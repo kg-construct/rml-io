@@ -1,0 +1,606 @@
+<!DOCTYPE html><html dir="ltr" lang="en"><head>
+<meta charset="utf-8">
+<meta name="generator" content="ReSpec 26.4.0">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<style>
+span.example-title{text-transform:none}
+aside.example,div.example,div.illegal-example{padding:.5em;margin:1em 0;position:relative;clear:both}
+div.illegal-example{color:red}
+div.illegal-example p{color:#000}
+aside.example,div.example{padding:.5em;border-left-width:.5em;border-left-style:solid;border-color:#e0cb52;background:#fcfaee}
+aside.example div.example{border-left-width:.1em;border-color:#999;background:#fff}
+aside.example div.example span.example-title{color:#999}
+.example pre{background-color:rgba(0,0,0,.03)}
+</style>
+<style>
+dfn{cursor:pointer}
+.dfn-panel{position:absolute;z-index:35;min-width:300px;max-width:500px;padding:.5em .75em;margin-top:.6em;font:small Helvetica Neue,sans-serif,Droid Sans Fallback;background:#fff;color:#000;box-shadow:0 1em 3em -.4em rgba(0,0,0,.3),0 0 1px 1px rgba(0,0,0,.05);border-radius:2px}
+.dfn-panel:not(.docked)>.caret{position:absolute;top:-9px}
+.dfn-panel:not(.docked)>.caret::after,.dfn-panel:not(.docked)>.caret::before{content:"";position:absolute;border:10px solid transparent;border-top:0;border-bottom:10px solid #fff;top:0}
+.dfn-panel:not(.docked)>.caret::before{border-bottom:9px solid #a2a9b1}
+.dfn-panel *{margin:0}
+.dfn-panel b{display:block;color:#000;margin-top:.25em}
+.dfn-panel ul a[href]{color:#333}
+.dfn-panel>div{display:flex}
+.dfn-panel a.self-link{font-weight:700;margin-right:auto}
+.dfn-panel .marker{padding:.1em;margin-left:.5em;border-radius:.2em;text-align:center;white-space:nowrap;font-size:90%;color:#040b1c}
+.dfn-panel .marker.dfn-exported{background:#d1edfd;box-shadow:0 0 0 .125em #1ca5f940}
+.dfn-panel .marker.idl-block{background:#8ccbf2;box-shadow:0 0 0 .125em #0670b161}
+.dfn-panel a:not(:hover){text-decoration:none!important;border-bottom:none!important}
+.dfn-panel a[href]:hover{border-bottom-width:1px}
+.dfn-panel ul{padding:0}
+.dfn-panel li{margin-left:1em}
+.dfn-panel.docked{position:fixed;left:.5em;top:unset;bottom:2em;margin:0 auto;max-width:calc(100vw - .75em * 2 - .5em - .2em * 2);max-height:30vh;overflow:auto}
+</style>
+    
+<title>Target</title>
+    
+    
+<link rel="stylesheet" type="text/css" href="./resources/css/extras.css">
+    
+<script async="" src="//www.google-analytics.com/analytics.js"></script>
+    
+<style type="text/css">
+
+        code {
+            font-size: 120%;
+        }
+    
+</style>
+    
+    
+<script>
+      (function (i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r;
+        i[r] = i[r] || function () {
+          (i[r].q = i[r].q || []).push(arguments)
+        }, i[r].l = 1 * new Date();
+        a = s.createElement(o),
+          m = s.getElementsByTagName(o)[0];
+        a.async = 1;
+        a.src = g;
+        m.parentNode.insertBefore(a, m)
+      })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+      ga('create', 'UA-87734787-2', 'auto');
+      ga('send', 'pageview');
+
+    </script>
+
+<style id="respec-mainstyle">
+@keyframes pop{
+0%{transform:scale(1,1)}
+25%{transform:scale(1.25,1.25);opacity:.75}
+100%{transform:scale(1,1)}
+}
+.hljs{background:0 0!important}
+a abbr,h1 abbr,h2 abbr,h3 abbr,h4 abbr,h5 abbr,h6 abbr{border:none}
+dfn{font-weight:700}
+a.internalDFN{color:inherit;border-bottom:1px solid #99c;text-decoration:none}
+a.externalDFN{color:inherit;border-bottom:1px dotted #ccc;text-decoration:none}
+a.bibref{text-decoration:none}
+.respec-offending-element:target{animation:pop .25s ease-in-out 0s 1}
+.respec-offending-element,a[href].respec-offending-element{text-decoration:red wavy underline}
+@supports not (text-decoration:red wavy underline){
+.respec-offending-element:not(pre){display:inline-block}
+.respec-offending-element{background:url(data:image/gif;base64,R0lGODdhBAADAPEAANv///8AAP///wAAACwAAAAABAADAEACBZQjmIAFADs=) bottom repeat-x}
+}
+#references :target{background:#eaf3ff;animation:pop .4s ease-in-out 0s 1}
+cite .bibref{font-style:normal}
+code{color:#c63501}
+th code{color:inherit}
+a[href].orcid{padding-left:4px;padding-right:4px}
+a[href].orcid>svg{margin-bottom:-2px}
+.toc a,.tof a{text-decoration:none}
+a .figno,a .secno{color:#000}
+ol.tof,ul.tof{list-style:none outside none}
+.caption{margin-top:.5em;font-style:italic}
+table.simple{border-spacing:0;border-collapse:collapse;border-bottom:3px solid #005a9c}
+.simple th{background:#005a9c;color:#fff;padding:3px 5px;text-align:left}
+.simple th a{color:#fff;padding:3px 5px;text-align:left}
+.simple th[scope=row]{background:inherit;color:inherit;border-top:1px solid #ddd}
+.simple td{padding:3px 10px;border-top:1px solid #ddd}
+.simple tr:nth-child(even){background:#f0f6ff}
+.section dd>p:first-child{margin-top:0}
+.section dd>p:last-child{margin-bottom:0}
+.section dd{margin-bottom:1em}
+.section dl.attrs dd,.section dl.eldef dd{margin-bottom:0}
+#issue-summary>ul{column-count:2}
+#issue-summary li{list-style:none;display:inline-block}
+details.respec-tests-details{margin-left:1em;display:inline-block;vertical-align:top}
+details.respec-tests-details>*{padding-right:2em}
+details.respec-tests-details[open]{z-index:999999;position:absolute;border:thin solid #cad3e2;border-radius:.3em;background-color:#fff;padding-bottom:.5em}
+details.respec-tests-details[open]>summary{border-bottom:thin solid #cad3e2;padding-left:1em;margin-bottom:1em;line-height:2em}
+details.respec-tests-details>ul{width:100%;margin-top:-.3em}
+details.respec-tests-details>li{padding-left:1em}
+a[href].self-link:hover{opacity:1;text-decoration:none;background-color:transparent}
+h2,h3,h4,h5,h6{position:relative}
+aside.example .marker>a.self-link{color:inherit}
+h2>a.self-link,h3>a.self-link,h4>a.self-link,h5>a.self-link,h6>a.self-link{border:none;color:inherit;font-size:83%;height:2em;left:-1.6em;opacity:.5;position:absolute;text-align:center;text-decoration:none;top:0;transition:opacity .2s;width:2em}
+h2>a.self-link::before,h3>a.self-link::before,h4>a.self-link::before,h5>a.self-link::before,h6>a.self-link::before{content:"§";display:block}
+@media (max-width:767px){
+dd{margin-left:0}
+h2>a.self-link,h3>a.self-link,h4>a.self-link,h5>a.self-link,h6>a.self-link{left:auto;top:auto}
+}
+@media print{
+.removeOnSave{display:none}
+}
+</style>
+<meta name="description" content="This document describes Target, 
+a formal model and a common representation 
+for specifying how a Knowledge Graph should be exported to a given target. 
+Target reuses existing data access descriptions 
+and is therefore not limited to a specific set of targets. 
+The current document describes the Target concepts 
+through definitions and examples.">
+<style>
+.hljs{display:block;overflow-x:auto;padding:.5em;color:#383a42;background:#fafafa}
+.hljs-comment,.hljs-quote{color:#717277;font-style:italic}
+.hljs-doctag,.hljs-formula,.hljs-keyword{color:#a626a4}
+.hljs-deletion,.hljs-name,.hljs-section,.hljs-selector-tag,.hljs-subst{color:#ca4706;font-weight:700}
+.hljs-literal{color:#0b76c5}
+.hljs-addition,.hljs-attribute,.hljs-meta-string,.hljs-regexp,.hljs-string{color:#42803c}
+.hljs-built_in,.hljs-class .hljs-title{color:#9a6a01}
+.hljs-attr,.hljs-number,.hljs-selector-attr,.hljs-selector-class,.hljs-selector-pseudo,.hljs-template-variable,.hljs-type,.hljs-variable{color:#986801}
+.hljs-bullet,.hljs-link,.hljs-meta,.hljs-selector-id,.hljs-symbol,.hljs-title{color:#336ae3}
+.hljs-emphasis{font-style:italic}
+.hljs-strong{font-weight:700}
+.hljs-link{text-decoration:underline}
+</style>
+<style>
+var{position:relative;cursor:pointer}
+var[data-type]::after,var[data-type]::before{position:absolute;left:50%;top:-6px;opacity:0;transition:opacity .4s;pointer-events:none}
+var[data-type]::before{content:"";transform:translateX(-50%);border-width:4px 6px 0 6px;border-style:solid;border-color:transparent;border-top-color:#000}
+var[data-type]::after{content:attr(data-type);transform:translateX(-50%) translateY(-100%);background:#000;text-align:center;font-family:"Dank Mono","Fira Code",monospace;font-style:normal;padding:6px;border-radius:3px;color:#daca88;text-indent:0;font-weight:400}
+var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
+</style>
+<script id="initialUserConfig" type="application/json">{
+  "localBiblio": {
+    "DCAT": {
+      "title": "Data Catalog Vocabulary (DCAT) - Version 2",
+      "href": "https://www.w3.org/TR/vocab-dcat/",
+      "status": "W3C Recommendation",
+      "publisher": "W3C",
+      "date": "22 February 2020",
+      "id": "dcat"
+    },
+    "SD": {
+      "title": "SPARQL 1.1 Service Description",
+      "href": "https://www.w3.org/TR/sparql11-service-description/",
+      "status": "W3C Recommendation",
+      "publisher": "W3C",
+      "date": "21 March 2013",
+      "id": "sd"
+    },
+    "VoID": {
+      "title": "Describing Linked Datasets with the VoID Vocabulary",
+      "href": "https://www.w3.org/TR/void/",
+      "status": "W3C Interest Group Note",
+      "publisher": "W3C",
+      "date": "03 March 2011",
+      "id": "void"
+    },
+    "RDF11-Concepts": {
+      "title": "RDF 1.1 Concepts and Abstract Syntax",
+      "href": "https://www.w3.org/TR/rdf11-concepts/",
+      "status": "W3C Recommendation",
+      "publisher": "W3C",
+      "date": "25 February 2014"
+    },
+    "SPARQL": {
+      "title": "SPARQL 1.1 Overview",
+      "href": "https://www.w3.org/TR/sparql11-overview/",
+      "status": "W3C Recommendation",
+      "publisher": "W3C",
+      "date": "21 March 2013",
+      "id": "sparql"
+    },
+    "Turtle": {
+      "title": "RDF 1.1 Turtle",
+      "href": "https://www.w3.org/TR/turtle/",
+      "status": "W3C Recommendation",
+      "publisher": "W3C",
+      "date": "25 February 2014",
+      "id": "turtle"
+    },
+    "N-Quads": {
+      "title": "RDF 1.1 N-Quads",
+      "href": "https://www.w3.org/TR/n-quads/",
+      "status": "W3C Recommendation",
+      "publisher": "W3C",
+      "date": "25 February 2014",
+      "id": "n-quads"
+    },
+    "RFC3986": {
+      "title": "Uniform Resource Identifier (URI): Generic Syntax",
+      "href": "https://tools.ietf.org/html/rfc3986",
+      "status": "Internet Standard",
+      "publisher": "IETF",
+      "date": "March 1997",
+      "id": "rfc3986"
+    },
+    "paper": {
+      "authors": [
+        "Dylan Van Assche",
+        "Gerald Haesendonck",
+        "Gertjan De Mulder",
+        "Thomas Delva",
+        "Pieter Heyvaert",
+        "Ben De Meester",
+        "Anastasia Dimou"
+      ],
+      "title": "Leveraging Web of Things W3C recommendations for knowledge graphs generation",
+      "href": "https://dylanvanassche.be/publications/#icwe2021",
+      "status": "In Proceedings of the 21st International Conference on Web Engineering 2021",
+      "publisher": "Springer",
+      "date": "2021"
+    }
+  },
+  "doRdfa": "true",
+  "processVersion": 2021,
+  "specStatus": "unofficial",
+  "shortName": "target",
+  "copyrightStart": "2021",
+  "edDraftURI": "https://rml.io/specs/target",
+  "editors": [
+    {
+      "name": "Dylan Van Assche",
+      "mailto": "dylan.vanassche@ugent.be",
+      "company": "Ghent University &ndash; imec &ndash; IDLab",
+      "url": "https://dylanvanassche.be/#me",
+      "orcidid": "0000-0002-7195-9935",
+      "companyURL": "http://idlab.technology/"
+    },
+    {
+      "name": "Anastasia Dimou",
+      "mailto": "anastasia.dimou@ugent.be",
+      "company": "Ghent University &ndash; imec &ndash; IDLab",
+      "orcidid": "0000-0003-2138-7972",
+      "companyURL": "http://idlab.technology/"
+    }
+  ],
+  "otherLinks": [
+    {
+      "key": "This Version",
+      "data": [
+        {
+          "value": "https://rml.io/specs/target/20210324/",
+          "href": "https://rml.io/specs/target/20210324/"
+        }
+      ]
+    },
+    {
+      "key": "Previous Version",
+      "data": [
+        {
+          "value": "https://rml.io/specs/target/20210324/",
+          "href": "https://rml.io/specs/target/20210324/"
+        }
+      ]
+    },
+    {
+      "key": "Website",
+      "data": [
+        {
+          "value": "https://rml.io/target",
+          "href": "https://rml.io/target"
+        }
+      ]
+    }
+  ],
+  "publishISODate": "2021-03-24T00:00:00.000Z",
+  "generatedSubtitle": "Unofficial Draft 24 March 2021"
+}</script>
+<link rel="stylesheet" href="https://www.w3.org/StyleSheets/TR/2016/W3C-UD"></head>
+<body class="h-entry"><div class="head">
+     <h1 id="title" class="title">Target</h1>
+    
+    <h2>
+      Unofficial Draft
+      <time class="dt-published" datetime="2021-03-24">24 March 2021</time>
+    </h2>
+    <dl>
+      
+      <dt>Latest editor's draft:</dt><dd><a href="https://rml.io/specs/target">https://rml.io/specs/target</a></dd>
+      
+      
+      
+      
+      
+      <dt>Editors:</dt>
+      <dd class="p-author h-card vcard"><a class="ed_mailto u-email email p-name" href="mailto:dylan.vanassche@ugent.be">Dylan Van Assche</a>
+            (<a class="p-org org h-org h-card" href="http://idlab.technology/">Ghent University – imec – IDLab</a>)
+          </dd><dd class="p-author h-card vcard"><a class="ed_mailto u-email email p-name" href="mailto:anastasia.dimou@ugent.be">Anastasia Dimou</a>
+            (<a class="p-org org h-org h-card" href="http://idlab.technology/">Ghent University – imec – IDLab</a>)
+          </dd>
+      
+      
+      <dt>This Version</dt><dd>
+    <a href="https://rml.io/specs/target/20210324/">https://rml.io/specs/target/20210324/</a>
+  </dd><dt>Previous Version</dt><dd>
+    <a href="https://rml.io/specs/target/20210324/">https://rml.io/specs/target/20210324/</a>
+  </dd><dt>Website</dt><dd>
+    <a href="https://rml.io/target">https://rml.io/target</a>
+  </dd>
+    </dl>
+    
+    
+    
+    <p class="copyright">
+      This document is licensed under a
+      <a rel="license" href="https://creativecommons.org/licenses/by/4.0/legalcode" class="subfoot">Creative Commons Attribution 4.0 International Public License</a>
+      (CC-BY).
+    </p>
+    <hr title="Separator for header">
+  </div>
+<section id="abstract" class="introductory"><h2 id="abstract">Abstract</h2><p>This document describes <em>Target</em>, 
+a formal model and a common representation 
+for specifying how a Knowledge Graph should be exported to a given target. 
+Target reuses existing data access descriptions 
+and is therefore not limited to a specific set of targets. 
+The current document describes the Target concepts 
+through definitions and examples.</p><p>The version of this document is <em>v1.0.0</em>.</p></section>
+
+<section id="sotd" class="introductory"><h2>Status of This Document</h2><p>
+      This document is a draft of a potential specification. It has no official
+      standing of any kind and does not represent the support or consensus of
+      any standards organization.
+    </p>
+    <p data-format="markdown"><p>This is an early draft,
+yet efforts are made to keep things stable.</p></p>
+</section><nav id="toc"><h2 class="introductory" id="table-of-contents">Table of Contents</h2><ol class="toc"><li class="tocline"><a class="tocxref" href="#conformance"><bdi class="secno">1. </bdi>Conformance</a></li><li class="tocline"><a class="tocxref" href="#overview"><bdi class="secno">2. </bdi>Overview</a></li><li class="tocline"><a class="tocxref" href="#target-vocabulary"><bdi class="secno">3. </bdi>Target vocabulary</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#defining-targets"><bdi class="secno">3.1 </bdi>Defining Targets</a></li><li class="tocline"><a class="tocxref" href="#examples"><bdi class="secno">3.2 </bdi>Examples</a></li></ol></li><li class="tocline"><a class="tocxref" href="#references"><bdi class="secno">A. </bdi>References</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#normative-references"><bdi class="secno">A.1 </bdi>Normative references</a></li></ol></li></ol></nav>
+
+<section id="conformance"><h2 id="x1-conformance"><bdi class="secno">1. </bdi>Conformance<a class="self-link" aria-label="§" href="#conformance"></a></h2><p>As well as sections marked as non-normative, all authoring guidelines, diagrams, examples, and notes in this specification are non-normative. Everything else in this specification is normative.</p><p>
+        The key words <em class="rfc2119">MAY</em> and <em class="rfc2119">MUST</em> in this document
+        are to be interpreted as described in
+        <a href="https://datatracker.ietf.org/doc/html/bcp14">BCP 14</a>
+        [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc2119" title="Key words for use in RFCs to Indicate Requirement Levels">RFC2119</a></cite>] [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc8174" title="Ambiguity of Uppercase vs Lowercase in RFC 2119 Key Words">RFC8174</a></cite>]
+        when, and only when, they appear in all capitals, as shown here.
+      </p></section>
+
+<section id="overview-0"><h2 id="overview"><bdi class="secno">2. </bdi>Overview<a class="self-link" aria-label="§" href="#overview"></a></h2><p><em>This section is non-normative.</em></p><p>This document specifies <em>Target</em>, 
+a description for defining how a generated 
+RDF [<cite><a class="bibref" data-link-type="biblio" href="#bib-rdf-concepts" title="Resource Description Framework (RDF): Concepts and Abstract Syntax">RDF-Concepts</a></cite>]
+knowledge graph must be exported. 
+A Target description is not tailored towards a specific Target 
+which allows to export the generated RDF triples to any type of Target. 
+Target leverages the access descriptions of data access 
+such as DCAT [<cite><a class="bibref" data-link-type="biblio" href="#bib-dcat" title="Data Catalog Vocabulary (DCAT) - Version 2">DCAT</a></cite>], VoID [<cite><a class="bibref" data-link-type="biblio" href="#bib-void" title="Describing Linked Datasets with the VoID Vocabulary">VoID</a></cite>], SD [<cite><a class="bibref" data-link-type="biblio" href="#bib-sd" title="SPARQL 1.1 Service Description">SD</a></cite>], etc. 
+and allows fine grained control over where each RDF triple is exported to.</p><p>In this document, examples assume 
+the following namespace prefix bindings unless otherwise stated:</p><table>
+<thead>
+<tr>
+<th>Prefix</th>
+<th>Namespace</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>rmlt</code></td>
+<td><a href="http://semweb.mmlab.be/ns/rml-target#">http://semweb.mmlab.be/ns/rml-target#</a></td>
+</tr>
+<tr>
+<td><code>formats</code></td>
+<td><a href="https://www.w3.org/ns/formats/">https://www.w3.org/ns/formats/</a></td>
+</tr>
+<tr>
+<td><code>comp</code></td>
+<td><a href="http://semweb.mmlab.be/ns/rml-compression#">http://semweb.mmlab.be/ns/rml-compression#</a></td>
+</tr>
+<tr>
+<td><code>void</code></td>
+<td><a href="http://rdfs.org/ns/void#">http://rdfs.org/ns/void#</a></td>
+</tr>
+<tr>
+<td><code>sd</code></td>
+<td><a href="http://www.w3.org/ns/sparql-service-description#">http://www.w3.org/ns/sparql-service-description#</a></td>
+</tr>
+<tr>
+<td><code>dcat</code></td>
+<td><a href="http://www.w3.org/ns/dcat#">http://www.w3.org/ns/dcat#</a></td>
+</tr>
+</tbody></table></section>
+
+<section id="target-vocabulary-0"><h2 id="target-vocabulary"><bdi class="secno">3. </bdi>Target vocabulary<a class="self-link" aria-label="§" href="#target-vocabulary"></a></h2><p>The Target vocabulary namespace is <a href="http://semweb.mmlab.be/ns/rml-target#">http://semweb.mmlab.be/ns/rml-target#</a> 
+and it's prefix is <code>rmlt</code>.</p><p>The Target vocabulary consists of a single class: <code>rmlt:LogicalTarget</code> 
+to describe how a knowledge graph must be exported after generation. </p><section id="defining-targets-0"><h3 id="defining-targets"><bdi class="secno">3.1 </bdi>Defining Targets<a class="self-link" aria-label="§" href="#defining-targets"></a></h3><p>A Target is any target to where RDF triples are exported to.</p><p>A Target (<code>rmlt:LogicalTarget</code>) contains the following properties:</p><ul>
+<li>The <strong>target</strong> (<code>rmlt:target</code>) locates the output target.
+It is a URI [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc3986" title="Uniform Resource Identifier (URI): Generic Syntax">RFC3986</a></cite>] 
+or Literal [<cite><a class="bibref" data-link-type="biblio" href="#bib-rdf-concepts" title="Resource Description Framework (RDF): Concepts and Abstract Syntax">RDF-Concepts</a></cite>]
+that represents the target's location. 
+External vocabulary such as DCAT, VoID, SD is allowed here. 
+Each <code>rmlt:LogicalTarget</code> <em class="rfc2119">MUST</em> have one <code>rmlt:target</code> property. 
+The target <em class="rfc2119">MAY</em> be a Literal 
+containing the path the file to where the knowledge graph is exported to, 
+this is allowed to stay backwards compatibility 
+with existing data access descriptions.</li>
+<li>The <strong>serialization format</strong> (<code>rmlt:serialization</code>) <em class="rfc2119">MAY</em> specify 
+the serialization format for exporting a knowledge graph. 
+The serialization format is described using the W3C 
+<a href="https://www.w3.org/ns/formats/">formats</a> namespace. 
+By default, the serialization format is N-Quads [<cite><a class="bibref" data-link-type="biblio" href="#bib-n-quads" title="RDF 1.1 N-Quads">N-Quads</a></cite>].</li>
+<li>The <strong>compression algorithm</strong> (<code>rmlt:compression</code>) <em class="rfc2119">MAY</em> describe 
+the compression algorithm to apply when exporting a knowledge graph.
+The compression format is specified through 
+the <a href="http://semweb.mmlab.be/ns/rml-compression#">comp</a> namespace.
+By default, no compression is applied.</li>
+</ul><p>The Target definition requires only the target (<code>rmlt:target</code>) to be specified, 
+all other properties are optional.</p><table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Domain</th>
+<th>Range</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>rmlt:target</code></td>
+<td><code>rmlt:LogicalTarget</code></td>
+<td><code>URI or Literal</code></td>
+</tr>
+<tr>
+<td><code>rmlt:serialization</code></td>
+<td><code>rmlt:LogicalTarget</code></td>
+<td><code>formats:Format</code></td>
+</tr>
+<tr>
+<td><code>rmlt:compression</code></td>
+<td><code>rmlt:LogicalTarget</code></td>
+<td><code>comp:Compression</code></td>
+</tr>
+</tbody></table><figure id="fig-the-structure-of-target">
+  <img src="./resources/images/structure.png" alt="Target structure" width="780" height="370">
+  <figcaption>Figure <bdi class="figno">1</bdi> <span class="fig-title">The structure of Target</span></figcaption>
+</figure></section><section id="examples-0"><h3 id="examples"><bdi class="secno">3.2 </bdi>Examples<a class="self-link" aria-label="§" href="#examples"></a></h3><p>The following example show a Target of an RDF dump in Turtle [<cite><a class="bibref" data-link-type="biblio" href="#bib-turtle" title="RDF 1.1 Turtle">Turtle</a></cite>] 
+format with GZip compression:</p><div class="example" id="example-1-generatedID">
+        <div class="marker">
+    <a class="self-link" href="#example-1-generatedID">Example<bdi> 1</bdi></a><span class="example-title">:  </span>
+  </div> <pre class="turtle"><code class="turtle hljs" aria-busy="false">&lt;#VoIDDump&gt; a rmlt:LogicalTarget;
+     rmlt:target [ a void:Dataset
+         void:dataDump &lt;file:///data/dump.ttl&gt;;
+     ];
+     rmlt:serialization formats:Turtle;
+     rmlt:compression comp:GZip;
+.
+</code></pre>
+      </div><p>The following example shows a Target of a [<cite><a class="bibref" data-link-type="biblio" href="#bib-sparql" title="SPARQL 1.1 Overview">SPARQL</a></cite>] 
+endpoint with <code>SPARQL UPDATE</code>:</p><div class="example" id="example-2-generatedID">
+        <div class="marker">
+    <a class="self-link" href="#example-2-generatedID">Example<bdi> 2</bdi></a><span class="example-title">:  </span>
+  </div> <pre class="turtle"><code class="turtle hljs" aria-busy="false">&lt;#SPARQLEndpoint&gt; a rmlt:LogicalTarget;
+     rmlt:target [ a sd:Service;
+       sd:endpoint  &lt;http://example.com/sparql-update&gt; ;
+       sd:supportedLanguage sd:SPARQL11Update ;
+     ];
+.
+</code></pre>
+      </div><p>The following example shows a Target of a 
+DCAT dataset in N-Quads format with Zip compression:</p><div class="example" id="example-3-generatedID">
+        <div class="marker">
+    <a class="self-link" href="#example-3-generatedID">Example<bdi> 3</bdi></a><span class="example-title">:  </span>
+  </div> <pre class="turtle"><code class="turtle hljs" aria-busy="false">&lt;#DCATDump&gt; a rmlt:LogicalTarget;
+     rmlt:target [ a dcat:Dataset
+         dcat:distribution [ a dcat:Distribution;
+            dcat:accessURL &lt;http://example.org/dcat-access-url&gt; ;
+         ];
+     ];
+     rmlt:serialization formats:N-Quads;
+     rmlt:compression comp:Zip;
+.
+</code></pre>
+      </div></section></section>
+
+
+
+<section id="references" class="appendix"><h2 id="a-references"><bdi class="secno">A. </bdi>References<a class="self-link" aria-label="§" href="#references"></a></h2><section id="normative-references">
+    <h3 id="a-1-normative-references"><bdi class="secno">A.1 </bdi>Normative references<a class="self-link" aria-label="§" href="#normative-references"></a></h3>
+    <dl class="bibliography"><dt id="bib-dcat">[DCAT]</dt><dd><a href="https://www.w3.org/TR/vocab-dcat/"><cite>Data Catalog Vocabulary (DCAT) - Version 2</cite></a>.  W3C. 22 February 2020. W3C Recommendation. URL: <a href="https://www.w3.org/TR/vocab-dcat/">https://www.w3.org/TR/vocab-dcat/</a></dd><dt id="bib-n-quads">[N-Quads]</dt><dd><a href="https://www.w3.org/TR/n-quads/"><cite>RDF 1.1 N-Quads</cite></a>.  W3C. 25 February 2014. W3C Recommendation. URL: <a href="https://www.w3.org/TR/n-quads/">https://www.w3.org/TR/n-quads/</a></dd><dt id="bib-rdf-concepts">[RDF-Concepts]</dt><dd><a href="https://www.w3.org/TR/rdf-concepts/"><cite>Resource Description Framework (RDF): Concepts and Abstract Syntax</cite></a>. Graham Klyne; Jeremy Carroll.  W3C. 10 February 2004. W3C Recommendation. URL: <a href="https://www.w3.org/TR/rdf-concepts/">https://www.w3.org/TR/rdf-concepts/</a></dd><dt id="bib-rfc2119">[RFC2119]</dt><dd><a href="https://datatracker.ietf.org/doc/html/rfc2119"><cite>Key words for use in RFCs to Indicate Requirement Levels</cite></a>. S. Bradner.  IETF. March 1997. Best Current Practice. URL: <a href="https://datatracker.ietf.org/doc/html/rfc2119">https://datatracker.ietf.org/doc/html/rfc2119</a></dd><dt id="bib-rfc3986">[RFC3986]</dt><dd><a href="https://tools.ietf.org/html/rfc3986"><cite>Uniform Resource Identifier (URI): Generic Syntax</cite></a>.  IETF. March 1997. Internet Standard. URL: <a href="https://tools.ietf.org/html/rfc3986">https://tools.ietf.org/html/rfc3986</a></dd><dt id="bib-rfc8174">[RFC8174]</dt><dd><a href="https://datatracker.ietf.org/doc/html/rfc8174"><cite>Ambiguity of Uppercase vs Lowercase in RFC 2119 Key Words</cite></a>. B. Leiba.  IETF. May 2017. Best Current Practice. URL: <a href="https://datatracker.ietf.org/doc/html/rfc8174">https://datatracker.ietf.org/doc/html/rfc8174</a></dd><dt id="bib-sd">[SD]</dt><dd><a href="https://www.w3.org/TR/sparql11-service-description/"><cite>SPARQL 1.1 Service Description</cite></a>.  W3C. 21 March 2013. W3C Recommendation. URL: <a href="https://www.w3.org/TR/sparql11-service-description/">https://www.w3.org/TR/sparql11-service-description/</a></dd><dt id="bib-sparql">[SPARQL]</dt><dd><a href="https://www.w3.org/TR/sparql11-overview/"><cite>SPARQL 1.1 Overview</cite></a>.  W3C. 21 March 2013. W3C Recommendation. URL: <a href="https://www.w3.org/TR/sparql11-overview/">https://www.w3.org/TR/sparql11-overview/</a></dd><dt id="bib-turtle">[Turtle]</dt><dd><a href="https://www.w3.org/TR/turtle/"><cite>RDF 1.1 Turtle</cite></a>.  W3C. 25 February 2014. W3C Recommendation. URL: <a href="https://www.w3.org/TR/turtle/">https://www.w3.org/TR/turtle/</a></dd><dt id="bib-void">[VoID]</dt><dd><a href="https://www.w3.org/TR/void/"><cite>Describing Linked Datasets with the VoID Vocabulary</cite></a>.  W3C. 03 March 2011. W3C Interest Group Note. URL: <a href="https://www.w3.org/TR/void/">https://www.w3.org/TR/void/</a></dd></dl>
+  </section></section><p role="navigation" id="back-to-top">
+    <a href="#title"><abbr title="Back to Top">↑</abbr></a>
+  </p><script id="respec-dfn-panel">(() => {
+// @ts-check
+if (document.respec) {
+  document.respec.ready.then(dfnPanel);
+} else {
+  dfnPanel();
+}
+
+function dfnPanel() {
+  /** @type {HTMLElement} */
+  let panel;
+  document.body.addEventListener("click", event => {
+    if (!(event.target instanceof HTMLElement)) return;
+
+    /** @type {HTMLElement} */
+    const el = event.target;
+
+    const action = deriveAction(el);
+    switch (action) {
+      case "show": {
+        if (panel) hidePanel(panel);
+        /** @type {HTMLElement} */
+        const dfn = el.closest("dfn, .index-term");
+        panel = document.getElementById(`dfn-panel-for-${dfn.id}`);
+        displayPanel(dfn, panel, { x: event.clientX, y: event.clientY });
+        break;
+      }
+      case "dock": {
+        panel.style.left = null;
+        panel.style.top = null;
+        panel.classList.add("docked");
+        break;
+      }
+      case "hide": {
+        hidePanel(panel);
+        break;
+      }
+    }
+  });
+}
+
+/** @param {HTMLElement} clickTarget */
+function deriveAction(clickTarget) {
+  const hitALink = !!clickTarget.closest("a");
+  if (clickTarget.closest("dfn, .index-term")) {
+    return hitALink ? null : "show";
+  }
+  if (clickTarget.closest(".dfn-panel")) {
+    if (hitALink) {
+      const clickedSelfLink = clickTarget.classList.contains("self-link");
+      return clickedSelfLink ? "hide" : "dock";
+    }
+    const panel = clickTarget.closest(".dfn-panel");
+    return panel.classList.contains("docked") ? "hide" : null;
+  }
+  if (document.querySelector(".dfn-panel:not([hidden])")) {
+    return "hide";
+  }
+  return null;
+}
+
+/**
+ * @param {HTMLElement} dfn
+ * @param {HTMLElement} panel
+ * @param {{ x: number, y: number }} clickPosition
+ */
+function displayPanel(dfn, panel, { x, y }) {
+  panel.hidden = false;
+  // distance (px) between edge of panel and the pointing triangle (caret)
+  const MARGIN = 20;
+
+  const dfnRects = dfn.getClientRects();
+  // Find the `top` offset when the `dfn` can be spread across multiple lines
+  let closestTop = 0;
+  let minDiff = Infinity;
+  for (const rect of dfnRects) {
+    const { top, bottom } = rect;
+    const diffFromClickY = Math.abs((top + bottom) / 2 - y);
+    if (diffFromClickY < minDiff) {
+      minDiff = diffFromClickY;
+      closestTop = top;
+    }
+  }
+
+  const top = window.scrollY + closestTop + dfnRects[0].height;
+  const left = x - MARGIN;
+  panel.style.left = `${left}px`;
+  panel.style.top = `${top}px`;
+
+  // Find if the panel is flowing out of the window
+  const panelRect = panel.getBoundingClientRect();
+  const SCREEN_WIDTH = Math.min(window.innerWidth, window.screen.width);
+  if (panelRect.right > SCREEN_WIDTH) {
+    const newLeft = Math.max(MARGIN, x + MARGIN - panelRect.width);
+    const newCaretOffset = left - newLeft;
+    panel.style.left = `${newLeft}px`;
+    /** @type {HTMLElement} */
+    const caret = panel.querySelector(".caret");
+    caret.style.left = `${newCaretOffset}px`;
+  }
+}
+
+/** @param {HTMLElement} panel */
+function hidePanel(panel) {
+  panel.hidden = true;
+  panel.classList.remove("docked");
+}
+})()</script><script src="https://www.w3.org/scripts/TR/2016/fixup.js"></script></body></html>
