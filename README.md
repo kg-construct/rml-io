@@ -1,6 +1,6 @@
-# The Function Ontology Specification
+# Data IO in RML Specification
 
-Repository for https://w3id.org/function/spec
+Repository for https://rml.io/specs/target-in-rml
 
 ## Quickstart
 
@@ -11,4 +11,4 @@ Repository for https://w3id.org/function/spec
 - save as snapshot to function.html [using the respec functionality](https://respec.org/docs/#using-browser)
 - run `node publish.js` to get the index.html + archived version in the `dist` folder
 
-The `dist` folder contents should mimic the contents on `https://w3id.org/function/spec`
+The `dist` folder contents should mimic the contents on `https://rml.io/specs/target-in-rml`
