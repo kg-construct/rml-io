@@ -10,7 +10,7 @@ the generated subject `http://example.org/{id}`
 to an RDF dump with N-Quads as serialization format and GZip compression:
 
 ```turtle "example": " "
-<LogicalSource1> a rml:LogicalSource;
+<#LogicalSource1> a rml:LogicalSource;
   rml:source "/data/people.json";
   rml:referenceFormulation ql:JSONPath;
   rml:iterator "$.[*]";
@@ -53,7 +53,7 @@ the generated predicate `foaf:name` to an RDF dump
 with Turtle as serialization format and Zip compression:
 
 ```turtle "example": " "
-<LogicalSource1> a rml:LogicalSource;
+<#LogicalSource1> a rml:LogicalSource;
   rml:source "/data/people.json";
   rml:referenceFormulation ql:JSONPath;
   rml:iterator "$.[*]";
@@ -96,7 +96,7 @@ the generated object name to an RDF dump
 with N-Triples as serialization format:
 
 ```turtle "example": " "
-<LogicalSource1> a rml:LogicalSource;
+<#LogicalSource1> a rml:LogicalSource;
   rml:source "/data/people.json";
   rml:referenceFormulation ql:JSONPath;
   rml:iterator "$.[*]";
@@ -112,7 +112,7 @@ with N-Triples as serialization format:
   rmlt:compression comp:GZip;
 
 <#TriplesMap> a rr:TriplesMap;
-  rml:logicalSource <#LogicalSource>;
+  rml:logicalSource <#LogicalSource1>;
   rr:subjectMap [ rr:template "http://example.org/{id}"; ];
   rr:predicateObjectMap [ 
     rr:predicateMap [ rr:constant foaf:name ];
@@ -141,7 +141,7 @@ The following example exports all triples in the named graph `ex:MyGraph`
 to an SPARQL [[SPARQL]] endpoint using `SPARQL UPDATE`:
 
 ```turtle "example": " "
-<LogicalSource1> a rml:LogicalSource;
+<#LogicalSource1> a rml:LogicalSource;
   rml:source "/data/people.json";
   rml:referenceFormulation ql:JSONPath;
   rml:iterator "$.[*]";
@@ -157,7 +157,7 @@ to an SPARQL [[SPARQL]] endpoint using `SPARQL UPDATE`:
   rmlt:compression comp:GZip;
 
 <#TriplesMap> a rr:TriplesMap;
-  rml:logicalSource <#LogicalSource>;
+  rml:logicalSource <#LogicalSource1>;
   rr:subjectMap [ 
     rr:template "http://example.org/{id}";
    ];
@@ -187,7 +187,7 @@ The following examples export all triples with a language tag
 to a RDF dump with JSON-LD as serialization format:
 
 ```turtle "example": " "
-<LogicalSource1> a rml:LogicalSource;
+<#LogicalSource1> a rml:LogicalSource;
   rml:source "/data/people.json";
   rml:referenceFormulation ql:JSONPath;
   rml:iterator "$.[*]";
@@ -203,7 +203,7 @@ to a RDF dump with JSON-LD as serialization format:
   rmlt:compression comp:GZip;
 
 <#TriplesMap> a rr:TriplesMap;
-  rml:logicalSource <#LogicalSource>;
+  rml:logicalSource <#LogicalSource1>;
   rr:subjectMap [ 
     rr:template "http://example.org/{id}";
    ];
@@ -239,7 +239,7 @@ and all triples containing the predicate `foaf:name`
 are exported to `LogicalTarget2`.
 
 ```turtle "example": " "
-<LogicalSource1> a rml:LogicalSource;
+<#LogicalSource1> a rml:LogicalSource;
   rml:source "/data/people.json";
   rml:referenceFormulation ql:JSONPath;
   rml:iterator "$.[*]";
@@ -265,7 +265,7 @@ are exported to `LogicalTarget2`.
 .
 
 <#TriplesMap> a rr:TriplesMap;
-  rml:logicalSource <#LogicalSource>;
+  rml:logicalSource <#LogicalSource1>;
   rr:subjectMap [ 
     rr:template "http://example.org/{id}";
     rml:logicalTarget <#LogicalTarget1>;
@@ -292,7 +292,7 @@ are exported to `LogicalTarget2` and all triples containing the object `"age"`
 are exported to `LogicalTarget3`.
 
 ```turtle "example": " "
-<LogicalSource1> a rml:LogicalSource;
+<#LogicalSource1> a rml:LogicalSource;
   rml:source "/data/people.json";
   rml:referenceFormulation ql:JSONPath;
   rml:iterator "$.[*]";
@@ -326,7 +326,7 @@ are exported to `LogicalTarget3`.
 .
 
 <#TriplesMap> a rr:TriplesMap;
-  rml:logicalSource <#LogicalSource>;
+  rml:logicalSource <#LogicalSource1>;
   rr:subjectMap [ 
     rr:template "http://example.org/{id}";
     rml:logicalTarget <#LogicalTarget1>;
@@ -358,7 +358,7 @@ and all triples containing the object `"age"`
 are exported to `LogicalTarget2`.
 
 ```turtle "example": " "
-<LogicalSource1> a rml:LogicalSource;
+<#LogicalSource1> a rml:LogicalSource;
   rml:source "/data/people.json";
   rml:referenceFormulation ql:JSONPath;
   rml:iterator "$.[*]";
@@ -384,7 +384,7 @@ are exported to `LogicalTarget2`.
 .
 
 <#TriplesMap> a rr:TriplesMap;
-  rml:logicalSource <#LogicalSource>;
+  rml:logicalSource <#LogicalSource1>;
   rr:subjectMap [ 
     rr:template "http://example.org/{id}";
    ];
@@ -426,7 +426,7 @@ and all triples containing the subject `http://newtarget.org/{id}`
 are exported to LogicalTarget2.
 
 ```turtle "example": " "
-<LogicalSource1> a rml:LogicalSource;
+<#LogicalSource1> a rml:LogicalSource;
   rml:source "/data/people.json";
   rml:referenceFormulation ql:JSONPath;
   rml:iterator "$.[*]";
@@ -492,7 +492,7 @@ Triples are generated and exported based on the FnO condition's evaluation.
 Only if the condition is true, the triples are generated and exported.
 
 ```turtle "example": " "
-<LogicalSource1> a rml:LogicalSource;
+<#LogicalSource1> a rml:LogicalSource;
   rml:source "/data/people.json";
   rml:referenceFormulation ql:JSONPath;
   rml:iterator "$.[*]";
