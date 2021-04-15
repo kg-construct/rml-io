@@ -1,7 +1,7 @@
 ## Abstract {#abstract}
 
 This document describes a formal representation to align the 
-RDF Mapping Language [[RML]] with Target [[paper]] 
+RDF Mapping Language [[RML]] with Target [[DataIO]]
 to describe in RML mapping rules how a generated Knowledge Graph 
 should be directed and exported. 
 The current document describes how Target is integrated 
