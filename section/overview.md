@@ -22,3 +22,4 @@ the following namespace prefix bindings unless otherwise stated:
 | `foaf`     | http://xmlns.com/foaf/0.1/                       |
 | `fnml`     | http://semweb.mmlab.be/ns/fnml#                  |
 | `idlab-fn` | http://example.com/idlab/function/               |
+| `void`     | http://rdfs.org/ns/void#                         |
