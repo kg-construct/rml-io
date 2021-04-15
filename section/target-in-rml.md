@@ -22,12 +22,7 @@ The same Term Map can have multiple targets by specifying
 multiple `rml:logicalTarget` properties in the Term Map. 
 
 Multiple Targets MAY be combined by specifying multiple Targets 
-in the same Term Map or multiple Term Maps of the same RDF triple. 
-If multiple Targets are defined in the same Term Map, 
-all triples containing the generated Term are exported 
-to all the specified Targets. 
-In case multiple Term Maps of the same RDF triple contain more than one Target, 
-the generated triples are exported to all the specified Targets.
+in the same Term Map or multiple Term Maps of the same RDF triple (see [[[!#multiple-targets]]]). 
 
 ```turtle "example": " "
 <#TriplesMap> a rr:TriplesMap;
