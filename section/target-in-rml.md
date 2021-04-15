@@ -73,8 +73,9 @@ the processor falls back to the default target,
 as it is specified through the processor's 
 specific configuration file or command line parameters. 
 If a mapping document contains at least one Target, 
-the processor will not export generated triples 
-which do not have a Target assigned.
+the processor will export the triples to these Targets,
+triples which do not have one or more Target(s) assigned,
+are exported to the default target of the processor.
 
 | Property            | Domain       | Range                |
 | ------------------- | ------------ | -------------------- |
