@@ -1,4 +1,4 @@
-## Combining multiple Targets {#multi-targets}
+## Combining multiple Targets {#multiple-targets}
 
 Multiple Targets MAY be specified for the same triple 
 in the same or multiple Term Maps.
