@@ -23,6 +23,7 @@ the following namespace prefix bindings unless otherwise stated:
 | `fnml`     | http://semweb.mmlab.be/ns/fnml#                  |
 | `idlab-fn` | http://example.com/idlab/function/               |
 | `void`     | http://rdfs.org/ns/void#                         |
+| `ex`       | http://example.org/ns#                           |
 
 Examples are divided in several boxes, each box has its own color.
 Blue boxes contain the input RDF data of the example:
