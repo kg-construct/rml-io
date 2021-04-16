@@ -10,67 +10,140 @@ by using FnO functions [[FnO]] as conditions.
 Triples can be exported to a specific Target while not to other Targets 
 by isolating these triples in a separate Triples Map.
 
-In this example, all triples containing the subject `http://example.org/{id}`
-are exported to `LogicalTarget1` 
-and all triples containing the subject `http://newtarget.org/{id}` 
-are exported to LogicalTarget2.
+In this example, the same subject and object are used in both Triples Maps,
+but with a diffent predicate. The triples with the first predicate `foaf:name`
+are exported to the first Target and the triples with the second predicate
+`schema:name` to the second Target.
 
-```turtle "example": " "
-<#LogicalSource1> a rml:LogicalSource;
-  rml:source "/data/people.json";
-  rml:referenceFormulation ql:JSONPath;
-  rml:iterator "$.[*]";
+<pre class="ex-input">
+# Results of DBPedia SPARQL query
+actor,name,nickname
+http://dbpedia.org/resource/Kevin_Sussman,Kevin Sussman
+http://dbpedia.org/resource/Jim_Parsons,Jim Parsons
+http://dbpedia.org/resource/Kaley_Cuoco,Kaley Cuoco
+http://dbpedia.org/resource/Sara_Gilbert,Sara Gilbert
+http://dbpedia.org/resource/Kunal_Nayyar,Kunal Nayyar
+http://dbpedia.org/resource/Laura_Spencer_(actress),Laura Spencer
+http://dbpedia.org/resource/Simon_Helberg,Simon Helberg
+http://dbpedia.org/resource/Johnny_Galecki,Johnny Galecki
+http://dbpedia.org/resource/Mayim_Bialik,Mayim Bialik
+http://dbpedia.org/resource/Melissa_Rauch,Melissa Rauch
+</pre>
+
+<pre class="ex-access">
+&lt;#SDSourceAccess&gt; a sd:Service;
+  sd:endpoint <http://dbpedia.org/sparql/>;
+  sd:supportedLanguage sd:SPARQL11Query;
+  sd:resultFormat formats:SPARQL_Results_CSV;
 .
+</pre>
 
-<#VoIDDump1> a void:Dataset ;
-  void:dataDump <file:///data/file1.nt>;
-.
-
-<#LogicalTarget1> a rmlt:LogicalTarget;
-  rmlt:target <#VoIDDump1>;
-  rmlt:serialization formats:N-Triples ;
-  rmlt:compression comp:GZip;
-
-<#VoIDDump2> a void:Dataset ;
-  void:dataDump <file:///data/file2.nt>;
-.
-
-<#LogicalTarget2> a rmlt:LogicalTarget;
-  rmlt:target <#VoIDDump2>;
-  rmlt:serialization formats:N-Triples ;
-  rmlt:compression comp:GZip;
-.
-
-<#TriplesMap1> a rr:TriplesMap;
-  rml:logicalSource <#LogicalSource1>;
-  rr:subjectMap [ 
-    rr:template "http://example.org/{id}";
-    rml:logicalTarget <#LogicalTarget1>;
-   ];
-  rr:predicateObjectMap [ 
-    rr:predicateMap [ rr:constant foaf:name ];
-    rr:objectMap [ rml:reference "name"; ];
+<pre class="ex-mapping">
+&lt;#TriplesMap1&gt; a rr:TriplesMap;
+  rml:logicalSource [ a rml:LogicalSource;
+    rml:source &lt;#SDSourceAccess&gt;;
+    rml:query """
+      PREFIX dbo: <http://dbpedia.org/ontology/>
+      PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+      PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+      SELECT DISTINCT ?actor ?name WHERE {
+        ?tvshow rdf:type dbo:TelevisionShow .
+        ?tvshow rdfs:label "The Big Bang Theory"@en .
+        ?tvshow dbo:starring ?actor .
+        ?actor foaf:name ?name .
+      }
+    """;
   ];
-  rr:predicateObjectMap [ 
-    rr:predicateMap [ rr:constant foaf:age ];
-    rr:objectMap [ 
-      rml:reference "age";
+  rr:subjectMap [ a rr:SubjectMap;
+    rml:reference "actor";
+    rr:termType rr:IRI;
+    rmlt:logicalTarget &lt;TargetDump1&gt;;
+  ];
+  rr:predicateObjectMap [ a rr:PredicateObjectMap;
+    rr:predicateMap [ a rr:PredicateMap;
+      rr:constant foaf:name;
+    ];
+    rr:objectMap [ a rr:ObjectMap;
+      rml:reference "name";
+    ];
+  ];
+
+&lt;#TriplesMap2&gt; a rr:TriplesMap;
+  rml:logicalSource [ a rml:LogicalSource;
+    rml:source &lt;#SDSourceAccess&gt;;
+    rml:query """
+      PREFIX dbo: <http://dbpedia.org/ontology/>
+      PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+      PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+      SELECT DISTINCT ?actor ?name WHERE {
+        ?tvshow rdf:type dbo:TelevisionShow .
+        ?tvshow rdfs:label "The Big Bang Theory"@en .
+        ?tvshow dbo:starring ?actor .
+        ?actor foaf:name ?name .
+      }
+    """;
+  ];
+  rr:subjectMap [ a rr:SubjectMap;
+    rml:reference "actor";
+    rr:termType rr:IRI;
+    rmlt:logicalTarget &lt;TargetDump2&gt;;
+  ];
+  rr:predicateObjectMap [ a rr:PredicateObjectMap;
+    rr:predicateMap [ a rr:PredicateMap;
+      rr:constant schema:name;
+    ];
+    rr:objectMap [ a rr:ObjectMap;
+      rml:reference "name";
     ];
   ];
 .
+</pre>
 
-<#TriplesMap2> a rr:TriplesMap;
-  rml:logicalSource <#LogicalSource1>;
-  rr:subjectMap [ 
-    rr:template "http://newtarget.org/{id}";
-    rml:logicalTarget <#LogicalTarget2>;
-   ];
-  rr:predicateObjectMap [ 
-    rr:predicateMap [ rr:constant foaf:interest ];
-    rr:objectMap [ rml:reference "interest"; ];
-  ];
+<pre class="ex-target">
+&lt;#TargetDump1&gt; a rmlt:LogicalTarget;
+  rmlt:target &lt;#VoIDDump1&gt;;
+  rmlt:serialization formats:N-Triples;
 .
-```
+&lt;#TargetDump2&gt; a rmlt:LogicalTarget;
+  rmlt:target &lt;#VoIDDump2&gt;;
+  rmlt:serialization formats:N-Triples;
+.
+</pre>
+
+<pre class="ex-access">
+&lt;#VoIDDump1&gt; a void:Dataset ;
+  void:dataDump &lt;file:///data/dump1.nt&gt;;
+.
+&lt;#VoIDDump2&gt; a void:Dataset ;
+  void:dataDump &lt;file:///data/dump2.nq&gt;;
+.
+</pre>
+
+<pre class="ex-output">
+# file:///data/dump1.nt
+&lt;http://dbpedia.org/resource/Kevin_Sussman&gt; &lt;http://xmlns.com/foaf/0.1/name&gt; "Kevin Sussman" .
+&lt;http://dbpedia.org/resource/Jim_Parsons&gt; &lt;http://xmlns.com/foaf/0.1/name&gt; "Jim Parsons" .
+&lt;http://dbpedia.org/resource/Kaley_Cuoco&gt; &lt;http://xmlns.com/foaf/0.1/name&gt; "Kaley Cuoco" .
+&lt;http://dbpedia.org/resource/Sara_Gilbert&gt; &lt;http://xmlns.com/foaf/0.1/name&gt; "Sara Gilbert" .
+&lt;http://dbpedia.org/resource/Kunal_Nayyar&gt; &lt;http://xmlns.com/foaf/0.1/name&gt; "Kunal Nayyar" .
+&lt;http://dbpedia.org/resource/Laura_Spencer&gt; &lt;http://xmlns.com/foaf/0.1/name&gt; "Laura Spencer" .
+&lt;http://dbpedia.org/resource/Simon_Helberg&gt; &lt;http://xmlns.com/foaf/0.1/name&gt; "Simon Helberg" .
+&lt;http://dbpedia.org/resource/Johnny_Galecki&gt; &lt;http://xmlns.com/foaf/0.1/name&gt; "Johnny Galecki" .
+&lt;http://dbpedia.org/resource/Mayim_Bialik&gt; &lt;http://xmlns.com/foaf/0.1/name&gt; "Mayim Bialik" .
+&lt;http://dbpedia.org/resource/Melissa_Rauch&gt; &lt;http://xmlns.com/foaf/0.1/name&gt; "Melissa Rauch" .
+
+# file:///data/dump2.nt
+&lt;http://dbpedia.org/resource/Kevin_Sussman&gt; &lt;http://schema.org/name&gt; "Kevin Sussman" .
+&lt;http://dbpedia.org/resource/Jim_Parsons&gt; &lt;http://schema.org/name&gt; "Jim Parsons" .
+&lt;http://dbpedia.org/resource/Kaley_Cuoco&gt; &lt;http://schema.org/name&gt; "Kaley Cuoco" .
+&lt;http://dbpedia.org/resource/Sara_Gilbert&gt; &lt;http://schema.org/name&gt; "Sara Gilbert" .
+&lt;http://dbpedia.org/resource/Kunal_Nayyar&gt; &lt;http://schema.org/name&gt; "Kunal Nayyar" .
+&lt;http://dbpedia.org/resource/Laura_Spencer&gt; &lt;http://schema.org/name&gt; "Laura Spencer" .
+&lt;http://dbpedia.org/resource/Simon_Helberg&gt; &lt;http://schema.org/name&gt; "Simon Helberg" .
+&lt;http://dbpedia.org/resource/Johnny_Galecki&gt; &lt;http://schema.org/name&gt; "Johnny Galecki" .
+&lt;http://dbpedia.org/resource/Mayim_Bialik&gt; &lt;http://schema.org/name&gt; "Mayim Bialik" .
+&lt;http://dbpedia.org/resource/Melissa_Rauch&gt; &lt;http://schema.org/name&gt; "Melissa Rauch" .
+</pre>
 
 ### Conditions {#conditions}
 
@@ -81,52 +154,132 @@ thus conditions apply on Targets as well.
 Triples are generated and exported based on the FnO condition's evaluation. 
 Only if the condition is true, the triples are generated and exported.
 
-```turtle "example": " "
-<#LogicalSource1> a rml:LogicalSource;
-  rml:source "/data/people.json";
-  rml:referenceFormulation ql:JSONPath;
-  rml:iterator "$.[*]";
+In the example, the triples with `Jim Parsons` as object are exported 
+to the first Target, triples with `Kaley Cuoco` as object are exported 
+to the second Target.
+
+<pre class="ex-input">
+# Results of DBPedia SPARQL query
+actor,name,nickname
+http://dbpedia.org/resource/Kevin_Sussman,Kevin Sussman
+http://dbpedia.org/resource/Jim_Parsons,Jim Parsons
+http://dbpedia.org/resource/Kaley_Cuoco,Kaley Cuoco
+http://dbpedia.org/resource/Sara_Gilbert,Sara Gilbert
+http://dbpedia.org/resource/Kunal_Nayyar,Kunal Nayyar
+http://dbpedia.org/resource/Laura_Spencer_(actress),Laura Spencer
+http://dbpedia.org/resource/Simon_Helberg,Simon Helberg
+http://dbpedia.org/resource/Johnny_Galecki,Johnny Galecki
+http://dbpedia.org/resource/Mayim_Bialik,Mayim Bialik
+http://dbpedia.org/resource/Melissa_Rauch,Melissa Rauch
+</pre>
+
+<pre class="ex-access">
+&lt;#SDSourceAccess&gt; a sd:Service;
+  sd:endpoint <http://dbpedia.org/sparql/>;
+  sd:supportedLanguage sd:SPARQL11Query;
+  sd:resultFormat formats:SPARQL_Results_CSV;
 .
+</pre>
 
-<#VoIDDump1> a void:Dataset ;
-  void:dataDump <file:///data/file1.nt>;
-.
-
-<#LogicalTarget1> a rmlt:LogicalTarget;
-  rmlt:target <#VoIDDump1>;
-  rmlt:serialization formats:N-Triples ;
-  rmlt:compression comp:GZip;
-
-<#TriplesMap> a rr:TriplesMap;
-  rml:logicalSource <#LogicalSource1>;
-  rr:subjectMap [ 
-    rr:template "http://example.org/{id}";    
+<pre class="ex-mapping">
+&lt;#TriplesMap&gt; a rr:TriplesMap;
+  rml:logicalSource [ a rml:LogicalSource;
+    rml:source &lt;#SDSourceAccess&gt;;
+    rml:query """
+      PREFIX dbo: <http://dbpedia.org/ontology/>
+      PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+      PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+      SELECT DISTINCT ?actor ?name WHERE {
+        ?tvshow rdf:type dbo:TelevisionShow .
+        ?tvshow rdfs:label "The Big Bang Theory"@en .
+        ?tvshow dbo:starring ?actor .
+        ?actor foaf:name ?name .
+      }
+    """;
+  ];
+  rr:subjectMap [ a rr:SubjectMap;
+    rml:reference "actor";
+    rr:termType rr:IRI;
+    rmlt:logicalTarget &lt;TargetDump1&gt;;
+  ];
+  rr:predicateObjectMap [ a rr:PredicateObjectMap;
+    rr:predicateMap [ a rr:PredicateMap;
+      rr:constant foaf:name;
+    ];
+    rr:objectMap [ a rr:ObjectMap;
+      rml:reference "name";
+    ];
   ];
   rr:predicateObjectMap [ 
     rr:predicateMap [ rr:constant foaf:name ];
-    rr:objectMap [ rml:reference "name"; ];
-  ];
-  rr:predicateObjectMap [ 
-    rr:predicateMap [ rr:constant foaf:age ];
     rr:objectMap [
       fnml:functionValue [
         rr:predicateObjectMap [
           rr:predicate fno:executes ;
-          rr:objectMap [ rr:constant idlab-fn:trueCondition ]
+          rr:objectMap [ rr:constant idlab-fn:decide ]
         ];
         rr:predicateObjectMap [
-          rr:predicate idlab-fn:strBoolean ;
-          rr:objectMap [ rr:constant "true"]
+          rr:predicate idlab-fn:expectedStr ;
+          rr:objectMap [ rr:constant "Jim Parsons"]
         ];
         rr:predicateObjectMap [
           rr:predicate idlab-fn:str ;
           rr:objectMap [ 
-            rml:reference "age";
-            rml:logicalTarget <#LogicalTarget1>;
+            rml:reference "name";
+            rml:logicalTarget <#TargetDump1>;
           ];
         ];
       ];
     ];
   ];
+  rr:predicateObjectMap [ 
+    rr:predicateMap [ rr:constant foaf:name ];
+    rr:objectMap [
+      fnml:functionValue [
+        rr:predicateObjectMap [
+          rr:predicate fno:executes ;
+          rr:objectMap [ rr:constant idlab-fn:decide ]
+        ];
+        rr:predicateObjectMap [
+          rr:predicate idlab-fn:expectedStr ;
+          rr:objectMap [ rr:constant "Kaley Cuoco"]
+        ];
+        rr:predicateObjectMap [
+          rr:predicate idlab-fn:str ;
+          rr:objectMap [ 
+            rml:reference "name";
+            rml:logicalTarget <#TargetDump2>;
+          ];
+        ];
+      ];
+    ];
+  ];
+</pre>
+
+<pre class="ex-target">
+&lt;#TargetDump1&gt; a rmlt:LogicalTarget;
+  rmlt:target &lt;#VoIDDump1&gt;;
+  rmlt:serialization formats:N-Triples;
 .
-```
+&lt;#TargetDump2&gt; a rmlt:LogicalTarget;
+  rmlt:target &lt;#VoIDDump2&gt;;
+  rmlt:serialization formats:N-Triples;
+.
+</pre>
+
+<pre class="ex-access">
+&lt;#VoIDDump1&gt; a void:Dataset ;
+  void:dataDump &lt;file:///data/dump1.nt&gt;;
+.
+&lt;#VoIDDump2&gt; a void:Dataset ;
+  void:dataDump &lt;file:///data/dump2.nt&gt;;
+.
+</pre>
+
+<pre class="ex-output">
+# file:///data/dump1.nt
+&lt;http://dbpedia.org/resource/Jim_Parsons&gt; &lt;http://xmlns.com/foaf/0.1/name&gt; "Jim Parsons" .
+
+# file:///data/dump2.nt
+&lt;http://dbpedia.org/resource/Kaley_Cuoco&gt; &lt;http://xmlns.com/foaf/0.1/name&gt; "Kaley Cuoco" .
+</pre>

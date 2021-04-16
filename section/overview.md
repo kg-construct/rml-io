@@ -24,6 +24,7 @@ the following namespace prefix bindings unless otherwise stated:
 | `idlab-fn` | http://example.com/idlab/function/               |
 | `void`     | http://rdfs.org/ns/void#                         |
 | `ex`       | http://example.org/ns#                           |
+| `schema`   | http://schema.org/                               |
 
 Examples are divided in several boxes, each box has its own color.
 Blue boxes contain the input RDF data of the example:
