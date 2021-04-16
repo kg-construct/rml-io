@@ -50,14 +50,17 @@ The Turtle file of the second Target is also compressed using the Zip
 compression algorithm.
 
 <pre class="ex-input">
-id;city;bus;latitude;longitude
-6523;Brussels;25;50.901389;4.484444
-6524;Athens;78;37.936388;23.947222
+id;name;nickname
+0;Nathan Ford;Mastermind
+1;Sophie Devereaux;Grifter
+2;Eliot Spender;Hitter
+3;Parker;Thief
+4;Alec Hardison;Hacker
 </pre>
 
 <pre class="ex-access">
 &lt;#CSVSourceAccess&gt; a csvw:Table;
-  csvw:url "https://rml.io/specs/rml-target/Airport.csv";
+  csvw:url "https://rml.io/specs/rml-target/Leverage.csv";
   csvw:dialect [ a csvw:Dialect;
     csvw:delimiter ";";
     csvw:encoding "UTF-8";
@@ -67,8 +70,6 @@ id;city;bus;latitude;longitude
 </pre>
 
 <pre class="ex-mapping">
-@prefix transit: &lt;http://vocab.org/transit/terms/&gt; .
-@prefix wgs84_pos: &lt;http://www.w3.org/2003/01/geo/wgs84_pos#&gt; .
 @base &lt;http://example.com/ns#&gt; .
 
 &lt;#TriplesMap&gt; a rr:TriplesMap;
@@ -76,34 +77,25 @@ id;city;bus;latitude;longitude
     rml:source &lt;#CSVSourceAccess&gt;;
   ];
   rr:subjectMap [ a rr:SubjectMap;
-    rr:template "http://airport.example.com/{id}";
+    rr:template "http://example.com/{id}";
     rml:logicalTarget &lt;#TargetDump1&gt;;
-    rr:class transit:Stop;
+    rr:class foaf:Person;
   ];
   rr:predicateObjectMap [ a rr:PredicateObjectMap;
     rr:predicateMap [ a rr:PredicateMap;
-      rr:constant transit:route;
+      rr:constant foaf:name;
       rml:logicalTarget &lt;#TargetDump2&gt;;
     ];
     rr:objectMap [ a rr:ObjectMap;
-      rml:reference "stop";
-      rr:datatype xsd:int;
+      rml:reference "name";
     ];
   ];
   rr:predicateObjectMap [ a rr:PredicateObjectMap;
     rr:predicateMap [ a rr:PredicateMap;
-      rr:constant wgs84_pos:lat;
+      rr:constant foaf:nickname;
     ];
     rr:objectMap [ a rr:ObjectMap;
-      rml:reference "latitude";
-    ];
-  ];
-  rr:predicateObjectMap [ a rr:PredicateObjectMap;
-    rr:predicateMap [ a rr:PredicateMap;
-      rr:constant wgs84_pos:long;
-    ];
-    rr:objectMap [ a rr:ObjectMap;
-      rml:reference "longitude";
+      rml:reference "nickname";
     ];
   ];
 .
@@ -134,24 +126,39 @@ id;city;bus;latitude;longitude
 
 <pre class="ex-output">
 # file:///data/dump1.nq
-@prefix rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt; .
-@prefix transit: &lt;http://vocab.org/transit/terms/&gt; .
-@prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; .
-@prefix wgs84_pos: &lt;http://www.w3.org/2003/01/geo/wgs84_pos#&gt; .
-
-&lt;http://airport.example.com/6523&gt; rdf:type transit:Stop .
-&lt;http://airport.example.com/6523&gt; transit:route "25"^^xsd:int .
-&lt;http://airport.example.com/6523&gt; wgs84_pos:lat "50.901389" .
-&lt;http://airport.example.com/6523&gt; wgs84_pos:long "4.484444" .
+&lt;http://example.org/0&gt; &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;http://xmlns.com/foaf/0.1/Person&gt; _b0 .
+&lt;http://example.org/0&gt; &lt;http://xmlns.com/foaf/0.1/name&gt; "Nathan Ford" _b0 .
+&lt;http://example.org/0&gt; &lt;http://xmlns.com/foaf/0.1/nickname&gt; "Mastermind" _b0 .
+&lt;http://example.org/1&gt; &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;http://xmlns.com/foaf/0.1/Person&gt; _b0 .
+&lt;http://example.org/1&gt; &lt;http://xmlns.com/foaf/0.1/name&gt; "Sophie Devereaux" _b0 .
+&lt;http://example.org/1&gt; &lt;http://xmlns.com/foaf/0.1/nickname&gt; "Grifter" _b0 .
+&lt;http://example.org/2&gt; &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;http://xmlns.com/foaf/0.1/Person&gt; _b0 .
+&lt;http://example.org/2&gt; &lt;http://xmlns.com/foaf/0.1/name&gt; "Eliot Spencer" _b0 .
+&lt;http://example.org/2&gt; &lt;http://xmlns.com/foaf/0.1/nickname&gt; "Hitter" _b0 .
+&lt;http://example.org/3&gt; &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;http://xmlns.com/foaf/0.1/Person&gt; _b0 .
+&lt;http://example.org/3&gt; &lt;http://xmlns.com/foaf/0.1/name&gt; "Parker" _b0 .
+&lt;http://example.org/3&gt; &lt;http://xmlns.com/foaf/0.1/nickname&gt; "Thief" _b0 .
+&lt;http://example.org/4&gt; &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;http://xmlns.com/foaf/0.1/Person&gt; _b0 .
+&lt;http://example.org/4&gt; &lt;http://xmlns.com/foaf/0.1/name&gt; "Alec Hardison" _b0 .
+&lt;http://example.org/4&gt; &lt;http://xmlns.com/foaf/0.1/nickname&gt; "Hacker" _b0 .
 
 # file:///data/dump2.ttl.zip
-@prefix rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt; .
-@prefix transit: &lt;http://vocab.org/transit/terms/&gt; .
-@prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; .
-@prefix wgs84_pos: &lt;http://www.w3.org/2003/01/geo/wgs84_pos#&gt; .
+@prefix foaf: &lt;http://xmlns.com/foaf/0.1/&gt; .
 
-&lt;http://airport.example.com/6523&gt;
-    transit:route "25"^^xsd:int;
+&lt;http://example.org/0&gt;
+  foaf:name "Nathan Ford";
+.
+&lt;http://example.org/1&gt;
+  foaf:name "Sophie Devereaux";
+.
+&lt;http://example.org/2&gt;
+  foaf:name "Eliot Spencer";
+.
+&lt;http://example.org/3&gt;
+  foaf:name "Parker";
+.
+&lt;http://example.org/4&gt;
+  foaf:name "Alec Hardison";
 .
 </pre>
 
