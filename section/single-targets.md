@@ -340,10 +340,17 @@ with N-Triples as serialization format:
 
 All triples within a named graph are exported to the specified targets 
 in the Graph Map [[RML]].
-The named graph doesn't influence where the named graph's triples 
-are exported to by the Target. 
+The named graph influences to where the named graph's triples 
+may be exported to as the Target's serialization format must 
+support named graphs such as N-Quads, JSON-LD or TriG.
+When a Target contains a serialization format 
+which does not support named graphs and a Graph Map is used,
+the mapping is considered invalid.
 If a named graph is spread over multiple targets, 
 all targets must be combined to access the complete named graph.
+In case RDF triples are not within a specific named graph,
+they are added to the default graph as specified 
+by the [[R2RML]] specification.
 
 The following example exports all triples in the named graph `ex:Friends`
 to an RDF dump with N-Quads as serialization format:
