@@ -406,7 +406,10 @@ to an RDF dump with N-Quads as serialization format:
   ];
   rr:subjectMap [ a rr:SubjectMap;
     rr:template "http://example.org/{id}";
-    rml:logicalTarget &lt;#TargetDump1;&gt;
+    rr:graphMap [
+      rml:logicalTarget &lt;#TargetDump1&gt;;
+      rr:constant ex:Friends;
+    ];
    ];
   rr:predicateObjectMap [ a rr:PredicateObjectMap;
     rr:predicateMap [ a rr:PredicateMap;
@@ -422,10 +425,6 @@ to an RDF dump with N-Quads as serialization format:
     ];
     rr:objectMap [ a rr:ObjectMap;
       rml:reference "age";
-      rr:graphMap [
-        rml:logicalTarget &lt;#TargetDump1&gt;;
-        rr:constant ex:Friends;
-      ];
     ];
   ];
 .
@@ -447,17 +446,15 @@ to an RDF dump with N-Quads as serialization format:
 <pre class="ex-output">
 # file:///data/dump1.nq
 &lt;http://example.org/0&gt; &lt;http://xmlns.com/foaf/0.1/age&gt; "33" &lt;http://example.org/Friends&gt; .
+&lt;http://example.org/0&gt; &lt;http://xmlns.com/foaf/0.1/age&gt; "33" &lt;http://example.org/Friends&gt; .
+&lt;http://example.org/1&gt; &lt;http://xmlns.com/foaf/0.1/age&gt; "34" &lt;http://example.org/Friends&gt; .
 &lt;http://example.org/1&gt; &lt;http://xmlns.com/foaf/0.1/age&gt; "34" &lt;http://example.org/Friends&gt; .
 &lt;http://example.org/2&gt; &lt;http://xmlns.com/foaf/0.1/age&gt; "35" &lt;http://example.org/Friends&gt; .
+&lt;http://example.org/2&gt; &lt;http://xmlns.com/foaf/0.1/age&gt; "35" &lt;http://example.org/Friends&gt; .
+&lt;http://example.org/3&gt; &lt;http://xmlns.com/foaf/0.1/age&gt; "36" &lt;http://example.org/Friends&gt; .
 &lt;http://example.org/3&gt; &lt;http://xmlns.com/foaf/0.1/age&gt; "36" &lt;http://example.org/Friends&gt; .
 &lt;http://example.org/4&gt; &lt;http://xmlns.com/foaf/0.1/age&gt; "37" &lt;http://example.org/Friends&gt; .
-
-# default target of the processor
-&lt;http://example.org/0&gt; &lt;http://xmlns.com/foaf/0.1/age&gt; "33" _b0 .
-&lt;http://example.org/1&gt; &lt;http://xmlns.com/foaf/0.1/age&gt; "34" _b0 .
-&lt;http://example.org/2&gt; &lt;http://xmlns.com/foaf/0.1/age&gt; "35" _b0 .
-&lt;http://example.org/3&gt; &lt;http://xmlns.com/foaf/0.1/age&gt; "36" _b0 .
-&lt;http://example.org/4&gt; &lt;http://xmlns.com/foaf/0.1/age&gt; "37" _b0 .
+&lt;http://example.org/4&gt; &lt;http://xmlns.com/foaf/0.1/age&gt; "37" &lt;http://example.org/Friends&gt; .
 </pre>
 
 ### Language Map {#language-map}
