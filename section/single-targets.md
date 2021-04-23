@@ -96,16 +96,16 @@ to an RDF dump with N-Quads as serialization format and GZip compression:
 </pre>
 
 <pre class="ex-output">
-&lt;http://example.org/0&gt; &lt;http://xmlns.com/foaf/0.1/name&gt; "Monica Geller" _b0 .
-&lt;http://example.org/0&gt; &lt;http://xmlns.com/foaf/0.1/age&gt; "33" _b0 .
-&lt;http://example.org/1&gt; &lt;http://xmlns.com/foaf/0.1/name&gt; "Rachel Green" _b0 .
-&lt;http://example.org/1&gt; &lt;http://xmlns.com/foaf/0.1/age&gt; "34" _b0 .
-&lt;http://example.org/2&gt; &lt;http://xmlns.com/foaf/0.1/name&gt; "Joey Tribbiani" _b0 .
-&lt;http://example.org/2&gt; &lt;http://xmlns.com/foaf/0.1/age&gt; "35" _b0 .
-&lt;http://example.org/3&gt; &lt;http://xmlns.com/foaf/0.1/name&gt; "Chandler Bing" _b0 .
-&lt;http://example.org/3&gt; &lt;http://xmlns.com/foaf/0.1/age&gt; "36" _b0 .
-&lt;http://example.org/4&gt; &lt;http://xmlns.com/foaf/0.1/name&gt; "Ross Geller" _b0 .
-&lt;http://example.org/4&gt; &lt;http://xmlns.com/foaf/0.1/age&gt; "37" _b0 .
+&lt;http://example.org/0&gt; &lt;http://xmlns.com/foaf/0.1/name&gt; "Monica Geller" .
+&lt;http://example.org/0&gt; &lt;http://xmlns.com/foaf/0.1/age&gt; "33" .
+&lt;http://example.org/1&gt; &lt;http://xmlns.com/foaf/0.1/name&gt; "Rachel Green" .
+&lt;http://example.org/1&gt; &lt;http://xmlns.com/foaf/0.1/age&gt; "34" .
+&lt;http://example.org/2&gt; &lt;http://xmlns.com/foaf/0.1/name&gt; "Joey Tribbiani" .
+&lt;http://example.org/2&gt; &lt;http://xmlns.com/foaf/0.1/age&gt; "35" .
+&lt;http://example.org/3&gt; &lt;http://xmlns.com/foaf/0.1/name&gt; "Chandler Bing" .
+&lt;http://example.org/3&gt; &lt;http://xmlns.com/foaf/0.1/age&gt; "36" .
+&lt;http://example.org/4&gt; &lt;http://xmlns.com/foaf/0.1/name&gt; "Ross Geller" .
+&lt;http://example.org/4&gt; &lt;http://xmlns.com/foaf/0.1/age&gt; "37" .
 </pre>
 
 ### Predicate Map {#predicate-map}
@@ -195,12 +195,12 @@ with Turtle as serialization format and Zip compression:
 
 <pre class="ex-access">
 &lt;#VoIDDump1&gt; a void:Dataset ;
-  void:dataDump &lt;file:///data/dump1.nq.gz&gt;;
+  void:dataDump &lt;file:///data/dump1.ttl.zip&gt;;
 .
 </pre>
 
 <pre class="ex-output">
-# file:///data/dump1.nq.gz
+# file:///data/dump1.ttl.zip
 @prefix foaf: &lt;http://xmlns.com/foaf/0.1/&gt; .
 @base &lt;http://example.com/ns#&gt; .
 
@@ -221,11 +221,11 @@ with Turtle as serialization format and Zip compression:
 .
 
 # default target of the processor
-&lt;http://example.org/0&gt; &lt;http://xmlns.com/foaf/0.1/age&gt; "33" _b0 .
-&lt;http://example.org/1&gt; &lt;http://xmlns.com/foaf/0.1/age&gt; "34" _b0 .
-&lt;http://example.org/2&gt; &lt;http://xmlns.com/foaf/0.1/age&gt; "35" _b0 .
-&lt;http://example.org/3&gt; &lt;http://xmlns.com/foaf/0.1/age&gt; "36" _b0 .
-&lt;http://example.org/4&gt; &lt;http://xmlns.com/foaf/0.1/age&gt; "37" _b0 .
+&lt;http://example.org/0&gt; &lt;http://xmlns.com/foaf/0.1/age&gt; "33" .
+&lt;http://example.org/1&gt; &lt;http://xmlns.com/foaf/0.1/age&gt; "34" .
+&lt;http://example.org/2&gt; &lt;http://xmlns.com/foaf/0.1/age&gt; "35" .
+&lt;http://example.org/3&gt; &lt;http://xmlns.com/foaf/0.1/age&gt; "36" .
+&lt;http://example.org/4&gt; &lt;http://xmlns.com/foaf/0.1/age&gt; "37" .
 
 </pre>
 
@@ -563,9 +563,9 @@ to a RDF dump with N-Triples as serialization format:
 &lt;http://example.org/4&gt; &lt;http://xmlns.com/foaf/0.1/name&gt; "Ross Geller"@en .
 
 # default target of the processor
-&lt;http://example.org/0&gt; &lt;http://xmlns.com/foaf/0.1/age&gt; "33" _b0 .
-&lt;http://example.org/1&gt; &lt;http://xmlns.com/foaf/0.1/age&gt; "34" _b0 .
-&lt;http://example.org/2&gt; &lt;http://xmlns.com/foaf/0.1/age&gt; "35" _b0 .
-&lt;http://example.org/3&gt; &lt;http://xmlns.com/foaf/0.1/age&gt; "36" _b0 .
-&lt;http://example.org/4&gt; &lt;http://xmlns.com/foaf/0.1/age&gt; "37" _b0 .
+&lt;http://example.org/0&gt; &lt;http://xmlns.com/foaf/0.1/age&gt; "33" .
+&lt;http://example.org/1&gt; &lt;http://xmlns.com/foaf/0.1/age&gt; "34" .
+&lt;http://example.org/2&gt; &lt;http://xmlns.com/foaf/0.1/age&gt; "35" .
+&lt;http://example.org/3&gt; &lt;http://xmlns.com/foaf/0.1/age&gt; "36" .
+&lt;http://example.org/4&gt; &lt;http://xmlns.com/foaf/0.1/age&gt; "37" .
 </pre>
