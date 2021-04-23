@@ -691,7 +691,7 @@ are exported to `TargetDump2`.
 &lt;http://example.org/3&gt; &lt;http://xmlns.com/foaf/0.1/name&gt; "Nia Nal" &lt;http://example.org/Characters&gt; .
 </pre>
 
-### Predicate Object Map and Graph Map {#predicate-object-and-graph-map}
+### Predicate Map and Graph Map {#predicate-and-graph-map}
 
 All triples containing the predicate `foaf:nickname`
 are exported to `TargetDump1` 
@@ -794,6 +794,111 @@ are exported to `TargetDump2`.
 &lt;http://example.org/2&gt; &lt;http://xmlns.com/foaf/0.1/name&gt; "J'onn J'onzz" &lt;http://example.org/Characters&gt; .
 &lt;http://example.org/3&gt; &lt;http://xmlns.com/foaf/0.1/name&gt; "Nia Nal" &lt;http://example.org/Characters&gt; .
 </pre>
+
+### Object Map and Graph Map {#object-and-graph-map}
+
+All triples containing the object reference `nickname/text()`
+are exported to `TargetDump1` 
+and all triples within the named graph `ex:Characters`
+are exported to `TargetDump2`. 
+
+<pre class="ex-input">
+&lt;Supergirl&gt;
+  &lt;Character id="0"&gt;
+    &lt;name&gt;Kara Danvers&lt;/name&gt;
+    &lt;nickname&gt;Supergirl&lt;/nickname&gt;
+  &lt;/Character&gt;
+  &lt;Character id="1"&gt;
+    &lt;name&gt;Alex Danvers&lt;/name&gt;
+    &lt;nickname&gt;Sentinel&lt;/nickname&gt;
+  &lt;/Character&gt;
+  &lt;Character id="2"&gt;
+    &lt;name&gt;J'onn J'onzz&lt;/name&gt;
+    &lt;nickname&gt;Martian Manhunter&lt;/nickname&gt;
+  &lt;/Character&gt;
+  &lt;Character id="3"&gt;
+    &lt;name&gt;Nia Nal&lt;/name&gt;
+    &lt;nickname&gt;Dreamer&lt;/nickname&gt;
+  &lt;/Character&gt; 
+&lt;/Supergirl&gt;
+</pre>
+
+<pre class="ex-access">
+&lt;#DCATSourceAccess&gt; a dcat:Dataset;
+  dcat:distribution [ a dcat:Distribution;
+    dcat:downloadURL "https://rml.io/specs/rml-target/Supergirl.xml";
+  ];
+.
+</pre>
+
+<pre class="ex-mapping">
+&lt;#TriplesMap&gt; a rr:TriplesMap;
+  rml:logicalSource [ a rml:LogicalSource;
+    rml:source &lt;#DCATSourceAccess&gt;;
+    rml:referenceFormulation ql:JSONPath;
+    rml:iterator "$.[*]";
+  ];
+  rr:subjectMap [ a rr:SubjectMap;
+    rr:template "http://example.org/{@id}";
+  ];
+  rr:predicateObjectMap [ a rr:PredicateObjectMap;
+    rr:graphMap [ a rr:GraphMap;
+      rml:logicalTarget <#TargetDump2>;
+      rr:constant ex:Characters;
+    ];
+    rr:predicateMap [ a rr:PredicateMap;
+      rr:constant foaf:name;
+    ];
+    rr:objectMap [ a rr:ObjectMap;
+      rml:reference "name/text()";
+    ];
+  ];
+  rr:predicateObjectMap [ a rr:PredicateObjectMap;
+    rr:predicateMap [ a rr:PredicateMap;
+      rr:constant foaf:nickname;
+    ];
+    rr:objectMap [ a rr:ObjectMap;
+      rml:reference "nickname/text()";
+      rml:logicalTarget <#TargetDump1>;
+    ];
+  ];
+.
+</pre>
+
+<pre class="ex-target">
+&lt;#TargetDump1&gt; a rmlt:LogicalTarget;
+  rmlt:target &lt;#VoIDDump1&gt;;
+  rmlt:serialization formats:N-Triples;
+.
+&lt;#TargetDump2&gt; a rmlt:LogicalTarget;
+  rmlt:target &lt;#VoIDDump1&gt;;
+  rmlt:serialization formats:N-Triples;
+.
+</pre>
+
+<pre class="ex-access">
+&lt;#VoIDDump1&gt; a void:Dataset ;
+  void:dataDump &lt;file:///data/dump1.nq&gt;;
+.
+&lt;#VoIDDump2&gt; a void:Dataset ;
+  void:dataDump &lt;file:///data/dump2.nq&gt;;
+.
+</pre>
+
+<pre class="ex-output">
+# file:///data/dump1.nq
+&lt;http://example.org/0&gt; &lt;http://xmlns.com/foaf/0.1/nickname&gt; "Supergirl" _b0 .
+&lt;http://example.org/1&gt; &lt;http://xmlns.com/foaf/0.1/nickname&gt; "Sentinel" _b0 .
+&lt;http://example.org/2&gt; &lt;http://xmlns.com/foaf/0.1/nickname&gt; "Martian Manhunter" _b0 .
+&lt;http://example.org/3&gt; &lt;http://xmlns.com/foaf/0.1/nickname&gt; "Dreamer" _b0 .
+
+# file:///data/dump2.nq
+&lt;http://example.org/0&gt; &lt;http://xmlns.com/foaf/0.1/name&gt; "Kara Danvers" &lt;http://example.org/Characters&gt; .
+&lt;http://example.org/1&gt; &lt;http://xmlns.com/foaf/0.1/name&gt; "Alex Danvers" &lt;http://example.org/Characters&gt; .
+&lt;http://example.org/2&gt; &lt;http://xmlns.com/foaf/0.1/name&gt; "J'onn J'onzz" &lt;http://example.org/Characters&gt; .
+&lt;http://example.org/3&gt; &lt;http://xmlns.com/foaf/0.1/name&gt; "Nia Nal" &lt;http://example.org/Characters&gt; .
+</pre>
+
 
 ### Language Map and Graph Map {#language-and-graph-map}
 
