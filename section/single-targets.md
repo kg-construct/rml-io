@@ -85,7 +85,7 @@ to an RDF dump with N-Quads as serialization format and GZip compression:
 &lt;#TargetDump1&gt; a rmlt:LogicalTarget;
   rmlt:target &lt;#VoIDDump1&gt;;
   rmlt:serialization formats:N-Quads;
-  rmlt:compression comp:GZip;
+  rmlt:compression comp:gzip;
 .
 </pre>
 
@@ -189,7 +189,7 @@ with Turtle as serialization format and Zip compression:
 &lt;#TargetDump1&gt; a rmlt:LogicalTarget;
   rmlt:target &lt;#VoIDDump1&gt;;
   rmlt:serialization formats:Turtle;
-  rmlt:compression comp:Zip;
+  rmlt:compression comp:zip;
 .
 </pre>
 
@@ -506,7 +506,7 @@ to a RDF dump with N-Triples as serialization format:
 <pre class="ex-mapping">
 &lt;#Target&gt; a rmlt:LogicalTarget;
   rmlt:target &lt;#VoIDDump1&gt;;
-  rmlt:compression comp:GZip;
+  rmlt:compression comp:gzip;
 .
 
 &lt;#TriplesMap&gt; a rr:TriplesMap;

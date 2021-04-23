@@ -110,7 +110,7 @@ id;name;nickname
 &lt;#TargetDump2&gt; a rmlt:LogicalTarget;
   rmlt:target &lt;#VoIDDump2&gt;;
   rmlt:serialization formats:Turtle;
-  rmlt:compression comp:Zip;
+  rmlt:compression comp:zip;
 .
 </pre>
 

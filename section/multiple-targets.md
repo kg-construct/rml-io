@@ -78,17 +78,17 @@ to the three specified Targets:
 &lt;#TargetDump1&gt; a rmlt:LogicalTarget;
   rmlt:target &lt;#VoIDDump1&gt;;
   rmlt:serialization formats:N-Triples;
-  rmlt:compression comp:Zip;
+  rmlt:compression comp:zip;
 .
 &lt;#TargetDump2&gt; a rmlt:LogicalTarget;
   rmlt:target &lt;#VoIDDump1&gt;;
   rmlt:serialization formats:JSON-LD;
-  rmlt:compression comp:TarXz;
+  rmlt:compression comp:tarxz;
 .
 &lt;#TargetDump3&gt; a rmlt:LogicalTarget;
   rmlt:target &lt;#VoIDDump1&gt;;
   rmlt:serialization formats:RDF_XML;
-  rmlt:compression comp:TarGZip;
+  rmlt:compression comp:targzip;
 .
 </pre>
 
