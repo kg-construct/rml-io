@@ -60,7 +60,7 @@ to an RDF dump with N-Quads as serialization format and GZip compression:
   ];
   rr:subjectMap [ a rr:SubjectMap;
     rr:template "http://example.org/{id}";
-    rml:logicalTarget &lt;#TargetDump1;&gt;
+    rml:logicalTarget &lt;#TargetDump1&gt;;
   ];
   rr:predicateObjectMap [ a rr:PredicateObjectMap;
     rr:predicateMap [ a rr:PredicateMap;
@@ -168,7 +168,7 @@ with Turtle as serialization format and Zip compression:
   rr:predicateObjectMap [ a rr:PredicateObjectMap;
     rr:predicateMap [ a rr:PredicateMap;
       rr:constant foaf:name;
-      rml:logicalTarget &lt;#TargetDump1;&gt;
+      rml:logicalTarget &lt;#TargetDump1&gt;;
     ];
     rr:objectMap [ a rr:ObjectMap;
       rml:reference "name";
@@ -292,7 +292,7 @@ with N-Triples as serialization format:
     ];
     rr:objectMap [ a rr:ObjectMap;
       rml:reference "name";
-      rml:logicalTarget &lt;#TargetDump1;&gt;
+      rml:logicalTarget &lt;#TargetDump1&gt;;
     ];
   ];
   rr:predicateObjectMap [ a rr:PredicateObjectMap;
@@ -525,7 +525,7 @@ to a RDF dump with N-Triples as serialization format:
     rr:objectMap [ a rr:ObjectMap;
       rml:reference "name";
       rml:languageMap [
-        rml:logicalTarget &lt;#TargetDump1;&gt;
+        rml:logicalTarget &lt;#TargetDump1&gt;;
         rr:constant "en";
       ];
     ];
