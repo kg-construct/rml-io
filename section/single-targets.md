@@ -433,7 +433,6 @@ to an RDF dump with N-Quads as serialization format:
 <pre class="ex-target">
 &lt;#TargetDump1&gt; a rmlt:LogicalTarget;
   rmlt:target &lt;#VoIDDump1&gt;;
-  rmlt:serialization formats:N-Triples;
 .
 </pre>
 
