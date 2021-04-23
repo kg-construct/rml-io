@@ -394,10 +394,6 @@ to an RDF dump with N-Quads as serialization format:
 </pre>
 
 <pre class="ex-mapping">
-&lt;#Target&gt; a rmlt:LogicalTarget;
-  rmlt:target &lt;#VoIDDump1&gt;;
-.
-
 &lt;#TriplesMap&gt; a rr:TriplesMap;
   rml:logicalSource [ a rml:LogicalSource;
     rml:source &lt;#DCATSourceAccess&gt;;
@@ -503,11 +499,6 @@ to a RDF dump with N-Triples as serialization format:
 </pre>
 
 <pre class="ex-mapping">
-&lt;#Target&gt; a rmlt:LogicalTarget;
-  rmlt:target &lt;#VoIDDump1&gt;;
-  rmlt:compression comp:gzip;
-.
-
 &lt;#TriplesMap&gt; a rr:TriplesMap;
   rml:logicalSource [ a rml:LogicalSource;
     rml:source &lt;#DCATSourceAccess&gt;;
