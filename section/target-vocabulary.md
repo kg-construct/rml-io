@@ -58,7 +58,7 @@ format with GZip compression:
          void:dataDump <file:///data/dump.ttl>;
      ];
      rmlt:serialization formats:Turtle;
-     rmlt:compression comp:GZip;
+     rmlt:compression comp:gzip;
 .
 </pre>
 
@@ -85,6 +85,6 @@ DCAT dataset in N-Quads format with Zip compression:
          ];
      ];
      rmlt:serialization formats:N-Quads;
-     rmlt:compression comp:Zip;
+     rmlt:compression comp:zip;
 .
 </pre>
