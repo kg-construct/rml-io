@@ -15,6 +15,7 @@ the following namespace prefix bindings unless otherwise stated:
 | ---------  | ------------------------------------------------ |
 | `rml`      | http://semweb.mmlab.be/ns/rml#                   |
 | `rmlt`     | http://semweb.mmlab.be/ns/rml-target#            |
+| `comp`     | http://semweb.mmlab.be/ns/rml-compression#       |
 | `rr`       | http://www.w3.org/ns/r2rml#                      |
 | `formats`  | https://www.w3.org/ns/formats/                   |
 | `comp`     | http://semweb.mmlab.be/ns/rml-compression#       |
