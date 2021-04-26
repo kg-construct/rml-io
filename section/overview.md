@@ -23,3 +23,9 @@ the following namespace prefix bindings unless otherwise stated:
 | `void`    | http://rdfs.org/ns/void#                         |
 | `sd`      | http://www.w3.org/ns/sparql-service-description# |
 | `dcat`    | http://www.w3.org/ns/dcat#                       |
+
+The examples are contained in pink colored boxes:
+
+<pre class="ex-target">
+# This box contains the example's Target description.
+</pre>

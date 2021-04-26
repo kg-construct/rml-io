@@ -52,7 +52,7 @@ all other properties are optional.
 The following example show a Target of an RDF dump in Turtle [[Turtle]] 
 format with GZip compression:
 
-```turtle "example": " "
+<pre class="ex-target">
 <#VoIDDump> a rmlt:LogicalTarget;
      rmlt:target [ a void:Dataset
          void:dataDump <file:///data/dump.ttl>;
@@ -60,24 +60,24 @@ format with GZip compression:
      rmlt:serialization formats:Turtle;
      rmlt:compression comp:GZip;
 .
-```
+</pre>
 
 The following example shows a Target of a [[SPARQL]] 
 endpoint with `SPARQL UPDATE`:
 
-```turtle "example": " "
+<pre class="ex-target">
 <#SPARQLEndpoint> a rmlt:LogicalTarget;
      rmlt:target [ a sd:Service;
        sd:endpoint  <http://example.com/sparql-update> ;
        sd:supportedLanguage sd:SPARQL11Update ;
      ];
 .
-```
+</pre>
 
 The following example shows a Target of a 
 DCAT dataset in N-Quads format with Zip compression:
 
-```turtle "example": " "
+<pre class="ex-target">
 <#DCATDump> a rmlt:LogicalTarget;
      rmlt:target [ a dcat:Dataset
          dcat:distribution [ a dcat:Distribution;
@@ -87,4 +87,4 @@ DCAT dataset in N-Quads format with Zip compression:
      rmlt:serialization formats:N-Quads;
      rmlt:compression comp:Zip;
 .
-```
+</pre>

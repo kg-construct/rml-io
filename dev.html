@@ -6,8 +6,86 @@
     <link rel="stylesheet" type="text/css" href="./resources/css/extras.css"/>
     <script src="https://www.w3.org/Tools/respec/respec-w3c" class="remove" defer></script>
     <style type="text/css">
-        code {
-            font-size: 120%;
+        /* Adapted from R2RML */
+        pre { 
+            word-wrap:normal
+        }
+        pre.ex-input,
+        pre.ex-mapping, 
+        pre.ex-output,
+        pre.ex-target,
+        pre.ex-access {
+            margin-top: 1.5em;
+            padding: 1em; 
+            font-size: 75%;
+        }
+        pre.ex-input:before,
+        pre.ex-mapping:before,
+        pre.ex-output:before, 
+        pre.ex-target:before,
+        pre.ex-access:before {
+            background: white;
+            display: block;
+            font-family: sans-serif;
+            font-size: 90%;
+            margin: -1.5em 0 0.5em 0;
+            padding: 0.4em 0.4em;
+            width: 18em;
+        }
+        /* Input data example */
+        pre.ex-input {
+            background: #cee;
+        }
+        pre.ex-input,
+        pre.ex-input:before {
+            border: 1px solid #acc;
+        }
+        pre.ex-input:before {
+            content: "Example input data";
+        }
+        /* RML mapping example */
+        pre.ex-mapping {
+            background: #eeb;
+        }
+        pre.ex-mapping,
+        pre.ex-mapping:before {
+            border: 1px solid #cc9;
+        }
+        pre.ex-mapping:before {
+            content: "Example RML mapping";
+        }
+        /* Output RDF example */
+        pre.ex-output {
+            background: #cfc;
+        }
+        pre.ex-output,
+        pre.ex-output:before {
+            border: 1px solid #aca;
+        }
+        pre.ex-output:before {
+            content: "Example output RDF";
+        }
+        /* Target's description example */
+        pre.ex-target {
+            background: #ffc8d4;
+        }
+        pre.ex-target,
+        pre.ex-target:before {
+            border: 1px solid #bbb;
+        }
+        pre.ex-target:before {
+            content: "Example Target description";
+        }
+        /* Data access description example */
+        pre.ex-access {
+            background: #d4dddd;
+        }
+        pre.ex-access,
+        pre.ex-access:before {
+            border: 1px solid #cca;
+        }
+        pre.ex-access:before {
+            content: "Example data access description";
         }
     </style>
     <script class="remove">
