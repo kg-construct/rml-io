@@ -1,17 +1,7 @@
 <!DOCTYPE html><html dir="ltr" lang="en"><head>
 <meta charset="utf-8">
-<meta name="generator" content="ReSpec 26.4.0">
+<meta name="generator" content="ReSpec 26.7.0">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<style>
-span.example-title{text-transform:none}
-aside.example,div.example,div.illegal-example{padding:.5em;margin:1em 0;position:relative;clear:both}
-div.illegal-example{color:red}
-div.illegal-example p{color:#000}
-aside.example,div.example{padding:.5em;border-left-width:.5em;border-left-style:solid;border-color:#e0cb52;background:#fcfaee}
-aside.example div.example{border-left-width:.1em;border-color:#999;background:#fff}
-aside.example div.example span.example-title{color:#999}
-.example pre{background-color:rgba(0,0,0,.03)}
-</style>
 <style>
 dfn{cursor:pointer}
 .dfn-panel{position:absolute;z-index:35;min-width:300px;max-width:500px;padding:.5em .75em;margin-top:.6em;font:small Helvetica Neue,sans-serif,Droid Sans Fallback;background:#fff;color:#000;box-shadow:0 1em 3em -.4em rgba(0,0,0,.3),0 0 1px 1px rgba(0,0,0,.05);border-radius:2px}
@@ -33,39 +23,104 @@ dfn{cursor:pointer}
 .dfn-panel.docked{position:fixed;left:.5em;top:unset;bottom:2em;margin:0 auto;max-width:calc(100vw - .75em * 2 - .5em - .2em * 2);max-height:30vh;overflow:auto}
 </style>
     
-<title>Target</title>
+<title>DataIO</title>
     
     
 <link rel="stylesheet" type="text/css" href="../resources/css/extras.css">
     
-<script async="" src="//www.google-analytics.com/analytics.js"></script>
     
 <style type="text/css">
 
-        code {
-            font-size: 120%;
+        /* Adapted from R2RML */
+        pre { 
+            word-wrap:normal
+        }
+        pre.ex-input,
+        pre.ex-mapping, 
+        pre.ex-output,
+        pre.ex-target,
+        pre.ex-access {
+            margin-top: 1.5em;
+            padding: 1em; 
+            font-size: 75%;
+        }
+        pre.ex-input:before,
+        pre.ex-mapping:before,
+        pre.ex-output:before, 
+        pre.ex-target:before,
+        pre.ex-access:before {
+            background: white;
+            display: block;
+            font-family: sans-serif;
+            font-size: 90%;
+            margin: -1.5em 0 0.5em 0;
+            padding: 0.4em 0.4em;
+            width: 18em;
+        }
+        /* Input data example */
+        pre.ex-input {
+            background: #cee;
+        }
+        pre.ex-input,
+        pre.ex-input:before {
+            border: 1px solid #acc;
+        }
+        pre.ex-input:before {
+            content: "Example input data";
+        }
+        /* RML mapping example */
+        pre.ex-mapping {
+            background: #eeb;
+        }
+        pre.ex-mapping,
+        pre.ex-mapping:before {
+            border: 1px solid #cc9;
+        }
+        pre.ex-mapping:before {
+            content: "Example RML mapping";
+        }
+        /* Output RDF example */
+        pre.ex-output {
+            background: #cfc;
+        }
+        pre.ex-output,
+        pre.ex-output:before {
+            border: 1px solid #aca;
+        }
+        pre.ex-output:before {
+            content: "Example output RDF";
+        }
+        /* Target's description example */
+        pre.ex-target {
+            background: #ffc8d4;
+        }
+        pre.ex-target,
+        pre.ex-target:before {
+            border: 1px solid #bbb;
+        }
+        pre.ex-target:before {
+            content: "Example Target description";
+        }
+        /* Data access description example */
+        pre.ex-access {
+            background: #d4dddd;
+        }
+        pre.ex-access,
+        pre.ex-access:before {
+            border: 1px solid #cca;
+        }
+        pre.ex-access:before {
+            content: "Example data access description";
         }
     
 </style>
     
     
-<script>
-      (function (i, s, o, g, r, a, m) {
-        i['GoogleAnalyticsObject'] = r;
-        i[r] = i[r] || function () {
-          (i[r].q = i[r].q || []).push(arguments)
-        }, i[r].l = 1 * new Date();
-        a = s.createElement(o),
-          m = s.getElementsByTagName(o)[0];
-        a.async = 1;
-        a.src = g;
-        m.parentNode.insertBefore(a, m)
-      })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
-
-      ga('create', 'UA-87734787-2', 'auto');
-      ga('send', 'pageview');
-
-    </script>
+<script data-goatcounter="https://dataio.goatcounter.com/count" async="" src="//gc.zgo.at/count.js"></script>
+    
+<noscript>
+        &amp;lt;img src="https://dataio.goatcounter.com/count?p=/test-noscript"&amp;gt;
+    </noscript>
 
 <style id="respec-mainstyle">
 @keyframes pop{
@@ -239,9 +294,9 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
   "doRdfa": "true",
   "processVersion": 2021,
   "specStatus": "unofficial",
-  "shortName": "target",
+  "shortName": "dataio",
   "copyrightStart": "2021",
-  "edDraftURI": "https://rml.io/specs/target",
+  "edDraftURI": "https://rml.io/specs/dataio",
   "editors": [
     {
       "name": "Dylan Van Assche",
@@ -264,8 +319,8 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
       "key": "This Version",
       "data": [
         {
-          "value": "https://rml.io/specs/target/20210324/",
-          "href": "https://rml.io/specs/target/20210324/"
+          "value": "https://rml.io/specs/dataio/20210518/",
+          "href": "https://rml.io/specs/dataio/20210518/"
         }
       ]
     },
@@ -273,8 +328,8 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
       "key": "Previous Version",
       "data": [
         {
-          "value": "https://rml.io/specs/target/20210324/",
-          "href": "https://rml.io/specs/target/20210324/"
+          "value": "https://rml.io/specs/dataio/20210518/",
+          "href": "https://rml.io/specs/dataio/20210518/"
         }
       ]
     },
@@ -282,26 +337,26 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
       "key": "Website",
       "data": [
         {
-          "value": "https://rml.io/target",
-          "href": "https://rml.io/target"
+          "value": "https://rml.io/",
+          "href": "https://rml.io/"
         }
       ]
     }
   ],
-  "publishISODate": "2021-03-24T00:00:00.000Z",
-  "generatedSubtitle": "Unofficial Draft 24 March 2021"
+  "publishISODate": "2021-05-18T00:00:00.000Z",
+  "generatedSubtitle": "Unofficial Draft 18 May 2021"
 }</script>
 <link rel="stylesheet" href="https://www.w3.org/StyleSheets/TR/2016/W3C-UD"></head>
 <body class="h-entry"><div class="head">
-     <h1 id="title" class="title">Target</h1>
+     <h1 id="title" class="title">DataIO</h1>
     
     <h2>
       Unofficial Draft
-      <time class="dt-published" datetime="2021-03-24">24 March 2021</time>
+      <time class="dt-published" datetime="2021-05-18">18 May 2021</time>
     </h2>
     <dl>
       
-      <dt>Latest editor's draft:</dt><dd><a href="https://rml.io/specs/target">https://rml.io/specs/target</a></dd>
+      <dt>Latest editor's draft:</dt><dd><a href="https://rml.io/specs/dataio">https://rml.io/specs/dataio</a></dd>
       
       
       
@@ -316,11 +371,11 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
       
       
       <dt>This Version</dt><dd>
-    <a href="https://rml.io/specs/target/20210324/">https://rml.io/specs/target/20210324/</a>
+    <a href="https://rml.io/specs/dataio/20210518/">https://rml.io/specs/dataio/20210518/</a>
   </dd><dt>Previous Version</dt><dd>
-    <a href="https://rml.io/specs/target/20210324/">https://rml.io/specs/target/20210324/</a>
+    <a href="https://rml.io/specs/dataio/20210518/">https://rml.io/specs/dataio/20210518/</a>
   </dd><dt>Website</dt><dd>
-    <a href="https://rml.io/target">https://rml.io/target</a>
+    <a href="https://rml.io/">https://rml.io/</a>
   </dd>
     </dl>
     
@@ -398,7 +453,7 @@ the following namespace prefix bindings unless otherwise stated:</p><table>
 <td><code>dcat</code></td>
 <td><a href="http://www.w3.org/ns/dcat#">http://www.w3.org/ns/dcat#</a></td>
 </tr>
-</tbody></table></section>
+</tbody></table><p>The examples are contained in pink colored boxes:</p><pre class="ex-target" aria-busy="false"><code class="hljs"># This box contains the example's Target description.</code></pre></section>
 
 <section id="target-vocabulary-0"><h2 id="target-vocabulary"><bdi class="secno">3. </bdi>Target vocabulary<a class="self-link" aria-label="§" href="#target-vocabulary"></a></h2><p>The Target vocabulary namespace is <a href="http://semweb.mmlab.be/ns/rml-target#">http://semweb.mmlab.be/ns/rml-target#</a> 
 and it's prefix is <code>rmlt</code>.</p><p>The Target vocabulary consists of a single class: <code>rmlt:LogicalTarget</code> 
@@ -451,43 +506,31 @@ all other properties are optional.</p><table>
   <img src="../resources/images/structure.png" alt="Target structure" width="780" height="370">
   <figcaption>Figure <bdi class="figno">1</bdi> <span class="fig-title">The structure of Target</span></figcaption>
 </figure></section><section id="examples-0"><h3 id="examples"><bdi class="secno">3.2 </bdi>Examples<a class="self-link" aria-label="§" href="#examples"></a></h3><p>The following example show a Target of an RDF dump in Turtle [<cite><a class="bibref" data-link-type="biblio" href="#bib-turtle" title="RDF 1.1 Turtle">Turtle</a></cite>] 
-format with GZip compression:</p><div class="example" id="example-1-generatedID">
-        <div class="marker">
-    <a class="self-link" href="#example-1-generatedID">Example<bdi> 1</bdi></a><span class="example-title">:  </span>
-  </div> <pre class="turtle"><code class="turtle hljs" aria-busy="false">&lt;#VoIDDump&gt; a rmlt:LogicalTarget;
+format with GZip compression:</p><pre class="ex-target" aria-busy="false"><code class="hljs">&lt;#VoIDDump&gt; a rmlt:LogicalTarget;
      rmlt:target [ a void:Dataset
-         void:dataDump &lt;file:///data/dump.ttl&gt;;
+         void:dataDump ;
      ];
      rmlt:serialization formats:Turtle;
-     rmlt:compression comp:GZip;
+     rmlt:compression comp:gzip;
 .
-</code></pre>
-      </div><p>The following example shows a Target of a [<cite><a class="bibref" data-link-type="biblio" href="#bib-sparql" title="SPARQL 1.1 Overview">SPARQL</a></cite>] 
-endpoint with <code>SPARQL UPDATE</code>:</p><div class="example" id="example-2-generatedID">
-        <div class="marker">
-    <a class="self-link" href="#example-2-generatedID">Example<bdi> 2</bdi></a><span class="example-title">:  </span>
-  </div> <pre class="turtle"><code class="turtle hljs" aria-busy="false">&lt;#SPARQLEndpoint&gt; a rmlt:LogicalTarget;
+</code></pre><p>The following example shows a Target of a [<cite><a class="bibref" data-link-type="biblio" href="#bib-sparql" title="SPARQL 1.1 Overview">SPARQL</a></cite>] 
+endpoint with <code>SPARQL UPDATE</code>:</p><pre class="ex-target" aria-busy="false"><code class="hljs">&lt;#SPARQLEndpoint&gt; a rmlt:LogicalTarget;
      rmlt:target [ a sd:Service;
-       sd:endpoint  &lt;http://example.com/sparql-update&gt; ;
+       sd:endpoint   ;
        sd:supportedLanguage sd:SPARQL11Update ;
      ];
 .
-</code></pre>
-      </div><p>The following example shows a Target of a 
-DCAT dataset in N-Quads format with Zip compression:</p><div class="example" id="example-3-generatedID">
-        <div class="marker">
-    <a class="self-link" href="#example-3-generatedID">Example<bdi> 3</bdi></a><span class="example-title">:  </span>
-  </div> <pre class="turtle"><code class="turtle hljs" aria-busy="false">&lt;#DCATDump&gt; a rmlt:LogicalTarget;
+</code></pre><p>The following example shows a Target of a 
+DCAT dataset in N-Quads format with Zip compression:</p><pre class="ex-target" aria-busy="false"><code class="hljs">&lt;#DCATDump&gt; a rmlt:LogicalTarget;
      rmlt:target [ a dcat:Dataset
          dcat:distribution [ a dcat:Distribution;
-            dcat:accessURL &lt;http://example.org/dcat-access-url&gt; ;
+            dcat:accessURL  ;
          ];
      ];
      rmlt:serialization formats:N-Quads;
-     rmlt:compression comp:Zip;
+     rmlt:compression comp:zip;
 .
-</code></pre>
-      </div></section></section>
+</code></pre></section></section>
 
 
 
@@ -499,28 +542,39 @@ DCAT dataset in N-Quads format with Zip compression:</p><div class="example" id=
   </p><script id="respec-dfn-panel">(() => {
 // @ts-check
 if (document.respec) {
-  document.respec.ready.then(dfnPanel);
+  document.respec.ready.then(setupPanel);
 } else {
-  dfnPanel();
+  setupPanel();
 }
 
-function dfnPanel() {
+function setupPanel() {
+  const listener = panelListener();
+  document.body.addEventListener("keydown", listener);
+  document.body.addEventListener("click", listener);
+}
+
+function panelListener() {
   /** @type {HTMLElement} */
-  let panel;
-  document.body.addEventListener("click", event => {
-    if (!(event.target instanceof HTMLElement)) return;
+  let panel = null;
+  return event => {
+    const { target, type } = event;
 
-    /** @type {HTMLElement} */
-    const el = event.target;
+    if (!(target instanceof HTMLElement)) return;
 
-    const action = deriveAction(el);
+    // For keys, we only care about Enter key to activate the panel
+    // otherwise it's activated via a click.
+    if (type === "keydown" && event.key !== "Enter") return;
+
+    const action = deriveAction(event);
+
     switch (action) {
       case "show": {
-        if (panel) hidePanel(panel);
+        hidePanel(panel);
         /** @type {HTMLElement} */
-        const dfn = el.closest("dfn, .index-term");
+        const dfn = target.closest("dfn, .index-term");
         panel = document.getElementById(`dfn-panel-for-${dfn.id}`);
-        displayPanel(dfn, panel, { x: event.clientX, y: event.clientY });
+        const coords = deriveCoordinates(event);
+        displayPanel(dfn, panel, coords);
         break;
       }
       case "dock": {
@@ -531,30 +585,59 @@ function dfnPanel() {
       }
       case "hide": {
         hidePanel(panel);
+        panel = null;
         break;
       }
     }
-  });
+  };
 }
 
-/** @param {HTMLElement} clickTarget */
-function deriveAction(clickTarget) {
-  const hitALink = !!clickTarget.closest("a");
-  if (clickTarget.closest("dfn, .index-term")) {
-    return hitALink ? null : "show";
+/**
+ * @param {MouseEvent|KeyboardEvent} event
+ */
+function deriveCoordinates(event) {
+  const target = /** @type HTMLElement */ (event.target);
+
+  // We prevent synthetic AT clicks from putting
+  // the dialog in a weird place. The AT events sometimes
+  // lack coordinates, so they have clientX/Y = 0
+  const rect = target.getBoundingClientRect();
+  if (
+    event instanceof MouseEvent &&
+    event.clientX >= rect.left &&
+    event.clientY >= rect.top
+  ) {
+    // The event probably happened inside the bounding rect...
+    return { x: event.clientX, y: event.clientY };
   }
-  if (clickTarget.closest(".dfn-panel")) {
+
+  // Offset to the middle of the element
+  const x = rect.x + rect.width / 2;
+  // Placed at the bottom of the element
+  const y = rect.y + rect.height;
+  return { x, y };
+}
+
+/**
+ * @param {Event} event
+ */
+function deriveAction(event) {
+  const target = /** @type {HTMLElement} */ (event.target);
+  const hitALink = !!target.closest("a");
+  if (target.closest("dfn:not([data-cite]), .index-term")) {
+    return hitALink ? "none" : "show";
+  }
+  if (target.closest(".dfn-panel")) {
     if (hitALink) {
-      const clickedSelfLink = clickTarget.classList.contains("self-link");
-      return clickedSelfLink ? "hide" : "dock";
+      return target.classList.contains("self-link") ? "hide" : "dock";
     }
-    const panel = clickTarget.closest(".dfn-panel");
-    return panel.classList.contains("docked") ? "hide" : null;
+    const panel = target.closest(".dfn-panel");
+    return panel.classList.contains("docked") ? "hide" : "none";
   }
   if (document.querySelector(".dfn-panel:not([hidden])")) {
     return "hide";
   }
-  return null;
+  return "none";
 }
 
 /**
@@ -596,10 +679,85 @@ function displayPanel(dfn, panel, { x, y }) {
     const caret = panel.querySelector(".caret");
     caret.style.left = `${newCaretOffset}px`;
   }
+
+  // As it's a dialog, we trap focus.
+  // TODO: when <dialog> becomes a implemented, we should really
+  // use that.
+  trapFocus(panel, dfn);
+}
+
+/**
+ * @param {HTMLElement} panel
+ * @param {HTMLElement} dfn
+ * @returns
+ */
+function trapFocus(panel, dfn) {
+  /** @type NodeListOf<HTMLAnchorElement> elements */
+  const anchors = panel.querySelectorAll("a[href]");
+  // No need to trap focus
+  if (!anchors.length) return;
+
+  // Move focus to first anchor element
+  const first = anchors.item(0);
+  first.focus();
+
+  const trapListener = createTrapListener(anchors, panel, dfn);
+  panel.addEventListener("keydown", trapListener);
+
+  // Hiding the panel releases the trap
+  const mo = new MutationObserver(records => {
+    const [record] = records;
+    const target = /** @type HTMLElement */ (record.target);
+    if (target.hidden) {
+      panel.removeEventListener("keydown", trapListener);
+      mo.disconnect();
+    }
+  });
+  mo.observe(panel, { attributes: true, attributeFilter: ["hidden"] });
+}
+
+/**
+ *
+ * @param {NodeListOf<HTMLAnchorElement>} anchors
+ * @param {HTMLElement} panel
+ * @param {HTMLElement} dfn
+ * @returns
+ */
+function createTrapListener(anchors, panel, dfn) {
+  const lastIndex = anchors.length - 1;
+  let currentIndex = 0;
+  return event => {
+    switch (event.key) {
+      // Hitting "Tab" traps us in a nice loop around elements.
+      case "Tab": {
+        event.preventDefault();
+        currentIndex += event.shiftKey ? -1 : +1;
+        if (currentIndex < 0) {
+          currentIndex = lastIndex;
+        } else if (currentIndex > lastIndex) {
+          currentIndex = 0;
+        }
+        anchors.item(currentIndex).focus();
+        break;
+      }
+
+      // Hitting "Enter" on an anchor releases the trap.
+      case "Enter":
+        hidePanel(panel);
+        break;
+
+      // Hitting "Escape" returns focus to dfn.
+      case "Escape":
+        hidePanel(panel);
+        dfn.focus();
+        return;
+    }
+  };
 }
 
 /** @param {HTMLElement} panel */
 function hidePanel(panel) {
+  if (!panel) return;
   panel.hidden = true;
   panel.classList.remove("docked");
 }
