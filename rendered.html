@@ -1,6 +1,6 @@
 <!DOCTYPE html><html dir="ltr" lang="en"><head>
 <meta charset="utf-8">
-<meta name="generator" content="ReSpec 26.5.3">
+<meta name="generator" content="ReSpec 26.7.0">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <style>
 dfn{cursor:pointer}
@@ -31,7 +31,7 @@ dfn{cursor:pointer}
     
 <style type="text/css">
 
-                /* Adapted from R2RML */
+        /* Adapted from R2RML */
         pre { 
             word-wrap:normal
         }
@@ -260,8 +260,8 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
         "Dylan Van Assche",
         "Anastasia Dimou"
       ],
-      "title": "Target",
-      "href": "https://rml.io/specs/target",
+      "title": "DataIO",
+      "href": "https://rml.io/specs/dataio",
       "status": "Unofficial Draft",
       "publisher": "RML team",
       "date": "24 March 2021",
@@ -320,8 +320,8 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
       ]
     }
   ],
-  "publishISODate": "2021-04-19T00:00:00.000Z",
-  "generatedSubtitle": "Unofficial Draft 19 April 2021"
+  "publishISODate": "2021-05-18T00:00:00.000Z",
+  "generatedSubtitle": "Unofficial Draft 18 May 2021"
 }</script>
 <link rel="stylesheet" href="https://www.w3.org/StyleSheets/TR/2016/W3C-UD"></head>
 <body class="h-entry"><div class="head">
@@ -329,7 +329,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
     
     <h2>
       Unofficial Draft
-      <time class="dt-published" datetime="2021-04-19">19 April 2021</time>
+      <time class="dt-published" datetime="2021-05-18">18 May 2021</time>
     </h2>
     <dl>
       
@@ -366,7 +366,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
     <hr title="Separator for header">
   </div>
 <section id="abstract" class="introductory"><h2 id="abstract">Abstract</h2><p>This document describes a formal representation to align the 
-RDF Mapping Language [<cite><a class="bibref" data-link-type="biblio" href="#bib-rml" title="RDF Mapping Language (RML)">RML</a></cite>] with Target [<cite><a class="bibref" data-link-type="biblio" href="#bib-dataio" title="Target">DataIO</a></cite>]
+RDF Mapping Language [<cite><a class="bibref" data-link-type="biblio" href="#bib-rml" title="RDF Mapping Language (RML)">RML</a></cite>] with Target [<cite><a class="bibref" data-link-type="biblio" href="#bib-dataio" title="DataIO">DataIO</a></cite>]
 to describe in RML mapping rules how a generated Knowledge Graph 
 should be directed and exported. 
 The current document describes how Target is integrated 
@@ -379,7 +379,7 @@ with RML through definitions and examples.</p><p>The version of this document is
     </p>
     <p data-format="markdown"><p>This is an early draft,
 yet efforts are made to keep things stable.</p></p>
-</section><nav id="toc"><h2 class="introductory" id="table-of-contents">Table of Contents</h2><ol class="toc"><li class="tocline"><a class="tocxref" href="#conformance"><bdi class="secno">1. </bdi>Conformance</a></li><li class="tocline"><a class="tocxref" href="#overview"><bdi class="secno">2. </bdi>Overview</a></li><li class="tocline"><a class="tocxref" href="#target-in-rml"><bdi class="secno">3. </bdi>Target in RML</a></li><li class="tocline"><a class="tocxref" href="#single-targets"><bdi class="secno">4. </bdi>Single targets</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#subject-map"><bdi class="secno">4.1 </bdi>Subject Map</a></li><li class="tocline"><a class="tocxref" href="#predicate-map"><bdi class="secno">4.2 </bdi>Predicate Map</a></li><li class="tocline"><a class="tocxref" href="#object-map"><bdi class="secno">4.3 </bdi>Object Map</a></li><li class="tocline"><a class="tocxref" href="#graph-map"><bdi class="secno">4.4 </bdi>Graph Map</a></li><li class="tocline"><a class="tocxref" href="#language-map"><bdi class="secno">4.5 </bdi>Language Map</a></li></ol></li><li class="tocline"><a class="tocxref" href="#multiple-targets"><bdi class="secno">5. </bdi>Combining multiple Targets</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#multiple-targets-same-term-map"><bdi class="secno">5.1 </bdi>Multiple Targets in the same Term Map</a></li><li class="tocline"><a class="tocxref" href="#subject-and-predicate-map"><bdi class="secno">5.2 </bdi>Subject Map and Predicate Map</a></li><li class="tocline"><a class="tocxref" href="#subject-and-object-map"><bdi class="secno">5.3 </bdi>Subject Map and Object Map</a></li><li class="tocline"><a class="tocxref" href="#predicate-and-object-map"><bdi class="secno">5.4 </bdi>Predicate Map and Object Map</a></li><li class="tocline"><a class="tocxref" href="#subject-predicate-and-object-map"><bdi class="secno">5.5 </bdi>Subject Map, Predicate Map and Object Map</a></li><li class="tocline"><a class="tocxref" href="#subject-and-graph-map"><bdi class="secno">5.6 </bdi>Subject Map and Graph Map</a></li><li class="tocline"><a class="tocxref" href="#predicate-object-and-graph-map"><bdi class="secno">5.7 </bdi>Predicate Object Map and Graph Map</a></li><li class="tocline"><a class="tocxref" href="#language-and-graph-map"><bdi class="secno">5.8 </bdi>Language Map and Graph Map</a></li><li class="tocline"><a class="tocxref" href="#language-and-object-map"><bdi class="secno">5.9 </bdi>Language Map and Object Map</a></li><li class="tocline"><a class="tocxref" href="#multiple-predicate-map"><bdi class="secno">5.10 </bdi>Multiple Predicate Maps</a></li><li class="tocline"><a class="tocxref" href="#multiple-object-map"><bdi class="secno">5.11 </bdi>Multiple Object Maps</a></li><li class="tocline"><a class="tocxref" href="#multiple-graph-map"><bdi class="secno">5.12 </bdi>Multiple Graph Maps</a></li></ol></li><li class="tocline"><a class="tocxref" href="#overriding-targets"><bdi class="secno">6. </bdi>Overriding Targets</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#seperate-triples-map"><bdi class="secno">6.1 </bdi>Separate Triples Map</a></li><li class="tocline"><a class="tocxref" href="#conditions"><bdi class="secno">6.2 </bdi>Conditions</a></li></ol></li><li class="tocline"><a class="tocxref" href="#references"><bdi class="secno">A. </bdi>References</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#normative-references"><bdi class="secno">A.1 </bdi>Normative references</a></li><li class="tocline"><a class="tocxref" href="#informative-references"><bdi class="secno">A.2 </bdi>Informative references</a></li></ol></li></ol></nav>
+</section><nav id="toc"><h2 class="introductory" id="table-of-contents">Table of Contents</h2><ol class="toc"><li class="tocline"><a class="tocxref" href="#conformance"><bdi class="secno">1. </bdi>Conformance</a></li><li class="tocline"><a class="tocxref" href="#overview"><bdi class="secno">2. </bdi>Overview</a></li><li class="tocline"><a class="tocxref" href="#target-in-rml"><bdi class="secno">3. </bdi>Target in RML</a></li><li class="tocline"><a class="tocxref" href="#single-targets"><bdi class="secno">4. </bdi>Single targets</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#subject-map"><bdi class="secno">4.1 </bdi>Subject Map</a></li><li class="tocline"><a class="tocxref" href="#predicate-map"><bdi class="secno">4.2 </bdi>Predicate Map</a></li><li class="tocline"><a class="tocxref" href="#object-map"><bdi class="secno">4.3 </bdi>Object Map</a></li><li class="tocline"><a class="tocxref" href="#graph-map"><bdi class="secno">4.4 </bdi>Graph Map</a></li><li class="tocline"><a class="tocxref" href="#language-map"><bdi class="secno">4.5 </bdi>Language Map</a></li></ol></li><li class="tocline"><a class="tocxref" href="#multiple-targets"><bdi class="secno">5. </bdi>Combining multiple Targets</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#multiple-targets-same-term-map"><bdi class="secno">5.1 </bdi>Multiple Targets in the same Term Map</a></li><li class="tocline"><a class="tocxref" href="#subject-and-predicate-map"><bdi class="secno">5.2 </bdi>Subject Map and Predicate Map</a></li><li class="tocline"><a class="tocxref" href="#subject-and-object-map"><bdi class="secno">5.3 </bdi>Subject Map and Object Map</a></li><li class="tocline"><a class="tocxref" href="#predicate-and-object-map"><bdi class="secno">5.4 </bdi>Predicate Map and Object Map</a></li><li class="tocline"><a class="tocxref" href="#subject-predicate-and-object-map"><bdi class="secno">5.5 </bdi>Subject Map, Predicate Map and Object Map</a></li><li class="tocline"><a class="tocxref" href="#subject-and-graph-map"><bdi class="secno">5.6 </bdi>Subject Map and Graph Map</a></li><li class="tocline"><a class="tocxref" href="#predicate-and-graph-map"><bdi class="secno">5.7 </bdi>Predicate Map and Graph Map</a></li><li class="tocline"><a class="tocxref" href="#object-and-graph-map"><bdi class="secno">5.8 </bdi>Object Map and Graph Map</a></li><li class="tocline"><a class="tocxref" href="#language-and-graph-map"><bdi class="secno">5.9 </bdi>Language Map and Graph Map</a></li><li class="tocline"><a class="tocxref" href="#language-and-object-map"><bdi class="secno">5.10 </bdi>Language Map and Object Map</a></li><li class="tocline"><a class="tocxref" href="#multiple-predicate-map"><bdi class="secno">5.11 </bdi>Multiple Predicate Maps</a></li><li class="tocline"><a class="tocxref" href="#multiple-object-map"><bdi class="secno">5.12 </bdi>Multiple Object Maps</a></li><li class="tocline"><a class="tocxref" href="#multiple-graph-map"><bdi class="secno">5.13 </bdi>Multiple Graph Maps</a></li></ol></li><li class="tocline"><a class="tocxref" href="#overriding-targets"><bdi class="secno">6. </bdi>Overriding Targets</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#seperate-triples-map"><bdi class="secno">6.1 </bdi>Separate Triples Map</a></li><li class="tocline"><a class="tocxref" href="#conditions"><bdi class="secno">6.2 </bdi>Conditions</a></li></ol></li><li class="tocline"><a class="tocxref" href="#references"><bdi class="secno">A. </bdi>References</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#normative-references"><bdi class="secno">A.1 </bdi>Normative references</a></li><li class="tocline"><a class="tocxref" href="#informative-references"><bdi class="secno">A.2 </bdi>Informative references</a></li></ol></li></ol></nav>
 
 <section id="conformance"><h2 id="x1-conformance"><bdi class="secno">1. </bdi>Conformance<a class="self-link" aria-label="§" href="#conformance"></a></h2><p>As well as sections marked as non-normative, all authoring guidelines, diagrams, examples, and notes in this specification are non-normative. Everything else in this specification is normative.</p><p>
         The key word <em class="rfc2119">MAY</em> in this document
@@ -408,6 +408,10 @@ the following namespace prefix bindings unless otherwise stated:</p><table>
 <tr>
 <td><code>rmlt</code></td>
 <td><a href="http://semweb.mmlab.be/ns/rml-target#">http://semweb.mmlab.be/ns/rml-target#</a></td>
+</tr>
+<tr>
+<td><code>comp</code></td>
+<td><a href="http://semweb.mmlab.be/ns/rml-compression#">http://semweb.mmlab.be/ns/rml-compression#</a></td>
 </tr>
 <tr>
 <td><code>rr</code></td>
@@ -548,7 +552,7 @@ compression algorithm.</p><pre class="ex-input" aria-busy="false"><code class="h
 &lt;#TargetDump2&gt; a rmlt:LogicalTarget;
   rmlt:target &lt;#VoIDDump2&gt;;
   rmlt:serialization formats:Turtle;
-  rmlt:compression comp:Zip;
+  rmlt:compression comp:zip;
 .</code></pre><pre class="ex-access" aria-busy="false"><code class="hljs">&lt;#VoIDDump1&gt; a void:Dataset;
     void:dataDump &lt;file:///data/dump1.nt&gt;;
 .
@@ -634,7 +638,7 @@ to an RDF dump with N-Quads as serialization format and GZip compression:</p><pr
   ];
   rr:subjectMap [ a rr:SubjectMap;
     rr:template "http://example.org/{id}";
-    rml:logicalTarget &lt;#TargetDump1;&gt;
+    rml:logicalTarget &lt;#TargetDump1&gt;;
   ];
   rr:predicateObjectMap [ a rr:PredicateObjectMap;
     rr:predicateMap [ a rr:PredicateMap;
@@ -655,19 +659,19 @@ to an RDF dump with N-Quads as serialization format and GZip compression:</p><pr
 .</code></pre><pre class="ex-target" aria-busy="false"><code class="hljs">&lt;#TargetDump1&gt; a rmlt:LogicalTarget;
   rmlt:target &lt;#VoIDDump1&gt;;
   rmlt:serialization formats:N-Quads;
-  rmlt:compression comp:GZip;
+  rmlt:compression comp:gzip;
 .</code></pre><pre class="ex-access" aria-busy="false"><code class="hljs">&lt;#VoIDDump1&gt; a void:Dataset ;
   void:dataDump &lt;file:///data/dump1.nq.gz&gt;;
-.</code></pre><pre class="ex-output" aria-busy="false"><code class="hljs">&lt;http://example.org/0&gt; &lt;http://xmlns.com/foaf/0.1/name&gt; "Monica Geller" _b0 .
-&lt;http://example.org/0&gt; &lt;http://xmlns.com/foaf/0.1/age&gt; "33" _b0 .
-&lt;http://example.org/1&gt; &lt;http://xmlns.com/foaf/0.1/name&gt; "Rachel Green" _b0 .
-&lt;http://example.org/1&gt; &lt;http://xmlns.com/foaf/0.1/age&gt; "34" _b0 .
-&lt;http://example.org/2&gt; &lt;http://xmlns.com/foaf/0.1/name&gt; "Joey Tribbiani" _b0 .
-&lt;http://example.org/2&gt; &lt;http://xmlns.com/foaf/0.1/age&gt; "35" _b0 .
-&lt;http://example.org/3&gt; &lt;http://xmlns.com/foaf/0.1/name&gt; "Chandler Bing" _b0 .
-&lt;http://example.org/3&gt; &lt;http://xmlns.com/foaf/0.1/age&gt; "36" _b0 .
-&lt;http://example.org/4&gt; &lt;http://xmlns.com/foaf/0.1/name&gt; "Ross Geller" _b0 .
-&lt;http://example.org/4&gt; &lt;http://xmlns.com/foaf/0.1/age&gt; "37" _b0 .</code></pre></section><section id="predicate-map-0"><h3 id="predicate-map"><bdi class="secno">4.2 </bdi>Predicate Map<a class="self-link" aria-label="§" href="#predicate-map"></a></h3><p>All triples containing the generated predicate are exported 
+.</code></pre><pre class="ex-output" aria-busy="false"><code class="hljs">&lt;http://example.org/0&gt; &lt;http://xmlns.com/foaf/0.1/name&gt; "Monica Geller" .
+&lt;http://example.org/0&gt; &lt;http://xmlns.com/foaf/0.1/age&gt; "33" .
+&lt;http://example.org/1&gt; &lt;http://xmlns.com/foaf/0.1/name&gt; "Rachel Green" .
+&lt;http://example.org/1&gt; &lt;http://xmlns.com/foaf/0.1/age&gt; "34" .
+&lt;http://example.org/2&gt; &lt;http://xmlns.com/foaf/0.1/name&gt; "Joey Tribbiani" .
+&lt;http://example.org/2&gt; &lt;http://xmlns.com/foaf/0.1/age&gt; "35" .
+&lt;http://example.org/3&gt; &lt;http://xmlns.com/foaf/0.1/name&gt; "Chandler Bing" .
+&lt;http://example.org/3&gt; &lt;http://xmlns.com/foaf/0.1/age&gt; "36" .
+&lt;http://example.org/4&gt; &lt;http://xmlns.com/foaf/0.1/name&gt; "Ross Geller" .
+&lt;http://example.org/4&gt; &lt;http://xmlns.com/foaf/0.1/age&gt; "37" .</code></pre></section><section id="predicate-map-0"><h3 id="predicate-map"><bdi class="secno">4.2 </bdi>Predicate Map<a class="self-link" aria-label="§" href="#predicate-map"></a></h3><p>All triples containing the generated predicate are exported 
 to the specified targets in the Predicate Map [<cite><a class="bibref" data-link-type="biblio" href="#bib-rml" title="RDF Mapping Language (RML)">RML</a></cite>].</p><p>The following example exports all triples containing 
 the generated predicate <code>foaf:name</code> to an RDF dump 
 with Turtle as serialization format and Zip compression:</p><pre class="ex-input" aria-busy="false"><code class="hljs">[
@@ -712,7 +716,7 @@ with Turtle as serialization format and Zip compression:</p><pre class="ex-input
   rr:predicateObjectMap [ a rr:PredicateObjectMap;
     rr:predicateMap [ a rr:PredicateMap;
       rr:constant foaf:name;
-      rml:logicalTarget &lt;#TargetDump1;&gt;
+      rml:logicalTarget &lt;#TargetDump1&gt;;
     ];
     rr:objectMap [ a rr:ObjectMap;
       rml:reference "name";
@@ -729,10 +733,10 @@ with Turtle as serialization format and Zip compression:</p><pre class="ex-input
 .</code></pre><pre class="ex-target" aria-busy="false"><code class="hljs">&lt;#TargetDump1&gt; a rmlt:LogicalTarget;
   rmlt:target &lt;#VoIDDump1&gt;;
   rmlt:serialization formats:Turtle;
-  rmlt:compression comp:Zip;
+  rmlt:compression comp:zip;
 .</code></pre><pre class="ex-access" aria-busy="false"><code class="hljs">&lt;#VoIDDump1&gt; a void:Dataset ;
-  void:dataDump &lt;file:///data/dump1.nq.gz&gt;;
-.</code></pre><pre class="ex-output" aria-busy="false"><code class="hljs"># file:///data/dump1.nq.gz
+  void:dataDump &lt;file:///data/dump1.ttl.zip&gt;;
+.</code></pre><pre class="ex-output" aria-busy="false"><code class="hljs"># file:///data/dump1.ttl.zip
 @prefix foaf: &lt;http://xmlns.com/foaf/0.1/&gt; .
 @base &lt;http://example.com/ns#&gt; .
 
@@ -753,11 +757,11 @@ with Turtle as serialization format and Zip compression:</p><pre class="ex-input
 .
 
 # default target of the processor
-&lt;http://example.org/0&gt; &lt;http://xmlns.com/foaf/0.1/age&gt; "33" _b0 .
-&lt;http://example.org/1&gt; &lt;http://xmlns.com/foaf/0.1/age&gt; "34" _b0 .
-&lt;http://example.org/2&gt; &lt;http://xmlns.com/foaf/0.1/age&gt; "35" _b0 .
-&lt;http://example.org/3&gt; &lt;http://xmlns.com/foaf/0.1/age&gt; "36" _b0 .
-&lt;http://example.org/4&gt; &lt;http://xmlns.com/foaf/0.1/age&gt; "37" _b0 .</code></pre></section><section id="object-map-0"><h3 id="object-map"><bdi class="secno">4.3 </bdi>Object Map<a class="self-link" aria-label="§" href="#object-map"></a></h3><p>All triples containing the generated object are exported 
+&lt;http://example.org/0&gt; &lt;http://xmlns.com/foaf/0.1/age&gt; "33" .
+&lt;http://example.org/1&gt; &lt;http://xmlns.com/foaf/0.1/age&gt; "34" .
+&lt;http://example.org/2&gt; &lt;http://xmlns.com/foaf/0.1/age&gt; "35" .
+&lt;http://example.org/3&gt; &lt;http://xmlns.com/foaf/0.1/age&gt; "36" .
+&lt;http://example.org/4&gt; &lt;http://xmlns.com/foaf/0.1/age&gt; "37" .</code></pre></section><section id="object-map-0"><h3 id="object-map"><bdi class="secno">4.3 </bdi>Object Map<a class="self-link" aria-label="§" href="#object-map"></a></h3><p>All triples containing the generated object are exported 
 to the specified targets in the Object Map [<cite><a class="bibref" data-link-type="biblio" href="#bib-rml" title="RDF Mapping Language (RML)">RML</a></cite>].</p><p>The following example exports all triples containing 
 the generated object from the reference <code>name</code> to an RDF dump 
 with N-Triples as serialization format:</p><pre class="ex-input" aria-busy="false"><code class="hljs">[
@@ -805,7 +809,7 @@ with N-Triples as serialization format:</p><pre class="ex-input" aria-busy="fals
     ];
     rr:objectMap [ a rr:ObjectMap;
       rml:reference "name";
-      rml:logicalTarget &lt;#TargetDump1;&gt;
+      rml:logicalTarget &lt;#TargetDump1&gt;;
     ];
   ];
   rr:predicateObjectMap [ a rr:PredicateObjectMap;
@@ -876,11 +880,7 @@ to an RDF dump with N-Quads as serialization format:</p><pre class="ex-input" ar
   dcat:distribution [ a dcat:Distribution;
     dcat:downloadURL "https://rml.io/specs/rml-target/Friends.json";
   ];
-.</code></pre><pre class="ex-mapping" aria-busy="false"><code class="hljs">&lt;#Target&gt; a rmlt:LogicalTarget;
-  rmlt:target &lt;#VoIDDump1&gt;;
-.
-
-&lt;#TriplesMap&gt; a rr:TriplesMap;
+.</code></pre><pre class="ex-mapping" aria-busy="false"><code class="hljs">&lt;#TriplesMap&gt; a rr:TriplesMap;
   rml:logicalSource [ a rml:LogicalSource;
     rml:source &lt;#DCATSourceAccess&gt;;
     rml:referenceFormulation ql:JSONPath;
@@ -911,7 +911,6 @@ to an RDF dump with N-Quads as serialization format:</p><pre class="ex-input" ar
   ];
 .</code></pre><pre class="ex-target" aria-busy="false"><code class="hljs">&lt;#TargetDump1&gt; a rmlt:LogicalTarget;
   rmlt:target &lt;#VoIDDump1&gt;;
-  rmlt:serialization formats:N-Triples;
 .</code></pre><pre class="ex-access" aria-busy="false"><code class="hljs">&lt;#VoIDDump1&gt; a void:Dataset ;
   void:dataDump &lt;file:///data/dump1.nq&gt;;
 .</code></pre><pre class="ex-output" aria-busy="false"><code class="hljs"># file:///data/dump1.nq
@@ -956,12 +955,7 @@ to a RDF dump with N-Triples as serialization format:</p><pre class="ex-input" a
   dcat:distribution [ a dcat:Distribution;
     dcat:downloadURL "https://rml.io/specs/rml-target/Friends.json";
   ];
-.</code></pre><pre class="ex-mapping" aria-busy="false"><code class="hljs">&lt;#Target&gt; a rmlt:LogicalTarget;
-  rmlt:target &lt;#VoIDDump1&gt;;
-  rmlt:compression comp:GZip;
-.
-
-&lt;#TriplesMap&gt; a rr:TriplesMap;
+.</code></pre><pre class="ex-mapping" aria-busy="false"><code class="hljs">&lt;#TriplesMap&gt; a rr:TriplesMap;
   rml:logicalSource [ a rml:LogicalSource;
     rml:source &lt;#DCATSourceAccess&gt;;
     rml:referenceFormulation ql:JSONPath;
@@ -977,7 +971,7 @@ to a RDF dump with N-Triples as serialization format:</p><pre class="ex-input" a
     rr:objectMap [ a rr:ObjectMap;
       rml:reference "name";
       rml:languageMap [
-        rml:logicalTarget &lt;#TargetDump1;&gt;
+        rml:logicalTarget &lt;#TargetDump1&gt;;
         rr:constant "en";
       ];
     ];
@@ -1003,11 +997,11 @@ to a RDF dump with N-Triples as serialization format:</p><pre class="ex-input" a
 &lt;http://example.org/4&gt; &lt;http://xmlns.com/foaf/0.1/name&gt; "Ross Geller"@en .
 
 # default target of the processor
-&lt;http://example.org/0&gt; &lt;http://xmlns.com/foaf/0.1/age&gt; "33" _b0 .
-&lt;http://example.org/1&gt; &lt;http://xmlns.com/foaf/0.1/age&gt; "34" _b0 .
-&lt;http://example.org/2&gt; &lt;http://xmlns.com/foaf/0.1/age&gt; "35" _b0 .
-&lt;http://example.org/3&gt; &lt;http://xmlns.com/foaf/0.1/age&gt; "36" _b0 .
-&lt;http://example.org/4&gt; &lt;http://xmlns.com/foaf/0.1/age&gt; "37" _b0 .</code></pre></section></section>
+&lt;http://example.org/0&gt; &lt;http://xmlns.com/foaf/0.1/age&gt; "33" .
+&lt;http://example.org/1&gt; &lt;http://xmlns.com/foaf/0.1/age&gt; "34" .
+&lt;http://example.org/2&gt; &lt;http://xmlns.com/foaf/0.1/age&gt; "35" .
+&lt;http://example.org/3&gt; &lt;http://xmlns.com/foaf/0.1/age&gt; "36" .
+&lt;http://example.org/4&gt; &lt;http://xmlns.com/foaf/0.1/age&gt; "37" .</code></pre></section></section>
 
 <section id="combining-multiple-targets"><h2 id="multiple-targets"><bdi class="secno">5. </bdi>Combining multiple Targets<a class="self-link" aria-label="§" href="#multiple-targets"></a></h2><p>Multiple Targets <em class="rfc2119">MAY</em> be specified for the same triple 
 in the same or multiple Term Maps.
@@ -1068,17 +1062,17 @@ to the three specified Targets:</p><ul>
 .</code></pre><pre class="ex-target" aria-busy="false"><code class="hljs">&lt;#TargetDump1&gt; a rmlt:LogicalTarget;
   rmlt:target &lt;#VoIDDump1&gt;;
   rmlt:serialization formats:N-Triples;
-  rmlt:compression comp:Zip;
+  rmlt:compression comp:zip;
 .
 &lt;#TargetDump2&gt; a rmlt:LogicalTarget;
   rmlt:target &lt;#VoIDDump1&gt;;
   rmlt:serialization formats:JSON-LD;
-  rmlt:compression comp:TarXz;
+  rmlt:compression comp:tarxz;
 .
 &lt;#TargetDump3&gt; a rmlt:LogicalTarget;
   rmlt:target &lt;#VoIDDump1&gt;;
   rmlt:serialization formats:RDF_XML;
-  rmlt:compression comp:TarGZip;
+  rmlt:compression comp:targzip;
 .</code></pre><pre class="ex-access" aria-busy="false"><code class="hljs">&lt;#VoIDDump1&gt; a void:Dataset ;
   void:dataDump &lt;file:///data/dump1.nt.zip&gt;;
 .
@@ -1530,7 +1524,7 @@ are exported to <code>TargetDump2</code>. </p><pre class="ex-input" aria-busy="f
 &lt;http://example.org/0&gt; &lt;http://xmlns.com/foaf/0.1/name&gt; "Kara Danvers" &lt;http://example.org/Characters&gt; .
 &lt;http://example.org/1&gt; &lt;http://xmlns.com/foaf/0.1/name&gt; "Alex Danvers" &lt;http://example.org/Characters&gt; .
 &lt;http://example.org/2&gt; &lt;http://xmlns.com/foaf/0.1/name&gt; "J'onn J'onzz" &lt;http://example.org/Characters&gt; .
-&lt;http://example.org/3&gt; &lt;http://xmlns.com/foaf/0.1/name&gt; "Nia Nal" &lt;http://example.org/Characters&gt; .</code></pre></section><section id="predicate-object-map-and-graph-map"><h3 id="predicate-object-and-graph-map"><bdi class="secno">5.7 </bdi>Predicate Object Map and Graph Map<a class="self-link" aria-label="§" href="#predicate-object-and-graph-map"></a></h3><p>All triples containing the predicate <code>foaf:nickname</code>
+&lt;http://example.org/3&gt; &lt;http://xmlns.com/foaf/0.1/name&gt; "Nia Nal" &lt;http://example.org/Characters&gt; .</code></pre></section><section id="predicate-map-and-graph-map"><h3 id="predicate-and-graph-map"><bdi class="secno">5.7 </bdi>Predicate Map and Graph Map<a class="self-link" aria-label="§" href="#predicate-and-graph-map"></a></h3><p>All triples containing the predicate <code>foaf:nickname</code>
 are exported to <code>TargetDump1</code> 
 and all triples within the named graph <code>ex:Characters</code>
 are exported to <code>TargetDump2</code>. </p><pre class="ex-input" aria-busy="false"><code class="hljs">&lt;Supergirl&gt;
@@ -1606,7 +1600,83 @@ are exported to <code>TargetDump2</code>. </p><pre class="ex-input" aria-busy="f
 &lt;http://example.org/0&gt; &lt;http://xmlns.com/foaf/0.1/name&gt; "Kara Danvers" &lt;http://example.org/Characters&gt; .
 &lt;http://example.org/1&gt; &lt;http://xmlns.com/foaf/0.1/name&gt; "Alex Danvers" &lt;http://example.org/Characters&gt; .
 &lt;http://example.org/2&gt; &lt;http://xmlns.com/foaf/0.1/name&gt; "J'onn J'onzz" &lt;http://example.org/Characters&gt; .
-&lt;http://example.org/3&gt; &lt;http://xmlns.com/foaf/0.1/name&gt; "Nia Nal" &lt;http://example.org/Characters&gt; .</code></pre></section><section id="language-map-and-graph-map"><h3 id="language-and-graph-map"><bdi class="secno">5.8 </bdi>Language Map and Graph Map<a class="self-link" aria-label="§" href="#language-and-graph-map"></a></h3><p>All triples containing the language tag <code>en</code> 
+&lt;http://example.org/3&gt; &lt;http://xmlns.com/foaf/0.1/name&gt; "Nia Nal" &lt;http://example.org/Characters&gt; .</code></pre></section><section id="object-map-and-graph-map"><h3 id="object-and-graph-map"><bdi class="secno">5.8 </bdi>Object Map and Graph Map<a class="self-link" aria-label="§" href="#object-and-graph-map"></a></h3><p>All triples containing the object reference <code>nickname/text()</code>
+are exported to <code>TargetDump1</code> 
+and all triples within the named graph <code>ex:Characters</code>
+are exported to <code>TargetDump2</code>. </p><pre class="ex-input" aria-busy="false"><code class="hljs">&lt;Supergirl&gt;
+  &lt;Character id="0"&gt;
+    &lt;name&gt;Kara Danvers&lt;/name&gt;
+    &lt;nickname&gt;Supergirl&lt;/nickname&gt;
+  &lt;/Character&gt;
+  &lt;Character id="1"&gt;
+    &lt;name&gt;Alex Danvers&lt;/name&gt;
+    &lt;nickname&gt;Sentinel&lt;/nickname&gt;
+  &lt;/Character&gt;
+  &lt;Character id="2"&gt;
+    &lt;name&gt;J'onn J'onzz&lt;/name&gt;
+    &lt;nickname&gt;Martian Manhunter&lt;/nickname&gt;
+  &lt;/Character&gt;
+  &lt;Character id="3"&gt;
+    &lt;name&gt;Nia Nal&lt;/name&gt;
+    &lt;nickname&gt;Dreamer&lt;/nickname&gt;
+  &lt;/Character&gt; 
+&lt;/Supergirl&gt;</code></pre><pre class="ex-access" aria-busy="false"><code class="hljs">&lt;#DCATSourceAccess&gt; a dcat:Dataset;
+  dcat:distribution [ a dcat:Distribution;
+    dcat:downloadURL "https://rml.io/specs/rml-target/Supergirl.xml";
+  ];
+.</code></pre><pre class="ex-mapping" aria-busy="false"><code class="hljs">&lt;#TriplesMap&gt; a rr:TriplesMap;
+  rml:logicalSource [ a rml:LogicalSource;
+    rml:source &lt;#DCATSourceAccess&gt;;
+    rml:referenceFormulation ql:JSONPath;
+    rml:iterator "$.[*]";
+  ];
+  rr:subjectMap [ a rr:SubjectMap;
+    rr:template "http://example.org/{@id}";
+  ];
+  rr:predicateObjectMap [ a rr:PredicateObjectMap;
+    rr:graphMap [ a rr:GraphMap;
+      rml:logicalTarget &lt;#TargetDump2&gt;;
+      rr:constant ex:Characters;
+    ];
+    rr:predicateMap [ a rr:PredicateMap;
+      rr:constant foaf:name;
+    ];
+    rr:objectMap [ a rr:ObjectMap;
+      rml:reference "name/text()";
+    ];
+  ];
+  rr:predicateObjectMap [ a rr:PredicateObjectMap;
+    rr:predicateMap [ a rr:PredicateMap;
+      rr:constant foaf:nickname;
+    ];
+    rr:objectMap [ a rr:ObjectMap;
+      rml:reference "nickname/text()";
+      rml:logicalTarget &lt;#TargetDump1&gt;;
+    ];
+  ];
+.</code></pre><pre class="ex-target" aria-busy="false"><code class="hljs">&lt;#TargetDump1&gt; a rmlt:LogicalTarget;
+  rmlt:target &lt;#VoIDDump1&gt;;
+  rmlt:serialization formats:N-Triples;
+.
+&lt;#TargetDump2&gt; a rmlt:LogicalTarget;
+  rmlt:target &lt;#VoIDDump1&gt;;
+  rmlt:serialization formats:N-Triples;
+.</code></pre><pre class="ex-access" aria-busy="false"><code class="hljs">&lt;#VoIDDump1&gt; a void:Dataset ;
+  void:dataDump &lt;file:///data/dump1.nq&gt;;
+.
+&lt;#VoIDDump2&gt; a void:Dataset ;
+  void:dataDump &lt;file:///data/dump2.nq&gt;;
+.</code></pre><pre class="ex-output" aria-busy="false"><code class="hljs"># file:///data/dump1.nq
+&lt;http://example.org/0&gt; &lt;http://xmlns.com/foaf/0.1/nickname&gt; "Supergirl" _b0 .
+&lt;http://example.org/1&gt; &lt;http://xmlns.com/foaf/0.1/nickname&gt; "Sentinel" _b0 .
+&lt;http://example.org/2&gt; &lt;http://xmlns.com/foaf/0.1/nickname&gt; "Martian Manhunter" _b0 .
+&lt;http://example.org/3&gt; &lt;http://xmlns.com/foaf/0.1/nickname&gt; "Dreamer" _b0 .
+
+# file:///data/dump2.nq
+&lt;http://example.org/0&gt; &lt;http://xmlns.com/foaf/0.1/name&gt; "Kara Danvers" &lt;http://example.org/Characters&gt; .
+&lt;http://example.org/1&gt; &lt;http://xmlns.com/foaf/0.1/name&gt; "Alex Danvers" &lt;http://example.org/Characters&gt; .
+&lt;http://example.org/2&gt; &lt;http://xmlns.com/foaf/0.1/name&gt; "J'onn J'onzz" &lt;http://example.org/Characters&gt; .
+&lt;http://example.org/3&gt; &lt;http://xmlns.com/foaf/0.1/name&gt; "Nia Nal" &lt;http://example.org/Characters&gt; .</code></pre></section><section id="language-map-and-graph-map"><h3 id="language-and-graph-map"><bdi class="secno">5.9 </bdi>Language Map and Graph Map<a class="self-link" aria-label="§" href="#language-and-graph-map"></a></h3><p>All triples containing the language tag <code>en</code> 
 are exported to <code>TargetDump1</code> 
 and all triples within the named graph <code>ex:Characters</code>
 are exported to <code>TargetDump2</code>. 
@@ -1695,7 +1765,7 @@ as there is no dedicated Target assigned to triples containing
 &lt;http://example.org/0&gt; &lt;http://xmlns.com/foaf/0.1/nickname&gt; "Supergirl" _b0 .
 &lt;http://example.org/1&gt; &lt;http://xmlns.com/foaf/0.1/nickname&gt; "Sentinel" _b0 .
 &lt;http://example.org/2&gt; &lt;http://xmlns.com/foaf/0.1/nickname&gt; "Martian Manhunter" _b0 .
-&lt;http://example.org/3&gt; &lt;http://xmlns.com/foaf/0.1/nickname&gt; "Dreamer" _b0 .</code></pre></section><section id="language-map-and-object-map"><h3 id="language-and-object-map"><bdi class="secno">5.9 </bdi>Language Map and Object Map<a class="self-link" aria-label="§" href="#language-and-object-map"></a></h3><p>All triples containing the language tag <code>en</code> 
+&lt;http://example.org/3&gt; &lt;http://xmlns.com/foaf/0.1/nickname&gt; "Dreamer" _b0 .</code></pre></section><section id="language-map-and-object-map"><h3 id="language-and-object-map"><bdi class="secno">5.10 </bdi>Language Map and Object Map<a class="self-link" aria-label="§" href="#language-and-object-map"></a></h3><p>All triples containing the language tag <code>en</code> 
 are exported to <code>TargetDump1</code> 
 and all triples containing the object reference <code>nickname/text()</code> 
 are exported to <code>TargetDump2</code>.</p><pre class="ex-input" aria-busy="false"><code class="hljs">&lt;Supergirl&gt;
@@ -1771,7 +1841,7 @@ are exported to <code>TargetDump2</code>.</p><pre class="ex-input" aria-busy="fa
 &lt;http://example.org/0&gt; &lt;http://xmlns.com/foaf/0.1/nickname&gt; "Supergirl" .
 &lt;http://example.org/1&gt; &lt;http://xmlns.com/foaf/0.1/nickname&gt; "Sentinel" .
 &lt;http://example.org/2&gt; &lt;http://xmlns.com/foaf/0.1/nickname&gt; "Martian Manhunter" .
-&lt;http://example.org/3&gt; &lt;http://xmlns.com/foaf/0.1/nickname&gt; "Dreamer" .</code></pre></section><section id="multiple-predicate-maps"><h3 id="multiple-predicate-map"><bdi class="secno">5.10 </bdi>Multiple Predicate Maps<a class="self-link" aria-label="§" href="#multiple-predicate-map"></a></h3><p>All triples containing the predicate <code>foaf:name</code>
+&lt;http://example.org/3&gt; &lt;http://xmlns.com/foaf/0.1/nickname&gt; "Dreamer" .</code></pre></section><section id="multiple-predicate-maps"><h3 id="multiple-predicate-map"><bdi class="secno">5.11 </bdi>Multiple Predicate Maps<a class="self-link" aria-label="§" href="#multiple-predicate-map"></a></h3><p>All triples containing the predicate <code>foaf:name</code>
 are exported to <code>TargetDump1</code> 
 and all triples containing the predicate <code>foaf:nickname</code>
 are exported to <code>TargetDump2</code>.</p><pre class="ex-input" aria-busy="false"><code class="hljs">&lt;Supergirl&gt;
@@ -1844,7 +1914,7 @@ are exported to <code>TargetDump2</code>.</p><pre class="ex-input" aria-busy="fa
 &lt;http://example.org/0&gt; &lt;http://xmlns.com/foaf/0.1/nickname&gt; "Supergirl" .
 &lt;http://example.org/1&gt; &lt;http://xmlns.com/foaf/0.1/nickname&gt; "Sentinel" .
 &lt;http://example.org/2&gt; &lt;http://xmlns.com/foaf/0.1/nickname&gt; "Martian Manhunter" .
-&lt;http://example.org/3&gt; &lt;http://xmlns.com/foaf/0.1/nickname&gt; "Dreamer" .</code></pre></section><section id="multiple-object-maps"><h3 id="multiple-object-map"><bdi class="secno">5.11 </bdi>Multiple Object Maps<a class="self-link" aria-label="§" href="#multiple-object-map"></a></h3><p>All triples containing the object reference <code>name/text()</code>
+&lt;http://example.org/3&gt; &lt;http://xmlns.com/foaf/0.1/nickname&gt; "Dreamer" .</code></pre></section><section id="multiple-object-maps"><h3 id="multiple-object-map"><bdi class="secno">5.12 </bdi>Multiple Object Maps<a class="self-link" aria-label="§" href="#multiple-object-map"></a></h3><p>All triples containing the object reference <code>name/text()</code>
 are exported to <code>TargetDump1</code> 
 and all triples containing the object reference <code>nickname/text()</code>
 are exported to <code>TargetDump2</code>.</p><pre class="ex-input" aria-busy="false"><code class="hljs">&lt;Supergirl&gt;
@@ -1917,7 +1987,7 @@ are exported to <code>TargetDump2</code>.</p><pre class="ex-input" aria-busy="fa
 &lt;http://example.org/0&gt; &lt;http://xmlns.com/foaf/0.1/nickname&gt; "Supergirl" .
 &lt;http://example.org/1&gt; &lt;http://xmlns.com/foaf/0.1/nickname&gt; "Sentinel" .
 &lt;http://example.org/2&gt; &lt;http://xmlns.com/foaf/0.1/nickname&gt; "Martian Manhunter" .
-&lt;http://example.org/3&gt; &lt;http://xmlns.com/foaf/0.1/nickname&gt; "Dreamer" .</code></pre></section><section id="multiple-graph-maps"><h3 id="multiple-graph-map"><bdi class="secno">5.12 </bdi>Multiple Graph Maps<a class="self-link" aria-label="§" href="#multiple-graph-map"></a></h3><p>All triples within the named graph <code>ex:Characters</code>
+&lt;http://example.org/3&gt; &lt;http://xmlns.com/foaf/0.1/nickname&gt; "Dreamer" .</code></pre></section><section id="multiple-graph-maps"><h3 id="multiple-graph-map"><bdi class="secno">5.13 </bdi>Multiple Graph Maps<a class="self-link" aria-label="§" href="#multiple-graph-map"></a></h3><p>All triples within the named graph <code>ex:Characters</code>
 are exported to <code>TargetDump1</code> 
 and all triples within the named graph <code>ex:NickNames</code>
 are exported to <code>TargetDump2</code>. </p><pre class="ex-input" aria-busy="false"><code class="hljs">&lt;Supergirl&gt;
@@ -2233,7 +2303,7 @@ http://dbpedia.org/resource/Melissa_Rauch,Melissa Rauch</code></pre><pre class="
     <dl class="bibliography"><dt id="bib-csvw">[CSVW]</dt><dd><a href="https://www.w3.org/TR/tabular-data-primer/"><cite>CSV on the Web: A Primer</cite></a>.  W3C. 25 February 2016. W3C Working Group Note. URL: <a href="https://www.w3.org/TR/tabular-data-primer/">https://www.w3.org/TR/tabular-data-primer/</a></dd><dt id="bib-fno">[FnO]</dt><dd><a href="https://fno.io/spec"><cite>The Function Ontology</cite></a>.  FnO team. 05 January 2021. Unofficial Draft. URL: <a href="https://fno.io/spec">https://fno.io/spec</a></dd><dt id="bib-r2rml">[R2RML]</dt><dd><a href="https://www.w3.org/TR/r2rml/"><cite>R2RML: RDB to RDF Mapping Language</cite></a>. Souripriya Das; Seema Sundara; Richard Cyganiak.  W3C. 27 September 2012. W3C Recommendation. URL: <a href="https://www.w3.org/TR/r2rml/">https://www.w3.org/TR/r2rml/</a></dd><dt id="bib-rdf-concepts">[RDF-Concepts]</dt><dd><a href="https://www.w3.org/TR/rdf-concepts/"><cite>Resource Description Framework (RDF): Concepts and Abstract Syntax</cite></a>. Graham Klyne; Jeremy Carroll.  W3C. 10 February 2004. W3C Recommendation. URL: <a href="https://www.w3.org/TR/rdf-concepts/">https://www.w3.org/TR/rdf-concepts/</a></dd><dt id="bib-rfc2119">[RFC2119]</dt><dd><a href="https://datatracker.ietf.org/doc/html/rfc2119"><cite>Key words for use in RFCs to Indicate Requirement Levels</cite></a>. S. Bradner.  IETF. March 1997. Best Current Practice. URL: <a href="https://datatracker.ietf.org/doc/html/rfc2119">https://datatracker.ietf.org/doc/html/rfc2119</a></dd><dt id="bib-rfc8174">[RFC8174]</dt><dd><a href="https://datatracker.ietf.org/doc/html/rfc8174"><cite>Ambiguity of Uppercase vs Lowercase in RFC 2119 Key Words</cite></a>. B. Leiba.  IETF. May 2017. Best Current Practice. URL: <a href="https://datatracker.ietf.org/doc/html/rfc8174">https://datatracker.ietf.org/doc/html/rfc8174</a></dd><dt id="bib-rml">[RML]</dt><dd><a href="https://rml.io/specs/rml"><cite>RDF Mapping Language (RML)</cite></a>.  RML team. 06 October 2020. Unofficial Draft. URL: <a href="https://rml.io/specs/rml">https://rml.io/specs/rml</a></dd><dt id="bib-void">[VoID]</dt><dd><a href="https://www.w3.org/TR/void/"><cite>Describing Linked Datasets with the VoID Vocabulary</cite></a>. Keith Alexander; Richard Cyganiak; Michael Hausenblas; Jun Zhao.  W3C. 3 March 2011. W3C Note. URL: <a href="https://www.w3.org/TR/void/">https://www.w3.org/TR/void/</a></dd></dl>
   </section><section id="informative-references">
     <h3 id="a-2-informative-references"><bdi class="secno">A.2 </bdi>Informative references<a class="self-link" aria-label="§" href="#informative-references"></a></h3>
-    <dl class="bibliography"><dt id="bib-dataio">[DataIO]</dt><dd><a href="https://rml.io/specs/target"><cite>Target</cite></a>. Dylan Van Assche; Anastasia Dimou.  RML team. 24 March 2021. Unofficial Draft. URL: <a href="https://rml.io/specs/target">https://rml.io/specs/target</a></dd></dl>
+    <dl class="bibliography"><dt id="bib-dataio">[DataIO]</dt><dd><a href="https://rml.io/specs/dataio"><cite>DataIO</cite></a>. Dylan Van Assche; Anastasia Dimou.  RML team. 24 March 2021. Unofficial Draft. URL: <a href="https://rml.io/specs/dataio">https://rml.io/specs/dataio</a></dd></dl>
   </section></section><p role="navigation" id="back-to-top">
     <a href="#title"><abbr title="Back to Top">↑</abbr></a>
   </p><script id="respec-dfn-panel">(() => {
@@ -2321,7 +2391,7 @@ function deriveCoordinates(event) {
 function deriveAction(event) {
   const target = /** @type {HTMLElement} */ (event.target);
   const hitALink = !!target.closest("a");
-  if (target.closest("dfn, .index-term")) {
+  if (target.closest("dfn:not([data-cite]), .index-term")) {
     return hitALink ? "none" : "show";
   }
   if (target.closest(".dfn-panel")) {

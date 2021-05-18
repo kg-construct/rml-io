@@ -48,3 +48,12 @@ fs.writeFileSync (path.resolve (__dirname, 'dist', 'index.html'), html);
 html = html.replace (/\.\/resources/g, '../resources');
 fs.writeFileSync (path.resolve(__dirname, 'dist', dateString, 'index.html'), html);
 
+// Copy assets
+fs.copyFileSync('Supergirl.xml', path.resolve(__dirname, 'dist', dateString, 'Supergirl.xml'))
+fs.copyFileSync('Supergirl.xml', path.resolve(__dirname, 'dist', 'Supergirl.xml'))
+fs.copyFileSync('Leverage.csv', path.resolve(__dirname, 'dist', dateString, 'Leverage.csv'))
+fs.copyFileSync('Leverage.csv', path.resolve(__dirname, 'dist', 'Leverage.csv'))
+fs.copyFileSync('Friends.json', path.resolve(__dirname, 'dist', dateString, 'Friends.json'))
+fs.copyFileSync('Friends.json', path.resolve(__dirname, 'dist', 'Friends.json'))
+fs.copyFileSync('DBPedia.csv', path.resolve(__dirname, 'dist', dateString, 'DBPedia.csv'))
+fs.copyFileSync('DBPedia.csv', path.resolve(__dirname, 'dist', 'DBPedia.csv'))
