@@ -53,9 +53,9 @@ The following example show a Target of an RDF dump in Turtle [[Turtle]]
 format with GZip compression:
 
 <pre class="ex-target">
-<#VoIDDump> a rmlt:LogicalTarget;
+&lt;#VoIDDump&gt; a rmlt:LogicalTarget;
      rmlt:target [ a void:Dataset
-         void:dataDump <file:///data/dump.ttl>;
+         void:dataDump &lt;file:///data/dump.ttl&gt;;
      ];
      rmlt:serialization formats:Turtle;
      rmlt:compression comp:gzip;
@@ -66,9 +66,9 @@ The following example shows a Target of a [[SPARQL]]
 endpoint with `SPARQL UPDATE`:
 
 <pre class="ex-target">
-<#SPARQLEndpoint> a rmlt:LogicalTarget;
+&lt;#SPARQLEndpoint&gt; a rmlt:LogicalTarget;
      rmlt:target [ a sd:Service;
-       sd:endpoint  <http://example.com/sparql-update> ;
+       sd:endpoint  &lt;http://example.com/sparql-update&gt;;
        sd:supportedLanguage sd:SPARQL11Update ;
      ];
 .
@@ -78,10 +78,10 @@ The following example shows a Target of a
 DCAT dataset in N-Quads format with Zip compression:
 
 <pre class="ex-target">
-<#DCATDump> a rmlt:LogicalTarget;
+&lt;#DCATDump&gt; a rmlt:LogicalTarget;
      rmlt:target [ a dcat:Dataset
          dcat:distribution [ a dcat:Distribution;
-	        dcat:accessURL <http://example.org/dcat-access-url> ;
+	        dcat:accessURL &lt;http://example.org/dcat-access-url&gt;;
          ];
      ];
      rmlt:serialization formats:N-Quads;

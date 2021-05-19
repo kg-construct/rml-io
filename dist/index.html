@@ -508,7 +508,7 @@ all other properties are optional.</p><table>
 </figure></section><section id="examples-0"><h3 id="examples"><bdi class="secno">3.2 </bdi>Examples<a class="self-link" aria-label="§" href="#examples"></a></h3><p>The following example show a Target of an RDF dump in Turtle [<cite><a class="bibref" data-link-type="biblio" href="#bib-turtle" title="RDF 1.1 Turtle">Turtle</a></cite>] 
 format with GZip compression:</p><pre class="ex-target" aria-busy="false"><code class="hljs">&lt;#VoIDDump&gt; a rmlt:LogicalTarget;
      rmlt:target [ a void:Dataset
-         void:dataDump ;
+         void:dataDump &lt;file:///data/dump.ttl&gt;;
      ];
      rmlt:serialization formats:Turtle;
      rmlt:compression comp:gzip;
@@ -516,7 +516,7 @@ format with GZip compression:</p><pre class="ex-target" aria-busy="false"><code 
 </code></pre><p>The following example shows a Target of a [<cite><a class="bibref" data-link-type="biblio" href="#bib-sparql" title="SPARQL 1.1 Overview">SPARQL</a></cite>] 
 endpoint with <code>SPARQL UPDATE</code>:</p><pre class="ex-target" aria-busy="false"><code class="hljs">&lt;#SPARQLEndpoint&gt; a rmlt:LogicalTarget;
      rmlt:target [ a sd:Service;
-       sd:endpoint   ;
+       sd:endpoint &lt;http://example.com/sparql-update&gt;;
        sd:supportedLanguage sd:SPARQL11Update ;
      ];
 .
@@ -524,7 +524,7 @@ endpoint with <code>SPARQL UPDATE</code>:</p><pre class="ex-target" aria-busy="f
 DCAT dataset in N-Quads format with Zip compression:</p><pre class="ex-target" aria-busy="false"><code class="hljs">&lt;#DCATDump&gt; a rmlt:LogicalTarget;
      rmlt:target [ a dcat:Dataset
          dcat:distribution [ a dcat:Distribution;
-            dcat:accessURL  ;
+            dcat:accessURL &lt;http://example.org/dcat-access-url&gt;;
          ];
      ];
      rmlt:serialization formats:N-Quads;
