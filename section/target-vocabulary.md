@@ -54,7 +54,7 @@ format with GZip compression:
 
 <pre class="ex-target">
 &lt;#VoIDDump&gt; a rmlt:LogicalTarget;
-     rmlt:target [ a void:Dataset
+     rmlt:target [ a void:Dataset;
          void:dataDump &lt;file:///data/dump.ttl&gt;;
      ];
      rmlt:serialization formats:Turtle;
@@ -79,7 +79,7 @@ DCAT dataset in N-Quads format with Zip compression:
 
 <pre class="ex-target">
 &lt;#DCATDump&gt; a rmlt:LogicalTarget;
-     rmlt:target [ a dcat:Dataset
+     rmlt:target [ a dcat:Dataset;
          dcat:distribution [ a dcat:Distribution;
 	        dcat:accessURL &lt;http://example.org/dcat-access-url&gt;;
          ];

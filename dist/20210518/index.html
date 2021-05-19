@@ -507,7 +507,7 @@ all other properties are optional.</p><table>
   <figcaption>Figure <bdi class="figno">1</bdi> <span class="fig-title">The structure of Target</span></figcaption>
 </figure></section><section id="examples-0"><h3 id="examples"><bdi class="secno">3.2 </bdi>Examples<a class="self-link" aria-label="§" href="#examples"></a></h3><p>The following example show a Target of an RDF dump in Turtle [<cite><a class="bibref" data-link-type="biblio" href="#bib-turtle" title="RDF 1.1 Turtle">Turtle</a></cite>] 
 format with GZip compression:</p><pre class="ex-target" aria-busy="false"><code class="hljs">&lt;#VoIDDump&gt; a rmlt:LogicalTarget;
-     rmlt:target [ a void:Dataset
+     rmlt:target [ a void:Dataset;
          void:dataDump &lt;file:///data/dump.ttl&gt;;
      ];
      rmlt:serialization formats:Turtle;
@@ -522,7 +522,7 @@ endpoint with <code>SPARQL UPDATE</code>:</p><pre class="ex-target" aria-busy="f
 .
 </code></pre><p>The following example shows a Target of a 
 DCAT dataset in N-Quads format with Zip compression:</p><pre class="ex-target" aria-busy="false"><code class="hljs">&lt;#DCATDump&gt; a rmlt:LogicalTarget;
-     rmlt:target [ a dcat:Dataset
+     rmlt:target [ a dcat:Dataset;
          dcat:distribution [ a dcat:Distribution;
             dcat:accessURL &lt;http://example.org/dcat-access-url&gt;;
          ];
