@@ -1,6 +1,6 @@
-# Data IO in RML Specification
+# Target in RML specification
 
-Repository for https://rml.io/specs/target-in-rml
+Repository for https://rml.io/specs/rml-target/
 
 ## Quickstart
 
