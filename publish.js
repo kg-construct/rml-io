@@ -9,18 +9,18 @@ var path = require('path');
 var dateString = (new Date()).toISOString().split('T')[0].replace(/-/g, '');
 
 try {
-    if (!fs.existsSync (path.resolve(__dirname, 'dist'))) {
-        fs.mkdirSync (path.resolve(__dirname, 'dist'));
+    if (!fs.existsSync (path.resolve(__dirname, 'docs'))) {
+        fs.mkdirSync (path.resolve(__dirname, 'docs'));
     }
-    fs.mkdirSync (path.resolve(__dirname, 'dist', dateString));
+    fs.mkdirSync (path.resolve(__dirname, 'docs', dateString));
 } catch (e) {
 
 }
 
-var files = fs.readdirSync (path.resolve(__dirname, 'dist'));
+var files = fs.readdirSync (path.resolve(__dirname, 'docs'));
 var dirs = [];
 for (var i = 0; i < files.length; i++) {
-    if (fs.lstatSync (path.resolve(__dirname, 'dist', files[i])).isDirectory()) {
+    if (fs.lstatSync (path.resolve(__dirname, 'docs', files[i])).isDirectory()) {
         dirs.push(files[i]);
     }
 }
@@ -44,16 +44,16 @@ if (dirs.length == 0) {
 var html = fs.readFileSync ('./rendered.html', 'utf8');
 html = html.replace (/%thisDate%/g, dateString);
 html = html.replace (/%prevDate%/g, dirs[0]);
-fs.writeFileSync (path.resolve (__dirname, 'dist', 'index.html'), html);
+fs.writeFileSync (path.resolve (__dirname, 'docs', 'index.html'), html);
 html = html.replace (/\.\/resources/g, '../resources');
-fs.writeFileSync (path.resolve(__dirname, 'dist', dateString, 'index.html'), html);
+fs.writeFileSync (path.resolve(__dirname, 'docs', dateString, 'index.html'), html);
 
 // Copy assets
-fs.copyFileSync('Supergirl.xml', path.resolve(__dirname, 'dist', dateString, 'Supergirl.xml'))
-fs.copyFileSync('Supergirl.xml', path.resolve(__dirname, 'dist', 'Supergirl.xml'))
-fs.copyFileSync('Leverage.csv', path.resolve(__dirname, 'dist', dateString, 'Leverage.csv'))
-fs.copyFileSync('Leverage.csv', path.resolve(__dirname, 'dist', 'Leverage.csv'))
-fs.copyFileSync('Friends.json', path.resolve(__dirname, 'dist', dateString, 'Friends.json'))
-fs.copyFileSync('Friends.json', path.resolve(__dirname, 'dist', 'Friends.json'))
-fs.copyFileSync('DBPedia.csv', path.resolve(__dirname, 'dist', dateString, 'DBPedia.csv'))
-fs.copyFileSync('DBPedia.csv', path.resolve(__dirname, 'dist', 'DBPedia.csv'))
+fs.copyFileSync('Supergirl.xml', path.resolve(__dirname, 'docs', dateString, 'Supergirl.xml'))
+fs.copyFileSync('Supergirl.xml', path.resolve(__dirname, 'docs', 'Supergirl.xml'))
+fs.copyFileSync('Leverage.csv', path.resolve(__dirname, 'docs', dateString, 'Leverage.csv'))
+fs.copyFileSync('Leverage.csv', path.resolve(__dirname, 'docs', 'Leverage.csv'))
+fs.copyFileSync('Friends.json', path.resolve(__dirname, 'docs', dateString, 'Friends.json'))
+fs.copyFileSync('Friends.json', path.resolve(__dirname, 'docs', 'Friends.json'))
+fs.copyFileSync('DBPedia.csv', path.resolve(__dirname, 'docs', dateString, 'DBPedia.csv'))
+fs.copyFileSync('DBPedia.csv', path.resolve(__dirname, 'docs', 'DBPedia.csv'))
