@@ -1,6 +1,6 @@
 # Target in RML specification
 
-Repository for https://rml.io/specs/rml-target/
+Repository for https://w3id.org/kg-construct/rml-target-source
 
 ## Quickstart
 
