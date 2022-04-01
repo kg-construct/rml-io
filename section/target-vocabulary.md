@@ -86,11 +86,146 @@ DCAT dataset in N-Quads format with Zip compression:
 <pre class="ex-target">
 &lt;#DCATDump&gt; a rmlt:LogicalTarget;
      rmlt:target [ a dcat:Dataset;
-         dcat:distribution [ a dcat:Distribution;
-	        dcat:accessURL &lt;http://example.org/dcat-access-url&gt;;
-         ];
+       dcat:distribution [ a dcat:Distribution;
+         dcat:accessURL &lt;http://example.org/dcat-access-url&gt;;
+       ];
      ];
      rmlt:serialization formats:N-Quads;
      rmlt:compression comp:zip;
+.
+</pre>
+
+The following example shows a Target of a
+MQTT stream in N-Quads format without compression:
+
+<pre class="ex-target">
+&lt;#MQTTStream&gt; a rmlt:LogicalTarget;
+     rmlt:target [ a td:Thing;
+       td:hasPropertyAffordance [
+         td:hasForm [
+           # URL and content type
+           hctl:hasTarget "mqtt://localhost/topic";
+           hctl:forContentType "application/n-quads";
+           # Write only
+           hctl:hasOperationType "writeproperty" ;
+           # Set MQTT parameters through W3C WoT Binding Template for MQTT
+           mqv:controlPacketValue "SUBSCRIBE";
+           mqv:options ([ mqv:optionName "qos"; mqv:optionValue "1" ] [ mqv:optionName "dup" ]);
+         ];
+       ];
+     ];
+     rmlt:serialization formats:N-Quads;
+.
+</pre>
+
+The following example shows a Target of a
+TCP stream in N-Quads format without compression:
+
+<pre class="ex-target">
+&lt;#MQTTStream&gt; a rmlt:LogicalTarget;
+     rmlt:target [ a td:Thing;
+       td:hasPropertyAffordance [
+         td:hasForm [
+           # URL and content type
+           hctl:hasTarget "tcp://localhost:1234/topic";
+           hctl:forContentType "application/n-quads";
+           # Write only
+           hctl:hasOperationType "writeproperty" ;
+         ];
+       ];
+     ];
+     rmlt:serialization formats:N-Quads;
+.
+</pre>
+
+The following example shows a Target of a
+Kafka stream in N-Quads format without compression:
+
+<pre class="ex-target">
+&lt;#KafkaStream&gt; a rmlt:LogicalTarget;
+     rmlt:target [ a td:Thing;
+       td:hasPropertyAffordance [
+         td:hasForm [
+           # URL and content type
+           hctl:hasTarget "kafka://localhost:8089/topic";
+           hctl:forContentType "application/n-quads";
+           # Write only
+           hctl:hasOperationType "writeproperty" ;
+           # Kafka parameters through W3C WoT Binding Template for Kafka
+           kafka:groupId "MyAwesomeGroup";
+         ];
+       ];
+     ];
+     rmlt:serialization formats:N-Quads;
+.
+</pre>
+
+The following example shows a Target of a
+HTTP Server Sent Events in N-Quads format without compression:
+
+<pre class="ex-target">
+&lt;#HTTPSSEStream&gt; a rmlt:LogicalTarget;
+     rmlt:target [ a td:Thing;
+       td:hasPropertyAffordance [
+         td:hasForm [
+           # URL and content type
+           hctl:hasTarget "http://localhost:4242/";
+           hctl:forContentType "application/n-quads";
+           # Write only
+           hctl:hasOperationType "writeproperty" ;
+           # Set HTTP method and headers through W3C WoT Binding Template for HTTP
+           htv:methodName "POST";
+           htv:headers ([
+             htv:fieldName "User-Agent";
+             htv:fieldValue "Processor";
+           ]);
+           # Max-Age CoAP property has number 14. Value is in seconds RFC7252
+           cov:options ([ cov:optionName "14"; cov:optionValue "360" ]);
+         ];
+       ];
+     ];
+     rmlt:serialization formats:N-Quads;
+.
+</pre>
+
+The following example shows a Target of a
+CoAP in N-Quads format without compression:
+
+<pre class="ex-target">
+&lt;#HTTPSSEStream&gt; a rmlt:LogicalTarget;
+     rmlt:target [ a td:Thing;
+       td:hasPropertyAffordance [
+         td:hasForm [
+           # URL and content type
+           hctl:hasTarget "http://localhost:4242/";
+           hctl:forContentType "application/n-quads";
+           # Write only
+           hctl:hasOperationType "writeproperty" ;
+           # Set CoAP parameters through W3C WoT Binding Template for HTTP
+           cov:methodName "POST";
+         ];
+       ];
+     ];
+     rmlt:serialization formats:N-Quads;
+.
+</pre>
+
+The following example shows a Target of a
+WebSocket in N-Quads format without compression:
+
+<pre class="ex-target">
+&lt;#HTTPSSEStream&gt; a rmlt:LogicalTarget;
+     rmlt:target [ a td:Thing;
+       td:hasPropertyAffordance [
+         td:hasForm [
+           # URL and content type
+           hctl:hasTarget "ws://localhost:5555/";
+           hctl:forContentType "application/n-quads";
+           # Write only
+           hctl:hasOperationType "writeproperty" ;
+         ];
+       ];
+     ];
+     rmlt:serialization formats:N-Quads;
 .
 </pre>
