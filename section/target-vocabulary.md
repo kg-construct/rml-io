@@ -32,6 +32,10 @@ the compression algorithm to apply when exporting a knowledge graph.
 The compression format is specified through 
 the [comp](http://semweb.mmlab.be/ns/rml-compression#) namespace.
 By default, no compression is applied.
+- The **encoding** (`rmlt:encoding`) MAY specify which encoding must be used
+when exporting a knowledge graph.
+The encoding is specified through 
+[enc](http://semweb.mmlab.be/ns/rml-compression#) namespace.
 
 The Target definition requires only the target (`rmlt:target`) to be specified, 
 all other properties are optional.
@@ -41,6 +45,7 @@ all other properties are optional.
 | `rmlt:target`        | `rmlt:LogicalTarget` | `URI or Literal`   |
 | `rmlt:serialization` | `rmlt:LogicalTarget` | `formats:Format`   |
 | `rmlt:compression`   | `rmlt:LogicalTarget` | `comp:Compression` |
+| `rmlt:encoding`      | `rmlt:LogicalTarget` | `enc:Encoding`     |
 
 <figure>
   <img src="./resources/images/structure.png" alt="Target structure"/>
@@ -50,7 +55,7 @@ all other properties are optional.
 ### Examples {#examples}
 
 The following example show a Target of an RDF dump in Turtle [[Turtle]] 
-format with GZip compression:
+format with GZip compression and UTF-8 encoding:
 
 <pre class="ex-target">
 &lt;#VoIDDump&gt; a rmlt:LogicalTarget;
@@ -59,6 +64,7 @@ format with GZip compression:
      ];
      rmlt:serialization formats:Turtle;
      rmlt:compression comp:gzip;
+     rmlt:encoding enc:UTF-8;
 .
 </pre>
 
