@@ -106,8 +106,6 @@ MQTT stream in N-Quads format without compression:
            # URL and content type
            hctl:hasTarget "mqtt://localhost/topic";
            hctl:forContentType "application/n-quads";
-           # Write only
-           hctl:hasOperationType "writeproperty" ;
            # Set MQTT parameters through W3C WoT Binding Template for MQTT
            mqv:controlPacketValue "SUBSCRIBE";
            mqv:options ([ mqv:optionName "qos"; mqv:optionValue "1" ] [ mqv:optionName "dup" ]);
@@ -129,8 +127,6 @@ TCP stream in N-Quads format without compression:
            # URL and content type
            hctl:hasTarget "tcp://localhost:1234/topic";
            hctl:forContentType "application/n-quads";
-           # Write only
-           hctl:hasOperationType "writeproperty" ;
          ];
        ];
      ];
@@ -149,8 +145,6 @@ Kafka stream in N-Quads format without compression:
            # URL and content type
            hctl:hasTarget "kafka://localhost:8089/topic";
            hctl:forContentType "application/n-quads";
-           # Write only
-           hctl:hasOperationType "writeproperty" ;
            # Kafka parameters through W3C WoT Binding Template for Kafka
            kafka:groupId "MyAwesomeGroup";
          ];
@@ -171,8 +165,6 @@ HTTP Server Sent Events in N-Quads format without compression:
            # URL and content type
            hctl:hasTarget "http://localhost:4242/";
            hctl:forContentType "application/n-quads";
-           # Write only
-           hctl:hasOperationType "writeproperty" ;
            # Set HTTP method and headers through W3C WoT Binding Template for HTTP
            htv:methodName "POST";
            htv:headers ([
@@ -189,7 +181,7 @@ HTTP Server Sent Events in N-Quads format without compression:
 </pre>
 
 The following example shows a Target of a
-CoAP in N-Quads format without compression:
+HTTP Server Sent Events stream in N-Quads format without compression:
 
 <pre class="ex-target">
 &lt;#HTTPSSEStream&gt; a rml:LogicalTarget;
@@ -198,11 +190,7 @@ CoAP in N-Quads format without compression:
          td:hasForm [
            # URL and content type
            hctl:hasTarget "http://localhost:4242/";
-           hctl:forContentType "application/n-quads";
-           # Write only
-           hctl:hasOperationType "writeproperty" ;
-           # Set CoAP parameters through W3C WoT Binding Template for HTTP
-           cov:methodName "POST";
+           hctl:forContentType "text/event-stream";
          ];
        ];
      ];
@@ -221,8 +209,6 @@ WebSocket in N-Quads format without compression:
            # URL and content type
            hctl:hasTarget "ws://localhost:5555/";
            hctl:forContentType "application/n-quads";
-           # Write only
-           hctl:hasOperationType "writeproperty" ;
          ];
        ];
      ];
