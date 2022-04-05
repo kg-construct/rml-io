@@ -1,24 +1,20 @@
-## Source vocabulary {#source-vocabulary}
+## Logical Source vocabulary {#source-vocabulary}
 
-The Source vocabulary namespace is http://semweb.mmlab.be/ns/rml-source# 
+The LogicalSource vocabulary namespace is http://semweb.mmlab.be/ns/rml-source# 
 and it's prefix is `rml`.
 
-The Source vocabulary consists of a single class: `rml:Source` 
-to describe how a source can be accessed.
+The Logical Source vocabulary consists of 2 classes: 
 
-### Defining Sources {#defining-sources}
+1. `rml:LogicalSource` describes how data of a source can be referenced.
+2. `rml:Source` describes how a source can be accessed, it is part of a `rml:LogicalSource`.
 
-A Source is any data source providing data to be mapped to RDF triples.
+### Defining Logical Sources {#defining-logical-sources}
 
-A Source (`rml:LogicalSource`) contains the following properties:
+A Logical Source is any data source providing data to be mapped to RDF triples.
 
-- The **source** (`rml:source`) locates the data source.
-It is a URI [[RFC3986]] 
-or Literal [[RDF-Concepts]]
-that represents the input data source's location. 
-External vocabulary such as DCAT, VoID, SD is allowed here. 
-- The **logical iterator** (`rml:iterator`)
-defines the iteration loop used to map the data of the input source. 
+A Logical Source (`rml:LogicalSource`) MUST contains the following properties:
+
+- The **source** (`rml:source`) specifies how a source is accessed through a `rml:Source`.
 - The **reference formulation** (`rml:referenceFormulation`)
 defines the reference formulation used to refer to the elements
 of a data source.
@@ -26,7 +22,12 @@ The reference formulation must be specified in the case of databases,
 CSV, TSV, XML, and JSON data sources.
 By default `rr:SQL2008` for databases, `ql:CSV` for CSV and TSV data sources.
 XPath for XML and JSONPath for JSON and JSONL data sources.
-- The **iterator** (`rml:iterator`) defines how to refer to any of the following:
+
+The following properties MAY be specified in a Logical Source:
+
+- The **logical iterator** (`rml:iterator`)
+defines the iteration loop used to map the data of the input source. 
+The iterator defines how to refer to any of the following:
     - a row in the case of databases, CSV or TSV data sources
     - a repetition pattern expressed as an element in the case of XML documents,
     - a repetition pattern expressed as an object in the case
@@ -40,21 +41,22 @@ By default, the iterator is considered a row, if not specified:
   it is a valid reference to an element or an object respectively
   considering the reference formulation specified. 
 
-The Source definition requires only the source (`rml:source`) to be specified, 
-all other properties are optional.
+The Logical Source definition requires only the source (`rml:source`)
+to be specified, all other properties are optional.
+If a property is specified, it MUST NOT be specified multiple times.
 
 | Property                    | Domain               | Range                     |
 | --------------------------- | -------------------- | ------------------------- |
-| `rml:source`               | `rml:LogicalSource` | `URI or Literal`          |
-| `rml:referenceFormulation` | `rml:LogicalSource` | `ql:ReferenceFormulation` |
-| `rml:iterator`             | `rml:LogicalSource` | `Literal`                 |
+| `rml:source`                | `rml:LogicalSource`  | `Source`                  |
+| `rml:referenceFormulation`  | `rml:LogicalSource`  | `ql:ReferenceFormulation` |
+| `rml:iterator`              | `rml:LogicalSource`  | `Literal`                 |
 
 <figure>
   <img src="./resources/images/source-structure.png" alt="Source structure"/>
   <figcaption>The structure of Source</figcaption>
 </figure>
 
-### Reference formulations
+#### Reference formulations
 
 Each Logical Source has a reference formulation to define how to reference
 to elements of the data of the input source.
@@ -78,9 +80,11 @@ A `ql:Namespace` contains the following required properties:
 
 <pre class="ex-source">
 &lt;#XMLNamespace&gt; a rml:LogicalSource;
-     rml:source [ a dcat:Dataset;
-       dcat:distribution [ a dcat:Distribution;
-         dcat:accessURL &lt;file:///path/to/data.xml&gt;;
+     rml:source [ a rml:Source
+       rml:access [ a dcat:Dataset;
+         dcat:distribution [ a dcat:Distribution;
+           dcat:accessURL &lt;file:///path/to/data.xml&gt;;
+         ];
        ];
      ];
      rml:referenceFormulation [ a ql:XPathReferenceFormulation;
@@ -93,6 +97,56 @@ A `ql:Namespace` contains the following required properties:
 .
 </pre>
 
+### Source
+
+A Source (`rml:Source`) defines how a data source should be accessed.
+It MUST contain the follow properties:
+
+- **rml:access** describes where a source is located.
+It is a URI [[RFC3986]] 
+or Literal [[RDF-Concepts]]
+that represents the input data source's location. 
+External vocabulary such as DCAT, VoID, SD is allowed here. 
+
+Optionally, the following properties MAY be specified:
+
+- **rml:encoding** specifies the encoding of the data inside the source.
+Defaults to `enc:UTF-8` if not specified.
+- **rml:null** describes which data values inside the source
+should be considered as NULL.
+Defaults to the default NULL character if available.
+If none is available such as CSV, no values are considered NULL,
+unless specified.
+Example: CSV does not have a default NULL character,
+so no value is considered NULL.
+However, JSON has a NULL character specified: `null`,
+this one is used together with the ones specified through `rml:null`.
+- **rml:compression** specifies if the source is compressed
+and the used compression algorithm. Defaults to no compression.
+
+<pre class="ex-source">
+&lt;#JSON&gt; a rml:LogicalSource;
+     rml:source [ a rml:Source
+       rml:access [ a dcat:Dataset;
+         dcat:distribution [ a dcat:Distribution;
+           dcat:accessURL &lt;file:///path/to/data.json.gz&gt;;
+         ];
+       ];
+       rml:null ""; # empty string as NULL besides default null character
+       rml:compression comp:gzip; # GZip compression
+       rml:encoding enc:UTF-16; # UTF-16 encoding
+     ];
+     rml:referenceFormulation ql:JSONPath;
+     rml:iterator "$.jsonpath.expression";
+.
+</pre>
+
+| Property                    | Domain               | Range                     |
+| --------------------------- | -------------------- | ------------------------- |
+| `rml:access`                | `rml:Source`         | `URI or Literal`          |
+| `rml:encoding`              | `rml:Source`         | `enc:Encoding`            |
+| `rml:null`                  | `rml:Source`         | `Literal`                 |
+| `rml:compression`           | `rml:Source`         | `comp:Compression`        |
 
 ### Examples {#examples}
 
