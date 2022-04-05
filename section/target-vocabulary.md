@@ -48,7 +48,7 @@ all other properties are optional.
 | `rmlt:encoding`      | `rmlt:LogicalTarget` | `enc:Encoding`     |
 
 <figure>
-  <img src="./resources/images/structure.png" alt="Target structure"/>
+  <img src="./resources/images/target-structure.png" alt="Target structure"/>
   <figcaption>The structure of Target</figcaption>
 </figure>
 

@@ -50,7 +50,7 @@ all other properties are optional.
 | `rmls:iterator`             | `rmls:LogicalSource` | `Literal`                 |
 
 <figure>
-  <img src="./resources/images/structure.png" alt="Source structure"/>
+  <img src="./resources/images/source-structure.png" alt="Source structure"/>
   <figcaption>The structure of Source</figcaption>
 </figure>
 
