@@ -1,16 +1,16 @@
 ## Source vocabulary {#source-vocabulary}
 
 The Source vocabulary namespace is http://semweb.mmlab.be/ns/rml-source# 
-and it's prefix is `rmls`.
+and it's prefix is `rml`.
 
-The Source vocabulary consists of a single class: `rmls:Source` 
+The Source vocabulary consists of a single class: `rml:Source` 
 to describe how a source can be accessed.
 
 ### Defining Sources {#defining-sources}
 
 A Source is any data source providing data to be mapped to RDF triples.
 
-A Source (`rmls:LogicalSource`) contains the following properties:
+A Source (`rml:LogicalSource`) contains the following properties:
 
 - The **source** (`rml:source`) locates the data source.
 It is a URI [[RFC3986]] 
@@ -40,27 +40,67 @@ By default, the iterator is considered a row, if not specified:
   it is a valid reference to an element or an object respectively
   considering the reference formulation specified. 
 
-The Source definition requires only the source (`rmls:source`) to be specified, 
+The Source definition requires only the source (`rml:source`) to be specified, 
 all other properties are optional.
 
 | Property                    | Domain               | Range                     |
-| --------------------        | -------------------- | ------------------        |
-| `rmls:source`               | `rmls:LogicalSource` | `URI or Literal`          |
-| `rmls:referenceFormulation` | `rmls:LogicalSource` | `ql:ReferenceFormulation` |
-| `rmls:iterator`             | `rmls:LogicalSource` | `Literal`                 |
+| --------------------------- | -------------------- | ------------------------- |
+| `rml:source`               | `rml:LogicalSource` | `URI or Literal`          |
+| `rml:referenceFormulation` | `rml:LogicalSource` | `ql:ReferenceFormulation` |
+| `rml:iterator`             | `rml:LogicalSource` | `Literal`                 |
 
 <figure>
   <img src="./resources/images/source-structure.png" alt="Source structure"/>
   <figcaption>The structure of Source</figcaption>
 </figure>
 
+### Reference formulations
+
+Each Logical Source has a reference formulation to define how to reference
+to elements of the data of the input source.
+Several reference formulations (`rml:ReferenceFormulation`)
+are defined in this specification:
+
+- `rr:SQL2008`: SQL 2008 standard for relational databases
+- `ql:CSV`: CSV or TSV data sources
+- `ql:JSONPath`: JSON documents
+- `ql:XPath`: XML documents, a shortcut for `ql:XPathReferenceFormulation`
+with default parameters
+- `ql:XPathReferenceFormulation`: XML documents with optionally
+the definition of XML namespaces used in references.
+By default, no namespaces are defined.
+
+`ql:XPathReferenceFormulation` may specify zero or more 
+`ql:namespace` properties with a `ql:Namespace`.
+A `ql:Namespace` contains the following required properties:
+ - `ql:namespacePrefix`: A Literal with the prefix used for the XML namespace.
+ - `ql:namespaceURL`: A Literal with the URL identifying the XML namespace.
+
+<pre class="ex-source">
+&lt;#XMLNamespace&gt; a rml:LogicalSource;
+     rml:source [ a dcat:Dataset;
+       dcat:distribution [ a dcat:Distribution;
+         dcat:accessURL &lt;file:///path/to/data.xml&gt;;
+       ];
+     ];
+     rml:referenceFormulation [ a ql:XPathReferenceFormulation;
+       ql:namespace [ a ql:Namespace;
+         ql:namespacePrefix "ex";
+         ql:namespaceURL "http://example.org";
+       ];
+     ];
+     rml:iterator "/xpath/ex:namespace/expression";
+.
+</pre>
+
+
 ### Examples {#examples}
 
 The following example show a Source of an CSV file.
 
 <pre class="ex-source">
-&lt;#CSV&gt; a rmls:LogicalSource;
-     rmls:source [ a csvw:Table;
+&lt;#CSV&gt; a rml:LogicalSource;
+     rml:source [ a csvw:Table;
          csvw:url "/path/to/data.csv";
      ];
      rml:referenceFormulation ql:CSV;
@@ -72,8 +112,8 @@ Note that there is not `rml:iterator` is present because its default is row.
 The following example shows a Source specified for a database.
 
 <pre class="ex-source">
-&lt;#RDB&gt; a rmls:LogicalSource;
-     rmls:source [ a d2rq:Database;
+&lt;#RDB&gt; a rml:LogicalSource;
+     rml:source [ a d2rq:Database;
         d2rq:jdbcDSN "jdbc:mysql://localhost/example";
         d2rq:jdbcDriver "com.mysql.jdbc.Driver";
         d2rq:username "user";
@@ -89,8 +129,8 @@ The following example shows a Source of a
 XML file
 
 <pre class="ex-source">
-&lt;#XML&gt; a rmls:LogicalSource;
-     rmls:source [ a dcat:Dataset;
+&lt;#XML&gt; a rml:LogicalSource;
+     rml:source [ a dcat:Dataset;
        dcat:distribution [ a dcat:Distribution;
          dcat:accessURL &lt;file:///path/to/data.xml&gt;;
        ];
@@ -101,8 +141,8 @@ XML file
 </pre>
 
 <pre class="ex-source">
-&lt;#JSON&gt; a rmls:LogicalSource;
-     rmls:source [ a dcat:Dataset;
+&lt;#JSON&gt; a rml:LogicalSource;
+     rml:source [ a dcat:Dataset;
        dcat:distribution [ a dcat:Distribution;
          dcat:accessURL &lt;file:///path/to/data.json&gt;;
        ];
