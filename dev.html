@@ -14,6 +14,7 @@
         pre.ex-mapping, 
         pre.ex-output,
         pre.ex-target,
+        pre.ex-source,
         pre.ex-access {
             margin-top: 1.5em;
             padding: 1em; 
@@ -23,6 +24,7 @@
         pre.ex-mapping:before,
         pre.ex-output:before, 
         pre.ex-target:before,
+        pre.ex-source:before,
         pre.ex-access:before {
             background: white;
             display: block;
@@ -64,6 +66,17 @@
         }
         pre.ex-output:before {
             content: "Example output RDF";
+        }
+        /* Source's description example */
+        pre.ex-source {
+            background: #ffc8d4;
+        }
+        pre.ex-source,
+        pre.ex-source:before {
+            border: 1px solid #bbb;
+        }
+        pre.ex-source:before {
+            content: "Example Source description";
         }
         /* Target's description example */
         pre.ex-target {

@@ -32,6 +32,7 @@ XPath for XML and JSONPath for JSON and JSONL data sources.
     - a repetition pattern expressed as an object in the case
     of a JSON data sources. 
     - etc...
+
 By default, the iterator is considered a row, if not specified:
   - In the case of databases, CSV or TSV data sources,
   the value of the `rml:iterator`, if not specified, is a "row". 
@@ -57,7 +58,7 @@ all other properties are optional.
 
 The following example show a Source of an CSV file.
 
-<pre class="ex-target">
+<pre class="ex-source">
 &lt;#CSV&gt; a rmls:LogicalSource;
      rmls:source [ a csvw:Table;
          csvw:url "/path/to/data.csv";
@@ -70,7 +71,7 @@ Note that there is not `rml:iterator` is present because its default is row.
 
 The following example shows a Source specified for a database.
 
-<pre class="ex-target">
+<pre class="ex-source">
 &lt;#RDB&gt; a rmls:LogicalSource;
      rmls:source [ a d2rq:Database;
         d2rq:jdbcDSN "jdbc:mysql://localhost/example";
@@ -87,7 +88,7 @@ Note that there is not `rml:iterator` is present because its default is row.
 The following example shows a Source of a 
 XML file
 
-<pre class="ex-target">
+<pre class="ex-source">
 &lt;#XML&gt; a rmls:LogicalSource;
      rmls:source [ a dcat:Dataset;
        dcat:distribution [ a dcat:Distribution;
@@ -99,7 +100,7 @@ XML file
 .
 </pre>
 
-<pre class="ex-target">
+<pre class="ex-source">
 &lt;#JSON&gt; a rmls:LogicalSource;
      rmls:source [ a dcat:Dataset;
        dcat:distribution [ a dcat:Distribution;
