@@ -1,10 +1,10 @@
 <!DOCTYPE html><html dir="ltr" lang="en"><head>
-<meta charset="utf-8">
-<meta name="generator" content="ReSpec 26.7.0">
+<meta charset="utf8">
+<meta name="generator" content="ReSpec 32.3.0">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <style>
 dfn{cursor:pointer}
-.dfn-panel{position:absolute;z-index:35;min-width:300px;max-width:500px;padding:.5em .75em;margin-top:.6em;font:small Helvetica Neue,sans-serif,Droid Sans Fallback;background:#fff;color:#000;box-shadow:0 1em 3em -.4em rgba(0,0,0,.3),0 0 1px 1px rgba(0,0,0,.05);border-radius:2px}
+.dfn-panel{position:absolute;z-index:35;min-width:300px;max-width:500px;padding:.5em .75em;margin-top:.6em;font-family:"Helvetica Neue",sans-serif;font-size:small;background:#fff;color:#000;box-shadow:0 1em 3em -.4em rgba(0,0,0,.3),0 0 1px 1px rgba(0,0,0,.05);border-radius:2px}
 .dfn-panel:not(.docked)>.caret{position:absolute;top:-9px}
 .dfn-panel:not(.docked)>.caret::after,.dfn-panel:not(.docked)>.caret::before{content:"";position:absolute;border:10px solid transparent;border-top:0;border-bottom:10px solid #fff;top:0}
 .dfn-panel:not(.docked)>.caret::before{border-bottom:9px solid #a2a9b1}
@@ -23,7 +23,7 @@ dfn{cursor:pointer}
 .dfn-panel.docked{position:fixed;left:.5em;top:unset;bottom:2em;margin:0 auto;max-width:calc(100vw - .75em * 2 - .5em - .2em * 2);max-height:30vh;overflow:auto}
 </style>
     
-<title>DataIO</title>
+<title>Source &amp; Target</title>
     
     
 <link rel="stylesheet" type="text/css" href="../resources/css/extras.css">
@@ -39,6 +39,7 @@ dfn{cursor:pointer}
         pre.ex-mapping, 
         pre.ex-output,
         pre.ex-target,
+        pre.ex-source,
         pre.ex-access {
             margin-top: 1.5em;
             padding: 1em; 
@@ -48,6 +49,7 @@ dfn{cursor:pointer}
         pre.ex-mapping:before,
         pre.ex-output:before, 
         pre.ex-target:before,
+        pre.ex-source:before,
         pre.ex-access:before {
             background: white;
             display: block;
@@ -90,6 +92,17 @@ dfn{cursor:pointer}
         pre.ex-output:before {
             content: "Example output RDF";
         }
+        /* Source's description example */
+        pre.ex-source {
+            background: #ffc8d4;
+        }
+        pre.ex-source,
+        pre.ex-source:before {
+            border: 1px solid #bbb;
+        }
+        pre.ex-source:before {
+            content: "Example Source description";
+        }
         /* Target's description example */
         pre.ex-target {
             background: #ffc8d4;
@@ -128,8 +141,7 @@ dfn{cursor:pointer}
 25%{transform:scale(1.25,1.25);opacity:.75}
 100%{transform:scale(1,1)}
 }
-.hljs{background:0 0!important}
-a abbr,h1 abbr,h2 abbr,h3 abbr,h4 abbr,h5 abbr,h6 abbr{border:none}
+:is(h1,h2,h3,h4,h5,h6,a) abbr{border:none}
 dfn{font-weight:700}
 a.internalDFN{color:inherit;border-bottom:1px solid #99c;text-decoration:none}
 a.externalDFN{color:inherit;border-bottom:1px dotted #ccc;text-decoration:none}
@@ -142,8 +154,6 @@ a.bibref{text-decoration:none}
 }
 #references :target{background:#eaf3ff;animation:pop .4s ease-in-out 0s 1}
 cite .bibref{font-style:normal}
-code{color:#c63501}
-th code{color:inherit}
 a[href].orcid{padding-left:4px;padding-right:4px}
 a[href].orcid>svg{margin-bottom:-2px}
 .toc a,.tof a{text-decoration:none}
@@ -168,26 +178,23 @@ details.respec-tests-details[open]{z-index:999999;position:absolute;border:thin 
 details.respec-tests-details[open]>summary{border-bottom:thin solid #cad3e2;padding-left:1em;margin-bottom:1em;line-height:2em}
 details.respec-tests-details>ul{width:100%;margin-top:-.3em}
 details.respec-tests-details>li{padding-left:1em}
-a[href].self-link:hover{opacity:1;text-decoration:none;background-color:transparent}
-h2,h3,h4,h5,h6{position:relative}
+.self-link:hover{opacity:1;text-decoration:none;background-color:transparent}
 aside.example .marker>a.self-link{color:inherit}
-h2>a.self-link,h3>a.self-link,h4>a.self-link,h5>a.self-link,h6>a.self-link{border:none;color:inherit;font-size:83%;height:2em;left:-1.6em;opacity:.5;position:absolute;text-align:center;text-decoration:none;top:0;transition:opacity .2s;width:2em}
-h2>a.self-link::before,h3>a.self-link::before,h4>a.self-link::before,h5>a.self-link::before,h6>a.self-link::before{content:"§";display:block}
+.header-wrapper{display:flex;align-items:baseline}
+:is(h2,h3,h4,h5,h6):not(#toc>h2,#abstract>h2,#sotd>h2,.head>h2){position:relative;left:-.5em}
+:is(h2,h3,h4,h5,h6):not(#toch2)+a.self-link{color:inherit;order:-1;position:relative;left:-1.1em;font-size:1rem;opacity:.5}
+:is(h2,h3,h4,h5,h6)+a.self-link::before{content:"§";text-decoration:none;color:var(--heading-text)}
+:is(h2,h3)+a.self-link{top:-.2em}
+:is(h4,h5,h6)+a.self-link::before{color:#000}
 @media (max-width:767px){
 dd{margin-left:0}
-h2>a.self-link,h3>a.self-link,h4>a.self-link,h5>a.self-link,h6>a.self-link{left:auto;top:auto}
 }
 @media print{
 .removeOnSave{display:none}
 }
 </style>
-<meta name="description" content="This document describes Target, 
-a formal model and a common representation 
-for specifying how a Knowledge Graph should be exported to a given target. 
-Target reuses existing data access descriptions 
-and is therefore not limited to a specific set of targets. 
-The current document describes the Target concepts 
-through definitions and examples.">
+<meta name="description" content="This document describes Logical Source and Logical Target
+to access data sources and targets.">
 <style>
 .hljs{display:block;overflow-x:auto;padding:.5em;color:#383a42;background:#fafafa}
 .hljs-comment,.hljs-quote{color:#717277;font-style:italic}
@@ -294,24 +301,25 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
   "doRdfa": "true",
   "processVersion": 2021,
   "specStatus": "unofficial",
-  "shortName": "dataio",
+  "shortName": "rml-target-source",
   "copyrightStart": "2021",
-  "edDraftURI": "https://rml.io/specs/dataio",
+  "edDraftURI": "https://kg-construct.github.io/rml-target-source-spec/",
   "editors": [
     {
       "name": "Dylan Van Assche",
       "mailto": "dylan.vanassche@ugent.be",
       "company": "Ghent University &ndash; imec &ndash; IDLab",
-      "url": "https://dylanvanassche.be/#me",
       "orcidid": "0000-0002-7195-9935",
-      "companyURL": "http://idlab.technology/"
+      "companyURL": "http://idlab.technology/",
+      "url": "mailto:dylan.vanassche@ugent.be"
     },
     {
       "name": "Anastasia Dimou",
-      "mailto": "anastasia.dimou@ugent.be",
-      "company": "Ghent University &ndash; imec &ndash; IDLab",
+      "mailto": "anastasia.dimou@kuleuven.be",
+      "company": "KU Leuven, Department of Computer Science",
       "orcidid": "0000-0003-2138-7972",
-      "companyURL": "http://idlab.technology/"
+      "companyURL": "https://wms.cs.kuleuven.be/cs/english/",
+      "url": "mailto:anastasia.dimou@kuleuven.be"
     }
   ],
   "otherLinks": [
@@ -343,58 +351,70 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
       ]
     }
   ],
-  "publishISODate": "2021-05-18T00:00:00.000Z",
-  "generatedSubtitle": "Unofficial Draft 18 May 2021"
+  "publishISODate": "2022-11-08T00:00:00.000Z",
+  "generatedSubtitle": "Unofficial Draft 08 November 2022"
 }</script>
-<link rel="stylesheet" href="https://www.w3.org/StyleSheets/TR/2016/W3C-UD"></head>
+<link rel="stylesheet" href="https://www.w3.org/StyleSheets/TR/2021/W3C-UD"></head>
 <body class="h-entry"><div class="head">
-     <h1 id="title" class="title">DataIO</h1>
     
-    <h2>
-      Unofficial Draft
-      <time class="dt-published" datetime="2021-05-18">18 May 2021</time>
-    </h2>
-    <dl>
-      
-      <dt>Latest editor's draft:</dt><dd><a href="https://rml.io/specs/dataio">https://rml.io/specs/dataio</a></dd>
-      
-      
-      
-      
-      
-      <dt>Editors:</dt>
-      <dd class="p-author h-card vcard"><a class="ed_mailto u-email email p-name" href="mailto:dylan.vanassche@ugent.be">Dylan Van Assche</a>
-            (<a class="p-org org h-org h-card" href="http://idlab.technology/">Ghent University – imec – IDLab</a>)
-          </dd><dd class="p-author h-card vcard"><a class="ed_mailto u-email email p-name" href="mailto:anastasia.dimou@ugent.be">Anastasia Dimou</a>
-            (<a class="p-org org h-org h-card" href="http://idlab.technology/">Ghent University – imec – IDLab</a>)
-          </dd>
-      
-      
-      <dt>This Version</dt><dd>
+    <h1 id="title" class="title">Source &amp; Target</h1> 
+    <p id="w3c-state">Unofficial Draft <time class="dt-published" datetime="2022-11-08">08 November 2022</time></p>
+    <details open="">
+      <summary>More details about this document</summary>
+      <dl>
+        
+        <dt>Latest published version:</dt><dd>
+                <a href="https://www.w3.org/rml-target-source/">https://www.w3.org/rml-target-source/</a>
+              </dd>
+        <dt>Latest editor's draft:</dt><dd><a href="https://kg-construct.github.io/rml-target-source-spec/">https://kg-construct.github.io/rml-target-source-spec/</a></dd>
+        
+        
+        
+        
+        
+        
+        <dt>Editors:</dt><dd class="editor p-author h-card vcard">
+    <a class="ed_mailto u-email email p-name" href="mailto:dylan.vanassche@ugent.be">Dylan Van Assche</a> (<a class="p-org org h-org" href="http://idlab.technology/">Ghent University – imec – IDLab</a>)
+  </dd><dd class="editor p-author h-card vcard">
+    <a class="ed_mailto u-email email p-name" href="mailto:anastasia.dimou@kuleuven.be">Anastasia Dimou</a> (<a class="p-org org h-org" href="https://wms.cs.kuleuven.be/cs/english/">KU Leuven, Department of Computer Science</a>)
+  </dd>
+        
+        
+        
+        
+        <dt>This Version</dt><dd>
     <a href="https://rml.io/specs/dataio/20221108/">https://rml.io/specs/dataio/20221108/</a>
   </dd><dt>Previous Version</dt><dd>
     <a href="https://rml.io/specs/dataio/20210518/">https://rml.io/specs/dataio/20210518/</a>
   </dd><dt>Website</dt><dd>
     <a href="https://rml.io/">https://rml.io/</a>
   </dd>
-    </dl>
-    
+      </dl>
+    </details>
     
     
     <p class="copyright">
-      This document is licensed under a
-      <a rel="license" href="https://creativecommons.org/licenses/by/4.0/legalcode" class="subfoot">Creative Commons Attribution 4.0 International Public License</a>
-      (CC-BY).
+      Copyright ©
+      2021-2022
+      the document editors/authors.
+      Text is available under the
+            <a rel="license" href="https://creativecommons.org/licenses/by/4.0/legalcode">Creative Commons Attribution 4.0 International Public License</a>; additional terms may apply.
     </p>
     <hr title="Separator for header">
   </div>
-<section id="abstract" class="introductory"><h2 id="abstract">Abstract</h2><p>This document describes <em>Target</em>, 
+<section id="abstract" class="introductory"><h2 id="abstract">Abstract</h2><p>This document describes <em>Logical Source</em> and <em>Logical Target</em>
+to access data sources and targets.</p>
+<p>A <em>Logical Source</em> is a formal model and common representation
+for describing access to data sources.
+A <em>Logical Target</em> is
 a formal model and a common representation 
-for specifying how a Knowledge Graph should be exported to a given target. 
-Target reuses existing data access descriptions 
-and is therefore not limited to a specific set of targets. 
-The current document describes the Target concepts 
-through definitions and examples.</p><p>The version of this document is <em>v1.0.0</em>.</p></section>
+for specifying how a Knowledge Graph should be exported to a given target. </p>
+<p>Logical Source and Logical Target reuses existing data access descriptions 
+and is therefore not limited to a specific set of targets or data sources. 
+The current document describes the Logical Source and Logical Target concepts 
+through definitions and examples.</p>
+<p>The version of this document is <em>v0.2</em>.</p>
+</section>
 
 <section id="sotd" class="introductory"><h2>Status of This Document</h2><p>
       This document is a draft of a potential specification. It has no official
@@ -402,27 +422,38 @@ through definitions and examples.</p><p>The version of this document is <em>v1.0
       any standards organization.
     </p>
     <p data-format="markdown"><p>This is an early draft,
-yet efforts are made to keep things stable.</p></p>
-</section><nav id="toc"><h2 class="introductory" id="table-of-contents">Table of Contents</h2><ol class="toc"><li class="tocline"><a class="tocxref" href="#conformance"><bdi class="secno">1. </bdi>Conformance</a></li><li class="tocline"><a class="tocxref" href="#overview"><bdi class="secno">2. </bdi>Overview</a></li><li class="tocline"><a class="tocxref" href="#target-vocabulary"><bdi class="secno">3. </bdi>Target vocabulary</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#defining-targets"><bdi class="secno">3.1 </bdi>Defining Targets</a></li><li class="tocline"><a class="tocxref" href="#examples"><bdi class="secno">3.2 </bdi>Examples</a></li></ol></li><li class="tocline"><a class="tocxref" href="#references"><bdi class="secno">A. </bdi>References</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#normative-references"><bdi class="secno">A.1 </bdi>Normative references</a></li></ol></li></ol></nav>
+yet efforts are made to keep things stable.</p>
+</p>
+</section><nav id="toc"><h2 class="introductory" id="table-of-contents">Table of Contents</h2><ol class="toc"><li class="tocline"><a class="tocxref" href="#abstract">Abstract</a></li><li class="tocline"><a class="tocxref" href="#sotd">Status of This Document</a></li><li class="tocline"><a class="tocxref" href="#conformance"><bdi class="secno">1. </bdi>Conformance</a></li><li class="tocline"><a class="tocxref" href="#overview"><bdi class="secno">2. </bdi>Overview</a></li><li class="tocline"><a class="tocxref" href="#source-vocabulary"><bdi class="secno">3. </bdi>Logical Source vocabulary</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#defining-logical-sources"><bdi class="secno">3.1 </bdi>Defining Logical Sources</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#reference-formulations"><bdi class="secno">3.1.1 </bdi>Reference formulations</a></li></ol></li><li class="tocline"><a class="tocxref" href="#source"><bdi class="secno">3.2 </bdi>Source</a></li><li class="tocline"><a class="tocxref" href="#examples"><bdi class="secno">3.3 </bdi>Examples</a></li></ol></li><li class="tocline"><a class="tocxref" href="#target-vocabulary"><bdi class="secno">4. </bdi>Logical Target vocabulary</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#defining-targets"><bdi class="secno">4.1 </bdi>Defining Logical Targets</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#serialization-formats"><bdi class="secno">4.1.1 </bdi>Serialization formats</a></li><li class="tocline"><a class="tocxref" href="#compression-formats"><bdi class="secno">4.1.2 </bdi>Compression formats</a></li><li class="tocline"><a class="tocxref" href="#encoding-formats"><bdi class="secno">4.1.3 </bdi>Encoding formats</a></li></ol></li><li class="tocline"><a class="tocxref" href="#target"><bdi class="secno">4.2 </bdi>Target</a></li><li class="tocline"><a class="tocxref" href="#examples"><bdi class="secno">4.3 </bdi>Examples</a></li></ol></li><li class="tocline"><a class="tocxref" href="#single-targets"><bdi class="secno">5. </bdi>Single targets</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#subject-map"><bdi class="secno">5.1 </bdi>Subject Map</a></li><li class="tocline"><a class="tocxref" href="#predicate-map"><bdi class="secno">5.2 </bdi>Predicate Map</a></li><li class="tocline"><a class="tocxref" href="#object-map"><bdi class="secno">5.3 </bdi>Object Map</a></li><li class="tocline"><a class="tocxref" href="#graph-map"><bdi class="secno">5.4 </bdi>Graph Map</a></li><li class="tocline"><a class="tocxref" href="#language-map"><bdi class="secno">5.5 </bdi>Language Map</a></li></ol></li><li class="tocline"><a class="tocxref" href="#multiple-targets"><bdi class="secno">6. </bdi>Combining multiple Targets</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#multiple-targets-same-term-map"><bdi class="secno">6.1 </bdi>Multiple Targets in the same Term Map</a></li><li class="tocline"><a class="tocxref" href="#subject-and-predicate-map"><bdi class="secno">6.2 </bdi>Subject Map and Predicate Map</a></li><li class="tocline"><a class="tocxref" href="#subject-and-object-map"><bdi class="secno">6.3 </bdi>Subject Map and Object Map</a></li><li class="tocline"><a class="tocxref" href="#predicate-and-object-map"><bdi class="secno">6.4 </bdi>Predicate Map and Object Map</a></li><li class="tocline"><a class="tocxref" href="#subject-predicate-and-object-map"><bdi class="secno">6.5 </bdi>Subject Map, Predicate Map and Object Map</a></li><li class="tocline"><a class="tocxref" href="#subject-and-graph-map"><bdi class="secno">6.6 </bdi>Subject Map and Graph Map</a></li><li class="tocline"><a class="tocxref" href="#predicate-and-graph-map"><bdi class="secno">6.7 </bdi>Predicate Map and Graph Map</a></li><li class="tocline"><a class="tocxref" href="#object-and-graph-map"><bdi class="secno">6.8 </bdi>Object Map and Graph Map</a></li><li class="tocline"><a class="tocxref" href="#language-and-graph-map"><bdi class="secno">6.9 </bdi>Language Map and Graph Map</a></li><li class="tocline"><a class="tocxref" href="#language-and-object-map"><bdi class="secno">6.10 </bdi>Language Map and Object Map</a></li><li class="tocline"><a class="tocxref" href="#multiple-predicate-map"><bdi class="secno">6.11 </bdi>Multiple Predicate Maps</a></li><li class="tocline"><a class="tocxref" href="#multiple-object-map"><bdi class="secno">6.12 </bdi>Multiple Object Maps</a></li><li class="tocline"><a class="tocxref" href="#multiple-graph-map"><bdi class="secno">6.13 </bdi>Multiple Graph Maps</a></li></ol></li><li class="tocline"><a class="tocxref" href="#overriding-targets"><bdi class="secno">7. </bdi>Overriding Targets</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#seperate-triples-map"><bdi class="secno">7.1 </bdi>Separate Triples Map</a></li><li class="tocline"><a class="tocxref" href="#conditions"><bdi class="secno">7.2 </bdi>Conditions</a></li></ol></li><li class="tocline"><a class="tocxref" href="#references"><bdi class="secno">A. </bdi>References</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#normative-references"><bdi class="secno">A.1 </bdi>Normative references</a></li></ol></li></ol></nav>
 
-<section id="conformance"><h2 id="x1-conformance"><bdi class="secno">1. </bdi>Conformance<a class="self-link" aria-label="§" href="#conformance"></a></h2><p>As well as sections marked as non-normative, all authoring guidelines, diagrams, examples, and notes in this specification are non-normative. Everything else in this specification is normative.</p><p>
-        The key words <em class="rfc2119">MAY</em> and <em class="rfc2119">MUST</em> in this document
+<section id="conformance"><div class="header-wrapper"><h2 id="x1-conformance"><bdi class="secno">1. </bdi>Conformance</h2><a class="self-link" href="#conformance" aria-label="Permalink for Section 1."></a></div><p>As well as sections marked as non-normative, all authoring guidelines, diagrams, examples, and notes in this specification are non-normative. Everything else in this specification is normative.</p><p>
+        The key words <em class="rfc2119">MAY</em>, <em class="rfc2119">MUST</em>, and <em class="rfc2119">MUST NOT</em> in this document
         are to be interpreted as described in
         <a href="https://datatracker.ietf.org/doc/html/bcp14">BCP 14</a>
         [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc2119" title="Key words for use in RFCs to Indicate Requirement Levels">RFC2119</a></cite>] [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc8174" title="Ambiguity of Uppercase vs Lowercase in RFC 2119 Key Words">RFC8174</a></cite>]
         when, and only when, they appear in all capitals, as shown here.
       </p></section>
 
-<section id="overview-0"><h2 id="overview"><bdi class="secno">2. </bdi>Overview<a class="self-link" aria-label="§" href="#overview"></a></h2><p><em>This section is non-normative.</em></p><p>This document specifies <em>Target</em>, 
+<section id="overview-0"><div class="header-wrapper"><h2 id="overview"><bdi class="secno">2. </bdi>Overview</h2><a class="self-link" href="#overview" aria-label="Permalink for Section 2."></a></div><p><em>This section is non-normative.</em></p>
+<p>This document specifies <em>Logical Source</em> and <em>Logical Target</em>, 
+Logical Source is a description
+for specifying how a data source should be accessed.
+A Logical Source description is not limited to a specific Source
+which allows to access any type of Source and provides a reference formulation
+to refer to data inside the Source.</p>
+<p>Logical Target is
 a description for defining how a generated 
 RDF [<cite><a class="bibref" data-link-type="biblio" href="#bib-rdf-concepts" title="Resource Description Framework (RDF): Concepts and Abstract Syntax">RDF-Concepts</a></cite>]
 knowledge graph must be exported. 
-A Target description is not tailored towards a specific Target 
-which allows to export the generated RDF triples to any type of Target. 
-Target leverages the access descriptions of data access 
-such as DCAT [<cite><a class="bibref" data-link-type="biblio" href="#bib-dcat" title="Data Catalog Vocabulary (DCAT) - Version 2">DCAT</a></cite>], VoID [<cite><a class="bibref" data-link-type="biblio" href="#bib-void" title="Describing Linked Datasets with the VoID Vocabulary">VoID</a></cite>], SD [<cite><a class="bibref" data-link-type="biblio" href="#bib-sd" title="SPARQL 1.1 Service Description">SD</a></cite>], etc. 
-and allows fine grained control over where each RDF triple is exported to.</p><p>In this document, examples assume 
-the following namespace prefix bindings unless otherwise stated:</p><table>
+A Logical Target description is not tailored towards a specific Target 
+which allows to export the generated RDF triples to any type of Target
+and provides fine-grained control over where each RDF triple is exported to.</p>
+<p>Logical Source and Logical Target leverage
+the access descriptions of data access 
+such as DCAT [<cite><a class="bibref" data-link-type="biblio" href="#bib-dcat" title="Data Catalog Vocabulary (DCAT) - Version 2">DCAT</a></cite>], VoID [<cite><a class="bibref" data-link-type="biblio" href="#bib-void" title="Describing Linked Datasets with the VoID Vocabulary">VoID</a></cite>], SD [<cite><a class="bibref" data-link-type="biblio" href="#bib-sd" title="SPARQL 1.1 Service Description">SD</a></cite>], etc. </p>
+<p>In this document, examples assume 
+the following namespace prefix bindings unless otherwise stated:</p>
+<table>
 <thead>
 <tr>
 <th>Prefix</th>
@@ -430,8 +461,8 @@ the following namespace prefix bindings unless otherwise stated:</p><table>
 </tr>
 </thead>
 <tbody><tr>
-<td><code>rmlt</code></td>
-<td><a href="http://semweb.mmlab.be/ns/rml-target#">http://semweb.mmlab.be/ns/rml-target#</a></td>
+<td><code>rml</code></td>
+<td><a href="http://semweb.mmlab.be/ns/rml#">http://semweb.mmlab.be/ns/rml#</a></td>
 </tr>
 <tr>
 <td><code>formats</code></td>
@@ -453,33 +484,68 @@ the following namespace prefix bindings unless otherwise stated:</p><table>
 <td><code>dcat</code></td>
 <td><a href="http://www.w3.org/ns/dcat#">http://www.w3.org/ns/dcat#</a></td>
 </tr>
-</tbody></table><p>The examples are contained in pink colored boxes:</p><pre class="ex-target" aria-busy="false"><code class="hljs"># This box contains the example's Target description.</code></pre></section>
+<tr>
+<td><code>td</code></td>
+<td><a href="https://www.w3.org/2019/wot/td#">https://www.w3.org/2019/wot/td#</a></td>
+</tr>
+<tr>
+<td><code>hctl</code></td>
+<td><a href="https://www.w3.org/2019/wot/hypermedia#">https://www.w3.org/2019/wot/hypermedia#</a></td>
+</tr>
+<tr>
+<td><code>htv</code></td>
+<td><a href="http://www.w3.org/2011/http#">http://www.w3.org/2011/http#</a></td>
+</tr>
+</tbody></table>
+<p>The examples are contained in pink colored boxes:</p>
+<pre class="ex-source" aria-busy="false"><code class="hljs"># This box contains the example's Logical Source description.</code></pre>
 
-<section id="target-vocabulary-0"><h2 id="target-vocabulary"><bdi class="secno">3. </bdi>Target vocabulary<a class="self-link" aria-label="§" href="#target-vocabulary"></a></h2><p>The Target vocabulary namespace is <a href="http://semweb.mmlab.be/ns/rml-target#">http://semweb.mmlab.be/ns/rml-target#</a> 
-and it's prefix is <code>rmlt</code>.</p><p>The Target vocabulary consists of a single class: <code>rmlt:LogicalTarget</code> 
-to describe how a knowledge graph must be exported after generation. </p><section id="defining-targets-0"><h3 id="defining-targets"><bdi class="secno">3.1 </bdi>Defining Targets<a class="self-link" aria-label="§" href="#defining-targets"></a></h3><p>A Target is any target to where RDF triples are exported to.</p><p>A Target (<code>rmlt:LogicalTarget</code>) contains the following properties:</p><ul>
-<li>The <strong>target</strong> (<code>rmlt:target</code>) locates the output target.
-It is a URI [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc3986" title="Uniform Resource Identifier (URI): Generic Syntax">RFC3986</a></cite>] 
-or Literal [<cite><a class="bibref" data-link-type="biblio" href="#bib-rdf-concepts" title="Resource Description Framework (RDF): Concepts and Abstract Syntax">RDF-Concepts</a></cite>]
-that represents the target's location. 
-External vocabulary such as DCAT, VoID, SD is allowed here. 
-Each <code>rmlt:LogicalTarget</code> <em class="rfc2119">MUST</em> have one <code>rmlt:target</code> property. 
-The target <em class="rfc2119">MAY</em> be a Literal 
-containing the path the file to where the knowledge graph is exported to, 
-this is allowed to stay backwards compatibility 
-with existing data access descriptions.</li>
-<li>The <strong>serialization format</strong> (<code>rmlt:serialization</code>) <em class="rfc2119">MAY</em> specify 
-the serialization format for exporting a knowledge graph. 
-The serialization format is described using the W3C 
-<a href="https://www.w3.org/ns/formats/">formats</a> namespace. 
-By default, the serialization format is N-Quads [<cite><a class="bibref" data-link-type="biblio" href="#bib-n-quads" title="RDF 1.1 N-Quads">N-Quads</a></cite>].</li>
-<li>The <strong>compression algorithm</strong> (<code>rmlt:compression</code>) <em class="rfc2119">MAY</em> describe 
-the compression algorithm to apply when exporting a knowledge graph.
-The compression format is specified through 
-the <a href="http://semweb.mmlab.be/ns/rml-compression#">comp</a> namespace.
-By default, no compression is applied.</li>
-</ul><p>The Target definition requires only the target (<code>rmlt:target</code>) to be specified, 
-all other properties are optional.</p><table>
+<pre class="ex-target" aria-busy="false"><code class="hljs"># This box contains the example's Logical Target description.</code></pre></section>
+
+<section id="logical-source-vocabulary"><div class="header-wrapper"><h2 id="source-vocabulary"><bdi class="secno">3. </bdi>Logical Source vocabulary</h2><a class="self-link" href="#source-vocabulary" aria-label="Permalink for Section 3."></a></div><p>The LogicalSource vocabulary namespace is <a href="http://semweb.mmlab.be/ns/rml-source#">http://semweb.mmlab.be/ns/rml-source#</a> 
+and it's prefix is <code>rml</code>.</p>
+<p>The Logical Source vocabulary consists of 2 classes: </p>
+<ol>
+<li><code>rml:LogicalSource</code> describes how data of a source can be referenced.</li>
+<li><code>rml:Source</code> describes how a source can be accessed, it is part of a <code>rml:LogicalSource</code>.</li>
+</ol>
+<section id="defining-logical-sources-0"><div class="header-wrapper"><h3 id="defining-logical-sources"><bdi class="secno">3.1 </bdi>Defining Logical Sources</h3><a class="self-link" href="#defining-logical-sources" aria-label="Permalink for Section 3.1"></a></div><p>A Logical Source is any data source providing data to be mapped to RDF triples.</p>
+<p>A Logical Source (<code>rml:LogicalSource</code>) <em class="rfc2119">MUST</em> contains the following properties:</p>
+<ul>
+<li>The <strong>source</strong> (<code>rml:source</code>) specifies how a source is accessed through a <code>rml:Source</code>.</li>
+<li>The <strong>reference formulation</strong> (<code>rml:referenceFormulation</code>)
+defines the reference formulation used to refer to the elements
+of a data source.
+The reference formulation must be specified in the case of databases,
+CSV, TSV, XML, and JSON data sources.
+By default <code>rr:SQL2008</code> for databases, <code>ql:CSV</code> for CSV and TSV data sources.
+XPath for XML and JSONPath for JSON and JSONL data sources.</li>
+</ul>
+<p>The following properties <em class="rfc2119">MAY</em> be specified in a Logical Source:</p>
+<ul>
+<li>The <strong>logical iterator</strong> (<code>rml:iterator</code>)
+defines the iteration loop used to map the data of the input source. 
+The iterator defines how to refer to any of the following:<ul>
+<li>a row in the case of databases, CSV or TSV data sources</li>
+<li>a repetition pattern expressed as an element in the case of XML documents,</li>
+<li>a repetition pattern expressed as an object in the case
+  of a JSON data sources. </li>
+<li>etc...</li>
+</ul>
+</li>
+</ul>
+<p>By default, the iterator is considered a row, if not specified:</p>
+<ul>
+<li>In the case of databases, CSV or TSV data sources,
+  the value of the <code>rml:iterator</code>, if not specified, is a "row". </li>
+<li>In the case of XML and JSON data sources,
+  it is a valid reference to an element or an object respectively
+  considering the reference formulation specified.</li>
+</ul>
+<p>The Logical Source definition requires only the source (<code>rml:source</code>)
+to be specified, all other properties are optional.
+If a property is specified, it <em class="rfc2119">MUST NOT</em> be specified multiple times.</p>
+<table>
 <thead>
 <tr>
 <th>Property</th>
@@ -488,55 +554,2629 @@ all other properties are optional.</p><table>
 </tr>
 </thead>
 <tbody><tr>
-<td><code>rmlt:target</code></td>
-<td><code>rmlt:LogicalTarget</code></td>
+<td><code>rml:source</code></td>
+<td><code>rml:LogicalSource</code></td>
+<td><code>Source</code></td>
+</tr>
+<tr>
+<td><code>rml:referenceFormulation</code></td>
+<td><code>rml:LogicalSource</code></td>
+<td><code>ql:ReferenceFormulation</code></td>
+</tr>
+<tr>
+<td><code>rml:iterator</code></td>
+<td><code>rml:LogicalSource</code></td>
+<td><code>Literal</code></td>
+</tr>
+</tbody></table>
+<figure id="fig-the-structure-of-logical-source">
+  <img src="../resources/images/source-structure.png" alt="Logical Source structure" width="967" height="668">
+  <figcaption>Figure <bdi class="figno">1</bdi> <span class="fig-title">The structure of Logical Source</span></figcaption>
+</figure>
+
+<section id="reference-formulations"><div class="header-wrapper"><h4 id="x3-1-1-reference-formulations"><bdi class="secno">3.1.1 </bdi>Reference formulations</h4><a class="self-link" href="#reference-formulations" aria-label="Permalink for Section 3.1.1"></a></div>
+<p>Each Logical Source has a reference formulation to define how to reference
+to elements of the data of the input source.
+Several reference formulations (<code>rml:ReferenceFormulation</code>)
+are defined in this specification:</p>
+<ul>
+<li><code>rr:SQL2008</code>: SQL 2008 standard for relational databases</li>
+<li><code>ql:CSV</code>: CSV or TSV data sources</li>
+<li><code>ql:JSONPath</code>: JSON documents</li>
+<li><code>ql:XPath</code>: XML documents, a shortcut for <code>ql:XPathReferenceFormulation</code>
+with default parameters</li>
+<li><code>ql:XPathReferenceFormulation</code>: XML documents with optionally
+the definition of XML namespaces used in references.
+By default, no namespaces are defined.</li>
+</ul>
+<p><code>ql:XPathReferenceFormulation</code> may specify zero or more 
+<code>ql:namespace</code> properties with a <code>ql:Namespace</code>.
+A <code>ql:Namespace</code> contains the following required properties:</p>
+<ul>
+<li><code>ql:namespacePrefix</code>: A Literal with the prefix used for the XML namespace.</li>
+<li><code>ql:namespaceURL</code>: A Literal with the URL identifying the XML namespace.</li>
+</ul>
+<pre class="ex-source" aria-busy="false"><code class="hljs">&lt;#XMLNamespace&gt; a rml:LogicalSource;
+     rml:source [ a rml:Source
+       rml:access [ a dcat:Dataset;
+         dcat:distribution [ a dcat:Distribution;
+           dcat:accessURL &lt;file:///path/to/data.xml&gt;;
+         ];
+       ];
+     ];
+     rml:referenceFormulation [ a ql:XPathReferenceFormulation;
+       ql:namespace [ a ql:Namespace;
+         ql:namespacePrefix "ex";
+         ql:namespaceURL "http://example.org";
+       ];
+     ];
+     rml:iterator "/xpath/ex:namespace/expression";
+.</code></pre>
+
+</section></section><section id="source"><div class="header-wrapper"><h3 id="x3-2-source"><bdi class="secno">3.2 </bdi>Source</h3><a class="self-link" href="#source" aria-label="Permalink for Section 3.2"></a></div>
+<p>A Source (<code>rml:Source</code>) defines how a data source should be accessed.
+It <em class="rfc2119">MUST</em> contain the follow properties:</p>
+<ul>
+<li><strong>rml:access</strong> describes where a source is located.
+It is a URI [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc3986" title="Uniform Resource Identifier (URI): Generic Syntax">RFC3986</a></cite>] 
+or Literal [<cite><a class="bibref" data-link-type="biblio" href="#bib-rdf-concepts" title="Resource Description Framework (RDF): Concepts and Abstract Syntax">RDF-Concepts</a></cite>]
+that represents the input data source's location. 
+External vocabulary such as DCAT, VoID, SD is allowed here. 
+If a source cannot be accessed with existing vocabulary, a custom vocabulary 
+can be used, for example: handling pagination in a Web API may be specific 
+for that Web API. A custom ontology can be used here to describe 
+that specific pagination behavior.</li>
+</ul>
+<p>Optionally, the following properties <em class="rfc2119">MAY</em> be specified:</p>
+<ul>
+<li><strong>rml:encoding</strong> specifies the encoding of the data inside the source.
+Defaults to <code>enc:UTF-8</code> if not specified.</li>
+<li><strong>rml:null</strong> describes which data values inside the source
+should be considered as NULL.
+Defaults to the default NULL character if available.
+If none is available such as CSV, no values are considered NULL,
+unless specified.
+Example: CSV does not have a default NULL character,
+so no value is considered NULL.
+However, JSON has a NULL character specified: <code>null</code>,
+this one is used together with the ones specified through <code>rml:null</code>.</li>
+<li><strong>rml:compression</strong> specifies if the source is compressed
+and the used compression algorithm. Defaults to no compression.</li>
+<li><strong>rml:query</strong> defines which query should be applied on the source 
+during access. Example: SPARQL query for a SPARQL endpoint or a SQL query
+for a relational database. Defaults to an empty string.
+This property is a broader version of <code>rr:sqlQuery</code>.
+A whole table or view of a relational database can be specified
+through a <code>SELECT * FROM {table}</code> query (<code>rr:tableName</code> compatibility).</li>
+</ul>
+<pre class="ex-source" aria-busy="false"><code class="hljs">&lt;#JSON&gt; a rml:LogicalSource;
+     rml:source [ a rml:Source
+       rml:access [ a dcat:Dataset;
+         dcat:distribution [ a dcat:Distribution;
+           dcat:accessURL &lt;file:///path/to/data.json.gz&gt;;
+         ];
+       ];
+       rml:null ""; # empty string as NULL besides default null character
+       rml:compression comp:gzip; # GZip compression
+       rml:encoding enc:UTF-16; # UTF-16 encoding
+     ];
+     rml:referenceFormulation ql:JSONPath;
+     rml:iterator "$.jsonpath.expression";
+.</code></pre>
+
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Domain</th>
+<th>Range</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>rml:access</code></td>
+<td><code>rml:Source</code></td>
 <td><code>URI or Literal</code></td>
 </tr>
 <tr>
-<td><code>rmlt:serialization</code></td>
-<td><code>rmlt:LogicalTarget</code></td>
+<td><code>rml:encoding</code></td>
+<td><code>rml:Source</code></td>
+<td><code>enc:Encoding</code></td>
+</tr>
+<tr>
+<td><code>rml:null</code></td>
+<td><code>rml:Source</code></td>
+<td><code>Literal</code></td>
+</tr>
+<tr>
+<td><code>rml:compression</code></td>
+<td><code>rml:Source</code></td>
+<td><code>comp:Compression</code></td>
+</tr>
+<tr>
+<td><code>rml:query</code></td>
+<td><code>rml:Source</code></td>
+<td><code>Literal</code></td>
+</tr>
+</tbody></table>
+</section><section id="examples-0"><div class="header-wrapper"><h3 id="examples"><bdi class="secno">3.3 </bdi>Examples</h3><a class="self-link" href="#examples" aria-label="Permalink for Section 3.3"></a></div><p>The following example show a Source of an CSV file.</p>
+<pre class="ex-source" aria-busy="false"><code class="hljs">&lt;#CSV&gt; a rml:LogicalSource;
+     rml:source [ 
+        rml:access [ a csvw:Table;
+            csvw:url "/path/to/data.csv";
+        ];
+        rml:null "NULL";
+        rml:null "";
+     ];
+     rml:referenceFormulation ql:CSV;
+.</code></pre>
+
+<p>Note that there is not <code>rml:iterator</code> is present because its default is row.
+This particular CSV file has 2 different ways to specify a NULL value: <code>NULL</code> 
+or an empty value. Implementations need to check if a value is equal to on of 
+the values defined by <code>rml:null</code> to check for NULL values in the data.</p>
+<p>The following example shows a Source specified for a MySQL database querying 
+the <code>student</code> table. The database username and password are provided as well.</p>
+<pre class="ex-source" aria-busy="false"><code class="hljs">&lt;#RDB&gt; a rml:LogicalSource;
+     rml:source [ 
+        rml:access [ a d2rq:Database;
+            d2rq:jdbcDSN "jdbc:mysql://localhost/example";
+            d2rq:jdbcDriver "com.mysql.jdbc.Driver";
+            d2rq:username "user";
+            d2rq:password "password";
+            d2rq:sqlVersion d2rq:SQL2008; # TODO: better ontology
+        ];
+        rml:query "SELECT * FROM student;";
+     ];
+.</code></pre>
+
+<p>Note that there is not <code>rml:iterator</code> is present because its default is row.</p>
+<p>The following example shows a Source of a 
+XML file with no compression.</p>
+<pre class="ex-source" aria-busy="false"><code class="hljs">&lt;#XML&gt; a rml:LogicalSource;
+     rml:source [ 
+        rml:access [ 
+            a dcat:Dataset;
+            dcat:distribution [ a dcat:Distribution;
+                dcat:accessURL &lt;file:///path/to/data.xml&gt;;
+            ];
+        ];
+     ];
+     rml:referenceFormulation ql:XPath;
+     rml:iterator "/xpath/iterator/expression";
+.</code></pre>
+
+<p>The following example is GZip compressed JSON file as Source:</p>
+<pre class="ex-source" aria-busy="false"><code class="hljs">&lt;#JSON&gt; a rml:LogicalSource;
+     rml:source [ 
+        rml:access [ a dcat:Dataset;
+            dcat:distribution [ a dcat:Distribution;
+                dcat:accessURL &lt;file:///path/to/data.json.gz&gt;;
+            ];
+        ];
+        rml:compression comp:gzip;
+     ];
+     rml:referenceFormulation ql:JSONPath;
+     rml:iterator "$.jsonpath.expression";
+.</code></pre>
+
+<p>Sources can also describe access to SPARQL endpoints with the 
+W3C Service Description ontology. SPARQL endpoints need a SPARQL query, 
+specified by <code>rml:query</code>.</p>
+<pre class="ex-source" aria-busy="false"><code class="hljs">&lt;#SPARQLEndpoint&gt; a rml:LogicalSource;
+    rml:source [ 
+        rml:access [ a sd:Service;
+            sd:endpoint  &lt;http://example.com/sparql&gt;;
+            sd:supportedLanguage sd:SPARQL11Query;
+        ];
+        rml:query "CONSTRUCT WHERE { ?s ?p ?o. } LIMIT 100";
+    ];
+.</code></pre>
+
+<p>Web APIs and streams are supported through the W3C Web of Things ontologies:</p>
+<ul>
+<li>HTTP Web API</li>
+<li>MQTT streams</li>
+<li>CoAP</li>
+<li>Kafka</li>
+<li>HTTP Server Sent Events</li>
+</ul>
+<p>The following example is a HTTP JSON Web API with a HTTP header User Agent 
+set to 'Processor':</p>
+<pre class="ex-source" aria-busy="false"><code class="hljs">&lt;#HTTPWebAPI&gt; a rml:LogicalSource;
+     rml:source [ 
+        rml:access [ a td:Thing;
+            td:hasPropertyAffordance [
+                td:hasForm [
+                    # URL and content type
+                    hctl:hasTarget "http://localhost:4242/";
+                    hctl:forContentType "application/json";
+                    # Set HTTP method and headers through W3C WoT Binding Template for HTTP
+                    htv:methodName "GET";
+                    htv:headers ([
+                        htv:fieldName "User-Agent";
+                        htv:fieldValue "Processor";
+                    ]);
+                ];
+            ];
+        ];
+     ];
+     rml:referenceFormulation ql:JSONPath;
+     rml:iterator "$.jsonpath";
+.</code></pre>
+
+<p>The following example shows a Source of a
+HTTP Server Sent Events stream in XML format without compression:</p>
+<pre class="ex-source" aria-busy="false"><code class="hljs">&lt;#HTTPSSEStream&gt; a rml:LogicalSource;
+     rml:source [
+        rml:access [ a td:Thing;
+            td:hasPropertyAffordance [
+                td:hasForm [
+                    # URL and content type
+                    hctl:hasTarget "http://localhost:4242/";
+                    hctl:forContentType "text/event-stream";
+                ];
+            ];
+        ];
+     ];
+     rml:referenceFormulation ql:XPath;
+     rml:iterator "/my/xpath";
+.
+
+The following example shows a Source of a
+MQTT stream in JSON format without compression:
+
+
+&lt;#MQTTStream&gt; a rml:LogicalSource;
+     rml:source [ 
+        rml:access [ a td:Thing;
+            td:hasPropertyAffordance [
+                td:hasForm [
+                    # URL and content type
+                    hctl:hasTarget "mqtt://localhost/topic";
+                    hctl:forContentType "application/json";
+                    # Set MQTT parameters through W3C WoT Binding Template for MQTT
+                    mqv:controlPacketValue "SUBSCRIBE";
+                    mqv:options ([ mqv:optionName "qos"; mqv:optionValue "1" ] [ mqv:optionName "dup" ]);
+                ];
+            ];
+        ];
+     ];
+     rml:referenceFormulation ql:JSONPath;
+     rml:iterator "$.jsonpath";
+.
+
+
+
+
+The following example shows a Source of a
+TCP stream in JSON format without compression:
+
+
+
+&lt;#TCPStream&gt; a rml:LogicalSource;
+     rml:source [ 
+        rml:access [ a td:Thing;
+            td:hasPropertyAffordance [
+                td:hasForm [
+                    # URL and content type
+                    hctl:hasTarget "tcp://localhost:1234/topic";
+                    hctl:forContentType "application/json";
+                ];
+            ];
+        ];
+     ];
+     rml:referenceFormulation ql:JSONPath;
+     rml:iterator "$.jsonpath";
+.
+
+
+
+
+The following example shows a Target of a
+Kafka stream in XML format without compression:
+
+
+
+&lt;#KafkaStream&gt; a rml:LogicalSource;
+     rml:source [ 
+        rml:access [ a td:Thing;
+            td:hasPropertyAffordance [
+                td:hasForm [
+                    # URL and content type
+                    hctl:hasTarget "kafka://localhost:8089/topic";
+                    hctl:forContentType "application/xml";
+                    # Kafka parameters through W3C WoT Binding Template for Kafka
+                    kafka:groupId "MyAwesomeGroup";
+                ];
+            ];
+        ];
+     ];
+     rml:referenceFormulation ql:XPath;
+     rml:iterator "/my/xpath";
+.</code></pre></section></section>
+
+<section id="logical-target-vocabulary"><div class="header-wrapper"><h2 id="target-vocabulary"><bdi class="secno">4. </bdi>Logical Target vocabulary</h2><a class="self-link" href="#target-vocabulary" aria-label="Permalink for Section 4."></a></div><p>The LogicalTarget vocabulary namespace is <a href="http://semweb.mmlab.be/ns/rml-target#">http://semweb.mmlab.be/ns/rml-target#</a> 
+and it's prefix is <code>rml</code>.</p>
+<p>The LogicalTarget vocabulary consists of <code>rml:LogicalTarget</code> and <code>rml:Target</code> 
+classes to describe how a knowledge graph must be exported after generation. </p>
+<section id="defining-logical-targets"><div class="header-wrapper"><h3 id="defining-targets"><bdi class="secno">4.1 </bdi>Defining Logical Targets</h3><a class="self-link" href="#defining-targets" aria-label="Permalink for Section 4.1"></a></div><p>A Logical Target is any target to where RDF triples are exported to.</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Domain</th>
+<th>Range</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>rml:source</code></td>
+<td><code>rml:LogicalSource</code></td>
+<td><code>Source</code></td>
+</tr>
+<tr>
+<td><code>rml:serialization</code></td>
+<td><code>rml:LogicalTarget</code></td>
 <td><code>formats:Format</code></td>
 </tr>
 <tr>
-<td><code>rmlt:compression</code></td>
-<td><code>rmlt:LogicalTarget</code></td>
+<td><code>rml:compression</code></td>
+<td><code>rml:LogicalTarget</code></td>
 <td><code>comp:Compression</code></td>
 </tr>
-</tbody></table><figure id="fig-the-structure-of-target">
-  <img src="../resources/images/structure.png" alt="Target structure" width="780" height="370">
-  <figcaption>Figure <bdi class="figno">1</bdi> <span class="fig-title">The structure of Target</span></figcaption>
-</figure></section><section id="examples-0"><h3 id="examples"><bdi class="secno">3.2 </bdi>Examples<a class="self-link" aria-label="§" href="#examples"></a></h3><p>The following example show a Target of an RDF dump in Turtle [<cite><a class="bibref" data-link-type="biblio" href="#bib-turtle" title="RDF 1.1 Turtle">Turtle</a></cite>] 
-format with GZip compression:</p><pre class="ex-target" aria-busy="false"><code class="hljs">&lt;#VoIDDump&gt; a rmlt:LogicalTarget;
-     rmlt:target [ a void:Dataset;
-         void:dataDump &lt;file:///data/dump.ttl&gt;;
+<tr>
+<td><code>rml:encoding</code></td>
+<td><code>rml:LogicalTarget</code></td>
+<td><code>enc:Encoding</code></td>
+</tr>
+</tbody></table>
+<ul>
+<li>The <strong>serialization format</strong> (<code>rml:serialization</code>) <em class="rfc2119">MAY</em> specify 
+the serialization format for exporting a knowledge graph. 
+The serialization format is described using the W3C 
+<a href="https://www.w3.org/ns/formats/">formats</a> namespace. 
+By default, the serialization format is N-Quads [<cite><a class="bibref" data-link-type="biblio" href="#bib-n-quads" title="RDF 1.1 N-Quads">N-Quads</a></cite>].</li>
+<li>The <strong>compression algorithm</strong> (<code>rml:compression</code>) <em class="rfc2119">MAY</em> describe 
+the compression algorithm to apply when exporting a knowledge graph.
+The compression format is specified through 
+the <a href="http://semweb.mmlab.be/ns/rml-compression#">comp</a> namespace.
+By default, no compression is applied.</li>
+<li>The <strong>encoding</strong> (<code>rml:encoding</code>) <em class="rfc2119">MAY</em> specify which encoding must be used
+when exporting a knowledge graph.
+The encoding is specified through 
+<a href="http://semweb.mmlab.be/ns/rml-compression#">enc</a> namespace.
+By default, UTF-8 is used.</li>
+</ul>
+<p>The Target definition requires only the target (<code>rml:target</code>) to be specified, 
+all other properties are optional.</p>
+<section id="serialization-formats"><div class="header-wrapper"><h4 id="x4-1-1-serialization-formats"><bdi class="secno">4.1.1 </bdi>Serialization formats</h4><a class="self-link" href="#serialization-formats" aria-label="Permalink for Section 4.1.1"></a></div>
+<p>Each Logical Target <em class="rfc2119">MAY</em> describe the serialization format 
+with <code>rml:serialization</code> to use when exporting RDF triples to a Target.
+The possible formats are defined in the W3C 
+<a href="https://www.w3.org/ns/formats/">formats</a> namespace 
+such as N-Quads, N-Triples, JSON-LD, Turtle, etc.
+If unspecified, the default format is N-Quads [<cite><a class="bibref" data-link-type="biblio" href="#bib-n-quads" title="RDF 1.1 N-Quads">N-Quads</a></cite>].</p>
+</section><section id="compression-formats"><div class="header-wrapper"><h4 id="x4-1-2-compression-formats"><bdi class="secno">4.1.2 </bdi>Compression formats</h4><a class="self-link" href="#compression-formats" aria-label="Permalink for Section 4.1.2"></a></div>
+<p>Each Logical Target <em class="rfc2119">MAY</em> specify the compression with <code>rml:compression</code>
+to apply when exporting RDF triples to a Target for saving storage space.
+Several compression formats are specified by the <code>comp</code> namespace:</p>
+<ul>
+<li><code>comp:none</code>: No compression is applied</li>
+<li><code>comp:gzip</code>: GZip compression</li>
+<li><code>comp:zip</code>: Zip archive with Zip compression</li>
+<li><code>comp:tarXz</code>: Tar archive with Xz compression</li>
+<li><code>comp:tarGz</code>: Tar archive with GZip compression</li>
+</ul>
+<p>If unspecified, the default value is no compression.
+This namespace is NOT limited to the listed compression formats 
+and <em class="rfc2119">MAY</em> be extended in the future.</p>
+</section><section id="encoding-formats"><div class="header-wrapper"><h4 id="x4-1-3-encoding-formats"><bdi class="secno">4.1.3 </bdi>Encoding formats</h4><a class="self-link" href="#encoding-formats" aria-label="Permalink for Section 4.1.3"></a></div>
+<p>Each Logical Target <em class="rfc2119">MAY</em> describe the encoding format to use when exporting
+RDF triples to a Target. Several encoding formats are defined by the <code>enc</code>
+namesapce:</p>
+<ul>
+<li><code>enc:UTF-8</code>: UTF-8 encoding</li>
+<li><code>enc:UTF-16</code>: UTF-16 encoding</li>
+</ul>
+<p>If unspecified, the default value is UTF-8.
+This namespace is NOT limited to the listed compression formats 
+and <em class="rfc2119">MAY</em> be extended in the future.</p>
+</section></section><section id="target"><div class="header-wrapper"><h3 id="x4-2-target"><bdi class="secno">4.2 </bdi>Target</h3><a class="self-link" href="#target" aria-label="Permalink for Section 4.2"></a></div>
+<p>A Target describes how a target must be accessed when exporting RDF triples.</p>
+<p>A Target (<code>rml:Target</code>) contains the following properties:</p>
+<ul>
+<li><strong>rml:access</strong> describes where a target is located.
+It is a URI [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc3986" title="Uniform Resource Identifier (URI): Generic Syntax">RFC3986</a></cite>] 
+or Literal [<cite><a class="bibref" data-link-type="biblio" href="#bib-rdf-concepts" title="Resource Description Framework (RDF): Concepts and Abstract Syntax">RDF-Concepts</a></cite>]
+that represents the input data target's location. 
+External vocabulary such as DCAT, VoID, SD is allowed here. 
+If a target cannot be accessed with existing vocabulary, a custom vocabulary 
+can be used, for example: handling an authentication flow may be specific 
+for that specific target. A custom ontology can be used here to describe 
+this authentication flow.</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Domain</th>
+<th>Range</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>rml:access</code></td>
+<td><code>rml:Target</code></td>
+<td><code>URI or Literal</code></td>
+</tr>
+</tbody></table>
+<figure id="fig-the-structure-of-logical-target">
+  <img src="../resources/images/target-structure.png" alt="Logical Target structure" width="965" height="546">
+  <figcaption>Figure <bdi class="figno">2</bdi> <span class="fig-title">The structure of Logical Target</span></figcaption>
+</figure>
+
+</section><section id="examples-1"><div class="header-wrapper"><h3 id="examples"><bdi class="secno">4.3 </bdi>Examples</h3><a class="self-link" href="#examples" aria-label="Permalink for Section 4.3"></a></div><p>The following example show a Target of an RDF dump in Turtle [<cite><a class="bibref" data-link-type="biblio" href="#bib-turtle" title="RDF 1.1 Turtle">Turtle</a></cite>] 
+format with GZip compression and UTF-8 encoding:</p>
+<pre class="ex-target" aria-busy="false"><code class="hljs">&lt;#VoIDDump&gt; a rml:LogicalTarget;
+    rml:target [ 
+        rml:access [ a void:Dataset;
+            void:dataDump &lt;file:///data/dump.ttl&gt;;
+        ];
+        rml:compression comp:gzip;
+        rml:encoding enc:UTF-8;
+    ];
+    rml:serialization formats:Turtle;
+.</code></pre>
+
+<p>The following example shows a Target of a [<cite><a class="bibref" data-link-type="biblio" href="#bib-sparql" title="SPARQL 1.1 Overview">SPARQL</a></cite>] 
+endpoint with <code>SPARQL UPDATE</code>:</p>
+<pre class="ex-target" aria-busy="false"><code class="hljs">&lt;#SPARQLEndpoint&gt; a rml:LogicalTarget;
+    rml:target [ 
+        rml:access [ a sd:Service;
+            sd:endpoint  &lt;http://example.com/sparql-update&gt;;
+            sd:supportedLanguage sd:SPARQL11Update ;
+        ];
+    ];
+.</code></pre>
+
+<p>The following example shows a Target of a 
+DCAT dataset in N-Quads format with Zip compression:</p>
+<pre class="ex-target" aria-busy="false"><code class="hljs">&lt;#DCATDump&gt; a rml:LogicalTarget;
+    rml:target [ 
+        rml:access [ a dcat:Dataset;
+            dcat:distribution [ a dcat:Distribution;
+                dcat:accessURL &lt;http://example.org/dcat-access-url&gt;;
+            ];
+        ];
+        rml:compression comp:zip;
+    ];
+    rml:serialization formats:N-Quads;
+.</code></pre>
+
+<p>The following example shows a Target of a
+MQTT stream in N-Quads format without compression:</p>
+<pre class="ex-target" aria-busy="false"><code class="hljs">&lt;#MQTTStream&gt; a rml:LogicalTarget;
+     rml:target [ 
+        rml:access [ a td:Thing;
+            td:hasPropertyAffordance [
+                td:hasForm [
+                    # URL and content type
+                    hctl:hasTarget "mqtt://localhost/topic";
+                    hctl:forContentType "application/n-quads";
+                    # Set MQTT parameters through W3C WoT Binding Template for MQTT
+                    mqv:controlPacketValue "SUBSCRIBE";
+                    mqv:options ([ mqv:optionName "qos"; mqv:optionValue "1" ] [ mqv:optionName "dup" ]);
+                ];
+            ];
+        ];
      ];
-     rmlt:serialization formats:Turtle;
-     rmlt:compression comp:gzip;
-.
-</code></pre><p>The following example shows a Target of a [<cite><a class="bibref" data-link-type="biblio" href="#bib-sparql" title="SPARQL 1.1 Overview">SPARQL</a></cite>] 
-endpoint with <code>SPARQL UPDATE</code>:</p><pre class="ex-target" aria-busy="false"><code class="hljs">&lt;#SPARQLEndpoint&gt; a rmlt:LogicalTarget;
-     rmlt:target [ a sd:Service;
-       sd:endpoint   ;
-       sd:supportedLanguage sd:SPARQL11Update ;
+     rml:serialization formats:N-Quads;
+.</code></pre>
+
+<p>The following example shows a Target of a
+TCP stream in N-Quads format without compression:</p>
+<pre class="ex-target" aria-busy="false"><code class="hljs">&lt;#TCPStream&gt; a rml:LogicalTarget;
+     rml:target [ 
+        rml:access [ a td:Thing;
+            td:hasPropertyAffordance [
+                td:hasForm [
+                    # URL and content type
+                    hctl:hasTarget "tcp://localhost:1234/topic";
+                    hctl:forContentType "application/n-quads";
+                ];
+            ];
+        ];
      ];
-.
-</code></pre><p>The following example shows a Target of a 
-DCAT dataset in N-Quads format with Zip compression:</p><pre class="ex-target" aria-busy="false"><code class="hljs">&lt;#DCATDump&gt; a rmlt:LogicalTarget;
-     rmlt:target [ a dcat:Dataset;
-         dcat:distribution [ a dcat:Distribution;
-            dcat:accessURL &lt;http://example.org/dcat-access-url&gt;;
-         ];
+     rml:serialization formats:N-Quads;
+.</code></pre>
+
+<p>The following example shows a Target of a
+Kafka stream in N-Quads format without compression:</p>
+<pre class="ex-target" aria-busy="false"><code class="hljs">&lt;#KafkaStream&gt; a rml:LogicalTarget;
+     rml:target [ 
+        rml:access [ a td:Thing;
+            td:hasPropertyAffordance [
+                td:hasForm [
+                    # URL and content type
+                    hctl:hasTarget "kafka://localhost:8089/topic";
+                    hctl:forContentType "application/n-quads";
+                    # Kafka parameters through W3C WoT Binding Template for Kafka
+                    kafka:groupId "MyAwesomeGroup";
+                ];
+            ];
+        ];
      ];
-     rmlt:serialization formats:N-Quads;
-     rmlt:compression comp:zip;
+     rml:serialization formats:N-Quads;
+.</code></pre>
+
+<p>The following example shows a Target of a
+HTTP Web API in N-Quads format without compression and
+the User Agent HTTP header set to 'Processor':</p>
+<pre class="ex-target" aria-busy="false"><code class="hljs">&lt;#HTTPWebAPI&gt; a rml:LogicalTarget;
+     rml:target [ 
+        rml:access [ a td:Thing;
+            td:hasPropertyAffordance [
+                td:hasForm [
+                    # URL and content type
+                    hctl:hasTarget "http://localhost:4242/";
+                    hctl:forContentType "application/n-quads";
+                    # Set HTTP method and headers through W3C WoT Binding Template for HTTP
+                    htv:methodName "POST";
+                    htv:headers ([
+                        htv:fieldName "User-Agent";
+                        htv:fieldValue "Processor";
+                    ]);
+                ];
+            ];
+        ];
+     ];
+     rml:serialization formats:N-Quads;
+.</code></pre>
+
+<p>The following example shows a Target of a
+HTTP Server Sent Events stream in N-Quads format without compression:</p>
+<pre class="ex-target" aria-busy="false"><code class="hljs">&lt;#HTTPSSEStream&gt; a rml:LogicalTarget;
+     rml:target [
+        rml:access [ a td:Thing;
+            td:hasPropertyAffordance [
+                td:hasForm [
+                    # URL and content type
+                    hctl:hasTarget "http://localhost:4242/";
+                    hctl:forContentType "text/event-stream";
+                ];
+            ];
+        ];
+     ];
+     rml:serialization formats:N-Quads;
+.</code></pre>
+
+<p>The following example shows a Target of a
+WebSocket in N-Quads format without compression:</p>
+<pre class="ex-target" aria-busy="false"><code class="hljs">&lt;#HTTPSSEStream&gt; a rml:LogicalTarget;
+     rml:target [ 
+        rml:access [ a td:Thing;
+            td:hasPropertyAffordance [
+                td:hasForm [
+                    # URL and content type
+                    hctl:hasTarget "ws://localhost:5555/";
+                    hctl:forContentType "application/n-quads";
+                ];
+            ];
+        ];
+     ];
+     rml:serialization formats:N-Quads;
+.</code></pre></section></section>
+
+<section class="respec-offending-element" title="All sections must start with a `h2-6` element." id="respec-offender-all-sections-must-start-with-a-h2-6-element">
+
+    
+        <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+        <title>Error response</title>
+    
+    
+        <section><div class="header-wrapper"><h3 id="error-response">Error response</h3><a class="self-link" href="#error-response" aria-label="Permalink for this Section"></a></div>
+        <p>Error code: 404</p>
+        <p>Message: File not found.</p>
+        <p>Error code explanation: HTTPStatus.NOT_FOUND - Nothing matches the given URI.</p>
+    
+</section></section>
+
+<section id="single-targets-0"><div class="header-wrapper"><h2 id="single-targets"><bdi class="secno">5. </bdi>Single targets</h2><a class="self-link" href="#single-targets" aria-label="Permalink for Section 5."></a></div><p>In the following examples, the RDF triples are exported to a single Target.
+In some examples, not all RDF triples have a dedicated Target assigned,
+therefore, they will be exported to the default Target of the processor.</p>
+<section id="subject-map-0"><div class="header-wrapper"><h3 id="subject-map"><bdi class="secno">5.1 </bdi>Subject Map</h3><a class="self-link" href="#subject-map" aria-label="Permalink for Section 5.1"></a></div><p>All triples containing the generated subject are exported 
+to the specified targets in the Subject Map [<cite><a class="bibref respec-offending-element" data-link-type="biblio" href="#bib-rml" title="Reference &quot;[RML]&quot; not found." id="respec-offender-reference-rml-not-found">RML</a></cite>].</p>
+<p>The following example exports all triples containing 
+the generated subject <code>http://example.org/{id}</code> 
+to an RDF dump with N-Quads as serialization format and GZip compression:</p>
+<pre class="ex-input" aria-busy="false"><code class="hljs">[
+  { 
+    "id": 0,
+    "name": "Monica Geller",
+    "age": 33
+  },
+  { 
+    "id": 1,
+    "name": "Rachel Green",
+    "age": 34
+  },
+  { 
+    "id": 2,
+    "name": "Joey Tribbiani",
+    "age": 35
+  },
+  { 
+    "id": 3,
+    "name": "Chandler Bing",
+    "age": 36
+  },
+  { 
+    "id": 4,
+    "name": "Ross Geller",
+    "age": 37
+  }
+]</code></pre>
+
+<pre class="ex-access" aria-busy="false"><code class="hljs">&lt;#DCATSourceAccess&gt; a dcat:Dataset;
+  dcat:distribution [ a dcat:Distribution;
+    dcat:downloadURL "https://rml.io/specs/rml-target/Friends.json";
+  ];
+.</code></pre>
+
+<pre class="ex-mapping" aria-busy="false"><code class="hljs">&lt;#TriplesMap&gt; a rr:TriplesMap;
+  rml:logicalSource [ a rml:LogicalSource;
+    rml:source &lt;#DCATSourceAccess&gt;;
+    rml:referenceFormulation ql:JSONPath;
+    rml:iterator "$.[*]";
+  ];
+  rr:subjectMap [ a rr:SubjectMap;
+    rr:template "http://example.org/{id}";
+    rml:logicalTarget &lt;#TargetDump1&gt;;
+  ];
+  rr:predicateObjectMap [ a rr:PredicateObjectMap;
+    rr:predicateMap [ a rr:PredicateMap;
+      rr:constant foaf:name;
+    ];
+    rr:objectMap [ a rr:ObjectMap;
+      rml:reference "name";
+    ];
+  ];
+  rr:predicateObjectMap [ a rr:PredicateObjectMap;
+    rr:predicateMap [ a rr:PredicateMap;
+      rr:constant foaf:age;
+    ];
+    rr:objectMap [ a rr:ObjectMap;
+      rml:reference "age";
+    ];
+  ];
+.</code></pre>
+
+<pre class="ex-target" aria-busy="false"><code class="hljs">&lt;#TargetDump1&gt; a rmlt:LogicalTarget;
+  rmlt:target &lt;#VoIDDump1&gt;;
+  rmlt:serialization formats:N-Quads;
+  rmlt:compression comp:gzip;
+.</code></pre>
+
+<pre class="ex-access" aria-busy="false"><code class="hljs">&lt;#VoIDDump1&gt; a void:Dataset ;
+  void:dataDump &lt;file:///data/dump1.nq.gz&gt;;
+.</code></pre>
+
+<pre class="ex-output" aria-busy="false"><code class="hljs">&lt;http://example.org/0&gt; &lt;http://xmlns.com/foaf/0.1/name&gt; "Monica Geller" .
+&lt;http://example.org/0&gt; &lt;http://xmlns.com/foaf/0.1/age&gt; "33" .
+&lt;http://example.org/1&gt; &lt;http://xmlns.com/foaf/0.1/name&gt; "Rachel Green" .
+&lt;http://example.org/1&gt; &lt;http://xmlns.com/foaf/0.1/age&gt; "34" .
+&lt;http://example.org/2&gt; &lt;http://xmlns.com/foaf/0.1/name&gt; "Joey Tribbiani" .
+&lt;http://example.org/2&gt; &lt;http://xmlns.com/foaf/0.1/age&gt; "35" .
+&lt;http://example.org/3&gt; &lt;http://xmlns.com/foaf/0.1/name&gt; "Chandler Bing" .
+&lt;http://example.org/3&gt; &lt;http://xmlns.com/foaf/0.1/age&gt; "36" .
+&lt;http://example.org/4&gt; &lt;http://xmlns.com/foaf/0.1/name&gt; "Ross Geller" .
+&lt;http://example.org/4&gt; &lt;http://xmlns.com/foaf/0.1/age&gt; "37" .</code></pre>
+
+</section><section id="predicate-map-0"><div class="header-wrapper"><h3 id="predicate-map"><bdi class="secno">5.2 </bdi>Predicate Map</h3><a class="self-link" href="#predicate-map" aria-label="Permalink for Section 5.2"></a></div><p>All triples containing the generated predicate are exported 
+to the specified targets in the Predicate Map [<cite><a class="bibref respec-offending-element" data-link-type="biblio" href="#bib-rml" title="Reference &quot;[RML]&quot; not found." id="respec-offender-reference-rml-not-found-0">RML</a></cite>].</p>
+<p>The following example exports all triples containing 
+the generated predicate <code>foaf:name</code> to an RDF dump 
+with Turtle as serialization format and Zip compression:</p>
+<pre class="ex-input" aria-busy="false"><code class="hljs">[
+  { 
+    "id": 0,
+    "name": "Monica Geller",
+    "age": 33
+  },
+  { 
+    "id": 1,
+    "name": "Rachel Green",
+    "age": 34
+  },
+  { 
+    "id": 2,
+    "name": "Joey Tribbiani",
+    "age": 35
+  },
+  { 
+    "id": 3,
+    "name": "Chandler Bing",
+    "age": 36
+  },
+  { 
+    "id": 4,
+    "name": "Ross Geller",
+    "age": 37
+  }
+]</code></pre>
+
+<pre class="ex-access" aria-busy="false"><code class="hljs">&lt;#DCATSourceAccess&gt; a dcat:Dataset;
+  dcat:distribution [ a dcat:Distribution;
+    dcat:downloadURL "https://rml.io/specs/rml-target/Friends.json";
+  ];
+.</code></pre>
+
+<pre class="ex-mapping" aria-busy="false"><code class="hljs">&lt;#TriplesMap&gt; a rr:TriplesMap;
+  rml:logicalSource [ a rml:LogicalSource;
+    rml:source &lt;#DCATSourceAccess&gt;;
+    rml:referenceFormulation ql:JSONPath;
+    rml:iterator "$.[*]";
+  ];
+  rr:subjectMap [ a rr:SubjectMap;
+    rr:template "http://example.org/{id}";
+  ];
+  rr:predicateObjectMap [ a rr:PredicateObjectMap;
+    rr:predicateMap [ a rr:PredicateMap;
+      rr:constant foaf:name;
+      rml:logicalTarget &lt;#TargetDump1&gt;;
+    ];
+    rr:objectMap [ a rr:ObjectMap;
+      rml:reference "name";
+    ];
+  ];
+  rr:predicateObjectMap [ a rr:PredicateObjectMap;
+    rr:predicateMap [ a rr:PredicateMap;
+      rr:constant foaf:age;
+    ];
+    rr:objectMap [ a rr:ObjectMap;
+      rml:reference "age";
+    ];
+  ];
+.</code></pre>
+
+<pre class="ex-target" aria-busy="false"><code class="hljs">&lt;#TargetDump1&gt; a rmlt:LogicalTarget;
+  rmlt:target &lt;#VoIDDump1&gt;;
+  rmlt:serialization formats:Turtle;
+  rmlt:compression comp:zip;
+.</code></pre>
+
+<pre class="ex-access" aria-busy="false"><code class="hljs">&lt;#VoIDDump1&gt; a void:Dataset ;
+  void:dataDump &lt;file:///data/dump1.ttl.zip&gt;;
+.</code></pre>
+
+<pre class="ex-output" aria-busy="false"><code class="hljs"># file:///data/dump1.ttl.zip
+@prefix foaf: &lt;http://xmlns.com/foaf/0.1/&gt; .
+@base &lt;http://example.com/ns#&gt; .
+
+&lt;http://example.org/0&gt;
+  foaf:name "Monica Geller";
 .
-</code></pre></section></section>
+&lt;http://example.org/1&gt;
+  foaf:name "Rachel Green";
+.
+&lt;http://example.org/2&gt;
+  foaf:name "Joey Tribbiani";
+.
+&lt;http://example.org/3&gt;
+  foaf:name "Chandler Bing";
+.
+&lt;http://example.org/4&gt;
+  foaf:name "Ross Geller";
+.
+
+# default target of the processor
+&lt;http://example.org/0&gt; &lt;http://xmlns.com/foaf/0.1/age&gt; "33" .
+&lt;http://example.org/1&gt; &lt;http://xmlns.com/foaf/0.1/age&gt; "34" .
+&lt;http://example.org/2&gt; &lt;http://xmlns.com/foaf/0.1/age&gt; "35" .
+&lt;http://example.org/3&gt; &lt;http://xmlns.com/foaf/0.1/age&gt; "36" .
+&lt;http://example.org/4&gt; &lt;http://xmlns.com/foaf/0.1/age&gt; "37" .</code></pre>
+
+</section><section id="object-map-0"><div class="header-wrapper"><h3 id="object-map"><bdi class="secno">5.3 </bdi>Object Map</h3><a class="self-link" href="#object-map" aria-label="Permalink for Section 5.3"></a></div><p>All triples containing the generated object are exported 
+to the specified targets in the Object Map [<cite><a class="bibref respec-offending-element" data-link-type="biblio" href="#bib-rml" title="Reference &quot;[RML]&quot; not found." id="respec-offender-reference-rml-not-found-1">RML</a></cite>].</p>
+<p>The following example exports all triples containing 
+the generated object from the reference <code>name</code> to an RDF dump 
+with N-Triples as serialization format:</p>
+<pre class="ex-input" aria-busy="false"><code class="hljs">[
+  { 
+    "id": 0,
+    "name": "Monica Geller",
+    "age": 33
+  },
+  { 
+    "id": 1,
+    "name": "Rachel Green",
+    "age": 34
+  },
+  { 
+    "id": 2,
+    "name": "Joey Tribbiani",
+    "age": 35
+  },
+  { 
+    "id": 3,
+    "name": "Chandler Bing",
+    "age": 36
+  },
+  { 
+    "id": 4,
+    "name": "Ross Geller",
+    "age": 37
+  }
+]</code></pre>
+
+<pre class="ex-access" aria-busy="false"><code class="hljs">&lt;#DCATSourceAccess&gt; a dcat:Dataset;
+  dcat:distribution [ a dcat:Distribution;
+    dcat:downloadURL "https://rml.io/specs/rml-target/Friends.json";
+  ];
+.</code></pre>
+
+<pre class="ex-mapping" aria-busy="false"><code class="hljs">&lt;#TriplesMap&gt; a rr:TriplesMap;
+  rml:logicalSource [ a rml:LogicalSource;
+    rml:source &lt;#DCATSourceAccess&gt;;
+    rml:referenceFormulation ql:JSONPath;
+    rml:iterator "$.[*]";
+  ];
+  rr:subjectMap [ a rr:SubjectMap;
+    rr:template "http://example.org/{id}";
+  ];
+  rr:predicateObjectMap [ a rr:PredicateObjectMap;
+    rr:predicateMap [ a rr:PredicateMap;
+      rr:constant foaf:name;
+    ];
+    rr:objectMap [ a rr:ObjectMap;
+      rml:reference "name";
+      rml:logicalTarget &lt;#TargetDump1&gt;;
+    ];
+  ];
+  rr:predicateObjectMap [ a rr:PredicateObjectMap;
+    rr:predicateMap [ a rr:PredicateMap;
+      rr:constant foaf:age;
+    ];
+    rr:objectMap [ a rr:ObjectMap;
+      rml:reference "age";
+    ];
+  ];
+.</code></pre>
+
+<pre class="ex-target" aria-busy="false"><code class="hljs">&lt;#TargetDump1&gt; a rmlt:LogicalTarget;
+  rmlt:target &lt;#VoIDDump1&gt;;
+  rmlt:serialization formats:N-Triples;
+.</code></pre>
+
+<pre class="ex-access" aria-busy="false"><code class="hljs">&lt;#VoIDDump1&gt; a void:Dataset ;
+  void:dataDump &lt;file:///data/dump1.nt&gt;;
+.</code></pre>
+
+<pre class="ex-output" aria-busy="false"><code class="hljs"># file:///data/dump1.nt
+&lt;http://example.org/0&gt; &lt;http://xmlns.com/foaf/0.1/name&gt; "Monica Geller" .
+&lt;http://example.org/1&gt; &lt;http://xmlns.com/foaf/0.1/name&gt; "Rachel Green" .
+&lt;http://example.org/2&gt; &lt;http://xmlns.com/foaf/0.1/name&gt; "Joey Tribbiani" .
+&lt;http://example.org/3&gt; &lt;http://xmlns.com/foaf/0.1/name&gt; "Chandler Bing" .
+&lt;http://example.org/4&gt; &lt;http://xmlns.com/foaf/0.1/name&gt; "Ross Geller" .
+
+# default target of the processor
+&lt;http://example.org/0&gt; &lt;http://xmlns.com/foaf/0.1/age&gt; "33" .
+&lt;http://example.org/1&gt; &lt;http://xmlns.com/foaf/0.1/age&gt; "34" .
+&lt;http://example.org/2&gt; &lt;http://xmlns.com/foaf/0.1/age&gt; "35" .
+&lt;http://example.org/3&gt; &lt;http://xmlns.com/foaf/0.1/age&gt; "36" .
+&lt;http://example.org/4&gt; &lt;http://xmlns.com/foaf/0.1/age&gt; "37" .</code></pre>
+
+</section><section id="graph-map-0"><div class="header-wrapper"><h3 id="graph-map"><bdi class="secno">5.4 </bdi>Graph Map</h3><a class="self-link" href="#graph-map" aria-label="Permalink for Section 5.4"></a></div><p>All triples within a named graph are exported to the specified targets 
+in the Graph Map [<cite><a class="bibref respec-offending-element" data-link-type="biblio" href="#bib-rml" title="Reference &quot;[RML]&quot; not found." id="respec-offender-reference-rml-not-found-2">RML</a></cite>].
+The named graph influences to where the named graph's triples 
+may be exported to as the Target's serialization format must 
+support named graphs such as N-Quads, JSON-LD or TriG.
+When a Target contains a serialization format 
+which does not support named graphs and a Graph Map is used,
+the mapping is considered invalid.
+If a named graph is spread over multiple targets, 
+all targets must be combined to access the complete named graph.
+In case RDF triples are not within a specific named graph,
+they are added to the default graph as specified 
+by the [<cite><a class="bibref" data-link-type="biblio" href="#bib-r2rml" title="R2RML: RDB to RDF Mapping Language">R2RML</a></cite>] specification.</p>
+<p>The following example exports all triples in the named graph <code>ex:Friends</code>
+to an RDF dump with N-Quads as serialization format:</p>
+<pre class="ex-input" aria-busy="false"><code class="hljs">[
+  { 
+    "id": 0,
+    "name": "Monica Geller",
+    "age": 33
+  },
+  { 
+    "id": 1,
+    "name": "Rachel Green",
+    "age": 34
+  },
+  { 
+    "id": 2,
+    "name": "Joey Tribbiani",
+    "age": 35
+  },
+  { 
+    "id": 3,
+    "name": "Chandler Bing",
+    "age": 36
+  },
+  { 
+    "id": 4,
+    "name": "Ross Geller",
+    "age": 37
+  }
+]</code></pre>
+
+<pre class="ex-access" aria-busy="false"><code class="hljs">&lt;#DCATSourceAccess&gt; a dcat:Dataset;
+  dcat:distribution [ a dcat:Distribution;
+    dcat:downloadURL "https://rml.io/specs/rml-target/Friends.json";
+  ];
+.</code></pre>
+
+<pre class="ex-mapping" aria-busy="false"><code class="hljs">&lt;#TriplesMap&gt; a rr:TriplesMap;
+  rml:logicalSource [ a rml:LogicalSource;
+    rml:source &lt;#DCATSourceAccess&gt;;
+    rml:referenceFormulation ql:JSONPath;
+    rml:iterator "$.[*]";
+  ];
+  rr:subjectMap [ a rr:SubjectMap;
+    rr:template "http://example.org/{id}";
+    rr:graphMap [
+      rml:logicalTarget &lt;#TargetDump1&gt;;
+      rr:constant ex:Friends;
+    ];
+   ];
+  rr:predicateObjectMap [ a rr:PredicateObjectMap;
+    rr:predicateMap [ a rr:PredicateMap;
+      rr:constant foaf:name;
+    ];
+    rr:objectMap [ a rr:ObjectMap;
+      rml:reference "name";
+    ];
+  ];
+  rr:predicateObjectMap [ a rr:PredicateObjectMap;
+    rr:predicateMap [ a rr:PredicateMap;
+      rr:constant foaf:age;
+    ];
+    rr:objectMap [ a rr:ObjectMap;
+      rml:reference "age";
+    ];
+  ];
+.</code></pre>
+
+<pre class="ex-target" aria-busy="false"><code class="hljs">&lt;#TargetDump1&gt; a rmlt:LogicalTarget;
+  rmlt:target &lt;#VoIDDump1&gt;;
+.</code></pre>
+
+<pre class="ex-access" aria-busy="false"><code class="hljs">&lt;#VoIDDump1&gt; a void:Dataset ;
+  void:dataDump &lt;file:///data/dump1.nq&gt;;
+.</code></pre>
+
+<pre class="ex-output" aria-busy="false"><code class="hljs"># file:///data/dump1.nq
+&lt;http://example.org/0&gt; &lt;http://xmlns.com/foaf/0.1/age&gt; "33" &lt;http://example.org/Friends&gt; .
+&lt;http://example.org/0&gt; &lt;http://xmlns.com/foaf/0.1/age&gt; "33" &lt;http://example.org/Friends&gt; .
+&lt;http://example.org/1&gt; &lt;http://xmlns.com/foaf/0.1/age&gt; "34" &lt;http://example.org/Friends&gt; .
+&lt;http://example.org/1&gt; &lt;http://xmlns.com/foaf/0.1/age&gt; "34" &lt;http://example.org/Friends&gt; .
+&lt;http://example.org/2&gt; &lt;http://xmlns.com/foaf/0.1/age&gt; "35" &lt;http://example.org/Friends&gt; .
+&lt;http://example.org/2&gt; &lt;http://xmlns.com/foaf/0.1/age&gt; "35" &lt;http://example.org/Friends&gt; .
+&lt;http://example.org/3&gt; &lt;http://xmlns.com/foaf/0.1/age&gt; "36" &lt;http://example.org/Friends&gt; .
+&lt;http://example.org/3&gt; &lt;http://xmlns.com/foaf/0.1/age&gt; "36" &lt;http://example.org/Friends&gt; .
+&lt;http://example.org/4&gt; &lt;http://xmlns.com/foaf/0.1/age&gt; "37" &lt;http://example.org/Friends&gt; .
+&lt;http://example.org/4&gt; &lt;http://xmlns.com/foaf/0.1/age&gt; "37" &lt;http://example.org/Friends&gt; .</code></pre>
+
+</section><section id="language-map-0"><div class="header-wrapper"><h3 id="language-map"><bdi class="secno">5.5 </bdi>Language Map</h3><a class="self-link" href="#language-map" aria-label="Permalink for Section 5.5"></a></div><p>All triples with a language tag are exported to the specified targets 
+in the Language Map [<cite><a class="bibref respec-offending-element" data-link-type="biblio" href="#bib-rml" title="Reference &quot;[RML]&quot; not found." id="respec-offender-reference-rml-not-found-3">RML</a></cite>].</p>
+<p>The following examples export all triples with a language tag 
+to a RDF dump with N-Triples as serialization format:</p>
+<pre class="ex-input" aria-busy="false"><code class="hljs">[
+  { 
+    "id": 0,
+    "name": "Monica Geller",
+    "age": 33
+  },
+  { 
+    "id": 1,
+    "name": "Rachel Green",
+    "age": 34
+  },
+  { 
+    "id": 2,
+    "name": "Joey Tribbiani",
+    "age": 35
+  },
+  { 
+    "id": 3,
+    "name": "Chandler Bing",
+    "age": 36
+  },
+  { 
+    "id": 4,
+    "name": "Ross Geller",
+    "age": 37
+  }
+]</code></pre>
+
+<pre class="ex-access" aria-busy="false"><code class="hljs">&lt;#DCATSourceAccess&gt; a dcat:Dataset;
+  dcat:distribution [ a dcat:Distribution;
+    dcat:downloadURL "https://rml.io/specs/rml-target/Friends.json";
+  ];
+.</code></pre>
+
+<pre class="ex-mapping" aria-busy="false"><code class="hljs">&lt;#TriplesMap&gt; a rr:TriplesMap;
+  rml:logicalSource [ a rml:LogicalSource;
+    rml:source &lt;#DCATSourceAccess&gt;;
+    rml:referenceFormulation ql:JSONPath;
+    rml:iterator "$.[*]";
+  ];
+  rr:subjectMap [ a rr:SubjectMap;
+    rr:template "http://example.org/{id}";
+   ];
+  rr:predicateObjectMap [ a rr:PredicateObjectMap;
+    rr:predicateMap [ a rr:PredicateMap;
+      rr:constant foaf:name;
+    ];
+    rr:objectMap [ a rr:ObjectMap;
+      rml:reference "name";
+      rml:languageMap [
+        rml:logicalTarget &lt;#TargetDump1&gt;;
+        rr:constant "en";
+      ];
+    ];
+  ];
+  rr:predicateObjectMap [ a rr:PredicateObjectMap;
+    rr:predicateMap [ a rr:PredicateMap;
+      rr:constant foaf:age;
+    ];
+    rr:objectMap [ a rr:ObjectMap;
+      rml:reference "age";
+    ];
+  ];
+.</code></pre>
+
+<pre class="ex-target" aria-busy="false"><code class="hljs">&lt;#TargetDump1&gt; a rmlt:LogicalTarget;
+  rmlt:target &lt;#VoIDDump1&gt;;
+  rmlt:serialization formats:N-Triples;
+.</code></pre>
+
+<pre class="ex-access" aria-busy="false"><code class="hljs">&lt;#VoIDDump1&gt; a void:Dataset ;
+  void:dataDump &lt;file:///data/dump1.nt&gt;;
+.</code></pre>
+
+<pre class="ex-output" aria-busy="false"><code class="hljs"># file:///data/dump1.nt
+&lt;http://example.org/0&gt; &lt;http://xmlns.com/foaf/0.1/name&gt; "Monica Geller"@en .
+&lt;http://example.org/1&gt; &lt;http://xmlns.com/foaf/0.1/name&gt; "Rachel Green"@en .
+&lt;http://example.org/2&gt; &lt;http://xmlns.com/foaf/0.1/name&gt; "Joey Tribbiani"@en .
+&lt;http://example.org/3&gt; &lt;http://xmlns.com/foaf/0.1/name&gt; "Chandler Bing"@en .
+&lt;http://example.org/4&gt; &lt;http://xmlns.com/foaf/0.1/name&gt; "Ross Geller"@en .
+
+# default target of the processor
+&lt;http://example.org/0&gt; &lt;http://xmlns.com/foaf/0.1/age&gt; "33" .
+&lt;http://example.org/1&gt; &lt;http://xmlns.com/foaf/0.1/age&gt; "34" .
+&lt;http://example.org/2&gt; &lt;http://xmlns.com/foaf/0.1/age&gt; "35" .
+&lt;http://example.org/3&gt; &lt;http://xmlns.com/foaf/0.1/age&gt; "36" .
+&lt;http://example.org/4&gt; &lt;http://xmlns.com/foaf/0.1/age&gt; "37" .</code></pre></section></section>
+
+<section id="combining-multiple-targets"><div class="header-wrapper"><h2 id="multiple-targets"><bdi class="secno">6. </bdi>Combining multiple Targets</h2><a class="self-link" href="#multiple-targets" aria-label="Permalink for Section 6."></a></div><p>Multiple Targets <em class="rfc2119">MAY</em> be specified for the same triple 
+in the same or multiple Term Maps.
+If multiple Targets are defined in the same Term Map, 
+all triples containing the generated Term are exported 
+to all the specified Targets. 
+In case multiple Term Maps of the same RDF triple contain more than one Target, 
+the generated triples are exported to all the specified Targets.
+If multiple Term Maps of an RDF triple refer multiple times to the same Target,
+the RDF triple is written only once to the target to avoid duplicates.</p>
+<section id="multiple-targets-in-the-same-term-map"><div class="header-wrapper"><h3 id="multiple-targets-same-term-map"><bdi class="secno">6.1 </bdi>Multiple Targets in the same Term Map</h3><a class="self-link" href="#multiple-targets-same-term-map" aria-label="Permalink for Section 6.1"></a></div><p>All triples are exported to all Targets, if the Term Map contains multiple 
+Targets. In the example a Subject Map has three specified Targets, 
+all triples with the subject <code>http://example.org/{@id}</code> are exported 
+to the three specified Targets:</p>
+<ul>
+<li>Target 1: <code>/data/dump.nt.zip</code>, N-Triples serialization, Zip compression</li>
+<li>Target 2: <code>/data/dump.jsonld.tar.xz</code>, JSON-LD serialization, TarXz compression</li>
+<li>Target 3: <code>/data/dump.rdf.tar.gzip</code>, RDF/XML serialization, TarGZip compression</li>
+</ul>
+<pre class="ex-input" aria-busy="false"><code class="hljs">&lt;Supergirl&gt;
+  &lt;Character id="0"&gt;
+    &lt;name&gt;Kara Danvers&lt;/name&gt;
+    &lt;nickname&gt;Supergirl&lt;/nickname&gt;
+  &lt;/Character&gt;
+  &lt;Character id="1"&gt;
+    &lt;name&gt;Alex Danvers&lt;/name&gt;
+    &lt;nickname&gt;Sentinel&lt;/nickname&gt;
+  &lt;/Character&gt;
+  &lt;Character id="2"&gt;
+    &lt;name&gt;J'onn J'onzz&lt;/name&gt;
+    &lt;nickname&gt;Martian Manhunter&lt;/nickname&gt;
+  &lt;/Character&gt;
+  &lt;Character id="3"&gt;
+    &lt;name&gt;Nia Nal&lt;/name&gt;
+    &lt;nickname&gt;Dreamer&lt;/nickname&gt;
+  &lt;/Character&gt; 
+&lt;/Supergirl&gt;</code></pre>
+
+<pre class="ex-access" aria-busy="false"><code class="hljs">&lt;#DCATSourceAccess&gt; a dcat:Dataset;
+  dcat:distribution [ a dcat:Distribution;
+    dcat:downloadURL "https://rml.io/specs/rml-target/Supergirl.xml";
+  ];
+.</code></pre>
+
+<pre class="ex-mapping" aria-busy="false"><code class="hljs">&lt;#TriplesMap&gt; a rr:TriplesMap;
+  rml:logicalSource [ a rml:LogicalSource;
+    rml:source &lt;#DCATSourceAccess&gt;;
+    rml:referenceFormulation ql:JSONPath;
+    rml:iterator "$.[*]";
+  ];
+  rr:subjectMap [ a rr:SubjectMap;
+    rr:template "http://example.org/{@id}";
+    rml:logicalTarget &lt;#TargetDump1&gt;;
+    rml:logicalTarget &lt;#TargetDump2&gt;;
+    rml:logicalTarget &lt;#TargetDump3&gt;;
+  ];
+  rr:predicateObjectMap [ a rr:PredicateObjectMap;
+    rr:predicateMap [ a rr:PredicateMap;
+      rr:constant foaf:name;
+    ];
+    rr:objectMap [ a rr:ObjectMap;
+      rml:reference "name/text()";
+    ];
+  ];
+.</code></pre>
+
+<pre class="ex-target" aria-busy="false"><code class="hljs">&lt;#TargetDump1&gt; a rmlt:LogicalTarget;
+  rmlt:target &lt;#VoIDDump1&gt;;
+  rmlt:serialization formats:N-Triples;
+  rmlt:compression comp:zip;
+.
+&lt;#TargetDump2&gt; a rmlt:LogicalTarget;
+  rmlt:target &lt;#VoIDDump1&gt;;
+  rmlt:serialization formats:JSON-LD;
+  rmlt:compression comp:tarxz;
+.
+&lt;#TargetDump3&gt; a rmlt:LogicalTarget;
+  rmlt:target &lt;#VoIDDump1&gt;;
+  rmlt:serialization formats:RDF_XML;
+  rmlt:compression comp:targzip;
+.</code></pre>
+
+<pre class="ex-access" aria-busy="false"><code class="hljs">&lt;#VoIDDump1&gt; a void:Dataset ;
+  void:dataDump &lt;file:///data/dump1.nt.zip&gt;;
+.
+&lt;#VoIDDump2&gt; a void:Dataset ;
+  void:dataDump &lt;file:///data/dump2.jsonld.tar.xz&gt;;
+.
+&lt;#VoIDDump3&gt; a void:Dataset ;
+  void:dataDump &lt;file:///data/dump3.rdf.tar.gz&gt;;
+.</code></pre>
+
+<pre class="ex-output" aria-busy="false"><code class="hljs"># file:///data/dump1.nt.zip
+&lt;http://example.org/0&gt; &lt;http://xmlns.com/foaf/0.1/name&gt; "Kara Danvers" .
+&lt;http://example.org/1&gt; &lt;http://xmlns.com/foaf/0.1/name&gt; "Alex Danvers" .
+&lt;http://example.org/2&gt; &lt;http://xmlns.com/foaf/0.1/name&gt; "J'onn J'onzz" .
+&lt;http://example.org/3&gt; &lt;http://xmlns.com/foaf/0.1/name&gt; "Nia Nal" .
+
+# file:///data/dump2.jsonld.tar.xz
+[
+  {
+    "@id": "http://example.org/0",
+    "http://xmlns.com/foaf/0.1/name": [
+      {
+        "@value": "Kara Danvers"
+      }
+    ]
+  },
+  {
+    "@id": "http://example.org/1",
+    "http://xmlns.com/foaf/0.1/name": [
+      {
+        "@value": "Alex Danvers"
+      }
+    ]
+  },
+  {
+    "@id": "http://example.org/2",
+    "http://xmlns.com/foaf/0.1/name": [
+      {
+        "@value": "J'onn J'onzz"
+      }
+    ]
+  },
+  {
+    "@id": "http://example.org/3",
+    "http://xmlns.com/foaf/0.1/name": [
+      {
+        "@value": "Nia Nal"
+      }
+    ]
+  }
+]
+
+# file:///data/dump3.rdf.tar.gz
+&lt;?xml version="1.0" encoding="utf-8" ?&gt;
+&lt;rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:foaf="http://xmlns.com/foaf/0.1/"&gt;
+  &lt;rdf:Description rdf:about="http://example.org/0"&gt;
+    &lt;foaf:name&gt;Kara Danvers&lt;/foaf:name&gt;
+  &lt;/rdf:Description&gt;
+  &lt;rdf:Description rdf:about="http://example.org/1"&gt;
+    &lt;foaf:name&gt;Alex Danvers&lt;/foaf:name&gt;
+  &lt;/rdf:Description&gt;
+  &lt;rdf:Description rdf:about="http://example.org/2"&gt;
+    &lt;foaf:name&gt;J'onn J'onzz&lt;/foaf:name&gt;
+  &lt;/rdf:Description&gt;
+  &lt;rdf:Description rdf:about="http://example.org/3"&gt;
+    &lt;foaf:name&gt;Nia Nal&lt;/foaf:name&gt;
+  &lt;/rdf:Description&gt;
+&lt;/rdf:RDF&gt;</code></pre>
+
+</section><section id="subject-map-and-predicate-map"><div class="header-wrapper"><h3 id="subject-and-predicate-map"><bdi class="secno">6.2 </bdi>Subject Map and Predicate Map</h3><a class="self-link" href="#subject-and-predicate-map" aria-label="Permalink for Section 6.2"></a></div><p>All triples containing the subject <code>http://example.org/{id}</code>
+are exported to <code>TargetDump1</code> 
+and all triples containing the predicate <code>foaf:name</code>
+are exported to <code>TargetDump2</code>.</p>
+<pre class="ex-input" aria-busy="false"><code class="hljs">&lt;Supergirl&gt;
+  &lt;Character id="0"&gt;
+    &lt;name&gt;Kara Danvers&lt;/name&gt;
+    &lt;nickname&gt;Supergirl&lt;/nickname&gt;
+  &lt;/Character&gt;
+  &lt;Character id="1"&gt;
+    &lt;name&gt;Alex Danvers&lt;/name&gt;
+    &lt;nickname&gt;Sentinel&lt;/nickname&gt;
+  &lt;/Character&gt;
+  &lt;Character id="2"&gt;
+    &lt;name&gt;J'onn J'onzz&lt;/name&gt;
+    &lt;nickname&gt;Martian Manhunter&lt;/nickname&gt;
+  &lt;/Character&gt;
+  &lt;Character id="3"&gt;
+    &lt;name&gt;Nia Nal&lt;/name&gt;
+    &lt;nickname&gt;Dreamer&lt;/nickname&gt;
+  &lt;/Character&gt; 
+&lt;/Supergirl&gt;</code></pre>
+
+<pre class="ex-access" aria-busy="false"><code class="hljs">&lt;#DCATSourceAccess&gt; a dcat:Dataset;
+  dcat:distribution [ a dcat:Distribution;
+    dcat:downloadURL "https://rml.io/specs/rml-target/Supergirl.xml";
+  ];
+.</code></pre>
+
+<pre class="ex-mapping" aria-busy="false"><code class="hljs">&lt;#TriplesMap&gt; a rr:TriplesMap;
+  rml:logicalSource [ a rml:LogicalSource;
+    rml:source &lt;#DCATSourceAccess&gt;;
+    rml:referenceFormulation ql:JSONPath;
+    rml:iterator "$.[*]";
+  ];
+  rr:subjectMap [ a rr:SubjectMap;
+    rr:template "http://example.org/{@id}";
+    rml:logicalTarget &lt;#TargetDump1&gt;;
+  ];
+  rr:predicateObjectMap [ a rr:PredicateObjectMap;
+    rr:predicateMap [ a rr:PredicateMap;
+      rr:constant foaf:name;
+      rml:logicalTarget &lt;#TargetDump2&gt;;
+    ];
+    rr:objectMap [ a rr:ObjectMap;
+      rml:reference "name/text()";
+    ];
+  ];
+  rr:predicateObjectMap [ a rr:PredicateObjectMap;
+    rr:predicateMap [ a rr:PredicateMap;
+      rr:constant foaf:nickname;
+    ];
+    rr:objectMap [ a rr:ObjectMap;
+      rml:reference "nickname/text()";
+    ];
+  ];
+.</code></pre>
+
+<pre class="ex-target" aria-busy="false"><code class="hljs">&lt;#TargetDump1&gt; a rmlt:LogicalTarget;
+  rmlt:target &lt;#VoIDDump1&gt;;
+  rmlt:serialization formats:N-Triples;
+.
+&lt;#TargetDump2&gt; a rmlt:LogicalTarget;
+  rmlt:target &lt;#VoIDDump1&gt;;
+  rmlt:serialization formats:N-Triples;
+.</code></pre>
+
+<pre class="ex-access" aria-busy="false"><code class="hljs">&lt;#VoIDDump1&gt; a void:Dataset ;
+  void:dataDump &lt;file:///data/dump1.nt&gt;;
+.
+&lt;#VoIDDump2&gt; a void:Dataset ;
+  void:dataDump &lt;file:///data/dump2.nt&gt;;
+.</code></pre>
+
+<pre class="ex-output" aria-busy="false"><code class="hljs"># file:///data/dump1.nt
+&lt;http://example.org/0&gt; &lt;http://xmlns.com/foaf/0.1/name&gt; "Kara Danvers" .
+&lt;http://example.org/0&gt; &lt;http://xmlns.com/foaf/0.1/nickname&gt; "Supergirl" .
+&lt;http://example.org/1&gt; &lt;http://xmlns.com/foaf/0.1/name&gt; "Alex Danvers" .
+&lt;http://example.org/1&gt; &lt;http://xmlns.com/foaf/0.1/nickname&gt; "Sentinel" .
+&lt;http://example.org/2&gt; &lt;http://xmlns.com/foaf/0.1/name&gt; "J'onn J'onzz" .
+&lt;http://example.org/2&gt; &lt;http://xmlns.com/foaf/0.1/nickname&gt; "Martian Manhunter" .
+&lt;http://example.org/3&gt; &lt;http://xmlns.com/foaf/0.1/name&gt; "Nia Nal" .
+&lt;http://example.org/3&gt; &lt;http://xmlns.com/foaf/0.1/nickname&gt; "Dreamer" .
+
+# file:///data/dump2.nt
+&lt;http://example.org/0&gt; &lt;http://xmlns.com/foaf/0.1/name&gt; "Kara Danvers" .
+&lt;http://example.org/1&gt; &lt;http://xmlns.com/foaf/0.1/name&gt; "Alex Danvers" .
+&lt;http://example.org/2&gt; &lt;http://xmlns.com/foaf/0.1/name&gt; "J'onn J'onzz" .
+&lt;http://example.org/3&gt; &lt;http://xmlns.com/foaf/0.1/name&gt; "Nia Nal" .</code></pre>
+
+</section><section id="subject-map-and-object-map"><div class="header-wrapper"><h3 id="subject-and-object-map"><bdi class="secno">6.3 </bdi>Subject Map and Object Map</h3><a class="self-link" href="#subject-and-object-map" aria-label="Permalink for Section 6.3"></a></div><p>All triples containing the subject <code>http://example.org/{id}</code>
+are exported to <code>TargetDump1</code> 
+and all triples containing the object reference <code>name/text()</code>
+are exported to <code>TargetDump2</code>.</p>
+<pre class="ex-input" aria-busy="false"><code class="hljs">&lt;Supergirl&gt;
+  &lt;Character id="0"&gt;
+    &lt;name&gt;Kara Danvers&lt;/name&gt;
+    &lt;nickname&gt;Supergirl&lt;/nickname&gt;
+  &lt;/Character&gt;
+  &lt;Character id="1"&gt;
+    &lt;name&gt;Alex Danvers&lt;/name&gt;
+    &lt;nickname&gt;Sentinel&lt;/nickname&gt;
+  &lt;/Character&gt;
+  &lt;Character id="2"&gt;
+    &lt;name&gt;J'onn J'onzz&lt;/name&gt;
+    &lt;nickname&gt;Martian Manhunter&lt;/nickname&gt;
+  &lt;/Character&gt;
+  &lt;Character id="3"&gt;
+    &lt;name&gt;Nia Nal&lt;/name&gt;
+    &lt;nickname&gt;Dreamer&lt;/nickname&gt;
+  &lt;/Character&gt; 
+&lt;/Supergirl&gt;</code></pre>
+
+<pre class="ex-access" aria-busy="false"><code class="hljs">&lt;#DCATSourceAccess&gt; a dcat:Dataset;
+  dcat:distribution [ a dcat:Distribution;
+    dcat:downloadURL "https://rml.io/specs/rml-target/Supergirl.xml";
+  ];
+.</code></pre>
+
+<pre class="ex-mapping" aria-busy="false"><code class="hljs">&lt;#TriplesMap&gt; a rr:TriplesMap;
+  rml:logicalSource [ a rml:LogicalSource;
+    rml:source &lt;#DCATSourceAccess&gt;;
+    rml:referenceFormulation ql:JSONPath;
+    rml:iterator "$.[*]";
+  ];
+  rr:subjectMap [ a rr:SubjectMap;
+    rr:template "http://example.org/{@id}";
+    rml:logicalTarget &lt;#TargetDump1&gt;;
+  ];
+  rr:predicateObjectMap [ a rr:PredicateObjectMap;
+    rr:predicateMap [ a rr:PredicateMap;
+      rr:constant foaf:name;
+    ];
+    rr:objectMap [ a rr:ObjectMap;
+      rml:reference "name/text()";
+      rml:logicalTarget &lt;#TargetDump2&gt;;
+    ];
+  ];
+  rr:predicateObjectMap [ a rr:PredicateObjectMap;
+    rr:predicateMap [ a rr:PredicateMap;
+      rr:constant foaf:nickname;
+    ];
+    rr:objectMap [ a rr:ObjectMap;
+      rml:reference "nickname/text()";
+    ];
+  ];
+.</code></pre>
+
+<pre class="ex-target" aria-busy="false"><code class="hljs">&lt;#TargetDump1&gt; a rmlt:LogicalTarget;
+  rmlt:target &lt;#VoIDDump1&gt;;
+  rmlt:serialization formats:N-Triples;
+.
+&lt;#TargetDump2&gt; a rmlt:LogicalTarget;
+  rmlt:target &lt;#VoIDDump1&gt;;
+  rmlt:serialization formats:N-Triples;
+.</code></pre>
+
+<pre class="ex-access" aria-busy="false"><code class="hljs">&lt;#VoIDDump1&gt; a void:Dataset ;
+  void:dataDump &lt;file:///data/dump1.nt&gt;;
+.
+&lt;#VoIDDump2&gt; a void:Dataset ;
+  void:dataDump &lt;file:///data/dump2.nt&gt;;
+.</code></pre>
+
+<pre class="ex-output" aria-busy="false"><code class="hljs"># file:///data/dump1.nt
+&lt;http://example.org/0&gt; &lt;http://xmlns.com/foaf/0.1/name&gt; "Kara Danvers" .
+&lt;http://example.org/0&gt; &lt;http://xmlns.com/foaf/0.1/nickname&gt; "Supergirl" .
+&lt;http://example.org/1&gt; &lt;http://xmlns.com/foaf/0.1/name&gt; "Alex Danvers" .
+&lt;http://example.org/1&gt; &lt;http://xmlns.com/foaf/0.1/nickname&gt; "Sentinel" .
+&lt;http://example.org/2&gt; &lt;http://xmlns.com/foaf/0.1/name&gt; "J'onn J'onzz" .
+&lt;http://example.org/2&gt; &lt;http://xmlns.com/foaf/0.1/nickname&gt; "Martian Manhunter" .
+&lt;http://example.org/3&gt; &lt;http://xmlns.com/foaf/0.1/name&gt; "Nia Nal" .
+&lt;http://example.org/3&gt; &lt;http://xmlns.com/foaf/0.1/nickname&gt; "Dreamer" .
+
+# file:///data/dump2.nt
+&lt;http://example.org/0&gt; &lt;http://xmlns.com/foaf/0.1/name&gt; "Kara Danvers" .
+&lt;http://example.org/1&gt; &lt;http://xmlns.com/foaf/0.1/name&gt; "Alex Danvers" .
+&lt;http://example.org/2&gt; &lt;http://xmlns.com/foaf/0.1/name&gt; "J'onn J'onzz" .
+&lt;http://example.org/3&gt; &lt;http://xmlns.com/foaf/0.1/name&gt; "Nia Nal" .</code></pre>
+
+</section><section id="predicate-map-and-object-map"><div class="header-wrapper"><h3 id="predicate-and-object-map"><bdi class="secno">6.4 </bdi>Predicate Map and Object Map</h3><a class="self-link" href="#predicate-and-object-map" aria-label="Permalink for Section 6.4"></a></div><p>All triples containing the predicate <code>foaf:name</code>
+are exported to <code>TargetDump1</code> 
+and all triples containing the object reference <code>nickname/text()</code>
+are exported to <code>TargetDump2</code>.</p>
+<pre class="ex-input" aria-busy="false"><code class="hljs">&lt;Supergirl&gt;
+  &lt;Character id="0"&gt;
+    &lt;name&gt;Kara Danvers&lt;/name&gt;
+    &lt;nickname&gt;Supergirl&lt;/nickname&gt;
+  &lt;/Character&gt;
+  &lt;Character id="1"&gt;
+    &lt;name&gt;Alex Danvers&lt;/name&gt;
+    &lt;nickname&gt;Sentinel&lt;/nickname&gt;
+  &lt;/Character&gt;
+  &lt;Character id="2"&gt;
+    &lt;name&gt;J'onn J'onzz&lt;/name&gt;
+    &lt;nickname&gt;Martian Manhunter&lt;/nickname&gt;
+  &lt;/Character&gt;
+  &lt;Character id="3"&gt;
+    &lt;name&gt;Nia Nal&lt;/name&gt;
+    &lt;nickname&gt;Dreamer&lt;/nickname&gt;
+  &lt;/Character&gt; 
+&lt;/Supergirl&gt;</code></pre>
+
+<pre class="ex-access" aria-busy="false"><code class="hljs">&lt;#DCATSourceAccess&gt; a dcat:Dataset;
+  dcat:distribution [ a dcat:Distribution;
+    dcat:downloadURL "https://rml.io/specs/rml-target/Supergirl.xml";
+  ];
+.</code></pre>
+
+<pre class="ex-mapping" aria-busy="false"><code class="hljs">&lt;#TriplesMap&gt; a rr:TriplesMap;
+  rml:logicalSource [ a rml:LogicalSource;
+    rml:source &lt;#DCATSourceAccess&gt;;
+    rml:referenceFormulation ql:JSONPath;
+    rml:iterator "$.[*]";
+  ];
+  rr:subjectMap [ a rr:SubjectMap;
+    rr:template "http://example.org/{@id}";
+  ];
+  rr:predicateObjectMap [ a rr:PredicateObjectMap;
+    rr:predicateMap [ a rr:PredicateMap;
+      rr:constant foaf:name;
+      rml:logicalTarget &lt;#TargetDump1&gt;;
+    ];
+    rr:objectMap [ a rr:ObjectMap;
+      rml:reference "name/text()";
+    ];
+  ];
+  rr:predicateObjectMap [ a rr:PredicateObjectMap;
+    rr:predicateMap [ a rr:PredicateMap;
+      rr:constant foaf:nickname;
+    ];
+    rr:objectMap [ a rr:ObjectMap;
+      rml:reference "nickname/text()";
+      rml:logicalTarget &lt;#TargetDump2&gt;;
+    ];
+  ];
+.</code></pre>
+
+<pre class="ex-target" aria-busy="false"><code class="hljs">&lt;#TargetDump1&gt; a rmlt:LogicalTarget;
+  rmlt:target &lt;#VoIDDump1&gt;;
+  rmlt:serialization formats:N-Triples;
+.
+&lt;#TargetDump2&gt; a rmlt:LogicalTarget;
+  rmlt:target &lt;#VoIDDump1&gt;;
+  rmlt:serialization formats:N-Triples;
+.</code></pre>
+
+<pre class="ex-access" aria-busy="false"><code class="hljs">&lt;#VoIDDump1&gt; a void:Dataset ;
+  void:dataDump &lt;file:///data/dump1.nt&gt;;
+.
+&lt;#VoIDDump2&gt; a void:Dataset ;
+  void:dataDump &lt;file:///data/dump2.nt&gt;;
+.</code></pre>
+
+<pre class="ex-output" aria-busy="false"><code class="hljs"># file:///data/dump1.nt
+&lt;http://example.org/0&gt; &lt;http://xmlns.com/foaf/0.1/name&gt; "Kara Danvers" .
+&lt;http://example.org/1&gt; &lt;http://xmlns.com/foaf/0.1/name&gt; "Alex Danvers" .
+&lt;http://example.org/2&gt; &lt;http://xmlns.com/foaf/0.1/name&gt; "J'onn J'onzz" .
+&lt;http://example.org/3&gt; &lt;http://xmlns.com/foaf/0.1/name&gt; "Nia Nal" .
+
+# file:///data/dump2.nt
+&lt;http://example.org/0&gt; &lt;http://xmlns.com/foaf/0.1/name&gt; "Kara Danvers" .
+&lt;http://example.org/1&gt; &lt;http://xmlns.com/foaf/0.1/name&gt; "Alex Danvers" .
+&lt;http://example.org/2&gt; &lt;http://xmlns.com/foaf/0.1/name&gt; "J'onn J'onzz" .
+&lt;http://example.org/3&gt; &lt;http://xmlns.com/foaf/0.1/name&gt; "Nia Nal" .</code></pre>
+
+</section><section id="subject-map-predicate-map-and-object-map"><div class="header-wrapper"><h3 id="subject-predicate-and-object-map"><bdi class="secno">6.5 </bdi>Subject Map, Predicate Map and Object Map</h3><a class="self-link" href="#subject-predicate-and-object-map" aria-label="Permalink for Section 6.5"></a></div><p>All triples containing the subject <code>http://example.org/{@id}</code>
+are exported to <code>TargetDump1</code> 
+and all triples containing the object reference <code>nickname/text()</code> or
+predicate <code>foaf:nickname</code> are exported to <code>TargetDump2</code>.</p>
+<pre class="ex-input" aria-busy="false"><code class="hljs">&lt;Supergirl&gt;
+  &lt;Character id="0"&gt;
+    &lt;name&gt;Kara Danvers&lt;/name&gt;
+    &lt;nickname&gt;Supergirl&lt;/nickname&gt;
+  &lt;/Character&gt;
+  &lt;Character id="1"&gt;
+    &lt;name&gt;Alex Danvers&lt;/name&gt;
+    &lt;nickname&gt;Sentinel&lt;/nickname&gt;
+  &lt;/Character&gt;
+  &lt;Character id="2"&gt;
+    &lt;name&gt;J'onn J'onzz&lt;/name&gt;
+    &lt;nickname&gt;Martian Manhunter&lt;/nickname&gt;
+  &lt;/Character&gt;
+  &lt;Character id="3"&gt;
+    &lt;name&gt;Nia Nal&lt;/name&gt;
+    &lt;nickname&gt;Dreamer&lt;/nickname&gt;
+  &lt;/Character&gt; 
+&lt;/Supergirl&gt;</code></pre>
+
+<pre class="ex-access" aria-busy="false"><code class="hljs">&lt;#DCATSourceAccess&gt; a dcat:Dataset;
+  dcat:distribution [ a dcat:Distribution;
+    dcat:downloadURL "https://rml.io/specs/rml-target/Supergirl.xml";
+  ];
+.</code></pre>
+
+<pre class="ex-mapping" aria-busy="false"><code class="hljs">&lt;#TriplesMap&gt; a rr:TriplesMap;
+  rml:logicalSource [ a rml:LogicalSource;
+    rml:source &lt;#DCATSourceAccess&gt;;
+    rml:referenceFormulation ql:JSONPath;
+    rml:iterator "$.[*]";
+  ];
+  rr:subjectMap [ a rr:SubjectMap;
+    rr:template "http://example.org/{@id}";
+    rml:logicalTarget &lt;#TargetDump1&gt;;
+  ];
+  rr:predicateObjectMap [ a rr:PredicateObjectMap;
+    rr:predicateMap [ a rr:PredicateMap;
+      rr:constant foaf:name;
+    ];
+    rr:objectMap [ a rr:ObjectMap;
+      rml:reference "name/text()";
+    ];
+  ];
+  rr:predicateObjectMap [ a rr:PredicateObjectMap;
+    rr:predicateMap [ a rr:PredicateMap;
+      rr:constant foaf:nickname;
+      rml:logicalTarget &lt;#TargetDump2&gt;;
+    ];
+    rr:objectMap [ a rr:ObjectMap;
+      rml:reference "nickname/text()";
+      rml:logicalTarget &lt;#TargetDump2&gt;;
+    ];
+  ];
+.</code></pre>
+
+<pre class="ex-target" aria-busy="false"><code class="hljs">&lt;#TargetDump1&gt; a rmlt:LogicalTarget;
+  rmlt:target &lt;#VoIDDump1&gt;;
+  rmlt:serialization formats:N-Triples;
+.
+&lt;#TargetDump2&gt; a rmlt:LogicalTarget;
+  rmlt:target &lt;#VoIDDump1&gt;;
+  rmlt:serialization formats:N-Triples;
+.</code></pre>
+
+<pre class="ex-access" aria-busy="false"><code class="hljs">&lt;#VoIDDump1&gt; a void:Dataset ;
+  void:dataDump &lt;file:///data/dump1.nt&gt;;
+.
+&lt;#VoIDDump2&gt; a void:Dataset ;
+  void:dataDump &lt;file:///data/dump2.nt&gt;;
+.</code></pre>
+
+<pre class="ex-output" aria-busy="false"><code class="hljs"># file:///data/dump1.nt
+&lt;http://example.org/0&gt; &lt;http://xmlns.com/foaf/0.1/name&gt; "Kara Danvers" .
+&lt;http://example.org/0&gt; &lt;http://xmlns.com/foaf/0.1/nickname&gt; "Supergirl" .
+&lt;http://example.org/1&gt; &lt;http://xmlns.com/foaf/0.1/name&gt; "Alex Danvers" .
+&lt;http://example.org/1&gt; &lt;http://xmlns.com/foaf/0.1/nickname&gt; "Sentinel" .
+&lt;http://example.org/2&gt; &lt;http://xmlns.com/foaf/0.1/name&gt; "J'onn J'onzz" .
+&lt;http://example.org/2&gt; &lt;http://xmlns.com/foaf/0.1/nickname&gt; "Martian Manhunter" .
+&lt;http://example.org/3&gt; &lt;http://xmlns.com/foaf/0.1/name&gt; "Nia Nal" .
+&lt;http://example.org/3&gt; &lt;http://xmlns.com/foaf/0.1/nickname&gt; "Dreamer" .
+
+# file:///data/dump2.nt
+&lt;http://example.org/0&gt; &lt;http://xmlns.com/foaf/0.1/name&gt; "Kara Danvers" .
+&lt;http://example.org/1&gt; &lt;http://xmlns.com/foaf/0.1/name&gt; "Alex Danvers" .
+&lt;http://example.org/2&gt; &lt;http://xmlns.com/foaf/0.1/name&gt; "J'onn J'onzz" .
+&lt;http://example.org/3&gt; &lt;http://xmlns.com/foaf/0.1/name&gt; "Nia Nal" .</code></pre>
+
+</section><section id="subject-map-and-graph-map"><div class="header-wrapper"><h3 id="subject-and-graph-map"><bdi class="secno">6.6 </bdi>Subject Map and Graph Map</h3><a class="self-link" href="#subject-and-graph-map" aria-label="Permalink for Section 6.6"></a></div><p>All triples containing the subject <code>http://example.org/{@id}</code>
+are exported to <code>TargetDump1</code> 
+and all triples within the named graph <code>ex:Characters</code>
+are exported to <code>TargetDump2</code>. </p>
+<pre class="ex-input" aria-busy="false"><code class="hljs">&lt;Supergirl&gt;
+  &lt;Character id="0"&gt;
+    &lt;name&gt;Kara Danvers&lt;/name&gt;
+    &lt;nickname&gt;Supergirl&lt;/nickname&gt;
+  &lt;/Character&gt;
+  &lt;Character id="1"&gt;
+    &lt;name&gt;Alex Danvers&lt;/name&gt;
+    &lt;nickname&gt;Sentinel&lt;/nickname&gt;
+  &lt;/Character&gt;
+  &lt;Character id="2"&gt;
+    &lt;name&gt;J'onn J'onzz&lt;/name&gt;
+    &lt;nickname&gt;Martian Manhunter&lt;/nickname&gt;
+  &lt;/Character&gt;
+  &lt;Character id="3"&gt;
+    &lt;name&gt;Nia Nal&lt;/name&gt;
+    &lt;nickname&gt;Dreamer&lt;/nickname&gt;
+  &lt;/Character&gt; 
+&lt;/Supergirl&gt;</code></pre>
+
+<pre class="ex-access" aria-busy="false"><code class="hljs">&lt;#DCATSourceAccess&gt; a dcat:Dataset;
+  dcat:distribution [ a dcat:Distribution;
+    dcat:downloadURL "https://rml.io/specs/rml-target/Supergirl.xml";
+  ];
+.</code></pre>
+
+<pre class="ex-mapping" aria-busy="false"><code class="hljs">&lt;#TriplesMap&gt; a rr:TriplesMap;
+  rml:logicalSource [ a rml:LogicalSource;
+    rml:source &lt;#DCATSourceAccess&gt;;
+    rml:referenceFormulation ql:JSONPath;
+    rml:iterator "$.[*]";
+  ];
+  rr:subjectMap [ a rr:SubjectMap;
+    rr:template "http://example.org/{@id}";
+    rml:logicalTarget &lt;#TargetDump1&gt;;
+  ];
+  rr:predicateObjectMap [ a rr:PredicateObjectMap;
+    rr:graphMap [ a rr:GraphMap;
+      rml:logicalTarget &lt;#TargetDump2&gt;;
+      rr:constant ex:Characters;
+    ];
+    rr:predicateMap [ a rr:PredicateMap;
+      rr:constant foaf:name;
+    ];
+    rr:objectMap [ a rr:ObjectMap;
+      rml:reference "name/text()";
+    ];
+  ];
+  rr:predicateObjectMap [ a rr:PredicateObjectMap;
+    rr:predicateMap [ a rr:PredicateMap;
+      rr:constant foaf:nickname;
+    ];
+    rr:objectMap [ a rr:ObjectMap;
+      rml:reference "nickname/text()";
+    ];
+  ];
+.</code></pre>
+
+<pre class="ex-target" aria-busy="false"><code class="hljs">&lt;#TargetDump1&gt; a rmlt:LogicalTarget;
+  rmlt:target &lt;#VoIDDump1&gt;;
+  rmlt:serialization formats:N-Triples;
+.
+&lt;#TargetDump2&gt; a rmlt:LogicalTarget;
+  rmlt:target &lt;#VoIDDump1&gt;;
+  rmlt:serialization formats:N-Triples;
+.</code></pre>
+
+<pre class="ex-access" aria-busy="false"><code class="hljs">&lt;#VoIDDump1&gt; a void:Dataset ;
+  void:dataDump &lt;file:///data/dump1.nq&gt;;
+.
+&lt;#VoIDDump2&gt; a void:Dataset ;
+  void:dataDump &lt;file:///data/dump2.nq&gt;;
+.</code></pre>
+
+<pre class="ex-output" aria-busy="false"><code class="hljs"># file:///data/dump1.nq
+&lt;http://example.org/0&gt; &lt;http://xmlns.com/foaf/0.1/name&gt; "Kara Danvers" &lt;http://example.org/Characters&gt; .
+&lt;http://example.org/0&gt; &lt;http://xmlns.com/foaf/0.1/nickname&gt; "Supergirl" _b0 .
+&lt;http://example.org/1&gt; &lt;http://xmlns.com/foaf/0.1/name&gt; "Alex Danvers" &lt;http://example.org/Characters&gt; .
+&lt;http://example.org/1&gt; &lt;http://xmlns.com/foaf/0.1/nickname&gt; "Sentinel" _b0 .
+&lt;http://example.org/2&gt; &lt;http://xmlns.com/foaf/0.1/name&gt; "J'onn J'onzz" &lt;http://example.org/Characters&gt; .
+&lt;http://example.org/2&gt; &lt;http://xmlns.com/foaf/0.1/nickname&gt; "Martian Manhunter" _b0 .
+&lt;http://example.org/3&gt; &lt;http://xmlns.com/foaf/0.1/name&gt; "Nia Nal" &lt;http://example.org/Characters&gt; .
+&lt;http://example.org/3&gt; &lt;http://xmlns.com/foaf/0.1/nickname&gt; "Dreamer" _b0 .
+
+# file:///data/dump2.nq
+&lt;http://example.org/0&gt; &lt;http://xmlns.com/foaf/0.1/name&gt; "Kara Danvers" &lt;http://example.org/Characters&gt; .
+&lt;http://example.org/1&gt; &lt;http://xmlns.com/foaf/0.1/name&gt; "Alex Danvers" &lt;http://example.org/Characters&gt; .
+&lt;http://example.org/2&gt; &lt;http://xmlns.com/foaf/0.1/name&gt; "J'onn J'onzz" &lt;http://example.org/Characters&gt; .
+&lt;http://example.org/3&gt; &lt;http://xmlns.com/foaf/0.1/name&gt; "Nia Nal" &lt;http://example.org/Characters&gt; .</code></pre>
+
+</section><section id="predicate-map-and-graph-map"><div class="header-wrapper"><h3 id="predicate-and-graph-map"><bdi class="secno">6.7 </bdi>Predicate Map and Graph Map</h3><a class="self-link" href="#predicate-and-graph-map" aria-label="Permalink for Section 6.7"></a></div><p>All triples containing the predicate <code>foaf:nickname</code>
+are exported to <code>TargetDump1</code> 
+and all triples within the named graph <code>ex:Characters</code>
+are exported to <code>TargetDump2</code>. </p>
+<pre class="ex-input" aria-busy="false"><code class="hljs">&lt;Supergirl&gt;
+  &lt;Character id="0"&gt;
+    &lt;name&gt;Kara Danvers&lt;/name&gt;
+    &lt;nickname&gt;Supergirl&lt;/nickname&gt;
+  &lt;/Character&gt;
+  &lt;Character id="1"&gt;
+    &lt;name&gt;Alex Danvers&lt;/name&gt;
+    &lt;nickname&gt;Sentinel&lt;/nickname&gt;
+  &lt;/Character&gt;
+  &lt;Character id="2"&gt;
+    &lt;name&gt;J'onn J'onzz&lt;/name&gt;
+    &lt;nickname&gt;Martian Manhunter&lt;/nickname&gt;
+  &lt;/Character&gt;
+  &lt;Character id="3"&gt;
+    &lt;name&gt;Nia Nal&lt;/name&gt;
+    &lt;nickname&gt;Dreamer&lt;/nickname&gt;
+  &lt;/Character&gt; 
+&lt;/Supergirl&gt;</code></pre>
+
+<pre class="ex-access" aria-busy="false"><code class="hljs">&lt;#DCATSourceAccess&gt; a dcat:Dataset;
+  dcat:distribution [ a dcat:Distribution;
+    dcat:downloadURL "https://rml.io/specs/rml-target/Supergirl.xml";
+  ];
+.</code></pre>
+
+<pre class="ex-mapping" aria-busy="false"><code class="hljs">&lt;#TriplesMap&gt; a rr:TriplesMap;
+  rml:logicalSource [ a rml:LogicalSource;
+    rml:source &lt;#DCATSourceAccess&gt;;
+    rml:referenceFormulation ql:JSONPath;
+    rml:iterator "$.[*]";
+  ];
+  rr:subjectMap [ a rr:SubjectMap;
+    rr:template "http://example.org/{@id}";
+  ];
+  rr:predicateObjectMap [ a rr:PredicateObjectMap;
+    rr:graphMap [ a rr:GraphMap;
+      rml:logicalTarget &lt;#TargetDump2&gt;;
+      rr:constant ex:Characters;
+    ];
+    rr:predicateMap [ a rr:PredicateMap;
+      rr:constant foaf:name;
+    ];
+    rr:objectMap [ a rr:ObjectMap;
+      rml:reference "name/text()";
+    ];
+  ];
+  rr:predicateObjectMap [ a rr:PredicateObjectMap;
+    rr:predicateMap [ a rr:PredicateMap;
+      rr:constant foaf:nickname;
+      rml:logicalTarget &lt;#TargetDump1&gt;;
+    ];
+    rr:objectMap [ a rr:ObjectMap;
+      rml:reference "nickname/text()";
+    ];
+  ];
+.</code></pre>
+
+<pre class="ex-target" aria-busy="false"><code class="hljs">&lt;#TargetDump1&gt; a rmlt:LogicalTarget;
+  rmlt:target &lt;#VoIDDump1&gt;;
+  rmlt:serialization formats:N-Triples;
+.
+&lt;#TargetDump2&gt; a rmlt:LogicalTarget;
+  rmlt:target &lt;#VoIDDump1&gt;;
+  rmlt:serialization formats:N-Triples;
+.</code></pre>
+
+<pre class="ex-access" aria-busy="false"><code class="hljs">&lt;#VoIDDump1&gt; a void:Dataset ;
+  void:dataDump &lt;file:///data/dump1.nq&gt;;
+.
+&lt;#VoIDDump2&gt; a void:Dataset ;
+  void:dataDump &lt;file:///data/dump2.nq&gt;;
+.</code></pre>
+
+<pre class="ex-output" aria-busy="false"><code class="hljs"># file:///data/dump1.nq
+&lt;http://example.org/0&gt; &lt;http://xmlns.com/foaf/0.1/nickname&gt; "Supergirl" _b0 .
+&lt;http://example.org/1&gt; &lt;http://xmlns.com/foaf/0.1/nickname&gt; "Sentinel" _b0 .
+&lt;http://example.org/2&gt; &lt;http://xmlns.com/foaf/0.1/nickname&gt; "Martian Manhunter" _b0 .
+&lt;http://example.org/3&gt; &lt;http://xmlns.com/foaf/0.1/nickname&gt; "Dreamer" _b0 .
+
+# file:///data/dump2.nq
+&lt;http://example.org/0&gt; &lt;http://xmlns.com/foaf/0.1/name&gt; "Kara Danvers" &lt;http://example.org/Characters&gt; .
+&lt;http://example.org/1&gt; &lt;http://xmlns.com/foaf/0.1/name&gt; "Alex Danvers" &lt;http://example.org/Characters&gt; .
+&lt;http://example.org/2&gt; &lt;http://xmlns.com/foaf/0.1/name&gt; "J'onn J'onzz" &lt;http://example.org/Characters&gt; .
+&lt;http://example.org/3&gt; &lt;http://xmlns.com/foaf/0.1/name&gt; "Nia Nal" &lt;http://example.org/Characters&gt; .</code></pre>
+
+</section><section id="object-map-and-graph-map"><div class="header-wrapper"><h3 id="object-and-graph-map"><bdi class="secno">6.8 </bdi>Object Map and Graph Map</h3><a class="self-link" href="#object-and-graph-map" aria-label="Permalink for Section 6.8"></a></div><p>All triples containing the object reference <code>nickname/text()</code>
+are exported to <code>TargetDump1</code> 
+and all triples within the named graph <code>ex:Characters</code>
+are exported to <code>TargetDump2</code>. </p>
+<pre class="ex-input" aria-busy="false"><code class="hljs">&lt;Supergirl&gt;
+  &lt;Character id="0"&gt;
+    &lt;name&gt;Kara Danvers&lt;/name&gt;
+    &lt;nickname&gt;Supergirl&lt;/nickname&gt;
+  &lt;/Character&gt;
+  &lt;Character id="1"&gt;
+    &lt;name&gt;Alex Danvers&lt;/name&gt;
+    &lt;nickname&gt;Sentinel&lt;/nickname&gt;
+  &lt;/Character&gt;
+  &lt;Character id="2"&gt;
+    &lt;name&gt;J'onn J'onzz&lt;/name&gt;
+    &lt;nickname&gt;Martian Manhunter&lt;/nickname&gt;
+  &lt;/Character&gt;
+  &lt;Character id="3"&gt;
+    &lt;name&gt;Nia Nal&lt;/name&gt;
+    &lt;nickname&gt;Dreamer&lt;/nickname&gt;
+  &lt;/Character&gt; 
+&lt;/Supergirl&gt;</code></pre>
+
+<pre class="ex-access" aria-busy="false"><code class="hljs">&lt;#DCATSourceAccess&gt; a dcat:Dataset;
+  dcat:distribution [ a dcat:Distribution;
+    dcat:downloadURL "https://rml.io/specs/rml-target/Supergirl.xml";
+  ];
+.</code></pre>
+
+<pre class="ex-mapping" aria-busy="false"><code class="hljs">&lt;#TriplesMap&gt; a rr:TriplesMap;
+  rml:logicalSource [ a rml:LogicalSource;
+    rml:source &lt;#DCATSourceAccess&gt;;
+    rml:referenceFormulation ql:JSONPath;
+    rml:iterator "$.[*]";
+  ];
+  rr:subjectMap [ a rr:SubjectMap;
+    rr:template "http://example.org/{@id}";
+  ];
+  rr:predicateObjectMap [ a rr:PredicateObjectMap;
+    rr:graphMap [ a rr:GraphMap;
+      rml:logicalTarget &lt;#TargetDump2&gt;;
+      rr:constant ex:Characters;
+    ];
+    rr:predicateMap [ a rr:PredicateMap;
+      rr:constant foaf:name;
+    ];
+    rr:objectMap [ a rr:ObjectMap;
+      rml:reference "name/text()";
+    ];
+  ];
+  rr:predicateObjectMap [ a rr:PredicateObjectMap;
+    rr:predicateMap [ a rr:PredicateMap;
+      rr:constant foaf:nickname;
+    ];
+    rr:objectMap [ a rr:ObjectMap;
+      rml:reference "nickname/text()";
+      rml:logicalTarget &lt;#TargetDump1&gt;;
+    ];
+  ];
+.</code></pre>
+
+<pre class="ex-target" aria-busy="false"><code class="hljs">&lt;#TargetDump1&gt; a rmlt:LogicalTarget;
+  rmlt:target &lt;#VoIDDump1&gt;;
+  rmlt:serialization formats:N-Triples;
+.
+&lt;#TargetDump2&gt; a rmlt:LogicalTarget;
+  rmlt:target &lt;#VoIDDump1&gt;;
+  rmlt:serialization formats:N-Triples;
+.</code></pre>
+
+<pre class="ex-access" aria-busy="false"><code class="hljs">&lt;#VoIDDump1&gt; a void:Dataset ;
+  void:dataDump &lt;file:///data/dump1.nq&gt;;
+.
+&lt;#VoIDDump2&gt; a void:Dataset ;
+  void:dataDump &lt;file:///data/dump2.nq&gt;;
+.</code></pre>
+
+<pre class="ex-output" aria-busy="false"><code class="hljs"># file:///data/dump1.nq
+&lt;http://example.org/0&gt; &lt;http://xmlns.com/foaf/0.1/nickname&gt; "Supergirl" _b0 .
+&lt;http://example.org/1&gt; &lt;http://xmlns.com/foaf/0.1/nickname&gt; "Sentinel" _b0 .
+&lt;http://example.org/2&gt; &lt;http://xmlns.com/foaf/0.1/nickname&gt; "Martian Manhunter" _b0 .
+&lt;http://example.org/3&gt; &lt;http://xmlns.com/foaf/0.1/nickname&gt; "Dreamer" _b0 .
+
+# file:///data/dump2.nq
+&lt;http://example.org/0&gt; &lt;http://xmlns.com/foaf/0.1/name&gt; "Kara Danvers" &lt;http://example.org/Characters&gt; .
+&lt;http://example.org/1&gt; &lt;http://xmlns.com/foaf/0.1/name&gt; "Alex Danvers" &lt;http://example.org/Characters&gt; .
+&lt;http://example.org/2&gt; &lt;http://xmlns.com/foaf/0.1/name&gt; "J'onn J'onzz" &lt;http://example.org/Characters&gt; .
+&lt;http://example.org/3&gt; &lt;http://xmlns.com/foaf/0.1/name&gt; "Nia Nal" &lt;http://example.org/Characters&gt; .</code></pre>
+
+
+</section><section id="language-map-and-graph-map"><div class="header-wrapper"><h3 id="language-and-graph-map"><bdi class="secno">6.9 </bdi>Language Map and Graph Map</h3><a class="self-link" href="#language-and-graph-map" aria-label="Permalink for Section 6.9"></a></div><p>All triples containing the language tag <code>en</code> 
+are exported to <code>TargetDump1</code> 
+and all triples within the named graph <code>ex:Characters</code>
+are exported to <code>TargetDump2</code>. 
+The other triples are exported to the default target of the processor
+as there is no dedicated Target assigned to triples containing 
+<code>foaf:nickname</code> as predicate.</p>
+<pre class="ex-input" aria-busy="false"><code class="hljs">&lt;Supergirl&gt;
+  &lt;Character id="0"&gt;
+    &lt;name&gt;Kara Danvers&lt;/name&gt;
+    &lt;nickname&gt;Supergirl&lt;/nickname&gt;
+  &lt;/Character&gt;
+  &lt;Character id="1"&gt;
+    &lt;name&gt;Alex Danvers&lt;/name&gt;
+    &lt;nickname&gt;Sentinel&lt;/nickname&gt;
+  &lt;/Character&gt;
+  &lt;Character id="2"&gt;
+    &lt;name&gt;J'onn J'onzz&lt;/name&gt;
+    &lt;nickname&gt;Martian Manhunter&lt;/nickname&gt;
+  &lt;/Character&gt;
+  &lt;Character id="3"&gt;
+    &lt;name&gt;Nia Nal&lt;/name&gt;
+    &lt;nickname&gt;Dreamer&lt;/nickname&gt;
+  &lt;/Character&gt; 
+&lt;/Supergirl&gt;</code></pre>
+
+<pre class="ex-access" aria-busy="false"><code class="hljs">&lt;#DCATSourceAccess&gt; a dcat:Dataset;
+  dcat:distribution [ a dcat:Distribution;
+    dcat:downloadURL "https://rml.io/specs/rml-target/Supergirl.xml";
+  ];
+.</code></pre>
+
+<pre class="ex-mapping" aria-busy="false"><code class="hljs">&lt;#TriplesMap&gt; a rr:TriplesMap;
+  rml:logicalSource [ a rml:LogicalSource;
+    rml:source &lt;#DCATSourceAccess&gt;;
+    rml:referenceFormulation ql:JSONPath;
+    rml:iterator "$.[*]";
+  ];
+  rr:subjectMap [ a rr:SubjectMap;
+    rr:template "http://example.org/{@id}";
+  ];
+  rr:predicateObjectMap [ a rr:PredicateObjectMap;
+    rr:graphMap [ a rr:GraphMap;
+      rml:logicalTarget &lt;#TargetDump2&gt;;
+      rr:constant ex:Characters;
+    ];
+    rr:predicateMap [ a rr:PredicateMap;
+      rr:constant foaf:name;
+    ];
+    rr:objectMap [ a rr:ObjectMap;
+      rml:reference "name/text()";
+      rml:languageMap [
+        rml:logicalTarget &lt;#TargetDump1&gt;;
+        rr:constant "en";
+      ];
+    ];
+  ];
+  rr:predicateObjectMap [ a rr:PredicateObjectMap;
+    rr:predicateMap [ a rr:PredicateMap;
+      rr:constant foaf:nickname;
+    ];
+    rr:objectMap [ a rr:ObjectMap;
+      rml:reference "nickname/text()";
+      rml:logicalTarget &lt;#TargetDump2&gt;;
+    ];
+  ];
+.</code></pre>
+
+<pre class="ex-target" aria-busy="false"><code class="hljs">&lt;#TargetDump1&gt; a rmlt:LogicalTarget;
+  rmlt:target &lt;#VoIDDump1&gt;;
+  rmlt:serialization formats:N-Triples;
+.
+&lt;#TargetDump2&gt; a rmlt:LogicalTarget;
+  rmlt:target &lt;#VoIDDump1&gt;;
+  rmlt:serialization formats:N-Triples;
+.</code></pre>
+
+<pre class="ex-access" aria-busy="false"><code class="hljs">&lt;#VoIDDump1&gt; a void:Dataset ;
+  void:dataDump &lt;file:///data/dump1.nt&gt;;
+.
+&lt;#VoIDDump2&gt; a void:Dataset ;
+  void:dataDump &lt;file:///data/dump2.nt&gt;;
+.</code></pre>
+
+<pre class="ex-output" aria-busy="false"><code class="hljs"># file:///data/dump1.nt
+&lt;http://example.org/0&gt; &lt;http://xmlns.com/foaf/0.1/name&gt; "Kara Danvers"@en &lt;http://example.org/Characters&gt; .
+&lt;http://example.org/1&gt; &lt;http://xmlns.com/foaf/0.1/name&gt; "Alex Danvers"@en &lt;http://example.org/Characters&gt; .
+&lt;http://example.org/2&gt; &lt;http://xmlns.com/foaf/0.1/name&gt; "J'onn J'onzz"@en &lt;http://example.org/Characters&gt; .
+&lt;http://example.org/3&gt; &lt;http://xmlns.com/foaf/0.1/name&gt; "Nia Nal"@en &lt;http://example.org/Characters&gt; .
+
+# file:///data/dump2.nt
+&lt;http://example.org/0&gt; &lt;http://xmlns.com/foaf/0.1/name&gt; "Kara Danvers"@en &lt;http://example.org/Characters&gt; .
+&lt;http://example.org/1&gt; &lt;http://xmlns.com/foaf/0.1/name&gt; "Alex Danvers"@en &lt;http://example.org/Characters&gt; .
+&lt;http://example.org/2&gt; &lt;http://xmlns.com/foaf/0.1/name&gt; "J'onn J'onzz"@en &lt;http://example.org/Characters&gt; .
+&lt;http://example.org/3&gt; &lt;http://xmlns.com/foaf/0.1/name&gt; "Nia Nal"@en &lt;http://example.org/Characters&gt; .
+
+# default target of processor
+&lt;http://example.org/0&gt; &lt;http://xmlns.com/foaf/0.1/nickname&gt; "Supergirl" _b0 .
+&lt;http://example.org/1&gt; &lt;http://xmlns.com/foaf/0.1/nickname&gt; "Sentinel" _b0 .
+&lt;http://example.org/2&gt; &lt;http://xmlns.com/foaf/0.1/nickname&gt; "Martian Manhunter" _b0 .
+&lt;http://example.org/3&gt; &lt;http://xmlns.com/foaf/0.1/nickname&gt; "Dreamer" _b0 .</code></pre>
+
+</section><section id="language-map-and-object-map"><div class="header-wrapper"><h3 id="language-and-object-map"><bdi class="secno">6.10 </bdi>Language Map and Object Map</h3><a class="self-link" href="#language-and-object-map" aria-label="Permalink for Section 6.10"></a></div><p>All triples containing the language tag <code>en</code> 
+are exported to <code>TargetDump1</code> 
+and all triples containing the object reference <code>nickname/text()</code> 
+are exported to <code>TargetDump2</code>.</p>
+<pre class="ex-input" aria-busy="false"><code class="hljs">&lt;Supergirl&gt;
+  &lt;Character id="0"&gt;
+    &lt;name&gt;Kara Danvers&lt;/name&gt;
+    &lt;nickname&gt;Supergirl&lt;/nickname&gt;
+  &lt;/Character&gt;
+  &lt;Character id="1"&gt;
+    &lt;name&gt;Alex Danvers&lt;/name&gt;
+    &lt;nickname&gt;Sentinel&lt;/nickname&gt;
+  &lt;/Character&gt;
+  &lt;Character id="2"&gt;
+    &lt;name&gt;J'onn J'onzz&lt;/name&gt;
+    &lt;nickname&gt;Martian Manhunter&lt;/nickname&gt;
+  &lt;/Character&gt;
+  &lt;Character id="3"&gt;
+    &lt;name&gt;Nia Nal&lt;/name&gt;
+    &lt;nickname&gt;Dreamer&lt;/nickname&gt;
+  &lt;/Character&gt; 
+&lt;/Supergirl&gt;</code></pre>
+
+<pre class="ex-access" aria-busy="false"><code class="hljs">&lt;#DCATSourceAccess&gt; a dcat:Dataset;
+  dcat:distribution [ a dcat:Distribution;
+    dcat:downloadURL "https://rml.io/specs/rml-target/Supergirl.xml";
+  ];
+.</code></pre>
+
+<pre class="ex-mapping" aria-busy="false"><code class="hljs">&lt;#TriplesMap&gt; a rr:TriplesMap;
+  rml:logicalSource [ a rml:LogicalSource;
+    rml:source &lt;#DCATSourceAccess&gt;;
+    rml:referenceFormulation ql:JSONPath;
+    rml:iterator "$.[*]";
+  ];
+  rr:subjectMap [ a rr:SubjectMap;
+    rr:template "http://example.org/{@id}";
+  ];
+  rr:predicateObjectMap [ a rr:PredicateObjectMap;
+    rr:predicateMap [ a rr:PredicateMap;
+      rr:constant foaf:name;
+    ];
+    rr:objectMap [ a rr:ObjectMap;
+      rml:reference "name/text()";
+      rml:languageMap [
+        rml:logicalTarget &lt;#TargetDump1&gt;;
+        rr:constant "en";
+      ];
+    ];
+  ];
+  rr:predicateObjectMap [ a rr:PredicateObjectMap;
+    rr:predicateMap [ a rr:PredicateMap;
+      rr:constant foaf:nickname;
+    ];
+    rr:objectMap [ a rr:ObjectMap;
+      rml:reference "nickname/text()";
+      rml:logicalTarget &lt;#TargetDump2&gt;;
+    ];
+  ];
+.</code></pre>
+
+<pre class="ex-target" aria-busy="false"><code class="hljs">&lt;#TargetDump1&gt; a rmlt:LogicalTarget;
+  rmlt:target &lt;#VoIDDump1&gt;;
+  rmlt:serialization formats:N-Triples;
+.
+&lt;#TargetDump2&gt; a rmlt:LogicalTarget;
+  rmlt:target &lt;#VoIDDump1&gt;;
+  rmlt:serialization formats:N-Triples;
+.</code></pre>
+
+<pre class="ex-access" aria-busy="false"><code class="hljs">&lt;#VoIDDump1&gt; a void:Dataset ;
+  void:dataDump &lt;file:///data/dump1.nt&gt;;
+.
+&lt;#VoIDDump2&gt; a void:Dataset ;
+  void:dataDump &lt;file:///data/dump2.nt&gt;;
+.</code></pre>
+
+<pre class="ex-output" aria-busy="false"><code class="hljs"># file:///data/dump1.nt
+&lt;http://example.org/0&gt; &lt;http://xmlns.com/foaf/0.1/name&gt; "Kara Danvers"@en .
+&lt;http://example.org/1&gt; &lt;http://xmlns.com/foaf/0.1/name&gt; "Alex Danvers"@en .
+&lt;http://example.org/2&gt; &lt;http://xmlns.com/foaf/0.1/name&gt; "J'onn J'onzz"@en .
+&lt;http://example.org/3&gt; &lt;http://xmlns.com/foaf/0.1/name&gt; "Nia Nal"@en .
+
+# file:///data/dump2.nt
+&lt;http://example.org/0&gt; &lt;http://xmlns.com/foaf/0.1/nickname&gt; "Supergirl" .
+&lt;http://example.org/1&gt; &lt;http://xmlns.com/foaf/0.1/nickname&gt; "Sentinel" .
+&lt;http://example.org/2&gt; &lt;http://xmlns.com/foaf/0.1/nickname&gt; "Martian Manhunter" .
+&lt;http://example.org/3&gt; &lt;http://xmlns.com/foaf/0.1/nickname&gt; "Dreamer" .</code></pre>
+
+</section><section id="multiple-predicate-maps"><div class="header-wrapper"><h3 id="multiple-predicate-map"><bdi class="secno">6.11 </bdi>Multiple Predicate Maps</h3><a class="self-link" href="#multiple-predicate-map" aria-label="Permalink for Section 6.11"></a></div><p>All triples containing the predicate <code>foaf:name</code>
+are exported to <code>TargetDump1</code> 
+and all triples containing the predicate <code>foaf:nickname</code>
+are exported to <code>TargetDump2</code>.</p>
+<pre class="ex-input" aria-busy="false"><code class="hljs">&lt;Supergirl&gt;
+  &lt;Character id="0"&gt;
+    &lt;name&gt;Kara Danvers&lt;/name&gt;
+    &lt;nickname&gt;Supergirl&lt;/nickname&gt;
+  &lt;/Character&gt;
+  &lt;Character id="1"&gt;
+    &lt;name&gt;Alex Danvers&lt;/name&gt;
+    &lt;nickname&gt;Sentinel&lt;/nickname&gt;
+  &lt;/Character&gt;
+  &lt;Character id="2"&gt;
+    &lt;name&gt;J'onn J'onzz&lt;/name&gt;
+    &lt;nickname&gt;Martian Manhunter&lt;/nickname&gt;
+  &lt;/Character&gt;
+  &lt;Character id="3"&gt;
+    &lt;name&gt;Nia Nal&lt;/name&gt;
+    &lt;nickname&gt;Dreamer&lt;/nickname&gt;
+  &lt;/Character&gt; 
+&lt;/Supergirl&gt;</code></pre>
+
+<pre class="ex-access" aria-busy="false"><code class="hljs">&lt;#DCATSourceAccess&gt; a dcat:Dataset;
+  dcat:distribution [ a dcat:Distribution;
+    dcat:downloadURL "https://rml.io/specs/rml-target/Supergirl.xml";
+  ];
+.</code></pre>
+
+<pre class="ex-mapping" aria-busy="false"><code class="hljs">&lt;#TriplesMap&gt; a rr:TriplesMap;
+  rml:logicalSource [ a rml:LogicalSource;
+    rml:source &lt;#DCATSourceAccess&gt;;
+    rml:referenceFormulation ql:JSONPath;
+    rml:iterator "$.[*]";
+  ];
+  rr:subjectMap [ a rr:SubjectMap;
+    rr:template "http://example.org/{@id}";
+  ];
+  rr:predicateObjectMap [ a rr:PredicateObjectMap;
+    rr:predicateMap [ a rr:PredicateMap;
+      rr:constant foaf:name;
+      rml:logicalTarget &lt;#TargetDump1&gt;;
+    ];
+    rr:objectMap [ a rr:ObjectMap;
+      rml:reference "name/text()";
+    ];
+  ];
+  rr:predicateObjectMap [ a rr:PredicateObjectMap;
+    rr:predicateMap [ a rr:PredicateMap;
+      rr:constant foaf:nickname;
+      rml:logicalTarget &lt;#TargetDump2&gt;;
+    ];
+    rr:objectMap [ a rr:ObjectMap;
+      rml:reference "nickname/text()";
+    ];
+  ];
+.</code></pre>
+
+<pre class="ex-target" aria-busy="false"><code class="hljs">&lt;#TargetDump1&gt; a rmlt:LogicalTarget;
+  rmlt:target &lt;#VoIDDump1&gt;;
+  rmlt:serialization formats:N-Triples;
+.
+&lt;#TargetDump2&gt; a rmlt:LogicalTarget;
+  rmlt:target &lt;#VoIDDump1&gt;;
+  rmlt:serialization formats:N-Triples;
+.</code></pre>
+
+<pre class="ex-access" aria-busy="false"><code class="hljs">&lt;#VoIDDump1&gt; a void:Dataset ;
+  void:dataDump &lt;file:///data/dump1.nt&gt;;
+.
+&lt;#VoIDDump2&gt; a void:Dataset ;
+  void:dataDump &lt;file:///data/dump2.nt&gt;;
+.</code></pre>
+
+<pre class="ex-output" aria-busy="false"><code class="hljs"># file:///data/dump1.nt
+&lt;http://example.org/0&gt; &lt;http://xmlns.com/foaf/0.1/name&gt; "Kara Danvers" .
+&lt;http://example.org/1&gt; &lt;http://xmlns.com/foaf/0.1/name&gt; "Alex Danvers" .
+&lt;http://example.org/2&gt; &lt;http://xmlns.com/foaf/0.1/name&gt; "J'onn J'onzz" .
+&lt;http://example.org/3&gt; &lt;http://xmlns.com/foaf/0.1/name&gt; "Nia Nal" .
+
+# file:///data/dump2.nt
+&lt;http://example.org/0&gt; &lt;http://xmlns.com/foaf/0.1/nickname&gt; "Supergirl" .
+&lt;http://example.org/1&gt; &lt;http://xmlns.com/foaf/0.1/nickname&gt; "Sentinel" .
+&lt;http://example.org/2&gt; &lt;http://xmlns.com/foaf/0.1/nickname&gt; "Martian Manhunter" .
+&lt;http://example.org/3&gt; &lt;http://xmlns.com/foaf/0.1/nickname&gt; "Dreamer" .</code></pre>
+
+</section><section id="multiple-object-maps"><div class="header-wrapper"><h3 id="multiple-object-map"><bdi class="secno">6.12 </bdi>Multiple Object Maps</h3><a class="self-link" href="#multiple-object-map" aria-label="Permalink for Section 6.12"></a></div><p>All triples containing the object reference <code>name/text()</code>
+are exported to <code>TargetDump1</code> 
+and all triples containing the object reference <code>nickname/text()</code>
+are exported to <code>TargetDump2</code>.</p>
+<pre class="ex-input" aria-busy="false"><code class="hljs">&lt;Supergirl&gt;
+  &lt;Character id="0"&gt;
+    &lt;name&gt;Kara Danvers&lt;/name&gt;
+    &lt;nickname&gt;Supergirl&lt;/nickname&gt;
+  &lt;/Character&gt;
+  &lt;Character id="1"&gt;
+    &lt;name&gt;Alex Danvers&lt;/name&gt;
+    &lt;nickname&gt;Sentinel&lt;/nickname&gt;
+  &lt;/Character&gt;
+  &lt;Character id="2"&gt;
+    &lt;name&gt;J'onn J'onzz&lt;/name&gt;
+    &lt;nickname&gt;Martian Manhunter&lt;/nickname&gt;
+  &lt;/Character&gt;
+  &lt;Character id="3"&gt;
+    &lt;name&gt;Nia Nal&lt;/name&gt;
+    &lt;nickname&gt;Dreamer&lt;/nickname&gt;
+  &lt;/Character&gt; 
+&lt;/Supergirl&gt;</code></pre>
+
+<pre class="ex-access" aria-busy="false"><code class="hljs">&lt;#DCATSourceAccess&gt; a dcat:Dataset;
+  dcat:distribution [ a dcat:Distribution;
+    dcat:downloadURL "https://rml.io/specs/rml-target/Supergirl.xml";
+  ];
+.</code></pre>
+
+<pre class="ex-mapping" aria-busy="false"><code class="hljs">&lt;#TriplesMap&gt; a rr:TriplesMap;
+  rml:logicalSource [ a rml:LogicalSource;
+    rml:source &lt;#DCATSourceAccess&gt;;
+    rml:referenceFormulation ql:JSONPath;
+    rml:iterator "$.[*]";
+  ];
+  rr:subjectMap [ a rr:SubjectMap;
+    rr:template "http://example.org/{@id}";
+  ];
+  rr:predicateObjectMap [ a rr:PredicateObjectMap;
+    rr:predicateMap [ a rr:PredicateMap;
+      rr:constant foaf:name;
+    ];
+    rr:objectMap [ a rr:ObjectMap;
+      rml:reference "name/text()";
+      rml:logicalTarget &lt;#TargetDump1&gt;;
+    ];
+  ];
+  rr:predicateObjectMap [ a rr:PredicateObjectMap;
+    rr:predicateMap [ a rr:PredicateMap;
+      rr:constant foaf:nickname;
+    ];
+    rr:objectMap [ a rr:ObjectMap;
+      rml:reference "nickname/text()";
+      rml:logicalTarget &lt;#TargetDump2&gt;;
+    ];
+  ];
+.</code></pre>
+
+<pre class="ex-target" aria-busy="false"><code class="hljs">&lt;#TargetDump1&gt; a rmlt:LogicalTarget;
+  rmlt:target &lt;#VoIDDump1&gt;;
+  rmlt:serialization formats:N-Triples;
+.
+&lt;#TargetDump2&gt; a rmlt:LogicalTarget;
+  rmlt:target &lt;#VoIDDump1&gt;;
+  rmlt:serialization formats:N-Triples;
+.</code></pre>
+
+<pre class="ex-access" aria-busy="false"><code class="hljs">&lt;#VoIDDump1&gt; a void:Dataset ;
+  void:dataDump &lt;file:///data/dump1.nt&gt;;
+.
+&lt;#VoIDDump2&gt; a void:Dataset ;
+  void:dataDump &lt;file:///data/dump2.nt&gt;;
+.</code></pre>
+
+<pre class="ex-output" aria-busy="false"><code class="hljs"># file:///data/dump1.nt
+&lt;http://example.org/0&gt; &lt;http://xmlns.com/foaf/0.1/name&gt; "Kara Danvers" .
+&lt;http://example.org/1&gt; &lt;http://xmlns.com/foaf/0.1/name&gt; "Alex Danvers" .
+&lt;http://example.org/2&gt; &lt;http://xmlns.com/foaf/0.1/name&gt; "J'onn J'onzz" .
+&lt;http://example.org/3&gt; &lt;http://xmlns.com/foaf/0.1/name&gt; "Nia Nal" .
+
+# file:///data/dump2.nt
+&lt;http://example.org/0&gt; &lt;http://xmlns.com/foaf/0.1/nickname&gt; "Supergirl" .
+&lt;http://example.org/1&gt; &lt;http://xmlns.com/foaf/0.1/nickname&gt; "Sentinel" .
+&lt;http://example.org/2&gt; &lt;http://xmlns.com/foaf/0.1/nickname&gt; "Martian Manhunter" .
+&lt;http://example.org/3&gt; &lt;http://xmlns.com/foaf/0.1/nickname&gt; "Dreamer" .</code></pre>
+
+</section><section id="multiple-graph-maps"><div class="header-wrapper"><h3 id="multiple-graph-map"><bdi class="secno">6.13 </bdi>Multiple Graph Maps</h3><a class="self-link" href="#multiple-graph-map" aria-label="Permalink for Section 6.13"></a></div><p>All triples within the named graph <code>ex:Characters</code>
+are exported to <code>TargetDump1</code> 
+and all triples within the named graph <code>ex:NickNames</code>
+are exported to <code>TargetDump2</code>. </p>
+<pre class="ex-input" aria-busy="false"><code class="hljs">&lt;Supergirl&gt;
+  &lt;Character id="0"&gt;
+    &lt;name&gt;Kara Danvers&lt;/name&gt;
+    &lt;nickname&gt;Supergirl&lt;/nickname&gt;
+  &lt;/Character&gt;
+  &lt;Character id="1"&gt;
+    &lt;name&gt;Alex Danvers&lt;/name&gt;
+    &lt;nickname&gt;Sentinel&lt;/nickname&gt;
+  &lt;/Character&gt;
+  &lt;Character id="2"&gt;
+    &lt;name&gt;J'onn J'onzz&lt;/name&gt;
+    &lt;nickname&gt;Martian Manhunter&lt;/nickname&gt;
+  &lt;/Character&gt;
+  &lt;Character id="3"&gt;
+    &lt;name&gt;Nia Nal&lt;/name&gt;
+    &lt;nickname&gt;Dreamer&lt;/nickname&gt;
+  &lt;/Character&gt; 
+&lt;/Supergirl&gt;</code></pre>
+
+<pre class="ex-access" aria-busy="false"><code class="hljs">&lt;#DCATSourceAccess&gt; a dcat:Dataset;
+  dcat:distribution [ a dcat:Distribution;
+    dcat:downloadURL "https://rml.io/specs/rml-target/Supergirl.xml";
+  ];
+.</code></pre>
+
+<pre class="ex-mapping" aria-busy="false"><code class="hljs">&lt;#TriplesMap&gt; a rr:TriplesMap;
+  rml:logicalSource [ a rml:LogicalSource;
+    rml:source &lt;#DCATSourceAccess&gt;;
+    rml:referenceFormulation ql:JSONPath;
+    rml:iterator "$.[*]";
+  ];
+  rr:subjectMap [ a rr:SubjectMap;
+    rr:template "http://example.org/{@id}";
+  ];
+  rr:predicateObjectMap [ a rr:PredicateObjectMap;
+    rr:graphMap [ a rr:GraphMap;
+      rml:logicalTarget &lt;#TargetDump1&gt;;
+      rr:constant ex:Characters;
+    ];
+    rr:predicateMap [ a rr:PredicateMap;
+      rr:constant foaf:name;
+    ];
+    rr:objectMap [ a rr:ObjectMap;
+      rml:reference "name/text()";
+    ];
+  ];
+  rr:predicateObjectMap [ a rr:PredicateObjectMap;
+    rr:graphMap [ a rr:GraphMap;
+      rml:logicalTarget &lt;#TargetDump2&gt;;
+      rr:constant ex:NickNames;
+    ];
+    rr:predicateMap [ a rr:PredicateMap;
+      rr:constant foaf:nickname;
+    ];
+    rr:objectMap [ a rr:ObjectMap;
+      rml:reference "nickname/text()";
+    ];
+  ];
+.</code></pre>
+
+<pre class="ex-target" aria-busy="false"><code class="hljs">&lt;#TargetDump1&gt; a rmlt:LogicalTarget;
+  rmlt:target &lt;#VoIDDump1&gt;;
+  rmlt:serialization formats:N-Triples;
+.
+&lt;#TargetDump2&gt; a rmlt:LogicalTarget;
+  rmlt:target &lt;#VoIDDump1&gt;;
+  rmlt:serialization formats:N-Triples;
+.</code></pre>
+
+<pre class="ex-access" aria-busy="false"><code class="hljs">&lt;#VoIDDump1&gt; a void:Dataset ;
+  void:dataDump &lt;file:///data/dump1.nq&gt;;
+.
+&lt;#VoIDDump2&gt; a void:Dataset ;
+  void:dataDump &lt;file:///data/dump2.nq&gt;;
+.</code></pre>
+
+<pre class="ex-output" aria-busy="false"><code class="hljs"># file:///data/dump1.nq
+&lt;http://example.org/0&gt; &lt;http://xmlns.com/foaf/0.1/name&gt; "Kara Danvers" &lt;http://example.org/Characters&gt; .
+&lt;http://example.org/1&gt; &lt;http://xmlns.com/foaf/0.1/name&gt; "Alex Danvers" &lt;http://example.org/Characters&gt; .
+&lt;http://example.org/2&gt; &lt;http://xmlns.com/foaf/0.1/name&gt; "J'onn J'onzz" &lt;http://example.org/Characters&gt; .
+&lt;http://example.org/3&gt; &lt;http://xmlns.com/foaf/0.1/name&gt; "Nia Nal" &lt;http://example.org/Characters&gt; .
+
+# file:///data/dump2.nq
+&lt;http://example.org/0&gt; &lt;http://xmlns.com/foaf/0.1/nickname&gt; "Supergirl" &lt;http://example.org/Nicknames&gt; .
+&lt;http://example.org/1&gt; &lt;http://xmlns.com/foaf/0.1/nickname&gt; "Sentinel" &lt;http://example.org/Nicknames&gt; .
+&lt;http://example.org/2&gt; &lt;http://xmlns.com/foaf/0.1/nickname&gt; "Martian Manhunter" &lt;http://example.org/Nicknames&gt; .
+&lt;http://example.org/3&gt; &lt;http://xmlns.com/foaf/0.1/nickname&gt; "Dreamer" &lt;http://example.org/Nicknames&gt; .</code></pre></section></section>
+
+<section id="overriding-targets-0"><div class="header-wrapper"><h2 id="overriding-targets"><bdi class="secno">7. </bdi>Overriding Targets</h2><a class="self-link" href="#overriding-targets" aria-label="Permalink for Section 7."></a></div><p>In some cases exporting all triples to a target is not desired, 
+therefore Targets can be overridden when needed 
+by either using a separate Triples Map which isolates certain triples or 
+by using FnO functions [<cite><a class="bibref respec-offending-element" data-link-type="biblio" href="#bib-fno" title="Reference &quot;[FnO]&quot; not found." id="respec-offender-reference-fno-not-found">FnO</a></cite>] as conditions.</p>
+<section id="separate-triples-map"><div class="header-wrapper"><h3 id="seperate-triples-map"><bdi class="secno">7.1 </bdi>Separate Triples Map</h3><a class="self-link" href="#seperate-triples-map" aria-label="Permalink for Section 7.1"></a></div><p>Triples can be exported to a specific Target while not to other Targets 
+by isolating these triples in a separate Triples Map.</p>
+<p>In this example, the same subject and object are used in both Triples Maps,
+but with a diffent predicate. The triples with the first predicate <code>foaf:name</code>
+are exported to the first Target and the triples with the second predicate
+<code>schema:name</code> to the second Target.</p>
+<pre class="ex-input" aria-busy="false"><code class="hljs"># Results of DBPedia SPARQL query
+actor,name,nickname
+http://dbpedia.org/resource/Kevin_Sussman,Kevin Sussman
+http://dbpedia.org/resource/Jim_Parsons,Jim Parsons
+http://dbpedia.org/resource/Kaley_Cuoco,Kaley Cuoco
+http://dbpedia.org/resource/Sara_Gilbert,Sara Gilbert
+http://dbpedia.org/resource/Kunal_Nayyar,Kunal Nayyar
+http://dbpedia.org/resource/Laura_Spencer_(actress),Laura Spencer
+http://dbpedia.org/resource/Simon_Helberg,Simon Helberg
+http://dbpedia.org/resource/Johnny_Galecki,Johnny Galecki
+http://dbpedia.org/resource/Mayim_Bialik,Mayim Bialik
+http://dbpedia.org/resource/Melissa_Rauch,Melissa Rauch</code></pre>
+
+<pre class="ex-access" aria-busy="false"><code class="hljs">&lt;#SDSourceAccess&gt; a sd:Service;
+  sd:endpoint ;
+  sd:supportedLanguage sd:SPARQL11Query;
+  sd:resultFormat formats:SPARQL_Results_CSV;
+.
+</code></pre>
+
+<pre class="ex-mapping" aria-busy="false"><code class="hljs">&lt;#TriplesMap1&gt; a rr:TriplesMap;
+  rml:logicalSource [ a rml:LogicalSource;
+    rml:source &lt;#SDSourceAccess&gt;;
+    rml:query """
+      PREFIX dbo: 
+      PREFIX rdf: 
+      PREFIX rdfs: 
+      SELECT DISTINCT ?actor ?name WHERE {
+        ?tvshow rdf:type dbo:TelevisionShow .
+        ?tvshow rdfs:label "The Big Bang Theory"@en .
+        ?tvshow dbo:starring ?actor .
+        ?actor foaf:name ?name .
+      }
+    """;
+  ];
+  rr:subjectMap [ a rr:SubjectMap;
+    rml:reference "actor";
+    rr:termType rr:IRI;
+    rmlt:logicalTarget &lt;TargetDump1&gt;;
+  ];
+  rr:predicateObjectMap [ a rr:PredicateObjectMap;
+    rr:predicateMap [ a rr:PredicateMap;
+      rr:constant foaf:name;
+    ];
+    rr:objectMap [ a rr:ObjectMap;
+      rml:reference "name";
+    ];
+  ];
+
+&lt;#TriplesMap2&gt; a rr:TriplesMap;
+  rml:logicalSource [ a rml:LogicalSource;
+    rml:source &lt;#SDSourceAccess&gt;;
+    rml:query """
+      PREFIX dbo: 
+      PREFIX rdf: 
+      PREFIX rdfs: 
+      SELECT DISTINCT ?actor ?name WHERE {
+        ?tvshow rdf:type dbo:TelevisionShow .
+        ?tvshow rdfs:label "The Big Bang Theory"@en .
+        ?tvshow dbo:starring ?actor .
+        ?actor foaf:name ?name .
+      }
+    """;
+  ];
+  rr:subjectMap [ a rr:SubjectMap;
+    rml:reference "actor";
+    rr:termType rr:IRI;
+    rmlt:logicalTarget &lt;TargetDump2&gt;;
+  ];
+  rr:predicateObjectMap [ a rr:PredicateObjectMap;
+    rr:predicateMap [ a rr:PredicateMap;
+      rr:constant schema:name;
+    ];
+    rr:objectMap [ a rr:ObjectMap;
+      rml:reference "name";
+    ];
+  ];
+.
+</code></pre>
+
+<pre class="ex-target" aria-busy="false"><code class="hljs">&lt;#TargetDump1&gt; a rmlt:LogicalTarget;
+  rmlt:target &lt;#VoIDDump1&gt;;
+  rmlt:serialization formats:N-Triples;
+.
+&lt;#TargetDump2&gt; a rmlt:LogicalTarget;
+  rmlt:target &lt;#VoIDDump2&gt;;
+  rmlt:serialization formats:N-Triples;
+.</code></pre>
+
+<pre class="ex-access" aria-busy="false"><code class="hljs">&lt;#VoIDDump1&gt; a void:Dataset ;
+  void:dataDump &lt;file:///data/dump1.nt&gt;;
+.
+&lt;#VoIDDump2&gt; a void:Dataset ;
+  void:dataDump &lt;file:///data/dump2.nq&gt;;
+.</code></pre>
+
+<pre class="ex-output" aria-busy="false"><code class="hljs"># file:///data/dump1.nt
+&lt;http://dbpedia.org/resource/Kevin_Sussman&gt; &lt;http://xmlns.com/foaf/0.1/name&gt; "Kevin Sussman" .
+&lt;http://dbpedia.org/resource/Jim_Parsons&gt; &lt;http://xmlns.com/foaf/0.1/name&gt; "Jim Parsons" .
+&lt;http://dbpedia.org/resource/Kaley_Cuoco&gt; &lt;http://xmlns.com/foaf/0.1/name&gt; "Kaley Cuoco" .
+&lt;http://dbpedia.org/resource/Sara_Gilbert&gt; &lt;http://xmlns.com/foaf/0.1/name&gt; "Sara Gilbert" .
+&lt;http://dbpedia.org/resource/Kunal_Nayyar&gt; &lt;http://xmlns.com/foaf/0.1/name&gt; "Kunal Nayyar" .
+&lt;http://dbpedia.org/resource/Laura_Spencer&gt; &lt;http://xmlns.com/foaf/0.1/name&gt; "Laura Spencer" .
+&lt;http://dbpedia.org/resource/Simon_Helberg&gt; &lt;http://xmlns.com/foaf/0.1/name&gt; "Simon Helberg" .
+&lt;http://dbpedia.org/resource/Johnny_Galecki&gt; &lt;http://xmlns.com/foaf/0.1/name&gt; "Johnny Galecki" .
+&lt;http://dbpedia.org/resource/Mayim_Bialik&gt; &lt;http://xmlns.com/foaf/0.1/name&gt; "Mayim Bialik" .
+&lt;http://dbpedia.org/resource/Melissa_Rauch&gt; &lt;http://xmlns.com/foaf/0.1/name&gt; "Melissa Rauch" .
+
+# file:///data/dump2.nt
+&lt;http://dbpedia.org/resource/Kevin_Sussman&gt; &lt;http://schema.org/name&gt; "Kevin Sussman" .
+&lt;http://dbpedia.org/resource/Jim_Parsons&gt; &lt;http://schema.org/name&gt; "Jim Parsons" .
+&lt;http://dbpedia.org/resource/Kaley_Cuoco&gt; &lt;http://schema.org/name&gt; "Kaley Cuoco" .
+&lt;http://dbpedia.org/resource/Sara_Gilbert&gt; &lt;http://schema.org/name&gt; "Sara Gilbert" .
+&lt;http://dbpedia.org/resource/Kunal_Nayyar&gt; &lt;http://schema.org/name&gt; "Kunal Nayyar" .
+&lt;http://dbpedia.org/resource/Laura_Spencer&gt; &lt;http://schema.org/name&gt; "Laura Spencer" .
+&lt;http://dbpedia.org/resource/Simon_Helberg&gt; &lt;http://schema.org/name&gt; "Simon Helberg" .
+&lt;http://dbpedia.org/resource/Johnny_Galecki&gt; &lt;http://schema.org/name&gt; "Johnny Galecki" .
+&lt;http://dbpedia.org/resource/Mayim_Bialik&gt; &lt;http://schema.org/name&gt; "Mayim Bialik" .
+&lt;http://dbpedia.org/resource/Melissa_Rauch&gt; &lt;http://schema.org/name&gt; "Melissa Rauch" .</code></pre>
+
+</section><section id="conditions-0"><div class="header-wrapper"><h3 id="conditions"><bdi class="secno">7.2 </bdi>Conditions</h3><a class="self-link" href="#conditions" aria-label="Permalink for Section 7.2"></a></div><p>FnO functions <em class="rfc2119">MAY</em> be leveraged to export triples 
+only under certain conditions. 
+Conditions are already integrated in RML+FnO processors, 
+thus conditions apply on Targets as well.
+Triples are generated and exported based on the FnO condition's evaluation. 
+Only if the condition is true, the triples are generated and exported.</p>
+<p>In the example, the triples with <code>Jim Parsons</code> as object are exported 
+to the first Target, triples with <code>Kaley Cuoco</code> as object are exported 
+to the second Target.</p>
+<pre class="ex-input" aria-busy="false"><code class="hljs"># Results of DBPedia SPARQL query
+actor,name,nickname
+http://dbpedia.org/resource/Kevin_Sussman,Kevin Sussman
+http://dbpedia.org/resource/Jim_Parsons,Jim Parsons
+http://dbpedia.org/resource/Kaley_Cuoco,Kaley Cuoco
+http://dbpedia.org/resource/Sara_Gilbert,Sara Gilbert
+http://dbpedia.org/resource/Kunal_Nayyar,Kunal Nayyar
+http://dbpedia.org/resource/Laura_Spencer_(actress),Laura Spencer
+http://dbpedia.org/resource/Simon_Helberg,Simon Helberg
+http://dbpedia.org/resource/Johnny_Galecki,Johnny Galecki
+http://dbpedia.org/resource/Mayim_Bialik,Mayim Bialik
+http://dbpedia.org/resource/Melissa_Rauch,Melissa Rauch</code></pre>
+
+<pre class="ex-access" aria-busy="false"><code class="hljs">&lt;#SDSourceAccess&gt; a sd:Service;
+  sd:endpoint ;
+  sd:supportedLanguage sd:SPARQL11Query;
+  sd:resultFormat formats:SPARQL_Results_CSV;
+.
+</code></pre>
+
+<pre class="ex-mapping" aria-busy="false"><code class="hljs">&lt;#TriplesMap&gt; a rr:TriplesMap;
+  rml:logicalSource [ a rml:LogicalSource;
+    rml:source &lt;#SDSourceAccess&gt;;
+    rml:query """
+      PREFIX dbo: 
+      PREFIX rdf: 
+      PREFIX rdfs: 
+      SELECT DISTINCT ?actor ?name WHERE {
+        ?tvshow rdf:type dbo:TelevisionShow .
+        ?tvshow rdfs:label "The Big Bang Theory"@en .
+        ?tvshow dbo:starring ?actor .
+        ?actor foaf:name ?name .
+      }
+    """;
+  ];
+  rr:subjectMap [ a rr:SubjectMap;
+    rml:reference "actor";
+    rr:termType rr:IRI;
+    rmlt:logicalTarget &lt;TargetDump1&gt;;
+  ];
+  rr:predicateObjectMap [ a rr:PredicateObjectMap;
+    rr:predicateMap [ a rr:PredicateMap;
+      rr:constant foaf:name;
+    ];
+    rr:objectMap [ a rr:ObjectMap;
+      rml:reference "name";
+    ];
+  ];
+  rr:predicateObjectMap [ 
+    rr:predicateMap [ rr:constant foaf:name ];
+    rr:objectMap [
+      fnml:functionValue [
+        rr:predicateObjectMap [
+          rr:predicate fno:executes ;
+          rr:objectMap [ rr:constant idlab-fn:decide ]
+        ];
+        rr:predicateObjectMap [
+          rr:predicate idlab-fn:expectedStr ;
+          rr:objectMap [ rr:constant "Jim Parsons"]
+        ];
+        rr:predicateObjectMap [
+          rr:predicate idlab-fn:str ;
+          rr:objectMap [ 
+            rml:reference "name";
+            rml:logicalTarget &lt;#TargetDump1&gt;;
+          ];
+        ];
+      ];
+    ];
+  ];
+  rr:predicateObjectMap [ 
+    rr:predicateMap [ rr:constant foaf:name ];
+    rr:objectMap [
+      fnml:functionValue [
+        rr:predicateObjectMap [
+          rr:predicate fno:executes ;
+          rr:objectMap [ rr:constant idlab-fn:decide ]
+        ];
+        rr:predicateObjectMap [
+          rr:predicate idlab-fn:expectedStr ;
+          rr:objectMap [ rr:constant "Kaley Cuoco"]
+        ];
+        rr:predicateObjectMap [
+          rr:predicate idlab-fn:str ;
+          rr:objectMap [ 
+            rml:reference "name";
+            rml:logicalTarget &lt;#TargetDump2&gt;;
+          ];
+        ];
+      ];
+    ];
+  ];
+</code></pre>
+
+<pre class="ex-target" aria-busy="false"><code class="hljs">&lt;#TargetDump1&gt; a rmlt:LogicalTarget;
+  rmlt:target &lt;#VoIDDump1&gt;;
+  rmlt:serialization formats:N-Triples;
+.
+&lt;#TargetDump2&gt; a rmlt:LogicalTarget;
+  rmlt:target &lt;#VoIDDump2&gt;;
+  rmlt:serialization formats:N-Triples;
+.</code></pre>
+
+<pre class="ex-access" aria-busy="false"><code class="hljs">&lt;#VoIDDump1&gt; a void:Dataset ;
+  void:dataDump &lt;file:///data/dump1.nt&gt;;
+.
+&lt;#VoIDDump2&gt; a void:Dataset ;
+  void:dataDump &lt;file:///data/dump2.nt&gt;;
+.</code></pre>
+
+<pre class="ex-output" aria-busy="false"><code class="hljs"># file:///data/dump1.nt
+&lt;http://dbpedia.org/resource/Jim_Parsons&gt; &lt;http://xmlns.com/foaf/0.1/name&gt; "Jim Parsons" .
+
+# file:///data/dump2.nt
+&lt;http://dbpedia.org/resource/Kaley_Cuoco&gt; &lt;http://xmlns.com/foaf/0.1/name&gt; "Kaley Cuoco" .</code></pre></section></section>
 
 
 
-<section id="references" class="appendix"><h2 id="a-references"><bdi class="secno">A. </bdi>References<a class="self-link" aria-label="§" href="#references"></a></h2><section id="normative-references">
-    <h3 id="a-1-normative-references"><bdi class="secno">A.1 </bdi>Normative references<a class="self-link" aria-label="§" href="#normative-references"></a></h3>
-    <dl class="bibliography"><dt id="bib-dcat">[DCAT]</dt><dd><a href="https://www.w3.org/TR/vocab-dcat/"><cite>Data Catalog Vocabulary (DCAT) - Version 2</cite></a>.  W3C. 22 February 2020. W3C Recommendation. URL: <a href="https://www.w3.org/TR/vocab-dcat/">https://www.w3.org/TR/vocab-dcat/</a></dd><dt id="bib-n-quads">[N-Quads]</dt><dd><a href="https://www.w3.org/TR/n-quads/"><cite>RDF 1.1 N-Quads</cite></a>.  W3C. 25 February 2014. W3C Recommendation. URL: <a href="https://www.w3.org/TR/n-quads/">https://www.w3.org/TR/n-quads/</a></dd><dt id="bib-rdf-concepts">[RDF-Concepts]</dt><dd><a href="https://www.w3.org/TR/rdf-concepts/"><cite>Resource Description Framework (RDF): Concepts and Abstract Syntax</cite></a>. Graham Klyne; Jeremy Carroll.  W3C. 10 February 2004. W3C Recommendation. URL: <a href="https://www.w3.org/TR/rdf-concepts/">https://www.w3.org/TR/rdf-concepts/</a></dd><dt id="bib-rfc2119">[RFC2119]</dt><dd><a href="https://datatracker.ietf.org/doc/html/rfc2119"><cite>Key words for use in RFCs to Indicate Requirement Levels</cite></a>. S. Bradner.  IETF. March 1997. Best Current Practice. URL: <a href="https://datatracker.ietf.org/doc/html/rfc2119">https://datatracker.ietf.org/doc/html/rfc2119</a></dd><dt id="bib-rfc3986">[RFC3986]</dt><dd><a href="https://tools.ietf.org/html/rfc3986"><cite>Uniform Resource Identifier (URI): Generic Syntax</cite></a>.  IETF. March 1997. Internet Standard. URL: <a href="https://tools.ietf.org/html/rfc3986">https://tools.ietf.org/html/rfc3986</a></dd><dt id="bib-rfc8174">[RFC8174]</dt><dd><a href="https://datatracker.ietf.org/doc/html/rfc8174"><cite>Ambiguity of Uppercase vs Lowercase in RFC 2119 Key Words</cite></a>. B. Leiba.  IETF. May 2017. Best Current Practice. URL: <a href="https://datatracker.ietf.org/doc/html/rfc8174">https://datatracker.ietf.org/doc/html/rfc8174</a></dd><dt id="bib-sd">[SD]</dt><dd><a href="https://www.w3.org/TR/sparql11-service-description/"><cite>SPARQL 1.1 Service Description</cite></a>.  W3C. 21 March 2013. W3C Recommendation. URL: <a href="https://www.w3.org/TR/sparql11-service-description/">https://www.w3.org/TR/sparql11-service-description/</a></dd><dt id="bib-sparql">[SPARQL]</dt><dd><a href="https://www.w3.org/TR/sparql11-overview/"><cite>SPARQL 1.1 Overview</cite></a>.  W3C. 21 March 2013. W3C Recommendation. URL: <a href="https://www.w3.org/TR/sparql11-overview/">https://www.w3.org/TR/sparql11-overview/</a></dd><dt id="bib-turtle">[Turtle]</dt><dd><a href="https://www.w3.org/TR/turtle/"><cite>RDF 1.1 Turtle</cite></a>.  W3C. 25 February 2014. W3C Recommendation. URL: <a href="https://www.w3.org/TR/turtle/">https://www.w3.org/TR/turtle/</a></dd><dt id="bib-void">[VoID]</dt><dd><a href="https://www.w3.org/TR/void/"><cite>Describing Linked Datasets with the VoID Vocabulary</cite></a>.  W3C. 03 March 2011. W3C Interest Group Note. URL: <a href="https://www.w3.org/TR/void/">https://www.w3.org/TR/void/</a></dd></dl>
+<div id="ConnectiveDocSignExtentionInstalled" data-extension-version="1.0.4"></div><section id="references" class="appendix"><div class="header-wrapper"><h2 id="a-references"><bdi class="secno">A. </bdi>References</h2><a class="self-link" href="#references" aria-label="Permalink for Appendix A."></a></div><section id="normative-references"><div class="header-wrapper"><h3 id="a-1-normative-references"><bdi class="secno">A.1 </bdi>Normative references</h3><a class="self-link" href="#normative-references" aria-label="Permalink for Appendix A.1"></a></div>
+    
+    <dl class="bibliography"><dt id="bib-dcat">[DCAT]</dt><dd>
+      <a href="https://www.w3.org/TR/vocab-dcat/"><cite>Data Catalog Vocabulary (DCAT) - Version 2</cite></a>.  W3C. 22 February 2020. W3C Recommendation. URL: <a href="https://www.w3.org/TR/vocab-dcat/">https://www.w3.org/TR/vocab-dcat/</a>
+    </dd><dt id="bib-fno">[FnO]</dt><dd>
+      <em class="respec-offending-element">Reference not found.</em>
+    </dd><dt id="bib-n-quads">[N-Quads]</dt><dd>
+      <a href="https://www.w3.org/TR/n-quads/"><cite>RDF 1.1 N-Quads</cite></a>.  W3C. 25 February 2014. W3C Recommendation. URL: <a href="https://www.w3.org/TR/n-quads/">https://www.w3.org/TR/n-quads/</a>
+    </dd><dt id="bib-r2rml">[R2RML]</dt><dd>
+      <a href="https://www.w3.org/TR/r2rml/"><cite>R2RML: RDB to RDF Mapping Language</cite></a>. Souripriya Das; Seema Sundara; Richard Cyganiak.  W3C. 27 September 2012. W3C Recommendation. URL: <a href="https://www.w3.org/TR/r2rml/">https://www.w3.org/TR/r2rml/</a>
+    </dd><dt id="bib-rdf-concepts">[RDF-Concepts]</dt><dd>
+      <a href="https://www.w3.org/TR/rdf-concepts/"><cite>Resource Description Framework (RDF): Concepts and Abstract Syntax</cite></a>. Graham Klyne; Jeremy Carroll.  W3C. 10 February 2004. W3C Recommendation. URL: <a href="https://www.w3.org/TR/rdf-concepts/">https://www.w3.org/TR/rdf-concepts/</a>
+    </dd><dt id="bib-rfc2119">[RFC2119]</dt><dd>
+      <a href="https://www.rfc-editor.org/rfc/rfc2119"><cite>Key words for use in RFCs to Indicate Requirement Levels</cite></a>. S. Bradner.  IETF. March 1997. Best Current Practice. URL: <a href="https://www.rfc-editor.org/rfc/rfc2119">https://www.rfc-editor.org/rfc/rfc2119</a>
+    </dd><dt id="bib-rfc3986">[RFC3986]</dt><dd>
+      <a href="https://tools.ietf.org/html/rfc3986"><cite>Uniform Resource Identifier (URI): Generic Syntax</cite></a>.  IETF. March 1997. Internet Standard. URL: <a href="https://tools.ietf.org/html/rfc3986">https://tools.ietf.org/html/rfc3986</a>
+    </dd><dt id="bib-rfc8174">[RFC8174]</dt><dd>
+      <a href="https://www.rfc-editor.org/rfc/rfc8174"><cite>Ambiguity of Uppercase vs Lowercase in RFC 2119 Key Words</cite></a>. B. Leiba.  IETF. May 2017. Best Current Practice. URL: <a href="https://www.rfc-editor.org/rfc/rfc8174">https://www.rfc-editor.org/rfc/rfc8174</a>
+    </dd><dt id="bib-rml">[RML]</dt><dd>
+      <em class="respec-offending-element">Reference not found.</em>
+    </dd><dt id="bib-sd">[SD]</dt><dd>
+      <a href="https://www.w3.org/TR/sparql11-service-description/"><cite>SPARQL 1.1 Service Description</cite></a>.  W3C. 21 March 2013. W3C Recommendation. URL: <a href="https://www.w3.org/TR/sparql11-service-description/">https://www.w3.org/TR/sparql11-service-description/</a>
+    </dd><dt id="bib-sparql">[SPARQL]</dt><dd>
+      <a href="https://www.w3.org/TR/sparql11-overview/"><cite>SPARQL 1.1 Overview</cite></a>.  W3C. 21 March 2013. W3C Recommendation. URL: <a href="https://www.w3.org/TR/sparql11-overview/">https://www.w3.org/TR/sparql11-overview/</a>
+    </dd><dt id="bib-turtle">[Turtle]</dt><dd>
+      <a href="https://www.w3.org/TR/turtle/"><cite>RDF 1.1 Turtle</cite></a>.  W3C. 25 February 2014. W3C Recommendation. URL: <a href="https://www.w3.org/TR/turtle/">https://www.w3.org/TR/turtle/</a>
+    </dd><dt id="bib-void">[VoID]</dt><dd>
+      <a href="https://www.w3.org/TR/void/"><cite>Describing Linked Datasets with the VoID Vocabulary</cite></a>.  W3C. 03 March 2011. W3C Interest Group Note. URL: <a href="https://www.w3.org/TR/void/">https://www.w3.org/TR/void/</a>
+    </dd></dl>
   </section></section><p role="navigation" id="back-to-top">
     <a href="#title"><abbr title="Back to Top">↑</abbr></a>
   </p><script id="respec-dfn-panel">(() => {
@@ -761,4 +3401,4 @@ function hidePanel(panel) {
   panel.hidden = true;
   panel.classList.remove("docked");
 }
-})()</script><script src="https://www.w3.org/scripts/TR/2016/fixup.js"></script></body></html>
+})()</script><script src="https://www.w3.org/scripts/TR/2021/fixup.js"></script></body></html>
