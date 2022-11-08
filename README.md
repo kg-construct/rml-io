@@ -1,6 +1,6 @@
-# Data IO in RML Specification
+# RML Target Source Specification
 
-Repository for https://rml.io/specs/target-in-rml
+Repository for https://w3id.org/kg-construct/rml-target-source
 
 ## Quickstart
 
@@ -11,4 +11,4 @@ Repository for https://rml.io/specs/target-in-rml
 - save as snapshot to function.html [using the respec functionality](https://respec.org/docs/#using-browser)
 - run `node publish.js` to get the index.html + archived version in the `dist` folder
 
-The `dist` folder contents should mimic the contents on `https://rml.io/specs/target-in-rml`
+The `dist` folder contents should mimic the contents on `https://w3id.org/kg-construct/rml-target-source`
