@@ -305,6 +305,7 @@ HTTP Server Sent Events stream in XML format without compression:
      rml:referenceFormulation ql:XPath;
      rml:iterator "/my/xpath";
 .
+</pre>
 
 The following example shows a Source of a
 MQTT stream in JSON format without compression:

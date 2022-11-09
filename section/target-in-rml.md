@@ -1,13 +1,6 @@
 ## Target in RML {#target-in-rml}
 
-RML does not specify where generated triples are exported to, 
-each RML processor has its own way to describe this information 
-through configuration files or command line parameters. 
-To incorporate this information in the RML mapping rules, 
-RML is aligned with the 
-[Target vocabulary](http://semweb.mmlab.be/ns/rml-target#)
-which describes how the generated triples are exported. 
-RML is aligned with the Target vocabulary 
+RML is aligned with the Logical Target vocabulary 
 by extending `rr:TermMap` with the `rml:logicalTarget` property 
 to describe on Term Map [[RML]] level where each triple must be directed to. 
 A Term Map is a function that generates an RDF term 
@@ -21,10 +14,10 @@ to export all triples containing the generated term to different targets.
 The same Term Map can have multiple targets by specifying 
 multiple `rml:logicalTarget` properties in the Term Map. 
 
-Multiple Targets MAY be combined by specifying multiple Targets 
+Multiple Logical Targets MAY be combined by specifying multiple Logical Targets 
 in the same Term Map or multiple Term Maps of the same RDF triple 
 (Section [[[#multiple-targets]]]). 
-Targets MAY be overriden by using a separate Triples Map 
+Logical Targets MAY be overriden by using a separate Triples Map 
 or conditions [[FnO]] (Section [[[#overriding-targets]]]).
 
 If the mapping document contains no Targets, 
@@ -43,7 +36,8 @@ are exported to the default target of the processor.
 In the example below, a CSV file is transformed into a knowledge graph.
 The CSV file is accessed using the [[CSVW]] vocabulary,
 transformed into a knowledge graph using [[RML]] mappings,
-and exported to two Targets, which are accessed through the [[VoID]] vocabulary.
+and exported to two Logical Targets, which are accessed through the [[VoID]] 
+vocabulary.
 The knowledge graph is exported as N-Quads to the first Target,
 and as Turtle to the second Target.
 The Turtle file of the second Target is also compressed using the Zip 
