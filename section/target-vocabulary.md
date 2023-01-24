@@ -137,10 +137,8 @@ DCAT dataset in N-Quads format with Zip compression:
 <pre class="ex-target">
 &lt;#DCATDump&gt; a rml:LogicalTarget;
     rml:target [ 
-        rml:access [ a dcat:Dataset;
-            dcat:distribution [ a dcat:Distribution;
-                dcat:accessURL &lt;http://example.org/dcat-access-url&gt;;
-            ];
+        rml:access [ a dcat:Distribution;
+            dcat:accessURL &lt;http://example.org/dcat-access-url&gt;;
         ];
         rml:compression comp:zip;
     ];

@@ -43,10 +43,8 @@ to the three specified Targets:
 </pre>
 
 <pre class="ex-access">
-&lt;#DCATSourceAccess&gt; a dcat:Dataset;
-  dcat:distribution [ a dcat:Distribution;
+&lt;#DCATSourceAccess&gt; a dcat:Distribution;
     dcat:downloadURL "https://rml.io/specs/rml-target/Supergirl.xml";
-  ];
 .
 </pre>
 
@@ -195,10 +193,8 @@ are exported to `TargetDump2`.
 </pre>
 
 <pre class="ex-access">
-&lt;#DCATSourceAccess&gt; a dcat:Dataset;
-  dcat:distribution [ a dcat:Distribution;
+&lt;#DCATSourceAccess&gt; a dcat:Distribution;
     dcat:downloadURL "https://rml.io/specs/rml-target/Supergirl.xml";
-  ];
 .
 </pre>
 
@@ -300,10 +296,8 @@ are exported to `TargetDump2`.
 </pre>
 
 <pre class="ex-access">
-&lt;#DCATSourceAccess&gt; a dcat:Dataset;
-  dcat:distribution [ a dcat:Distribution;
+&lt;#DCATSourceAccess&gt; a dcat:Distribution;
     dcat:downloadURL "https://rml.io/specs/rml-target/Supergirl.xml";
-  ];
 .
 </pre>
 
@@ -405,10 +399,8 @@ are exported to `TargetDump2`.
 </pre>
 
 <pre class="ex-access">
-&lt;#DCATSourceAccess&gt; a dcat:Dataset;
-  dcat:distribution [ a dcat:Distribution;
+&lt;#DCATSourceAccess&gt; a dcat:Distribution;
     dcat:downloadURL "https://rml.io/specs/rml-target/Supergirl.xml";
-  ];
 .
 </pre>
 
@@ -506,10 +498,8 @@ predicate `foaf:nickname` are exported to `TargetDump2`.
 </pre>
 
 <pre class="ex-access">
-&lt;#DCATSourceAccess&gt; a dcat:Dataset;
-  dcat:distribution [ a dcat:Distribution;
+&lt;#DCATSourceAccess&gt; a dcat:Distribution;
     dcat:downloadURL "https://rml.io/specs/rml-target/Supergirl.xml";
-  ];
 .
 </pre>
 
@@ -612,10 +602,8 @@ are exported to `TargetDump2`.
 </pre>
 
 <pre class="ex-access">
-&lt;#DCATSourceAccess&gt; a dcat:Dataset;
-  dcat:distribution [ a dcat:Distribution;
+&lt;#DCATSourceAccess&gt; a dcat:Distribution;
     dcat:downloadURL "https://rml.io/specs/rml-target/Supergirl.xml";
-  ];
 .
 </pre>
 
@@ -720,10 +708,8 @@ are exported to `TargetDump2`.
 </pre>
 
 <pre class="ex-access">
-&lt;#DCATSourceAccess&gt; a dcat:Dataset;
-  dcat:distribution [ a dcat:Distribution;
+&lt;#DCATSourceAccess&gt; a dcat:Distribution;
     dcat:downloadURL "https://rml.io/specs/rml-target/Supergirl.xml";
-  ];
 .
 </pre>
 
@@ -824,10 +810,8 @@ are exported to `TargetDump2`.
 </pre>
 
 <pre class="ex-access">
-&lt;#DCATSourceAccess&gt; a dcat:Dataset;
-  dcat:distribution [ a dcat:Distribution;
+&lt;#DCATSourceAccess&gt; a dcat:Distribution;
     dcat:downloadURL "https://rml.io/specs/rml-target/Supergirl.xml";
-  ];
 .
 </pre>
 
@@ -932,10 +916,8 @@ as there is no dedicated Target assigned to triples containing
 </pre>
 
 <pre class="ex-access">
-&lt;#DCATSourceAccess&gt; a dcat:Dataset;
-  dcat:distribution [ a dcat:Distribution;
+&lt;#DCATSourceAccess&gt; a dcat:Distribution;
     dcat:downloadURL "https://rml.io/specs/rml-target/Supergirl.xml";
-  ];
 .
 </pre>
 
@@ -1046,10 +1028,8 @@ are exported to `TargetDump2`.
 </pre>
 
 <pre class="ex-access">
-&lt;#DCATSourceAccess&gt; a dcat:Dataset;
-  dcat:distribution [ a dcat:Distribution;
+&lt;#DCATSourceAccess&gt; a dcat:Distribution;
     dcat:downloadURL "https://rml.io/specs/rml-target/Supergirl.xml";
-  ];
 .
 </pre>
 
@@ -1150,10 +1130,8 @@ are exported to `TargetDump2`.
 </pre>
 
 <pre class="ex-access">
-&lt;#DCATSourceAccess&gt; a dcat:Dataset;
-  dcat:distribution [ a dcat:Distribution;
+&lt;#DCATSourceAccess&gt; a dcat:Distribution;
     dcat:downloadURL "https://rml.io/specs/rml-target/Supergirl.xml";
-  ];
 .
 </pre>
 
@@ -1251,10 +1229,8 @@ are exported to `TargetDump2`.
 </pre>
 
 <pre class="ex-access">
-&lt;#DCATSourceAccess&gt; a dcat:Dataset;
-  dcat:distribution [ a dcat:Distribution;
+&lt;#DCATSourceAccess&gt; a dcat:Distribution;
     dcat:downloadURL "https://rml.io/specs/rml-target/Supergirl.xml";
-  ];
 .
 </pre>
 
@@ -1352,10 +1328,8 @@ are exported to `TargetDump2`.
 </pre>
 
 <pre class="ex-access">
-&lt;#DCATSourceAccess&gt; a dcat:Dataset;
-  dcat:distribution [ a dcat:Distribution;
+&lt;#DCATSourceAccess&gt; a dcat:Distribution;
     dcat:downloadURL "https://rml.io/specs/rml-target/Supergirl.xml";
-  ];
 .
 </pre>
 

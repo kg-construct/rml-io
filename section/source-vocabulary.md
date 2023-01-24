@@ -81,10 +81,8 @@ A `ql:Namespace` contains the following required properties:
 <pre class="ex-source">
 &lt;#XMLNamespace&gt; a rml:LogicalSource;
      rml:source [ a rml:Source
-       rml:access [ a dcat:Dataset;
-         dcat:distribution [ a dcat:Distribution;
-           dcat:accessURL &lt;file:///path/to/data.xml&gt;;
-         ];
+       rml:access [ a dcat:Distribution;
+         dcat:accessURL &lt;file:///path/to/data.xml&gt;;
        ];
      ];
      rml:referenceFormulation [ a ql:XPathReferenceFormulation;
@@ -137,10 +135,8 @@ through a `SELECT * FROM {table}` query (`rr:tableName` compatibility).
 <pre class="ex-source">
 &lt;#JSON&gt; a rml:LogicalSource;
      rml:source [ a rml:Source
-       rml:access [ a dcat:Dataset;
-         dcat:distribution [ a dcat:Distribution;
+       rml:access [ a dcat:Distribution;
            dcat:accessURL &lt;file:///path/to/data.json.gz&gt;;
-         ];
        ];
        rml:null ""; # empty string as NULL besides default null character
        rml:compression comp:gzip; # GZip compression
@@ -207,11 +203,8 @@ XML file with no compression.
 <pre class="ex-source">
 &lt;#XML&gt; a rml:LogicalSource;
      rml:source [ 
-        rml:access [ 
-            a dcat:Dataset;
-            dcat:distribution [ a dcat:Distribution;
-                dcat:accessURL &lt;file:///path/to/data.xml&gt;;
-            ];
+        rml:access [ a dcat:Distribution;
+             dcat:accessURL &lt;file:///path/to/data.xml&gt;;
         ];
      ];
      rml:referenceFormulation ql:XPath;
@@ -224,12 +217,10 @@ The following example is GZip compressed JSON file as Source:
 <pre class="ex-source">
 &lt;#JSON&gt; a rml:LogicalSource;
      rml:source [ 
-        rml:access [ a dcat:Dataset;
-            dcat:distribution [ a dcat:Distribution;
-                dcat:accessURL &lt;file:///path/to/data.json.gz&gt;;
-            ];
-        ];
-        rml:compression comp:gzip;
+         rml:access [ a dcat:Distribution;
+             dcat:accessURL &lt;file:///path/to/data.json.gz&gt;;
+         ];
+         rml:compression comp:gzip;
      ];
      rml:referenceFormulation ql:JSONPath;
      rml:iterator "$.jsonpath.expression";
