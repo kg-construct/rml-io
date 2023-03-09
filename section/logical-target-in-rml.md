@@ -1,4 +1,4 @@
-## Target in RML {#target-in-rml}
+## Logical Target in RML {#logical-target-in-rml}
 
 RML is aligned with the Logical Target vocabulary 
 by extending `rr:TermMap` with the `rml:logicalTarget` property 
@@ -31,7 +31,7 @@ are exported to the default target of the processor.
 
 | Property            | Domain       | Range                |
 | ------------------- | ------------ | -------------------- |
-| `rml:logicalTarget` | `rr:TermMap` | `rmlt:LogicalTarget` |
+| `rml:logicalTarget` | `rr:TermMap` | `rml:LogicalTarget` |
 
 In the example below, a CSV file is transformed into a knowledge graph.
 The CSV file is accessed using the [[CSVW]] vocabulary,
@@ -96,15 +96,15 @@ id;name;nickname
 </pre>
 
 <pre class="ex-target">
-&lt;#TargetDump1&gt; a rmlt:LogicalTarget;
-  rmlt:target &lt;#VoIDDump1&gt;;
-  rmlt:serialization formats:N-Triples;
+&lt;#TargetDump1&gt; a rml:LogicalTarget;
+  rml:target &lt;#VoIDDump1&gt;;
+  rml:serialization formats:N-Triples;
 .
 
-&lt;#TargetDump2&gt; a rmlt:LogicalTarget;
-  rmlt:target &lt;#VoIDDump2&gt;;
-  rmlt:serialization formats:Turtle;
-  rmlt:compression comp:zip;
+&lt;#TargetDump2&gt; a rml:LogicalTarget;
+  rml:target &lt;#VoIDDump2&gt;;
+  rml:serialization formats:Turtle;
+  rml:compression comp:zip;
 .
 </pre>
 
