@@ -48,13 +48,11 @@ id;name;nickname
   ];
   rr:subjectMap [ a rr:SubjectMap;
     rr:template "http://example.com/{id}";
-    rml:logicalTarget &lt;#TargetDump1&gt;;
     rr:class foaf:Person;
   ];
   rr:predicateObjectMap [ a rr:PredicateObjectMap;
     rr:predicateMap [ a rr:PredicateMap;
       rr:constant foaf:name;
-      rml:logicalTarget &lt;#TargetDump2&gt;;
     ];
     rr:objectMap [ a rr:ObjectMap;
       rml:reference "name";
