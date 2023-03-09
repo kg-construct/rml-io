@@ -31,7 +31,7 @@ http://dbpedia.org/resource/Melissa_Rauch,Melissa Rauch
 </pre>
 
 <pre class="ex-access">
-&lt;#SDSourceAccess&gt; a sd:Service;
+&lt;#SDSourceAccess&gt; a rml:Source, sd:Service;
   sd:endpoint <http://dbpedia.org/sparql/>;
   sd:supportedLanguage sd:SPARQL11Query;
   sd:resultFormat formats:SPARQL_Results_CSV;
@@ -57,7 +57,7 @@ http://dbpedia.org/resource/Melissa_Rauch,Melissa Rauch
   rr:subjectMap [ a rr:SubjectMap;
     rml:reference "actor";
     rr:termType rr:IRI;
-    rmlt:logicalTarget &lt;TargetDump1&gt;;
+    rml:logicalTarget &lt;TargetDump1&gt;;
   ];
   rr:predicateObjectMap [ a rr:PredicateObjectMap;
     rr:predicateMap [ a rr:PredicateMap;
@@ -86,7 +86,7 @@ http://dbpedia.org/resource/Melissa_Rauch,Melissa Rauch
   rr:subjectMap [ a rr:SubjectMap;
     rml:reference "actor";
     rr:termType rr:IRI;
-    rmlt:logicalTarget &lt;TargetDump2&gt;;
+    rml:logicalTarget &lt;TargetDump2&gt;;
   ];
   rr:predicateObjectMap [ a rr:PredicateObjectMap;
     rr:predicateMap [ a rr:PredicateMap;
@@ -100,21 +100,21 @@ http://dbpedia.org/resource/Melissa_Rauch,Melissa Rauch
 </pre>
 
 <pre class="ex-target">
-&lt;#TargetDump1&gt; a rmlt:LogicalTarget;
-  rmlt:target &lt;#VoIDDump1&gt;;
-  rmlt:serialization formats:N-Triples;
+&lt;#TargetDump1&gt; a rml:LogicalTarget;
+  rml:target &lt;#VoIDDump1&gt;;
+  rml:serialization formats:N-Triples;
 .
-&lt;#TargetDump2&gt; a rmlt:LogicalTarget;
-  rmlt:target &lt;#VoIDDump2&gt;;
-  rmlt:serialization formats:N-Triples;
+&lt;#TargetDump2&gt; a rml:LogicalTarget;
+  rml:target &lt;#VoIDDump2&gt;;
+  rml:serialization formats:N-Triples;
 .
 </pre>
 
 <pre class="ex-access">
-&lt;#VoIDDump1&gt; a void:Dataset ;
+&lt;#VoIDDump1&gt; a rml:Target, void:Dataset;
   void:dataDump &lt;file:///data/dump1.nt&gt;;
 .
-&lt;#VoIDDump2&gt; a void:Dataset ;
+&lt;#VoIDDump2&gt; a rml:Target, void:Dataset;
   void:dataDump &lt;file:///data/dump2.nq&gt;;
 .
 </pre>
@@ -174,7 +174,7 @@ http://dbpedia.org/resource/Melissa_Rauch,Melissa Rauch
 </pre>
 
 <pre class="ex-access">
-&lt;#SDSourceAccess&gt; a sd:Service;
+&lt;#SDSourceAccess&gt; a rml:Source, sd:Service;
   sd:endpoint <http://dbpedia.org/sparql/>;
   sd:supportedLanguage sd:SPARQL11Query;
   sd:resultFormat formats:SPARQL_Results_CSV;
@@ -200,7 +200,7 @@ http://dbpedia.org/resource/Melissa_Rauch,Melissa Rauch
   rr:subjectMap [ a rr:SubjectMap;
     rml:reference "actor";
     rr:termType rr:IRI;
-    rmlt:logicalTarget &lt;TargetDump1&gt;;
+    rml:logicalTarget &lt;TargetDump1&gt;;
   ];
   rr:predicateObjectMap [ a rr:PredicateObjectMap;
     rr:predicateMap [ a rr:PredicateMap;
@@ -257,21 +257,21 @@ http://dbpedia.org/resource/Melissa_Rauch,Melissa Rauch
 </pre>
 
 <pre class="ex-target">
-&lt;#TargetDump1&gt; a rmlt:LogicalTarget;
-  rmlt:target &lt;#VoIDDump1&gt;;
-  rmlt:serialization formats:N-Triples;
+&lt;#TargetDump1&gt; a rml:LogicalTarget;
+  rml:target &lt;#VoIDDump1&gt;;
+  rml:serialization formats:N-Triples;
 .
-&lt;#TargetDump2&gt; a rmlt:LogicalTarget;
-  rmlt:target &lt;#VoIDDump2&gt;;
-  rmlt:serialization formats:N-Triples;
+&lt;#TargetDump2&gt; a rml:LogicalTarget;
+  rml:target &lt;#VoIDDump2&gt;;
+  rml:serialization formats:N-Triples;
 .
 </pre>
 
 <pre class="ex-access">
-&lt;#VoIDDump1&gt; a void:Dataset ;
+&lt;#VoIDDump1&gt; a rml:Target, void:Dataset ;
   void:dataDump &lt;file:///data/dump1.nt&gt;;
 .
-&lt;#VoIDDump2&gt; a void:Dataset ;
+&lt;#VoIDDump2&gt; a rml:Target, void:Dataset ;
   void:dataDump &lt;file:///data/dump2.nt&gt;;
 .
 </pre>
