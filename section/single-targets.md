@@ -44,10 +44,8 @@ to an RDF dump with N-Quads as serialization format and GZip compression:
 </pre>
 
 <pre class="ex-access">
-&lt;#DCATSourceAccess&gt; a dcat:Dataset;
-  dcat:distribution [ a dcat:Distribution;
-    dcat:downloadURL "https://rml.io/specs/rml-target/Friends.json";
-  ];
+&lt;#DCATSourceAccess&gt; a rml:Source, dcat:Distribution;
+  dcat:downloadURL "https://rml.io/specs/rml-target/Friends.json";
 .
 </pre>
 
@@ -82,16 +80,16 @@ to an RDF dump with N-Quads as serialization format and GZip compression:
 </pre>
 
 <pre class="ex-target">
-&lt;#TargetDump1&gt; a rmlt:LogicalTarget;
-  rmlt:target &lt;#VoIDDump1&gt;;
-  rmlt:serialization formats:N-Quads;
-  rmlt:compression comp:gzip;
+&lt;#TargetDump1&gt; a rml:LogicalTarget;
+  rml:target &lt;#VoIDDump1&gt;;
+  rml:serialization formats:N-Quads;
 .
 </pre>
 
 <pre class="ex-access">
-&lt;#VoIDDump1&gt; a void:Dataset ;
+&lt;#VoIDDump1&gt; a rml:Target, void:Dataset ;
   void:dataDump &lt;file:///data/dump1.nq.gz&gt;;
+  rml:compression comp:gzip;
 .
 </pre>
 
@@ -148,10 +146,8 @@ with Turtle as serialization format and Zip compression:
 </pre>
 
 <pre class="ex-access">
-&lt;#DCATSourceAccess&gt; a dcat:Dataset;
-  dcat:distribution [ a dcat:Distribution;
-    dcat:downloadURL "https://rml.io/specs/rml-target/Friends.json";
-  ];
+&lt;#DCATSourceAccess&gt; a rml:Source, dcat:Distribution;
+  dcat:downloadURL "https://rml.io/specs/rml-target/Friends.json";
 .
 </pre>
 
@@ -186,16 +182,16 @@ with Turtle as serialization format and Zip compression:
 </pre>
 
 <pre class="ex-target">
-&lt;#TargetDump1&gt; a rmlt:LogicalTarget;
-  rmlt:target &lt;#VoIDDump1&gt;;
-  rmlt:serialization formats:Turtle;
-  rmlt:compression comp:zip;
+&lt;#TargetDump1&gt; a rml:LogicalTarget;
+  rml:target &lt;#VoIDDump1&gt;;
+  rml:serialization formats:Turtle;
 .
 </pre>
 
 <pre class="ex-access">
-&lt;#VoIDDump1&gt; a void:Dataset ;
+&lt;#VoIDDump1&gt; a rml:Target, void:Dataset;
   void:dataDump &lt;file:///data/dump1.ttl.zip&gt;;
+  rml:compression comp:zip;
 .
 </pre>
 
@@ -269,10 +265,8 @@ with N-Triples as serialization format:
 </pre>
 
 <pre class="ex-access">
-&lt;#DCATSourceAccess&gt; a dcat:Dataset;
-  dcat:distribution [ a dcat:Distribution;
-    dcat:downloadURL "https://rml.io/specs/rml-target/Friends.json";
-  ];
+&lt;#DCATSourceAccess&gt; a rml:Source, dcat:Distribution;
+  dcat:downloadURL "https://rml.io/specs/rml-target/Friends.json";
 .
 </pre>
 
@@ -307,14 +301,14 @@ with N-Triples as serialization format:
 </pre>
 
 <pre class="ex-target">
-&lt;#TargetDump1&gt; a rmlt:LogicalTarget;
-  rmlt:target &lt;#VoIDDump1&gt;;
-  rmlt:serialization formats:N-Triples;
+&lt;#TargetDump1&gt; a rml:LogicalTarget;
+  rml:target &lt;#VoIDDump1&gt;;
+  rml:serialization formats:N-Triples;
 .
 </pre>
 
 <pre class="ex-access">
-&lt;#VoIDDump1&gt; a void:Dataset ;
+&lt;#VoIDDump1&gt; a rml:Target, void:Dataset ;
   void:dataDump &lt;file:///data/dump1.nt&gt;;
 .
 </pre>
@@ -386,10 +380,8 @@ to an RDF dump with N-Quads as serialization format:
 </pre>
 
 <pre class="ex-access">
-&lt;#DCATSourceAccess&gt; a dcat:Dataset;
-  dcat:distribution [ a dcat:Distribution;
-    dcat:downloadURL "https://rml.io/specs/rml-target/Friends.json";
-  ];
+&lt;#DCATSourceAccess&gt; a rml:Source, dcat:Distribution;
+  dcat:downloadURL "https://rml.io/specs/rml-target/Friends.json";
 .
 </pre>
 
@@ -427,13 +419,13 @@ to an RDF dump with N-Quads as serialization format:
 </pre>
 
 <pre class="ex-target">
-&lt;#TargetDump1&gt; a rmlt:LogicalTarget;
-  rmlt:target &lt;#VoIDDump1&gt;;
+&lt;#TargetDump1&gt; a rml:LogicalTarget;
+  rml:target &lt;#VoIDDump1&gt;;
 .
 </pre>
 
 <pre class="ex-access">
-&lt;#VoIDDump1&gt; a void:Dataset ;
+&lt;#VoIDDump1&gt; a rml:Target, void:Dataset ;
   void:dataDump &lt;file:///data/dump1.nq&gt;;
 .
 </pre>
@@ -491,10 +483,8 @@ to a RDF dump with N-Triples as serialization format:
 </pre>
 
 <pre class="ex-access">
-&lt;#DCATSourceAccess&gt; a dcat:Dataset;
-  dcat:distribution [ a dcat:Distribution;
-    dcat:downloadURL "https://rml.io/specs/rml-target/Friends.json";
-  ];
+&lt;#DCATSourceAccess&gt; a rml:Source, dcat:Dataset;
+  dcat:downloadURL "https://rml.io/specs/rml-target/Friends.json";
 .
 </pre>
 
@@ -532,14 +522,14 @@ to a RDF dump with N-Triples as serialization format:
 </pre>
 
 <pre class="ex-target">
-&lt;#TargetDump1&gt; a rmlt:LogicalTarget;
-  rmlt:target &lt;#VoIDDump1&gt;;
-  rmlt:serialization formats:N-Triples;
+&lt;#TargetDump1&gt; a rml:LogicalTarget;
+  rml:target &lt;#VoIDDump1&gt;;
+  rml:serialization formats:N-Triples;
 .
 </pre>
 
 <pre class="ex-access">
-&lt;#VoIDDump1&gt; a void:Dataset ;
+&lt;#VoIDDump1&gt; a rml:Target, void:Dataset ;
   void:dataDump &lt;file:///data/dump1.nt&gt;;
 .
 </pre>
