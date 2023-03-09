@@ -1,6 +1,7 @@
-# RML Target Source Specification
+# Source & Target
 
-Repository for https://w3id.org/kg-construct/rml-target-source
+Repository for RML Source & Target specification.
+Deployed to https://w3id.org/kg-construct/rml-target-source
 
 ## Quickstart
 
