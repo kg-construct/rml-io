@@ -43,8 +43,8 @@ to the three specified Targets:
 </pre>
 
 <pre class="ex-access">
-&lt;#DCATSourceAccess&gt; a dcat:Distribution;
-    dcat:downloadURL "https://rml.io/specs/rml-target/Supergirl.xml";
+&lt;#DCATSourceAccess&gt; a rml:Source, dcat:Distribution;
+  dcat:downloadURL "https://rml.io/specs/rml-target/Supergirl.xml";
 .
 </pre>
 
@@ -73,32 +73,32 @@ to the three specified Targets:
 </pre>
 
 <pre class="ex-target">
-&lt;#TargetDump1&gt; a rmlt:LogicalTarget;
-  rmlt:target &lt;#VoIDDump1&gt;;
-  rmlt:serialization formats:N-Triples;
-  rmlt:compression comp:zip;
+&lt;#TargetDump1&gt; a rml:LogicalTarget;
+  rml:target &lt;#VoIDDump1&gt;;
+  rml:serialization formats:N-Triples;
 .
-&lt;#TargetDump2&gt; a rmlt:LogicalTarget;
-  rmlt:target &lt;#VoIDDump1&gt;;
-  rmlt:serialization formats:JSON-LD;
-  rmlt:compression comp:tarxz;
+&lt;#TargetDump2&gt; a rml:LogicalTarget;
+  rml:target &lt;#VoIDDump1&gt;;
+  rml:serialization formats:JSON-LD;
 .
-&lt;#TargetDump3&gt; a rmlt:LogicalTarget;
-  rmlt:target &lt;#VoIDDump1&gt;;
-  rmlt:serialization formats:RDF_XML;
-  rmlt:compression comp:targzip;
+&lt;#TargetDump3&gt; a rml:LogicalTarget;
+  rml:target &lt;#VoIDDump1&gt;;
+  rml:serialization formats:RDF_XML;
 .
 </pre>
 
 <pre class="ex-access">
-&lt;#VoIDDump1&gt; a void:Dataset ;
+&lt;#VoIDDump1&gt; a rml:Target, void:Dataset;
   void:dataDump &lt;file:///data/dump1.nt.zip&gt;;
+  rml:compression comp:zip;
 .
-&lt;#VoIDDump2&gt; a void:Dataset ;
+&lt;#VoIDDump2&gt; a rml:Target, void:Dataset;
   void:dataDump &lt;file:///data/dump2.jsonld.tar.xz&gt;;
+  rml:compression comp:tarxz;
 .
-&lt;#VoIDDump3&gt; a void:Dataset ;
+&lt;#VoIDDump3&gt; a rml:Target, void:Dataset;
   void:dataDump &lt;file:///data/dump3.rdf.tar.gz&gt;;
+  rml:compression comp:targzip;
 .
 </pre>
 
@@ -193,8 +193,8 @@ are exported to `TargetDump2`.
 </pre>
 
 <pre class="ex-access">
-&lt;#DCATSourceAccess&gt; a dcat:Distribution;
-    dcat:downloadURL "https://rml.io/specs/rml-target/Supergirl.xml";
+&lt;#DCATSourceAccess&gt; a rml:Source, dcat:Distribution;
+  dcat:downloadURL "https://rml.io/specs/rml-target/Supergirl.xml";
 .
 </pre>
 
@@ -230,13 +230,13 @@ are exported to `TargetDump2`.
 </pre>
 
 <pre class="ex-target">
-&lt;#TargetDump1&gt; a rmlt:LogicalTarget;
-  rmlt:target &lt;#VoIDDump1&gt;;
-  rmlt:serialization formats:N-Triples;
+&lt;#TargetDump1&gt; a rml:LogicalTarget;
+  rml:target &lt;#VoIDDump1&gt;;
+  rml:serialization formats:N-Triples;
 .
-&lt;#TargetDump2&gt; a rmlt:LogicalTarget;
-  rmlt:target &lt;#VoIDDump1&gt;;
-  rmlt:serialization formats:N-Triples;
+&lt;#TargetDump2&gt; a rml:LogicalTarget;
+  rml:target &lt;#VoIDDump1&gt;;
+  rml:serialization formats:N-Triples;
 .
 </pre>
 
@@ -296,8 +296,8 @@ are exported to `TargetDump2`.
 </pre>
 
 <pre class="ex-access">
-&lt;#DCATSourceAccess&gt; a dcat:Distribution;
-    dcat:downloadURL "https://rml.io/specs/rml-target/Supergirl.xml";
+&lt;#DCATSourceAccess&gt; a rml:Source, dcat:Distribution;
+  dcat:downloadURL "https://rml.io/specs/rml-target/Supergirl.xml";
 .
 </pre>
 
@@ -333,21 +333,21 @@ are exported to `TargetDump2`.
 </pre>
 
 <pre class="ex-target">
-&lt;#TargetDump1&gt; a rmlt:LogicalTarget;
-  rmlt:target &lt;#VoIDDump1&gt;;
-  rmlt:serialization formats:N-Triples;
+&lt;#TargetDump1&gt; a rml:LogicalTarget;
+  rml:target &lt;#VoIDDump1&gt;;
+  rml:serialization formats:N-Triples;
 .
-&lt;#TargetDump2&gt; a rmlt:LogicalTarget;
-  rmlt:target &lt;#VoIDDump1&gt;;
-  rmlt:serialization formats:N-Triples;
+&lt;#TargetDump2&gt; a rml:LogicalTarget;
+  rml:target &lt;#VoIDDump1&gt;;
+  rml:serialization formats:N-Triples;
 .
 </pre>
 
 <pre class="ex-access">
-&lt;#VoIDDump1&gt; a void:Dataset ;
+&lt;#VoIDDump1&gt; a rml:Target, void:Dataset;
   void:dataDump &lt;file:///data/dump1.nt&gt;;
 .
-&lt;#VoIDDump2&gt; a void:Dataset ;
+&lt;#VoIDDump2&gt; a rml:Target, void:Dataset;
   void:dataDump &lt;file:///data/dump2.nt&gt;;
 .
 </pre>
@@ -399,8 +399,8 @@ are exported to `TargetDump2`.
 </pre>
 
 <pre class="ex-access">
-&lt;#DCATSourceAccess&gt; a dcat:Distribution;
-    dcat:downloadURL "https://rml.io/specs/rml-target/Supergirl.xml";
+&lt;#DCATSourceAccess&gt; a rml:Source, dcat:Distribution;
+  dcat:downloadURL "https://rml.io/specs/rml-target/Supergirl.xml";
 .
 </pre>
 
@@ -436,21 +436,21 @@ are exported to `TargetDump2`.
 </pre>
 
 <pre class="ex-target">
-&lt;#TargetDump1&gt; a rmlt:LogicalTarget;
-  rmlt:target &lt;#VoIDDump1&gt;;
-  rmlt:serialization formats:N-Triples;
+&lt;#TargetDump1&gt; a rml:LogicalTarget;
+  rml:target &lt;#VoIDDump1&gt;;
+  rml:serialization formats:N-Triples;
 .
-&lt;#TargetDump2&gt; a rmlt:LogicalTarget;
-  rmlt:target &lt;#VoIDDump1&gt;;
-  rmlt:serialization formats:N-Triples;
+&lt;#TargetDump2&gt; a rml:LogicalTarget;
+  rml:target &lt;#VoIDDump1&gt;;
+  rml:serialization formats:N-Triples;
 .
 </pre>
 
 <pre class="ex-access">
-&lt;#VoIDDump1&gt; a void:Dataset ;
+&lt;#VoIDDump1&gt; a rml:Target, void:Dataset;
   void:dataDump &lt;file:///data/dump1.nt&gt;;
 .
-&lt;#VoIDDump2&gt; a void:Dataset ;
+&lt;#VoIDDump2&gt; a rml:Target, void:Dataset;
   void:dataDump &lt;file:///data/dump2.nt&gt;;
 .
 </pre>
@@ -498,8 +498,8 @@ predicate `foaf:nickname` are exported to `TargetDump2`.
 </pre>
 
 <pre class="ex-access">
-&lt;#DCATSourceAccess&gt; a dcat:Distribution;
-    dcat:downloadURL "https://rml.io/specs/rml-target/Supergirl.xml";
+&lt;#DCATSourceAccess&gt; a rml:Source, dcat:Distribution;
+  dcat:downloadURL "https://rml.io/specs/rml-target/Supergirl.xml";
 .
 </pre>
 
@@ -536,21 +536,21 @@ predicate `foaf:nickname` are exported to `TargetDump2`.
 </pre>
 
 <pre class="ex-target">
-&lt;#TargetDump1&gt; a rmlt:LogicalTarget;
-  rmlt:target &lt;#VoIDDump1&gt;;
-  rmlt:serialization formats:N-Triples;
+&lt;#TargetDump1&gt; a rml:LogicalTarget;
+  rml:target &lt;#VoIDDump1&gt;;
+  rml:serialization formats:N-Triples;
 .
-&lt;#TargetDump2&gt; a rmlt:LogicalTarget;
-  rmlt:target &lt;#VoIDDump1&gt;;
-  rmlt:serialization formats:N-Triples;
+&lt;#TargetDump2&gt; a rml:LogicalTarget;
+  rml:target &lt;#VoIDDump1&gt;;
+  rml:serialization formats:N-Triples;
 .
 </pre>
 
 <pre class="ex-access">
-&lt;#VoIDDump1&gt; a void:Dataset ;
+&lt;#VoIDDump1&gt; a rml:Target, void:Dataset;
   void:dataDump &lt;file:///data/dump1.nt&gt;;
 .
-&lt;#VoIDDump2&gt; a void:Dataset ;
+&lt;#VoIDDump2&gt; a rml:Target, void:Dataset;
   void:dataDump &lt;file:///data/dump2.nt&gt;;
 .
 </pre>
@@ -602,8 +602,8 @@ are exported to `TargetDump2`.
 </pre>
 
 <pre class="ex-access">
-&lt;#DCATSourceAccess&gt; a dcat:Distribution;
-    dcat:downloadURL "https://rml.io/specs/rml-target/Supergirl.xml";
+&lt;#DCATSourceAccess&gt; a rml:Source, dcat:Distribution;
+  dcat:downloadURL "https://rml.io/specs/rml-target/Supergirl.xml";
 .
 </pre>
 
@@ -642,21 +642,21 @@ are exported to `TargetDump2`.
 </pre>
 
 <pre class="ex-target">
-&lt;#TargetDump1&gt; a rmlt:LogicalTarget;
-  rmlt:target &lt;#VoIDDump1&gt;;
-  rmlt:serialization formats:N-Triples;
+&lt;#TargetDump1&gt; a rml:LogicalTarget;
+  rml:target &lt;#VoIDDump1&gt;;
+  rml:serialization formats:N-Triples;
 .
-&lt;#TargetDump2&gt; a rmlt:LogicalTarget;
-  rmlt:target &lt;#VoIDDump1&gt;;
-  rmlt:serialization formats:N-Triples;
+&lt;#TargetDump2&gt; a rml:LogicalTarget;
+  rml:target &lt;#VoIDDump1&gt;;
+  rml:serialization formats:N-Triples;
 .
 </pre>
 
 <pre class="ex-access">
-&lt;#VoIDDump1&gt; a void:Dataset ;
+&lt;#VoIDDump1&gt; a rml:Target, void:Dataset;
   void:dataDump &lt;file:///data/dump1.nq&gt;;
 .
-&lt;#VoIDDump2&gt; a void:Dataset ;
+&lt;#VoIDDump2&gt; a rml:Target, void:Dataset;
   void:dataDump &lt;file:///data/dump2.nq&gt;;
 .
 </pre>
@@ -708,8 +708,8 @@ are exported to `TargetDump2`.
 </pre>
 
 <pre class="ex-access">
-&lt;#DCATSourceAccess&gt; a dcat:Distribution;
-    dcat:downloadURL "https://rml.io/specs/rml-target/Supergirl.xml";
+&lt;#DCATSourceAccess&gt; a rml:Source, dcat:Distribution;
+  dcat:downloadURL "https://rml.io/specs/rml-target/Supergirl.xml";
 .
 </pre>
 
@@ -748,21 +748,21 @@ are exported to `TargetDump2`.
 </pre>
 
 <pre class="ex-target">
-&lt;#TargetDump1&gt; a rmlt:LogicalTarget;
-  rmlt:target &lt;#VoIDDump1&gt;;
-  rmlt:serialization formats:N-Triples;
+&lt;#TargetDump1&gt; a rml:LogicalTarget;
+  rml:target &lt;#VoIDDump1&gt;;
+  rml:serialization formats:N-Triples;
 .
-&lt;#TargetDump2&gt; a rmlt:LogicalTarget;
-  rmlt:target &lt;#VoIDDump1&gt;;
-  rmlt:serialization formats:N-Triples;
+&lt;#TargetDump2&gt; a rml:LogicalTarget;
+  rml:target &lt;#VoIDDump1&gt;;
+  rml:serialization formats:N-Triples;
 .
 </pre>
 
 <pre class="ex-access">
-&lt;#VoIDDump1&gt; a void:Dataset ;
+&lt;#VoIDDump1&gt; a rml:Target, void:Dataset ;
   void:dataDump &lt;file:///data/dump1.nq&gt;;
 .
-&lt;#VoIDDump2&gt; a void:Dataset ;
+&lt;#VoIDDump2&gt; a rml:Target, void:Dataset ;
   void:dataDump &lt;file:///data/dump2.nq&gt;;
 .
 </pre>
@@ -810,8 +810,8 @@ are exported to `TargetDump2`.
 </pre>
 
 <pre class="ex-access">
-&lt;#DCATSourceAccess&gt; a dcat:Distribution;
-    dcat:downloadURL "https://rml.io/specs/rml-target/Supergirl.xml";
+&lt;#DCATSourceAccess&gt; a rml:Source, dcat:Distribution;
+  dcat:downloadURL "https://rml.io/specs/rml-target/Supergirl.xml";
 .
 </pre>
 
@@ -850,21 +850,21 @@ are exported to `TargetDump2`.
 </pre>
 
 <pre class="ex-target">
-&lt;#TargetDump1&gt; a rmlt:LogicalTarget;
-  rmlt:target &lt;#VoIDDump1&gt;;
-  rmlt:serialization formats:N-Triples;
+&lt;#TargetDump1&gt; a rml:LogicalTarget;
+  rml:target &lt;#VoIDDump1&gt;;
+  rml:serialization formats:N-Triples;
 .
-&lt;#TargetDump2&gt; a rmlt:LogicalTarget;
-  rmlt:target &lt;#VoIDDump1&gt;;
-  rmlt:serialization formats:N-Triples;
+&lt;#TargetDump2&gt; a rml:LogicalTarget;
+  rml:target &lt;#VoIDDump1&gt;;
+  rml:serialization formats:N-Triples;
 .
 </pre>
 
 <pre class="ex-access">
-&lt;#VoIDDump1&gt; a void:Dataset ;
+&lt;#VoIDDump1&gt; a rml:Target, void:Dataset;
   void:dataDump &lt;file:///data/dump1.nq&gt;;
 .
-&lt;#VoIDDump2&gt; a void:Dataset ;
+&lt;#VoIDDump2&gt; a rml:Target, void:Dataset;
   void:dataDump &lt;file:///data/dump2.nq&gt;;
 .
 </pre>
@@ -916,8 +916,8 @@ as there is no dedicated Target assigned to triples containing
 </pre>
 
 <pre class="ex-access">
-&lt;#DCATSourceAccess&gt; a dcat:Distribution;
-    dcat:downloadURL "https://rml.io/specs/rml-target/Supergirl.xml";
+&lt;#DCATSourceAccess&gt; a rml:Source, dcat:Distribution;
+  dcat:downloadURL "https://rml.io/specs/rml-target/Supergirl.xml";
 .
 </pre>
 
@@ -960,21 +960,21 @@ as there is no dedicated Target assigned to triples containing
 </pre>
 
 <pre class="ex-target">
-&lt;#TargetDump1&gt; a rmlt:LogicalTarget;
-  rmlt:target &lt;#VoIDDump1&gt;;
-  rmlt:serialization formats:N-Triples;
+&lt;#TargetDump1&gt; a rml:LogicalTarget;
+  rml:target &lt;#VoIDDump1&gt;;
+  rml:serialization formats:N-Triples;
 .
-&lt;#TargetDump2&gt; a rmlt:LogicalTarget;
-  rmlt:target &lt;#VoIDDump1&gt;;
-  rmlt:serialization formats:N-Triples;
+&lt;#TargetDump2&gt; a rml:LogicalTarget;
+  rml:target &lt;#VoIDDump1&gt;;
+  rml:serialization formats:N-Triples;
 .
 </pre>
 
 <pre class="ex-access">
-&lt;#VoIDDump1&gt; a void:Dataset ;
+&lt;#VoIDDump1&gt; a rml:Target, void:Dataset;
   void:dataDump &lt;file:///data/dump1.nt&gt;;
 .
-&lt;#VoIDDump2&gt; a void:Dataset ;
+&lt;#VoIDDump2&gt; a rml:Target, void:Dataset;
   void:dataDump &lt;file:///data/dump2.nt&gt;;
 .
 </pre>
@@ -1028,8 +1028,8 @@ are exported to `TargetDump2`.
 </pre>
 
 <pre class="ex-access">
-&lt;#DCATSourceAccess&gt; a dcat:Distribution;
-    dcat:downloadURL "https://rml.io/specs/rml-target/Supergirl.xml";
+&lt;#DCATSourceAccess&gt; a rml:Source, dcat:Distribution;
+  dcat:downloadURL "https://rml.io/specs/rml-target/Supergirl.xml";
 .
 </pre>
 
@@ -1068,21 +1068,21 @@ are exported to `TargetDump2`.
 </pre>
 
 <pre class="ex-target">
-&lt;#TargetDump1&gt; a rmlt:LogicalTarget;
-  rmlt:target &lt;#VoIDDump1&gt;;
-  rmlt:serialization formats:N-Triples;
+&lt;#TargetDump1&gt; a rml:LogicalTarget;
+  rml:target &lt;#VoIDDump1&gt;;
+  rml:serialization formats:N-Triples;
 .
-&lt;#TargetDump2&gt; a rmlt:LogicalTarget;
-  rmlt:target &lt;#VoIDDump1&gt;;
-  rmlt:serialization formats:N-Triples;
+&lt;#TargetDump2&gt; a rml:LogicalTarget;
+  rml:target &lt;#VoIDDump1&gt;;
+  rml:serialization formats:N-Triples;
 .
 </pre>
 
 <pre class="ex-access">
-&lt;#VoIDDump1&gt; a void:Dataset ;
+&lt;#VoIDDump1&gt; a rml:Target, void:Dataset;
   void:dataDump &lt;file:///data/dump1.nt&gt;;
 .
-&lt;#VoIDDump2&gt; a void:Dataset ;
+&lt;#VoIDDump2&gt; a rml:Target, void:Dataset;
   void:dataDump &lt;file:///data/dump2.nt&gt;;
 .
 </pre>
@@ -1130,8 +1130,8 @@ are exported to `TargetDump2`.
 </pre>
 
 <pre class="ex-access">
-&lt;#DCATSourceAccess&gt; a dcat:Distribution;
-    dcat:downloadURL "https://rml.io/specs/rml-target/Supergirl.xml";
+&lt;#DCATSourceAccess&gt; a rml:Source, dcat:Distribution;
+  dcat:downloadURL "https://rml.io/specs/rml-target/Supergirl.xml";
 .
 </pre>
 
@@ -1167,21 +1167,21 @@ are exported to `TargetDump2`.
 </pre>
 
 <pre class="ex-target">
-&lt;#TargetDump1&gt; a rmlt:LogicalTarget;
-  rmlt:target &lt;#VoIDDump1&gt;;
-  rmlt:serialization formats:N-Triples;
+&lt;#TargetDump1&gt; a rml:LogicalTarget;
+  rml:target &lt;#VoIDDump1&gt;;
+  rml:serialization formats:N-Triples;
 .
-&lt;#TargetDump2&gt; a rmlt:LogicalTarget;
-  rmlt:target &lt;#VoIDDump1&gt;;
-  rmlt:serialization formats:N-Triples;
+&lt;#TargetDump2&gt; a rml:LogicalTarget;
+  rml:target &lt;#VoIDDump1&gt;;
+  rml:serialization formats:N-Triples;
 .
 </pre>
 
 <pre class="ex-access">
-&lt;#VoIDDump1&gt; a void:Dataset ;
+&lt;#VoIDDump1&gt; a rml:Target, void:Dataset ;
   void:dataDump &lt;file:///data/dump1.nt&gt;;
 .
-&lt;#VoIDDump2&gt; a void:Dataset ;
+&lt;#VoIDDump2&gt; a rml:Target, void:Dataset ;
   void:dataDump &lt;file:///data/dump2.nt&gt;;
 .
 </pre>
@@ -1229,8 +1229,8 @@ are exported to `TargetDump2`.
 </pre>
 
 <pre class="ex-access">
-&lt;#DCATSourceAccess&gt; a dcat:Distribution;
-    dcat:downloadURL "https://rml.io/specs/rml-target/Supergirl.xml";
+&lt;#DCATSourceAccess&gt; a rml:Source, dcat:Distribution;
+  dcat:downloadURL "https://rml.io/specs/rml-target/Supergirl.xml";
 .
 </pre>
 
@@ -1266,21 +1266,21 @@ are exported to `TargetDump2`.
 </pre>
 
 <pre class="ex-target">
-&lt;#TargetDump1&gt; a rmlt:LogicalTarget;
-  rmlt:target &lt;#VoIDDump1&gt;;
-  rmlt:serialization formats:N-Triples;
+&lt;#TargetDump1&gt; a rml:LogicalTarget;
+  rml:target &lt;#VoIDDump1&gt;;
+  rml:serialization formats:N-Triples;
 .
-&lt;#TargetDump2&gt; a rmlt:LogicalTarget;
-  rmlt:target &lt;#VoIDDump1&gt;;
-  rmlt:serialization formats:N-Triples;
+&lt;#TargetDump2&gt; a rml:LogicalTarget;
+  rml:target &lt;#VoIDDump1&gt;;
+  rml:serialization formats:N-Triples;
 .
 </pre>
 
 <pre class="ex-access">
-&lt;#VoIDDump1&gt; a void:Dataset ;
+&lt;#VoIDDump1&gt; a rml:Target, void:Dataset;
   void:dataDump &lt;file:///data/dump1.nt&gt;;
 .
-&lt;#VoIDDump2&gt; a void:Dataset ;
+&lt;#VoIDDump2&gt; a rml:Target, void:Dataset;
   void:dataDump &lt;file:///data/dump2.nt&gt;;
 .
 </pre>
@@ -1328,8 +1328,8 @@ are exported to `TargetDump2`.
 </pre>
 
 <pre class="ex-access">
-&lt;#DCATSourceAccess&gt; a dcat:Distribution;
-    dcat:downloadURL "https://rml.io/specs/rml-target/Supergirl.xml";
+&lt;#DCATSourceAccess&gt; a rml:Source, dcat:Distribution;
+  dcat:downloadURL "https://rml.io/specs/rml-target/Supergirl.xml";
 .
 </pre>
 
@@ -1371,21 +1371,21 @@ are exported to `TargetDump2`.
 </pre>
 
 <pre class="ex-target">
-&lt;#TargetDump1&gt; a rmlt:LogicalTarget;
-  rmlt:target &lt;#VoIDDump1&gt;;
-  rmlt:serialization formats:N-Triples;
+&lt;#TargetDump1&gt; a rml:LogicalTarget;
+  rml:target &lt;#VoIDDump1&gt;;
+  rml:serialization formats:N-Triples;
 .
-&lt;#TargetDump2&gt; a rmlt:LogicalTarget;
-  rmlt:target &lt;#VoIDDump1&gt;;
-  rmlt:serialization formats:N-Triples;
+&lt;#TargetDump2&gt; a rml:LogicalTarget;
+  rml:target &lt;#VoIDDump1&gt;;
+  rml:serialization formats:N-Triples;
 .
 </pre>
 
 <pre class="ex-access">
-&lt;#VoIDDump1&gt; a void:Dataset ;
+&lt;#VoIDDump1&gt; a rml:Target, void:Dataset;
   void:dataDump &lt;file:///data/dump1.nq&gt;;
 .
-&lt;#VoIDDump2&gt; a void:Dataset ;
+&lt;#VoIDDump2&gt; a rml:Target, void:Dataset;
   void:dataDump &lt;file:///data/dump2.nq&gt;;
 .
 </pre>
