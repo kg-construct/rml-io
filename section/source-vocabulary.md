@@ -80,10 +80,8 @@ A `ql:Namespace` contains the following required properties:
 
 <pre class="ex-source">
 &lt;#XMLNamespace&gt; a rml:LogicalSource;
-     rml:source [ a rml:Source
-       rml:access [ a dcat:Distribution;
+     rml:source [ a rml:Source, dcat:Distribution;
          dcat:accessURL &lt;file:///path/to/data.xml&gt;;
-       ];
      ];
      rml:referenceFormulation [ a ql:XPathReferenceFormulation;
        ql:namespace [ a ql:Namespace;
