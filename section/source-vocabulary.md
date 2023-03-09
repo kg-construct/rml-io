@@ -47,7 +47,7 @@ If a property is specified, it MUST NOT be specified multiple times.
 
 | Property                    | Domain               | Range                     |
 | --------------------------- | -------------------- | ------------------------- |
-| `rml:source`                | `rml:LogicalSource`  | `Source`                  |
+| `rml:source`                | `rml:LogicalSource`  | `IRI`                     |
 | `rml:referenceFormulation`  | `rml:LogicalSource`  | `ql:ReferenceFormulation` |
 | `rml:iterator`              | `rml:LogicalSource`  | `Literal`                 |
 
@@ -95,20 +95,19 @@ A `ql:Namespace` contains the following required properties:
 .
 </pre>
 
+Since `rml:source` is open to any IRI, you can implement your own source access
+description for sources that are not covered by existing vocabularies such as
+paginated Web APIs which implement pagination in a Web API specific way.
+
 ### Source
 
 A Source (`rml:Source`) defines how a data source should be accessed.
-It MUST contain the follow properties:
-
-- **rml:access** describes where a source is located.
-It is a URI [[RFC3986]] 
-or Literal [[RDF-Concepts]]
-that represents the input data source's location. 
-External vocabulary such as DCAT, VoID, SD is allowed here. 
-If a source cannot be accessed with existing vocabulary, a custom vocabulary 
-can be used, for example: handling pagination in a Web API may be specific 
-for that Web API. A custom ontology can be used here to describe 
-that specific pagination behavior.
+It complements other source descriptions 
+such as SD Service, CSVW Table, DCAT Distribution, etc.
+to support encoding, null values, compression, and other access properties.
+The properties of a Source take precedence over the properties of other source
+descriptions, for example: `rml:encoding` takes precedence over `csvw:encoding`
+if both are specific.
 
 Optionally, the following properties MAY be specified:
 
@@ -134,10 +133,8 @@ through a `SELECT * FROM {table}` query (`rr:tableName` compatibility).
 
 <pre class="ex-source">
 &lt;#JSON&gt; a rml:LogicalSource;
-     rml:source [ a rml:Source
-       rml:access [ a dcat:Distribution;
-           dcat:accessURL &lt;file:///path/to/data.json.gz&gt;;
-       ];
+     rml:source [ a rml:Source, dcat:Distribution
+       dcat:accessURL &lt;file:///path/to/data.json.gz&gt;;
        rml:null ""; # empty string as NULL besides default null character
        rml:compression comp:gzip; # GZip compression
        rml:encoding enc:UTF-16; # UTF-16 encoding
@@ -149,7 +146,6 @@ through a `SELECT * FROM {table}` query (`rr:tableName` compatibility).
 
 | Property                    | Domain               | Range                     |
 | --------------------------- | -------------------- | ------------------------- |
-| `rml:access`                | `rml:Source`         | `URI or Literal`          |
 | `rml:encoding`              | `rml:Source`         | `enc:Encoding`            |
 | `rml:null`                  | `rml:Source`         | `Literal`                 |
 | `rml:compression`           | `rml:Source`         | `comp:Compression`        |
@@ -161,10 +157,8 @@ The following example show a Source of an CSV file.
 
 <pre class="ex-source">
 &lt;#CSV&gt; a rml:LogicalSource;
-     rml:source [ 
-        rml:access [ a csvw:Table;
-            csvw:url "/path/to/data.csv";
-        ];
+     rml:source [ a rml:Source, a csvw:Table
+        csvw:url "/path/to/data.csv";
         rml:null "NULL";
         rml:null "";
      ];
@@ -182,16 +176,14 @@ the `student` table. The database username and password are provided as well.
 
 <pre class="ex-source">
 &lt;#RDB&gt; a rml:LogicalSource;
-     rml:source [ 
-        rml:access [ a d2rq:Database;
-            d2rq:jdbcDSN "jdbc:mysql://localhost/example";
-            d2rq:jdbcDriver "com.mysql.jdbc.Driver";
-            d2rq:username "user";
-            d2rq:password "password";
-            d2rq:sqlVersion d2rq:SQL2008; # TODO: better ontology
-        ];
+    rml:source [ a rml:Source, d2rq:Database;
+        d2rq:jdbcDSN "jdbc:mysql://localhost/example";
+        d2rq:jdbcDriver "com.mysql.jdbc.Driver";
+        d2rq:username "user";
+        d2rq:password "password";
         rml:query "SELECT * FROM student;";
-     ];
+        rml:referenceFormulation rr:SQL2008;
+    ];
 .
 </pre>
 
@@ -202,13 +194,11 @@ XML file with no compression.
 
 <pre class="ex-source">
 &lt;#XML&gt; a rml:LogicalSource;
-     rml:source [ 
-        rml:access [ a dcat:Distribution;
-             dcat:accessURL &lt;file:///path/to/data.xml&gt;;
-        ];
-     ];
-     rml:referenceFormulation ql:XPath;
-     rml:iterator "/xpath/iterator/expression";
+    rml:source [ a rml:Source, dcat:Distribution;
+        dcat:accessURL &lt;file:///path/to/data.xml&gt;;
+    ];
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "/xpath/iterator/expression";
 .
 </pre>
 
@@ -216,11 +206,9 @@ The following example is GZip compressed JSON file as Source:
 
 <pre class="ex-source">
 &lt;#JSON&gt; a rml:LogicalSource;
-     rml:source [ 
-         rml:access [ a dcat:Distribution;
-             dcat:accessURL &lt;file:///path/to/data.json.gz&gt;;
-         ];
-         rml:compression comp:gzip;
+    rml:source [ a rml:Source, dcat:Distribution;
+        dcat:accessURL &lt;file:///path/to/data.json.gz&gt;;
+        rml:compression comp:gzip;
      ];
      rml:referenceFormulation ql:JSONPath;
      rml:iterator "$.jsonpath.expression";
@@ -233,11 +221,9 @@ specified by `rml:query`.
 
 <pre class="ex-source">
 &lt;#SPARQLEndpoint&gt; a rml:LogicalSource;
-    rml:source [ 
-        rml:access [ a sd:Service;
-            sd:endpoint  &lt;http://example.com/sparql&gt;;
-            sd:supportedLanguage sd:SPARQL11Query;
-        ];
+    rml:source [ a rml:Source, sd:Service;
+        sd:endpoint  &lt;http://example.com/sparql&gt;;
+        sd:supportedLanguage sd:SPARQL11Query;
         rml:query "CONSTRUCT WHERE { ?s ?p ?o. } LIMIT 100";
     ];
 .
@@ -255,25 +241,23 @@ set to 'Processor':
 
 <pre class="ex-source">
 &lt;#HTTPWebAPI&gt; a rml:LogicalSource;
-     rml:source [ 
-        rml:access [ a td:Thing;
-            td:hasPropertyAffordance [
-                td:hasForm [
-                    # URL and content type
-                    hctl:hasTarget "http://localhost:4242/";
-                    hctl:forContentType "application/json";
-                    # Set HTTP method and headers through W3C WoT Binding Template for HTTP
-                    htv:methodName "GET";
-                    htv:headers ([
-                        htv:fieldName "User-Agent";
-                        htv:fieldValue "Processor";
-                    ]);
-                ];
+    rml:source [ a rml:Source, td:Thing;
+        td:hasPropertyAffordance [
+            td:hasForm [
+                # URL and content type
+                hctl:hasTarget "http://localhost:4242/";
+                hctl:forContentType "application/json";
+                # Set HTTP method and headers through W3C WoT Binding Template for HTTP
+                htv:methodName "GET";
+                htv:headers ([
+                    htv:fieldName "User-Agent";
+                    htv:fieldValue "Processor";
+                ]);
             ];
         ];
-     ];
-     rml:referenceFormulation ql:JSONPath;
-     rml:iterator "$.jsonpath";
+    ];
+    rml:referenceFormulation ql:JSONPath;
+    rml:iterator "$.jsonpath";
 .
 </pre>
 
@@ -282,19 +266,17 @@ HTTP Server Sent Events stream in XML format without compression:
 
 <pre class="ex-source">
 &lt;#HTTPSSEStream&gt; a rml:LogicalSource;
-     rml:source [
-        rml:access [ a td:Thing;
-            td:hasPropertyAffordance [
-                td:hasForm [
-                    # URL and content type
-                    hctl:hasTarget "http://localhost:4242/";
-                    hctl:forContentType "text/event-stream";
-                ];
+    rml:source [ a rml:Source, td:Thing;
+        td:hasPropertyAffordance [
+            td:hasForm [
+                # URL and content type
+                hctl:hasTarget "http://localhost:4242/";
+                hctl:forContentType "text/event-stream";
             ];
         ];
-     ];
-     rml:referenceFormulation ql:XPath;
-     rml:iterator "/my/xpath";
+    ];
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "/my/xpath";
 .
 </pre>
 
@@ -303,22 +285,20 @@ MQTT stream in JSON format without compression:
 
 <pre class="ex-source">
 &lt;#MQTTStream&gt; a rml:LogicalSource;
-     rml:source [ 
-        rml:access [ a td:Thing;
-            td:hasPropertyAffordance [
-                td:hasForm [
-                    # URL and content type
-                    hctl:hasTarget "mqtt://localhost/topic";
-                    hctl:forContentType "application/json";
-                    # Set MQTT parameters through W3C WoT Binding Template for MQTT
-                    mqv:controlPacketValue "SUBSCRIBE";
-                    mqv:options ([ mqv:optionName "qos"; mqv:optionValue "1" ] [ mqv:optionName "dup" ]);
-                ];
+    rml:source [ a rml:Source, td:Thing;
+        td:hasPropertyAffordance [
+            td:hasForm [
+                # URL and content type
+                hctl:hasTarget "mqtt://localhost/topic";
+                hctl:forContentType "application/json";
+                # Set MQTT parameters through W3C WoT Binding Template for MQTT
+                mqv:controlPacketValue "SUBSCRIBE";
+                mqv:options ([ mqv:optionName "qos"; mqv:optionValue "1" ] [ mqv:optionName "dup" ]);
             ];
         ];
-     ];
-     rml:referenceFormulation ql:JSONPath;
-     rml:iterator "$.jsonpath";
+    ];
+    rml:referenceFormulation ql:JSONPath;
+    rml:iterator "$.jsonpath";
 .
 </pre>
 
@@ -327,19 +307,17 @@ TCP stream in JSON format without compression:
 
 <pre class="ex-source">
 &lt;#TCPStream&gt; a rml:LogicalSource;
-     rml:source [ 
-        rml:access [ a td:Thing;
-            td:hasPropertyAffordance [
-                td:hasForm [
-                    # URL and content type
-                    hctl:hasTarget "tcp://localhost:1234/topic";
-                    hctl:forContentType "application/json";
-                ];
+    rml:source [ a rml:Source, td:Thing;
+        td:hasPropertyAffordance [
+            td:hasForm [
+                # URL and content type
+                hctl:hasTarget "tcp://localhost:1234/topic";
+                hctl:forContentType "application/json";
             ];
         ];
-     ];
-     rml:referenceFormulation ql:JSONPath;
-     rml:iterator "$.jsonpath";
+    ];
+    rml:referenceFormulation ql:JSONPath;
+    rml:iterator "$.jsonpath";
 .
 </pre>
 
@@ -348,20 +326,18 @@ Kafka stream in XML format without compression:
 
 <pre class="ex-source">
 &lt;#KafkaStream&gt; a rml:LogicalSource;
-     rml:source [ 
-        rml:access [ a td:Thing;
-            td:hasPropertyAffordance [
-                td:hasForm [
-                    # URL and content type
-                    hctl:hasTarget "kafka://localhost:8089/topic";
-                    hctl:forContentType "application/xml";
-                    # Kafka parameters through W3C WoT Binding Template for Kafka
-                    kafka:groupId "MyAwesomeGroup";
-                ];
+    rml:source [ a rml:Source, td:Thing;
+        td:hasPropertyAffordance [
+            td:hasForm [
+                # URL and content type
+                hctl:hasTarget "kafka://localhost:8089/topic";
+                hctl:forContentType "application/xml";
+                # Kafka parameters through W3C WoT Binding Template for Kafka
+                kafka:groupId "MyAwesomeGroup";
             ];
         ];
-     ];
-     rml:referenceFormulation ql:XPath;
-     rml:iterator "/my/xpath";
+    ];
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "/my/xpath";
 .
 </pre>
