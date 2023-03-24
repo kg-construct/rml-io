@@ -1,0 +1,267 @@
+@prefix : <http://w3id.org/rml/> .
+@prefix cc: <http://creativecommons.org/ns#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix ql: <http://semweb.mmlab.be/ns/ql#> .
+@prefix enc: <http://semweb.mmlab.be/ns/rml-encoding#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix comp: <http://semweb.mmlab.be/ns/rml-compression#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix vaem: <http://www.linkedmodel.org/schema/vaem#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix formats: <https://www.w3.org/ns/formats/> .
+@base <http://w3id.org/rml/> .
+
+<http://w3id.org/rml/> rdf:type owl:Ontology ;
+                        dc:description "Generic Mapping Language for RDF (RDB/CSV/TSV/XML/JSON/... to RDF) - Vocabulary description"@en ;
+                        dc:modified "2023-03-15" ;
+                        dc:title "RML Source and Target"@en ;
+                        vann:preferredNamespacePrefix "rml" ;
+                        vann:preferredNamespaceUri "http://w3id.org/rml/" .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://creativecommons.org/ns#license
+cc:license rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/elements/1.1/contributor
+dc:contributor rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/elements/1.1/creator
+dc:creator rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/elements/1.1/description
+dc:description rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/elements/1.1/issued
+dc:issued rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/elements/1.1/modified
+dc:modified rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/elements/1.1/publisher
+dc:publisher rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/elements/1.1/title
+dc:title rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/vocab/vann/preferredNamespacePrefix
+vann:preferredNamespacePrefix rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/vocab/vann/preferredNamespaceUri
+vann:preferredNamespaceUri rdf:type owl:AnnotationProperty .
+
+
+###  http://www.linkedmodel.org/schema/vaem#acronym
+vaem:acronym rdf:type owl:AnnotationProperty .
+
+
+###  http://xmlns.com/foaf/0.1/name
+foaf:name rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://w3id.org/rml/compression
+:compression rdf:type owl:ObjectProperty ;
+             rdfs:domain [ rdf:type owl:Class ;
+                           owl:unionOf ( :Source
+                                         :Target
+                                       )
+                         ] ;
+             rdfs:range comp:Compression ;
+             rdfs:comment <http://w3id.org/rml/source-target/> ;
+             rdfs:label "compression" .
+
+
+###  http://w3id.org/rml/encoding
+:encoding rdf:type owl:ObjectProperty ;
+          rdfs:domain [ rdf:type owl:Class ;
+                        owl:unionOf ( :Source
+                                      :Target
+                                    )
+                      ] ;
+          rdfs:range enc:Encoding ;
+          rdfs:comment <http://w3id.org/rml/source-target/> ;
+          rdfs:label "encoding" .
+
+
+###  http://w3id.org/rml/iterator
+:iterator rdf:type owl:ObjectProperty ;
+          rdfs:domain :LogicalSource ;
+          rdfs:range rdf:Literal ;
+          rdfs:comment <http://w3id.org/rml/source-target/> ;
+          rdfs:label "iterator" .
+
+
+###  http://w3id.org/rml/logicalSource
+:logicalSource rdf:type owl:ObjectProperty ;
+               rdfs:domain :TriplesMap ;
+               rdfs:range :LogicalSource ;
+               rdfs:comment "Represents the logical source to be mapped. This can be a pointer to any dataset."@en ;
+               rdfs:isDefinedBy <http://w3id.org/rml/core/> ;
+               rdfs:label "logical source" .
+
+
+###  http://w3id.org/rml/logicalTarget
+:logicalTarget rdf:type owl:ObjectProperty ;
+               rdfs:domain :TermMap ;
+               rdfs:range :LogicalTarget ;
+               rdfs:comment "Represents the logical target to where triples are exported to. This can be a pointer to any dataset." ;
+               rdfs:isDefinedBy <http://w3id.org/rml/core/> ;
+               rdfs:label "logical target" .
+
+
+###  http://w3id.org/rml/null
+:null rdf:type owl:ObjectProperty ;
+      rdfs:domain :Source ;
+      rdfs:range rdf:Literal ;
+      rdfs:comment <http://w3id.org/rml/source-target/> ;
+      rdfs:label "null" .
+
+
+###  http://w3id.org/rml/query
+:query rdf:type owl:ObjectProperty ;
+       rdfs:domain :Source ;
+       rdfs:range rdf:Literal ;
+       rdfs:comment <http://w3id.org/rml/source-target/> ;
+       rdfs:label "query" .
+
+
+###  http://w3id.org/rml/referenceFormulation
+:referenceFormulation rdf:type owl:ObjectProperty ;
+                      rdfs:domain :LogicalSource ;
+                      rdfs:range :ReferenceFormulation ;
+                      rdfs:comment <http://w3id.org/rml/source-target/> ;
+                      rdfs:label "reference formulation" .
+
+
+###  http://w3id.org/rml/serialization
+:serialization rdf:type owl:ObjectProperty ;
+               rdfs:domain :LogicalTarget ;
+               rdfs:range formats:Format ;
+               rdfs:comment <http://w3id.org/rml/source-target/> ;
+               rdfs:label "serialization" .
+
+
+###  http://w3id.org/rml/source
+:source rdf:type owl:ObjectProperty ;
+        rdfs:domain :LogicalSource ;
+        rdfs:range :Source ;
+        rdfs:comment <http://w3id.org/rml/source-target/> ;
+        rdfs:label "source" .
+
+
+###  http://w3id.org/rml/target
+:target rdf:type owl:ObjectProperty ;
+        rdfs:domain :LogicalTarget ;
+        rdfs:range :Target ;
+        rdfs:comment <http://w3id.org/rml/source-target/> ;
+        rdfs:label "target" .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://semweb.mmlab.be/ns/rml-compression#Compression
+comp:Compression rdf:type owl:Class ;
+                 rdfs:isDefinedBy <http://w3id.org/rml/source-target/> ;
+                 rdfs:label "Compression" .
+
+
+###  http://semweb.mmlab.be/ns/rml-encoding#Encoding
+enc:Encoding rdf:type owl:Class ;
+             rdfs:label "Encoding" .
+
+
+###  http://w3id.org/rml/LogicalSource
+:LogicalSource rdf:type owl:Class ;
+               rdfs:isDefinedBy <http://w3id.org/rml/source-target/> ;
+               rdfs:label "Logical Source" .
+
+
+###  http://w3id.org/rml/LogicalTarget
+:LogicalTarget rdf:type owl:Class ;
+               rdfs:isDefinedBy <http://w3id.org/rml/source-target/> ;
+               rdfs:label "LogicalTarget" .
+
+
+###  http://w3id.org/rml/ReferenceFormulation
+:ReferenceFormulation rdf:type owl:Class ;
+                      rdfs:isDefinedBy <http://w3id.org/rml/source-target/> ;
+                      rdfs:label "Reference Formulation" .
+
+
+###  http://w3id.org/rml/Source
+:Source rdf:type owl:Class ;
+        rdfs:isDefinedBy <http://w3id.org/rml/source-target/> ;
+        rdfs:label "Source" .
+
+
+###  http://w3id.org/rml/Target
+:Target rdf:type owl:Class ;
+        rdfs:isDefinedBy <http://w3id.org/rml/source-target/> ;
+        rdfs:label "Target" .
+
+
+###  http://w3id.org/rml/TermMap
+:TermMap rdf:type owl:Class ;
+         rdfs:comment "A function that generates an RDF term from a logical table row."@en ;
+         rdfs:isDefinedBy <http://w3id.org/rml/core/> ;
+         rdfs:label "Term Map"@en .
+
+
+###  http://w3id.org/rml/TriplesMap
+:TriplesMap rdf:type owl:Class ;
+            rdfs:subClassOf owl:Thing ;
+            rdfs:comment "Represents a triples map."@en ;
+            rdfs:isDefinedBy <http://w3id.org/rml/core/> ;
+            rdfs:label "Triples Map" .
+
+
+###  http://www.w3.org/1999/02/22-rdf-syntax-ns#Literal
+rdf:Literal rdf:type owl:Class .
+
+
+###  https://www.w3.org/ns/formats/Format
+formats:Format rdf:type owl:Class ;
+               rdfs:label "Format" .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://semweb.mmlab.be/ns/ql#CSV
+ql:CSV rdf:type owl:NamedIndividual ,
+                :ReferenceFormulation .
+
+
+###  http://semweb.mmlab.be/ns/ql#JSONPath
+ql:JSONPath rdf:type owl:NamedIndividual ,
+                     :ReferenceFormulation .
+
+
+###  http://semweb.mmlab.be/ns/ql#XPath
+ql:XPath rdf:type owl:NamedIndividual ,
+                  :ReferenceFormulation .
+
+
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
