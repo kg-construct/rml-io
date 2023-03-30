@@ -1,0 +1,76 @@
+###############################################################################
+# RML Target shape                                                            #
+# Copyright Dylan Van Assche, IDLab - UGent - imec (2023)                     #
+###############################################################################
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix schema: <http://schema.org/> .
+@prefix ql: <http://w3id.org/rml/io/ql/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rml: <http://w3id.org/rml/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> . 
+
+schema:RMLIOTargetShape
+    a sh:NodeShape ;
+    sh:targetObjectsOf rml:target ;  # Object of rml:LogicalTarget
+    sh:targetClass rml:Target ;  # Used as a class
+    # Already targets 'rml:target'
+    sh:ignoredProperties (rdf:type);
+    sh:name "RMLIO Target" ;
+    sh:description """
+    A target describes access to a data target. Any data access description
+    is allowed, but rml:Target provides additional properties to complete
+    such descriptions.
+    """ ;
+    sh:message """
+    RMLIO Target accepts one rml:compression, and one rml:encoding.
+    All of them are optional.
+    """ ;
+
+    # rml:compression
+    sh:property [
+        sh:path rml:compression ;
+        sh:name "rml:compression" ;
+        sh:description """
+        rml:compression specifies the compression algorithm to use when
+        accessing the data target. By default, no compression is applied.
+        """ ;
+        sh:message """
+        rml:query must be provided as an IRI.
+        """ ;
+        sh:minCount 0 ;
+        sh:maxCount 1 ;
+        sh:nodeKind sh:IRI;
+    ] ; 
+
+    # rml:encoding
+    sh:property [
+        sh:path rml:encoding ;
+        sh:name "rml:encoding" ;
+        sh:description """
+        rml:encoding specifies the encoding to use when accessing the data 
+        target. By default, UTF-8 is used.
+        """ ;
+        sh:message """
+        rml:encoding must be provided as an IRI.
+        """ ;
+        sh:minCount 0;
+        sh:maxCount 1 ;
+        sh:nodeKind sh:IRI ;
+    ] ;
+
+    # rml:serialization
+    sh:property [
+        sh:path rml:serialization ;
+        sh:name "rml:serialization" ;
+        sh:description """
+        rml:serialization specifies the serialization format to use when
+        exporting the generated RDF to a target. By default N-Quads is used.
+        """ ;
+        sh:message """
+        rml:serialization must be provided as an IRI.
+        """ ;
+        sh:minCount 0;
+        sh:maxCount 1 ;
+        sh:nodeKind sh:IRI ;
+    ] ;
+.

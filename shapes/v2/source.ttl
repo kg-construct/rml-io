@@ -1,0 +1,110 @@
+###############################################################################
+# RML Source shape                                                            #
+# Copyright Dylan Van Assche, IDLab - UGent - imec (2023)                     #
+###############################################################################
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix schema: <http://schema.org/> .
+@prefix ql: <http://w3id.org/rml/io/ql/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rml: <http://w3id.org/rml/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> . 
+
+schema:RMLIOSourceShape
+    a sh:NodeShape ;
+    sh:targetObjectsOf rml:source ;  # Object of rml:LogicalSource
+    sh:targetClass rml:Source ;  # Used as a class
+    # Already targets 'rml:source'
+    sh:ignoredProperties (rdf:type);
+    sh:name "RMLIO Source" ;
+    sh:description """
+    A source describes access to a data source. Any data access description
+    is allowed, but rml:Source provides additional properties to complete
+    such descriptions.
+    """ ;
+    sh:message """
+    RMLIO Source accepts one or multiple rml:null, one rml:query,
+    one rml:compression, and one rml:encoding. All of them are optional.
+    """ ;
+
+    # rml:null
+    sh:property [
+        sh:path rml:null ;
+        sh:name "rml:null" ;
+        sh:description """
+        rml:null specifies how NULL or empty values are exposed by the data 
+        source.
+        """ ;
+        sh:message """
+        rml:source must be provided as a string Literal.
+        """ ;
+        sh:minCount 0 ;
+        sh:nodeKind sh:Literal;
+        sh:datatype xsd:string ;
+    ] ; 
+
+    # rml:query
+    sh:property [
+        sh:path rml:query ;
+        sh:name "rml:query" ;
+        sh:description """
+        rml:query specifies the query to execute on a data source if that data
+        source suports it.
+        """ ;
+        sh:message """
+        rml:query must be provided as a string Literal.
+        """ ;
+        sh:minCount 0 ;
+        sh:maxCount 1 ;
+        sh:nodeKind sh:Literal;
+        sh:datatype xsd:string ;
+    ] ; 
+
+    # rml:compression
+    sh:property [
+        sh:path rml:compression ;
+        sh:name "rml:compression" ;
+        sh:description """
+        rml:compression specifies the compression algorithm to use when
+        accessing the data source. By default, no compression is applied.
+        """ ;
+        sh:message """
+        rml:query must be provided as an IRI.
+        """ ;
+        sh:minCount 0 ;
+        sh:maxCount 1 ;
+        sh:nodeKind sh:IRI;
+    ] ; 
+
+    # rml:encoding
+    sh:property [
+        sh:path rml:encoding ;
+        sh:name "rml:encoding" ;
+        sh:description """
+        rml:encoding specifies the encoding to use when accessing the data 
+        source. By default, UTF-8 is used.
+        """ ;
+        sh:message """
+        rml:encoding must be provided as an IRI.
+        """ ;
+        sh:minCount 0;
+        sh:maxCount 1 ;
+        sh:nodeKind sh:IRI ;
+    ] ;
+
+    # rml:null
+    sh:property [
+        sh:path rml:null ;
+        sh:name "rml:null" ;
+        sh:description """
+        rml:null specifies which data values inside the source should be 
+        considered as NULL. Defaults to the default NULL character of a source,
+        if available.
+        """ ;
+        sh:message """
+        rml:null must be provided as a Literal.
+        """ ;
+        sh:minCount 0;
+        sh:maxCount 1 ;
+        sh:nodeKind sh:Literal ;
+    ] ;
+.
