@@ -1,0 +1,247 @@
+<http://w3id.org/rml/io/> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Ontology> .
+<http://w3id.org/rml/io/> <http://purl.org/dc/elements/1.1/contributor> "Ana Iglesias Molina" .
+<http://w3id.org/rml/io/> <http://purl.org/dc/elements/1.1/contributor> "Anastasia Dimou" .
+<http://w3id.org/rml/io/> <http://purl.org/dc/elements/1.1/contributor> "Dylan Van Assche" .
+<http://w3id.org/rml/io/> <http://purl.org/dc/elements/1.1/contributor> "Pano Maria" .
+<http://w3id.org/rml/io/> <http://purl.org/dc/elements/1.1/description> "RML-IO enables the description of in put data sources and target output data serialization "@en .
+<http://w3id.org/rml/io/> <http://purl.org/dc/elements/1.1/license> <http://purl.org/NET/rdflicense/cc-by4.0> .
+<http://w3id.org/rml/io/> <http://purl.org/dc/elements/1.1/modified> "2023-04-19" .
+<http://w3id.org/rml/io/> <http://purl.org/dc/elements/1.1/title> "RML Source and Target"@en .
+<http://w3id.org/rml/io/> <http://purl.org/vocab/vann/preferredNamespaceUri> "http://w3id.org/rml/io/" .
+# 
+# 
+# #################################################################
+# #
+# #    Annotation properties
+# #
+# #################################################################
+# 
+# 
+# http://creativecommons.org/ns#license
+<http://creativecommons.org/ns#license> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/dc/elements/1.1/contributor
+<http://purl.org/dc/elements/1.1/contributor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/dc/elements/1.1/creator
+<http://purl.org/dc/elements/1.1/creator> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/dc/elements/1.1/description
+<http://purl.org/dc/elements/1.1/description> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/dc/elements/1.1/issued
+<http://purl.org/dc/elements/1.1/issued> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/dc/elements/1.1/license
+<http://purl.org/dc/elements/1.1/license> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/dc/elements/1.1/modified
+<http://purl.org/dc/elements/1.1/modified> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/dc/elements/1.1/publisher
+<http://purl.org/dc/elements/1.1/publisher> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/dc/elements/1.1/title
+<http://purl.org/dc/elements/1.1/title> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/vocab/vann/preferredNamespacePrefix
+<http://purl.org/vocab/vann/preferredNamespacePrefix> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/vocab/vann/preferredNamespaceUri
+<http://purl.org/vocab/vann/preferredNamespaceUri> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://www.linkedmodel.org/schema/vaem#acronym
+<http://www.linkedmodel.org/schema/vaem#acronym> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://xmlns.com/foaf/0.1/name
+<http://xmlns.com/foaf/0.1/name> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Object Properties
+# #
+# #################################################################
+# 
+# 
+# http://w3id.org/rml/compression
+<http://w3id.org/rml/compression> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://w3id.org/rml/compression> <http://www.w3.org/2000/01/rdf-schema#domain> _:genid1 .
+_:genid1 <http://www.w3.org/2002/07/owl#unionOf> _:genid3 .
+_:genid3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid2 .
+_:genid2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://w3id.org/rml/Target> .
+_:genid2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://w3id.org/rml/Source> .
+_:genid3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://w3id.org/rml/compression> <http://www.w3.org/2000/01/rdf-schema#range> <http://semweb.mmlab.be/ns/rml-compression#Compression> .
+<http://w3id.org/rml/compression> <http://www.w3.org/2000/01/rdf-schema#comment> <http://w3id.org/rml/io/> .
+<http://w3id.org/rml/compression> <http://www.w3.org/2000/01/rdf-schema#label> "compression" .
+# 
+# http://w3id.org/rml/encoding
+<http://w3id.org/rml/encoding> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://w3id.org/rml/encoding> <http://www.w3.org/2000/01/rdf-schema#domain> _:genid4 .
+_:genid4 <http://www.w3.org/2002/07/owl#unionOf> _:genid6 .
+_:genid6 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid5 .
+_:genid5 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid5 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://w3id.org/rml/Target> .
+_:genid5 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid6 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://w3id.org/rml/Source> .
+_:genid6 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid4 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://w3id.org/rml/encoding> <http://www.w3.org/2000/01/rdf-schema#range> <http://semweb.mmlab.be/ns/rml-encoding#Encoding> .
+<http://w3id.org/rml/encoding> <http://www.w3.org/2000/01/rdf-schema#comment> <http://w3id.org/rml/io/> .
+<http://w3id.org/rml/encoding> <http://www.w3.org/2000/01/rdf-schema#label> "encoding" .
+# 
+# http://w3id.org/rml/iterator
+<http://w3id.org/rml/iterator> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://w3id.org/rml/iterator> <http://www.w3.org/2000/01/rdf-schema#domain> <http://w3id.org/rml/LogicalSource> .
+<http://w3id.org/rml/iterator> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/1999/02/22-rdf-syntax-ns#Literal> .
+<http://w3id.org/rml/iterator> <http://www.w3.org/2000/01/rdf-schema#comment> <http://w3id.org/rml/io/> .
+<http://w3id.org/rml/iterator> <http://www.w3.org/2000/01/rdf-schema#label> "iterator" .
+# 
+# http://w3id.org/rml/logicalSource
+<http://w3id.org/rml/logicalSource> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://w3id.org/rml/logicalSource> <http://www.w3.org/2000/01/rdf-schema#domain> <http://w3id.org/rml/TriplesMap> .
+<http://w3id.org/rml/logicalSource> <http://www.w3.org/2000/01/rdf-schema#range> <http://w3id.org/rml/LogicalSource> .
+<http://w3id.org/rml/logicalSource> <http://www.w3.org/2000/01/rdf-schema#comment> "Represents the logical source to be mapped. This can be a pointer to any dataset."@en .
+<http://w3id.org/rml/logicalSource> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://w3id.org/rml/core/> .
+<http://w3id.org/rml/logicalSource> <http://www.w3.org/2000/01/rdf-schema#label> "logical source" .
+# 
+# http://w3id.org/rml/logicalTarget
+<http://w3id.org/rml/logicalTarget> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://w3id.org/rml/logicalTarget> <http://www.w3.org/2000/01/rdf-schema#domain> <http://w3id.org/rml/TermMap> .
+<http://w3id.org/rml/logicalTarget> <http://www.w3.org/2000/01/rdf-schema#range> <http://w3id.org/rml/LogicalTarget> .
+<http://w3id.org/rml/logicalTarget> <http://www.w3.org/2000/01/rdf-schema#comment> "Represents the logical target to where triples are exported to. This can be a pointer to any dataset." .
+<http://w3id.org/rml/logicalTarget> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://w3id.org/rml/core/> .
+<http://w3id.org/rml/logicalTarget> <http://www.w3.org/2000/01/rdf-schema#label> "logical target" .
+# 
+# http://w3id.org/rml/null
+<http://w3id.org/rml/null> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://w3id.org/rml/null> <http://www.w3.org/2000/01/rdf-schema#domain> <http://w3id.org/rml/Source> .
+<http://w3id.org/rml/null> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/1999/02/22-rdf-syntax-ns#Literal> .
+<http://w3id.org/rml/null> <http://www.w3.org/2000/01/rdf-schema#comment> <http://w3id.org/rml/io/> .
+<http://w3id.org/rml/null> <http://www.w3.org/2000/01/rdf-schema#label> "null" .
+# 
+# http://w3id.org/rml/query
+<http://w3id.org/rml/query> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://w3id.org/rml/query> <http://www.w3.org/2000/01/rdf-schema#domain> <http://w3id.org/rml/Source> .
+<http://w3id.org/rml/query> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/1999/02/22-rdf-syntax-ns#Literal> .
+<http://w3id.org/rml/query> <http://www.w3.org/2000/01/rdf-schema#comment> <http://w3id.org/rml/io/> .
+<http://w3id.org/rml/query> <http://www.w3.org/2000/01/rdf-schema#label> "query" .
+# 
+# http://w3id.org/rml/referenceFormulation
+<http://w3id.org/rml/referenceFormulation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://w3id.org/rml/referenceFormulation> <http://www.w3.org/2000/01/rdf-schema#domain> <http://w3id.org/rml/LogicalSource> .
+<http://w3id.org/rml/referenceFormulation> <http://www.w3.org/2000/01/rdf-schema#range> <http://w3id.org/rml/ReferenceFormulation> .
+<http://w3id.org/rml/referenceFormulation> <http://www.w3.org/2000/01/rdf-schema#comment> <http://w3id.org/rml/io/> .
+<http://w3id.org/rml/referenceFormulation> <http://www.w3.org/2000/01/rdf-schema#label> "reference formulation" .
+# 
+# http://w3id.org/rml/serialization
+<http://w3id.org/rml/serialization> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://w3id.org/rml/serialization> <http://www.w3.org/2000/01/rdf-schema#domain> <http://w3id.org/rml/LogicalTarget> .
+<http://w3id.org/rml/serialization> <http://www.w3.org/2000/01/rdf-schema#range> <https://www.w3.org/ns/formats/Format> .
+<http://w3id.org/rml/serialization> <http://www.w3.org/2000/01/rdf-schema#comment> <http://w3id.org/rml/io/> .
+<http://w3id.org/rml/serialization> <http://www.w3.org/2000/01/rdf-schema#label> "serialization" .
+# 
+# http://w3id.org/rml/source
+<http://w3id.org/rml/source> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://w3id.org/rml/source> <http://www.w3.org/2000/01/rdf-schema#domain> <http://w3id.org/rml/LogicalSource> .
+<http://w3id.org/rml/source> <http://www.w3.org/2000/01/rdf-schema#range> <http://w3id.org/rml/Source> .
+<http://w3id.org/rml/source> <http://www.w3.org/2000/01/rdf-schema#comment> <http://w3id.org/rml/io/> .
+<http://w3id.org/rml/source> <http://www.w3.org/2000/01/rdf-schema#label> "source" .
+# 
+# http://w3id.org/rml/target
+<http://w3id.org/rml/target> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://w3id.org/rml/target> <http://www.w3.org/2000/01/rdf-schema#domain> <http://w3id.org/rml/LogicalTarget> .
+<http://w3id.org/rml/target> <http://www.w3.org/2000/01/rdf-schema#range> <http://w3id.org/rml/Target> .
+<http://w3id.org/rml/target> <http://www.w3.org/2000/01/rdf-schema#comment> <http://w3id.org/rml/io/> .
+<http://w3id.org/rml/target> <http://www.w3.org/2000/01/rdf-schema#label> "target" .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Classes
+# #
+# #################################################################
+# 
+# 
+# http://semweb.mmlab.be/ns/rml-compression#Compression
+<http://semweb.mmlab.be/ns/rml-compression#Compression> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://semweb.mmlab.be/ns/rml-compression#Compression> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://w3id.org/rml/io/> .
+<http://semweb.mmlab.be/ns/rml-compression#Compression> <http://www.w3.org/2000/01/rdf-schema#label> "Compression" .
+# 
+# http://semweb.mmlab.be/ns/rml-encoding#Encoding
+<http://semweb.mmlab.be/ns/rml-encoding#Encoding> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://semweb.mmlab.be/ns/rml-encoding#Encoding> <http://www.w3.org/2000/01/rdf-schema#label> "Encoding" .
+# 
+# http://w3id.org/rml/LogicalSource
+<http://w3id.org/rml/LogicalSource> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://w3id.org/rml/LogicalSource> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://w3id.org/rml/io/> .
+<http://w3id.org/rml/LogicalSource> <http://www.w3.org/2000/01/rdf-schema#label> "Logical Source" .
+# 
+# http://w3id.org/rml/LogicalTarget
+<http://w3id.org/rml/LogicalTarget> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://w3id.org/rml/LogicalTarget> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://w3id.org/rml/io/> .
+<http://w3id.org/rml/LogicalTarget> <http://www.w3.org/2000/01/rdf-schema#label> "LogicalTarget" .
+# 
+# http://w3id.org/rml/ReferenceFormulation
+<http://w3id.org/rml/ReferenceFormulation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://w3id.org/rml/ReferenceFormulation> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://w3id.org/rml/io/> .
+<http://w3id.org/rml/ReferenceFormulation> <http://www.w3.org/2000/01/rdf-schema#label> "Reference Formulation" .
+# 
+# http://w3id.org/rml/Source
+<http://w3id.org/rml/Source> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://w3id.org/rml/Source> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://w3id.org/rml/io/> .
+<http://w3id.org/rml/Source> <http://www.w3.org/2000/01/rdf-schema#label> "Source" .
+# 
+# http://w3id.org/rml/Target
+<http://w3id.org/rml/Target> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://w3id.org/rml/Target> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://w3id.org/rml/io/> .
+<http://w3id.org/rml/Target> <http://www.w3.org/2000/01/rdf-schema#label> "Target" .
+# 
+# http://w3id.org/rml/TermMap
+<http://w3id.org/rml/TermMap> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://w3id.org/rml/TermMap> <http://www.w3.org/2000/01/rdf-schema#comment> "A function that generates an RDF term from a logical table row."@en .
+<http://w3id.org/rml/TermMap> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://w3id.org/rml/core/> .
+<http://w3id.org/rml/TermMap> <http://www.w3.org/2000/01/rdf-schema#label> "Term Map"@en .
+# 
+# http://w3id.org/rml/TriplesMap
+<http://w3id.org/rml/TriplesMap> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://w3id.org/rml/TriplesMap> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/2002/07/owl#Thing> .
+<http://w3id.org/rml/TriplesMap> <http://www.w3.org/2000/01/rdf-schema#comment> "Represents a triples map."@en .
+<http://w3id.org/rml/TriplesMap> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://w3id.org/rml/core/> .
+<http://w3id.org/rml/TriplesMap> <http://www.w3.org/2000/01/rdf-schema#label> "Triples Map" .
+# 
+# http://www.w3.org/1999/02/22-rdf-syntax-ns#Literal
+<http://www.w3.org/1999/02/22-rdf-syntax-ns#Literal> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+# 
+# https://www.w3.org/ns/formats/Format
+<https://www.w3.org/ns/formats/Format> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://www.w3.org/ns/formats/Format> <http://www.w3.org/2000/01/rdf-schema#label> "Format" .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Individuals
+# #
+# #################################################################
+# 
+# 
+# http://semweb.mmlab.be/ns/ql#CSV
+<http://semweb.mmlab.be/ns/ql#CSV> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://semweb.mmlab.be/ns/ql#CSV> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://w3id.org/rml/ReferenceFormulation> .
+# 
+# http://semweb.mmlab.be/ns/ql#JSONPath
+<http://semweb.mmlab.be/ns/ql#JSONPath> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://semweb.mmlab.be/ns/ql#JSONPath> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://w3id.org/rml/ReferenceFormulation> .
+# 
+# http://semweb.mmlab.be/ns/ql#XPath
+<http://semweb.mmlab.be/ns/ql#XPath> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://semweb.mmlab.be/ns/ql#XPath> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://w3id.org/rml/ReferenceFormulation> .
+# 
+# Generated by the OWL API (version 5.1.18) https://github.com/owlcs/owlapi/
