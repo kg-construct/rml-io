@@ -15,12 +15,16 @@
 @prefix formats: <https://www.w3.org/ns/formats/> .
 @base <http://w3id.org/rml/> .
 
-<http://w3id.org/rml/> rdf:type owl:Ontology ;
-                        dc:description "Generic Mapping Language for RDF (RDB/CSV/TSV/XML/JSON/... to RDF) - Vocabulary description"@en ;
-                        dc:modified "2023-03-15" ;
+<http://w3id.org/rml/io/> rdf:type owl:Ontology ;
+                        dc:description "RML-IO enables the description of in put data sources and target output data serialization "@en ;
+                        dc:modified "2023-04-19" ;
                         dc:title "RML Source and Target"@en ;
-                        vann:preferredNamespacePrefix "rml" ;
-                        vann:preferredNamespaceUri "http://w3id.org/rml/" .
+                        dc:contributor "Dylan Van Assche" ;
+                        dc:contributor "Anastasia Dimou" ;
+                        dc:contributor "Pano Maria" ;
+                        dc:contributor "Ana Iglesias Molina" ;
+                        dc:license <http://purl.org/NET/rdflicense/cc-by4.0> ;
+                        vann:preferredNamespaceUri "http://w3id.org/rml/io/" .
 
 #################################################################
 #    Annotation properties
@@ -86,7 +90,7 @@ foaf:name rdf:type owl:AnnotationProperty .
                                        )
                          ] ;
              rdfs:range comp:Compression ;
-             rdfs:comment <http://w3id.org/rml/source-target/> ;
+             rdfs:comment <http://w3id.org/rml/io/> ;
              rdfs:label "compression" .
 
 
@@ -98,7 +102,7 @@ foaf:name rdf:type owl:AnnotationProperty .
                                     )
                       ] ;
           rdfs:range enc:Encoding ;
-          rdfs:comment <http://w3id.org/rml/source-target/> ;
+          rdfs:comment <http://w3id.org/rml/io/> ;
           rdfs:label "encoding" .
 
 
@@ -106,7 +110,7 @@ foaf:name rdf:type owl:AnnotationProperty .
 :iterator rdf:type owl:ObjectProperty ;
           rdfs:domain :LogicalSource ;
           rdfs:range rdf:Literal ;
-          rdfs:comment <http://w3id.org/rml/source-target/> ;
+          rdfs:comment <http://w3id.org/rml/io/> ;
           rdfs:label "iterator" .
 
 
@@ -132,7 +136,7 @@ foaf:name rdf:type owl:AnnotationProperty .
 :null rdf:type owl:ObjectProperty ;
       rdfs:domain :Source ;
       rdfs:range rdf:Literal ;
-      rdfs:comment <http://w3id.org/rml/source-target/> ;
+      rdfs:comment <http://w3id.org/rml/io/> ;
       rdfs:label "null" .
 
 
@@ -140,7 +144,7 @@ foaf:name rdf:type owl:AnnotationProperty .
 :query rdf:type owl:ObjectProperty ;
        rdfs:domain :Source ;
        rdfs:range rdf:Literal ;
-       rdfs:comment <http://w3id.org/rml/source-target/> ;
+       rdfs:comment <http://w3id.org/rml/io/> ;
        rdfs:label "query" .
 
 
@@ -148,7 +152,7 @@ foaf:name rdf:type owl:AnnotationProperty .
 :referenceFormulation rdf:type owl:ObjectProperty ;
                       rdfs:domain :LogicalSource ;
                       rdfs:range :ReferenceFormulation ;
-                      rdfs:comment <http://w3id.org/rml/source-target/> ;
+                      rdfs:comment <http://w3id.org/rml/io/> ;
                       rdfs:label "reference formulation" .
 
 
@@ -156,7 +160,7 @@ foaf:name rdf:type owl:AnnotationProperty .
 :serialization rdf:type owl:ObjectProperty ;
                rdfs:domain :LogicalTarget ;
                rdfs:range formats:Format ;
-               rdfs:comment <http://w3id.org/rml/source-target/> ;
+               rdfs:comment <http://w3id.org/rml/io/> ;
                rdfs:label "serialization" .
 
 
@@ -164,7 +168,7 @@ foaf:name rdf:type owl:AnnotationProperty .
 :source rdf:type owl:ObjectProperty ;
         rdfs:domain :LogicalSource ;
         rdfs:range :Source ;
-        rdfs:comment <http://w3id.org/rml/source-target/> ;
+        rdfs:comment <http://w3id.org/rml/io/> ;
         rdfs:label "source" .
 
 
@@ -172,7 +176,7 @@ foaf:name rdf:type owl:AnnotationProperty .
 :target rdf:type owl:ObjectProperty ;
         rdfs:domain :LogicalTarget ;
         rdfs:range :Target ;
-        rdfs:comment <http://w3id.org/rml/source-target/> ;
+        rdfs:comment <http://w3id.org/rml/io/> ;
         rdfs:label "target" .
 
 
@@ -182,7 +186,7 @@ foaf:name rdf:type owl:AnnotationProperty .
 
 ###  http://semweb.mmlab.be/ns/rml-compression#Compression
 comp:Compression rdf:type owl:Class ;
-                 rdfs:isDefinedBy <http://w3id.org/rml/source-target/> ;
+                 rdfs:isDefinedBy <http://w3id.org/rml/io/> ;
                  rdfs:label "Compression" .
 
 
@@ -193,31 +197,31 @@ enc:Encoding rdf:type owl:Class ;
 
 ###  http://w3id.org/rml/LogicalSource
 :LogicalSource rdf:type owl:Class ;
-               rdfs:isDefinedBy <http://w3id.org/rml/source-target/> ;
+               rdfs:isDefinedBy <http://w3id.org/rml/io/> ;
                rdfs:label "Logical Source" .
 
 
 ###  http://w3id.org/rml/LogicalTarget
 :LogicalTarget rdf:type owl:Class ;
-               rdfs:isDefinedBy <http://w3id.org/rml/source-target/> ;
+               rdfs:isDefinedBy <http://w3id.org/rml/io/> ;
                rdfs:label "LogicalTarget" .
 
 
 ###  http://w3id.org/rml/ReferenceFormulation
 :ReferenceFormulation rdf:type owl:Class ;
-                      rdfs:isDefinedBy <http://w3id.org/rml/source-target/> ;
+                      rdfs:isDefinedBy <http://w3id.org/rml/io/> ;
                       rdfs:label "Reference Formulation" .
 
 
 ###  http://w3id.org/rml/Source
 :Source rdf:type owl:Class ;
-        rdfs:isDefinedBy <http://w3id.org/rml/source-target/> ;
+        rdfs:isDefinedBy <http://w3id.org/rml/io/> ;
         rdfs:label "Source" .
 
 
 ###  http://w3id.org/rml/Target
 :Target rdf:type owl:Class ;
-        rdfs:isDefinedBy <http://w3id.org/rml/source-target/> ;
+        rdfs:isDefinedBy <http://w3id.org/rml/io/> ;
         rdfs:label "Target" .
 
 
