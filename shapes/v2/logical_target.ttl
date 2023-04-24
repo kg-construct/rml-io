@@ -14,7 +14,6 @@ schema:RMLIOLogicalTargetShape
     sh:targetObjectsOf rml:logicalTarget ;  # Object of rml:TriplesMap
     sh:targetClass rml:LogicalTarget ;  # Used as a class
     # Already targets 'rml:logicalTarget'
-    sh:ignoredProperties (rdf:type);
     sh:name "RMLIO Logical Target" ;
     sh:description """
     A logical target is any target to where generated RDF triples are exported

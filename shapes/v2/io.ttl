@@ -33,7 +33,6 @@
     sh:description """
     A logical source is any source that is mapped to RDF triples.
     """ ;
-    sh:ignoredProperties ( rdf:type ) ;
     sh:message """
     RMLIO Logical Source requires one rml:source and depending on the source 
     type: one rml:query, one rml:referenceFormulation and/or 
@@ -75,12 +74,12 @@
         """ ;
             sh:maxCount 1 ;
             sh:message """
-        rml:referenceFormulation must be a IRI specifying the reference
-        formulation on how to reference elements of a data source.
+        rml:referenceFormulation must be a blank node or IRI specifying the 
+        reference formulation on how to reference elements of a data source.
         """ ;
             sh:minCount 0 ;
             sh:name "rml:referenceFormulation" ;
-            sh:nodeKind sh:IRI ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
             sh:path rml:referenceFormulation ] ;
     sh:targetClass rml:LogicalSource ;
     sh:targetObjectsOf rml:logicalSource .
@@ -90,7 +89,6 @@
     A logical target is any target to where generated RDF triples are exported
     to.
     """ ;
-    sh:ignoredProperties ( rdf:type ) ;
     sh:message """
     RMLIO Logical Target requires one rml:target.
     """ ;
@@ -119,7 +117,6 @@
     is allowed, but rml:Source provides additional properties to complete
     such descriptions.
     """ ;
-    sh:ignoredProperties ( rdf:type ) ;
     sh:message """
     RMLIO Source accepts one or multiple rml:null, one rml:query,
     one rml:compression, and one rml:encoding. All of them are optional.
@@ -179,7 +176,6 @@
         considered as NULL. Defaults to the default NULL character of a source,
         if available.
         """ ;
-            sh:maxCount 1 ;
             sh:message """
         rml:null must be provided as a Literal.
         """ ;
@@ -196,7 +192,6 @@
     is allowed, but rml:Target provides additional properties to complete
     such descriptions.
     """ ;
-    sh:ignoredProperties ( rdf:type ) ;
     sh:message """
     RMLIO Target accepts one rml:compression, and one rml:encoding.
     All of them are optional.
