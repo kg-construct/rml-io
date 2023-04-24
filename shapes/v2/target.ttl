@@ -14,7 +14,6 @@ schema:RMLIOTargetShape
     sh:targetObjectsOf rml:target ;  # Object of rml:LogicalTarget
     sh:targetClass rml:Target ;  # Used as a class
     # Already targets 'rml:target'
-    sh:ignoredProperties (rdf:type);
     sh:name "RMLIO Target" ;
     sh:description """
     A target describes access to a data target. Any data access description

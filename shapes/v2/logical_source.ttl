@@ -14,7 +14,6 @@ schema:RMLIOLogicalSourceShape
     sh:targetObjectsOf rml:logicalSource ;  # Object of rml:TriplesMap
     sh:targetClass rml:LogicalSource ;  # Used as a class
     # Already targets 'rml:logicalSource'
-    sh:ignoredProperties (rdf:type);
     sh:name "RMLIO Logical Source" ;
     sh:description """
     A logical source is any source that is mapped to RDF triples.
@@ -71,11 +70,11 @@ schema:RMLIOLogicalSourceShape
         reference to elements of the data of the input source.
         """ ;
         sh:message """
-        rml:referenceFormulation must be a IRI specifying the reference
-        formulation on how to reference elements of a data source.
+        rml:referenceFormulation must be a blank node or IRI specifying the 
+        reference formulation on how to reference elements of a data source.
         """ ;
         sh:minCount 0;
         sh:maxCount 1 ;
-        sh:nodeKind sh:IRI ;
+        sh:nodeKind sh:BlankNodeOrIRI ;
     ] ;
 .

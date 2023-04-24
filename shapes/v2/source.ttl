@@ -14,7 +14,6 @@ schema:RMLIOSourceShape
     sh:targetObjectsOf rml:source ;  # Object of rml:LogicalSource
     sh:targetClass rml:Source ;  # Used as a class
     # Already targets 'rml:source'
-    sh:ignoredProperties (rdf:type);
     sh:name "RMLIO Source" ;
     sh:description """
     A source describes access to a data source. Any data access description
@@ -104,7 +103,6 @@ schema:RMLIOSourceShape
         rml:null must be provided as a Literal.
         """ ;
         sh:minCount 0;
-        sh:maxCount 1 ;
         sh:nodeKind sh:Literal ;
     ] ;
 .
