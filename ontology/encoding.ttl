@@ -11,7 +11,7 @@
     dc:title 		  "Encodings"@en ;
     dc:issued 		  "2023-04-26"^^<http://www.w3.org/2001/XMLSchema#date> ;
     dc:modified 		  "2023-04-26"^^<http://www.w3.org/2001/XMLSchema#date> ;
-    dc:description 	  "Encoding formats"@en ;
+    dc:description 	  "Compression formats"@en ;
     dc:contributor 		"Anastasia Dimou" ;
     dc:contributor 		"Dylan Van Assche" ;
     dc:contributor 		"Ana Iglesias Molina" ;
