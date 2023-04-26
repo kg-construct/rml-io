@@ -14,4 +14,4 @@ and is therefore not limited to a specific set of targets or data sources.
 The current document describes the Logical Source and Logical Target concepts 
 through definitions and examples.
 
-The version of this document is *v1.1*.
+The version of this document is *v1.3*.
