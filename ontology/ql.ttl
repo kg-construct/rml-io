@@ -17,27 +17,62 @@
     dc:contributor 		"Dylan Van Assche" ;
     dc:contributor 		"Ana Iglesias Molina" ;
     cc:license 			    <http://purl.org/NET/rdflicense/cc-by4.0> ;
-    vann:preferredNamespacePrefix "comp" ;
+    vann:preferredNamespacePrefix "ql" ;
     vann:preferredNamespaceUri    "http://w3id.org/rml/ql#" ;
 .
+
+## Classes
+
+ql:XPathReferenceFormulation rdf:type owl:Class ;
+                           rdfs:subClassOf rml:ReferenceFormulation ;
+                           rdfs:comment "Denotes a XPath Reference Formulation."@en ;
+                           rdfs:label "XPath Reference Formulation" .
+
+
+ql:Namespace rdf:type owl:Class ;
+             rdfs:comment "Denotes a namespace"@en ;
+             rdfs:label "Namespace" .
+
+
+## Properties
+
+ql:namespace rdf:type owl:ObjectProperty ;
+             rdfs:comment "A namespace for describing a XPath reference formulation."@en ;
+             rdfs:label "namespace" ;
+             rdfs:domain ql:XPathReferenceFormulation ;
+             rdfs:range ql:Namespace .
+
+
+## Data Properties
+
+ql:namespacePrefix rdf:type owl:DatatypeProperty ;
+             rdfs:comment "Describes the prefix of a namespace."@en ;
+             rdfs:label "namespace prefix" ;
+             rdfs:domain ql:Namespace ;
+             rdfs:range rdf:Literal .
+
+ql:namespaceURL rdf:type owl:DatatypeProperty ;
+             rdfs:comment "Describes the URL of a namespace."@en ;
+             rdfs:label "namespace URL" ;
+             rdfs:domain ql:Namespace ;
+             rdfs:range rdf:Literal .
+
 
 ## Individuals
 
 
-###  http://semweb.mmlab.be/ns/ql#CSV
+
 ql:CSV rdf:type owl:NamedIndividual , rml:ReferenceFormulation ;
     rdfs:label   "CSV" ;
     rdfs:comment "Denotes that the CSV file's column names are used for referring to extracts of CSV resources."@en ;
     ql:specification <http://tools.ietf.org/html/rfc4180>.
 
 
-###  http://semweb.mmlab.be/ns/ql#JSONPath
 ql:JSONPath rdf:type owl:NamedIndividual , rml:ReferenceFormulation  ;
     rdfs:label   "JSONPath" ;
     rdfs:comment "Denotes the JSONPath reference formulation, used for referring to extracts of JSON sources."@en .
 
 
-###  http://semweb.mmlab.be/ns/ql#XPath
 ql:XPath rdf:type owl:NamedIndividual , rml:ReferenceFormulation ;
     rdfs:label   "XPath" ;
     rdfs:comment "Denotes the XPath reference formulation, used for referring to extracts of XML sources."@en ;
