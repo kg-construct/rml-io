@@ -1,0 +1,44 @@
+@prefix rmlt: <http://semweb.mmlab.be/ns/rml-target#> .
+@prefix owl: 	<http://www.w3.org/2002/07/owl#> .
+@prefix rdf: 	<http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dc:    <http://purl.org/dc/elements/1.1/> .
+@prefix ql: <http://w3id.org/rml/ql#> .
+@prefix rml: <http://w3id.org/rml/> . 
+@base         <http://w3id.org/rml/ql#> .
+
+<>  rdf:type            owl:Ontology ;
+    rdf:type            <http://purl.org/vocommons/voaf#Vocabulary> ;
+    dc:title 		    "QL"@en ;
+    dc:issued           "2023-04-26"^^<http://www.w3.org/2001/XMLSchema#date> ;
+    dc:modified         "2023-04-26"^^<http://www.w3.org/2001/XMLSchema#date> ;
+    dc:description      "QL"@en ;
+    dc:contributor 		"Anastasia Dimou" ;
+    dc:contributor 		"Dylan Van Assche" ;
+    dc:contributor 		"Ana Iglesias Molina" ;
+    cc:license 			    <http://purl.org/NET/rdflicense/cc-by4.0> ;
+    vann:preferredNamespacePrefix "comp" ;
+    vann:preferredNamespaceUri    "http://w3id.org/rml/ql#" ;
+.
+
+## Individuals
+
+
+###  http://semweb.mmlab.be/ns/ql#CSV
+ql:CSV rdf:type owl:NamedIndividual , rml:ReferenceFormulation ;
+    rdfs:label   "CSV" ;
+    rdfs:comment "Denotes that the CSV file's column names are used for referring to extracts of CSV resources."@en ;
+    ql:specification <http://tools.ietf.org/html/rfc4180>.
+
+
+###  http://semweb.mmlab.be/ns/ql#JSONPath
+ql:JSONPath rdf:type owl:NamedIndividual , rml:ReferenceFormulation  ;
+    rdfs:label   "JSONPath" ;
+    rdfs:comment "Denotes the JSONPath reference formulation, used for referring to extracts of JSON sources."@en .
+
+
+###  http://semweb.mmlab.be/ns/ql#XPath
+ql:XPath rdf:type owl:NamedIndividual , rml:ReferenceFormulation ;
+    rdfs:label   "XPath" ;
+    rdfs:comment "Denotes the XPath reference formulation, used for referring to extracts of XML sources."@en ;
+    ql:specification <http://www.w3.org/TR/xpath20/>  .

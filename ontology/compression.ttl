@@ -1,0 +1,46 @@
+@prefix rmlt: <http://semweb.mmlab.be/ns/rml-target#> .
+@prefix owl: 	<http://www.w3.org/2002/07/owl#> .
+@prefix rdf: 	<http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dc:    <http://purl.org/dc/elements/1.1/> .
+@prefix comp: <http://w3id.org/rml/comp#> .
+@base         <http://w3id.org/rml/comp#>
+
+<>  rdf:type			  owl:Ontology ;
+    rdf:type 			  <http://purl.org/vocommons/voaf#Vocabulary> ;
+    dc:title 		  "Compressions"@en ;
+    dc:issued 		  "2023-04-26"^^<http://www.w3.org/2001/XMLSchema#date> ;
+    dc:modified 		  "2023-04-26"^^<http://www.w3.org/2001/XMLSchema#date> ;
+    dc:description 	  "Compression formats"@en ;
+    dc:contributor 		"Anastasia Dimou" ;
+    dc:contributor 		"Dylan Van Assche" ;
+    dc:contributor 		"Ana Iglesias Molina" ;
+    dc:contributor 		"Thomas Delva" ;
+    cc:license 			    <http://purl.org/NET/rdflicense/cc-by4.0> ;
+    vann:preferredNamespacePrefix "comp" ;
+    vann:preferredNamespaceUri    "http://w3id.org/rml/comp#" ;
+.
+
+# Classes
+
+comp:Compression rdf:type owl:Class ;
+    rdfs:label   "compression class" ;
+    rdfs:comment "Represents file compression schemes."@en .
+
+# Individuals
+
+comp:gzip rdf:type owl:NamedIndividual , comp:Compression ;
+    rdfs:label   "GZip" ;
+    rdfs:comment "Represents GZip file compression."@en .
+
+comp:zip rdf:type owl:NamedIndividual , comp:Compression ;
+    rdfs:label   "Zip" ;
+    rdfs:comment "Represents Zip file compression."@en .
+
+comp:targzip rdf:type owl:NamedIndividual , comp:Compression ;
+    rdfs:label   "TarGZip" ;
+    rdfs:comment "Represents TarGZip file compression."@en .
+
+comp:tarxz rdf:type owl:NamedIndividual , comp:Compression ;
+    rdfs:label   "TarXz" ;
+    rdfs:comment "Represents TarXz file compression."@en .
