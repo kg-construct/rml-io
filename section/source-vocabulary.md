@@ -201,9 +201,9 @@ The following example show a Source of an CSV file.
 .
 </pre>
 
-Note that there is not `rml:iterator` is present because its default is row.
+Note that there is no `rml:iterator` present because its default is row.
 This particular CSV file has 2 different ways to specify a NULL value: `NULL` 
-or an empty value. Implementations need to check if a value is equal to on of 
+or an empty value. Implementations need to check if a value is equal to one of 
 the values defined by `rml:null` to check for NULL values in the data.
 
 The following example shows a Source specified for a MySQL database querying 
@@ -222,7 +222,7 @@ the `student` table. The database username and password are provided as well.
 .
 </pre>
 
-Note that there is not `rml:iterator` is present because its default is row.
+Note that there is no `rml:iterator` present because its default is row.
 
 The following example shows a Source of a 
 XML file with no compression.

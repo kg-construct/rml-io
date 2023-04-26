@@ -22,7 +22,7 @@ all other properties are optional.
 ### Target 
 
 A Target describes how a target must be accessed when exporting RDF triples.
-External vocabulary such as DCAT, VoID, SD is allowed here. 
+An external vocabulary such as DCAT, VoID, SD is allowed here. 
 If a target cannot be accessed with existing vocabulary, a custom vocabulary 
 can be used, for example: handling an authentication flow may be specific 
 for that specific target. A custom ontology can be used here to describe 
