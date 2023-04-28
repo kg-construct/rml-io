@@ -49,8 +49,8 @@ By default, UTF-8 is used.
 | Property             | Domain               | Range              |
 | -------------------- | -------------------- | ------------------ |
 | `rml:serialization`  | `rml:LogicalTarget`  | `formats:Format`   |
-| `rml:compression`    | `rml:LogicalTarget`  | `comp:Compression` |
-| `rml:encoding`       | `rml:LogicalTarget`  | `enc:Encoding`     |
+| `rml:compression`    | `rml:LogicalTarget`  | `rml:Compression` |
+| `rml:encoding`       | `rml:LogicalTarget`  | `rml:Encoding`     |
 
 <figure>
   <img src="./resources/images/target-structure.png" alt="Logical Target structure"/>
@@ -72,11 +72,11 @@ Each Target MAY specify the compression with `rml:compression`
 to apply when exporting RDF triples to a Target for saving storage space.
 Several compression formats are specified by the `comp` namespace:
 
-- `comp:none`: No compression is applied
-- `comp:gzip`: GZip compression
-- `comp:zip`: Zip archive with Zip compression
-- `comp:tarXz`: Tar archive with Xz compression
-- `comp:tarGz`: Tar archive with GZip compression
+- `rml:none`: No compression is applied
+- `rml:gzip`: GZip compression
+- `rml:zip`: Zip archive with Zip compression
+- `rml:tarXz`: Tar archive with Xz compression
+- `rml:tarGz`: Tar archive with GZip compression
 
 If unspecified, the default value is no compression.
 This namespace is NOT limited to the listed compression formats 
@@ -88,8 +88,8 @@ Each Target MAY describe the encoding format to use when exporting
 RDF triples to a Target. Several encoding formats are defined by the `enc`
 namesapce:
 
-- `enc:UTF-8`: UTF-8 encoding
-- `enc:UTF-16`: UTF-16 encoding
+- `rml:UTF-8`: UTF-8 encoding
+- `rml:UTF-16`: UTF-16 encoding
 
 If unspecified, the default value is UTF-8.
 This namespace is NOT limited to the listed compression formats 
@@ -104,8 +104,8 @@ format with GZip compression and UTF-8 encoding:
 &lt;#VoIDDump&gt; a rml:LogicalTarget;
     rml:target [ a rml:Target, void:Dataset;
         void:dataDump &lt;file:///data/dump.ttl&gt;;
-        rml:compression comp:gzip;
-        rml:encoding enc:UTF-8;
+        rml:compression rml:gzip;
+        rml:encoding rml:UTF-8;
     ];
     rml:serialization formats:Turtle;
 .
@@ -130,7 +130,7 @@ DCAT dataset in N-Quads format with Zip compression:
 &lt;#DCATDump&gt; a rml:LogicalTarget;
     rml:target [ a rml:Target, dcat:Distribution;
         dcat:accessURL &lt;http://example.org/dcat-access-url&gt;;
-        rml:compression comp:zip;
+        rml:compression rml:zip;
     ];
     rml:serialization formats:N-Quads;
 .

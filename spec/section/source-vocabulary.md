@@ -20,7 +20,7 @@ defines the reference formulation used to refer to the elements
 of a data source.
 The reference formulation must be specified in the case of databases,
 CSV, TSV, XML, and JSON data sources.
-By default `rr:SQL2008` for databases, `ql:CSV` for CSV and TSV data sources.
+By default `rml:SQL2008` for databases, `ql:CSV` for CSV and TSV data sources.
 XPath for XML and JSONPath for JSON and JSONL data sources.
 
 The following properties MAY be specified in a Logical Source:
@@ -63,7 +63,7 @@ to elements of the data of the input source.
 Several reference formulations (`rml:ReferenceFormulation`)
 are defined in this specification:
 
-- `rr:SQL2008`: SQL 2008 standard for relational databases
+- `rml:SQL2008`: SQL 2008 standard for relational databases
 - `ql:CSV`: CSV or TSV data sources
 - `ql:JSONPath`: JSON documents
 - `ql:XPath`: XML documents, a shortcut for `ql:XPathReferenceFormulation`
@@ -110,7 +110,7 @@ if both are specific.
 Optionally, the following properties MAY be specified:
 
 - **rml:encoding** specifies the encoding of the data inside the source.
-Defaults to `enc:UTF-8` if not specified.
+Defaults to `rml:UTF-8` if not specified.
 - **rml:null** describes which data values inside the source
 should be considered as NULL.
 Defaults to the default NULL character if available.
@@ -125,17 +125,17 @@ and the used compression algorithm. Defaults to no compression.
 - **rml:query** defines which query should be applied on the source 
 during access. Example: SPARQL query for a SPARQL endpoint or a SQL query
 for a relational database. Defaults to an empty string.
-This property is a broader version of `rr:sqlQuery`.
+This property is a broader version of `rml:sqlQuery`.
 A whole table or view of a relational database can be specified
-through a `SELECT * FROM {table}` query (`rr:tableName` compatibility).
+through a `SELECT * FROM {table}` query (`rml:tableName` compatibility).
 
 <pre class="ex-source">
 &lt;#JSON&gt; a rml:LogicalSource;
      rml:source [ a rml:Source, dcat:Distribution
        dcat:accessURL &lt;file:///path/to/data.json.gz&gt;;
        rml:null ""; # empty string as NULL besides default null character
-       rml:compression comp:gzip; # GZip compression
-       rml:encoding enc:UTF-16; # UTF-16 encoding
+       rml:compression rml:gzip; # GZip compression
+       rml:encoding rml:UTF-16; # UTF-16 encoding
      ];
      rml:referenceFormulation ql:JSONPath;
      rml:iterator "$.jsonpath.expression";
@@ -144,9 +144,9 @@ through a `SELECT * FROM {table}` query (`rr:tableName` compatibility).
 
 | Property                    | Domain               | Range                     |
 | --------------------------- | -------------------- | ------------------------- |
-| `rml:encoding`              | `rml:Source`         | `enc:Encoding`            |
+| `rml:encoding`              | `rml:Source`         | `rml:Encoding`            |
 | `rml:null`                  | `rml:Source`         | `Literal`                 |
-| `rml:compression`           | `rml:Source`         | `comp:Compression`        |
+| `rml:compression`           | `rml:Source`         | `rml:Compression`        |
 | `rml:query`                 | `rml:Source`         | `Literal`                 |
 
 #### NULL values
@@ -198,7 +198,7 @@ the `student` table. The database username and password are provided as well.
         d2rq:username "user";
         d2rq:password "password";
         rml:query "SELECT * FROM student;";
-        rml:referenceFormulation rr:SQL2008;
+        rml:referenceFormulation rml:SQL2008;
     ];
 .
 </pre>
@@ -224,7 +224,7 @@ The following example is GZip compressed JSON file as Source:
 &lt;#JSON&gt; a rml:LogicalSource;
     rml:source [ a rml:Source, dcat:Distribution;
         dcat:accessURL &lt;file:///path/to/data.json.gz&gt;;
-        rml:compression comp:gzip;
+        rml:compression rml:gzip;
      ];
      rml:referenceFormulation ql:JSONPath;
      rml:iterator "$.jsonpath.expression";
