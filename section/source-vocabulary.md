@@ -149,42 +149,23 @@ through a `SELECT * FROM {table}` query (`rr:tableName` compatibility).
 | `rml:compression`           | `rml:Source`         | `comp:Compression`        |
 | `rml:query`                 | `rml:Source`         | `Literal`                 |
 
-#### Serialization formats
+#### NULL values
 
-Each Source MAY describe the serialization format 
-with `rml:serialization` to use when access the source.
-The possible formats are defined in the W3C 
-[formats](https://www.w3.org/ns/formats/) namespace 
-such as N-Quads, N-Triples, JSON-LD, Turtle, etc.
-If unspecified, the default format is N-Quads [[N-Quads]].
+Each Source MAY describe the values that should be considered as NULL
+with `rml:null`, similar to `NULL` in relational databases.
+By default, standardized NULL values are always considered,
+but additional ones can be specified. Multiple NULL values are allowed.
+For example, in relational databases `NULL` is always considered as a NULL
+value while also an empty column can be considered as a NULL value by
+specifying it through `rml:null` in a Source.
 
-#### Compression formats
+#### Query
 
-Each Source MAY specify the compression with `rml:compression`
-to use when accessing the source.
-Several compression formats are specified by the `comp` namespace:
+Each Source MAY specify a query to apply when accessing the source 
+with `rml:query`.
 
-- `comp:none`: No compression is applied
-- `comp:gzip`: GZip compression
-- `comp:zip`: Zip archive with Zip compression
-- `comp:tarXz`: Tar archive with Xz compression
-- `comp:tarGz`: Tar archive with GZip compression
-
-If unspecified, the default value is no compression.
-This namespace is NOT limited to the listed compression formats 
-and MAY be extended in the future.
-
-#### Encoding formats
-
-Each Source MAY describe the encoding format to use when accesisng the source.
-Several encoding formats are defined by the `enc` namesapce:
-
-- `enc:UTF-8`: UTF-8 encoding
-- `enc:UTF-16`: UTF-16 encoding
-
-If unspecified, the default value is UTF-8.
-This namespace is NOT limited to the listed compression formats 
-and MAY be extended in the future.
+This property is under review in
+[Issue 28](https://github.com/kg-construct/rml-io/issues/28).
 
 #### Examples {#source-examples}
 
