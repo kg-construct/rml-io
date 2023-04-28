@@ -35,11 +35,11 @@ The iterator defines how to refer to any of the following:
     - etc...
 
 By default, the iterator is considered a row, if not specified:
-  - In the case of databases, CSV or TSV data sources,
-  the value of the `rml:iterator`, if not specified, is a "row". 
-  - In the case of XML and JSON data sources,
-  it is a valid reference to an element or an object respectively
-  considering the reference formulation specified. 
+  - In the case of databases, CSV or TSV data sources, the value of 
+  `rml:iterator` is considered a "row" and must not be specified.
+  - In the case of XML and JSON data sources, it is a valid reference
+  to an element or an object respectively considering the reference
+  formulation specified.
 
 The Logical Source definition requires only the source (`rml:source`)
 to be specified, all other properties are optional.
