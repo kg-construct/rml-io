@@ -1,7 +1,4 @@
 @prefix rml: <http://w3id.org/rml/> .
-@prefix ql: <http://w3id.org/rml/ql/> .
-@prefix comp: <http://w3id.org/rml/comp/> .
-@prefix enc: <http://w3id.org/rml/enc/> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix dcat: <http://www.w3.org/ns/dcat#> .
 @prefix void: <http://rdfs.org/ns/void#> .
@@ -15,7 +12,7 @@
 <#TriplesMap> a rml:TriplesMap;
   rml:logicalSource [ a rml:LogicalSource;
     rml:source <#DCATSourceAccess>;
-    rml:referenceFormulation ql:JSONPath;
+    rml:referenceFormulation rml:JSONPath;
     rml:iterator "$.[*]";
   ];
   rml:subjectMap [ a rml:SubjectMap;
@@ -45,5 +42,5 @@
     void:dataDump <file://./dump1.nq>;
   ];
   rml:serialization formats:N-Quads;
-  rml:encoding enc:UTF-16;
+  rml:encoding rml:UTF-16;
 .
