@@ -17,11 +17,10 @@
         <dc:contributor>Anastasia Dimou</dc:contributor>
         <dc:contributor>Dylan Van Assche</dc:contributor>
         <dc:contributor>Pano Maria</dc:contributor>
-        <dc:description xml:lang="en">RML-IO enables the description of in put data sources and target output data serialization </dc:description>
+        <dc:description xml:lang="en">RML-IO enables the description of input data sources and target output data serialization </dc:description>
         <dc:license rdf:resource="http://purl.org/NET/rdflicense/cc-by4.0"/>
-        <dc:modified>2023-04-19</dc:modified>
-        <dc:title xml:lang="en">RML Source and Target</dc:title>
-        <vann:preferredNamespaceUri>http://w3id.org/rml/io/</vann:preferredNamespaceUri>
+        <dc:modified>2023-04-28</dc:modified>
+        <dc:title xml:lang="en">RML-IO: Source and Target</dc:title>
     </owl:Ontology>
     
 
@@ -258,7 +257,7 @@
 
     <owl:ObjectProperty rdf:about="http://w3id.org/rml/serialization">
         <rdfs:domain rdf:resource="http://w3id.org/rml/LogicalTarget"/>
-        <rdfs:range rdf:resource="http://w3id.org/rml/Format"/>
+        <rdfs:range rdf:resource="https://www.w3.org/ns/formats/Format"/>
         <rdfs:comment xml:lang="en">Defines the serialization to generate the target output.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://w3id.org/rml/io/"/>
         <rdfs:label>serialization</rdfs:label>
@@ -363,17 +362,6 @@
     
 
 
-    <!-- http://w3id.org/rml/Format -->
-
-
-    <owl:Class rdf:about="http://w3id.org/rml/Format">
-        <rdfs:comment xml:lang="en">Represents serialization formats.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://w3id.org/rml/io/"/>
-        <rdfs:label>Format</rdfs:label>
-    </owl:Class>
-    
-
-
     <!-- http://w3id.org/rml/LogicalSource -->
 
 
@@ -459,6 +447,13 @@
     
 
 
+    <!-- https://www.w3.org/ns/formats/Format -->
+
+
+    <owl:Class rdf:about="https://www.w3.org/ns/formats/Format"/>
+    
+
+
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
@@ -484,18 +479,6 @@
     
 
 
-    <!-- http://w3id.org/rml/JSON-LD -->
-
-
-    <owl:NamedIndividual rdf:about="http://w3id.org/rml/JSON-LD">
-        <rdf:type rdf:resource="http://w3id.org/rml/Format"/>
-        <rdfs:comment xml:lang="en">Represents the JSON-LD serialization.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://w3id.org/rml/io/"/>
-        <rdfs:label>JSON-LD</rdfs:label>
-    </owl:NamedIndividual>
-    
-
-
     <!-- http://w3id.org/rml/JSONPath -->
 
 
@@ -508,42 +491,6 @@
     
 
 
-    <!-- http://w3id.org/rml/N-Quads -->
-
-
-    <owl:NamedIndividual rdf:about="http://w3id.org/rml/N-Quads">
-        <rdf:type rdf:resource="http://w3id.org/rml/Format"/>
-        <rdfs:comment xml:lang="en">Represents the N-Quads serialization.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://w3id.org/rml/io/"/>
-        <rdfs:label>N-Quads</rdfs:label>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://w3id.org/rml/N-Triples -->
-
-
-    <owl:NamedIndividual rdf:about="http://w3id.org/rml/N-Triples">
-        <rdf:type rdf:resource="http://w3id.org/rml/Format"/>
-        <rdfs:comment xml:lang="en">Represents the N-Triples serialization.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://w3id.org/rml/io/"/>
-        <rdfs:label>N-Triples</rdfs:label>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://w3id.org/rml/SPARQL_Results_CSV -->
-
-
-    <owl:NamedIndividual rdf:about="http://w3id.org/rml/SPARQL_Results_CSV">
-        <rdf:type rdf:resource="http://w3id.org/rml/Format"/>
-        <rdfs:comment xml:lang="en">Represents the SPARQL results CSV serialization.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://w3id.org/rml/io/"/>
-        <rdfs:label>SPARQL results CSV</rdfs:label>
-    </owl:NamedIndividual>
-    
-
-
     <!-- http://w3id.org/rml/SQL2008 -->
 
 
@@ -552,18 +499,6 @@
         <rdfs:comment xml:lang="en">Denotes the Core SQL 2008.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://w3id.org/rml/io/"/>
         <rdfs:label>SQL 2008</rdfs:label>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://w3id.org/rml/Turtle -->
-
-
-    <owl:NamedIndividual rdf:about="http://w3id.org/rml/Turtle">
-        <rdf:type rdf:resource="http://w3id.org/rml/Format"/>
-        <rdfs:comment xml:lang="en">Represents the Turtle serialization.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://w3id.org/rml/io/"/>
-        <rdfs:label>Turtle</rdfs:label>
     </owl:NamedIndividual>
     
 

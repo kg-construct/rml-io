@@ -3,11 +3,10 @@
 <http://w3id.org/rml/io/> <http://purl.org/dc/elements/1.1/contributor> "Anastasia Dimou" .
 <http://w3id.org/rml/io/> <http://purl.org/dc/elements/1.1/contributor> "Dylan Van Assche" .
 <http://w3id.org/rml/io/> <http://purl.org/dc/elements/1.1/contributor> "Pano Maria" .
-<http://w3id.org/rml/io/> <http://purl.org/dc/elements/1.1/description> "RML-IO enables the description of in put data sources and target output data serialization "@en .
+<http://w3id.org/rml/io/> <http://purl.org/dc/elements/1.1/description> "RML-IO enables the description of input data sources and target output data serialization "@en .
 <http://w3id.org/rml/io/> <http://purl.org/dc/elements/1.1/license> <http://purl.org/NET/rdflicense/cc-by4.0> .
-<http://w3id.org/rml/io/> <http://purl.org/dc/elements/1.1/modified> "2023-04-19" .
-<http://w3id.org/rml/io/> <http://purl.org/dc/elements/1.1/title> "RML Source and Target"@en .
-<http://w3id.org/rml/io/> <http://purl.org/vocab/vann/preferredNamespaceUri> "http://w3id.org/rml/io/" .
+<http://w3id.org/rml/io/> <http://purl.org/dc/elements/1.1/modified> "2023-04-28" .
+<http://w3id.org/rml/io/> <http://purl.org/dc/elements/1.1/title> "RML-IO: Source and Target"@en .
 # 
 # 
 # #################################################################
@@ -144,7 +143,8 @@ _:genid4 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/20
 # http://w3id.org/rml/serialization
 <http://w3id.org/rml/serialization> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <http://w3id.org/rml/serialization> <http://www.w3.org/2000/01/rdf-schema#domain> <http://w3id.org/rml/LogicalTarget> .
-<http://w3id.org/rml/serialization> <http://www.w3.org/2000/01/rdf-schema#range> <http://w3id.org/rml/Format> .
+<http://w3id.org/rml/serialization> <http://www.w3.org/2000/01/rdf-schema#range> <https://www.w3.org/ns/formats/Format> .
+<https://www.w3.org/ns/formats/Format> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://w3id.org/rml/serialization> <http://www.w3.org/2000/01/rdf-schema#comment> "Defines the serialization to generate the target output."@en .
 <http://w3id.org/rml/serialization> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://w3id.org/rml/io/> .
 <http://w3id.org/rml/serialization> <http://www.w3.org/2000/01/rdf-schema#label> "serialization" .
@@ -210,12 +210,6 @@ _:genid4 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/20
 <http://w3id.org/rml/Encoding> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://w3id.org/rml/io/> .
 <http://w3id.org/rml/Encoding> <http://www.w3.org/2000/01/rdf-schema#label> "Encoding class" .
 # 
-# http://w3id.org/rml/Format
-<http://w3id.org/rml/Format> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<http://w3id.org/rml/Format> <http://www.w3.org/2000/01/rdf-schema#comment> "Represents serialization formats."@en .
-<http://w3id.org/rml/Format> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://w3id.org/rml/io/> .
-<http://w3id.org/rml/Format> <http://www.w3.org/2000/01/rdf-schema#label> "Format" .
-# 
 # http://w3id.org/rml/LogicalSource
 <http://w3id.org/rml/LogicalSource> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://w3id.org/rml/LogicalSource> <http://www.w3.org/2000/01/rdf-schema#comment> "Denotes a logical source."@en .
@@ -261,6 +255,8 @@ _:genid4 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/20
 # 
 # http://www.w3.org/1999/02/22-rdf-syntax-ns#Literal
 # 
+# https://www.w3.org/ns/formats/Format
+# 
 # 
 # 
 # #################################################################
@@ -278,13 +274,6 @@ _:genid4 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/20
 <http://w3id.org/rml/CSV> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://w3id.org/rml/io/> .
 <http://w3id.org/rml/CSV> <http://www.w3.org/2000/01/rdf-schema#label> "CSV" .
 # 
-# http://w3id.org/rml/JSON-LD
-<http://w3id.org/rml/JSON-LD> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
-<http://w3id.org/rml/JSON-LD> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://w3id.org/rml/Format> .
-<http://w3id.org/rml/JSON-LD> <http://www.w3.org/2000/01/rdf-schema#comment> "Represents the JSON-LD serialization."@en .
-<http://w3id.org/rml/JSON-LD> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://w3id.org/rml/io/> .
-<http://w3id.org/rml/JSON-LD> <http://www.w3.org/2000/01/rdf-schema#label> "JSON-LD" .
-# 
 # http://w3id.org/rml/JSONPath
 <http://w3id.org/rml/JSONPath> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
 <http://w3id.org/rml/JSONPath> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://w3id.org/rml/ReferenceFormulation> .
@@ -292,40 +281,12 @@ _:genid4 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/20
 <http://w3id.org/rml/JSONPath> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://w3id.org/rml/io/> .
 <http://w3id.org/rml/JSONPath> <http://www.w3.org/2000/01/rdf-schema#label> "JSONPath" .
 # 
-# http://w3id.org/rml/N-Quads
-<http://w3id.org/rml/N-Quads> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
-<http://w3id.org/rml/N-Quads> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://w3id.org/rml/Format> .
-<http://w3id.org/rml/N-Quads> <http://www.w3.org/2000/01/rdf-schema#comment> "Represents the N-Quads serialization."@en .
-<http://w3id.org/rml/N-Quads> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://w3id.org/rml/io/> .
-<http://w3id.org/rml/N-Quads> <http://www.w3.org/2000/01/rdf-schema#label> "N-Quads" .
-# 
-# http://w3id.org/rml/N-Triples
-<http://w3id.org/rml/N-Triples> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
-<http://w3id.org/rml/N-Triples> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://w3id.org/rml/Format> .
-<http://w3id.org/rml/N-Triples> <http://www.w3.org/2000/01/rdf-schema#comment> "Represents the N-Triples serialization."@en .
-<http://w3id.org/rml/N-Triples> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://w3id.org/rml/io/> .
-<http://w3id.org/rml/N-Triples> <http://www.w3.org/2000/01/rdf-schema#label> "N-Triples" .
-# 
-# http://w3id.org/rml/SPARQL_Results_CSV
-<http://w3id.org/rml/SPARQL_Results_CSV> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
-<http://w3id.org/rml/SPARQL_Results_CSV> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://w3id.org/rml/Format> .
-<http://w3id.org/rml/SPARQL_Results_CSV> <http://www.w3.org/2000/01/rdf-schema#comment> "Represents the SPARQL results CSV serialization."@en .
-<http://w3id.org/rml/SPARQL_Results_CSV> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://w3id.org/rml/io/> .
-<http://w3id.org/rml/SPARQL_Results_CSV> <http://www.w3.org/2000/01/rdf-schema#label> "SPARQL results CSV" .
-# 
 # http://w3id.org/rml/SQL2008
 <http://w3id.org/rml/SQL2008> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
 <http://w3id.org/rml/SQL2008> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://w3id.org/rml/ReferenceFormulation> .
 <http://w3id.org/rml/SQL2008> <http://www.w3.org/2000/01/rdf-schema#comment> "Denotes the Core SQL 2008."@en .
 <http://w3id.org/rml/SQL2008> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://w3id.org/rml/io/> .
 <http://w3id.org/rml/SQL2008> <http://www.w3.org/2000/01/rdf-schema#label> "SQL 2008" .
-# 
-# http://w3id.org/rml/Turtle
-<http://w3id.org/rml/Turtle> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
-<http://w3id.org/rml/Turtle> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://w3id.org/rml/Format> .
-<http://w3id.org/rml/Turtle> <http://www.w3.org/2000/01/rdf-schema#comment> "Represents the Turtle serialization."@en .
-<http://w3id.org/rml/Turtle> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://w3id.org/rml/io/> .
-<http://w3id.org/rml/Turtle> <http://www.w3.org/2000/01/rdf-schema#label> "Turtle" .
 # 
 # http://w3id.org/rml/UTF-16
 <http://w3id.org/rml/UTF-16> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .

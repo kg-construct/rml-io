@@ -12,19 +12,18 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix vaem: <http://www.linkedmodel.org/schema/vaem#> .
 @prefix vann: <http://purl.org/vocab/vann/> .
-@prefix formats: <http://w3id.org/rml/formats#> .
+@prefix formats: <https://www.w3.org/ns/formats/> .
 @base <http://w3id.org/rml/> .
 
 <http://w3id.org/rml/io/> rdf:type owl:Ontology ;
-                        dc:description "RML-IO enables the description of in put data sources and target output data serialization "@en ;
-                        dc:modified "2023-04-19" ;
-                        dc:title "RML Source and Target"@en ;
+                        dc:description "RML-IO enables the description of input data sources and target output data serialization "@en ;
+                        dc:modified "2023-04-28" ;
+                        dc:title "RML-IO: Source and Target"@en ;
                         dc:contributor "Dylan Van Assche" ;
                         dc:contributor "Anastasia Dimou" ;
                         dc:contributor "Pano Maria" ;
                         dc:contributor "Ana Iglesias Molina" ;
-                        dc:license <http://purl.org/NET/rdflicense/cc-by4.0> ;
-                        vann:preferredNamespaceUri "http://w3id.org/rml/io/" .
+                        dc:license <http://purl.org/NET/rdflicense/cc-by4.0> .
 
 #################################################################
 #    Annotation properties
@@ -147,7 +146,7 @@ foaf:name rdf:type owl:AnnotationProperty .
 ###  http://w3id.org/rml/serialization
 :serialization rdf:type owl:ObjectProperty ;
                rdfs:domain :LogicalTarget ;
-               rdfs:range :Format ;
+               rdfs:range formats:Format ;
                rdfs:isDefinedBy <http://w3id.org/rml/io/> ;
                rdfs:comment "Defines the serialization to generate the target output."@en ;
                rdfs:label "serialization" .
@@ -236,12 +235,6 @@ foaf:name rdf:type owl:AnnotationProperty .
         rdfs:comment "Denotes a target."@en ;
         rdfs:label "Target" .
 
-###  http://w3id.org/rml/Format
-:Format rdf:type owl:Class ;
-    rdfs:label   "Format" ;
-    rdfs:isDefinedBy <http://w3id.org/rml/io/> ;
-    rdfs:comment "Represents serialization formats."@en .
-
 ### http://w3id.org/rml/Encoding
 :Encoding rdf:type owl:Class ;
     rdfs:label   "Encoding class" ;
@@ -271,31 +264,6 @@ foaf:name rdf:type owl:AnnotationProperty .
 #################################################################
 #    Individuals
 #################################################################
-
-:N-Quads rdf:type owl:NamedIndividual , :Format ;
-    rdfs:label   "N-Quads" ;
-    rdfs:isDefinedBy <http://w3id.org/rml/io/> ;
-    rdfs:comment "Represents the N-Quads serialization."@en .
-
-:N-Triples rdf:type owl:NamedIndividual , :Format ;
-    rdfs:label   "N-Triples" ;
-    rdfs:isDefinedBy <http://w3id.org/rml/io/> ;
-    rdfs:comment "Represents the N-Triples serialization."@en .
-
-:JSON-LD rdf:type owl:NamedIndividual , :Format ;
-    rdfs:label   "JSON-LD" ;
-    rdfs:isDefinedBy <http://w3id.org/rml/io/> ;
-    rdfs:comment "Represents the JSON-LD serialization."@en .
-
-:Turtle rdf:type owl:NamedIndividual , :Format ;
-    rdfs:label   "Turtle" ;
-    rdfs:isDefinedBy <http://w3id.org/rml/io/> ;
-    rdfs:comment "Represents the Turtle serialization."@en .
-
-:SPARQL_Results_CSV rdf:type owl:NamedIndividual , :Format ;
-    rdfs:label   "SPARQL results CSV" ;
-    rdfs:isDefinedBy <http://w3id.org/rml/io/> ;
-    rdfs:comment "Represents the SPARQL results CSV serialization."@en .
 
 :UTF-8 rdf:type owl:NamedIndividual , :Encoding ;
     rdfs:label   "UTF-8" ;

@@ -97,35 +97,6 @@
     "@value" : "Encoding class"
   } ]
 }, {
-  "@id" : "http://w3id.org/rml/Format",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@language" : "en",
-    "@value" : "Represents serialization formats."
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
-    "@id" : "http://w3id.org/rml/io/"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@value" : "Format"
-  } ]
-}, {
-  "@id" : "http://w3id.org/rml/JSON-LD",
-  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
-  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
-    "@id" : "http://w3id.org/rml/Format"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@language" : "en",
-    "@value" : "Represents the JSON-LD serialization."
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
-    "@id" : "http://w3id.org/rml/io/"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@value" : "JSON-LD"
-  } ]
-}, {
   "@id" : "http://w3id.org/rml/JSONPath",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
@@ -168,38 +139,6 @@
     "@value" : "LogicalTarget"
   } ]
 }, {
-  "@id" : "http://w3id.org/rml/N-Quads",
-  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
-  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
-    "@id" : "http://w3id.org/rml/Format"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@language" : "en",
-    "@value" : "Represents the N-Quads serialization."
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
-    "@id" : "http://w3id.org/rml/io/"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@value" : "N-Quads"
-  } ]
-}, {
-  "@id" : "http://w3id.org/rml/N-Triples",
-  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
-  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
-    "@id" : "http://w3id.org/rml/Format"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@language" : "en",
-    "@value" : "Represents the N-Triples serialization."
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
-    "@id" : "http://w3id.org/rml/io/"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@value" : "N-Triples"
-  } ]
-}, {
   "@id" : "http://w3id.org/rml/Namespace",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
@@ -224,22 +163,6 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@value" : "Reference Formulation"
-  } ]
-}, {
-  "@id" : "http://w3id.org/rml/SPARQL_Results_CSV",
-  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
-  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
-    "@id" : "http://w3id.org/rml/Format"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@language" : "en",
-    "@value" : "Represents the SPARQL results CSV serialization."
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
-    "@id" : "http://w3id.org/rml/io/"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@value" : "SPARQL results CSV"
   } ]
 }, {
   "@id" : "http://w3id.org/rml/SQL2008",
@@ -282,22 +205,6 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@value" : "Target"
-  } ]
-}, {
-  "@id" : "http://w3id.org/rml/Turtle",
-  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
-  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
-    "@id" : "http://w3id.org/rml/Format"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@language" : "en",
-    "@value" : "Represents the Turtle serialization."
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
-    "@id" : "http://w3id.org/rml/io/"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@value" : "Turtle"
   } ]
 }, {
   "@id" : "http://w3id.org/rml/UTF-16",
@@ -434,20 +341,17 @@
   } ],
   "http://purl.org/dc/elements/1.1/description" : [ {
     "@language" : "en",
-    "@value" : "RML-IO enables the description of in put data sources and target output data serialization "
+    "@value" : "RML-IO enables the description of input data sources and target output data serialization "
   } ],
   "http://purl.org/dc/elements/1.1/license" : [ {
     "@id" : "http://purl.org/NET/rdflicense/cc-by4.0"
   } ],
   "http://purl.org/dc/elements/1.1/modified" : [ {
-    "@value" : "2023-04-19"
+    "@value" : "2023-04-28"
   } ],
   "http://purl.org/dc/elements/1.1/title" : [ {
     "@language" : "en",
-    "@value" : "RML Source and Target"
-  } ],
-  "http://purl.org/vocab/vann/preferredNamespaceUri" : [ {
-    "@value" : "http://w3id.org/rml/io/"
+    "@value" : "RML-IO: Source and Target"
   } ]
 }, {
   "@id" : "http://w3id.org/rml/iterator",
@@ -596,7 +500,7 @@
     "@value" : "serialization"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "http://w3id.org/rml/Format"
+    "@id" : "https://www.w3.org/ns/formats/Format"
   } ]
 }, {
   "@id" : "http://w3id.org/rml/source",
@@ -696,4 +600,7 @@
 }, {
   "@id" : "http://xmlns.com/foaf/0.1/name",
   "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "https://www.w3.org/ns/formats/Format",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
 } ]
