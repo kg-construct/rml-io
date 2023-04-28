@@ -4,20 +4,22 @@ This ontology has the following classes and properties.</span>
 <h4>Classes</h4>
 <ul xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" class="hlist">
    <li>
-      <a href="#http://semweb.mmlab.be/ns/rml-compression#Compression"
-         title="http://semweb.mmlab.be/ns/rml-compression#Compression">Compression</a>
+      <a href="#http://w3id.org/rml/Compression" title="http://w3id.org/rml/Compression">compression class</a>
    </li>
    <li>
-      <a href="#http://semweb.mmlab.be/ns/rml-encoding#Encoding" title="http://semweb.mmlab.be/ns/rml-encoding#Encoding">Encoding</a>
+      <a href="#http://w3id.org/rml/Encoding" title="http://w3id.org/rml/Encoding">Encoding class</a>
    </li>
    <li>
-      <a href="#https://www.w3.org/ns/formats/Format" title="https://www.w3.org/ns/formats/Format">Format</a>
+      <a href="#http://w3id.org/rml/Format" title="http://w3id.org/rml/Format">Format</a>
    </li>
    <li>
       <a href="#http://w3id.org/rml/LogicalSource" title="http://w3id.org/rml/LogicalSource">Logical Source</a>
    </li>
    <li>
       <a href="#http://w3id.org/rml/LogicalTarget" title="http://w3id.org/rml/LogicalTarget">LogicalTarget</a>
+   </li>
+   <li>
+      <a href="#http://w3id.org/rml/Namespace" title="http://w3id.org/rml/Namespace">Namespace</a>
    </li>
    <li>
       <a href="#http://w3id.org/rml/ReferenceFormulation" title="http://w3id.org/rml/ReferenceFormulation">Reference Formulation</a>
@@ -29,10 +31,7 @@ This ontology has the following classes and properties.</span>
       <a href="#http://w3id.org/rml/Target" title="http://w3id.org/rml/Target">Target</a>
    </li>
    <li>
-      <a href="#http://w3id.org/rml/TermMap" title="http://w3id.org/rml/TermMap">Term Map</a>
-   </li>
-   <li>
-      <a href="#http://w3id.org/rml/TriplesMap" title="http://w3id.org/rml/TriplesMap">Triples Map</a>
+      <a href="#http://w3id.org/rml/XPathReferenceFormulation" title="http://w3id.org/rml/XPathReferenceFormulation">XPath Reference Formulation</a>
    </li>
 </ul><h4>Object Properties</h4><ul xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" class="hlist">
    <li>
@@ -45,10 +44,7 @@ This ontology has the following classes and properties.</span>
       <a href="#http://w3id.org/rml/iterator" title="http://w3id.org/rml/iterator">iterator</a>
    </li>
    <li>
-      <a href="#http://w3id.org/rml/logicalSource" title="http://w3id.org/rml/logicalSource">logical source</a>
-   </li>
-   <li>
-      <a href="#http://w3id.org/rml/logicalTarget" title="http://w3id.org/rml/logicalTarget">logical target</a>
+      <a href="#http://w3id.org/rml/namespace" title="http://w3id.org/rml/namespace">namespace</a>
    </li>
    <li>
       <a href="#http://w3id.org/rml/null" title="http://w3id.org/rml/null">null</a>
@@ -68,20 +64,57 @@ This ontology has the following classes and properties.</span>
    <li>
       <a href="#http://w3id.org/rml/target" title="http://w3id.org/rml/target">target</a>
    </li>
+</ul><h4>Data Properties</h4><ul xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" class="hlist">
+   <li>
+      <a href="#http://w3id.org/rml/namespacePrefix" title="http://w3id.org/rml/namespacePrefix">namespace prefix</a>
+   </li>
+   <li>
+      <a href="#http://w3id.org/rml/namespaceURL" title="http://w3id.org/rml/namespaceURL">namespace URL</a>
+   </li>
 </ul><h4>Named Individuals</h4><ul xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" class="hlist">
    <li>
-      <a href="#http://semweb.mmlab.be/ns/ql#CSV" title="http://semweb.mmlab.be/ns/ql#CSV">
-         <span>c s v</span>
-      </a>
+      <a href="#http://w3id.org/rml/CSV" title="http://w3id.org/rml/CSV">CSV</a>
    </li>
    <li>
-      <a href="#http://semweb.mmlab.be/ns/ql#JSONPath" title="http://semweb.mmlab.be/ns/ql#JSONPath">
-         <span>j s o n path</span>
-      </a>
+      <a href="#http://w3id.org/rml/gzip" title="http://w3id.org/rml/gzip">GZip</a>
    </li>
    <li>
-      <a href="#http://semweb.mmlab.be/ns/ql#XPath" title="http://semweb.mmlab.be/ns/ql#XPath">
-         <span>x path</span>
-      </a>
+      <a href="#http://w3id.org/rml/JSON-LD" title="http://w3id.org/rml/JSON-LD">JSON-LD</a>
+   </li>
+   <li>
+      <a href="#http://w3id.org/rml/JSONPath" title="http://w3id.org/rml/JSONPath">JSONPath</a>
+   </li>
+   <li>
+      <a href="#http://w3id.org/rml/N-Quads" title="http://w3id.org/rml/N-Quads">N-Quads</a>
+   </li>
+   <li>
+      <a href="#http://w3id.org/rml/N-Triples" title="http://w3id.org/rml/N-Triples">N-Triples</a>
+   </li>
+   <li>
+      <a href="#http://w3id.org/rml/SPARQL_Results_CSV" title="http://w3id.org/rml/SPARQL_Results_CSV">SPARQL results CSV</a>
+   </li>
+   <li>
+      <a href="#http://w3id.org/rml/SQL2008" title="http://w3id.org/rml/SQL2008">SQL 2008</a>
+   </li>
+   <li>
+      <a href="#http://w3id.org/rml/targzip" title="http://w3id.org/rml/targzip">TarGZip</a>
+   </li>
+   <li>
+      <a href="#http://w3id.org/rml/tarxz" title="http://w3id.org/rml/tarxz">TarXz</a>
+   </li>
+   <li>
+      <a href="#http://w3id.org/rml/Turtle" title="http://w3id.org/rml/Turtle">Turtle</a>
+   </li>
+   <li>
+      <a href="#http://w3id.org/rml/UTF-16" title="http://w3id.org/rml/UTF-16">UTF-16</a>
+   </li>
+   <li>
+      <a href="#http://w3id.org/rml/UTF-8" title="http://w3id.org/rml/UTF-8">UTF-8</a>
+   </li>
+   <li>
+      <a href="#http://w3id.org/rml/XPath" title="http://w3id.org/rml/XPath">XPath</a>
+   </li>
+   <li>
+      <a href="#http://w3id.org/rml/zip" title="http://w3id.org/rml/zip">Zip</a>
    </li>
 </ul>

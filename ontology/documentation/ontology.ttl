@@ -65,6 +65,10 @@
 <http://purl.org/vocab/vann/preferredNamespaceUri> rdf:type owl:AnnotationProperty .
 
 
+###  http://w3id.org/rml/specification
+<http://w3id.org/rml/specification> rdf:type owl:AnnotationProperty .
+
+
 ###  http://www.linkedmodel.org/schema/vaem#acronym
 <http://www.linkedmodel.org/schema/vaem#acronym> rdf:type owl:AnnotationProperty .
 
@@ -84,8 +88,9 @@
                                                               <http://w3id.org/rml/Target>
                                                             )
                                               ] ;
-                                  rdfs:range <http://semweb.mmlab.be/ns/rml-compression#Compression> ;
-                                  rdfs:comment <http://w3id.org/rml/io/> ;
+                                  rdfs:range <http://w3id.org/rml/Compression> ;
+                                  rdfs:comment "Defines the compression format of a Source or Target."@en ;
+                                  rdfs:isDefinedBy <http://w3id.org/rml/io/> ;
                                   rdfs:label "compression" .
 
 
@@ -96,8 +101,9 @@
                                                            <http://w3id.org/rml/Target>
                                                          )
                                            ] ;
-                               rdfs:range <http://semweb.mmlab.be/ns/rml-encoding#Encoding> ;
-                               rdfs:comment <http://w3id.org/rml/io/> ;
+                               rdfs:range <http://w3id.org/rml/Encoding> ;
+                               rdfs:comment "Defines the encoding format of a Source or Target."@en ;
+                               rdfs:isDefinedBy <http://w3id.org/rml/io/> ;
                                rdfs:label "encoding" .
 
 
@@ -105,33 +111,26 @@
 <http://w3id.org/rml/iterator> rdf:type owl:ObjectProperty ;
                                rdfs:domain <http://w3id.org/rml/LogicalSource> ;
                                rdfs:range rdf:Literal ;
-                               rdfs:comment <http://w3id.org/rml/io/> ;
+                               rdfs:comment "An expression qualified according to the reference formulation specified for pointing to an extract of the source data. "@en ;
+                               rdfs:isDefinedBy <http://w3id.org/rml/io/> ;
                                rdfs:label "iterator" .
 
 
-###  http://w3id.org/rml/logicalSource
-<http://w3id.org/rml/logicalSource> rdf:type owl:ObjectProperty ;
-                                    rdfs:domain <http://w3id.org/rml/TriplesMap> ;
-                                    rdfs:range <http://w3id.org/rml/LogicalSource> ;
-                                    rdfs:comment "Represents the logical source to be mapped. This can be a pointer to any dataset."@en ;
-                                    rdfs:isDefinedBy <http://w3id.org/rml/core/> ;
-                                    rdfs:label "logical source" .
-
-
-###  http://w3id.org/rml/logicalTarget
-<http://w3id.org/rml/logicalTarget> rdf:type owl:ObjectProperty ;
-                                    rdfs:domain <http://w3id.org/rml/TermMap> ;
-                                    rdfs:range <http://w3id.org/rml/LogicalTarget> ;
-                                    rdfs:comment "Represents the logical target to where triples are exported to. This can be a pointer to any dataset." ;
-                                    rdfs:isDefinedBy <http://w3id.org/rml/core/> ;
-                                    rdfs:label "logical target" .
+###  http://w3id.org/rml/namespace
+<http://w3id.org/rml/namespace> rdf:type owl:ObjectProperty ;
+                                rdfs:domain <http://w3id.org/rml/XPathReferenceFormulation> ;
+                                rdfs:range <http://w3id.org/rml/Namespace> ;
+                                rdfs:comment "A namespace for describing a XPath reference formulation."@en ;
+                                rdfs:isDefinedBy <http://w3id.org/rml/io/> ;
+                                rdfs:label "namespace" .
 
 
 ###  http://w3id.org/rml/null
 <http://w3id.org/rml/null> rdf:type owl:ObjectProperty ;
                            rdfs:domain <http://w3id.org/rml/Source> ;
                            rdfs:range rdf:Literal ;
-                           rdfs:comment <http://w3id.org/rml/io/> ;
+                           rdfs:comment "Describes which data values inside the source should be considered as NULL."@en ;
+                           rdfs:isDefinedBy <http://w3id.org/rml/io/> ;
                            rdfs:label "null" .
 
 
@@ -139,7 +138,8 @@
 <http://w3id.org/rml/query> rdf:type owl:ObjectProperty ;
                             rdfs:domain <http://w3id.org/rml/Source> ;
                             rdfs:range rdf:Literal ;
-                            rdfs:comment <http://w3id.org/rml/io/> ;
+                            rdfs:comment "Defines which query should be applied on the source during access"@en ;
+                            rdfs:isDefinedBy <http://w3id.org/rml/io/> ;
                             rdfs:label "query" .
 
 
@@ -147,15 +147,17 @@
 <http://w3id.org/rml/referenceFormulation> rdf:type owl:ObjectProperty ;
                                            rdfs:domain <http://w3id.org/rml/LogicalSource> ;
                                            rdfs:range <http://w3id.org/rml/ReferenceFormulation> ;
-                                           rdfs:comment <http://w3id.org/rml/io/> ;
+                                           rdfs:comment "The reference formulation used to refer to extracts of the source data. "@en ;
+                                           rdfs:isDefinedBy <http://w3id.org/rml/io/> ;
                                            rdfs:label "reference formulation" .
 
 
 ###  http://w3id.org/rml/serialization
 <http://w3id.org/rml/serialization> rdf:type owl:ObjectProperty ;
                                     rdfs:domain <http://w3id.org/rml/LogicalTarget> ;
-                                    rdfs:range <https://www.w3.org/ns/formats/Format> ;
-                                    rdfs:comment <http://w3id.org/rml/io/> ;
+                                    rdfs:range <http://w3id.org/rml/Format> ;
+                                    rdfs:comment "Defines the serialization to generate the target output."@en ;
+                                    rdfs:isDefinedBy <http://w3id.org/rml/io/> ;
                                     rdfs:label "serialization" .
 
 
@@ -163,7 +165,8 @@
 <http://w3id.org/rml/source> rdf:type owl:ObjectProperty ;
                              rdfs:domain <http://w3id.org/rml/LogicalSource> ;
                              rdfs:range <http://w3id.org/rml/Source> ;
-                             rdfs:comment <http://w3id.org/rml/io/> ;
+                             rdfs:comment "Defines the source that describe the input data."@en ;
+                             rdfs:isDefinedBy <http://w3id.org/rml/io/> ;
                              rdfs:label "source" .
 
 
@@ -171,96 +174,235 @@
 <http://w3id.org/rml/target> rdf:type owl:ObjectProperty ;
                              rdfs:domain <http://w3id.org/rml/LogicalTarget> ;
                              rdfs:range <http://w3id.org/rml/Target> ;
-                             rdfs:comment <http://w3id.org/rml/io/> ;
+                             rdfs:comment "Defines the target that describe the output data."@en ;
+                             rdfs:isDefinedBy <http://w3id.org/rml/io/> ;
                              rdfs:label "target" .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://w3id.org/rml/namespacePrefix
+<http://w3id.org/rml/namespacePrefix> rdf:type owl:DatatypeProperty ;
+                                      rdfs:domain <http://w3id.org/rml/Namespace> ;
+                                      rdfs:range xsd:string ;
+                                      rdfs:comment "Describes the prefix of a namespace."@en ;
+                                      rdfs:isDefinedBy <http://w3id.org/rml/io/> ;
+                                      rdfs:label "namespace prefix" .
+
+
+###  http://w3id.org/rml/namespaceURL
+<http://w3id.org/rml/namespaceURL> rdf:type owl:DatatypeProperty ;
+                                   rdfs:domain <http://w3id.org/rml/Namespace> ;
+                                   rdfs:comment "Describes the URL of a namespace."@en ;
+                                   rdfs:isDefinedBy <http://w3id.org/rml/io/> ;
+                                   rdfs:label "namespace URL" .
 
 
 #################################################################
 #    Classes
 #################################################################
 
-###  http://semweb.mmlab.be/ns/rml-compression#Compression
-<http://semweb.mmlab.be/ns/rml-compression#Compression> rdf:type owl:Class ;
-                                                        rdfs:isDefinedBy <http://w3id.org/rml/io/> ;
-                                                        rdfs:label "Compression" .
+###  http://w3id.org/rml/Compression
+<http://w3id.org/rml/Compression> rdf:type owl:Class ;
+                                  rdfs:comment "Represents file compression schemes."@en ;
+                                  rdfs:isDefinedBy <http://w3id.org/rml/io/> ;
+                                  rdfs:label "compression class" .
 
 
-###  http://semweb.mmlab.be/ns/rml-encoding#Encoding
-<http://semweb.mmlab.be/ns/rml-encoding#Encoding> rdf:type owl:Class ;
-                                                  rdfs:label "Encoding" .
+###  http://w3id.org/rml/Encoding
+<http://w3id.org/rml/Encoding> rdf:type owl:Class ;
+                               rdfs:comment "Represents encoding formats."@en ;
+                               rdfs:isDefinedBy <http://w3id.org/rml/io/> ;
+                               rdfs:label "Encoding class" .
+
+
+###  http://w3id.org/rml/Format
+<http://w3id.org/rml/Format> rdf:type owl:Class ;
+                             rdfs:comment "Represents serialization formats."@en ;
+                             rdfs:isDefinedBy <http://w3id.org/rml/io/> ;
+                             rdfs:label "Format" .
 
 
 ###  http://w3id.org/rml/LogicalSource
 <http://w3id.org/rml/LogicalSource> rdf:type owl:Class ;
+                                    rdfs:comment "Denotes a logical source."@en ;
                                     rdfs:isDefinedBy <http://w3id.org/rml/io/> ;
                                     rdfs:label "Logical Source" .
 
 
 ###  http://w3id.org/rml/LogicalTarget
 <http://w3id.org/rml/LogicalTarget> rdf:type owl:Class ;
+                                    rdfs:comment "Denotes a logical target."@en ;
                                     rdfs:isDefinedBy <http://w3id.org/rml/io/> ;
                                     rdfs:label "LogicalTarget" .
 
 
+###  http://w3id.org/rml/Namespace
+<http://w3id.org/rml/Namespace> rdf:type owl:Class ;
+                                rdfs:comment "Denotes a namespace"@en ;
+                                rdfs:isDefinedBy <http://w3id.org/rml/io/> ;
+                                rdfs:label "Namespace" .
+
+
 ###  http://w3id.org/rml/ReferenceFormulation
 <http://w3id.org/rml/ReferenceFormulation> rdf:type owl:Class ;
+                                           rdfs:comment "Denotes a Reference Formulation."@en ;
                                            rdfs:isDefinedBy <http://w3id.org/rml/io/> ;
                                            rdfs:label "Reference Formulation" .
 
 
 ###  http://w3id.org/rml/Source
 <http://w3id.org/rml/Source> rdf:type owl:Class ;
+                             rdfs:comment "Denotes a source."@en ;
                              rdfs:isDefinedBy <http://w3id.org/rml/io/> ;
                              rdfs:label "Source" .
 
 
 ###  http://w3id.org/rml/Target
 <http://w3id.org/rml/Target> rdf:type owl:Class ;
+                             rdfs:comment "Denotes a target."@en ;
                              rdfs:isDefinedBy <http://w3id.org/rml/io/> ;
                              rdfs:label "Target" .
 
 
-###  http://w3id.org/rml/TermMap
-<http://w3id.org/rml/TermMap> rdf:type owl:Class ;
-                              rdfs:comment "A function that generates an RDF term from a logical table row."@en ;
-                              rdfs:isDefinedBy <http://w3id.org/rml/core/> ;
-                              rdfs:label "Term Map"@en .
-
-
-###  http://w3id.org/rml/TriplesMap
-<http://w3id.org/rml/TriplesMap> rdf:type owl:Class ;
-                                 rdfs:subClassOf owl:Thing ;
-                                 rdfs:comment "Represents a triples map."@en ;
-                                 rdfs:isDefinedBy <http://w3id.org/rml/core/> ;
-                                 rdfs:label "Triples Map" .
+###  http://w3id.org/rml/XPathReferenceFormulation
+<http://w3id.org/rml/XPathReferenceFormulation> rdf:type owl:Class ;
+                                                rdfs:subClassOf <http://w3id.org/rml/ReferenceFormulation> ;
+                                                rdfs:comment "Denotes a XPath Reference Formulation."@en ;
+                                                rdfs:isDefinedBy <http://w3id.org/rml/io/> ;
+                                                rdfs:label "XPath Reference Formulation" .
 
 
 ###  http://www.w3.org/1999/02/22-rdf-syntax-ns#Literal
 rdf:Literal rdf:type owl:Class .
 
 
-###  https://www.w3.org/ns/formats/Format
-<https://www.w3.org/ns/formats/Format> rdf:type owl:Class ;
-                                       rdfs:label "Format" .
-
-
 #################################################################
 #    Individuals
 #################################################################
 
-###  http://semweb.mmlab.be/ns/ql#CSV
-<http://semweb.mmlab.be/ns/ql#CSV> rdf:type owl:NamedIndividual ,
-                                            <http://w3id.org/rml/ReferenceFormulation> .
+###  http://w3id.org/rml/CSV
+<http://w3id.org/rml/CSV> rdf:type owl:NamedIndividual ,
+                                   <http://w3id.org/rml/ReferenceFormulation> ;
+                          <http://w3id.org/rml/specification> <http://tools.ietf.org/html/rfc4180> ;
+                          rdfs:comment "Denotes that the CSV file's column names are used for referring to extracts of CSV resources."@en ;
+                          rdfs:isDefinedBy <http://w3id.org/rml/io/> ;
+                          rdfs:label "CSV" .
 
 
-###  http://semweb.mmlab.be/ns/ql#JSONPath
-<http://semweb.mmlab.be/ns/ql#JSONPath> rdf:type owl:NamedIndividual ,
-                                                 <http://w3id.org/rml/ReferenceFormulation> .
+###  http://w3id.org/rml/JSON-LD
+<http://w3id.org/rml/JSON-LD> rdf:type owl:NamedIndividual ,
+                                       <http://w3id.org/rml/Format> ;
+                              rdfs:comment "Represents the JSON-LD serialization."@en ;
+                              rdfs:isDefinedBy <http://w3id.org/rml/io/> ;
+                              rdfs:label "JSON-LD" .
 
 
-###  http://semweb.mmlab.be/ns/ql#XPath
-<http://semweb.mmlab.be/ns/ql#XPath> rdf:type owl:NamedIndividual ,
-                                              <http://w3id.org/rml/ReferenceFormulation> .
+###  http://w3id.org/rml/JSONPath
+<http://w3id.org/rml/JSONPath> rdf:type owl:NamedIndividual ,
+                                        <http://w3id.org/rml/ReferenceFormulation> ;
+                               rdfs:comment "Denotes the JSONPath reference formulation, used for referring to extracts of JSON sources."@en ;
+                               rdfs:isDefinedBy <http://w3id.org/rml/io/> ;
+                               rdfs:label "JSONPath" .
+
+
+###  http://w3id.org/rml/N-Quads
+<http://w3id.org/rml/N-Quads> rdf:type owl:NamedIndividual ,
+                                       <http://w3id.org/rml/Format> ;
+                              rdfs:comment "Represents the N-Quads serialization."@en ;
+                              rdfs:isDefinedBy <http://w3id.org/rml/io/> ;
+                              rdfs:label "N-Quads" .
+
+
+###  http://w3id.org/rml/N-Triples
+<http://w3id.org/rml/N-Triples> rdf:type owl:NamedIndividual ,
+                                         <http://w3id.org/rml/Format> ;
+                                rdfs:comment "Represents the N-Triples serialization."@en ;
+                                rdfs:isDefinedBy <http://w3id.org/rml/io/> ;
+                                rdfs:label "N-Triples" .
+
+
+###  http://w3id.org/rml/SPARQL_Results_CSV
+<http://w3id.org/rml/SPARQL_Results_CSV> rdf:type owl:NamedIndividual ,
+                                                  <http://w3id.org/rml/Format> ;
+                                         rdfs:comment "Represents the SPARQL results CSV serialization."@en ;
+                                         rdfs:isDefinedBy <http://w3id.org/rml/io/> ;
+                                         rdfs:label "SPARQL results CSV" .
+
+
+###  http://w3id.org/rml/SQL2008
+<http://w3id.org/rml/SQL2008> rdf:type owl:NamedIndividual ,
+                                       <http://w3id.org/rml/ReferenceFormulation> ;
+                              rdfs:comment "Denotes the Core SQL 2008."@en ;
+                              rdfs:isDefinedBy <http://w3id.org/rml/io/> ;
+                              rdfs:label "SQL 2008" .
+
+
+###  http://w3id.org/rml/Turtle
+<http://w3id.org/rml/Turtle> rdf:type owl:NamedIndividual ,
+                                      <http://w3id.org/rml/Format> ;
+                             rdfs:comment "Represents the Turtle serialization."@en ;
+                             rdfs:isDefinedBy <http://w3id.org/rml/io/> ;
+                             rdfs:label "Turtle" .
+
+
+###  http://w3id.org/rml/UTF-16
+<http://w3id.org/rml/UTF-16> rdf:type owl:NamedIndividual ,
+                                      <http://w3id.org/rml/Encoding> ;
+                             rdfs:comment "Represents the UFT-16 encoding."@en ;
+                             rdfs:isDefinedBy <http://w3id.org/rml/io/> ;
+                             rdfs:label "UTF-16" .
+
+
+###  http://w3id.org/rml/UTF-8
+<http://w3id.org/rml/UTF-8> rdf:type owl:NamedIndividual ,
+                                     <http://w3id.org/rml/Encoding> ;
+                            rdfs:comment "Represents the UFT-8 encoding."@en ;
+                            rdfs:isDefinedBy <http://w3id.org/rml/io/> ;
+                            rdfs:label "UTF-8" .
+
+
+###  http://w3id.org/rml/XPath
+<http://w3id.org/rml/XPath> rdf:type owl:NamedIndividual ,
+                                     <http://w3id.org/rml/ReferenceFormulation> ;
+                            <http://w3id.org/rml/specification> <http://www.w3.org/TR/xpath20/> ;
+                            rdfs:comment "Denotes the XPath reference formulation, used for referring to extracts of XML sources."@en ;
+                            rdfs:isDefinedBy <http://w3id.org/rml/io/> ;
+                            rdfs:label "XPath" .
+
+
+###  http://w3id.org/rml/gzip
+<http://w3id.org/rml/gzip> rdf:type owl:NamedIndividual ,
+                                    <http://w3id.org/rml/Compression> ;
+                           rdfs:comment "Represents GZip file compression."@en ;
+                           rdfs:isDefinedBy <http://w3id.org/rml/io/> ;
+                           rdfs:label "GZip" .
+
+
+###  http://w3id.org/rml/targzip
+<http://w3id.org/rml/targzip> rdf:type owl:NamedIndividual ,
+                                       <http://w3id.org/rml/Compression> ;
+                              rdfs:comment "Represents TarGZip file compression."@en ;
+                              rdfs:isDefinedBy <http://w3id.org/rml/io/> ;
+                              rdfs:label "TarGZip" .
+
+
+###  http://w3id.org/rml/tarxz
+<http://w3id.org/rml/tarxz> rdf:type owl:NamedIndividual ,
+                                     <http://w3id.org/rml/Compression> ;
+                            rdfs:comment "Represents TarXz file compression."@en ;
+                            rdfs:isDefinedBy <http://w3id.org/rml/io/> ;
+                            rdfs:label "TarXz" .
+
+
+###  http://w3id.org/rml/zip
+<http://w3id.org/rml/zip> rdf:type owl:NamedIndividual ,
+                                   <http://w3id.org/rml/Compression> ;
+                          rdfs:comment "Represents Zip file compression."@en ;
+                          rdfs:isDefinedBy <http://w3id.org/rml/io/> ;
+                          rdfs:label "Zip" .
 
 
 ###  Generated by the OWL API (version 5.1.18) https://github.com/owlcs/owlapi/
