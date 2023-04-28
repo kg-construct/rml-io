@@ -1,6 +1,4 @@
 @prefix rml: <http://w3id.org/rml/> .
-@prefix ql: <http://w3id.org/rml/ql/> .
-@prefix enc: <http://w3id.org/rml/enc/> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix csvw: <http://www.w3.org/ns/dcat#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
@@ -14,7 +12,7 @@
     csvw:header "1"^^xsd:boolean;
   ];
   # Encoding is UTF-16 and overrides CSVW
-  rml:encoding enc:UTF-16;
+  rml:encoding rml:UTF-16;
 .
 
 <#TriplesMap> a rml:TriplesMap;
