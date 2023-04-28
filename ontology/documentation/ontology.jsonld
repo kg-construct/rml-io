@@ -52,41 +52,102 @@
   "@id" : "http://purl.org/vocab/vann/preferredNamespaceUri",
   "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
 }, {
-  "@id" : "http://semweb.mmlab.be/ns/ql#CSV",
+  "@id" : "http://w3id.org/rml/CSV",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://w3id.org/rml/specification" : [ {
+    "@id" : "http://tools.ietf.org/html/rfc4180"
+  } ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "http://w3id.org/rml/ReferenceFormulation"
-  } ]
-}, {
-  "@id" : "http://semweb.mmlab.be/ns/ql#JSONPath",
-  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
-  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
-    "@id" : "http://w3id.org/rml/ReferenceFormulation"
-  } ]
-}, {
-  "@id" : "http://semweb.mmlab.be/ns/ql#XPath",
-  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
-  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
-    "@id" : "http://w3id.org/rml/ReferenceFormulation"
-  } ]
-}, {
-  "@id" : "http://semweb.mmlab.be/ns/rml-compression#Compression",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Denotes that the CSV file's column names are used for referring to extracts of CSV resources."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
     "@id" : "http://w3id.org/rml/io/"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@value" : "Compression"
+    "@value" : "CSV"
   } ]
 }, {
-  "@id" : "http://semweb.mmlab.be/ns/rml-encoding#Encoding",
+  "@id" : "http://w3id.org/rml/Compression",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Represents file compression schemes."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@id" : "http://w3id.org/rml/io/"
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@value" : "Encoding"
+    "@value" : "compression class"
+  } ]
+}, {
+  "@id" : "http://w3id.org/rml/Encoding",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Represents encoding formats."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@id" : "http://w3id.org/rml/io/"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "Encoding class"
+  } ]
+}, {
+  "@id" : "http://w3id.org/rml/Format",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Represents serialization formats."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@id" : "http://w3id.org/rml/io/"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "Format"
+  } ]
+}, {
+  "@id" : "http://w3id.org/rml/JSON-LD",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://w3id.org/rml/Format"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Represents the JSON-LD serialization."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@id" : "http://w3id.org/rml/io/"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "JSON-LD"
+  } ]
+}, {
+  "@id" : "http://w3id.org/rml/JSONPath",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://w3id.org/rml/ReferenceFormulation"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Denotes the JSONPath reference formulation, used for referring to extracts of JSON sources."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@id" : "http://w3id.org/rml/io/"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "JSONPath"
   } ]
 }, {
   "@id" : "http://w3id.org/rml/LogicalSource",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Denotes a logical source."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
     "@id" : "http://w3id.org/rml/io/"
   } ],
@@ -96,6 +157,10 @@
 }, {
   "@id" : "http://w3id.org/rml/LogicalTarget",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Denotes a logical target."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
     "@id" : "http://w3id.org/rml/io/"
   } ],
@@ -103,8 +168,57 @@
     "@value" : "LogicalTarget"
   } ]
 }, {
+  "@id" : "http://w3id.org/rml/N-Quads",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://w3id.org/rml/Format"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Represents the N-Quads serialization."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@id" : "http://w3id.org/rml/io/"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "N-Quads"
+  } ]
+}, {
+  "@id" : "http://w3id.org/rml/N-Triples",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://w3id.org/rml/Format"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Represents the N-Triples serialization."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@id" : "http://w3id.org/rml/io/"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "N-Triples"
+  } ]
+}, {
+  "@id" : "http://w3id.org/rml/Namespace",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Denotes a namespace"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@id" : "http://w3id.org/rml/io/"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "Namespace"
+  } ]
+}, {
   "@id" : "http://w3id.org/rml/ReferenceFormulation",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Denotes a Reference Formulation."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
     "@id" : "http://w3id.org/rml/io/"
   } ],
@@ -112,8 +226,44 @@
     "@value" : "Reference Formulation"
   } ]
 }, {
+  "@id" : "http://w3id.org/rml/SPARQL_Results_CSV",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://w3id.org/rml/Format"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Represents the SPARQL results CSV serialization."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@id" : "http://w3id.org/rml/io/"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "SPARQL results CSV"
+  } ]
+}, {
+  "@id" : "http://w3id.org/rml/SQL2008",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://w3id.org/rml/ReferenceFormulation"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Denotes the Core SQL 2008."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@id" : "http://w3id.org/rml/io/"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "SQL 2008"
+  } ]
+}, {
   "@id" : "http://w3id.org/rml/Source",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Denotes a source."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
     "@id" : "http://w3id.org/rml/io/"
   } ],
@@ -123,6 +273,10 @@
 }, {
   "@id" : "http://w3id.org/rml/Target",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Denotes a target."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
     "@id" : "http://w3id.org/rml/io/"
   } ],
@@ -130,64 +284,141 @@
     "@value" : "Target"
   } ]
 }, {
-  "@id" : "http://w3id.org/rml/TermMap",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "@id" : "http://w3id.org/rml/Turtle",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://w3id.org/rml/Format"
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
-    "@value" : "A function that generates an RDF term from a logical table row."
+    "@value" : "Represents the Turtle serialization."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
-    "@id" : "http://w3id.org/rml/core/"
+    "@id" : "http://w3id.org/rml/io/"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@language" : "en",
-    "@value" : "Term Map"
+    "@value" : "Turtle"
   } ]
 }, {
-  "@id" : "http://w3id.org/rml/TriplesMap",
+  "@id" : "http://w3id.org/rml/UTF-16",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://w3id.org/rml/Encoding"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Represents the UFT-16 encoding."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@id" : "http://w3id.org/rml/io/"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "UTF-16"
+  } ]
+}, {
+  "@id" : "http://w3id.org/rml/UTF-8",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://w3id.org/rml/Encoding"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Represents the UFT-8 encoding."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@id" : "http://w3id.org/rml/io/"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "UTF-8"
+  } ]
+}, {
+  "@id" : "http://w3id.org/rml/XPath",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://w3id.org/rml/specification" : [ {
+    "@id" : "http://www.w3.org/TR/xpath20/"
+  } ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://w3id.org/rml/ReferenceFormulation"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Denotes the XPath reference formulation, used for referring to extracts of XML sources."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@id" : "http://w3id.org/rml/io/"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "XPath"
+  } ]
+}, {
+  "@id" : "http://w3id.org/rml/XPathReferenceFormulation",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
-    "@value" : "Represents a triples map."
+    "@value" : "Denotes a XPath Reference Formulation."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
-    "@id" : "http://w3id.org/rml/core/"
+    "@id" : "http://w3id.org/rml/io/"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@value" : "Triples Map"
+    "@value" : "XPath Reference Formulation"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "http://www.w3.org/2002/07/owl#Thing"
+    "@id" : "http://w3id.org/rml/ReferenceFormulation"
   } ]
 }, {
   "@id" : "http://w3id.org/rml/compression",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@id" : "http://w3id.org/rml/io/"
+    "@language" : "en",
+    "@value" : "Defines the compression format of a Source or Target."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "_:genid1"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@id" : "http://w3id.org/rml/io/"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@value" : "compression"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "http://semweb.mmlab.be/ns/rml-compression#Compression"
+    "@id" : "http://w3id.org/rml/Compression"
   } ]
 }, {
   "@id" : "http://w3id.org/rml/encoding",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@id" : "http://w3id.org/rml/io/"
+    "@language" : "en",
+    "@value" : "Defines the encoding format of a Source or Target."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "_:genid4"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@id" : "http://w3id.org/rml/io/"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@value" : "encoding"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "http://semweb.mmlab.be/ns/rml-encoding#Encoding"
+    "@id" : "http://w3id.org/rml/Encoding"
+  } ]
+}, {
+  "@id" : "http://w3id.org/rml/gzip",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://w3id.org/rml/Compression"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Represents GZip file compression."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@id" : "http://w3id.org/rml/io/"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "GZip"
   } ]
 }, {
   "@id" : "http://w3id.org/rml/io/",
@@ -222,10 +453,14 @@
   "@id" : "http://w3id.org/rml/iterator",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@id" : "http://w3id.org/rml/io/"
+    "@language" : "en",
+    "@value" : "An expression qualified according to the reference formulation specified for pointing to an extract of the source data. "
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "http://w3id.org/rml/LogicalSource"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@id" : "http://w3id.org/rml/io/"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@value" : "iterator"
@@ -234,50 +469,71 @@
     "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#Literal"
   } ]
 }, {
-  "@id" : "http://w3id.org/rml/logicalSource",
+  "@id" : "http://w3id.org/rml/namespace",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
-    "@value" : "Represents the logical source to be mapped. This can be a pointer to any dataset."
+    "@value" : "A namespace for describing a XPath reference formulation."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "http://w3id.org/rml/TriplesMap"
+    "@id" : "http://w3id.org/rml/XPathReferenceFormulation"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
-    "@id" : "http://w3id.org/rml/core/"
+    "@id" : "http://w3id.org/rml/io/"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@value" : "logical source"
+    "@value" : "namespace"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "http://w3id.org/rml/LogicalSource"
+    "@id" : "http://w3id.org/rml/Namespace"
   } ]
 }, {
-  "@id" : "http://w3id.org/rml/logicalTarget",
-  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "@id" : "http://w3id.org/rml/namespacePrefix",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@value" : "Represents the logical target to where triples are exported to. This can be a pointer to any dataset."
+    "@language" : "en",
+    "@value" : "Describes the prefix of a namespace."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "http://w3id.org/rml/TermMap"
+    "@id" : "http://w3id.org/rml/Namespace"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
-    "@id" : "http://w3id.org/rml/core/"
+    "@id" : "http://w3id.org/rml/io/"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@value" : "logical target"
+    "@value" : "namespace prefix"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "http://w3id.org/rml/LogicalTarget"
+    "@id" : "http://www.w3.org/2001/XMLSchema#string"
+  } ]
+}, {
+  "@id" : "http://w3id.org/rml/namespaceURL",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Describes the URL of a namespace."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://w3id.org/rml/Namespace"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@id" : "http://w3id.org/rml/io/"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "namespace URL"
   } ]
 }, {
   "@id" : "http://w3id.org/rml/null",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@id" : "http://w3id.org/rml/io/"
+    "@language" : "en",
+    "@value" : "Describes which data values inside the source should be considered as NULL."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "http://w3id.org/rml/Source"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@id" : "http://w3id.org/rml/io/"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@value" : "null"
@@ -289,10 +545,14 @@
   "@id" : "http://w3id.org/rml/query",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@id" : "http://w3id.org/rml/io/"
+    "@language" : "en",
+    "@value" : "Defines which query should be applied on the source during access"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "http://w3id.org/rml/Source"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@id" : "http://w3id.org/rml/io/"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@value" : "query"
@@ -304,10 +564,14 @@
   "@id" : "http://w3id.org/rml/referenceFormulation",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@id" : "http://w3id.org/rml/io/"
+    "@language" : "en",
+    "@value" : "The reference formulation used to refer to extracts of the source data. "
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "http://w3id.org/rml/LogicalSource"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@id" : "http://w3id.org/rml/io/"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@value" : "reference formulation"
@@ -319,25 +583,33 @@
   "@id" : "http://w3id.org/rml/serialization",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@id" : "http://w3id.org/rml/io/"
+    "@language" : "en",
+    "@value" : "Defines the serialization to generate the target output."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "http://w3id.org/rml/LogicalTarget"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@id" : "http://w3id.org/rml/io/"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@value" : "serialization"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "https://www.w3.org/ns/formats/Format"
+    "@id" : "http://w3id.org/rml/Format"
   } ]
 }, {
   "@id" : "http://w3id.org/rml/source",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@id" : "http://w3id.org/rml/io/"
+    "@language" : "en",
+    "@value" : "Defines the source that describe the input data."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "http://w3id.org/rml/LogicalSource"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@id" : "http://w3id.org/rml/io/"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@value" : "source"
@@ -346,19 +618,74 @@
     "@id" : "http://w3id.org/rml/Source"
   } ]
 }, {
+  "@id" : "http://w3id.org/rml/specification",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
   "@id" : "http://w3id.org/rml/target",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@id" : "http://w3id.org/rml/io/"
+    "@language" : "en",
+    "@value" : "Defines the target that describe the output data."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "http://w3id.org/rml/LogicalTarget"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@id" : "http://w3id.org/rml/io/"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@value" : "target"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
     "@id" : "http://w3id.org/rml/Target"
+  } ]
+}, {
+  "@id" : "http://w3id.org/rml/targzip",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://w3id.org/rml/Compression"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Represents TarGZip file compression."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@id" : "http://w3id.org/rml/io/"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "TarGZip"
+  } ]
+}, {
+  "@id" : "http://w3id.org/rml/tarxz",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://w3id.org/rml/Compression"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Represents TarXz file compression."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@id" : "http://w3id.org/rml/io/"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "TarXz"
+  } ]
+}, {
+  "@id" : "http://w3id.org/rml/zip",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://w3id.org/rml/Compression"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Represents Zip file compression."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@id" : "http://w3id.org/rml/io/"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "Zip"
   } ]
 }, {
   "@id" : "http://www.linkedmodel.org/schema/vaem#acronym",
@@ -369,10 +696,4 @@
 }, {
   "@id" : "http://xmlns.com/foaf/0.1/name",
   "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
-}, {
-  "@id" : "https://www.w3.org/ns/formats/Format",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@value" : "Format"
-  } ]
 } ]

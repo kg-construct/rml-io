@@ -4,20 +4,22 @@ This section provides details for each class and property defined by RML Source 
    <h3 id="classes-headline" class="list">Classes</h3>
    <ul class="hlist">
       <li>
-         <a href="#http://semweb.mmlab.be/ns/rml-compression#Compression"
-            title="http://semweb.mmlab.be/ns/rml-compression#Compression">Compression</a>
+         <a href="#http://w3id.org/rml/Compression" title="http://w3id.org/rml/Compression">compression class</a>
       </li>
       <li>
-         <a href="#http://semweb.mmlab.be/ns/rml-encoding#Encoding" title="http://semweb.mmlab.be/ns/rml-encoding#Encoding">Encoding</a>
+         <a href="#http://w3id.org/rml/Encoding" title="http://w3id.org/rml/Encoding">Encoding class</a>
       </li>
       <li>
-         <a href="#https://www.w3.org/ns/formats/Format" title="https://www.w3.org/ns/formats/Format">Format</a>
+         <a href="#http://w3id.org/rml/Format" title="http://w3id.org/rml/Format">Format</a>
       </li>
       <li>
          <a href="#http://w3id.org/rml/LogicalSource" title="http://w3id.org/rml/LogicalSource">Logical Source</a>
       </li>
       <li>
          <a href="#http://w3id.org/rml/LogicalTarget" title="http://w3id.org/rml/LogicalTarget">LogicalTarget</a>
+      </li>
+      <li>
+         <a href="#http://w3id.org/rml/Namespace" title="http://w3id.org/rml/Namespace">Namespace</a>
       </li>
       <li>
          <a href="#http://w3id.org/rml/ReferenceFormulation" title="http://w3id.org/rml/ReferenceFormulation">Reference Formulation</a>
@@ -29,19 +31,19 @@ This section provides details for each class and property defined by RML Source 
          <a href="#http://w3id.org/rml/Target" title="http://w3id.org/rml/Target">Target</a>
       </li>
       <li>
-         <a href="#http://w3id.org/rml/TermMap" title="http://w3id.org/rml/TermMap">Term Map</a>
-      </li>
-      <li>
-         <a href="#http://w3id.org/rml/TriplesMap" title="http://w3id.org/rml/TriplesMap">Triples Map</a>
+         <a href="#http://w3id.org/rml/XPathReferenceFormulation" title="http://w3id.org/rml/XPathReferenceFormulation">XPath Reference Formulation</a>
       </li>
    </ul>
-   <div class="entity" id="http://semweb.mmlab.be/ns/rml-compression#Compression">
-      <h3>Compression<sup class="type-c" title="class">c</sup>
+   <div class="entity" id="http://w3id.org/rml/Compression">
+      <h3>compression class<sup class="type-c" title="class">c</sup>
          <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
          </span>
       </h3>
       <p>
-         <strong>IRI:</strong> http://semweb.mmlab.be/ns/rml-compression#Compression</p>
+         <strong>IRI:</strong> http://w3id.org/rml/Compression</p>
+      <div class="comment">
+         <span class="markdown">Represents file compression schemes.</span>
+      </div>
       <dl class="definedBy">
          <dt>Is defined by</dt>
          <dd>
@@ -54,35 +56,76 @@ This section provides details for each class and property defined by RML Source 
             <a href="#http://w3id.org/rml/compression" title="http://w3id.org/rml/compression">compression</a>
             <sup class="type-op" title="object property">op</sup>
          </dd>
+         <dt>has members</dt>
+         <dd>
+            <a href="#http://w3id.org/rml/gzip" title="http://w3id.org/rml/gzip">GZip</a>
+            <sup class="type-ni" title="named individual">ni</sup>, <a href="#http://w3id.org/rml/targzip" title="http://w3id.org/rml/targzip">TarGZip</a>
+            <sup class="type-ni" title="named individual">ni</sup>, <a href="#http://w3id.org/rml/tarxz" title="http://w3id.org/rml/tarxz">TarXz</a>
+            <sup class="type-ni" title="named individual">ni</sup>, <a href="#http://w3id.org/rml/zip" title="http://w3id.org/rml/zip">Zip</a>
+            <sup class="type-ni" title="named individual">ni</sup>
+         </dd>
       </dl>
    </div>
-   <div class="entity" id="http://semweb.mmlab.be/ns/rml-encoding#Encoding">
-      <h3>Encoding<sup class="type-c" title="class">c</sup>
+   <div class="entity" id="http://w3id.org/rml/Encoding">
+      <h3>Encoding class<sup class="type-c" title="class">c</sup>
          <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
          </span>
       </h3>
       <p>
-         <strong>IRI:</strong> http://semweb.mmlab.be/ns/rml-encoding#Encoding</p>
+         <strong>IRI:</strong> http://w3id.org/rml/Encoding</p>
+      <div class="comment">
+         <span class="markdown">Represents encoding formats.</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>
+            <a href="http://w3id.org/rml/io/">http://w3id.org/rml/io/</a>
+         </dd>
+      </dl>
       <dl class="description">
          <dt>is in range of</dt>
          <dd>
             <a href="#http://w3id.org/rml/encoding" title="http://w3id.org/rml/encoding">encoding</a>
             <sup class="type-op" title="object property">op</sup>
          </dd>
+         <dt>has members</dt>
+         <dd>
+            <a href="#http://w3id.org/rml/UTF-16" title="http://w3id.org/rml/UTF-16">UTF-16</a>
+            <sup class="type-ni" title="named individual">ni</sup>, <a href="#http://w3id.org/rml/UTF-8" title="http://w3id.org/rml/UTF-8">UTF-8</a>
+            <sup class="type-ni" title="named individual">ni</sup>
+         </dd>
       </dl>
    </div>
-   <div class="entity" id="https://www.w3.org/ns/formats/Format">
+   <div class="entity" id="http://w3id.org/rml/Format">
       <h3>Format<sup class="type-c" title="class">c</sup>
          <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
          </span>
       </h3>
       <p>
-         <strong>IRI:</strong> https://www.w3.org/ns/formats/Format</p>
+         <strong>IRI:</strong> http://w3id.org/rml/Format</p>
+      <div class="comment">
+         <span class="markdown">Represents serialization formats.</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>
+            <a href="http://w3id.org/rml/io/">http://w3id.org/rml/io/</a>
+         </dd>
+      </dl>
       <dl class="description">
          <dt>is in range of</dt>
          <dd>
             <a href="#http://w3id.org/rml/serialization" title="http://w3id.org/rml/serialization">serialization</a>
             <sup class="type-op" title="object property">op</sup>
+         </dd>
+         <dt>has members</dt>
+         <dd>
+            <a href="#http://w3id.org/rml/JSON-LD" title="http://w3id.org/rml/JSON-LD">JSON-LD</a>
+            <sup class="type-ni" title="named individual">ni</sup>, <a href="#http://w3id.org/rml/N-Quads" title="http://w3id.org/rml/N-Quads">N-Quads</a>
+            <sup class="type-ni" title="named individual">ni</sup>, <a href="#http://w3id.org/rml/N-Triples" title="http://w3id.org/rml/N-Triples">N-Triples</a>
+            <sup class="type-ni" title="named individual">ni</sup>, <a href="#http://w3id.org/rml/SPARQL_Results_CSV" title="http://w3id.org/rml/SPARQL_Results_CSV">SPARQL results CSV</a>
+            <sup class="type-ni" title="named individual">ni</sup>, <a href="#http://w3id.org/rml/Turtle" title="http://w3id.org/rml/Turtle">Turtle</a>
+            <sup class="type-ni" title="named individual">ni</sup>
          </dd>
       </dl>
    </div>
@@ -93,6 +136,9 @@ This section provides details for each class and property defined by RML Source 
       </h3>
       <p>
          <strong>IRI:</strong> http://w3id.org/rml/LogicalSource</p>
+      <div class="comment">
+         <span class="markdown">Denotes a logical source.</span>
+      </div>
       <dl class="definedBy">
          <dt>Is defined by</dt>
          <dd>
@@ -107,11 +153,6 @@ This section provides details for each class and property defined by RML Source 
             <sup class="type-op" title="object property">op</sup>, <a href="#http://w3id.org/rml/source" title="http://w3id.org/rml/source">source</a>
             <sup class="type-op" title="object property">op</sup>
          </dd>
-         <dt>is in range of</dt>
-         <dd>
-            <a href="#http://w3id.org/rml/logicalSource" title="http://w3id.org/rml/logicalSource">logical source</a>
-            <sup class="type-op" title="object property">op</sup>
-         </dd>
       </dl>
    </div>
    <div class="entity" id="http://w3id.org/rml/LogicalTarget">
@@ -121,6 +162,9 @@ This section provides details for each class and property defined by RML Source 
       </h3>
       <p>
          <strong>IRI:</strong> http://w3id.org/rml/LogicalTarget</p>
+      <div class="comment">
+         <span class="markdown">Denotes a logical target.</span>
+      </div>
       <dl class="definedBy">
          <dt>Is defined by</dt>
          <dd>
@@ -134,9 +178,34 @@ This section provides details for each class and property defined by RML Source 
             <sup class="type-op" title="object property">op</sup>, <a href="#http://w3id.org/rml/target" title="http://w3id.org/rml/target">target</a>
             <sup class="type-op" title="object property">op</sup>
          </dd>
+      </dl>
+   </div>
+   <div class="entity" id="http://w3id.org/rml/Namespace">
+      <h3>Namespace<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://w3id.org/rml/Namespace</p>
+      <div class="comment">
+         <span class="markdown">Denotes a namespace</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>
+            <a href="http://w3id.org/rml/io/">http://w3id.org/rml/io/</a>
+         </dd>
+      </dl>
+      <dl class="description">
+         <dt>is in domain of</dt>
+         <dd>
+            <a href="#http://w3id.org/rml/namespaceURL" title="http://w3id.org/rml/namespaceURL">namespace URL</a>
+            <sup class="type-dp" title="data property">dp</sup>, <a href="#http://w3id.org/rml/namespacePrefix" title="http://w3id.org/rml/namespacePrefix">namespace prefix</a>
+            <sup class="type-dp" title="data property">dp</sup>
+         </dd>
          <dt>is in range of</dt>
          <dd>
-            <a href="#http://w3id.org/rml/logicalTarget" title="http://w3id.org/rml/logicalTarget">logical target</a>
+            <a href="#http://w3id.org/rml/namespace" title="http://w3id.org/rml/namespace">namespace</a>
             <sup class="type-op" title="object property">op</sup>
          </dd>
       </dl>
@@ -148,6 +217,9 @@ This section provides details for each class and property defined by RML Source 
       </h3>
       <p>
          <strong>IRI:</strong> http://w3id.org/rml/ReferenceFormulation</p>
+      <div class="comment">
+         <span class="markdown">Denotes a Reference Formulation.</span>
+      </div>
       <dl class="definedBy">
          <dt>Is defined by</dt>
          <dd>
@@ -155,6 +227,11 @@ This section provides details for each class and property defined by RML Source 
          </dd>
       </dl>
       <dl class="description">
+         <dt>has sub-classes</dt>
+         <dd>
+            <a href="#http://w3id.org/rml/XPathReferenceFormulation" title="http://w3id.org/rml/XPathReferenceFormulation">XPath Reference Formulation</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
          <dt>is in range of</dt>
          <dd>
             <a href="#http://w3id.org/rml/referenceFormulation" title="http://w3id.org/rml/referenceFormulation">reference formulation</a>
@@ -162,9 +239,10 @@ This section provides details for each class and property defined by RML Source 
          </dd>
          <dt>has members</dt>
          <dd>
-            <a href="#http://semweb.mmlab.be/ns/ql#CSV" title="http://semweb.mmlab.be/ns/ql#CSV">c s v</a>
-            <sup class="type-ni" title="named individual">ni</sup>, <a href="#http://semweb.mmlab.be/ns/ql#JSONPath" title="http://semweb.mmlab.be/ns/ql#JSONPath">j s o n path</a>
-            <sup class="type-ni" title="named individual">ni</sup>, <a href="#http://semweb.mmlab.be/ns/ql#XPath" title="http://semweb.mmlab.be/ns/ql#XPath">x path</a>
+            <a href="#http://w3id.org/rml/CSV" title="http://w3id.org/rml/CSV">CSV</a>
+            <sup class="type-ni" title="named individual">ni</sup>, <a href="#http://w3id.org/rml/JSONPath" title="http://w3id.org/rml/JSONPath">JSONPath</a>
+            <sup class="type-ni" title="named individual">ni</sup>, <a href="#http://w3id.org/rml/SQL2008" title="http://w3id.org/rml/SQL2008">SQL 2008</a>
+            <sup class="type-ni" title="named individual">ni</sup>, <a href="#http://w3id.org/rml/XPath" title="http://w3id.org/rml/XPath">XPath</a>
             <sup class="type-ni" title="named individual">ni</sup>
          </dd>
       </dl>
@@ -176,6 +254,9 @@ This section provides details for each class and property defined by RML Source 
       </h3>
       <p>
          <strong>IRI:</strong> http://w3id.org/rml/Source</p>
+      <div class="comment">
+         <span class="markdown">Denotes a source.</span>
+      </div>
       <dl class="definedBy">
          <dt>Is defined by</dt>
          <dd>
@@ -203,6 +284,9 @@ This section provides details for each class and property defined by RML Source 
       </h3>
       <p>
          <strong>IRI:</strong> http://w3id.org/rml/Target</p>
+      <div class="comment">
+         <span class="markdown">Denotes a target.</span>
+      </div>
       <dl class="definedBy">
          <dt>Is defined by</dt>
          <dd>
@@ -217,57 +301,31 @@ This section provides details for each class and property defined by RML Source 
          </dd>
       </dl>
    </div>
-   <div class="entity" id="http://w3id.org/rml/TermMap">
-      <h3>Term Map<sup class="type-c" title="class">c</sup>
+   <div class="entity" id="http://w3id.org/rml/XPathReferenceFormulation">
+      <h3>XPath Reference Formulation<sup class="type-c" title="class">c</sup>
          <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
          </span>
       </h3>
       <p>
-         <strong>IRI:</strong> http://w3id.org/rml/TermMap</p>
+         <strong>IRI:</strong> http://w3id.org/rml/XPathReferenceFormulation</p>
       <div class="comment">
-         <span class="markdown">A function that generates an RDF term from a logical table row.</span>
+         <span class="markdown">Denotes a XPath Reference Formulation.</span>
       </div>
       <dl class="definedBy">
          <dt>Is defined by</dt>
          <dd>
-            <a href="http://w3id.org/rml/core/">http://w3id.org/rml/core/</a>
-         </dd>
-      </dl>
-      <dl class="description">
-         <dt>is in domain of</dt>
-         <dd>
-            <a href="#http://w3id.org/rml/logicalTarget" title="http://w3id.org/rml/logicalTarget">logical target</a>
-            <sup class="type-op" title="object property">op</sup>
-         </dd>
-      </dl>
-   </div>
-   <div class="entity" id="http://w3id.org/rml/TriplesMap">
-      <h3>Triples Map<sup class="type-c" title="class">c</sup>
-         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
-         </span>
-      </h3>
-      <p>
-         <strong>IRI:</strong> http://w3id.org/rml/TriplesMap</p>
-      <div class="comment">
-         <span class="markdown">Represents a triples map.</span>
-      </div>
-      <dl class="definedBy">
-         <dt>Is defined by</dt>
-         <dd>
-            <a href="http://w3id.org/rml/core/">http://w3id.org/rml/core/</a>
+            <a href="http://w3id.org/rml/io/">http://w3id.org/rml/io/</a>
          </dd>
       </dl>
       <dl class="description">
          <dt>has super-classes</dt>
          <dd>
-            <a href="http://www.w3.org/2002/07/owl#Thing"
-               target="_blank"
-               title="http://www.w3.org/2002/07/owl#Thing">thing</a>
+            <a href="#http://w3id.org/rml/ReferenceFormulation" title="http://w3id.org/rml/ReferenceFormulation">Reference Formulation</a>
             <sup class="type-c" title="class">c</sup>
          </dd>
          <dt>is in domain of</dt>
          <dd>
-            <a href="#http://w3id.org/rml/logicalSource" title="http://w3id.org/rml/logicalSource">logical source</a>
+            <a href="#http://w3id.org/rml/namespace" title="http://w3id.org/rml/namespace">namespace</a>
             <sup class="type-op" title="object property">op</sup>
          </dd>
       </dl>
@@ -285,10 +343,7 @@ This section provides details for each class and property defined by RML Source 
          <a href="#http://w3id.org/rml/iterator" title="http://w3id.org/rml/iterator">iterator</a>
       </li>
       <li>
-         <a href="#http://w3id.org/rml/logicalSource" title="http://w3id.org/rml/logicalSource">logical source</a>
-      </li>
-      <li>
-         <a href="#http://w3id.org/rml/logicalTarget" title="http://w3id.org/rml/logicalTarget">logical target</a>
+         <a href="#http://w3id.org/rml/namespace" title="http://w3id.org/rml/namespace">namespace</a>
       </li>
       <li>
          <a href="#http://w3id.org/rml/null" title="http://w3id.org/rml/null">null</a>
@@ -317,8 +372,14 @@ This section provides details for each class and property defined by RML Source 
       <p>
          <strong>IRI:</strong> http://w3id.org/rml/compression</p>
       <div class="comment">
-         <span class="markdown"/>
+         <span class="markdown">Defines the compression format of a Source or Target.</span>
       </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>
+            <a href="http://w3id.org/rml/io/">http://w3id.org/rml/io/</a>
+         </dd>
+      </dl>
       <div class="description">
          <dl>
             <dt>has domain</dt>
@@ -331,8 +392,7 @@ This section provides details for each class and property defined by RML Source 
             </dd>
             <dt>has range</dt>
             <dd>
-               <a href="#http://semweb.mmlab.be/ns/rml-compression#Compression"
-                  title="http://semweb.mmlab.be/ns/rml-compression#Compression">Compression</a>
+               <a href="#http://w3id.org/rml/Compression" title="http://w3id.org/rml/Compression">compression class</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
          </dl>
@@ -346,8 +406,14 @@ This section provides details for each class and property defined by RML Source 
       <p>
          <strong>IRI:</strong> http://w3id.org/rml/encoding</p>
       <div class="comment">
-         <span class="markdown"/>
+         <span class="markdown">Defines the encoding format of a Source or Target.</span>
       </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>
+            <a href="http://w3id.org/rml/io/">http://w3id.org/rml/io/</a>
+         </dd>
+      </dl>
       <div class="description">
          <dl>
             <dt>has domain</dt>
@@ -360,7 +426,7 @@ This section provides details for each class and property defined by RML Source 
             </dd>
             <dt>has range</dt>
             <dd>
-               <a href="#http://semweb.mmlab.be/ns/rml-encoding#Encoding" title="http://semweb.mmlab.be/ns/rml-encoding#Encoding">Encoding</a>
+               <a href="#http://w3id.org/rml/Encoding" title="http://w3id.org/rml/Encoding">Encoding class</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
          </dl>
@@ -374,8 +440,14 @@ This section provides details for each class and property defined by RML Source 
       <p>
          <strong>IRI:</strong> http://w3id.org/rml/iterator</p>
       <div class="comment">
-         <span class="markdown"/>
+         <span class="markdown">An expression qualified according to the reference formulation specified for pointing to an extract of the source data. </span>
       </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>
+            <a href="http://w3id.org/rml/io/">http://w3id.org/rml/io/</a>
+         </dd>
+      </dl>
       <div class="description">
          <dl>
             <dt>has domain</dt>
@@ -393,63 +465,32 @@ This section provides details for each class and property defined by RML Source 
          </dl>
       </div>
    </div>
-   <div class="entity" id="http://w3id.org/rml/logicalSource">
-      <h3>logical source<sup class="type-op" title="object property">op</sup>
+   <div class="entity" id="http://w3id.org/rml/namespace">
+      <h3>namespace<sup class="type-op" title="object property">op</sup>
          <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
          </span>
       </h3>
       <p>
-         <strong>IRI:</strong> http://w3id.org/rml/logicalSource</p>
+         <strong>IRI:</strong> http://w3id.org/rml/namespace</p>
       <div class="comment">
-         <span class="markdown">Represents the logical source to be mapped. This can be a pointer to any dataset.</span>
+         <span class="markdown">A namespace for describing a XPath reference formulation.</span>
       </div>
       <dl class="definedBy">
          <dt>Is defined by</dt>
          <dd>
-            <a href="http://w3id.org/rml/core/">http://w3id.org/rml/core/</a>
+            <a href="http://w3id.org/rml/io/">http://w3id.org/rml/io/</a>
          </dd>
       </dl>
       <div class="description">
          <dl>
             <dt>has domain</dt>
             <dd>
-               <a href="#http://w3id.org/rml/TriplesMap" title="http://w3id.org/rml/TriplesMap">Triples Map</a>
+               <a href="#http://w3id.org/rml/XPathReferenceFormulation" title="http://w3id.org/rml/XPathReferenceFormulation">XPath Reference Formulation</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
             <dt>has range</dt>
             <dd>
-               <a href="#http://w3id.org/rml/LogicalSource" title="http://w3id.org/rml/LogicalSource">Logical Source</a>
-               <sup class="type-c" title="class">c</sup>
-            </dd>
-         </dl>
-      </div>
-   </div>
-   <div class="entity" id="http://w3id.org/rml/logicalTarget">
-      <h3>logical target<sup class="type-op" title="object property">op</sup>
-         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
-         </span>
-      </h3>
-      <p>
-         <strong>IRI:</strong> http://w3id.org/rml/logicalTarget</p>
-      <div class="comment">
-         <span class="markdown">Represents the logical target to where triples are exported to. This can be a pointer to any dataset.</span>
-      </div>
-      <dl class="definedBy">
-         <dt>Is defined by</dt>
-         <dd>
-            <a href="http://w3id.org/rml/core/">http://w3id.org/rml/core/</a>
-         </dd>
-      </dl>
-      <div class="description">
-         <dl>
-            <dt>has domain</dt>
-            <dd>
-               <a href="#http://w3id.org/rml/TermMap" title="http://w3id.org/rml/TermMap">Term Map</a>
-               <sup class="type-c" title="class">c</sup>
-            </dd>
-            <dt>has range</dt>
-            <dd>
-               <a href="#http://w3id.org/rml/LogicalTarget" title="http://w3id.org/rml/LogicalTarget">LogicalTarget</a>
+               <a href="#http://w3id.org/rml/Namespace" title="http://w3id.org/rml/Namespace">Namespace</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
          </dl>
@@ -463,8 +504,14 @@ This section provides details for each class and property defined by RML Source 
       <p>
          <strong>IRI:</strong> http://w3id.org/rml/null</p>
       <div class="comment">
-         <span class="markdown"/>
+         <span class="markdown">Describes which data values inside the source should be considered as NULL.</span>
       </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>
+            <a href="http://w3id.org/rml/io/">http://w3id.org/rml/io/</a>
+         </dd>
+      </dl>
       <div class="description">
          <dl>
             <dt>has domain</dt>
@@ -490,8 +537,14 @@ This section provides details for each class and property defined by RML Source 
       <p>
          <strong>IRI:</strong> http://w3id.org/rml/query</p>
       <div class="comment">
-         <span class="markdown"/>
+         <span class="markdown">Defines which query should be applied on the source during access</span>
       </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>
+            <a href="http://w3id.org/rml/io/">http://w3id.org/rml/io/</a>
+         </dd>
+      </dl>
       <div class="description">
          <dl>
             <dt>has domain</dt>
@@ -517,8 +570,14 @@ This section provides details for each class and property defined by RML Source 
       <p>
          <strong>IRI:</strong> http://w3id.org/rml/referenceFormulation</p>
       <div class="comment">
-         <span class="markdown"/>
+         <span class="markdown">The reference formulation used to refer to extracts of the source data. </span>
       </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>
+            <a href="http://w3id.org/rml/io/">http://w3id.org/rml/io/</a>
+         </dd>
+      </dl>
       <div class="description">
          <dl>
             <dt>has domain</dt>
@@ -542,8 +601,14 @@ This section provides details for each class and property defined by RML Source 
       <p>
          <strong>IRI:</strong> http://w3id.org/rml/serialization</p>
       <div class="comment">
-         <span class="markdown"/>
+         <span class="markdown">Defines the serialization to generate the target output.</span>
       </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>
+            <a href="http://w3id.org/rml/io/">http://w3id.org/rml/io/</a>
+         </dd>
+      </dl>
       <div class="description">
          <dl>
             <dt>has domain</dt>
@@ -553,7 +618,7 @@ This section provides details for each class and property defined by RML Source 
             </dd>
             <dt>has range</dt>
             <dd>
-               <a href="#https://www.w3.org/ns/formats/Format" title="https://www.w3.org/ns/formats/Format">Format</a>
+               <a href="#http://w3id.org/rml/Format" title="http://w3id.org/rml/Format">Format</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
          </dl>
@@ -567,8 +632,14 @@ This section provides details for each class and property defined by RML Source 
       <p>
          <strong>IRI:</strong> http://w3id.org/rml/source</p>
       <div class="comment">
-         <span class="markdown"/>
+         <span class="markdown">Defines the source that describe the input data.</span>
       </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>
+            <a href="http://w3id.org/rml/io/">http://w3id.org/rml/io/</a>
+         </dd>
+      </dl>
       <div class="description">
          <dl>
             <dt>has domain</dt>
@@ -592,8 +663,14 @@ This section provides details for each class and property defined by RML Source 
       <p>
          <strong>IRI:</strong> http://w3id.org/rml/target</p>
       <div class="comment">
-         <span class="markdown"/>
+         <span class="markdown">Defines the target that describe the output data.</span>
       </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>
+            <a href="http://w3id.org/rml/io/">http://w3id.org/rml/io/</a>
+         </dd>
+      </dl>
       <div class="description">
          <dl>
             <dt>has domain</dt>
@@ -609,32 +686,139 @@ This section provides details for each class and property defined by RML Source 
          </dl>
       </div>
    </div>
+</div><div xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="dataproperties">
+   <h3 id="dataproperties-headline" class="list">Data Properties</h3>
+   <ul class="hlist">
+      <li>
+         <a href="#http://w3id.org/rml/namespacePrefix" title="http://w3id.org/rml/namespacePrefix">namespace prefix</a>
+      </li>
+      <li>
+         <a href="#http://w3id.org/rml/namespaceURL" title="http://w3id.org/rml/namespaceURL">namespace URL</a>
+      </li>
+   </ul>
+   <div class="entity" id="http://w3id.org/rml/namespacePrefix">
+      <h3>namespace prefix<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://w3id.org/rml/namespacePrefix</p>
+      <div class="comment">
+         <span class="markdown">Describes the prefix of a namespace.</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>
+            <a href="http://w3id.org/rml/io/">http://w3id.org/rml/io/</a>
+         </dd>
+      </dl>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#http://w3id.org/rml/Namespace" title="http://w3id.org/rml/Namespace">Namespace</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="http://www.w3.org/2001/XMLSchema#string"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#string">string</a>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="http://w3id.org/rml/namespaceURL">
+      <h3>namespace URL<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://w3id.org/rml/namespaceURL</p>
+      <div class="comment">
+         <span class="markdown">Describes the URL of a namespace.</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>
+            <a href="http://w3id.org/rml/io/">http://w3id.org/rml/io/</a>
+         </dd>
+      </dl>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#http://w3id.org/rml/Namespace" title="http://w3id.org/rml/Namespace">Namespace</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
 </div><div xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="namedindividuals">
    <h3 id="namedindividuals" class="list">Named Individuals</h3>
    <ul class="hlist">
       <li>
-         <a href="#http://semweb.mmlab.be/ns/ql#CSV" title="http://semweb.mmlab.be/ns/ql#CSV">
-            <span>c s v</span>
-         </a>
+         <a href="#http://w3id.org/rml/CSV" title="http://w3id.org/rml/CSV">CSV</a>
       </li>
       <li>
-         <a href="#http://semweb.mmlab.be/ns/ql#JSONPath" title="http://semweb.mmlab.be/ns/ql#JSONPath">
-            <span>j s o n path</span>
-         </a>
+         <a href="#http://w3id.org/rml/gzip" title="http://w3id.org/rml/gzip">GZip</a>
       </li>
       <li>
-         <a href="#http://semweb.mmlab.be/ns/ql#XPath" title="http://semweb.mmlab.be/ns/ql#XPath">
-            <span>x path</span>
-         </a>
+         <a href="#http://w3id.org/rml/JSON-LD" title="http://w3id.org/rml/JSON-LD">JSON-LD</a>
+      </li>
+      <li>
+         <a href="#http://w3id.org/rml/JSONPath" title="http://w3id.org/rml/JSONPath">JSONPath</a>
+      </li>
+      <li>
+         <a href="#http://w3id.org/rml/N-Quads" title="http://w3id.org/rml/N-Quads">N-Quads</a>
+      </li>
+      <li>
+         <a href="#http://w3id.org/rml/N-Triples" title="http://w3id.org/rml/N-Triples">N-Triples</a>
+      </li>
+      <li>
+         <a href="#http://w3id.org/rml/SPARQL_Results_CSV" title="http://w3id.org/rml/SPARQL_Results_CSV">SPARQL results CSV</a>
+      </li>
+      <li>
+         <a href="#http://w3id.org/rml/SQL2008" title="http://w3id.org/rml/SQL2008">SQL 2008</a>
+      </li>
+      <li>
+         <a href="#http://w3id.org/rml/targzip" title="http://w3id.org/rml/targzip">TarGZip</a>
+      </li>
+      <li>
+         <a href="#http://w3id.org/rml/tarxz" title="http://w3id.org/rml/tarxz">TarXz</a>
+      </li>
+      <li>
+         <a href="#http://w3id.org/rml/Turtle" title="http://w3id.org/rml/Turtle">Turtle</a>
+      </li>
+      <li>
+         <a href="#http://w3id.org/rml/UTF-16" title="http://w3id.org/rml/UTF-16">UTF-16</a>
+      </li>
+      <li>
+         <a href="#http://w3id.org/rml/UTF-8" title="http://w3id.org/rml/UTF-8">UTF-8</a>
+      </li>
+      <li>
+         <a href="#http://w3id.org/rml/XPath" title="http://w3id.org/rml/XPath">XPath</a>
+      </li>
+      <li>
+         <a href="#http://w3id.org/rml/zip" title="http://w3id.org/rml/zip">Zip</a>
       </li>
    </ul>
-   <div class="entity" id="http://semweb.mmlab.be/ns/ql#CSV">
-      <h3>c s v<sup class="type-ni" title="named individual">ni</sup>
+   <div class="entity" id="http://w3id.org/rml/CSV">
+      <h3>CSV<sup class="type-ni" title="named individual">ni</sup>
          <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
          </span>
       </h3>
       <p>
-         <strong>IRI:</strong> http://semweb.mmlab.be/ns/ql#CSV</p>
+         <strong>IRI:</strong> http://w3id.org/rml/CSV</p>
+      <div class="comment">
+         <span class="markdown">Denotes that the CSV file's column names are used for referring to extracts of CSV resources.</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>
+            <a href="http://w3id.org/rml/io/">http://w3id.org/rml/io/</a>
+         </dd>
+      </dl>
       <dl class="description">
          <dt>belongs to</dt>
          <dd>
@@ -643,13 +827,70 @@ This section provides details for each class and property defined by RML Source 
          </dd>
       </dl>
    </div>
-   <div class="entity" id="http://semweb.mmlab.be/ns/ql#JSONPath">
-      <h3>j s o n path<sup class="type-ni" title="named individual">ni</sup>
+   <div class="entity" id="http://w3id.org/rml/gzip">
+      <h3>GZip<sup class="type-ni" title="named individual">ni</sup>
          <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
          </span>
       </h3>
       <p>
-         <strong>IRI:</strong> http://semweb.mmlab.be/ns/ql#JSONPath</p>
+         <strong>IRI:</strong> http://w3id.org/rml/gzip</p>
+      <div class="comment">
+         <span class="markdown">Represents GZip file compression.</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>
+            <a href="http://w3id.org/rml/io/">http://w3id.org/rml/io/</a>
+         </dd>
+      </dl>
+      <dl class="description">
+         <dt>belongs to</dt>
+         <dd>
+            <a href="#http://w3id.org/rml/Compression" title="http://w3id.org/rml/Compression">compression class</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="http://w3id.org/rml/JSON-LD">
+      <h3>JSON-LD<sup class="type-ni" title="named individual">ni</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://w3id.org/rml/JSON-LD</p>
+      <div class="comment">
+         <span class="markdown">Represents the JSON-LD serialization.</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>
+            <a href="http://w3id.org/rml/io/">http://w3id.org/rml/io/</a>
+         </dd>
+      </dl>
+      <dl class="description">
+         <dt>belongs to</dt>
+         <dd>
+            <a href="#http://w3id.org/rml/Format" title="http://w3id.org/rml/Format">Format</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="http://w3id.org/rml/JSONPath">
+      <h3>JSONPath<sup class="type-ni" title="named individual">ni</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://w3id.org/rml/JSONPath</p>
+      <div class="comment">
+         <span class="markdown">Denotes the JSONPath reference formulation, used for referring to extracts of JSON sources.</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>
+            <a href="http://w3id.org/rml/io/">http://w3id.org/rml/io/</a>
+         </dd>
+      </dl>
       <dl class="description">
          <dt>belongs to</dt>
          <dd>
@@ -658,17 +899,266 @@ This section provides details for each class and property defined by RML Source 
          </dd>
       </dl>
    </div>
-   <div class="entity" id="http://semweb.mmlab.be/ns/ql#XPath">
-      <h3>x path<sup class="type-ni" title="named individual">ni</sup>
+   <div class="entity" id="http://w3id.org/rml/N-Quads">
+      <h3>N-Quads<sup class="type-ni" title="named individual">ni</sup>
          <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
          </span>
       </h3>
       <p>
-         <strong>IRI:</strong> http://semweb.mmlab.be/ns/ql#XPath</p>
+         <strong>IRI:</strong> http://w3id.org/rml/N-Quads</p>
+      <div class="comment">
+         <span class="markdown">Represents the N-Quads serialization.</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>
+            <a href="http://w3id.org/rml/io/">http://w3id.org/rml/io/</a>
+         </dd>
+      </dl>
+      <dl class="description">
+         <dt>belongs to</dt>
+         <dd>
+            <a href="#http://w3id.org/rml/Format" title="http://w3id.org/rml/Format">Format</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="http://w3id.org/rml/N-Triples">
+      <h3>N-Triples<sup class="type-ni" title="named individual">ni</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://w3id.org/rml/N-Triples</p>
+      <div class="comment">
+         <span class="markdown">Represents the N-Triples serialization.</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>
+            <a href="http://w3id.org/rml/io/">http://w3id.org/rml/io/</a>
+         </dd>
+      </dl>
+      <dl class="description">
+         <dt>belongs to</dt>
+         <dd>
+            <a href="#http://w3id.org/rml/Format" title="http://w3id.org/rml/Format">Format</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="http://w3id.org/rml/SPARQL_Results_CSV">
+      <h3>SPARQL results CSV<sup class="type-ni" title="named individual">ni</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://w3id.org/rml/SPARQL_Results_CSV</p>
+      <div class="comment">
+         <span class="markdown">Represents the SPARQL results CSV serialization.</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>
+            <a href="http://w3id.org/rml/io/">http://w3id.org/rml/io/</a>
+         </dd>
+      </dl>
+      <dl class="description">
+         <dt>belongs to</dt>
+         <dd>
+            <a href="#http://w3id.org/rml/Format" title="http://w3id.org/rml/Format">Format</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="http://w3id.org/rml/SQL2008">
+      <h3>SQL 2008<sup class="type-ni" title="named individual">ni</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://w3id.org/rml/SQL2008</p>
+      <div class="comment">
+         <span class="markdown">Denotes the Core SQL 2008.</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>
+            <a href="http://w3id.org/rml/io/">http://w3id.org/rml/io/</a>
+         </dd>
+      </dl>
       <dl class="description">
          <dt>belongs to</dt>
          <dd>
             <a href="#http://w3id.org/rml/ReferenceFormulation" title="http://w3id.org/rml/ReferenceFormulation">Reference Formulation</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="http://w3id.org/rml/targzip">
+      <h3>TarGZip<sup class="type-ni" title="named individual">ni</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://w3id.org/rml/targzip</p>
+      <div class="comment">
+         <span class="markdown">Represents TarGZip file compression.</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>
+            <a href="http://w3id.org/rml/io/">http://w3id.org/rml/io/</a>
+         </dd>
+      </dl>
+      <dl class="description">
+         <dt>belongs to</dt>
+         <dd>
+            <a href="#http://w3id.org/rml/Compression" title="http://w3id.org/rml/Compression">compression class</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="http://w3id.org/rml/tarxz">
+      <h3>TarXz<sup class="type-ni" title="named individual">ni</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://w3id.org/rml/tarxz</p>
+      <div class="comment">
+         <span class="markdown">Represents TarXz file compression.</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>
+            <a href="http://w3id.org/rml/io/">http://w3id.org/rml/io/</a>
+         </dd>
+      </dl>
+      <dl class="description">
+         <dt>belongs to</dt>
+         <dd>
+            <a href="#http://w3id.org/rml/Compression" title="http://w3id.org/rml/Compression">compression class</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="http://w3id.org/rml/Turtle">
+      <h3>Turtle<sup class="type-ni" title="named individual">ni</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://w3id.org/rml/Turtle</p>
+      <div class="comment">
+         <span class="markdown">Represents the Turtle serialization.</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>
+            <a href="http://w3id.org/rml/io/">http://w3id.org/rml/io/</a>
+         </dd>
+      </dl>
+      <dl class="description">
+         <dt>belongs to</dt>
+         <dd>
+            <a href="#http://w3id.org/rml/Format" title="http://w3id.org/rml/Format">Format</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="http://w3id.org/rml/UTF-16">
+      <h3>UTF-16<sup class="type-ni" title="named individual">ni</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://w3id.org/rml/UTF-16</p>
+      <div class="comment">
+         <span class="markdown">Represents the UFT-16 encoding.</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>
+            <a href="http://w3id.org/rml/io/">http://w3id.org/rml/io/</a>
+         </dd>
+      </dl>
+      <dl class="description">
+         <dt>belongs to</dt>
+         <dd>
+            <a href="#http://w3id.org/rml/Encoding" title="http://w3id.org/rml/Encoding">Encoding class</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="http://w3id.org/rml/UTF-8">
+      <h3>UTF-8<sup class="type-ni" title="named individual">ni</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://w3id.org/rml/UTF-8</p>
+      <div class="comment">
+         <span class="markdown">Represents the UFT-8 encoding.</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>
+            <a href="http://w3id.org/rml/io/">http://w3id.org/rml/io/</a>
+         </dd>
+      </dl>
+      <dl class="description">
+         <dt>belongs to</dt>
+         <dd>
+            <a href="#http://w3id.org/rml/Encoding" title="http://w3id.org/rml/Encoding">Encoding class</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="http://w3id.org/rml/XPath">
+      <h3>XPath<sup class="type-ni" title="named individual">ni</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://w3id.org/rml/XPath</p>
+      <div class="comment">
+         <span class="markdown">Denotes the XPath reference formulation, used for referring to extracts of XML sources.</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>
+            <a href="http://w3id.org/rml/io/">http://w3id.org/rml/io/</a>
+         </dd>
+      </dl>
+      <dl class="description">
+         <dt>belongs to</dt>
+         <dd>
+            <a href="#http://w3id.org/rml/ReferenceFormulation" title="http://w3id.org/rml/ReferenceFormulation">Reference Formulation</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="http://w3id.org/rml/zip">
+      <h3>Zip<sup class="type-ni" title="named individual">ni</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://w3id.org/rml/zip</p>
+      <div class="comment">
+         <span class="markdown">Represents Zip file compression.</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>
+            <a href="http://w3id.org/rml/io/">http://w3id.org/rml/io/</a>
+         </dd>
+      </dl>
+      <dl class="description">
+         <dt>belongs to</dt>
+         <dd>
+            <a href="#http://w3id.org/rml/Compression" title="http://w3id.org/rml/Compression">compression class</a>
             <sup class="type-c" title="class">c</sup>
          </dd>
       </dl>
@@ -678,6 +1168,7 @@ This section provides details for each class and property defined by RML Source 
 <div   class="entity">
 <sup class="type-c" title="Classes">c</sup>: Classes <br/>
 <sup class="type-op" title="Object Properties">op</sup>: Object Properties <br/>
+<sup class="type-dp" title="Data Properties">dp</sup>: Data Properties <br/>
 <sup class="type-ni" title="Named Individuals">ni</sup>: Named Individuals
 </div>
 </div>
