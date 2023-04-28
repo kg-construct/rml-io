@@ -49,23 +49,23 @@ to the three specified Targets:
 </pre>
 
 <pre class="ex-mapping">
-&lt;#TriplesMap&gt; a rr:TriplesMap;
+&lt;#TriplesMap&gt; a rml:TriplesMap;
   rml:logicalSource [ a rml:LogicalSource;
     rml:source &lt;#DCATSourceAccess&gt;;
-    rml:referenceFormulation ql:JSONPath;
+    rml:referenceFormulation rml:JSONPath;
     rml:iterator "$.[*]";
   ];
-  rr:subjectMap [ a rr:SubjectMap;
-    rr:template "http://example.org/{@id}";
+  rml:subjectMap [ a rml:SubjectMap;
+    rml:template "http://example.org/{@id}";
     rml:logicalTarget <#TargetDump1>;
     rml:logicalTarget <#TargetDump2>;
     rml:logicalTarget <#TargetDump3>;
   ];
-  rr:predicateObjectMap [ a rr:PredicateObjectMap;
-    rr:predicateMap [ a rr:PredicateMap;
-      rr:constant foaf:name;
+  rml:predicateObjectMap [ a rml:PredicateObjectMap;
+    rml:predicateMap [ a rml:PredicateMap;
+      rml:constant foaf:name;
     ];
-    rr:objectMap [ a rr:ObjectMap;
+    rml:objectMap [ a rml:ObjectMap;
       rml:reference "name/text()";
     ];
   ];
@@ -90,15 +90,15 @@ to the three specified Targets:
 <pre class="ex-access">
 &lt;#VoIDDump1&gt; a rml:Target, void:Dataset;
   void:dataDump &lt;file:///data/dump1.nt.zip&gt;;
-  rml:compression comp:zip;
+  rml:compression rml:zip;
 .
 &lt;#VoIDDump2&gt; a rml:Target, void:Dataset;
   void:dataDump &lt;file:///data/dump2.jsonld.tar.xz&gt;;
-  rml:compression comp:tarxz;
+  rml:compression rml:tarxz;
 .
 &lt;#VoIDDump3&gt; a rml:Target, void:Dataset;
   void:dataDump &lt;file:///data/dump3.rdf.tar.gz&gt;;
-  rml:compression comp:targzip;
+  rml:compression rml:targzip;
 .
 </pre>
 
@@ -199,30 +199,30 @@ are exported to `TargetDump2`.
 </pre>
 
 <pre class="ex-mapping">
-&lt;#TriplesMap&gt; a rr:TriplesMap;
+&lt;#TriplesMap&gt; a rml:TriplesMap;
   rml:logicalSource [ a rml:LogicalSource;
     rml:source &lt;#DCATSourceAccess&gt;;
-    rml:referenceFormulation ql:JSONPath;
+    rml:referenceFormulation rml:JSONPath;
     rml:iterator "$.[*]";
   ];
-  rr:subjectMap [ a rr:SubjectMap;
-    rr:template "http://example.org/{@id}";
+  rml:subjectMap [ a rml:SubjectMap;
+    rml:template "http://example.org/{@id}";
     rml:logicalTarget <#TargetDump1>;
   ];
-  rr:predicateObjectMap [ a rr:PredicateObjectMap;
-    rr:predicateMap [ a rr:PredicateMap;
-      rr:constant foaf:name;
+  rml:predicateObjectMap [ a rml:PredicateObjectMap;
+    rml:predicateMap [ a rml:PredicateMap;
+      rml:constant foaf:name;
       rml:logicalTarget <#TargetDump2>;
     ];
-    rr:objectMap [ a rr:ObjectMap;
+    rml:objectMap [ a rml:ObjectMap;
       rml:reference "name/text()";
     ];
   ];
-  rr:predicateObjectMap [ a rr:PredicateObjectMap;
-    rr:predicateMap [ a rr:PredicateMap;
-      rr:constant foaf:nickname;
+  rml:predicateObjectMap [ a rml:PredicateObjectMap;
+    rml:predicateMap [ a rml:PredicateMap;
+      rml:constant foaf:nickname;
     ];
-    rr:objectMap [ a rr:ObjectMap;
+    rml:objectMap [ a rml:ObjectMap;
       rml:reference "nickname/text()";
     ];
   ];
@@ -302,30 +302,30 @@ are exported to `TargetDump2`.
 </pre>
 
 <pre class="ex-mapping">
-&lt;#TriplesMap&gt; a rr:TriplesMap;
+&lt;#TriplesMap&gt; a rml:TriplesMap;
   rml:logicalSource [ a rml:LogicalSource;
     rml:source &lt;#DCATSourceAccess&gt;;
-    rml:referenceFormulation ql:JSONPath;
+    rml:referenceFormulation rml:JSONPath;
     rml:iterator "$.[*]";
   ];
-  rr:subjectMap [ a rr:SubjectMap;
-    rr:template "http://example.org/{@id}";
+  rml:subjectMap [ a rml:SubjectMap;
+    rml:template "http://example.org/{@id}";
     rml:logicalTarget <#TargetDump1>;
   ];
-  rr:predicateObjectMap [ a rr:PredicateObjectMap;
-    rr:predicateMap [ a rr:PredicateMap;
-      rr:constant foaf:name;
+  rml:predicateObjectMap [ a rml:PredicateObjectMap;
+    rml:predicateMap [ a rml:PredicateMap;
+      rml:constant foaf:name;
     ];
-    rr:objectMap [ a rr:ObjectMap;
+    rml:objectMap [ a rml:ObjectMap;
       rml:reference "name/text()";
       rml:logicalTarget <#TargetDump2>;
     ];
   ];
-  rr:predicateObjectMap [ a rr:PredicateObjectMap;
-    rr:predicateMap [ a rr:PredicateMap;
-      rr:constant foaf:nickname;
+  rml:predicateObjectMap [ a rml:PredicateObjectMap;
+    rml:predicateMap [ a rml:PredicateMap;
+      rml:constant foaf:nickname;
     ];
-    rr:objectMap [ a rr:ObjectMap;
+    rml:objectMap [ a rml:ObjectMap;
       rml:reference "nickname/text()";
     ];
   ];
@@ -405,29 +405,29 @@ are exported to `TargetDump2`.
 </pre>
 
 <pre class="ex-mapping">
-&lt;#TriplesMap&gt; a rr:TriplesMap;
+&lt;#TriplesMap&gt; a rml:TriplesMap;
   rml:logicalSource [ a rml:LogicalSource;
     rml:source &lt;#DCATSourceAccess&gt;;
-    rml:referenceFormulation ql:JSONPath;
+    rml:referenceFormulation rml:JSONPath;
     rml:iterator "$.[*]";
   ];
-  rr:subjectMap [ a rr:SubjectMap;
-    rr:template "http://example.org/{@id}";
+  rml:subjectMap [ a rml:SubjectMap;
+    rml:template "http://example.org/{@id}";
   ];
-  rr:predicateObjectMap [ a rr:PredicateObjectMap;
-    rr:predicateMap [ a rr:PredicateMap;
-      rr:constant foaf:name;
+  rml:predicateObjectMap [ a rml:PredicateObjectMap;
+    rml:predicateMap [ a rml:PredicateMap;
+      rml:constant foaf:name;
       rml:logicalTarget <#TargetDump1>;
     ];
-    rr:objectMap [ a rr:ObjectMap;
+    rml:objectMap [ a rml:ObjectMap;
       rml:reference "name/text()";
     ];
   ];
-  rr:predicateObjectMap [ a rr:PredicateObjectMap;
-    rr:predicateMap [ a rr:PredicateMap;
-      rr:constant foaf:nickname;
+  rml:predicateObjectMap [ a rml:PredicateObjectMap;
+    rml:predicateMap [ a rml:PredicateMap;
+      rml:constant foaf:nickname;
     ];
-    rr:objectMap [ a rr:ObjectMap;
+    rml:objectMap [ a rml:ObjectMap;
       rml:reference "nickname/text()";
       rml:logicalTarget <#TargetDump2>;
     ];
@@ -504,30 +504,30 @@ predicate `foaf:nickname` are exported to `TargetDump2`.
 </pre>
 
 <pre class="ex-mapping">
-&lt;#TriplesMap&gt; a rr:TriplesMap;
+&lt;#TriplesMap&gt; a rml:TriplesMap;
   rml:logicalSource [ a rml:LogicalSource;
     rml:source &lt;#DCATSourceAccess&gt;;
-    rml:referenceFormulation ql:JSONPath;
+    rml:referenceFormulation rml:JSONPath;
     rml:iterator "$.[*]";
   ];
-  rr:subjectMap [ a rr:SubjectMap;
-    rr:template "http://example.org/{@id}";
+  rml:subjectMap [ a rml:SubjectMap;
+    rml:template "http://example.org/{@id}";
     rml:logicalTarget <#TargetDump1>;
   ];
-  rr:predicateObjectMap [ a rr:PredicateObjectMap;
-    rr:predicateMap [ a rr:PredicateMap;
-      rr:constant foaf:name;
+  rml:predicateObjectMap [ a rml:PredicateObjectMap;
+    rml:predicateMap [ a rml:PredicateMap;
+      rml:constant foaf:name;
     ];
-    rr:objectMap [ a rr:ObjectMap;
+    rml:objectMap [ a rml:ObjectMap;
       rml:reference "name/text()";
     ];
   ];
-  rr:predicateObjectMap [ a rr:PredicateObjectMap;
-    rr:predicateMap [ a rr:PredicateMap;
-      rr:constant foaf:nickname;
+  rml:predicateObjectMap [ a rml:PredicateObjectMap;
+    rml:predicateMap [ a rml:PredicateMap;
+      rml:constant foaf:nickname;
       rml:logicalTarget <#TargetDump2>;
     ];
-    rr:objectMap [ a rr:ObjectMap;
+    rml:objectMap [ a rml:ObjectMap;
       rml:reference "nickname/text()";
       rml:logicalTarget <#TargetDump2>;
     ];
@@ -608,33 +608,33 @@ are exported to `TargetDump2`.
 </pre>
 
 <pre class="ex-mapping">
-&lt;#TriplesMap&gt; a rr:TriplesMap;
+&lt;#TriplesMap&gt; a rml:TriplesMap;
   rml:logicalSource [ a rml:LogicalSource;
     rml:source &lt;#DCATSourceAccess&gt;;
-    rml:referenceFormulation ql:JSONPath;
+    rml:referenceFormulation rml:JSONPath;
     rml:iterator "$.[*]";
   ];
-  rr:subjectMap [ a rr:SubjectMap;
-    rr:template "http://example.org/{@id}";
+  rml:subjectMap [ a rml:SubjectMap;
+    rml:template "http://example.org/{@id}";
     rml:logicalTarget <#TargetDump1>;
   ];
-  rr:predicateObjectMap [ a rr:PredicateObjectMap;
-    rr:graphMap [ a rr:GraphMap;
+  rml:predicateObjectMap [ a rml:PredicateObjectMap;
+    rml:graphMap [ a rml:GraphMap;
       rml:logicalTarget <#TargetDump2>;
-      rr:constant ex:Characters;
+      rml:constant ex:Characters;
     ];
-    rr:predicateMap [ a rr:PredicateMap;
-      rr:constant foaf:name;
+    rml:predicateMap [ a rml:PredicateMap;
+      rml:constant foaf:name;
     ];
-    rr:objectMap [ a rr:ObjectMap;
+    rml:objectMap [ a rml:ObjectMap;
       rml:reference "name/text()";
     ];
   ];
-  rr:predicateObjectMap [ a rr:PredicateObjectMap;
-    rr:predicateMap [ a rr:PredicateMap;
-      rr:constant foaf:nickname;
+  rml:predicateObjectMap [ a rml:PredicateObjectMap;
+    rml:predicateMap [ a rml:PredicateMap;
+      rml:constant foaf:nickname;
     ];
-    rr:objectMap [ a rr:ObjectMap;
+    rml:objectMap [ a rml:ObjectMap;
       rml:reference "nickname/text()";
     ];
   ];
@@ -714,33 +714,33 @@ are exported to `TargetDump2`.
 </pre>
 
 <pre class="ex-mapping">
-&lt;#TriplesMap&gt; a rr:TriplesMap;
+&lt;#TriplesMap&gt; a rml:TriplesMap;
   rml:logicalSource [ a rml:LogicalSource;
     rml:source &lt;#DCATSourceAccess&gt;;
-    rml:referenceFormulation ql:JSONPath;
+    rml:referenceFormulation rml:JSONPath;
     rml:iterator "$.[*]";
   ];
-  rr:subjectMap [ a rr:SubjectMap;
-    rr:template "http://example.org/{@id}";
+  rml:subjectMap [ a rml:SubjectMap;
+    rml:template "http://example.org/{@id}";
   ];
-  rr:predicateObjectMap [ a rr:PredicateObjectMap;
-    rr:graphMap [ a rr:GraphMap;
+  rml:predicateObjectMap [ a rml:PredicateObjectMap;
+    rml:graphMap [ a rml:GraphMap;
       rml:logicalTarget <#TargetDump2>;
-      rr:constant ex:Characters;
+      rml:constant ex:Characters;
     ];
-    rr:predicateMap [ a rr:PredicateMap;
-      rr:constant foaf:name;
+    rml:predicateMap [ a rml:PredicateMap;
+      rml:constant foaf:name;
     ];
-    rr:objectMap [ a rr:ObjectMap;
+    rml:objectMap [ a rml:ObjectMap;
       rml:reference "name/text()";
     ];
   ];
-  rr:predicateObjectMap [ a rr:PredicateObjectMap;
-    rr:predicateMap [ a rr:PredicateMap;
-      rr:constant foaf:nickname;
+  rml:predicateObjectMap [ a rml:PredicateObjectMap;
+    rml:predicateMap [ a rml:PredicateMap;
+      rml:constant foaf:nickname;
       rml:logicalTarget <#TargetDump1>;
     ];
-    rr:objectMap [ a rr:ObjectMap;
+    rml:objectMap [ a rml:ObjectMap;
       rml:reference "nickname/text()";
     ];
   ];
@@ -816,32 +816,32 @@ are exported to `TargetDump2`.
 </pre>
 
 <pre class="ex-mapping">
-&lt;#TriplesMap&gt; a rr:TriplesMap;
+&lt;#TriplesMap&gt; a rml:TriplesMap;
   rml:logicalSource [ a rml:LogicalSource;
     rml:source &lt;#DCATSourceAccess&gt;;
-    rml:referenceFormulation ql:JSONPath;
+    rml:referenceFormulation rml:JSONPath;
     rml:iterator "$.[*]";
   ];
-  rr:subjectMap [ a rr:SubjectMap;
-    rr:template "http://example.org/{@id}";
+  rml:subjectMap [ a rml:SubjectMap;
+    rml:template "http://example.org/{@id}";
   ];
-  rr:predicateObjectMap [ a rr:PredicateObjectMap;
-    rr:graphMap [ a rr:GraphMap;
+  rml:predicateObjectMap [ a rml:PredicateObjectMap;
+    rml:graphMap [ a rml:GraphMap;
       rml:logicalTarget <#TargetDump2>;
-      rr:constant ex:Characters;
+      rml:constant ex:Characters;
     ];
-    rr:predicateMap [ a rr:PredicateMap;
-      rr:constant foaf:name;
+    rml:predicateMap [ a rml:PredicateMap;
+      rml:constant foaf:name;
     ];
-    rr:objectMap [ a rr:ObjectMap;
+    rml:objectMap [ a rml:ObjectMap;
       rml:reference "name/text()";
     ];
   ];
-  rr:predicateObjectMap [ a rr:PredicateObjectMap;
-    rr:predicateMap [ a rr:PredicateMap;
-      rr:constant foaf:nickname;
+  rml:predicateObjectMap [ a rml:PredicateObjectMap;
+    rml:predicateMap [ a rml:PredicateMap;
+      rml:constant foaf:nickname;
     ];
-    rr:objectMap [ a rr:ObjectMap;
+    rml:objectMap [ a rml:ObjectMap;
       rml:reference "nickname/text()";
       rml:logicalTarget <#TargetDump1>;
     ];
@@ -922,36 +922,36 @@ as there is no dedicated Target assigned to triples containing
 </pre>
 
 <pre class="ex-mapping">
-&lt;#TriplesMap&gt; a rr:TriplesMap;
+&lt;#TriplesMap&gt; a rml:TriplesMap;
   rml:logicalSource [ a rml:LogicalSource;
     rml:source &lt;#DCATSourceAccess&gt;;
-    rml:referenceFormulation ql:JSONPath;
+    rml:referenceFormulation rml:JSONPath;
     rml:iterator "$.[*]";
   ];
-  rr:subjectMap [ a rr:SubjectMap;
-    rr:template "http://example.org/{@id}";
+  rml:subjectMap [ a rml:SubjectMap;
+    rml:template "http://example.org/{@id}";
   ];
-  rr:predicateObjectMap [ a rr:PredicateObjectMap;
-    rr:graphMap [ a rr:GraphMap;
+  rml:predicateObjectMap [ a rml:PredicateObjectMap;
+    rml:graphMap [ a rml:GraphMap;
       rml:logicalTarget <#TargetDump2>;
-      rr:constant ex:Characters;
+      rml:constant ex:Characters;
     ];
-    rr:predicateMap [ a rr:PredicateMap;
-      rr:constant foaf:name;
+    rml:predicateMap [ a rml:PredicateMap;
+      rml:constant foaf:name;
     ];
-    rr:objectMap [ a rr:ObjectMap;
+    rml:objectMap [ a rml:ObjectMap;
       rml:reference "name/text()";
       rml:languageMap [
         rml:logicalTarget <#TargetDump1>;
-        rr:constant "en";
+        rml:constant "en";
       ];
     ];
   ];
-  rr:predicateObjectMap [ a rr:PredicateObjectMap;
-    rr:predicateMap [ a rr:PredicateMap;
-      rr:constant foaf:nickname;
+  rml:predicateObjectMap [ a rml:PredicateObjectMap;
+    rml:predicateMap [ a rml:PredicateMap;
+      rml:constant foaf:nickname;
     ];
-    rr:objectMap [ a rr:ObjectMap;
+    rml:objectMap [ a rml:ObjectMap;
       rml:reference "nickname/text()";
       rml:logicalTarget <#TargetDump2>;
     ];
@@ -1034,32 +1034,32 @@ are exported to `TargetDump2`.
 </pre>
 
 <pre class="ex-mapping">
-&lt;#TriplesMap&gt; a rr:TriplesMap;
+&lt;#TriplesMap&gt; a rml:TriplesMap;
   rml:logicalSource [ a rml:LogicalSource;
     rml:source &lt;#DCATSourceAccess&gt;;
-    rml:referenceFormulation ql:JSONPath;
+    rml:referenceFormulation rml:JSONPath;
     rml:iterator "$.[*]";
   ];
-  rr:subjectMap [ a rr:SubjectMap;
-    rr:template "http://example.org/{@id}";
+  rml:subjectMap [ a rml:SubjectMap;
+    rml:template "http://example.org/{@id}";
   ];
-  rr:predicateObjectMap [ a rr:PredicateObjectMap;
-    rr:predicateMap [ a rr:PredicateMap;
-      rr:constant foaf:name;
+  rml:predicateObjectMap [ a rml:PredicateObjectMap;
+    rml:predicateMap [ a rml:PredicateMap;
+      rml:constant foaf:name;
     ];
-    rr:objectMap [ a rr:ObjectMap;
+    rml:objectMap [ a rml:ObjectMap;
       rml:reference "name/text()";
       rml:languageMap [
         rml:logicalTarget <#TargetDump1>;
-        rr:constant "en";
+        rml:constant "en";
       ];
     ];
   ];
-  rr:predicateObjectMap [ a rr:PredicateObjectMap;
-    rr:predicateMap [ a rr:PredicateMap;
-      rr:constant foaf:nickname;
+  rml:predicateObjectMap [ a rml:PredicateObjectMap;
+    rml:predicateMap [ a rml:PredicateMap;
+      rml:constant foaf:nickname;
     ];
-    rr:objectMap [ a rr:ObjectMap;
+    rml:objectMap [ a rml:ObjectMap;
       rml:reference "nickname/text()";
       rml:logicalTarget <#TargetDump2>;
     ];
@@ -1136,30 +1136,30 @@ are exported to `TargetDump2`.
 </pre>
 
 <pre class="ex-mapping">
-&lt;#TriplesMap&gt; a rr:TriplesMap;
+&lt;#TriplesMap&gt; a rml:TriplesMap;
   rml:logicalSource [ a rml:LogicalSource;
     rml:source &lt;#DCATSourceAccess&gt;;
-    rml:referenceFormulation ql:JSONPath;
+    rml:referenceFormulation rml:JSONPath;
     rml:iterator "$.[*]";
   ];
-  rr:subjectMap [ a rr:SubjectMap;
-    rr:template "http://example.org/{@id}";
+  rml:subjectMap [ a rml:SubjectMap;
+    rml:template "http://example.org/{@id}";
   ];
-  rr:predicateObjectMap [ a rr:PredicateObjectMap;
-    rr:predicateMap [ a rr:PredicateMap;
-      rr:constant foaf:name;
+  rml:predicateObjectMap [ a rml:PredicateObjectMap;
+    rml:predicateMap [ a rml:PredicateMap;
+      rml:constant foaf:name;
       rml:logicalTarget <#TargetDump1>;
     ];
-    rr:objectMap [ a rr:ObjectMap;
+    rml:objectMap [ a rml:ObjectMap;
       rml:reference "name/text()";
     ];
   ];
-  rr:predicateObjectMap [ a rr:PredicateObjectMap;
-    rr:predicateMap [ a rr:PredicateMap;
-      rr:constant foaf:nickname;
+  rml:predicateObjectMap [ a rml:PredicateObjectMap;
+    rml:predicateMap [ a rml:PredicateMap;
+      rml:constant foaf:nickname;
       rml:logicalTarget <#TargetDump2>;
     ];
-    rr:objectMap [ a rr:ObjectMap;
+    rml:objectMap [ a rml:ObjectMap;
       rml:reference "nickname/text()";
     ];
   ];
@@ -1235,29 +1235,29 @@ are exported to `TargetDump2`.
 </pre>
 
 <pre class="ex-mapping">
-&lt;#TriplesMap&gt; a rr:TriplesMap;
+&lt;#TriplesMap&gt; a rml:TriplesMap;
   rml:logicalSource [ a rml:LogicalSource;
     rml:source &lt;#DCATSourceAccess&gt;;
-    rml:referenceFormulation ql:JSONPath;
+    rml:referenceFormulation rml:JSONPath;
     rml:iterator "$.[*]";
   ];
-  rr:subjectMap [ a rr:SubjectMap;
-    rr:template "http://example.org/{@id}";
+  rml:subjectMap [ a rml:SubjectMap;
+    rml:template "http://example.org/{@id}";
   ];
-  rr:predicateObjectMap [ a rr:PredicateObjectMap;
-    rr:predicateMap [ a rr:PredicateMap;
-      rr:constant foaf:name;
+  rml:predicateObjectMap [ a rml:PredicateObjectMap;
+    rml:predicateMap [ a rml:PredicateMap;
+      rml:constant foaf:name;
     ];
-    rr:objectMap [ a rr:ObjectMap;
+    rml:objectMap [ a rml:ObjectMap;
       rml:reference "name/text()";
       rml:logicalTarget <#TargetDump1>;
     ];
   ];
-  rr:predicateObjectMap [ a rr:PredicateObjectMap;
-    rr:predicateMap [ a rr:PredicateMap;
-      rr:constant foaf:nickname;
+  rml:predicateObjectMap [ a rml:PredicateObjectMap;
+    rml:predicateMap [ a rml:PredicateMap;
+      rml:constant foaf:nickname;
     ];
-    rr:objectMap [ a rr:ObjectMap;
+    rml:objectMap [ a rml:ObjectMap;
       rml:reference "nickname/text()";
       rml:logicalTarget <#TargetDump2>;
     ];
@@ -1334,36 +1334,36 @@ are exported to `TargetDump2`.
 </pre>
 
 <pre class="ex-mapping">
-&lt;#TriplesMap&gt; a rr:TriplesMap;
+&lt;#TriplesMap&gt; a rml:TriplesMap;
   rml:logicalSource [ a rml:LogicalSource;
     rml:source &lt;#DCATSourceAccess&gt;;
-    rml:referenceFormulation ql:JSONPath;
+    rml:referenceFormulation rml:JSONPath;
     rml:iterator "$.[*]";
   ];
-  rr:subjectMap [ a rr:SubjectMap;
-    rr:template "http://example.org/{@id}";
+  rml:subjectMap [ a rml:SubjectMap;
+    rml:template "http://example.org/{@id}";
   ];
-  rr:predicateObjectMap [ a rr:PredicateObjectMap;
-    rr:graphMap [ a rr:GraphMap;
+  rml:predicateObjectMap [ a rml:PredicateObjectMap;
+    rml:graphMap [ a rml:GraphMap;
       rml:logicalTarget <#TargetDump1>;
-      rr:constant ex:Characters;
+      rml:constant ex:Characters;
     ];
-    rr:predicateMap [ a rr:PredicateMap;
-      rr:constant foaf:name;
+    rml:predicateMap [ a rml:PredicateMap;
+      rml:constant foaf:name;
     ];
-    rr:objectMap [ a rr:ObjectMap;
+    rml:objectMap [ a rml:ObjectMap;
       rml:reference "name/text()";
     ];
   ];
-  rr:predicateObjectMap [ a rr:PredicateObjectMap;
-    rr:graphMap [ a rr:GraphMap;
+  rml:predicateObjectMap [ a rml:PredicateObjectMap;
+    rml:graphMap [ a rml:GraphMap;
       rml:logicalTarget <#TargetDump2>;
-      rr:constant ex:NickNames;
+      rml:constant ex:NickNames;
     ];
-    rr:predicateMap [ a rr:PredicateMap;
-      rr:constant foaf:nickname;
+    rml:predicateMap [ a rml:PredicateMap;
+      rml:constant foaf:nickname;
     ];
-    rr:objectMap [ a rr:ObjectMap;
+    rml:objectMap [ a rml:ObjectMap;
       rml:reference "nickname/text()";
     ];
   ];
