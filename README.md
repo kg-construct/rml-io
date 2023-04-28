@@ -1,7 +1,7 @@
 # Source & Target
 
 Repository for RML Source & Target specification.
-Deployed to https://kg-construct.github.io/rml-io
+Deployed to https://kg-construct.github.io/rml-io/spec/docs
 
 ## Quickstart
 
