@@ -50,29 +50,29 @@ to an RDF dump with N-Quads as serialization format and GZip compression:
 </pre>
 
 <pre class="ex-mapping">
-&lt;#TriplesMap&gt; a rr:TriplesMap;
+&lt;#TriplesMap&gt; a rml:TriplesMap;
   rml:logicalSource [ a rml:LogicalSource;
     rml:source &lt;#DCATSourceAccess&gt;;
     rml:referenceFormulation ql:JSONPath;
     rml:iterator "$.[*]";
   ];
-  rr:subjectMap [ a rr:SubjectMap;
-    rr:template "http://example.org/{id}";
+  rml:subjectMap [ a rml:SubjectMap;
+    rml:template "http://example.org/{id}";
     rml:logicalTarget &lt;#TargetDump1&gt;;
   ];
-  rr:predicateObjectMap [ a rr:PredicateObjectMap;
-    rr:predicateMap [ a rr:PredicateMap;
-      rr:constant foaf:name;
+  rml:predicateObjectMap [ a rml:PredicateObjectMap;
+    rml:predicateMap [ a rml:PredicateMap;
+      rml:constant foaf:name;
     ];
-    rr:objectMap [ a rr:ObjectMap;
+    rml:objectMap [ a rml:ObjectMap;
       rml:reference "name";
     ];
   ];
-  rr:predicateObjectMap [ a rr:PredicateObjectMap;
-    rr:predicateMap [ a rr:PredicateMap;
-      rr:constant foaf:age;
+  rml:predicateObjectMap [ a rml:PredicateObjectMap;
+    rml:predicateMap [ a rml:PredicateMap;
+      rml:constant foaf:age;
     ];
-    rr:objectMap [ a rr:ObjectMap;
+    rml:objectMap [ a rml:ObjectMap;
       rml:reference "age";
     ];
   ];
@@ -89,7 +89,7 @@ to an RDF dump with N-Quads as serialization format and GZip compression:
 <pre class="ex-access">
 &lt;#VoIDDump1&gt; a rml:Target, void:Dataset ;
   void:dataDump &lt;file:///data/dump1.nq.gz&gt;;
-  rml:compression comp:gzip;
+  rml:compression rml:gzip;
 .
 </pre>
 
@@ -152,29 +152,29 @@ with Turtle as serialization format and Zip compression:
 </pre>
 
 <pre class="ex-mapping">
-&lt;#TriplesMap&gt; a rr:TriplesMap;
+&lt;#TriplesMap&gt; a rml:TriplesMap;
   rml:logicalSource [ a rml:LogicalSource;
     rml:source &lt;#DCATSourceAccess&gt;;
     rml:referenceFormulation ql:JSONPath;
     rml:iterator "$.[*]";
   ];
-  rr:subjectMap [ a rr:SubjectMap;
-    rr:template "http://example.org/{id}";
+  rml:subjectMap [ a rml:SubjectMap;
+    rml:template "http://example.org/{id}";
   ];
-  rr:predicateObjectMap [ a rr:PredicateObjectMap;
-    rr:predicateMap [ a rr:PredicateMap;
-      rr:constant foaf:name;
+  rml:predicateObjectMap [ a rml:PredicateObjectMap;
+    rml:predicateMap [ a rml:PredicateMap;
+      rml:constant foaf:name;
       rml:logicalTarget &lt;#TargetDump1&gt;;
     ];
-    rr:objectMap [ a rr:ObjectMap;
+    rml:objectMap [ a rml:ObjectMap;
       rml:reference "name";
     ];
   ];
-  rr:predicateObjectMap [ a rr:PredicateObjectMap;
-    rr:predicateMap [ a rr:PredicateMap;
-      rr:constant foaf:age;
+  rml:predicateObjectMap [ a rml:PredicateObjectMap;
+    rml:predicateMap [ a rml:PredicateMap;
+      rml:constant foaf:age;
     ];
-    rr:objectMap [ a rr:ObjectMap;
+    rml:objectMap [ a rml:ObjectMap;
       rml:reference "age";
     ];
   ];
@@ -191,7 +191,7 @@ with Turtle as serialization format and Zip compression:
 <pre class="ex-access">
 &lt;#VoIDDump1&gt; a rml:Target, void:Dataset;
   void:dataDump &lt;file:///data/dump1.ttl.zip&gt;;
-  rml:compression comp:zip;
+  rml:compression rml:zip;
 .
 </pre>
 
@@ -271,29 +271,29 @@ with N-Triples as serialization format:
 </pre>
 
 <pre class="ex-mapping">
-&lt;#TriplesMap&gt; a rr:TriplesMap;
+&lt;#TriplesMap&gt; a rml:TriplesMap;
   rml:logicalSource [ a rml:LogicalSource;
     rml:source &lt;#DCATSourceAccess&gt;;
     rml:referenceFormulation ql:JSONPath;
     rml:iterator "$.[*]";
   ];
-  rr:subjectMap [ a rr:SubjectMap;
-    rr:template "http://example.org/{id}";
+  rml:subjectMap [ a rml:SubjectMap;
+    rml:template "http://example.org/{id}";
   ];
-  rr:predicateObjectMap [ a rr:PredicateObjectMap;
-    rr:predicateMap [ a rr:PredicateMap;
-      rr:constant foaf:name;
+  rml:predicateObjectMap [ a rml:PredicateObjectMap;
+    rml:predicateMap [ a rml:PredicateMap;
+      rml:constant foaf:name;
     ];
-    rr:objectMap [ a rr:ObjectMap;
+    rml:objectMap [ a rml:ObjectMap;
       rml:reference "name";
       rml:logicalTarget &lt;#TargetDump1&gt;;
     ];
   ];
-  rr:predicateObjectMap [ a rr:PredicateObjectMap;
-    rr:predicateMap [ a rr:PredicateMap;
-      rr:constant foaf:age;
+  rml:predicateObjectMap [ a rml:PredicateObjectMap;
+    rml:predicateMap [ a rml:PredicateMap;
+      rml:constant foaf:age;
     ];
-    rr:objectMap [ a rr:ObjectMap;
+    rml:objectMap [ a rml:ObjectMap;
       rml:reference "age";
     ];
   ];
@@ -386,32 +386,32 @@ to an RDF dump with N-Quads as serialization format:
 </pre>
 
 <pre class="ex-mapping">
-&lt;#TriplesMap&gt; a rr:TriplesMap;
+&lt;#TriplesMap&gt; a rml:TriplesMap;
   rml:logicalSource [ a rml:LogicalSource;
     rml:source &lt;#DCATSourceAccess&gt;;
     rml:referenceFormulation ql:JSONPath;
     rml:iterator "$.[*]";
   ];
-  rr:subjectMap [ a rr:SubjectMap;
-    rr:template "http://example.org/{id}";
-    rr:graphMap [
+  rml:subjectMap [ a rml:SubjectMap;
+    rml:template "http://example.org/{id}";
+    rml:graphMap [
       rml:logicalTarget &lt;#TargetDump1&gt;;
-      rr:constant ex:Friends;
+      rml:constant ex:Friends;
     ];
    ];
-  rr:predicateObjectMap [ a rr:PredicateObjectMap;
-    rr:predicateMap [ a rr:PredicateMap;
-      rr:constant foaf:name;
+  rml:predicateObjectMap [ a rml:PredicateObjectMap;
+    rml:predicateMap [ a rml:PredicateMap;
+      rml:constant foaf:name;
     ];
-    rr:objectMap [ a rr:ObjectMap;
+    rml:objectMap [ a rml:ObjectMap;
       rml:reference "name";
     ];
   ];
-  rr:predicateObjectMap [ a rr:PredicateObjectMap;
-    rr:predicateMap [ a rr:PredicateMap;
-      rr:constant foaf:age;
+  rml:predicateObjectMap [ a rml:PredicateObjectMap;
+    rml:predicateMap [ a rml:PredicateMap;
+      rml:constant foaf:age;
     ];
-    rr:objectMap [ a rr:ObjectMap;
+    rml:objectMap [ a rml:ObjectMap;
       rml:reference "age";
     ];
   ];
@@ -489,32 +489,32 @@ to a RDF dump with N-Triples as serialization format:
 </pre>
 
 <pre class="ex-mapping">
-&lt;#TriplesMap&gt; a rr:TriplesMap;
+&lt;#TriplesMap&gt; a rml:TriplesMap;
   rml:logicalSource [ a rml:LogicalSource;
     rml:source &lt;#DCATSourceAccess&gt;;
     rml:referenceFormulation ql:JSONPath;
     rml:iterator "$.[*]";
   ];
-  rr:subjectMap [ a rr:SubjectMap;
-    rr:template "http://example.org/{id}";
+  rml:subjectMap [ a rml:SubjectMap;
+    rml:template "http://example.org/{id}";
    ];
-  rr:predicateObjectMap [ a rr:PredicateObjectMap;
-    rr:predicateMap [ a rr:PredicateMap;
-      rr:constant foaf:name;
+  rml:predicateObjectMap [ a rml:PredicateObjectMap;
+    rml:predicateMap [ a rml:PredicateMap;
+      rml:constant foaf:name;
     ];
-    rr:objectMap [ a rr:ObjectMap;
+    rml:objectMap [ a rml:ObjectMap;
       rml:reference "name";
       rml:languageMap [
         rml:logicalTarget &lt;#TargetDump1&gt;;
-        rr:constant "en";
+        rml:constant "en";
       ];
     ];
   ];
-  rr:predicateObjectMap [ a rr:PredicateObjectMap;
-    rr:predicateMap [ a rr:PredicateMap;
-      rr:constant foaf:age;
+  rml:predicateObjectMap [ a rml:PredicateObjectMap;
+    rml:predicateMap [ a rml:PredicateMap;
+      rml:constant foaf:age;
     ];
-    rr:objectMap [ a rr:ObjectMap;
+    rml:objectMap [ a rml:ObjectMap;
       rml:reference "age";
     ];
   ];

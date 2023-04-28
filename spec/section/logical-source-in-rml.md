@@ -1,7 +1,7 @@
 ## Logical Source in RML {#logical-source-in-rml}
 
 RML is aligned with the Logical Source vocabulary 
-by extending `rr:TriplesMap` with the `rml:logicalSource` property 
+by extending `rml:TriplesMap` with the `rml:logicalSource` property 
 to describe on Triples Map [[RML]] level where the data must be retrieved
 from and where the references refer to.
 A Triples Map is a function that generates an RDF triples 
@@ -13,7 +13,7 @@ RDF triples.
 
 | Property            | Domain          | Range                |
 | ------------------- | ------------    | -------------------- |
-| `rml:logicalSource` | `rr:TriplesMap` | `rml:LogicalSource`  |
+| `rml:logicalSource` | `rml:TriplesMap` | `rml:LogicalSource`  |
 
 In the example below, a CSV file is transformed into a knowledge graph.
 The CSV file is accessed using the [[CSVW]] vocabulary,
@@ -42,27 +42,27 @@ id;name;nickname
 <pre class="ex-mapping">
 @base &lt;http://example.com/ns#&gt; .
 
-&lt;#TriplesMap&gt; a rr:TriplesMap;
+&lt;#TriplesMap&gt; a rml:TriplesMap;
   rml:logicalSource [ a rml:LogicalSource;
     rml:source &lt;#CSVSourceAccess&gt;;
   ];
-  rr:subjectMap [ a rr:SubjectMap;
-    rr:template "http://example.com/{id}";
-    rr:class foaf:Person;
+  rml:subjectMap [ a rml:SubjectMap;
+    rml:template "http://example.com/{id}";
+    rml:class foaf:Person;
   ];
-  rr:predicateObjectMap [ a rr:PredicateObjectMap;
-    rr:predicateMap [ a rr:PredicateMap;
-      rr:constant foaf:name;
+  rml:predicateObjectMap [ a rml:PredicateObjectMap;
+    rml:predicateMap [ a rml:PredicateMap;
+      rml:constant foaf:name;
     ];
-    rr:objectMap [ a rr:ObjectMap;
+    rml:objectMap [ a rml:ObjectMap;
       rml:reference "name";
     ];
   ];
-  rr:predicateObjectMap [ a rr:PredicateObjectMap;
-    rr:predicateMap [ a rr:PredicateMap;
-      rr:constant foaf:nickname;
+  rml:predicateObjectMap [ a rml:PredicateObjectMap;
+    rml:predicateMap [ a rml:PredicateMap;
+      rml:constant foaf:nickname;
     ];
-    rr:objectMap [ a rr:ObjectMap;
+    rml:objectMap [ a rml:ObjectMap;
       rml:reference "nickname";
     ];
   ];

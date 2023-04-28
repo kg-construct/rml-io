@@ -1,7 +1,7 @@
 ## Logical Target in RML {#logical-target-in-rml}
 
 RML is aligned with the Logical Target vocabulary 
-by extending `rr:TermMap` with the `rml:logicalTarget` property 
+by extending `rml:TermMap` with the `rml:logicalTarget` property 
 to describe on Term Map [[RML]] level where each triple must be directed to. 
 A Term Map is a function that generates an RDF term 
 from a logical reference [[RML]].
@@ -31,7 +31,7 @@ are exported to the default target of the processor.
 
 | Property            | Domain       | Range                |
 | ------------------- | ------------ | -------------------- |
-| `rml:logicalTarget` | `rr:TermMap` | `rml:LogicalTarget` |
+| `rml:logicalTarget` | `rml:TermMap` | `rml:LogicalTarget` |
 
 In the example below, a CSV file is transformed into a knowledge graph.
 The CSV file is accessed using the [[CSVW]] vocabulary,
@@ -66,29 +66,29 @@ id;name;nickname
 <pre class="ex-mapping">
 @base &lt;http://example.com/ns#&gt; .
 
-&lt;#TriplesMap&gt; a rr:TriplesMap;
+&lt;#TriplesMap&gt; a rml:TriplesMap;
   rml:logicalSource [ a rml:LogicalSource;
     rml:source &lt;#CSVSourceAccess&gt;;
   ];
-  rr:subjectMap [ a rr:SubjectMap;
-    rr:template "http://example.com/{id}";
+  rml:subjectMap [ a rml:SubjectMap;
+    rml:template "http://example.com/{id}";
     rml:logicalTarget &lt;#TargetDump1&gt;;
-    rr:class foaf:Person;
+    rml:class foaf:Person;
   ];
-  rr:predicateObjectMap [ a rr:PredicateObjectMap;
-    rr:predicateMap [ a rr:PredicateMap;
-      rr:constant foaf:name;
+  rml:predicateObjectMap [ a rml:PredicateObjectMap;
+    rml:predicateMap [ a rml:PredicateMap;
+      rml:constant foaf:name;
       rml:logicalTarget &lt;#TargetDump2&gt;;
     ];
-    rr:objectMap [ a rr:ObjectMap;
+    rml:objectMap [ a rml:ObjectMap;
       rml:reference "name";
     ];
   ];
-  rr:predicateObjectMap [ a rr:PredicateObjectMap;
-    rr:predicateMap [ a rr:PredicateMap;
-      rr:constant foaf:nickname;
+  rml:predicateObjectMap [ a rml:PredicateObjectMap;
+    rml:predicateMap [ a rml:PredicateMap;
+      rml:constant foaf:nickname;
     ];
-    rr:objectMap [ a rr:ObjectMap;
+    rml:objectMap [ a rml:ObjectMap;
       rml:reference "nickname";
     ];
   ];
@@ -104,7 +104,7 @@ id;name;nickname
 &lt;#TargetDump2&gt; a rml:LogicalTarget;
   rml:target &lt;#VoIDDump2&gt;;
   rml:serialization formats:Turtle;
-  rml:compression comp:zip;
+  rml:compression rml:zip;
 .
 </pre>
 

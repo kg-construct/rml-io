@@ -39,7 +39,7 @@ http://dbpedia.org/resource/Melissa_Rauch,Melissa Rauch
 </pre>
 
 <pre class="ex-mapping">
-&lt;#TriplesMap1&gt; a rr:TriplesMap;
+&lt;#TriplesMap1&gt; a rml:TriplesMap;
   rml:logicalSource [ a rml:LogicalSource;
     rml:source &lt;#SDSourceAccess&gt;;
     rml:query """
@@ -54,21 +54,21 @@ http://dbpedia.org/resource/Melissa_Rauch,Melissa Rauch
       }
     """;
   ];
-  rr:subjectMap [ a rr:SubjectMap;
+  rml:subjectMap [ a rml:SubjectMap;
     rml:reference "actor";
-    rr:termType rr:IRI;
+    rml:termType rml:IRI;
     rml:logicalTarget &lt;TargetDump1&gt;;
   ];
-  rr:predicateObjectMap [ a rr:PredicateObjectMap;
-    rr:predicateMap [ a rr:PredicateMap;
-      rr:constant foaf:name;
+  rml:predicateObjectMap [ a rml:PredicateObjectMap;
+    rml:predicateMap [ a rml:PredicateMap;
+      rml:constant foaf:name;
     ];
-    rr:objectMap [ a rr:ObjectMap;
+    rml:objectMap [ a rml:ObjectMap;
       rml:reference "name";
     ];
   ];
 
-&lt;#TriplesMap2&gt; a rr:TriplesMap;
+&lt;#TriplesMap2&gt; a rml:TriplesMap;
   rml:logicalSource [ a rml:LogicalSource;
     rml:source &lt;#SDSourceAccess&gt;;
     rml:query """
@@ -83,16 +83,16 @@ http://dbpedia.org/resource/Melissa_Rauch,Melissa Rauch
       }
     """;
   ];
-  rr:subjectMap [ a rr:SubjectMap;
+  rml:subjectMap [ a rml:SubjectMap;
     rml:reference "actor";
-    rr:termType rr:IRI;
+    rml:termType rml:IRI;
     rml:logicalTarget &lt;TargetDump2&gt;;
   ];
-  rr:predicateObjectMap [ a rr:PredicateObjectMap;
-    rr:predicateMap [ a rr:PredicateMap;
-      rr:constant schema:name;
+  rml:predicateObjectMap [ a rml:PredicateObjectMap;
+    rml:predicateMap [ a rml:PredicateMap;
+      rml:constant schema:name;
     ];
-    rr:objectMap [ a rr:ObjectMap;
+    rml:objectMap [ a rml:ObjectMap;
       rml:reference "name";
     ];
   ];
@@ -182,7 +182,7 @@ http://dbpedia.org/resource/Melissa_Rauch,Melissa Rauch
 </pre>
 
 <pre class="ex-mapping">
-&lt;#TriplesMap&gt; a rr:TriplesMap;
+&lt;#TriplesMap&gt; a rml:TriplesMap;
   rml:logicalSource [ a rml:LogicalSource;
     rml:source &lt;#SDSourceAccess&gt;;
     rml:query """
@@ -197,34 +197,34 @@ http://dbpedia.org/resource/Melissa_Rauch,Melissa Rauch
       }
     """;
   ];
-  rr:subjectMap [ a rr:SubjectMap;
+  rml:subjectMap [ a rml:SubjectMap;
     rml:reference "actor";
-    rr:termType rr:IRI;
+    rml:termType rml:IRI;
     rml:logicalTarget &lt;TargetDump1&gt;;
   ];
-  rr:predicateObjectMap [ a rr:PredicateObjectMap;
-    rr:predicateMap [ a rr:PredicateMap;
-      rr:constant foaf:name;
+  rml:predicateObjectMap [ a rml:PredicateObjectMap;
+    rml:predicateMap [ a rml:PredicateMap;
+      rml:constant foaf:name;
     ];
-    rr:objectMap [ a rr:ObjectMap;
+    rml:objectMap [ a rml:ObjectMap;
       rml:reference "name";
     ];
   ];
-  rr:predicateObjectMap [ 
-    rr:predicateMap [ rr:constant foaf:name ];
-    rr:objectMap [
+  rml:predicateObjectMap [ 
+    rml:predicateMap [ rml:constant foaf:name ];
+    rml:objectMap [
       fnml:functionValue [
-        rr:predicateObjectMap [
-          rr:predicate fno:executes ;
-          rr:objectMap [ rr:constant idlab-fn:decide ]
+        rml:predicateObjectMap [
+          rml:predicate fno:executes ;
+          rml:objectMap [ rml:constant idlab-fn:decide ]
         ];
-        rr:predicateObjectMap [
-          rr:predicate idlab-fn:expectedStr ;
-          rr:objectMap [ rr:constant "Jim Parsons"]
+        rml:predicateObjectMap [
+          rml:predicate idlab-fn:expectedStr ;
+          rml:objectMap [ rml:constant "Jim Parsons"]
         ];
-        rr:predicateObjectMap [
-          rr:predicate idlab-fn:str ;
-          rr:objectMap [ 
+        rml:predicateObjectMap [
+          rml:predicate idlab-fn:str ;
+          rml:objectMap [ 
             rml:reference "name";
             rml:logicalTarget <#TargetDump1>;
           ];
@@ -232,21 +232,21 @@ http://dbpedia.org/resource/Melissa_Rauch,Melissa Rauch
       ];
     ];
   ];
-  rr:predicateObjectMap [ 
-    rr:predicateMap [ rr:constant foaf:name ];
-    rr:objectMap [
+  rml:predicateObjectMap [ 
+    rml:predicateMap [ rml:constant foaf:name ];
+    rml:objectMap [
       fnml:functionValue [
-        rr:predicateObjectMap [
-          rr:predicate fno:executes ;
-          rr:objectMap [ rr:constant idlab-fn:decide ]
+        rml:predicateObjectMap [
+          rml:predicate fno:executes ;
+          rml:objectMap [ rml:constant idlab-fn:decide ]
         ];
-        rr:predicateObjectMap [
-          rr:predicate idlab-fn:expectedStr ;
-          rr:objectMap [ rr:constant "Kaley Cuoco"]
+        rml:predicateObjectMap [
+          rml:predicate idlab-fn:expectedStr ;
+          rml:objectMap [ rml:constant "Kaley Cuoco"]
         ];
-        rr:predicateObjectMap [
-          rr:predicate idlab-fn:str ;
-          rr:objectMap [ 
+        rml:predicateObjectMap [
+          rml:predicate idlab-fn:str ;
+          rml:objectMap [ 
             rml:reference "name";
             rml:logicalTarget <#TargetDump2>;
           ];

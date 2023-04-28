@@ -1,5 +1,4 @@
 @prefix rml: <http://w3id.org/rml/> .
-@prefix ql: <http://w3id.org/rml/ql/> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix csvw: <http://www.w3.org/ns/dcat#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
@@ -20,7 +19,7 @@
 <#TriplesMap> a rml:TriplesMap;
   rml:logicalSource [ a rml:LogicalSource;
     rml:source <#CSVWSourceAccess>;
-    rml:referenceFormulation ql:JSONPath;
+    rml:referenceFormulation rml:JSONPath;
     rml:iterator "$.[*]";
   ];
   rml:subjectMap [ a rml:SubjectMap;
