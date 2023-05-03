@@ -17,7 +17,7 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix rml: <http://w3id.org/rml/> .
-@prefix schema: <https://schema.org/> .
+@prefix : <http://w3id.org/rml/shapes/> .
 @prefix sh: <http://www.w3.org/ns/shacl#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix sosa: <http://www.w3.org/ns/sosa/> .
@@ -29,7 +29,7 @@
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<http://schema.org/RMLIOLogicalSourceShape> a sh:NodeShape ;
+<http://w3id.org/rml/shapes/RMLIOLogicalSourceShape> a sh:NodeShape ;
     sh:description """
     A logical source is any source that is mapped to RDF triples.
     """ ;
@@ -50,7 +50,7 @@
         """ ;
             sh:minCount 1 ;
             sh:name "rml:source" ;
-            sh:node <http://schema.org/RMLIOSourceShape> ;
+            sh:node <http://w3id.org/rml/shapes/RMLIOSourceShape> ;
             sh:nodeKind sh:BlankNodeOrIRI ;
             sh:path rml:source ],
         [ sh:datatype xsd:string ;
@@ -84,7 +84,7 @@
     sh:targetClass rml:LogicalSource ;
     sh:targetObjectsOf rml:logicalSource .
 
-<http://schema.org/RMLIOLogicalTargetShape> a sh:NodeShape ;
+<http://w3id.org/rml/shapes/RMLIOLogicalTargetShape> a sh:NodeShape ;
     sh:description """
     A logical target is any target to where generated RDF triples are exported
     to.
@@ -105,13 +105,13 @@
         """ ;
             sh:minCount 1 ;
             sh:name "rml:target" ;
-            sh:node <http://schema.org/RMLIOTargetShape> ;
+            sh:node <http://w3id.org/rml/shapes/RMLIOTargetShape> ;
             sh:nodeKind sh:BlankNodeOrIRI ;
             sh:path rml:target ] ;
     sh:targetClass rml:LogicalTarget ;
     sh:targetObjectsOf rml:logicalTarget .
 
-<http://schema.org/RMLIOSourceShape> a sh:NodeShape ;
+<http://w3id.org/rml/shapes/RMLIOSourceShape> a sh:NodeShape ;
     sh:description """
     A source describes access to a data source. Any data access description
     is allowed, but rml:Source provides additional properties to complete
@@ -186,7 +186,7 @@
     sh:targetClass rml:Source ;
     sh:targetObjectsOf rml:source .
 
-<http://schema.org/RMLIOTargetShape> a sh:NodeShape ;
+<http://w3id.org/rml/shapes/RMLIOTargetShape> a sh:NodeShape ;
     sh:description """
     A target describes access to a data target. Any data access description
     is allowed, but rml:Target provides additional properties to complete
