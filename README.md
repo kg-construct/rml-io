@@ -1,7 +1,7 @@
-# Source & Target
+# RML-IO
 
-Repository for RML Source & Target specification.
-Deployed to https://kg-construct.github.io/rml-io/spec/docs
+Repository for RML-IO specification, ontology, SHACL shapes and test cases.
+Deployed to https://w3id.org/rml/io/spec/
 
 ## Quickstart
 
@@ -13,3 +13,13 @@ Deployed to https://kg-construct.github.io/rml-io/spec/docs
 - run `node publish.js` to get the index.html + archived version in the `dist` folder
 
 The `dist` folder contents should mimic the contents on `https://w3id.org/kg-construct/rml-target-source`
+
+## License
+
+RML-IO (c) by W3C Community Group on Knowledge Graph Construction
+
+RML-IO is licensed under a
+Creative Commons Attribution-ShareAlike 4.0 International License.
+
+You should have received a copy of the license along with this
+work.  If not, see <http://creativecommons.org/licenses/by-sa/4.0/>.
