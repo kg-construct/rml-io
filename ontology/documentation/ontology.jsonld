@@ -54,9 +54,6 @@
 }, {
   "@id" : "http://w3id.org/rml/CSV",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
-  "http://w3id.org/rml/specification" : [ {
-    "@id" : "http://tools.ietf.org/html/rfc4180"
-  } ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "http://w3id.org/rml/ReferenceFormulation"
   } ],
@@ -69,6 +66,9 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@value" : "CSV"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#seeAlso" : [ {
+    "@id" : "http://tools.ietf.org/html/rfc4180"
   } ]
 }, {
   "@id" : "http://w3id.org/rml/Compression",
@@ -241,9 +241,6 @@
 }, {
   "@id" : "http://w3id.org/rml/XPath",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
-  "http://w3id.org/rml/specification" : [ {
-    "@id" : "http://www.w3.org/TR/xpath20/"
-  } ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "http://w3id.org/rml/ReferenceFormulation"
   } ],
@@ -256,6 +253,9 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@value" : "XPath"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#seeAlso" : [ {
+    "@id" : "http://www.w3.org/TR/xpath20/"
   } ]
 }, {
   "@id" : "http://w3id.org/rml/XPathReferenceFormulation",
@@ -521,9 +521,6 @@
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
     "@id" : "http://w3id.org/rml/Source"
   } ]
-}, {
-  "@id" : "http://w3id.org/rml/specification",
-  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
 }, {
   "@id" : "http://w3id.org/rml/target",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],

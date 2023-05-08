@@ -64,10 +64,6 @@
 <http://purl.org/vocab/vann/preferredNamespaceUri> rdf:type owl:AnnotationProperty .
 
 
-###  http://w3id.org/rml/specification
-<http://w3id.org/rml/specification> rdf:type owl:AnnotationProperty .
-
-
 ###  http://www.linkedmodel.org/schema/vaem#acronym
 <http://www.linkedmodel.org/schema/vaem#acronym> rdf:type owl:AnnotationProperty .
 
@@ -282,10 +278,10 @@ rdf:Literal rdf:type owl:Class .
 ###  http://w3id.org/rml/CSV
 <http://w3id.org/rml/CSV> rdf:type owl:NamedIndividual ,
                                    <http://w3id.org/rml/ReferenceFormulation> ;
-                          <http://w3id.org/rml/specification> <http://tools.ietf.org/html/rfc4180> ;
                           rdfs:comment "Denotes that the CSV file's column names are used for referring to extracts of CSV resources."@en ;
                           rdfs:isDefinedBy <http://w3id.org/rml/io/> ;
-                          rdfs:label "CSV" .
+                          rdfs:label "CSV" ;
+                          rdfs:seeAlso <http://tools.ietf.org/html/rfc4180> .
 
 
 ###  http://w3id.org/rml/JSONPath
@@ -323,10 +319,10 @@ rdf:Literal rdf:type owl:Class .
 ###  http://w3id.org/rml/XPath
 <http://w3id.org/rml/XPath> rdf:type owl:NamedIndividual ,
                                      <http://w3id.org/rml/ReferenceFormulation> ;
-                            <http://w3id.org/rml/specification> <http://www.w3.org/TR/xpath20/> ;
                             rdfs:comment "Denotes the XPath reference formulation, used for referring to extracts of XML sources."@en ;
                             rdfs:isDefinedBy <http://w3id.org/rml/io/> ;
-                            rdfs:label "XPath" .
+                            rdfs:label "XPath" ;
+                            rdfs:seeAlso <http://www.w3.org/TR/xpath20/> .
 
 
 ###  http://w3id.org/rml/gzip

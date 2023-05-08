@@ -49,9 +49,6 @@
 # http://purl.org/vocab/vann/preferredNamespaceUri
 <http://purl.org/vocab/vann/preferredNamespaceUri> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
 # 
-# http://w3id.org/rml/specification
-<http://w3id.org/rml/specification> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
-# 
 # http://www.linkedmodel.org/schema/vaem#acronym
 <http://www.linkedmodel.org/schema/vaem#acronym> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
 # 
@@ -269,10 +266,10 @@ _:genid4 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/20
 # http://w3id.org/rml/CSV
 <http://w3id.org/rml/CSV> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
 <http://w3id.org/rml/CSV> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://w3id.org/rml/ReferenceFormulation> .
-<http://w3id.org/rml/CSV> <http://w3id.org/rml/specification> <http://tools.ietf.org/html/rfc4180> .
 <http://w3id.org/rml/CSV> <http://www.w3.org/2000/01/rdf-schema#comment> "Denotes that the CSV file's column names are used for referring to extracts of CSV resources."@en .
 <http://w3id.org/rml/CSV> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://w3id.org/rml/io/> .
 <http://w3id.org/rml/CSV> <http://www.w3.org/2000/01/rdf-schema#label> "CSV" .
+<http://w3id.org/rml/CSV> <http://www.w3.org/2000/01/rdf-schema#seeAlso> <http://tools.ietf.org/html/rfc4180> .
 # 
 # http://w3id.org/rml/JSONPath
 <http://w3id.org/rml/JSONPath> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
@@ -305,10 +302,10 @@ _:genid4 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/20
 # http://w3id.org/rml/XPath
 <http://w3id.org/rml/XPath> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
 <http://w3id.org/rml/XPath> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://w3id.org/rml/ReferenceFormulation> .
-<http://w3id.org/rml/XPath> <http://w3id.org/rml/specification> <http://www.w3.org/TR/xpath20/> .
 <http://w3id.org/rml/XPath> <http://www.w3.org/2000/01/rdf-schema#comment> "Denotes the XPath reference formulation, used for referring to extracts of XML sources."@en .
 <http://w3id.org/rml/XPath> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://w3id.org/rml/io/> .
 <http://w3id.org/rml/XPath> <http://www.w3.org/2000/01/rdf-schema#label> "XPath" .
+<http://w3id.org/rml/XPath> <http://www.w3.org/2000/01/rdf-schema#seeAlso> <http://www.w3.org/TR/xpath20/> .
 # 
 # http://w3id.org/rml/gzip
 <http://w3id.org/rml/gzip> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .

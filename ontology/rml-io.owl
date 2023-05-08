@@ -299,7 +299,7 @@ foaf:name rdf:type owl:AnnotationProperty .
     rdfs:label   "CSV" ;
     rdfs:isDefinedBy <http://w3id.org/rml/io/> ;
     rdfs:comment "Denotes that the CSV file's column names are used for referring to extracts of CSV resources."@en ;
-    :specification <http://tools.ietf.org/html/rfc4180>.
+    rdfs:seeAlso <http://tools.ietf.org/html/rfc4180>.
 
 :JSONPath rdf:type owl:NamedIndividual , :ReferenceFormulation  ;
     rdfs:label   "JSONPath" ;
@@ -310,7 +310,7 @@ foaf:name rdf:type owl:AnnotationProperty .
     rdfs:label   "XPath" ;
     rdfs:isDefinedBy <http://w3id.org/rml/io/> ;
     rdfs:comment "Denotes the XPath reference formulation, used for referring to extracts of XML sources."@en ;
-    :specification <http://www.w3.org/TR/xpath20/>  .
+    rdfs:seeAlso <http://www.w3.org/TR/xpath20/>  .
 
 :SQL2008 rdf:type owl:NamedIndividual , :ReferenceFormulation ;
     rdfs:label   "SQL 2008" ;

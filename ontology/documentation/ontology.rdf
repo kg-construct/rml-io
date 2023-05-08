@@ -5,7 +5,6 @@
      xmlns:ns="http://creativecommons.org/ns#"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-     xmlns:rml="http://w3id.org/rml/"
      xmlns:xml="http://www.w3.org/XML/1998/namespace"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:foaf="http://xmlns.com/foaf/0.1/"
@@ -111,13 +110,6 @@
 
 
     <owl:AnnotationProperty rdf:about="http://purl.org/vocab/vann/preferredNamespaceUri"/>
-    
-
-
-    <!-- http://w3id.org/rml/specification -->
-
-
-    <owl:AnnotationProperty rdf:about="http://w3id.org/rml/specification"/>
     
 
 
@@ -471,10 +463,10 @@
 
     <owl:NamedIndividual rdf:about="http://w3id.org/rml/CSV">
         <rdf:type rdf:resource="http://w3id.org/rml/ReferenceFormulation"/>
-        <rml:specification rdf:resource="http://tools.ietf.org/html/rfc4180"/>
         <rdfs:comment xml:lang="en">Denotes that the CSV file&apos;s column names are used for referring to extracts of CSV resources.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://w3id.org/rml/io/"/>
         <rdfs:label>CSV</rdfs:label>
+        <rdfs:seeAlso rdf:resource="http://tools.ietf.org/html/rfc4180"/>
     </owl:NamedIndividual>
     
 
@@ -532,10 +524,10 @@
 
     <owl:NamedIndividual rdf:about="http://w3id.org/rml/XPath">
         <rdf:type rdf:resource="http://w3id.org/rml/ReferenceFormulation"/>
-        <rml:specification rdf:resource="http://www.w3.org/TR/xpath20/"/>
         <rdfs:comment xml:lang="en">Denotes the XPath reference formulation, used for referring to extracts of XML sources.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://w3id.org/rml/io/"/>
         <rdfs:label>XPath</rdfs:label>
+        <rdfs:seeAlso rdf:resource="http://www.w3.org/TR/xpath20/"/>
     </owl:NamedIndividual>
     
 
