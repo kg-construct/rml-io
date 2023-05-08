@@ -8,19 +8,19 @@
 @prefix rml: <http://w3id.org/rml/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> . 
 
-:RMLIOTargetShape
+:RMLTargetShape
     a sh:NodeShape ;
     sh:targetObjectsOf rml:target ;  # Object of rml:LogicalTarget
     sh:targetClass rml:Target ;  # Used as a class
     # Already targets 'rml:target'
-    sh:name "RMLIO Target" ;
+    sh:name "RML Target" ;
     sh:description """
     A target describes access to a data target. Any data access description
     is allowed, but rml:Target provides additional properties to complete
     such descriptions.
     """ ;
     sh:message """
-    RMLIO Target accepts one rml:compression, and one rml:encoding.
+    RML Target accepts one rml:compression, and one rml:encoding.
     All of them are optional.
     """ ;
 

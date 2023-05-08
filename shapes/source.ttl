@@ -8,19 +8,19 @@
 @prefix rml: <http://w3id.org/rml/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> . 
 
-:RMLIOSourceShape
+:RMLSourceShape
     a sh:NodeShape ;
     sh:targetObjectsOf rml:source ;  # Object of rml:LogicalSource
     sh:targetClass rml:Source ;  # Used as a class
     # Already targets 'rml:source'
-    sh:name "RMLIO Source" ;
+    sh:name "RML Source" ;
     sh:description """
     A source describes access to a data source. Any data access description
     is allowed, but rml:Source provides additional properties to complete
     such descriptions.
     """ ;
     sh:message """
-    RMLIO Source accepts one or multiple rml:null, one rml:query,
+    RML Source accepts one or multiple rml:null, one rml:query,
     one rml:compression, and one rml:encoding. All of them are optional.
     """ ;
 
