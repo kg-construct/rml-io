@@ -5,6 +5,7 @@ Repository for RML-IO specification, ontology, SHACL shapes and test cases.
 - Specification: http://w3id.org/rml/io/spec/
 - Ontology: http://w3id.org/rml/io
 - Shapes: http://w3id.org/rml/io/shapes
+- Backwards compatibility with R2RML: http://w3id.org/rml/io/bc
 - Test cases: [test-cases](./test-cases)
 
 ## Quickstart
