@@ -29,16 +29,16 @@
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<http://schema.org/RMLIOLogicalSourceShape> a sh:NodeShape ;
+<http://w3id.org/rml/shapes/RMLLogicalSourceShape> a sh:NodeShape ;
     sh:description """
     A logical source is any source that is mapped to RDF triples.
     """ ;
     sh:message """
-    RMLIO Logical Source requires one rml:source and depending on the source 
+    RML Logical Source requires one rml:source and depending on the source 
     type: one rml:query, one rml:referenceFormulation and/or 
     one rml:iterator.
     """ ;
-    sh:name "RMLIO Logical Source" ;
+    sh:name "RML Logical Source" ;
     sh:property [ sh:description """
         The source (rml:source) locates the input data source. It is a URI
         that represents the data source where the data source is.
@@ -50,7 +50,7 @@
         """ ;
             sh:minCount 1 ;
             sh:name "rml:source" ;
-            sh:node <http://schema.org/RMLIOSourceShape> ;
+            sh:node <http://w3id.org/rml/shapes/RMLSourceShape> ;
             sh:nodeKind sh:BlankNodeOrIRI ;
             sh:path rml:source ],
         [ sh:datatype xsd:string ;
@@ -84,15 +84,15 @@
     sh:targetClass rml:LogicalSource ;
     sh:targetObjectsOf rml:logicalSource .
 
-<http://schema.org/RMLIOLogicalTargetShape> a sh:NodeShape ;
+<http://w3id.org/rml/shapes/RMLLogicalTargetShape> a sh:NodeShape ;
     sh:description """
     A logical target is any target to where generated RDF triples are exported
     to.
     """ ;
     sh:message """
-    RMLIO Logical Target requires one rml:target.
+    RML Logical Target requires one rml:target.
     """ ;
-    sh:name "RMLIO Logical Target" ;
+    sh:name "RML Logical Target" ;
     sh:property [ sh:description """
         The target (rml:target) locates the output target. It is a URI
         that represents the target where it must export generated RDF triples
@@ -105,23 +105,23 @@
         """ ;
             sh:minCount 1 ;
             sh:name "rml:target" ;
-            sh:node <http://schema.org/RMLIOTargetShape> ;
+            sh:node <http://w3id.org/rml/shapes/RMLTargetShape> ;
             sh:nodeKind sh:BlankNodeOrIRI ;
             sh:path rml:target ] ;
     sh:targetClass rml:LogicalTarget ;
     sh:targetObjectsOf rml:logicalTarget .
 
-<http://schema.org/RMLIOSourceShape> a sh:NodeShape ;
+<http://w3id.org/rml/shapes/RMLSourceShape> a sh:NodeShape ;
     sh:description """
     A source describes access to a data source. Any data access description
     is allowed, but rml:Source provides additional properties to complete
     such descriptions.
     """ ;
     sh:message """
-    RMLIO Source accepts one or multiple rml:null, one rml:query,
+    RML Source accepts one or multiple rml:null, one rml:query,
     one rml:compression, and one rml:encoding. All of them are optional.
     """ ;
-    sh:name "RMLIO Source" ;
+    sh:name "RML Source" ;
     sh:property [ sh:datatype xsd:string ;
             sh:description """
         rml:null specifies how NULL or empty values are exposed by the data 
@@ -186,17 +186,17 @@
     sh:targetClass rml:Source ;
     sh:targetObjectsOf rml:source .
 
-<http://schema.org/RMLIOTargetShape> a sh:NodeShape ;
+<http://w3id.org/rml/shapes/RMLTargetShape> a sh:NodeShape ;
     sh:description """
     A target describes access to a data target. Any data access description
     is allowed, but rml:Target provides additional properties to complete
     such descriptions.
     """ ;
     sh:message """
-    RMLIO Target accepts one rml:compression, and one rml:encoding.
+    RML Target accepts one rml:compression, and one rml:encoding.
     All of them are optional.
     """ ;
-    sh:name "RMLIO Target" ;
+    sh:name "RML Target" ;
     sh:property [ sh:description """
         rml:compression specifies the compression algorithm to use when
         accessing the data target. By default, no compression is applied.

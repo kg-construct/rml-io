@@ -1,6 +1,6 @@
 ## Logical Source vocabulary {#source-vocabulary}
 
-The LogicalSource vocabulary namespace is http://semweb.mmlab.be/ns/rml-source# 
+The LogicalSource vocabulary namespace is http://w3id.org/rml/
 and it's prefix is `rml`.
 
 The Logical Source vocabulary consists of 2 classes: 
@@ -167,7 +167,36 @@ with `rml:query`.
 This property is under review in
 [Issue 28](https://github.com/kg-construct/rml-io/issues/28).
 
-#### Examples {#source-examples}
+#### Compression formats
+
+Each Source MAY specify the compression with `rml:compression`
+to apply when exporting RDF triples to a Source for saving storage space.
+Several compression formats are specified by the `comp` namespace:
+
+- `rml:none`: No compression is applied
+- `rml:gzip`: GZip compression
+- `rml:zip`: Zip archive with Zip compression
+- `rml:tarXz`: Tar archive with Xz compression
+- `rml:tarGz`: Tar archive with GZip compression
+
+If unspecified, the default value is no compression.
+This namespace is NOT limited to the listed compression formats 
+and MAY be extended in the future.
+
+#### Encoding formats
+
+Each Source MAY describe the encoding format to use when exporting
+RDF triples to a Source. Several encoding formats are defined by the `enc`
+namesapce:
+
+- `rml:UTF-8`: UTF-8 encoding
+- `rml:UTF-16`: UTF-16 encoding
+
+If unspecified, the default value is UTF-8.
+This namespace is NOT limited to the listed compression formats 
+and MAY be extended in the future.
+
+### Examples {#source-examples}
 
 The following example show a Source of an CSV file.
 
@@ -337,7 +366,7 @@ TCP stream in JSON format without compression:
 .
 </pre>
 
-The following example shows a Target of a
+The following example shows a Source of a
 Kafka stream in XML format without compression:
 
 <pre class="ex-source">

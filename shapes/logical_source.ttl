@@ -3,22 +3,22 @@
 # Copyright Dylan Van Assche, IDLab - UGent - imec (2020 - 2023)              #
 ###############################################################################
 @prefix sh: <http://www.w3.org/ns/shacl#> .
-@prefix schema: <http://schema.org/> .
+@prefix : <http://w3id.org/rml/shapes/> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rml: <http://w3id.org/rml/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> . 
 
-schema:RMLIOLogicalSourceShape
+:RMLLogicalSourceShape
     a sh:NodeShape ;
     sh:targetObjectsOf rml:logicalSource ;  # Object of rml:TriplesMap
     sh:targetClass rml:LogicalSource ;  # Used as a class
     # Already targets 'rml:logicalSource'
-    sh:name "RMLIO Logical Source" ;
+    sh:name "RML Logical Source" ;
     sh:description """
     A logical source is any source that is mapped to RDF triples.
     """ ;
     sh:message """
-    RMLIO Logical Source requires one rml:source and depending on the source 
+    RML Logical Source requires one rml:source and depending on the source 
     type: one rml:query, one rml:referenceFormulation and/or 
     one rml:iterator.
     """ ;
@@ -38,7 +38,7 @@ schema:RMLIOLogicalSourceShape
         sh:minCount 1 ;
         sh:maxCount 1 ;
         sh:nodeKind sh:BlankNodeOrIRI;
-        sh:node schema:RMLIOSourceShape;
+        sh:node :RMLSourceShape;
     ] ; 
 
     # rml:iterator
