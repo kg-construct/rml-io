@@ -1,6 +1,6 @@
 ## Logical Target vocabulary {#target-vocabulary}
 
-The LogicalTarget vocabulary namespace is http://semweb.mmlab.be/ns/rml-target# 
+The LogicalTarget vocabulary namespace is http://w3id.org/rml/
 and it's prefix is `rml`.
 
 The LogicalTarget vocabulary consists of `rml:LogicalTarget` and `rml:Target` 
@@ -37,20 +37,16 @@ The serialization format is described using the W3C
 By default, the serialization format is N-Quads [[N-Quads]].
 - The **compression algorithm** (`rml:compression`) MAY describe 
 the compression algorithm to apply when exporting a knowledge graph.
-The compression format is specified through 
-the [comp](http://semweb.mmlab.be/ns/rml-compression#) namespace.
 By default, no compression is applied.
 - The **encoding** (`rml:encoding`) MAY specify which encoding must be used
 when exporting a knowledge graph.
-The encoding is specified through 
-[enc](http://semweb.mmlab.be/ns/rml-compression#) namespace.
 By default, UTF-8 is used.
 
-| Property             | Domain               | Range              |
-| -------------------- | -------------------- | ------------------ |
-| `rml:serialization`  | `rml:LogicalTarget`  | `formats:Format`   |
+| Property             | Domain               | Range             |
+| -------------------- | -------------------- | ----------------- |
+| `rml:serialization`  | `rml:LogicalTarget`  | `formats:Format`  |
 | `rml:compression`    | `rml:LogicalTarget`  | `rml:Compression` |
-| `rml:encoding`       | `rml:LogicalTarget`  | `rml:Encoding`     |
+| `rml:encoding`       | `rml:LogicalTarget`  | `rml:Encoding`    |
 
 <figure>
   <img src="./resources/images/target-structure.png" alt="Logical Target structure"/>

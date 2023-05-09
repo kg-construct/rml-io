@@ -104,17 +104,17 @@ id;name;nickname
 &lt;#TargetDump2&gt; a rml:LogicalTarget;
   rml:target &lt;#VoIDDump2&gt;;
   rml:serialization formats:Turtle;
-  rml:compression rml:zip;
 .
 </pre>
 
 <pre class="ex-access">
 &lt;#VoIDDump1&gt; a void:Dataset;
-    void:dataDump &ltfile:///data/dump1.nt&gt;;
+  void:dataDump &ltfile:///data/dump1.nt&gt;;
 .
 
 &lt;#VoIDDump2&gt; a void:Dataset;
-    void:dataDump &ltfile:///data/dump2.ttl.zip&gt;;
+  void:dataDump &ltfile:///data/dump2.ttl.zip&gt;;
+  rml:compression rml:zip;
 .
 </pre>
 

@@ -11,8 +11,8 @@ A Triples Map MUST contain exactly one `rml:logicalSource` property
 to describe the data source that must be used by the Triples Map to generate
 RDF triples.
 
-| Property            | Domain          | Range                |
-| ------------------- | ------------    | -------------------- |
+| Property            | Domain           | Range                |
+| ------------------- | ---------------- | -------------------- |
 | `rml:logicalSource` | `rml:TriplesMap` | `rml:LogicalSource`  |
 
 In the example below, a CSV file is transformed into a knowledge graph.
