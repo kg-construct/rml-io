@@ -196,7 +196,7 @@ If unspecified, the default value is UTF-8.
 This namespace is NOT limited to the listed compression formats 
 and MAY be extended in the future.
 
-#### Examples {#source-examples}
+### Examples {#source-examples}
 
 The following example show a Source of an CSV file.
 

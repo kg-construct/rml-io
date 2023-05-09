@@ -91,7 +91,7 @@ If unspecified, the default value is UTF-8.
 This namespace is NOT limited to the listed compression formats 
 and MAY be extended in the future.
 
-#### Examples {#target-examples}
+### Examples {#target-examples}
 
 The following example show a Target of an RDF dump in Turtle [[Turtle]] 
 format with GZip compression and UTF-8 encoding:
