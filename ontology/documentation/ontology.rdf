@@ -1,25 +1,33 @@
 <?xml version="1.0"?>
-<rdf:RDF xmlns="http://w3id.org/rml/io/"
-     xml:base="http://w3id.org/rml/io/"
-     xmlns:dc="http://purl.org/dc/terms/"
+<rdf:RDF xmlns="http://w3id.org/rml/"
+     xml:base="http://w3id.org/rml/"
      xmlns:ns="http://creativecommons.org/ns#"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:xml="http://www.w3.org/XML/1998/namespace"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:bibo="http://purl.org/ontology/bibo/"
      xmlns:foaf="http://xmlns.com/foaf/0.1/"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
      xmlns:vaem="http://www.linkedmodel.org/schema/vaem#"
-     xmlns:vann="http://purl.org/vocab/vann/">
+     xmlns:vann="http://purl.org/vocab/vann/"
+     xmlns:terms="http://purl.org/dc/terms/">
     <owl:Ontology rdf:about="http://w3id.org/rml/io/">
-        <dc:contributor>Ana Iglesias Molina</dc:contributor>
-        <dc:contributor>Anastasia Dimou</dc:contributor>
-        <dc:contributor>Dylan Van Assche</dc:contributor>
-        <dc:contributor>Pano Maria</dc:contributor>
-        <dc:description xml:lang="en">RML-IO enables the description of input data sources and target output data serialization </dc:description>
-        <dc:license rdf:resource="http://purl.org/NET/rdflicense/cc-by4.0"/>
-        <dc:modified>2023-04-28</dc:modified>
-        <dc:title xml:lang="en">RML-IO: Source and Target</dc:title>
+        <owl:versionIRI rdf:resource="http://w3id.org/rml/io"/>
+        <terms:contributor>Ana Iglesias Molina</terms:contributor>
+        <terms:contributor>Anastasia Dimou</terms:contributor>
+        <terms:contributor>Dylan Van Assche</terms:contributor>
+        <terms:contributor>Pano Maria</terms:contributor>
+        <terms:created>2023-03-14</terms:created>
+        <terms:description xml:lang="en">RML-IO enables the description of input data sources and target output data serialization </terms:description>
+        <terms:license rdf:resource="http://purl.org/NET/rdflicense/cc-by4.0"/>
+        <terms:modified>2023-06-15</terms:modified>
+        <terms:publisher rdf:resource="https://www.w3.org/community/kg-construct/"/>
+        <terms:title xml:lang="en">RML-IO: Source and Target</terms:title>
+        <bibo:status>draft</bibo:status>
+        <vann:preferredNamespacePrefix>rml</vann:preferredNamespacePrefix>
+        <vann:preferredNamespaceUri>http://w3id.org/rml/</vann:preferredNamespaceUri>
+        <owl:versionInfo>0.1.0</owl:versionInfo>
     </owl:Ontology>
 
 
@@ -47,6 +55,13 @@
 
 
     <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/contributor"/>
+
+
+
+    <!-- http://purl.org/dc/terms/created -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/created"/>
 
 
 
@@ -96,6 +111,13 @@
 
 
     <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/title"/>
+
+
+
+    <!-- http://purl.org/ontology/bibo/status -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/ontology/bibo/status"/>
 
 
 
@@ -540,6 +562,18 @@
         <rdfs:comment xml:lang="en">Represents GZip file compression.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://w3id.org/rml/io/"/>
         <rdfs:label>GZip</rdfs:label>
+    </owl:NamedIndividual>
+
+
+
+    <!-- http://w3id.org/rml/none -->
+
+
+    <owl:NamedIndividual rdf:about="http://w3id.org/rml/none">
+        <rdf:type rdf:resource="http://w3id.org/rml/Compression"/>
+        <rdfs:comment xml:lang="en">Represents no compression.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://w3id.org/rml/io/"/>
+        <rdfs:label>None</rdfs:label>
     </owl:NamedIndividual>
 
 

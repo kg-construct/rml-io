@@ -13,17 +13,25 @@
 @prefix vaem: <http://www.linkedmodel.org/schema/vaem#> .
 @prefix vann: <http://purl.org/vocab/vann/> .
 @prefix formats: <https://www.w3.org/ns/formats/> .
+@prefix bibo: <http://purl.org/ontology/bibo/> .
 @base <http://w3id.org/rml/> .
 
 <http://w3id.org/rml/io/> rdf:type owl:Ontology ;
                         dc:description "RML-IO enables the description of input data sources and target output data serialization "@en ;
-                        dc:modified "2023-04-28" ;
                         dc:title "RML-IO: Source and Target"@en ;
                         dc:contributor "Dylan Van Assche" ;
                         dc:contributor "Anastasia Dimou" ;
                         dc:contributor "Pano Maria" ;
                         dc:contributor "Ana Iglesias Molina" ;
-                        dc:license <http://purl.org/NET/rdflicense/cc-by4.0> .
+                        dc:license <http://purl.org/NET/rdflicense/cc-by4.0> ;
+                        vann:preferredNamespaceUri "http://w3id.org/rml/" ;
+                        vann:preferredNamespacePrefix "rml" ;
+                        dc:publisher <https://www.w3.org/community/kg-construct/> ;
+                        bibo:status "draft" ;
+                        owl:versionIRI <http://w3id.org/rml/io> ;
+                        owl:versionInfo "0.1.0" ;
+                        dc:created "2023-03-14" ;
+                        dc:modified "2023-06-15" .
 
 #################################################################
 #    Annotation properties
@@ -294,6 +302,11 @@ foaf:name rdf:type owl:AnnotationProperty .
     rdfs:label   "TarXz" ;
     rdfs:isDefinedBy <http://w3id.org/rml/io/> ;
     rdfs:comment "Represents TarXz file compression."@en .
+
+:none rdf:type owl:NamedIndividual , :Compression ;
+    rdfs:label   "None" ;
+    rdfs:isDefinedBy <http://w3id.org/rml/io/> ;
+    rdfs:comment "Represents no compression."@en .
 
 :CSV rdf:type owl:NamedIndividual , :ReferenceFormulation ;
     rdfs:label   "CSV" ;
