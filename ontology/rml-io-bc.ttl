@@ -17,7 +17,8 @@
 
 <http://w3id.org/rml/io/bc> rdf:type owl:Ontology ;
                         dc:description "This module specifies the relationships established by the R2RML and previous RML vocabularies to the new RML-IO specification."@en ;
-                        dc:modified "2023-05-02" ;
+                        dc:created "2023-05-02" ;
+                        dc:modified "2023-06-19" ;
                         dc:title "R2RML to RML alignment module for RML-IO"@en ;
                         dc:creator "Ana Iglesias Molina" ;
                         dc:license <http://purl.org/NET/rdflicense/cc-by4.0> ;
@@ -85,31 +86,31 @@ oldrml:LogicalSource rdf:type owl:Class ;
                 rdfs:comment "Denotes a logical source."@en ;
                 rdfs:label "Logical Source"@en ;
                 rdfs:isDefinedBy <http://semweb.mmlab.be/ns/rml#> ;
-                owl:equivalentClass rml:LogicalSource .
+                owl:subClassOf rml:LogicalSource .
 
 rr:LogicalTable rdf:type owl:Class ;
                 rdfs:comment "Denotes a logical table."@en ;
                 rdfs:label "Logical Table"@en ;
                 rdfs:isDefinedBy <http://www.w3.org/ns/r2rml#> ;
-                dc:isReplacedBy rml:LogicalSource .
+                owl:subClassOf rml:LogicalSource .
 
 oldrml:BaseSource rdf:type owl:Class ;
                 rdfs:comment "Denotes a base source."@en ;
                 rdfs:label "Base Source"@en ;
                 rdfs:isDefinedBy <http://semweb.mmlab.be/ns/rml#> ;
-                dc:isReplacedBy rml:LogicalSource .
+                owl:subClassOf rml:LogicalSource .
 
 rr:BaseTableOrView rdf:type owl:Class ;
                 rdfs:comment "Denotes a base table or view."@en ;
                 rdfs:label "Base Table Or View"@en ;
                 rdfs:isDefinedBy <http://www.w3.org/ns/r2rml#> ;
-                dc:isReplacedBy rml:LogicalSource .
+                owl:subClassOf rml:LogicalSource .
 
 rr:R2RMLView rdf:type owl:Class ;
                 rdfs:comment "Denotes an R2RML view."@en ;
                 rdfs:label "R2RML View"@en ;
                 rdfs:isDefinedBy <http://www.w3.org/ns/r2rml#> ;
-                dc:isReplacedBy rml:LogicalSource .
+                owl:subClassOf rml:LogicalSource .
 
 
 #################################################################
@@ -119,13 +120,13 @@ rr:R2RMLView rdf:type owl:Class ;
 rr:sqlVersion rdf:type owl:ObjectProperty ;
                    rdfs:label "SQL version"@en ;
                    rdfs:isDefinedBy <http://www.w3.org/ns/r2rml#> ;
-                   dc:isReplacedBy rml:referenceFormulation ;
+                   owl:subPropertyOf rml:referenceFormulation ;
                    rdfs:comment "An identifier for a SQL version."@en .
 
 oldrml:source rdf:type rdf:Property ;
                    rdfs:label "source"@en ;
                    rdfs:isDefinedBy <http://semweb.mmlab.be/ns/rml#> ;
-                   dc:isReplacedBy rml:source ;
+                   owl:subPropertyOf rml:source ;
                    rdfs:comment "Qualified name of the source data."@en .
 
 
@@ -136,19 +137,19 @@ oldrml:source rdf:type rdf:Property ;
 rr:tableName rdf:type owl:DatatypeProperty ;
                    rdfs:label "table name"@en ;
                    rdfs:isDefinedBy <http://www.w3.org/ns/r2rml#> ;
-                   dc:isReplacedBy rml:source ;
+                   owl:subPropertyOf rml:source ;
                    rdfs:comment "Schema-qualified name of a table or view."@en .
 
 rr:sqlQuery rdf:type owl:DatatypeProperty ;
                    rdfs:label "SQL query"@en ;
                    rdfs:isDefinedBy <http://www.w3.org/ns/r2rml#> ;
-                   dc:isReplacedBy rml:query ;
+                   owl:subPropertyOf rml:query ;
                    rdfs:comment "A valid SQL query."@en .
 
 oldrml:iterator rdf:type owl:DatatypeProperty ;
                    rdfs:label "iterator"@en ;
                    rdfs:isDefinedBy <http://www.w3.org/ns/r2rml#> ;
-                   owl:equivalentProperty rml:iterator ;
+                   owl:subPropertyOf rml:iterator ;
                    rdfs:comment "an expression qualified according to the reference formulation specified for pointing to an extract of the source data."@en .
 
 
