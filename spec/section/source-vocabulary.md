@@ -20,7 +20,7 @@ defines the reference formulation used to refer to the elements
 of a data source.
 The reference formulation must be specified in the case of databases,
 CSV, TSV, XML, and JSON data sources.
-By default `rml:SQL2008` for databases, `ql:CSV` for CSV and TSV data sources.
+By default `rml:SQL2008` for databases, `rml:CSV` for CSV and TSV data sources.
 XPath for XML and JSONPath for JSON and JSONL data sources.
 
 The following properties MAY be specified in a Logical Source:
@@ -48,7 +48,7 @@ If a property is specified, it MUST NOT be specified multiple times.
 | Property                    | Domain               | Range                     |
 | --------------------------- | -------------------- | ------------------------- |
 | `rml:source`                | `rml:LogicalSource`  | `IRI`                     |
-| `rml:referenceFormulation`  | `rml:LogicalSource`  | `ql:ReferenceFormulation` |
+| `rml:referenceFormulation`  | `rml:LogicalSource`  | `rml:ReferenceFormulation` |
 | `rml:iterator`              | `rml:LogicalSource`  | `Literal`                 |
 
 <figure>
@@ -64,29 +64,29 @@ Several reference formulations (`rml:ReferenceFormulation`)
 are defined in this specification:
 
 - `rml:SQL2008`: SQL 2008 standard for relational databases
-- `ql:CSV`: CSV or TSV data sources
-- `ql:JSONPath`: JSON documents
-- `ql:XPath`: XML documents, a shortcut for `ql:XPathReferenceFormulation`
+- `rml:CSV`: CSV or TSV data sources
+- `rml:JSONPath`: JSON documents
+- `rml:XPath`: XML documents, a shortcut for `rml:XPathReferenceFormulation`
 with default parameters
-- `ql:XPathReferenceFormulation`: XML documents with optionally
+- `rml:XPathReferenceFormulation`: XML documents with optionally
 the definition of XML namespaces used in references.
 By default, no namespaces are defined.
 
-`ql:XPathReferenceFormulation` may specify zero or more 
-`ql:namespace` properties with a `ql:Namespace`.
-A `ql:Namespace` contains the following required properties:
- - `ql:namespacePrefix`: A Literal with the prefix used for the XML namespace.
- - `ql:namespaceURL`: A Literal with the URL identifying the XML namespace.
+`rml:XPathReferenceFormulation` may specify zero or more 
+`rml:namespace` properties with a `rml:Namespace`.
+A `rml:Namespace` contains the following required properties:
+ - `rml:namespacePrefix`: A Literal with the prefix used for the XML namespace.
+ - `rml:namespaceURL`: A Literal with the URL identifying the XML namespace.
 
 <pre class="ex-source">
 &lt;#XMLNamespace&gt; a rml:LogicalSource;
      rml:source [ a rml:Source, dcat:Distribution;
          dcat:accessURL &lt;file:///path/to/data.xml&gt;;
      ];
-     rml:referenceFormulation [ a ql:XPathReferenceFormulation;
-       ql:namespace [ a ql:Namespace;
-         ql:namespacePrefix "ex";
-         ql:namespaceURL "http://example.org";
+     rml:referenceFormulation [ a rml:XPathReferenceFormulation;
+       rml:namespace [ a rml:Namespace;
+         rml:namespacePrefix "ex";
+         rml:namespaceURL "http://example.org";
        ];
      ];
      rml:iterator "/xpath/ex:namespace/expression";
@@ -137,7 +137,7 @@ through a `SELECT * FROM {table}` query (`rml:tableName` compatibility).
        rml:compression rml:gzip; # GZip compression
        rml:encoding rml:UTF-16; # UTF-16 encoding
      ];
-     rml:referenceFormulation ql:JSONPath;
+     rml:referenceFormulation rml:JSONPath;
      rml:iterator "$.jsonpath.expression";
 .
 </pre>
@@ -207,7 +207,7 @@ The following example show a Source of an CSV file.
         rml:null "NULL";
         rml:null "";
      ];
-     rml:referenceFormulation ql:CSV;
+     rml:referenceFormulation rml:CSV;
 .
 </pre>
 
@@ -222,7 +222,7 @@ the `student` table. The database username and password are provided as well.
 <pre class="ex-source">
 &lt;#RDB&gt; a rml:LogicalSource;
     rml:source [ a rml:Source, d2rq:Database;
-        d2rq:jdbcDSN "jdbc:mysql://localhost/example";
+        d2rq:jdbcDSN "jdbc:mysrml://localhost/example";
         d2rq:jdbcDriver "com.mysql.jdbc.Driver";
         d2rq:username "user";
         d2rq:password "password";
@@ -242,7 +242,7 @@ XML file with no compression.
     rml:source [ a rml:Source, dcat:Distribution;
         dcat:accessURL &lt;file:///path/to/data.xml&gt;;
     ];
-    rml:referenceFormulation ql:XPath;
+    rml:referenceFormulation rml:XPath;
     rml:iterator "/xpath/iterator/expression";
 .
 </pre>
@@ -255,7 +255,7 @@ The following example is GZip compressed JSON file as Source:
         dcat:accessURL &lt;file:///path/to/data.json.gz&gt;;
         rml:compression rml:gzip;
      ];
-     rml:referenceFormulation ql:JSONPath;
+     rml:referenceFormulation rml:JSONPath;
      rml:iterator "$.jsonpath.expression";
 .
 </pre>
@@ -301,7 +301,7 @@ set to 'Processor':
             ];
         ];
     ];
-    rml:referenceFormulation ql:JSONPath;
+    rml:referenceFormulation rml:JSONPath;
     rml:iterator "$.jsonpath";
 .
 </pre>
@@ -320,7 +320,7 @@ HTTP Server Sent Events stream in XML format without compression:
             ];
         ];
     ];
-    rml:referenceFormulation ql:XPath;
+    rml:referenceFormulation rml:XPath;
     rml:iterator "/my/xpath";
 .
 </pre>
@@ -342,7 +342,7 @@ MQTT stream in JSON format without compression:
             ];
         ];
     ];
-    rml:referenceFormulation ql:JSONPath;
+    rml:referenceFormulation rml:JSONPath;
     rml:iterator "$.jsonpath";
 .
 </pre>
@@ -361,7 +361,7 @@ TCP stream in JSON format without compression:
             ];
         ];
     ];
-    rml:referenceFormulation ql:JSONPath;
+    rml:referenceFormulation rml:JSONPath;
     rml:iterator "$.jsonpath";
 .
 </pre>
@@ -382,7 +382,7 @@ Kafka stream in XML format without compression:
             ];
         ];
     ];
-    rml:referenceFormulation ql:XPath;
+    rml:referenceFormulation rml:XPath;
     rml:iterator "/my/xpath";
 .
 </pre>

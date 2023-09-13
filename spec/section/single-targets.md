@@ -53,7 +53,7 @@ to an RDF dump with N-Quads as serialization format and GZip compression:
 &lt;#TriplesMap&gt; a rml:TriplesMap;
   rml:logicalSource [ a rml:LogicalSource;
     rml:source &lt;#DCATSourceAccess&gt;;
-    rml:referenceFormulation ql:JSONPath;
+    rml:referenceFormulation rml:JSONPath;
     rml:iterator "$.[*]";
   ];
   rml:subjectMap [ a rml:SubjectMap;
@@ -155,7 +155,7 @@ with Turtle as serialization format and Zip compression:
 &lt;#TriplesMap&gt; a rml:TriplesMap;
   rml:logicalSource [ a rml:LogicalSource;
     rml:source &lt;#DCATSourceAccess&gt;;
-    rml:referenceFormulation ql:JSONPath;
+    rml:referenceFormulation rml:JSONPath;
     rml:iterator "$.[*]";
   ];
   rml:subjectMap [ a rml:SubjectMap;
@@ -274,7 +274,7 @@ with N-Triples as serialization format:
 &lt;#TriplesMap&gt; a rml:TriplesMap;
   rml:logicalSource [ a rml:LogicalSource;
     rml:source &lt;#DCATSourceAccess&gt;;
-    rml:referenceFormulation ql:JSONPath;
+    rml:referenceFormulation rml:JSONPath;
     rml:iterator "$.[*]";
   ];
   rml:subjectMap [ a rml:SubjectMap;
@@ -389,7 +389,7 @@ to an RDF dump with N-Quads as serialization format:
 &lt;#TriplesMap&gt; a rml:TriplesMap;
   rml:logicalSource [ a rml:LogicalSource;
     rml:source &lt;#DCATSourceAccess&gt;;
-    rml:referenceFormulation ql:JSONPath;
+    rml:referenceFormulation rml:JSONPath;
     rml:iterator "$.[*]";
   ];
   rml:subjectMap [ a rml:SubjectMap;
@@ -492,7 +492,7 @@ to a RDF dump with N-Triples as serialization format:
 &lt;#TriplesMap&gt; a rml:TriplesMap;
   rml:logicalSource [ a rml:LogicalSource;
     rml:source &lt;#DCATSourceAccess&gt;;
-    rml:referenceFormulation ql:JSONPath;
+    rml:referenceFormulation rml:JSONPath;
     rml:iterator "$.[*]";
   ];
   rml:subjectMap [ a rml:SubjectMap;
