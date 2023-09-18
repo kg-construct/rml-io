@@ -33,7 +33,7 @@
         accessing the data target. By default, no compression is applied.
         """ ;
         sh:message """
-        rml:query must be provided as an IRI.
+        rml:compression must be provided as an IRI.
         """ ;
         sh:minCount 0 ;
         sh:maxCount 1 ;

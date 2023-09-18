@@ -71,12 +71,21 @@ with default parameters
 - `rml:XPathReferenceFormulation`: XML documents with optionally
 the definition of XML namespaces used in references.
 By default, no namespaces are defined.
+- `rml:SQL2008Query`: SQL query for a relational database.
+- `rml:SQL2008Table`: Shortcut to select all columns from a SQL table.
 
 `rml:XPathReferenceFormulation` may specify zero or more 
 `rml:namespace` properties with a `rml:Namespace`.
 A `rml:Namespace` contains the following required properties:
  - `rml:namespacePrefix`: A Literal with the prefix used for the XML namespace.
  - `rml:namespaceURL`: A Literal with the URL identifying the XML namespace.
+
+SPARQL queries iterations can be specified by using the W3C Formats namespace:
+
+- `formats:SPARQL_Results_CSV`: SPARQL results as CSV.
+- `formats:SPARQL_Results_TSV`: SPARQL results as TSV.
+- `formats:SPARQL_Results_JSON`: SPARQL results as JSON.
+- `formats:SPARQL_Results_XML`: SPARQL results as XML.
 
 <pre class="ex-source">
 &lt;#XMLNamespace&gt; a rml:LogicalSource;
@@ -122,12 +131,6 @@ However, JSON has a NULL character specified: `null`,
 this one is used together with the ones specified through `rml:null`.
 - **rml:compression** specifies if the source is compressed
 and the used compression algorithm. Defaults to no compression.
-- **rml:query** defines which query should be applied on the source 
-during access. Example: SPARQL query for a SPARQL endpoint or a SQL query
-for a relational database. Defaults to an empty string.
-This property is a broader version of `rml:sqlQuery`.
-A whole table or view of a relational database can be specified
-through a `SELECT * FROM {table}` query (`rml:tableName` compatibility).
 
 <pre class="ex-source">
 &lt;#JSON&gt; a rml:LogicalSource;
@@ -146,8 +149,7 @@ through a `SELECT * FROM {table}` query (`rml:tableName` compatibility).
 | --------------------------- | -------------------- | ------------------------- |
 | `rml:encoding`              | `rml:Source`         | `rml:Encoding`            |
 | `rml:null`                  | `rml:Source`         | `Literal`                 |
-| `rml:compression`           | `rml:Source`         | `rml:Compression`        |
-| `rml:query`                 | `rml:Source`         | `Literal`                 |
+| `rml:compression`           | `rml:Source`         | `rml:Compression`         |
 
 #### NULL values
 
@@ -158,14 +160,6 @@ but additional ones can be specified. Multiple NULL values are allowed.
 For example, in relational databases `NULL` is always considered as a NULL
 value while also an empty column can be considered as a NULL value by
 specifying it through `rml:null` in a Source.
-
-#### Query
-
-Each Source MAY specify a query to apply when accessing the source 
-with `rml:query`.
-
-This property is under review in
-[Issue 28](https://github.com/kg-construct/rml-io/issues/28).
 
 #### Compression formats
 
@@ -226,13 +220,15 @@ the `student` table. The database username and password are provided as well.
         d2rq:jdbcDriver "com.mysql.jdbc.Driver";
         d2rq:username "user";
         d2rq:password "password";
-        rml:query "SELECT * FROM student;";
-        rml:referenceFormulation rml:SQL2008;
     ];
+    rml:iterator "SELECT * FROM student;";
+    rml:referenceFormulation rml:SQL2008Query;
 .
 </pre>
 
-Note that there is no `rml:iterator` present because its default is row.
+A shortcut is available to select all columns from a table,
+such as in the example above, by using the `rml:SQL2008Table`
+as `rml:referenceFormulation`.
 
 The following example shows a Source of a 
 XML file with no compression.
@@ -262,15 +258,16 @@ The following example is GZip compressed JSON file as Source:
 
 Sources can also describe access to SPARQL endpoints with the 
 W3C Service Description ontology. SPARQL endpoints need a SPARQL query, 
-specified by `rml:query`.
+to iterate over.
 
 <pre class="ex-source">
 &lt;#SPARQLEndpoint&gt; a rml:LogicalSource;
     rml:source [ a rml:Source, sd:Service;
         sd:endpoint  &lt;http://example.com/sparql&gt;;
         sd:supportedLanguage sd:SPARQL11Query;
-        rml:query "CONSTRUCT WHERE { ?s ?p ?o. } LIMIT 100";
     ];
+    rml:iterator "CONSTRUCT WHERE { ?s ?p ?o. } LIMIT 100";
+    rml:referenceFormulation formats:SPARQL_Results_CSV;
 .
 </pre>
 

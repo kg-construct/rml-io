@@ -34,7 +34,6 @@ http://dbpedia.org/resource/Melissa_Rauch,Melissa Rauch
 &lt;#SDSourceAccess&gt; a rml:Source, sd:Service;
   sd:endpoint <http://dbpedia.org/sparql/>;
   sd:supportedLanguage sd:SPARQL11Query;
-  sd:resultFormat formats:SPARQL_Results_CSV;
 .
 </pre>
 
@@ -42,7 +41,8 @@ http://dbpedia.org/resource/Melissa_Rauch,Melissa Rauch
 &lt;#TriplesMap1&gt; a rml:TriplesMap;
   rml:logicalSource [ a rml:LogicalSource;
     rml:source &lt;#SDSourceAccess&gt;;
-    rml:query """
+    rml:referenceFormulation formats:SPARQL_Results_CSV;
+    rml:iterator """
       PREFIX dbo: <http://dbpedia.org/ontology/>
       PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
       PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
@@ -71,7 +71,8 @@ http://dbpedia.org/resource/Melissa_Rauch,Melissa Rauch
 &lt;#TriplesMap2&gt; a rml:TriplesMap;
   rml:logicalSource [ a rml:LogicalSource;
     rml:source &lt;#SDSourceAccess&gt;;
-    rml:query """
+    rml:referenceFormulation formats:SPARQL_Results_CSV;
+    rml:iterator """
       PREFIX dbo: <http://dbpedia.org/ontology/>
       PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
       PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
@@ -177,7 +178,6 @@ http://dbpedia.org/resource/Melissa_Rauch,Melissa Rauch
 &lt;#SDSourceAccess&gt; a rml:Source, sd:Service;
   sd:endpoint <http://dbpedia.org/sparql/>;
   sd:supportedLanguage sd:SPARQL11Query;
-  sd:resultFormat formats:SPARQL_Results_CSV;
 .
 </pre>
 
@@ -185,7 +185,8 @@ http://dbpedia.org/resource/Melissa_Rauch,Melissa Rauch
 &lt;#TriplesMap&gt; a rml:TriplesMap;
   rml:logicalSource [ a rml:LogicalSource;
     rml:source &lt;#SDSourceAccess&gt;;
-    rml:query """
+    rml:referenceFormulation formats:SPARQL_Results_CSV;
+    rml:iterator """
       PREFIX dbo: <http://dbpedia.org/ontology/>
       PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
       PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>

@@ -19,8 +19,7 @@
     """ ;
     sh:message """
     RML Logical Source requires one rml:source and depending on the source 
-    type: one rml:query, one rml:referenceFormulation and/or 
-    one rml:iterator.
+    type: one rml:referenceFormulation and/or one rml:iterator.
     """ ;
 
     # rml:source

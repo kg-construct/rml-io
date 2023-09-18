@@ -20,8 +20,8 @@
     such descriptions.
     """ ;
     sh:message """
-    RML Source accepts one or multiple rml:null, one rml:query,
-    one rml:compression, and one rml:encoding. All of them are optional.
+    RML Source accepts one or multiple rml:null, one rml:compression,
+    and one rml:encoding. All of them are optional.
     """ ;
 
     # rml:null
@@ -40,23 +40,6 @@
         sh:datatype xsd:string ;
     ] ; 
 
-    # rml:query
-    sh:property [
-        sh:path rml:query ;
-        sh:name "rml:query" ;
-        sh:description """
-        rml:query specifies the query to execute on a data source if that data
-        source suports it.
-        """ ;
-        sh:message """
-        rml:query must be provided as a string Literal.
-        """ ;
-        sh:minCount 0 ;
-        sh:maxCount 1 ;
-        sh:nodeKind sh:Literal;
-        sh:datatype xsd:string ;
-    ] ; 
-
     # rml:compression
     sh:property [
         sh:path rml:compression ;
@@ -66,7 +49,7 @@
         accessing the data source. By default, no compression is applied.
         """ ;
         sh:message """
-        rml:query must be provided as an IRI.
+        rml:compression must be provided as an IRI.
         """ ;
         sh:minCount 0 ;
         sh:maxCount 1 ;
