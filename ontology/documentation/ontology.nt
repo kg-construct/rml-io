@@ -134,14 +134,6 @@ _:genid4 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/20
 <http://w3id.org/rml/null> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://w3id.org/rml/io/> .
 <http://w3id.org/rml/null> <http://www.w3.org/2000/01/rdf-schema#label> "null" .
 # 
-# http://w3id.org/rml/query
-<http://w3id.org/rml/query> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<http://w3id.org/rml/query> <http://www.w3.org/2000/01/rdf-schema#domain> <http://w3id.org/rml/Source> .
-<http://w3id.org/rml/query> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/1999/02/22-rdf-syntax-ns#Literal> .
-<http://w3id.org/rml/query> <http://www.w3.org/2000/01/rdf-schema#comment> "Defines which query should be applied on the source during access"@en .
-<http://w3id.org/rml/query> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://w3id.org/rml/io/> .
-<http://w3id.org/rml/query> <http://www.w3.org/2000/01/rdf-schema#label> "query" .
-# 
 # http://w3id.org/rml/referenceFormulation
 <http://w3id.org/rml/referenceFormulation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <http://w3id.org/rml/referenceFormulation> <http://www.w3.org/2000/01/rdf-schema#domain> <http://w3id.org/rml/LogicalSource> .
@@ -291,12 +283,19 @@ _:genid4 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/20
 <http://w3id.org/rml/JSONPath> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://w3id.org/rml/io/> .
 <http://w3id.org/rml/JSONPath> <http://www.w3.org/2000/01/rdf-schema#label> "JSONPath" .
 # 
-# http://w3id.org/rml/SQL2008
-<http://w3id.org/rml/SQL2008> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
-<http://w3id.org/rml/SQL2008> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://w3id.org/rml/ReferenceFormulation> .
-<http://w3id.org/rml/SQL2008> <http://www.w3.org/2000/01/rdf-schema#comment> "Denotes the Core SQL 2008."@en .
-<http://w3id.org/rml/SQL2008> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://w3id.org/rml/io/> .
-<http://w3id.org/rml/SQL2008> <http://www.w3.org/2000/01/rdf-schema#label> "SQL 2008" .
+# http://w3id.org/rml/SQL2008Query
+<http://w3id.org/rml/SQL2008Query> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://w3id.org/rml/SQL2008Query> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://w3id.org/rml/ReferenceFormulation> .
+<http://w3id.org/rml/SQL2008Query> <http://www.w3.org/2000/01/rdf-schema#comment> "Denotes a query in SQL 2008."@en .
+<http://w3id.org/rml/SQL2008Query> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://w3id.org/rml/io/> .
+<http://w3id.org/rml/SQL2008Query> <http://www.w3.org/2000/01/rdf-schema#label> "SQL 2008 Query" .
+# 
+# http://w3id.org/rml/SQL2008Table
+<http://w3id.org/rml/SQL2008Table> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://w3id.org/rml/SQL2008Table> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://w3id.org/rml/ReferenceFormulation> .
+<http://w3id.org/rml/SQL2008Table> <http://www.w3.org/2000/01/rdf-schema#comment> "Denotes a table in SQL 2008."@en .
+<http://w3id.org/rml/SQL2008Table> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://w3id.org/rml/io/> .
+<http://w3id.org/rml/SQL2008Table> <http://www.w3.org/2000/01/rdf-schema#label> "SQL 2008 Table" .
 # 
 # http://w3id.org/rml/UTF-16
 <http://w3id.org/rml/UTF-16> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .

@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
-<rdf:RDF xmlns="http://w3id.org/rml/"
-     xml:base="http://w3id.org/rml/"
+<rdf:RDF xmlns="http://w3id.org/rml/io/"
+     xml:base="http://w3id.org/rml/io/"
      xmlns:ns="http://creativecommons.org/ns#"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
@@ -29,10 +29,10 @@
         <vann:preferredNamespaceUri>http://w3id.org/rml/</vann:preferredNamespaceUri>
         <owl:versionInfo>0.1.0</owl:versionInfo>
     </owl:Ontology>
+    
 
 
-
-    <!--
+    <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
     // Annotation properties
@@ -41,115 +41,115 @@
      -->
 
 
-
+    
 
 
     <!-- http://creativecommons.org/ns#license -->
 
 
     <owl:AnnotationProperty rdf:about="http://creativecommons.org/ns#license"/>
-
+    
 
 
     <!-- http://purl.org/dc/terms/contributor -->
 
 
     <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/contributor"/>
-
+    
 
 
     <!-- http://purl.org/dc/terms/created -->
 
 
     <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/created"/>
-
+    
 
 
     <!-- http://purl.org/dc/terms/creator -->
 
 
     <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/creator"/>
-
+    
 
 
     <!-- http://purl.org/dc/terms/description -->
 
 
     <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/description"/>
-
+    
 
 
     <!-- http://purl.org/dc/terms/issued -->
 
 
     <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/issued"/>
-
+    
 
 
     <!-- http://purl.org/dc/terms/license -->
 
 
     <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/license"/>
-
+    
 
 
     <!-- http://purl.org/dc/terms/modified -->
 
 
     <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/modified"/>
-
+    
 
 
     <!-- http://purl.org/dc/terms/publisher -->
 
 
     <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/publisher"/>
-
+    
 
 
     <!-- http://purl.org/dc/terms/title -->
 
 
     <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/title"/>
-
+    
 
 
     <!-- http://purl.org/ontology/bibo/status -->
 
 
     <owl:AnnotationProperty rdf:about="http://purl.org/ontology/bibo/status"/>
-
+    
 
 
     <!-- http://purl.org/vocab/vann/preferredNamespacePrefix -->
 
 
     <owl:AnnotationProperty rdf:about="http://purl.org/vocab/vann/preferredNamespacePrefix"/>
-
+    
 
 
     <!-- http://purl.org/vocab/vann/preferredNamespaceUri -->
 
 
     <owl:AnnotationProperty rdf:about="http://purl.org/vocab/vann/preferredNamespaceUri"/>
-
+    
 
 
     <!-- http://www.linkedmodel.org/schema/vaem#acronym -->
 
 
     <owl:AnnotationProperty rdf:about="http://www.linkedmodel.org/schema/vaem#acronym"/>
-
+    
 
 
     <!-- http://xmlns.com/foaf/0.1/name -->
 
 
     <owl:AnnotationProperty rdf:about="http://xmlns.com/foaf/0.1/name"/>
+    
 
 
-
-    <!--
+    <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
     // Object Properties
@@ -158,7 +158,7 @@
      -->
 
 
-
+    
 
 
     <!-- http://w3id.org/rml/compression -->
@@ -178,7 +178,7 @@
         <rdfs:isDefinedBy rdf:resource="http://w3id.org/rml/io/"/>
         <rdfs:label>compression</rdfs:label>
     </owl:ObjectProperty>
-
+    
 
 
     <!-- http://w3id.org/rml/encoding -->
@@ -198,7 +198,7 @@
         <rdfs:isDefinedBy rdf:resource="http://w3id.org/rml/io/"/>
         <rdfs:label>encoding</rdfs:label>
     </owl:ObjectProperty>
-
+    
 
 
     <!-- http://w3id.org/rml/iterator -->
@@ -211,7 +211,7 @@
         <rdfs:isDefinedBy rdf:resource="http://w3id.org/rml/io/"/>
         <rdfs:label>iterator</rdfs:label>
     </owl:ObjectProperty>
-
+    
 
 
     <!-- http://w3id.org/rml/namespace -->
@@ -224,7 +224,7 @@
         <rdfs:isDefinedBy rdf:resource="http://w3id.org/rml/io/"/>
         <rdfs:label>namespace</rdfs:label>
     </owl:ObjectProperty>
-
+    
 
 
     <!-- http://w3id.org/rml/null -->
@@ -237,20 +237,7 @@
         <rdfs:isDefinedBy rdf:resource="http://w3id.org/rml/io/"/>
         <rdfs:label>null</rdfs:label>
     </owl:ObjectProperty>
-
-
-
-    <!-- http://w3id.org/rml/query -->
-
-
-    <owl:ObjectProperty rdf:about="http://w3id.org/rml/query">
-        <rdfs:domain rdf:resource="http://w3id.org/rml/Source"/>
-        <rdfs:range rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Literal"/>
-        <rdfs:comment xml:lang="en">Defines which query should be applied on the source during access</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://w3id.org/rml/io/"/>
-        <rdfs:label>query</rdfs:label>
-    </owl:ObjectProperty>
-
+    
 
 
     <!-- http://w3id.org/rml/referenceFormulation -->
@@ -263,7 +250,7 @@
         <rdfs:isDefinedBy rdf:resource="http://w3id.org/rml/io/"/>
         <rdfs:label>reference formulation</rdfs:label>
     </owl:ObjectProperty>
-
+    
 
 
     <!-- http://w3id.org/rml/serialization -->
@@ -276,7 +263,7 @@
         <rdfs:isDefinedBy rdf:resource="http://w3id.org/rml/io/"/>
         <rdfs:label>serialization</rdfs:label>
     </owl:ObjectProperty>
-
+    
 
 
     <!-- http://w3id.org/rml/source -->
@@ -289,7 +276,7 @@
         <rdfs:isDefinedBy rdf:resource="http://w3id.org/rml/io/"/>
         <rdfs:label>source</rdfs:label>
     </owl:ObjectProperty>
-
+    
 
 
     <!-- http://w3id.org/rml/target -->
@@ -302,10 +289,10 @@
         <rdfs:isDefinedBy rdf:resource="http://w3id.org/rml/io/"/>
         <rdfs:label>target</rdfs:label>
     </owl:ObjectProperty>
+    
 
 
-
-    <!--
+    <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
     // Data properties
@@ -314,7 +301,7 @@
      -->
 
 
-
+    
 
 
     <!-- http://w3id.org/rml/namespacePrefix -->
@@ -327,7 +314,7 @@
         <rdfs:isDefinedBy rdf:resource="http://w3id.org/rml/io/"/>
         <rdfs:label>namespace prefix</rdfs:label>
     </owl:DatatypeProperty>
-
+    
 
 
     <!-- http://w3id.org/rml/namespaceURL -->
@@ -339,10 +326,10 @@
         <rdfs:isDefinedBy rdf:resource="http://w3id.org/rml/io/"/>
         <rdfs:label>namespace URL</rdfs:label>
     </owl:DatatypeProperty>
+    
 
 
-
-    <!--
+    <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
     // Classes
@@ -351,7 +338,7 @@
      -->
 
 
-
+    
 
 
     <!-- http://w3id.org/rml/Compression -->
@@ -362,7 +349,7 @@
         <rdfs:isDefinedBy rdf:resource="http://w3id.org/rml/io/"/>
         <rdfs:label>compression class</rdfs:label>
     </owl:Class>
-
+    
 
 
     <!-- http://w3id.org/rml/Encoding -->
@@ -373,7 +360,7 @@
         <rdfs:isDefinedBy rdf:resource="http://w3id.org/rml/io/"/>
         <rdfs:label>Encoding class</rdfs:label>
     </owl:Class>
-
+    
 
 
     <!-- http://w3id.org/rml/LogicalSource -->
@@ -384,7 +371,7 @@
         <rdfs:isDefinedBy rdf:resource="http://w3id.org/rml/io/"/>
         <rdfs:label>Logical Source</rdfs:label>
     </owl:Class>
-
+    
 
 
     <!-- http://w3id.org/rml/LogicalTarget -->
@@ -395,7 +382,7 @@
         <rdfs:isDefinedBy rdf:resource="http://w3id.org/rml/io/"/>
         <rdfs:label>LogicalTarget</rdfs:label>
     </owl:Class>
-
+    
 
 
     <!-- http://w3id.org/rml/Namespace -->
@@ -406,7 +393,7 @@
         <rdfs:isDefinedBy rdf:resource="http://w3id.org/rml/io/"/>
         <rdfs:label>Namespace</rdfs:label>
     </owl:Class>
-
+    
 
 
     <!-- http://w3id.org/rml/ReferenceFormulation -->
@@ -417,7 +404,7 @@
         <rdfs:isDefinedBy rdf:resource="http://w3id.org/rml/io/"/>
         <rdfs:label>Reference Formulation</rdfs:label>
     </owl:Class>
-
+    
 
 
     <!-- http://w3id.org/rml/Source -->
@@ -428,7 +415,7 @@
         <rdfs:isDefinedBy rdf:resource="http://w3id.org/rml/io/"/>
         <rdfs:label>Source</rdfs:label>
     </owl:Class>
-
+    
 
 
     <!-- http://w3id.org/rml/Target -->
@@ -439,7 +426,7 @@
         <rdfs:isDefinedBy rdf:resource="http://w3id.org/rml/io/"/>
         <rdfs:label>Target</rdfs:label>
     </owl:Class>
-
+    
 
 
     <!-- http://w3id.org/rml/XPathReferenceFormulation -->
@@ -451,24 +438,24 @@
         <rdfs:isDefinedBy rdf:resource="http://w3id.org/rml/io/"/>
         <rdfs:label>XPath Reference Formulation</rdfs:label>
     </owl:Class>
-
+    
 
 
     <!-- http://www.w3.org/1999/02/22-rdf-syntax-ns#Literal -->
 
 
     <owl:Class rdf:about="http://www.w3.org/1999/02/22-rdf-syntax-ns#Literal"/>
-
+    
 
 
     <!-- https://www.w3.org/ns/formats/Format -->
 
 
     <owl:Class rdf:about="https://www.w3.org/ns/formats/Format"/>
+    
 
 
-
-    <!--
+    <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
     // Individuals
@@ -477,7 +464,7 @@
      -->
 
 
-
+    
 
 
     <!-- http://w3id.org/rml/CSV -->
@@ -490,7 +477,7 @@
         <rdfs:label>CSV</rdfs:label>
         <rdfs:seeAlso rdf:resource="http://tools.ietf.org/html/rfc4180"/>
     </owl:NamedIndividual>
-
+    
 
 
     <!-- http://w3id.org/rml/JSONPath -->
@@ -502,19 +489,31 @@
         <rdfs:isDefinedBy rdf:resource="http://w3id.org/rml/io/"/>
         <rdfs:label>JSONPath</rdfs:label>
     </owl:NamedIndividual>
+    
 
 
+    <!-- http://w3id.org/rml/SQL2008Query -->
 
-    <!-- http://w3id.org/rml/SQL2008 -->
 
-
-    <owl:NamedIndividual rdf:about="http://w3id.org/rml/SQL2008">
+    <owl:NamedIndividual rdf:about="http://w3id.org/rml/SQL2008Query">
         <rdf:type rdf:resource="http://w3id.org/rml/ReferenceFormulation"/>
-        <rdfs:comment xml:lang="en">Denotes the Core SQL 2008.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Denotes a query in SQL 2008.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://w3id.org/rml/io/"/>
-        <rdfs:label>SQL 2008</rdfs:label>
+        <rdfs:label>SQL 2008 Query</rdfs:label>
     </owl:NamedIndividual>
+    
 
+
+    <!-- http://w3id.org/rml/SQL2008Table -->
+
+
+    <owl:NamedIndividual rdf:about="http://w3id.org/rml/SQL2008Table">
+        <rdf:type rdf:resource="http://w3id.org/rml/ReferenceFormulation"/>
+        <rdfs:comment xml:lang="en">Denotes a table in SQL 2008.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://w3id.org/rml/io/"/>
+        <rdfs:label>SQL 2008 Table</rdfs:label>
+    </owl:NamedIndividual>
+    
 
 
     <!-- http://w3id.org/rml/UTF-16 -->
@@ -526,7 +525,7 @@
         <rdfs:isDefinedBy rdf:resource="http://w3id.org/rml/io/"/>
         <rdfs:label>UTF-16</rdfs:label>
     </owl:NamedIndividual>
-
+    
 
 
     <!-- http://w3id.org/rml/UTF-8 -->
@@ -538,7 +537,7 @@
         <rdfs:isDefinedBy rdf:resource="http://w3id.org/rml/io/"/>
         <rdfs:label>UTF-8</rdfs:label>
     </owl:NamedIndividual>
-
+    
 
 
     <!-- http://w3id.org/rml/XPath -->
@@ -551,7 +550,7 @@
         <rdfs:label>XPath</rdfs:label>
         <rdfs:seeAlso rdf:resource="http://www.w3.org/TR/xpath20/"/>
     </owl:NamedIndividual>
-
+    
 
 
     <!-- http://w3id.org/rml/gzip -->
@@ -563,7 +562,7 @@
         <rdfs:isDefinedBy rdf:resource="http://w3id.org/rml/io/"/>
         <rdfs:label>GZip</rdfs:label>
     </owl:NamedIndividual>
-
+    
 
 
     <!-- http://w3id.org/rml/none -->
@@ -575,7 +574,7 @@
         <rdfs:isDefinedBy rdf:resource="http://w3id.org/rml/io/"/>
         <rdfs:label>None</rdfs:label>
     </owl:NamedIndividual>
-
+    
 
 
     <!-- http://w3id.org/rml/targzip -->
@@ -587,7 +586,7 @@
         <rdfs:isDefinedBy rdf:resource="http://w3id.org/rml/io/"/>
         <rdfs:label>TarGZip</rdfs:label>
     </owl:NamedIndividual>
-
+    
 
 
     <!-- http://w3id.org/rml/tarxz -->
@@ -599,7 +598,7 @@
         <rdfs:isDefinedBy rdf:resource="http://w3id.org/rml/io/"/>
         <rdfs:label>TarXz</rdfs:label>
     </owl:NamedIndividual>
-
+    
 
 
     <!-- http://w3id.org/rml/zip -->
@@ -616,3 +615,5 @@
 
 
 <!-- Generated by the OWL API (version 5.1.18) https://github.com/owlcs/owlapi/ -->
+
+

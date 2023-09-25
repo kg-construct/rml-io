@@ -206,7 +206,8 @@ This section provides details for each class and property defined by RML-IO: Sou
          <dd>
             <a href="#CSV" title="http://w3id.org/rml/CSV">CSV</a>
             <sup class="type-ni" title="named individual">ni</sup>, <a href="#JSONPath" title="http://w3id.org/rml/JSONPath">JSONPath</a>
-            <sup class="type-ni" title="named individual">ni</sup>, <a href="#SQL2008" title="http://w3id.org/rml/SQL2008">SQL 2008</a>
+            <sup class="type-ni" title="named individual">ni</sup>, <a href="#SQL2008Query" title="http://w3id.org/rml/SQL2008Query">SQL 2008 Query</a>
+            <sup class="type-ni" title="named individual">ni</sup>, <a href="#SQL2008Table" title="http://w3id.org/rml/SQL2008Table">SQL 2008 Table</a>
             <sup class="type-ni" title="named individual">ni</sup>, <a href="#XPath" title="http://w3id.org/rml/XPath">XPath</a>
             <sup class="type-ni" title="named individual">ni</sup>
          </dd>
@@ -232,7 +233,6 @@ This section provides details for each class and property defined by RML-IO: Sou
          <dt>is in domain of</dt>
          <dd>
             <a href="#null" title="http://w3id.org/rml/null">null</a>
-            <sup class="type-op" title="object property">op</sup>, <a href="#query" title="http://w3id.org/rml/query">query</a>
             <sup class="type-op" title="object property">op</sup>
          </dd>
          <dt>is in range of</dt>
@@ -312,9 +312,6 @@ This section provides details for each class and property defined by RML-IO: Sou
       </li>
       <li>
          <a href="#null" title="http://w3id.org/rml/null">null</a>
-      </li>
-      <li>
-         <a href="#query" title="http://w3id.org/rml/query">query</a>
       </li>
       <li>
          <a href="#referenceFormulation" title="http://w3id.org/rml/referenceFormulation">reference formulation</a>
@@ -470,39 +467,6 @@ This section provides details for each class and property defined by RML-IO: Sou
          <strong>IRI:</strong> http://w3id.org/rml/null</p>
       <div class="comment">
          <span class="markdown">Describes which data values inside the source should be considered as NULL.</span>
-      </div>
-      <dl class="definedBy">
-         <dt>Is defined by</dt>
-         <dd>
-            <a href="http://w3id.org/rml/io/">http://w3id.org/rml/io/</a>
-         </dd>
-      </dl>
-      <div class="description">
-         <dl>
-            <dt>has domain</dt>
-            <dd>
-               <a href="#Source" title="http://w3id.org/rml/Source">Source</a>
-               <sup class="type-c" title="class">c</sup>
-            </dd>
-            <dt>has range</dt>
-            <dd>
-               <a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#Literal"
-                  target="_blank"
-                  title="http://www.w3.org/1999/02/22-rdf-syntax-ns#Literal">literal</a>
-               <sup class="type-c" title="class">c</sup>
-            </dd>
-         </dl>
-      </div>
-   </div>
-   <div class="entity" id="query">
-      <h3>query<sup class="type-op" title="object property">op</sup>
-         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
-         </span>
-      </h3>
-      <p>
-         <strong>IRI:</strong> http://w3id.org/rml/query</p>
-      <div class="comment">
-         <span class="markdown">Defines which query should be applied on the source during access</span>
       </div>
       <dl class="definedBy">
          <dt>Is defined by</dt>
@@ -737,7 +701,10 @@ This section provides details for each class and property defined by RML-IO: Sou
          <a href="#none" title="http://w3id.org/rml/none">None</a>
       </li>
       <li>
-         <a href="#SQL2008" title="http://w3id.org/rml/SQL2008">SQL 2008</a>
+         <a href="#SQL2008Query" title="http://w3id.org/rml/SQL2008Query">SQL 2008 Query</a>
+      </li>
+      <li>
+         <a href="#SQL2008Table" title="http://w3id.org/rml/SQL2008Table">SQL 2008 Table</a>
       </li>
       <li>
          <a href="#targzip" title="http://w3id.org/rml/targzip">TarGZip</a>
@@ -854,15 +821,39 @@ This section provides details for each class and property defined by RML-IO: Sou
          </dd>
       </dl>
    </div>
-   <div class="entity" id="SQL2008">
-      <h3>SQL 2008<sup class="type-ni" title="named individual">ni</sup>
+   <div class="entity" id="SQL2008Query">
+      <h3>SQL 2008 Query<sup class="type-ni" title="named individual">ni</sup>
          <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
          </span>
       </h3>
       <p>
-         <strong>IRI:</strong> http://w3id.org/rml/SQL2008</p>
+         <strong>IRI:</strong> http://w3id.org/rml/SQL2008Query</p>
       <div class="comment">
-         <span class="markdown">Denotes the Core SQL 2008.</span>
+         <span class="markdown">Denotes a query in SQL 2008.</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>
+            <a href="http://w3id.org/rml/io/">http://w3id.org/rml/io/</a>
+         </dd>
+      </dl>
+      <dl class="description">
+         <dt>belongs to</dt>
+         <dd>
+            <a href="#ReferenceFormulation" title="http://w3id.org/rml/ReferenceFormulation">Reference Formulation</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="SQL2008Table">
+      <h3>SQL 2008 Table<sup class="type-ni" title="named individual">ni</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://w3id.org/rml/SQL2008Table</p>
+      <div class="comment">
+         <span class="markdown">Denotes a table in SQL 2008.</span>
       </div>
       <dl class="definedBy">
          <dt>Is defined by</dt>
