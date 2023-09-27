@@ -178,7 +178,7 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
-    "@value" : "Denotes a query in SQL 2008."
+    "@value" : "Denotes a reference formulation that affords the creation of a row based iteration using a query in accordance with SQL:2008, from which values can be referenced by column name."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
     "@id" : "http://w3id.org/rml/io/"
@@ -194,7 +194,7 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
-    "@value" : "Denotes a table in SQL 2008."
+    "@value" : "Denotes a reference formulation that affords the creation of a row based iteration using a table name reference in accordance with SQL:2008, from which values can be referenced by column name."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
     "@id" : "http://w3id.org/rml/io/"

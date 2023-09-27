@@ -497,7 +497,7 @@
 
     <owl:NamedIndividual rdf:about="http://w3id.org/rml/SQL2008Query">
         <rdf:type rdf:resource="http://w3id.org/rml/ReferenceFormulation"/>
-        <rdfs:comment xml:lang="en">Denotes a query in SQL 2008.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Denotes a reference formulation that affords the creation of a row based iteration using a query in accordance with SQL:2008, from which values can be referenced by column name.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://w3id.org/rml/io/"/>
         <rdfs:label>SQL 2008 Query</rdfs:label>
     </owl:NamedIndividual>
@@ -509,7 +509,7 @@
 
     <owl:NamedIndividual rdf:about="http://w3id.org/rml/SQL2008Table">
         <rdf:type rdf:resource="http://w3id.org/rml/ReferenceFormulation"/>
-        <rdfs:comment xml:lang="en">Denotes a table in SQL 2008.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Denotes a reference formulation that affords the creation of a row based iteration using a table name reference in accordance with SQL:2008, from which values can be referenced by column name.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://w3id.org/rml/io/"/>
         <rdfs:label>SQL 2008 Table</rdfs:label>
     </owl:NamedIndividual>

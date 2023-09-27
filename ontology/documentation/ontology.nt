@@ -286,14 +286,14 @@ _:genid4 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/20
 # http://w3id.org/rml/SQL2008Query
 <http://w3id.org/rml/SQL2008Query> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
 <http://w3id.org/rml/SQL2008Query> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://w3id.org/rml/ReferenceFormulation> .
-<http://w3id.org/rml/SQL2008Query> <http://www.w3.org/2000/01/rdf-schema#comment> "Denotes a query in SQL 2008."@en .
+<http://w3id.org/rml/SQL2008Query> <http://www.w3.org/2000/01/rdf-schema#comment> "Denotes a reference formulation that affords the creation of a row based iteration using a query in accordance with SQL:2008, from which values can be referenced by column name."@en .
 <http://w3id.org/rml/SQL2008Query> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://w3id.org/rml/io/> .
 <http://w3id.org/rml/SQL2008Query> <http://www.w3.org/2000/01/rdf-schema#label> "SQL 2008 Query" .
 # 
 # http://w3id.org/rml/SQL2008Table
 <http://w3id.org/rml/SQL2008Table> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
 <http://w3id.org/rml/SQL2008Table> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://w3id.org/rml/ReferenceFormulation> .
-<http://w3id.org/rml/SQL2008Table> <http://www.w3.org/2000/01/rdf-schema#comment> "Denotes a table in SQL 2008."@en .
+<http://w3id.org/rml/SQL2008Table> <http://www.w3.org/2000/01/rdf-schema#comment> "Denotes a reference formulation that affords the creation of a row based iteration using a table name reference in accordance with SQL:2008, from which values can be referenced by column name."@en .
 <http://w3id.org/rml/SQL2008Table> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://w3id.org/rml/io/> .
 <http://w3id.org/rml/SQL2008Table> <http://www.w3.org/2000/01/rdf-schema#label> "SQL 2008 Table" .
 # 
