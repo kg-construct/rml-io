@@ -20,7 +20,8 @@ defines the reference formulation used to refer to the elements
 of a data source.
 The reference formulation must be specified in the case of databases,
 CSV, TSV, XML, and JSON data sources.
-By default `rml:SQL2008` for databases, `rml:CSV` for CSV and TSV data sources.
+By default `rml:SQL2008Query` for databases,
+`rml:CSV` for CSV and TSV data sources.
 XPath for XML and JSONPath for JSON and JSONL data sources.
 
 The following properties MAY be specified in a Logical Source:
@@ -63,7 +64,6 @@ to elements of the data of the input source.
 Several reference formulations (`rml:ReferenceFormulation`)
 are defined in this specification:
 
-- `rml:SQL2008`: SQL 2008 standard for relational databases
 - `rml:CSV`: CSV or TSV data sources
 - `rml:JSONPath`: JSON documents
 - `rml:XPath`: XML documents, a shortcut for `rml:XPathReferenceFormulation`
