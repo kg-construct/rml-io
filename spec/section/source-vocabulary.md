@@ -134,7 +134,7 @@ and the used compression algorithm. Defaults to no compression.
 
 <pre class="ex-source">
 &lt;#JSON&gt; a rml:LogicalSource;
-     rml:source [ a rml:Source, dcat:Distribution
+     rml:source [ a rml:Source, dcat:Distribution;
        dcat:accessURL &lt;file:///path/to/data.json.gz&gt;;
        rml:null ""; # empty string as NULL besides default null character
        rml:compression rml:gzip; # GZip compression
@@ -196,7 +196,7 @@ The following example show a Source of an CSV file.
 
 <pre class="ex-source">
 &lt;#CSV&gt; a rml:LogicalSource;
-     rml:source [ a rml:Source, a csvw:Table
+     rml:source [ a rml:Source, csvw:Table;
         csvw:url "/path/to/data.csv";
         rml:null "NULL";
         rml:null "";
