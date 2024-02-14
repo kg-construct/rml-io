@@ -125,10 +125,21 @@ should be considered as NULL.
 Defaults to the default NULL character if available.
 If none is available such as CSV, no values are considered NULL,
 unless specified.
+- **rml:null** indicate which data values inside the source 
+should be considered as NULL values.
+The value for this predicate defaults to the default NULL token 
+of the underlying data model (e.g., NULL in relational databases 
+and null in JSON) and are always processed as such.
+Some data models have no such default NULL token, such as CSV.
+When that is the case, then nothing is considered NULL unless specified by
+`rml:null`.
 Example: CSV does not have a default NULL character,
 so no value is considered NULL.
 However, JSON has a NULL character specified: `null`,
 this one is used together with the ones specified through `rml:null`.
+For a relational database, `rml:null "foo"` results into the following values
+considered as NULL: `{NULL, "foo"}` where `NULL` comes from the relational 
+database model as NULL value.
 - **rml:compression** specifies if the source is compressed
 and the used compression algorithm. Defaults to no compression.
 
