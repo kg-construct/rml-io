@@ -394,3 +394,58 @@ Kafka stream in XML format without compression:
     rml:iterator "/my/xpath";
 .
 </pre>
+
+Relative paths to files are covered by a source access description included
+in this specification which subclasses `rml:Source` as `rml:RelativePathSource`.
+This access description allows accessing files relative from:
+
+- `rml:CurrentWorkingDirectory`: relative to the current working directory of the RML processor.
+- `rml:MappingDirectory`: relative to the location of the RML mapping.
+- A string Literal: a string describing an absolute path against which relative paths are resolved, similar to the Base URI in [RFC3986](https://www.rfc-editor.org/rfc/rfc3986).
+
+| Property    | Domain                    | Range                                                              |
+| ----------- | ------------------------- | ------------------------------------------------------------------ |
+| `rml:root`  | `rml:RelativePathSource`  | `rml:CurrentWorkingDirectory`, `rml:MappingDirectory` or `Literal` |
+| `rml:path`  | `rml:RelativePathSource`  | `Literal`                                                          |
+
+Example of accessing a CSV file relative to the current working directory.
+The file's absolute path is `$CURRENT_WORKING_DIR/file.csv` where `$CURRENT_WORKING_DIR` is
+the location of the RML mapping.
+
+<pre class="ex-source">
+&lt;#RelativePathCWD&gt; a rml:LogicalSource;
+  rml:source [ a rml:RelativePathSource, rml:Source;
+    rml:root rml:CurrentWorkingDirectory;
+    rml:path "./file.csv";
+  ];
+.
+</pre>
+
+Example of accessing a JSON file relative to the path of the mapping.
+The file's absolute path is `$MAPPING_DIR/file.json` where `$MAPPING_DIR` is
+the location of the RML mapping.
+
+<pre class="ex-source">
+&lt;#RelativePathMapping&gt; a rml:LogicalSource;
+  rml:source [ a rml:RelativePathSource, rml:Source;
+    rml:root rml:MappingDirectory;
+    rml:path "./file.json";
+  ];
+  rml:referenceFormulation rml:JSONPath;
+  rml:iterator "$";
+.
+</pre>
+
+Example of accessing an XML file relative to an absolute root path
+specified by a string Literal. The file's absolute path is `/root/file.xml`.
+
+<pre class="ex-source">
+&lt;#RelativePathLiteral&gt; a rml:LogicalSource;
+  rml:source [ a rml:RelativePathSource, rml:Source;
+    rml:root "/root";
+    rml:path "file.xml";
+  ];
+  rml:referenceFormulation rml:JSONPath;
+  rml:iterator "$";
+.
+</pre>
