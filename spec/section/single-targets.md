@@ -483,7 +483,7 @@ to a RDF dump with N-Triples as serialization format:
 </pre>
 
 <pre class="ex-access">
-&lt;#DCATSourceAccess&gt; a rml:Source, dcat:Dataset;
+&lt;#DCATSourceAccess&gt; a rml:Source, dcat:Distribution;
   dcat:downloadURL "https://rml.io/specs/rml-target/Friends.json";
 .
 </pre>
