@@ -403,6 +403,8 @@ This access description allows accessing files relative from:
 - `rml:MappingDirectory`: relative to the location of the RML mapping.
 - A string Literal: a string describing an absolute path against which relative paths are resolved, similar to the Base URI in [RFC3986](https://www.rfc-editor.org/rfc/rfc3986).
 
+If `rml:root` is not specified, it defaults to `rml:CurrentWorkingDirectory`.
+
 | Property    | Domain                    | Range                                                              |
 | ----------- | ------------------------- | ------------------------------------------------------------------ |
 | `rml:root`  | `rml:RelativePathSource`  | `rml:CurrentWorkingDirectory`, `rml:MappingDirectory` or `Literal` |
