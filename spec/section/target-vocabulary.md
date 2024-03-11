@@ -45,8 +45,8 @@ By default, UTF-8 is used.
 | Property             | Domain               | Range             |
 | -------------------- | -------------------- | ----------------- |
 | `rml:serialization`  | `rml:LogicalTarget`  | `formats:Format`  |
-| `rml:compression`    | `rml:LogicalTarget`  | `rml:Compression` |
-| `rml:encoding`       | `rml:LogicalTarget`  | `rml:Encoding`    |
+| `rml:compression`    | `rml:Target`         | `rml:Compression` |
+| `rml:encoding`       | `rml:Target`         | `rml:Encoding`    |
 
 <figure>
   <img src="./resources/images/target-structure.png" alt="Logical Target structure"/>
