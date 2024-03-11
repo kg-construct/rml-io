@@ -9,10 +9,17 @@ The result of that function is known as the term map's generated
 RDF term [[RDF-Concepts]] 
 such as subjects, predicates, objects, named graphs and language tags.
 
-A Term Map MAY also contain zero or more `rml:logicalTarget` properties 
-to export all triples containing the generated term to different targets. 
-The same Term Map can have multiple targets by specifying 
-multiple `rml:logicalTarget` properties in the Term Map. 
+Each RML processor has a default target where generated triples are exported.
+Logical Targets provide a mechanism to override this default target for some 
+of the triples to be exported.
+
+Logical Targets are defined in Term Maps. A Term Map MAY contain 
+one or more `rml:logicalTarget` properties to export all triples containing
+the generated term to different targets. Specifically, when generating a 
+triple `t`, if any of the term maps involved in the generation of `t` 
+contains a Logical Target `LT`, then triple `t` exported to target `LT`.
+If none of those Term Maps contains a Logical Target,
+then the triple `t` is sent to the default target of the RML processor.
 
 Multiple Logical Targets MAY be combined by specifying multiple Logical Targets 
 in the same Term Map or multiple Term Maps of the same RDF triple 
