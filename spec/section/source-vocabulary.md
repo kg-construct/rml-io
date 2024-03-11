@@ -18,7 +18,7 @@ A Logical Source (`rml:LogicalSource`) MUST contains the following properties:
 - The **reference formulation** (`rml:referenceFormulation`)
 defines the reference formulation used to refer to the elements
 of a data source.
-The reference formulation must be specified in the case of databases,
+The reference formulation must be specified in the case of relational databases,
 CSV, TSV, XML, and JSON data sources.
 By default `rml:SQL2008Query` for databases,
 `rml:CSV` for CSV and TSV data sources.
@@ -29,18 +29,23 @@ The following properties MAY be specified in a Logical Source:
 - The **logical iterator** (`rml:iterator`)
 defines the iteration loop used to map the data of the input source. 
 The iterator defines how to refer to any of the following:
-    - a row in the case of databases, CSV or TSV data sources
+    - a row in the case of relational databases, CSV or TSV data sources
     - a repetition pattern expressed as an element in the case of XML documents,
     - a repetition pattern expressed as an object in the case
     of a JSON data sources. 
     - etc...
 
 By default, the iterator is considered a row, if not specified:
-  - In the case of databases, CSV or TSV data sources, the value of 
+  - In the case of CSV or TSV data sources, the value of 
   `rml:iterator` is considered a "row" and must not be specified.
   - In the case of XML and JSON data sources, it is a valid reference
   to an element or an object respectively considering the reference
   formulation specified.
+  - In the case of relational databases, the value of `rml:iterator` is either
+  a SQL query (`rml:referenceFormulation rml:SQL2008Query`) or the SQL table
+  name (`rml:referenceFormulation rml:SQL2008Table`). For SQL table names,
+  they can be converted to a SQL query using the following SQL query template:
+  `SELECT * FROM {table}` where `{table}` is the table name.
 
 The Logical Source definition requires only the source (`rml:source`)
 to be specified, all other properties are optional.
