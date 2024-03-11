@@ -282,7 +282,7 @@ to iterate over.
         sd:endpoint  &lt;http://example.com/sparql&gt;;
         sd:supportedLanguage sd:SPARQL11Query;
     ];
-    rml:iterator "CONSTRUCT WHERE { ?s ?p ?o. } LIMIT 100";
+    rml:iterator "SELECT { s? ?p ?o } WHERE { ?s ?p ?o. } LIMIT 100";
     rml:referenceFormulation formats:SPARQL_Results_CSV;
 .
 </pre>
