@@ -463,10 +463,10 @@ are exported to `TargetDump2`.
 &lt;http://example.org/3&gt; &lt;http://xmlns.com/foaf/0.1/name&gt; "Nia Nal" .
 
 # file:///data/dump2.nt
-&lt;http://example.org/0&gt; &lt;http://xmlns.com/foaf/0.1/name&gt; "Kara Danvers" .
-&lt;http://example.org/1&gt; &lt;http://xmlns.com/foaf/0.1/name&gt; "Alex Danvers" .
-&lt;http://example.org/2&gt; &lt;http://xmlns.com/foaf/0.1/name&gt; "J'onn J'onzz" .
-&lt;http://example.org/3&gt; &lt;http://xmlns.com/foaf/0.1/name&gt; "Nia Nal" .
+&lt;http://example.org/0&gt; &lt;http://xmlns.com/foaf/0.1/name&gt; "Supergirl" .
+&lt;http://example.org/1&gt; &lt;http://xmlns.com/foaf/0.1/name&gt; "Sentinel" .
+&lt;http://example.org/2&gt; &lt;http://xmlns.com/foaf/0.1/name&gt; "Martian Manhunter" .
+&lt;http://example.org/3&gt; &lt;http://xmlns.com/foaf/0.1/name&gt; "Dreamer" .
 </pre>
 
 ### Subject Map, Predicate Map and Object Map {#subject-predicate-and-object-map}
