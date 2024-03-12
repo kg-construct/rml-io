@@ -98,7 +98,7 @@ to the three specified Targets:
 .
 &lt;#VoIDDump3&gt; a rml:Target, void:Dataset;
   void:dataDump &lt;file:///data/dump3.rdf.tar.gz&gt;;
-  rml:compression rml:targzip;
+  rml:compression rml:targz;
 .
 </pre>
 
