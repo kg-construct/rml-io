@@ -1,16 +1,16 @@
 <!DOCTYPE html><html lang="en" dir="ltr"><head>
 <meta charset="utf-8">
-<meta name="generator" content="ReSpec 34.1.8">
+<meta name="generator" content="ReSpec 34.5.0">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <style>
 dfn{cursor:pointer}
-.dfn-panel{position:absolute;z-index:35;min-width:300px;max-width:500px;padding:.5em .75em;margin-top:.6em;font-family:"Helvetica Neue",sans-serif;font-size:small;background:#fff;color:#000;box-shadow:0 1em 3em -.4em rgba(0,0,0,.3),0 0 1px 1px rgba(0,0,0,.05);border-radius:2px}
+.dfn-panel{position:absolute;z-index:35;min-width:300px;max-width:500px;padding:.5em .75em;margin-top:.6em;font-family:"Helvetica Neue",sans-serif;font-size:small;background:#fff;background:var(--indextable-hover-bg,#fff);color:#000;color:var(--text,#000);box-shadow:0 1em 3em -.4em rgba(0,0,0,.3),0 0 1px 1px rgba(0,0,0,.05);box-shadow:0 1em 3em -.4em var(--tocsidebar-shadow,rgba(0,0,0,.3)),0 0 1px 1px var(--tocsidebar-shadow,rgba(0,0,0,.05));border-radius:2px}
 .dfn-panel:not(.docked)>.caret{position:absolute;top:-9px}
-.dfn-panel:not(.docked)>.caret::after,.dfn-panel:not(.docked)>.caret::before{content:"";position:absolute;border:10px solid transparent;border-top:0;border-bottom:10px solid #fff;top:0}
-.dfn-panel:not(.docked)>.caret::before{border-bottom:9px solid #a2a9b1}
+.dfn-panel:not(.docked)>.caret::after,.dfn-panel:not(.docked)>.caret::before{content:"";position:absolute;border:10px solid transparent;border-top:0;border-bottom:10px solid #fff;border-bottom-color:var(--indextable-hover-bg,#fff);top:0}
+.dfn-panel:not(.docked)>.caret::before{border-bottom:9px solid #a2a9b1;border-bottom-color:var(--indextable-hover-bg,#a2a9b1)}
 .dfn-panel *{margin:0}
-.dfn-panel b{display:block;color:#000;margin-top:.25em}
-.dfn-panel ul a[href]{color:#333}
+.dfn-panel b{display:block;color:#000;color:var(--text,#000);margin-top:.25em}
+.dfn-panel ul a[href]{color:#333;color:var(--text,#333)}
 .dfn-panel>div{display:flex}
 .dfn-panel a.self-link{font-weight:700;margin-right:auto}
 .dfn-panel .marker{padding:.1em;margin-left:.5em;border-radius:.2em;text-align:center;white-space:nowrap;font-size:90%;color:#040b1c}
@@ -151,7 +151,6 @@ cite .bibref{font-style:normal}
 a[href].orcid{padding-left:4px;padding-right:4px}
 a[href].orcid>svg{margin-bottom:-2px}
 .toc a,.tof a{text-decoration:none}
-a .figno,a .secno{color:#000}
 ol.tof,ul.tof{list-style:none outside none}
 .caption{margin-top:.5em;font-style:italic}
 table.simple{border-spacing:0;border-collapse:collapse;border-bottom:3px solid #005a9c}
@@ -190,15 +189,19 @@ dd{margin-left:0}
 <meta name="description" content="This document describes Logical Source and Logical Target
 to access data sources and targets.">
 <style>
-.hljs{display:block;overflow-x:auto;padding:.5em;color:#383a42;background:#fafafa}
-.hljs-comment,.hljs-quote{color:#717277;font-style:italic}
-.hljs-doctag,.hljs-formula,.hljs-keyword{color:#a626a4}
-.hljs-deletion,.hljs-name,.hljs-section,.hljs-selector-tag,.hljs-subst{color:#ca4706;font-weight:700}
-.hljs-literal{color:#0b76c5}
-.hljs-addition,.hljs-attribute,.hljs-meta-string,.hljs-regexp,.hljs-string{color:#42803c}
-.hljs-built_in,.hljs-class .hljs-title{color:#9a6a01}
-.hljs-attr,.hljs-number,.hljs-selector-attr,.hljs-selector-class,.hljs-selector-pseudo,.hljs-template-variable,.hljs-type,.hljs-variable{color:#986801}
-.hljs-bullet,.hljs-link,.hljs-meta,.hljs-selector-id,.hljs-symbol,.hljs-title{color:#336ae3}
+.hljs{--base:#fafafa;--mono-1:#383a42;--mono-2:#686b77;--mono-3:#717277;--hue-1:#0b76c5;--hue-2:#336ae3;--hue-3:#a626a4;--hue-4:#42803c;--hue-5:#ca4706;--hue-5-2:#c91243;--hue-6:#986801;--hue-6-2:#9a6a01}
+@media (prefers-color-scheme:dark){
+.hljs{--base:#282c34;--mono-1:#abb2bf;--mono-2:#818896;--mono-3:#5c6370;--hue-1:#56b6c2;--hue-2:#61aeee;--hue-3:#c678dd;--hue-4:#98c379;--hue-5:#e06c75;--hue-5-2:#be5046;--hue-6:#d19a66;--hue-6-2:#e6c07b}
+}
+.hljs{display:block;overflow-x:auto;padding:.5em;color:#383a42;color:var(--mono-1,#383a42);background:#fafafa;background:var(--base,#fafafa)}
+.hljs-comment,.hljs-quote{color:#717277;color:var(--mono-3,#717277);font-style:italic}
+.hljs-doctag,.hljs-formula,.hljs-keyword{color:#a626a4;color:var(--hue-3,#a626a4)}
+.hljs-deletion,.hljs-name,.hljs-section,.hljs-selector-tag,.hljs-subst{color:#ca4706;color:var(--hue-5,#ca4706);font-weight:700}
+.hljs-literal{color:#0b76c5;color:var(--hue-1,#0b76c5)}
+.hljs-addition,.hljs-attribute,.hljs-meta-string,.hljs-regexp,.hljs-string{color:#42803c;color:var(--hue-4,#42803c)}
+.hljs-built_in,.hljs-class .hljs-title{color:#9a6a01;color:var(--hue-6-2,#9a6a01)}
+.hljs-attr,.hljs-number,.hljs-selector-attr,.hljs-selector-class,.hljs-selector-pseudo,.hljs-template-variable,.hljs-type,.hljs-variable{color:#986801;color:var(--hue-6,#986801)}
+.hljs-bullet,.hljs-link,.hljs-meta,.hljs-selector-id,.hljs-symbol,.hljs-title{color:#336ae3;color:var(--hue-2,#336ae3)}
 .hljs-emphasis{font-style:italic}
 .hljs-strong{font-weight:700}
 .hljs-link{text-decoration:underline}
@@ -206,8 +209,8 @@ to access data sources and targets.">
 <style>
 var{position:relative;cursor:pointer}
 var[data-type]::after,var[data-type]::before{position:absolute;left:50%;top:-6px;opacity:0;transition:opacity .4s;pointer-events:none}
-var[data-type]::before{content:"";transform:translateX(-50%);border-width:4px 6px 0 6px;border-style:solid;border-color:transparent;border-top-color:#000}
-var[data-type]::after{content:attr(data-type);transform:translateX(-50%) translateY(-100%);background:#000;text-align:center;font-family:"Dank Mono","Fira Code",monospace;font-style:normal;padding:6px;border-radius:3px;color:#daca88;text-indent:0;font-weight:400}
+var[data-type]::before{content:"";transform:translateX(-50%);border-width:4px 6px 0 6px;border-style:solid;border-color:transparent;border-top-color:#222}
+var[data-type]::after{content:attr(data-type);transform:translateX(-50%) translateY(-100%);background:#222;text-align:center;font-family:"Dank Mono","Fira Code",monospace;font-style:normal;padding:6px;border-radius:3px;color:#daca88;text-indent:0;font-weight:400}
 var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
 </style>
 <script id="initialUserConfig" type="application/json">{
@@ -334,7 +337,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
   "processVersion": 2021,
   "specStatus": "CG-DRAFT",
   "shortName": "rml-io",
-  "publishDate": "2023-09-27",
+  "publishDate": "2024-03-12",
   "copyrightStart": "2021",
   "edDraftURI": "https://w3id.org/rml/io/spec",
   "editors": [
@@ -386,8 +389,8 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
       ]
     }
   ],
-  "publishISODate": "2023-09-27T00:00:00.000Z",
-  "generatedSubtitle": "Draft Community Group Report 27 September 2023"
+  "publishISODate": "2024-03-12T00:00:00.000Z",
+  "generatedSubtitle": "Draft Community Group Report 12 March 2024"
 }</script>
 <link rel="stylesheet" href="https://www.w3.org/StyleSheets/TR/2021/cg-draft"></head>
 <body class="h-entry"><div class="head">
@@ -395,7 +398,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
     <h1 id="title" class="title">RML-IO</h1> 
     <p id="w3c-state">
       <a href="https://www.w3.org/standards/types#reports">Draft Community Group Report</a>
-      <time class="dt-published" datetime="2023-09-27">27 September 2023</time>
+      <time class="dt-published" datetime="2024-03-12">12 March 2024</time>
     </p>
     <dl>
       
@@ -425,9 +428,9 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
     </dl>
     
     <p class="copyright">
-          <a href="https://www.w3.org/Consortium/Legal/ipr-notice#Copyright">Copyright</a>
+          <a href="https://www.w3.org/policies/#copyright">Copyright</a>
           ©
-          2021-2023
+          2021-2024
           
           the Contributors to the RML-IO
           Specification, published by the
@@ -553,7 +556,7 @@ and it's prefix is <code>rml</code>.</p>
 <li>The <strong>reference formulation</strong> (<code>rml:referenceFormulation</code>)
 defines the reference formulation used to refer to the elements
 of a data source.
-The reference formulation must be specified in the case of databases,
+The reference formulation must be specified in the case of relational databases,
 CSV, TSV, XML, and JSON data sources.
 By default <code>rml:SQL2008Query</code> for databases,
 <code>rml:CSV</code> for CSV and TSV data sources.
@@ -564,7 +567,7 @@ XPath for XML and JSONPath for JSON and JSONL data sources.</li>
 <li>The <strong>logical iterator</strong> (<code>rml:iterator</code>)
 defines the iteration loop used to map the data of the input source. 
 The iterator defines how to refer to any of the following:<ul>
-<li>a row in the case of databases, CSV or TSV data sources</li>
+<li>a row in the case of relational databases, CSV or TSV data sources</li>
 <li>a repetition pattern expressed as an element in the case of XML documents,</li>
 <li>a repetition pattern expressed as an object in the case
   of a JSON data sources. </li>
@@ -574,11 +577,16 @@ The iterator defines how to refer to any of the following:<ul>
 </ul>
 <p>By default, the iterator is considered a row, if not specified:</p>
 <ul>
-<li>In the case of databases, CSV or TSV data sources, the value of 
+<li>In the case of CSV or TSV data sources, the value of 
   <code>rml:iterator</code> is considered a "row" and must not be specified.</li>
 <li>In the case of XML and JSON data sources, it is a valid reference
   to an element or an object respectively considering the reference
   formulation specified.</li>
+<li>In the case of relational databases, the value of <code>rml:iterator</code> is either
+  a SQL query (<code>rml:referenceFormulation rml:SQL2008Query</code>) or the SQL table
+  name (<code>rml:referenceFormulation rml:SQL2008Table</code>). For SQL table names,
+  they can be converted to a SQL query using the following SQL query template:
+  <code>SELECT * FROM {table}</code> where <code>{table}</code> is the table name.</li>
 </ul>
 <p>The Logical Source definition requires only the source (<code>rml:source</code>)
 to be specified, all other properties are optional.
@@ -674,16 +682,27 @@ Defaults to <code>rml:UTF-8</code> if not specified.</li>
 should be considered as NULL.
 Defaults to the default NULL character if available.
 If none is available such as CSV, no values are considered NULL,
-unless specified.
+unless specified.</li>
+<li><strong>rml:null</strong> indicate which data values inside the source 
+should be considered as NULL values.
+The value for this predicate defaults to the default NULL token 
+of the underlying data model (e.g., NULL in relational databases 
+and null in JSON) and are always processed as such.
+Some data models have no such default NULL token, such as CSV.
+When that is the case, then nothing is considered NULL unless specified by
+<code>rml:null</code>.
 Example: CSV does not have a default NULL character,
 so no value is considered NULL.
 However, JSON has a NULL character specified: <code>null</code>,
-this one is used together with the ones specified through <code>rml:null</code>.</li>
+this one is used together with the ones specified through <code>rml:null</code>.
+For a relational database, <code>rml:null "foo"</code> results into the following values
+considered as NULL: <code>{NULL, "foo"}</code> where <code>NULL</code> comes from the relational 
+database model as NULL value.</li>
 <li><strong>rml:compression</strong> specifies if the source is compressed
 and the used compression algorithm. Defaults to no compression.</li>
 </ul>
 <pre class="ex-source" aria-busy="false"><code class="hljs">&lt;#JSON&gt; a rml:LogicalSource;
-     rml:source [ a rml:Source, dcat:Distribution
+     rml:source [ a rml:Source, dcat:Distribution;
        dcat:accessURL &lt;file:///path/to/data.json.gz&gt;;
        rml:null ""; # empty string as NULL besides default null character
        rml:compression rml:gzip; # GZip compression
@@ -733,8 +752,8 @@ Several compression formats are specified by the <code>comp</code> namespace:</p
 <li><code>rml:none</code>: No compression is applied</li>
 <li><code>rml:gzip</code>: GZip compression</li>
 <li><code>rml:zip</code>: Zip archive with Zip compression</li>
-<li><code>rml:tarXz</code>: Tar archive with Xz compression</li>
-<li><code>rml:tarGz</code>: Tar archive with GZip compression</li>
+<li><code>rml:targz</code>: Tar archive with Xz compression</li>
+<li><code>rml:targz</code>: Tar archive with GZip compression</li>
 </ul>
 <p>If unspecified, the default value is no compression.
 This namespace is NOT limited to the listed compression formats 
@@ -752,7 +771,7 @@ This namespace is NOT limited to the listed compression formats
 and <em class="rfc2119">MAY</em> be extended in the future.</p>
 </section></section><section id="examples"><div class="header-wrapper"><h3 id="source-examples"><bdi class="secno">3.3 </bdi>Examples</h3><a class="self-link" href="#source-examples" aria-label="Permalink for Section 3.3"></a></div><p>The following example show a Source of an CSV file.</p>
 <pre class="ex-source" aria-busy="false"><code class="hljs">&lt;#CSV&gt; a rml:LogicalSource;
-     rml:source [ a rml:Source, a csvw:Table
+     rml:source [ a rml:Source, csvw:Table;
         csvw:url "/path/to/data.csv";
         rml:null "NULL";
         rml:null "";
@@ -808,7 +827,7 @@ to iterate over.</p>
         sd:endpoint  &lt;http://example.com/sparql&gt;;
         sd:supportedLanguage sd:SPARQL11Query;
     ];
-    rml:iterator "CONSTRUCT WHERE { ?s ?p ?o. } LIMIT 100";
+    rml:iterator "SELECT { s? ?p ?o } WHERE { ?s ?p ?o. } LIMIT 100";
     rml:referenceFormulation formats:SPARQL_Results_CSV;
 .</code></pre>
 
@@ -909,6 +928,67 @@ Kafka stream in XML format without compression:</p>
     ];
     rml:referenceFormulation rml:XPath;
     rml:iterator "/my/xpath";
+.</code></pre>
+
+<p>Relative paths to files are covered by a source access description included
+in this specification which subclasses <code>rml:Source</code> as <code>rml:RelativePathSource</code>.
+This access description allows accessing files relative from:</p>
+<ul>
+<li><code>rml:CurrentWorkingDirectory</code>: relative to the current working directory of the RML processor.</li>
+<li><code>rml:MappingDirectory</code>: relative to the location of the RML mapping.</li>
+<li>A string Literal: a string describing an absolute path against which relative paths are resolved, similar to the Base URI in <a href="https://www.rfc-editor.org/rfc/rfc3986">RFC3986</a>.</li>
+</ul>
+<p>If <code>rml:root</code> is not specified, it defaults to <code>rml:CurrentWorkingDirectory</code>.</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Domain</th>
+<th>Range</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>rml:root</code></td>
+<td><code>rml:RelativePathSource</code></td>
+<td><code>rml:CurrentWorkingDirectory</code>, <code>rml:MappingDirectory</code> or <code>Literal</code></td>
+</tr>
+<tr>
+<td><code>rml:path</code></td>
+<td><code>rml:RelativePathSource</code></td>
+<td><code>Literal</code></td>
+</tr>
+</tbody></table>
+<p>Example of accessing a CSV file relative to the current working directory.
+The file's absolute path is <code>$CURRENT_WORKING_DIR/file.csv</code> where <code>$CURRENT_WORKING_DIR</code> is
+the location of the RML mapping.</p>
+<pre class="ex-source" aria-busy="false"><code class="hljs">&lt;#RelativePathCWD&gt; a rml:LogicalSource;
+  rml:source [ a rml:RelativePathSource, rml:Source;
+    rml:root rml:CurrentWorkingDirectory;
+    rml:path "./file.csv";
+  ];
+.</code></pre>
+
+<p>Example of accessing a JSON file relative to the path of the mapping.
+The file's absolute path is <code>$MAPPING_DIR/file.json</code> where <code>$MAPPING_DIR</code> is
+the location of the RML mapping.</p>
+<pre class="ex-source" aria-busy="false"><code class="hljs">&lt;#RelativePathMapping&gt; a rml:LogicalSource;
+  rml:source [ a rml:RelativePathSource, rml:Source;
+    rml:root rml:MappingDirectory;
+    rml:path "./file.json";
+  ];
+  rml:referenceFormulation rml:JSONPath;
+  rml:iterator "$";
+.</code></pre>
+
+<p>Example of accessing an XML file relative to an absolute root path
+specified by a string Literal. The file's absolute path is <code>/root/file.xml</code>.</p>
+<pre class="ex-source" aria-busy="false"><code class="hljs">&lt;#RelativePathLiteral&gt; a rml:LogicalSource;
+  rml:source [ a rml:RelativePathSource, rml:Source;
+    rml:root "/root";
+    rml:path "file.xml";
+  ];
+  rml:referenceFormulation rml:JSONPath;
+  rml:iterator "$";
 .</code></pre></section></section>
 
 <section id="logical-target-vocabulary"><div class="header-wrapper"><h2 id="target-vocabulary"><bdi class="secno">4. </bdi>Logical Target vocabulary</h2><a class="self-link" href="#target-vocabulary" aria-label="Permalink for Section 4."></a></div><p>The LogicalTarget vocabulary namespace is <a href="http://w3id.org/rml/">http://w3id.org/rml/</a>
@@ -972,12 +1052,12 @@ By default, UTF-8 is used.</li>
 </tr>
 <tr>
 <td><code>rml:compression</code></td>
-<td><code>rml:LogicalTarget</code></td>
+<td><code>rml:Target</code></td>
 <td><code>rml:Compression</code></td>
 </tr>
 <tr>
 <td><code>rml:encoding</code></td>
-<td><code>rml:LogicalTarget</code></td>
+<td><code>rml:Target</code></td>
 <td><code>rml:Encoding</code></td>
 </tr>
 </tbody></table>
@@ -1001,8 +1081,8 @@ Several compression formats are specified by the <code>comp</code> namespace:</p
 <li><code>rml:none</code>: No compression is applied</li>
 <li><code>rml:gzip</code>: GZip compression</li>
 <li><code>rml:zip</code>: Zip archive with Zip compression</li>
-<li><code>rml:tarXz</code>: Tar archive with Xz compression</li>
-<li><code>rml:tarGz</code>: Tar archive with GZip compression</li>
+<li><code>rml:tarxz</code>: Tar archive with Xz compression</li>
+<li><code>rml:targz</code>: Tar archive with GZip compression</li>
 </ul>
 <p>If unspecified, the default value is no compression.
 This namespace is NOT limited to the listed compression formats 
@@ -1245,10 +1325,16 @@ from a logical reference [<cite><a class="bibref" data-link-type="biblio" href="
 The result of that function is known as the term map's generated 
 RDF term [<cite><a class="bibref" data-link-type="biblio" href="#bib-rdf-concepts" title="Resource Description Framework (RDF): Concepts and Abstract Syntax">RDF-Concepts</a></cite>] 
 such as subjects, predicates, objects, named graphs and language tags.</p>
-<p>A Term Map <em class="rfc2119">MAY</em> also contain zero or more <code>rml:logicalTarget</code> properties 
-to export all triples containing the generated term to different targets. 
-The same Term Map can have multiple targets by specifying 
-multiple <code>rml:logicalTarget</code> properties in the Term Map. </p>
+<p>Each RML processor has a default target where generated triples are exported.
+Logical Targets provide a mechanism to override this default target for some 
+of the triples to be exported.</p>
+<p>Logical Targets are defined in Term Maps. A Term Map <em class="rfc2119">MAY</em> contain 
+one or more <code>rml:logicalTarget</code> properties to export all triples containing
+the generated term to different targets. Specifically, when generating a 
+triple <code>t</code>, if any of the term maps involved in the generation of <code>t</code> 
+contains a Logical Target <code>LT</code>, then triple <code>t</code> exported to target <code>LT</code>.
+If none of those Term Maps contains a Logical Target,
+then the triple <code>t</code> is sent to the default target of the RML processor.</p>
 <p>Multiple Logical Targets <em class="rfc2119">MAY</em> be combined by specifying multiple Logical Targets 
 in the same Term Map or multiple Term Maps of the same RDF triple 
 (Section <a href="#multiple-targets" data-matched-text="[[[#multiple-targets]]]" class="sec-ref"><bdi class="secno">8. </bdi>Combining multiple Targets</a>). 
@@ -1796,7 +1882,7 @@ to a RDF dump with N-Triples as serialization format:</p>
   }
 ]</code></pre>
 
-<pre class="ex-access" aria-busy="false"><code class="hljs">&lt;#DCATSourceAccess&gt; a rml:Source, dcat:Dataset;
+<pre class="ex-access" aria-busy="false"><code class="hljs">&lt;#DCATSourceAccess&gt; a rml:Source, dcat:Distribution;
   dcat:downloadURL "https://rml.io/specs/rml-target/Friends.json";
 .</code></pre>
 
@@ -1940,7 +2026,7 @@ to the three specified Targets:</p>
 .
 &lt;#VoIDDump3&gt; a rml:Target, void:Dataset;
   void:dataDump &lt;file:///data/dump3.rdf.tar.gz&gt;;
-  rml:compression rml:targzip;
+  rml:compression rml:targz;
 .</code></pre>
 
 <pre class="ex-output" aria-busy="false"><code class="hljs"># file:///data/dump1.nt.zip
@@ -2258,10 +2344,10 @@ are exported to <code>TargetDump2</code>.</p>
 &lt;http://example.org/3&gt; &lt;http://xmlns.com/foaf/0.1/name&gt; "Nia Nal" .
 
 # file:///data/dump2.nt
-&lt;http://example.org/0&gt; &lt;http://xmlns.com/foaf/0.1/name&gt; "Kara Danvers" .
-&lt;http://example.org/1&gt; &lt;http://xmlns.com/foaf/0.1/name&gt; "Alex Danvers" .
-&lt;http://example.org/2&gt; &lt;http://xmlns.com/foaf/0.1/name&gt; "J'onn J'onzz" .
-&lt;http://example.org/3&gt; &lt;http://xmlns.com/foaf/0.1/name&gt; "Nia Nal" .</code></pre>
+&lt;http://example.org/0&gt; &lt;http://xmlns.com/foaf/0.1/name&gt; "Supergirl" .
+&lt;http://example.org/1&gt; &lt;http://xmlns.com/foaf/0.1/name&gt; "Sentinel" .
+&lt;http://example.org/2&gt; &lt;http://xmlns.com/foaf/0.1/name&gt; "Martian Manhunter" .
+&lt;http://example.org/3&gt; &lt;http://xmlns.com/foaf/0.1/name&gt; "Dreamer" .</code></pre>
 
 </section><section id="subject-map-predicate-map-and-object-map"><div class="header-wrapper"><h3 id="subject-predicate-and-object-map"><bdi class="secno">8.5 </bdi>Subject Map, Predicate Map and Object Map</h3><a class="self-link" href="#subject-predicate-and-object-map" aria-label="Permalink for Section 8.5"></a></div><p>All triples containing the subject <code>http://example.org/{@id}</code>
 are exported to <code>TargetDump1</code> 
