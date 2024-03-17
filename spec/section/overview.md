@@ -27,7 +27,7 @@ the following namespace prefix bindings unless otherwise stated:
 | Prefix    | Namespace                                        |
 | --------- | ------------------------------------------------ |
 | `rml`     | http://w3id.org/rml/                             |
-| `formats` | https://www.w3.org/ns/formats/                   |
+| `formats` | http://www.w3.org/ns/formats/                   |
 | `void`    | http://rdfs.org/ns/void#                         |
 | `sd`      | http://www.w3.org/ns/sparql-service-description# |
 | `dcat`    | http://www.w3.org/ns/dcat#                       |

@@ -145,8 +145,8 @@ _:genid4 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/20
 # http://w3id.org/rml/serialization
 <http://w3id.org/rml/serialization> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <http://w3id.org/rml/serialization> <http://www.w3.org/2000/01/rdf-schema#domain> <http://w3id.org/rml/LogicalTarget> .
-<http://w3id.org/rml/serialization> <http://www.w3.org/2000/01/rdf-schema#range> <https://www.w3.org/ns/formats/Format> .
-<https://www.w3.org/ns/formats/Format> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://w3id.org/rml/serialization> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/ns/formats/Format> .
+<http://www.w3.org/ns/formats/Format> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://w3id.org/rml/serialization> <http://www.w3.org/2000/01/rdf-schema#comment> "Defines the serialization to generate the target output."@en .
 <http://w3id.org/rml/serialization> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://w3id.org/rml/io/> .
 <http://w3id.org/rml/serialization> <http://www.w3.org/2000/01/rdf-schema#label> "serialization" .
@@ -257,7 +257,7 @@ _:genid4 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/20
 # 
 # http://www.w3.org/1999/02/22-rdf-syntax-ns#Literal
 # 
-# https://www.w3.org/ns/formats/Format
+# http://www.w3.org/ns/formats/Format
 # 
 # 
 # 

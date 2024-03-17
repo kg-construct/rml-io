@@ -540,7 +540,7 @@
     "@value" : "serialization"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "https://www.w3.org/ns/formats/Format"
+    "@id" : "http://www.w3.org/ns/formats/Format"
   } ]
 }, {
   "@id" : "http://w3id.org/rml/source",
@@ -638,6 +638,6 @@
   "@id" : "http://xmlns.com/foaf/0.1/name",
   "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
 }, {
-  "@id" : "https://www.w3.org/ns/formats/Format",
+  "@id" : "http://www.w3.org/ns/formats/Format",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
 } ]

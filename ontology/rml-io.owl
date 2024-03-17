@@ -11,7 +11,7 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix vaem: <http://www.linkedmodel.org/schema/vaem#> .
 @prefix vann: <http://purl.org/vocab/vann/> .
-@prefix formats: <https://www.w3.org/ns/formats/> .
+@prefix formats: <http://www.w3.org/ns/formats/> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @base <http://w3id.org/rml/> .
 

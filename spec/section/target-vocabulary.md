@@ -33,7 +33,7 @@ A Target (`rml:Target`) MAY contain the following properties:
 - The **serialization format** (`rml:serialization`) MAY specify 
 the serialization format for exporting a knowledge graph. 
 The serialization format is described using the W3C 
-[formats](https://www.w3.org/ns/formats/) namespace. 
+[formats](http://www.w3.org/ns/formats/) namespace. 
 By default, the serialization format is N-Quads [[N-Quads]].
 - The **compression algorithm** (`rml:compression`) MAY describe 
 the compression algorithm to apply when exporting a knowledge graph.
@@ -58,7 +58,7 @@ By default, UTF-8 is used.
 Each Target MAY describe the serialization format 
 with `rml:serialization` to use when exporting RDF triples to a Target.
 The possible formats are defined in the W3C 
-[formats](https://www.w3.org/ns/formats/) namespace 
+[formats](http://www.w3.org/ns/formats/) namespace 
 such as N-Quads, N-Triples, JSON-LD, Turtle, etc.
 If unspecified, the default format is N-Quads [[N-Quads]].
 
