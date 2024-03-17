@@ -156,7 +156,7 @@
 ###  http://w3id.org/rml/serialization
 <http://w3id.org/rml/serialization> rdf:type owl:ObjectProperty ;
                                     rdfs:domain <http://w3id.org/rml/LogicalTarget> ;
-                                    rdfs:range <https://www.w3.org/ns/formats/Format> ;
+                                    rdfs:range <http://www.w3.org/ns/formats/Format> ;
                                     rdfs:comment "Defines the serialization to generate the target output."@en ;
                                     rdfs:isDefinedBy <http://w3id.org/rml/io/> ;
                                     rdfs:label "serialization" .
@@ -273,8 +273,8 @@
 rdf:Literal rdf:type owl:Class .
 
 
-###  https://www.w3.org/ns/formats/Format
-<https://www.w3.org/ns/formats/Format> rdf:type owl:Class .
+###  http://www.w3.org/ns/formats/Format
+<http://www.w3.org/ns/formats/Format> rdf:type owl:Class .
 
 
 #################################################################
