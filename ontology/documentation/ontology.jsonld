@@ -9,6 +9,26 @@
     } ]
   } ]
 }, {
+  "@id" : "_:genid11",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#unionOf" : [ {
+    "@list" : [ {
+      "@id" : "http://w3id.org/rml/RelativePath"
+    }, {
+      "@id" : "http://w3id.org/rml/Source"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid14",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#unionOf" : [ {
+    "@list" : [ {
+      "@id" : "http://w3id.org/rml/RelativePath"
+    }, {
+      "@id" : "http://w3id.org/rml/Target"
+    } ]
+  } ]
+}, {
   "@id" : "_:genid4",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2002/07/owl#unionOf" : [ {
@@ -16,6 +36,18 @@
       "@id" : "http://w3id.org/rml/Source"
     }, {
       "@id" : "http://w3id.org/rml/Target"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid7",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#unionOf" : [ {
+    "@list" : [ {
+      "@id" : "http://w3id.org/rml/CurrentWorkingDirectory"
+    }, {
+      "@id" : "http://w3id.org/rml/MappingDirectory"
+    }, {
+      "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#Literal"
     } ]
   } ]
 }, {
@@ -90,6 +122,19 @@
     "@value" : "compression class"
   } ]
 }, {
+  "@id" : "http://w3id.org/rml/CurrentWorkingDirectory",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Denotes the path to the current working directory of the RML processor."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@id" : "http://w3id.org/rml/io/"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "Current Working Directory"
+  } ]
+}, {
   "@id" : "http://w3id.org/rml/Encoding",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
@@ -145,11 +190,24 @@
     "@value" : "LogicalTarget"
   } ]
 }, {
+  "@id" : "http://w3id.org/rml/MappingDirectory",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Denotes the path to the location of the RML mapping."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@id" : "http://w3id.org/rml/io/"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "Mapping Directory"
+  } ]
+}, {
   "@id" : "http://w3id.org/rml/Namespace",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
-    "@value" : "Denotes a namespace"
+    "@value" : "Denotes a namespace."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
     "@id" : "http://w3id.org/rml/io/"
@@ -171,6 +229,19 @@
     "@value" : "Reference Formulation"
   } ]
 }, {
+  "@id" : "http://w3id.org/rml/RelativePath",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Denotes a relative path location."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@id" : "http://w3id.org/rml/io/"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "Relative Path"
+  } ]
+}, {
   "@id" : "http://w3id.org/rml/SQL2008Query",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
@@ -178,7 +249,7 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
-    "@value" : "Denotes a reference formulation that affords the creation of a row based iteration using a query in accordance with SQL:2008, from which values can be referenced by column name."
+    "@value" : "Denotes a query in SQL 2008."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
     "@id" : "http://w3id.org/rml/io/"
@@ -194,7 +265,7 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
-    "@value" : "Denotes a reference formulation that affords the creation of a row based iteration using a table name reference in accordance with SQL:2008, from which values can be referenced by column name."
+    "@value" : "Denotes a table in SQL 2008."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
     "@id" : "http://w3id.org/rml/io/"
@@ -398,7 +469,7 @@
   } ]
 }, {
   "@id" : "http://w3id.org/rml/iterator",
-  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
     "@value" : "An expression qualified according to the reference formulation specified for pointing to an extract of the source data. "
@@ -413,7 +484,7 @@
     "@value" : "iterator"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#Literal"
+    "@id" : "http://www.w3.org/2001/XMLSchema#string"
   } ]
 }, {
   "@id" : "http://w3id.org/rml/namespace",
@@ -487,7 +558,7 @@
   } ]
 }, {
   "@id" : "http://w3id.org/rml/null",
-  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
     "@value" : "Describes which data values inside the source should be considered as NULL."
@@ -502,7 +573,26 @@
     "@value" : "null"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#Literal"
+    "@id" : "http://www.w3.org/2001/XMLSchema#string"
+  } ]
+}, {
+  "@id" : "http://w3id.org/rml/path",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Denotes the path to a source or target resource."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://w3id.org/rml/LogicalSource"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@id" : "http://w3id.org/rml/io/"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "path"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#string"
   } ]
 }, {
   "@id" : "http://w3id.org/rml/referenceFormulation",
@@ -522,6 +612,25 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
     "@id" : "http://w3id.org/rml/ReferenceFormulation"
+  } ]
+}, {
+  "@id" : "http://w3id.org/rml/root",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Defines the root of the relative path."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://w3id.org/rml/RelativePath"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@id" : "http://w3id.org/rml/io/"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "root"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "_:genid7"
   } ]
 }, {
   "@id" : "http://w3id.org/rml/serialization",
@@ -559,7 +668,7 @@
     "@value" : "source"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "http://w3id.org/rml/Source"
+    "@id" : "_:genid11"
   } ]
 }, {
   "@id" : "http://w3id.org/rml/target",
@@ -578,7 +687,7 @@
     "@value" : "target"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "http://w3id.org/rml/Target"
+    "@id" : "_:genid14"
   } ]
 }, {
   "@id" : "http://w3id.org/rml/targzip",
@@ -635,9 +744,9 @@
   "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#Literal",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
 }, {
-  "@id" : "http://xmlns.com/foaf/0.1/name",
-  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
-}, {
   "@id" : "http://www.w3.org/ns/formats/Format",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
+}, {
+  "@id" : "http://xmlns.com/foaf/0.1/name",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
 } ]
