@@ -7,6 +7,9 @@ This section provides details for each class and property defined by RML-IO: Sou
          <a href="#Compression" title="http://w3id.org/rml/Compression">compression class</a>
       </li>
       <li>
+         <a href="#CurrentWorkingDirectory" title="http://w3id.org/rml/CurrentWorkingDirectory">Current Working Directory</a>
+      </li>
+      <li>
          <a href="#Encoding" title="http://w3id.org/rml/Encoding">Encoding class</a>
       </li>
       <li>
@@ -16,10 +19,16 @@ This section provides details for each class and property defined by RML-IO: Sou
          <a href="#LogicalTarget" title="http://w3id.org/rml/LogicalTarget">LogicalTarget</a>
       </li>
       <li>
+         <a href="#MappingDirectory" title="http://w3id.org/rml/MappingDirectory">Mapping Directory</a>
+      </li>
+      <li>
          <a href="#Namespace" title="http://w3id.org/rml/Namespace">Namespace</a>
       </li>
       <li>
          <a href="#ReferenceFormulation" title="http://w3id.org/rml/ReferenceFormulation">Reference Formulation</a>
+      </li>
+      <li>
+         <a href="#RelativePath" title="http://w3id.org/rml/RelativePath">Relative Path</a>
       </li>
       <li>
          <a href="#Source" title="http://w3id.org/rml/Source">Source</a>
@@ -61,6 +70,23 @@ This section provides details for each class and property defined by RML-IO: Sou
             <sup class="type-ni" title="named individual">ni</sup>, <a href="#tarxz" title="http://w3id.org/rml/tarxz">TarXz</a>
             <sup class="type-ni" title="named individual">ni</sup>, <a href="#zip" title="http://w3id.org/rml/zip">Zip</a>
             <sup class="type-ni" title="named individual">ni</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="CurrentWorkingDirectory">
+      <h3>Current Working Directory<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://w3id.org/rml/CurrentWorkingDirectory</p>
+      <div class="comment">
+         <span class="markdown">Denotes the path to the current working directory of the RML processor.</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>
+            <a href="http://w3id.org/rml/io/">http://w3id.org/rml/io/</a>
          </dd>
       </dl>
    </div>
@@ -114,7 +140,8 @@ This section provides details for each class and property defined by RML-IO: Sou
          <dt>is in domain of</dt>
          <dd>
             <a href="#iterator" title="http://w3id.org/rml/iterator">iterator</a>
-            <sup class="type-op" title="object property">op</sup>, <a href="#referenceFormulation" title="http://w3id.org/rml/referenceFormulation">reference formulation</a>
+            <sup class="type-dp" title="data property">dp</sup>, <a href="#path" title="http://w3id.org/rml/path">path</a>
+            <sup class="type-dp" title="data property">dp</sup>, <a href="#referenceFormulation" title="http://w3id.org/rml/referenceFormulation">reference formulation</a>
             <sup class="type-op" title="object property">op</sup>, <a href="#source" title="http://w3id.org/rml/source">source</a>
             <sup class="type-op" title="object property">op</sup>
          </dd>
@@ -145,6 +172,23 @@ This section provides details for each class and property defined by RML-IO: Sou
          </dd>
       </dl>
    </div>
+   <div class="entity" id="MappingDirectory">
+      <h3>Mapping Directory<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://w3id.org/rml/MappingDirectory</p>
+      <div class="comment">
+         <span class="markdown">Denotes the path to the location of the RML mapping.</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>
+            <a href="http://w3id.org/rml/io/">http://w3id.org/rml/io/</a>
+         </dd>
+      </dl>
+   </div>
    <div class="entity" id="Namespace">
       <h3>Namespace<sup class="type-c" title="class">c</sup>
          <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
@@ -153,7 +197,7 @@ This section provides details for each class and property defined by RML-IO: Sou
       <p>
          <strong>IRI:</strong> http://w3id.org/rml/Namespace</p>
       <div class="comment">
-         <span class="markdown">Denotes a namespace</span>
+         <span class="markdown">Denotes a namespace.</span>
       </div>
       <dl class="definedBy">
          <dt>Is defined by</dt>
@@ -213,6 +257,30 @@ This section provides details for each class and property defined by RML-IO: Sou
          </dd>
       </dl>
    </div>
+   <div class="entity" id="RelativePath">
+      <h3>Relative Path<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://w3id.org/rml/RelativePath</p>
+      <div class="comment">
+         <span class="markdown">Denotes a relative path location.</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>
+            <a href="http://w3id.org/rml/io/">http://w3id.org/rml/io/</a>
+         </dd>
+      </dl>
+      <dl class="description">
+         <dt>is in domain of</dt>
+         <dd>
+            <a href="#root" title="http://w3id.org/rml/root">root</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+      </dl>
+   </div>
    <div class="entity" id="Source">
       <h3>Source<sup class="type-c" title="class">c</sup>
          <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
@@ -233,12 +301,7 @@ This section provides details for each class and property defined by RML-IO: Sou
          <dt>is in domain of</dt>
          <dd>
             <a href="#null" title="http://w3id.org/rml/null">null</a>
-            <sup class="type-op" title="object property">op</sup>
-         </dd>
-         <dt>is in range of</dt>
-         <dd>
-            <a href="#source" title="http://w3id.org/rml/source">source</a>
-            <sup class="type-op" title="object property">op</sup>
+            <sup class="type-dp" title="data property">dp</sup>
          </dd>
       </dl>
    </div>
@@ -256,13 +319,6 @@ This section provides details for each class and property defined by RML-IO: Sou
          <dt>Is defined by</dt>
          <dd>
             <a href="http://w3id.org/rml/io/">http://w3id.org/rml/io/</a>
-         </dd>
-      </dl>
-      <dl class="description">
-         <dt>is in range of</dt>
-         <dd>
-            <a href="#target" title="http://w3id.org/rml/target">target</a>
-            <sup class="type-op" title="object property">op</sup>
          </dd>
       </dl>
    </div>
@@ -305,16 +361,13 @@ This section provides details for each class and property defined by RML-IO: Sou
          <a href="#encoding" title="http://w3id.org/rml/encoding">encoding</a>
       </li>
       <li>
-         <a href="#iterator" title="http://w3id.org/rml/iterator">iterator</a>
-      </li>
-      <li>
          <a href="#namespace" title="http://w3id.org/rml/namespace">namespace</a>
       </li>
       <li>
-         <a href="#null" title="http://w3id.org/rml/null">null</a>
+         <a href="#referenceFormulation" title="http://w3id.org/rml/referenceFormulation">reference formulation</a>
       </li>
       <li>
-         <a href="#referenceFormulation" title="http://w3id.org/rml/referenceFormulation">reference formulation</a>
+         <a href="#root" title="http://w3id.org/rml/root">root</a>
       </li>
       <li>
          <a href="#serialization" title="http://w3id.org/rml/serialization">serialization</a>
@@ -394,39 +447,6 @@ This section provides details for each class and property defined by RML-IO: Sou
          </dl>
       </div>
    </div>
-   <div class="entity" id="iterator">
-      <h3>iterator<sup class="type-op" title="object property">op</sup>
-         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
-         </span>
-      </h3>
-      <p>
-         <strong>IRI:</strong> http://w3id.org/rml/iterator</p>
-      <div class="comment">
-         <span class="markdown">An expression qualified according to the reference formulation specified for pointing to an extract of the source data. </span>
-      </div>
-      <dl class="definedBy">
-         <dt>Is defined by</dt>
-         <dd>
-            <a href="http://w3id.org/rml/io/">http://w3id.org/rml/io/</a>
-         </dd>
-      </dl>
-      <div class="description">
-         <dl>
-            <dt>has domain</dt>
-            <dd>
-               <a href="#LogicalSource" title="http://w3id.org/rml/LogicalSource">Logical Source</a>
-               <sup class="type-c" title="class">c</sup>
-            </dd>
-            <dt>has range</dt>
-            <dd>
-               <a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#Literal"
-                  target="_blank"
-                  title="http://www.w3.org/1999/02/22-rdf-syntax-ns#Literal">literal</a>
-               <sup class="type-c" title="class">c</sup>
-            </dd>
-         </dl>
-      </div>
-   </div>
    <div class="entity" id="namespace">
       <h3>namespace<sup class="type-op" title="object property">op</sup>
          <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
@@ -458,39 +478,6 @@ This section provides details for each class and property defined by RML-IO: Sou
          </dl>
       </div>
    </div>
-   <div class="entity" id="null">
-      <h3>null<sup class="type-op" title="object property">op</sup>
-         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
-         </span>
-      </h3>
-      <p>
-         <strong>IRI:</strong> http://w3id.org/rml/null</p>
-      <div class="comment">
-         <span class="markdown">Describes which data values inside the source should be considered as NULL.</span>
-      </div>
-      <dl class="definedBy">
-         <dt>Is defined by</dt>
-         <dd>
-            <a href="http://w3id.org/rml/io/">http://w3id.org/rml/io/</a>
-         </dd>
-      </dl>
-      <div class="description">
-         <dl>
-            <dt>has domain</dt>
-            <dd>
-               <a href="#Source" title="http://w3id.org/rml/Source">Source</a>
-               <sup class="type-c" title="class">c</sup>
-            </dd>
-            <dt>has range</dt>
-            <dd>
-               <a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#Literal"
-                  target="_blank"
-                  title="http://www.w3.org/1999/02/22-rdf-syntax-ns#Literal">literal</a>
-               <sup class="type-c" title="class">c</sup>
-            </dd>
-         </dl>
-      </div>
-   </div>
    <div class="entity" id="referenceFormulation">
       <h3>reference formulation<sup class="type-op" title="object property">op</sup>
          <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
@@ -517,6 +504,45 @@ This section provides details for each class and property defined by RML-IO: Sou
             <dt>has range</dt>
             <dd>
                <a href="#ReferenceFormulation" title="http://w3id.org/rml/ReferenceFormulation">Reference Formulation</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="root">
+      <h3>root<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://w3id.org/rml/root</p>
+      <div class="comment">
+         <span class="markdown">Defines the root of the relative path.</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>
+            <a href="http://w3id.org/rml/io/">http://w3id.org/rml/io/</a>
+         </dd>
+      </dl>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#RelativePath" title="http://w3id.org/rml/RelativePath">Relative Path</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#CurrentWorkingDirectory" title="http://w3id.org/rml/CurrentWorkingDirectory">Current Working Directory</a>
+               <sup class="type-c" title="class">c</sup> 
+               <span class="logic">or</span> 
+               <a href="#MappingDirectory" title="http://w3id.org/rml/MappingDirectory">Mapping Directory</a>
+               <sup class="type-c" title="class">c</sup> 
+               <span class="logic">or</span> 
+               <a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#Literal"
+                  target="_blank"
+                  title="http://www.w3.org/1999/02/22-rdf-syntax-ns#Literal">literal</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
          </dl>
@@ -580,6 +606,9 @@ This section provides details for each class and property defined by RML-IO: Sou
             </dd>
             <dt>has range</dt>
             <dd>
+               <a href="#RelativePath" title="http://w3id.org/rml/RelativePath">Relative Path</a>
+               <sup class="type-c" title="class">c</sup> 
+               <span class="logic">or</span> 
                <a href="#Source" title="http://w3id.org/rml/Source">Source</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
@@ -611,6 +640,9 @@ This section provides details for each class and property defined by RML-IO: Sou
             </dd>
             <dt>has range</dt>
             <dd>
+               <a href="#RelativePath" title="http://w3id.org/rml/RelativePath">Relative Path</a>
+               <sup class="type-c" title="class">c</sup> 
+               <span class="logic">or</span> 
                <a href="#Target" title="http://w3id.org/rml/Target">Target</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
@@ -621,12 +653,53 @@ This section provides details for each class and property defined by RML-IO: Sou
    <h3 id="dataproperties-headline" class="list">Data Properties</h3>
    <ul class="hlist">
       <li>
+         <a href="#iterator" title="http://w3id.org/rml/iterator">iterator</a>
+      </li>
+      <li>
          <a href="#namespacePrefix" title="http://w3id.org/rml/namespacePrefix">namespace prefix</a>
       </li>
       <li>
          <a href="#namespaceURL" title="http://w3id.org/rml/namespaceURL">namespace URL</a>
       </li>
+      <li>
+         <a href="#null" title="http://w3id.org/rml/null">null</a>
+      </li>
+      <li>
+         <a href="#path" title="http://w3id.org/rml/path">path</a>
+      </li>
    </ul>
+   <div class="entity" id="iterator">
+      <h3>iterator<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://w3id.org/rml/iterator</p>
+      <div class="comment">
+         <span class="markdown">An expression qualified according to the reference formulation specified for pointing to an extract of the source data. </span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>
+            <a href="http://w3id.org/rml/io/">http://w3id.org/rml/io/</a>
+         </dd>
+      </dl>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#LogicalSource" title="http://w3id.org/rml/LogicalSource">Logical Source</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="http://www.w3.org/2001/XMLSchema#string"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#string">string</a>
+            </dd>
+         </dl>
+      </div>
+   </div>
    <div class="entity" id="namespacePrefix">
       <h3>namespace prefix<sup class="type-dp" title="data property">dp</sup>
          <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
@@ -681,6 +754,70 @@ This section provides details for each class and property defined by RML-IO: Sou
             <dd>
                <a href="#Namespace" title="http://w3id.org/rml/Namespace">Namespace</a>
                <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="null">
+      <h3>null<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://w3id.org/rml/null</p>
+      <div class="comment">
+         <span class="markdown">Describes which data values inside the source should be considered as NULL.</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>
+            <a href="http://w3id.org/rml/io/">http://w3id.org/rml/io/</a>
+         </dd>
+      </dl>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#Source" title="http://w3id.org/rml/Source">Source</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="http://www.w3.org/2001/XMLSchema#string"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#string">string</a>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="path">
+      <h3>path<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://w3id.org/rml/path</p>
+      <div class="comment">
+         <span class="markdown">Denotes the path to a source or target resource.</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>
+            <a href="http://w3id.org/rml/io/">http://w3id.org/rml/io/</a>
+         </dd>
+      </dl>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#LogicalSource" title="http://w3id.org/rml/LogicalSource">Logical Source</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="http://www.w3.org/2001/XMLSchema#string"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#string">string</a>
             </dd>
          </dl>
       </div>
@@ -829,7 +966,7 @@ This section provides details for each class and property defined by RML-IO: Sou
       <p>
          <strong>IRI:</strong> http://w3id.org/rml/SQL2008Query</p>
       <div class="comment">
-         <span class="markdown">Denotes a reference formulation that affords the creation of a row based iteration using a query in accordance with SQL:2008, from which values can be referenced by column name.</span>
+         <span class="markdown">Denotes a query in SQL 2008.</span>
       </div>
       <dl class="definedBy">
          <dt>Is defined by</dt>
@@ -853,7 +990,7 @@ This section provides details for each class and property defined by RML-IO: Sou
       <p>
          <strong>IRI:</strong> http://w3id.org/rml/SQL2008Table</p>
       <div class="comment">
-         <span class="markdown">Denotes a reference formulation that affords the creation of a row based iteration using a table name reference in accordance with SQL:2008, from which values can be referenced by column name.</span>
+         <span class="markdown">Denotes a table in SQL 2008.</span>
       </div>
       <dl class="definedBy">
          <dt>Is defined by</dt>

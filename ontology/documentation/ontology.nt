@@ -109,15 +109,6 @@ _:genid4 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/20
 <http://w3id.org/rml/encoding> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://w3id.org/rml/io/> .
 <http://w3id.org/rml/encoding> <http://www.w3.org/2000/01/rdf-schema#label> "encoding" .
 # 
-# http://w3id.org/rml/iterator
-<http://w3id.org/rml/iterator> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<http://w3id.org/rml/iterator> <http://www.w3.org/2000/01/rdf-schema#domain> <http://w3id.org/rml/LogicalSource> .
-<http://w3id.org/rml/iterator> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/1999/02/22-rdf-syntax-ns#Literal> .
-<http://www.w3.org/1999/02/22-rdf-syntax-ns#Literal> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<http://w3id.org/rml/iterator> <http://www.w3.org/2000/01/rdf-schema#comment> "An expression qualified according to the reference formulation specified for pointing to an extract of the source data. "@en .
-<http://w3id.org/rml/iterator> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://w3id.org/rml/io/> .
-<http://w3id.org/rml/iterator> <http://www.w3.org/2000/01/rdf-schema#label> "iterator" .
-# 
 # http://w3id.org/rml/namespace
 <http://w3id.org/rml/namespace> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <http://w3id.org/rml/namespace> <http://www.w3.org/2000/01/rdf-schema#domain> <http://w3id.org/rml/XPathReferenceFormulation> .
@@ -126,14 +117,6 @@ _:genid4 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/20
 <http://w3id.org/rml/namespace> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://w3id.org/rml/io/> .
 <http://w3id.org/rml/namespace> <http://www.w3.org/2000/01/rdf-schema#label> "namespace" .
 # 
-# http://w3id.org/rml/null
-<http://w3id.org/rml/null> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<http://w3id.org/rml/null> <http://www.w3.org/2000/01/rdf-schema#domain> <http://w3id.org/rml/Source> .
-<http://w3id.org/rml/null> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/1999/02/22-rdf-syntax-ns#Literal> .
-<http://w3id.org/rml/null> <http://www.w3.org/2000/01/rdf-schema#comment> "Describes which data values inside the source should be considered as NULL."@en .
-<http://w3id.org/rml/null> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://w3id.org/rml/io/> .
-<http://w3id.org/rml/null> <http://www.w3.org/2000/01/rdf-schema#label> "null" .
-# 
 # http://w3id.org/rml/referenceFormulation
 <http://w3id.org/rml/referenceFormulation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <http://w3id.org/rml/referenceFormulation> <http://www.w3.org/2000/01/rdf-schema#domain> <http://w3id.org/rml/LogicalSource> .
@@ -141,6 +124,26 @@ _:genid4 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/20
 <http://w3id.org/rml/referenceFormulation> <http://www.w3.org/2000/01/rdf-schema#comment> "The reference formulation used to refer to extracts of the source data. "@en .
 <http://w3id.org/rml/referenceFormulation> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://w3id.org/rml/io/> .
 <http://w3id.org/rml/referenceFormulation> <http://www.w3.org/2000/01/rdf-schema#label> "reference formulation" .
+# 
+# http://w3id.org/rml/root
+<http://w3id.org/rml/root> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://w3id.org/rml/root> <http://www.w3.org/2000/01/rdf-schema#domain> <http://w3id.org/rml/RelativePath> .
+<http://w3id.org/rml/root> <http://www.w3.org/2000/01/rdf-schema#range> _:genid7 .
+_:genid7 <http://www.w3.org/2002/07/owl#unionOf> _:genid10 .
+_:genid10 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid9 .
+_:genid9 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid8 .
+_:genid8 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid8 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://www.w3.org/1999/02/22-rdf-syntax-ns#Literal> .
+<http://www.w3.org/1999/02/22-rdf-syntax-ns#Literal> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:genid8 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid9 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://w3id.org/rml/MappingDirectory> .
+_:genid9 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid10 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://w3id.org/rml/CurrentWorkingDirectory> .
+_:genid10 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid7 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://w3id.org/rml/root> <http://www.w3.org/2000/01/rdf-schema#comment> "Defines the root of the relative path."@en .
+<http://w3id.org/rml/root> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://w3id.org/rml/io/> .
+<http://w3id.org/rml/root> <http://www.w3.org/2000/01/rdf-schema#label> "root" .
 # 
 # http://w3id.org/rml/serialization
 <http://w3id.org/rml/serialization> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
@@ -154,7 +157,15 @@ _:genid4 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/20
 # http://w3id.org/rml/source
 <http://w3id.org/rml/source> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <http://w3id.org/rml/source> <http://www.w3.org/2000/01/rdf-schema#domain> <http://w3id.org/rml/LogicalSource> .
-<http://w3id.org/rml/source> <http://www.w3.org/2000/01/rdf-schema#range> <http://w3id.org/rml/Source> .
+<http://w3id.org/rml/source> <http://www.w3.org/2000/01/rdf-schema#range> _:genid11 .
+_:genid11 <http://www.w3.org/2002/07/owl#unionOf> _:genid13 .
+_:genid13 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid12 .
+_:genid12 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid12 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://w3id.org/rml/Source> .
+_:genid12 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid13 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://w3id.org/rml/RelativePath> .
+_:genid13 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid11 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://w3id.org/rml/source> <http://www.w3.org/2000/01/rdf-schema#comment> "Defines the source that describe the input data."@en .
 <http://w3id.org/rml/source> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://w3id.org/rml/io/> .
 <http://w3id.org/rml/source> <http://www.w3.org/2000/01/rdf-schema#label> "source" .
@@ -162,7 +173,15 @@ _:genid4 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/20
 # http://w3id.org/rml/target
 <http://w3id.org/rml/target> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <http://w3id.org/rml/target> <http://www.w3.org/2000/01/rdf-schema#domain> <http://w3id.org/rml/LogicalTarget> .
-<http://w3id.org/rml/target> <http://www.w3.org/2000/01/rdf-schema#range> <http://w3id.org/rml/Target> .
+<http://w3id.org/rml/target> <http://www.w3.org/2000/01/rdf-schema#range> _:genid14 .
+_:genid14 <http://www.w3.org/2002/07/owl#unionOf> _:genid16 .
+_:genid16 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid15 .
+_:genid15 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid15 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://w3id.org/rml/Target> .
+_:genid15 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid16 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://w3id.org/rml/RelativePath> .
+_:genid16 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid14 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://w3id.org/rml/target> <http://www.w3.org/2000/01/rdf-schema#comment> "Defines the target that describe the output data."@en .
 <http://w3id.org/rml/target> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://w3id.org/rml/io/> .
 <http://w3id.org/rml/target> <http://www.w3.org/2000/01/rdf-schema#label> "target" .
@@ -175,6 +194,14 @@ _:genid4 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/20
 # #
 # #################################################################
 # 
+# 
+# http://w3id.org/rml/iterator
+<http://w3id.org/rml/iterator> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://w3id.org/rml/iterator> <http://www.w3.org/2000/01/rdf-schema#domain> <http://w3id.org/rml/LogicalSource> .
+<http://w3id.org/rml/iterator> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<http://w3id.org/rml/iterator> <http://www.w3.org/2000/01/rdf-schema#comment> "An expression qualified according to the reference formulation specified for pointing to an extract of the source data. "@en .
+<http://w3id.org/rml/iterator> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://w3id.org/rml/io/> .
+<http://w3id.org/rml/iterator> <http://www.w3.org/2000/01/rdf-schema#label> "iterator" .
 # 
 # http://w3id.org/rml/namespacePrefix
 <http://w3id.org/rml/namespacePrefix> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
@@ -191,6 +218,22 @@ _:genid4 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/20
 <http://w3id.org/rml/namespaceURL> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://w3id.org/rml/io/> .
 <http://w3id.org/rml/namespaceURL> <http://www.w3.org/2000/01/rdf-schema#label> "namespace URL" .
 # 
+# http://w3id.org/rml/null
+<http://w3id.org/rml/null> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://w3id.org/rml/null> <http://www.w3.org/2000/01/rdf-schema#domain> <http://w3id.org/rml/Source> .
+<http://w3id.org/rml/null> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<http://w3id.org/rml/null> <http://www.w3.org/2000/01/rdf-schema#comment> "Describes which data values inside the source should be considered as NULL."@en .
+<http://w3id.org/rml/null> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://w3id.org/rml/io/> .
+<http://w3id.org/rml/null> <http://www.w3.org/2000/01/rdf-schema#label> "null" .
+# 
+# http://w3id.org/rml/path
+<http://w3id.org/rml/path> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://w3id.org/rml/path> <http://www.w3.org/2000/01/rdf-schema#domain> <http://w3id.org/rml/LogicalSource> .
+<http://w3id.org/rml/path> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<http://w3id.org/rml/path> <http://www.w3.org/2000/01/rdf-schema#comment> "Denotes the path to a source or target resource."@en .
+<http://w3id.org/rml/path> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://w3id.org/rml/io/> .
+<http://w3id.org/rml/path> <http://www.w3.org/2000/01/rdf-schema#label> "path" .
+# 
 # 
 # 
 # #################################################################
@@ -205,6 +248,12 @@ _:genid4 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/20
 <http://w3id.org/rml/Compression> <http://www.w3.org/2000/01/rdf-schema#comment> "Represents file compression schemes."@en .
 <http://w3id.org/rml/Compression> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://w3id.org/rml/io/> .
 <http://w3id.org/rml/Compression> <http://www.w3.org/2000/01/rdf-schema#label> "compression class" .
+# 
+# http://w3id.org/rml/CurrentWorkingDirectory
+<http://w3id.org/rml/CurrentWorkingDirectory> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://w3id.org/rml/CurrentWorkingDirectory> <http://www.w3.org/2000/01/rdf-schema#comment> "Denotes the path to the current working directory of the RML processor."@en .
+<http://w3id.org/rml/CurrentWorkingDirectory> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://w3id.org/rml/io/> .
+<http://w3id.org/rml/CurrentWorkingDirectory> <http://www.w3.org/2000/01/rdf-schema#label> "Current Working Directory" .
 # 
 # http://w3id.org/rml/Encoding
 <http://w3id.org/rml/Encoding> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
@@ -224,9 +273,15 @@ _:genid4 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/20
 <http://w3id.org/rml/LogicalTarget> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://w3id.org/rml/io/> .
 <http://w3id.org/rml/LogicalTarget> <http://www.w3.org/2000/01/rdf-schema#label> "LogicalTarget" .
 # 
+# http://w3id.org/rml/MappingDirectory
+<http://w3id.org/rml/MappingDirectory> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://w3id.org/rml/MappingDirectory> <http://www.w3.org/2000/01/rdf-schema#comment> "Denotes the path to the location of the RML mapping."@en .
+<http://w3id.org/rml/MappingDirectory> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://w3id.org/rml/io/> .
+<http://w3id.org/rml/MappingDirectory> <http://www.w3.org/2000/01/rdf-schema#label> "Mapping Directory" .
+# 
 # http://w3id.org/rml/Namespace
 <http://w3id.org/rml/Namespace> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<http://w3id.org/rml/Namespace> <http://www.w3.org/2000/01/rdf-schema#comment> "Denotes a namespace"@en .
+<http://w3id.org/rml/Namespace> <http://www.w3.org/2000/01/rdf-schema#comment> "Denotes a namespace."@en .
 <http://w3id.org/rml/Namespace> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://w3id.org/rml/io/> .
 <http://w3id.org/rml/Namespace> <http://www.w3.org/2000/01/rdf-schema#label> "Namespace" .
 # 
@@ -235,6 +290,12 @@ _:genid4 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/20
 <http://w3id.org/rml/ReferenceFormulation> <http://www.w3.org/2000/01/rdf-schema#comment> "Denotes a Reference Formulation."@en .
 <http://w3id.org/rml/ReferenceFormulation> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://w3id.org/rml/io/> .
 <http://w3id.org/rml/ReferenceFormulation> <http://www.w3.org/2000/01/rdf-schema#label> "Reference Formulation" .
+# 
+# http://w3id.org/rml/RelativePath
+<http://w3id.org/rml/RelativePath> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://w3id.org/rml/RelativePath> <http://www.w3.org/2000/01/rdf-schema#comment> "Denotes a relative path location."@en .
+<http://w3id.org/rml/RelativePath> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://w3id.org/rml/io/> .
+<http://w3id.org/rml/RelativePath> <http://www.w3.org/2000/01/rdf-schema#label> "Relative Path" .
 # 
 # http://w3id.org/rml/Source
 <http://w3id.org/rml/Source> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
@@ -286,14 +347,14 @@ _:genid4 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/20
 # http://w3id.org/rml/SQL2008Query
 <http://w3id.org/rml/SQL2008Query> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
 <http://w3id.org/rml/SQL2008Query> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://w3id.org/rml/ReferenceFormulation> .
-<http://w3id.org/rml/SQL2008Query> <http://www.w3.org/2000/01/rdf-schema#comment> "Denotes a reference formulation that affords the creation of a row based iteration using a query in accordance with SQL:2008, from which values can be referenced by column name."@en .
+<http://w3id.org/rml/SQL2008Query> <http://www.w3.org/2000/01/rdf-schema#comment> "Denotes a query in SQL 2008."@en .
 <http://w3id.org/rml/SQL2008Query> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://w3id.org/rml/io/> .
 <http://w3id.org/rml/SQL2008Query> <http://www.w3.org/2000/01/rdf-schema#label> "SQL 2008 Query" .
 # 
 # http://w3id.org/rml/SQL2008Table
 <http://w3id.org/rml/SQL2008Table> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
 <http://w3id.org/rml/SQL2008Table> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://w3id.org/rml/ReferenceFormulation> .
-<http://w3id.org/rml/SQL2008Table> <http://www.w3.org/2000/01/rdf-schema#comment> "Denotes a reference formulation that affords the creation of a row based iteration using a table name reference in accordance with SQL:2008, from which values can be referenced by column name."@en .
+<http://w3id.org/rml/SQL2008Table> <http://www.w3.org/2000/01/rdf-schema#comment> "Denotes a table in SQL 2008."@en .
 <http://w3id.org/rml/SQL2008Table> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://w3id.org/rml/io/> .
 <http://w3id.org/rml/SQL2008Table> <http://www.w3.org/2000/01/rdf-schema#label> "SQL 2008 Table" .
 # 

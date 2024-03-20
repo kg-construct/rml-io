@@ -114,24 +114,6 @@ foaf:name rdf:type owl:AnnotationProperty .
           rdfs:label "encoding" .
 
 
-###  http://w3id.org/rml/iterator
-:iterator rdf:type owl:ObjectProperty ;
-          rdfs:domain :LogicalSource ;
-          rdfs:range rdf:Literal ;
-          rdfs:isDefinedBy <http://w3id.org/rml/io/> ;
-          rdfs:comment "An expression qualified according to the reference formulation specified for pointing to an extract of the source data. "@en ;
-          rdfs:label "iterator" .
-
-
-###  http://w3id.org/rml/null
-:null rdf:type owl:ObjectProperty ;
-      rdfs:domain :Source ;
-      rdfs:range rdf:Literal ;
-      rdfs:isDefinedBy <http://w3id.org/rml/io/> ;
-      rdfs:comment "Describes which data values inside the source should be considered as NULL."@en ;
-      rdfs:label "null" .
-
-
 ###  http://w3id.org/rml/referenceFormulation
 :referenceFormulation rdf:type owl:ObjectProperty ;
                       rdfs:domain :LogicalSource ;
@@ -153,7 +135,11 @@ foaf:name rdf:type owl:AnnotationProperty .
 ###  http://w3id.org/rml/source
 :source rdf:type owl:ObjectProperty ;
         rdfs:domain :LogicalSource ;
-        rdfs:range :Source ;
+        rdfs:range [ rdf:type owl:Class ;
+                      owl:unionOf ( :Source
+                                    :RelativePath
+                                  )
+                    ] ;
         rdfs:isDefinedBy <http://w3id.org/rml/io/> ;
         rdfs:comment "Defines the source that describe the input data."@en ;
         rdfs:label "source" .
@@ -162,7 +148,11 @@ foaf:name rdf:type owl:AnnotationProperty .
 ###  http://w3id.org/rml/target
 :target rdf:type owl:ObjectProperty ;
         rdfs:domain :LogicalTarget ;
-        rdfs:range :Target ;
+        rdfs:range [ rdf:type owl:Class ;
+                      owl:unionOf ( :RelativePath
+                                    :Target
+                                  )
+                    ] ;
         rdfs:isDefinedBy <http://w3id.org/rml/io/> ;
         rdfs:comment "Defines the target that describe the output data."@en ;
         rdfs:label "target" .
@@ -176,10 +166,25 @@ foaf:name rdf:type owl:AnnotationProperty .
              rdfs:range :Namespace .
 
 
+###  http://w3id.org/rml/root
+:root rdf:type owl:ObjectProperty ;
+      rdfs:domain :RelativePath ;
+      rdfs:range [ rdf:type owl:Class ;
+                    owl:unionOf ( :CurrentWorkingDirectory
+                                  :MappingDirectory
+                                  rdf:Literal
+                                )
+                  ] ;
+      rdfs:isDefinedBy <http://w3id.org/rml/io/> ;
+         rdfs:comment "Defines the root of the relative path."@en ;
+      rdfs:label "root" .
+
+
 #################################################################
 #    Data Properties
 #################################################################
 
+###  http://w3id.org/rml/namespacePrefix
 :namespacePrefix rdf:type owl:DatatypeProperty ;
              rdfs:comment "Describes the prefix of a namespace."@en ;
              rdfs:label "namespace prefix" ;
@@ -187,11 +192,38 @@ foaf:name rdf:type owl:AnnotationProperty .
              rdfs:isDefinedBy <http://w3id.org/rml/io/> ;
              rdfs:range xsd:string .
 
+###  http://w3id.org/rml/namespaceURL
 :namespaceURL rdf:type owl:DatatypeProperty ;
              rdfs:comment "Describes the URL of a namespace."@en ;
              rdfs:label "namespace URL" ;
              rdfs:isDefinedBy <http://w3id.org/rml/io/> ;
              rdfs:domain :Namespace .
+
+
+###  http://w3id.org/rml/iterator
+:iterator rdf:type owl:DatatypeProperty ;
+          rdfs:domain :LogicalSource ;
+          rdfs:range xsd:string ;
+          rdfs:isDefinedBy <http://w3id.org/rml/io/> ;
+          rdfs:comment "An expression qualified according to the reference formulation specified for pointing to an extract of the source data. "@en ;
+          rdfs:label "iterator" .
+
+
+###  http://w3id.org/rml/null
+:null rdf:type owl:DatatypeProperty ;
+      rdfs:domain :Source ;
+      rdfs:range xsd:string ;
+      rdfs:isDefinedBy <http://w3id.org/rml/io/> ;
+      rdfs:comment "Describes which data values inside the source should be considered as NULL."@en ;
+      rdfs:label "null" .
+
+###  http://w3id.org/rml/path
+:path rdf:type owl:DatatypeProperty ;
+      rdfs:domain :LogicalSource ;
+      rdfs:range xsd:string ;
+      rdfs:isDefinedBy <http://w3id.org/rml/io/> ;
+      rdfs:comment "Denotes the path to a source or target resource."@en ;
+      rdfs:label "path" .
 
 
 #################################################################
@@ -254,9 +286,27 @@ foaf:name rdf:type owl:AnnotationProperty .
 
 ###  http://w3id.org/rml/Namespace
 :Namespace rdf:type owl:Class ;
-             rdfs:comment "Denotes a namespace"@en ;
+             rdfs:comment "Denotes a namespace."@en ;
              rdfs:isDefinedBy <http://w3id.org/rml/io/> ;
              rdfs:label "Namespace" .
+
+###  http://w3id.org/rml/RelativePath
+:RelativePath rdf:type owl:Class ;
+rdfs:comment "Denotes a relative path location."@en ;
+rdfs:isDefinedBy <http://w3id.org/rml/io/> ;
+rdfs:label "Relative Path" .
+
+###  http://w3id.org/rml/CurrentWorkingDirectory
+:CurrentWorkingDirectory rdf:type owl:Class ;
+rdfs:comment "Denotes the path to the current working directory of the RML processor."@en ;
+rdfs:isDefinedBy <http://w3id.org/rml/io/> ;
+rdfs:label "Current Working Directory" .
+
+###  http://w3id.org/rml/MappingDirectory
+:MappingDirectory rdf:type owl:Class ;
+rdfs:comment "Denotes the path to the location of the RML mapping."@en ;
+rdfs:isDefinedBy <http://w3id.org/rml/io/> ;
+rdfs:label "Mapping Directory" .
 
 
 #################################################################
