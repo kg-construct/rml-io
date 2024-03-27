@@ -24,16 +24,17 @@ such as DCAT [[DCAT]], VoID [[VoID]], SD [[SD]], etc.
 In this document, examples assume 
 the following namespace prefix bindings unless otherwise stated:
 
-| Prefix    | Namespace                                        |
-| --------- | ------------------------------------------------ |
-| `rml`     | http://w3id.org/rml/                             |
-| `formats` | http://www.w3.org/ns/formats/                   |
-| `void`    | http://rdfs.org/ns/void#                         |
-| `sd`      | http://www.w3.org/ns/sparql-service-description# |
-| `dcat`    | http://www.w3.org/ns/dcat#                       |
-| `td`      | https://www.w3.org/2019/wot/td#                  |
-| `hctl`    | https://www.w3.org/2019/wot/hypermedia#          |
-| `htv`     | http://www.w3.org/2011/http#                     |
+| Prefix    | Namespace                                           |
+| --------- | --------------------------------------------------- |
+| `rml`     | http://w3id.org/rml/                                |
+| `formats` | http://www.w3.org/ns/formats/                       |
+| `void`    | http://rdfs.org/ns/void#                            |
+| `sd`      | http://www.w3.org/ns/sparql-service-description#    |
+| `dcat`    | http://www.w3.org/ns/dcat#                          |
+| `td`      | https://www.w3.org/2019/wot/td#                     |
+| `hctl`    | https://www.w3.org/2019/wot/hypermedia#             |
+| `htv`     | http://www.w3.org/2011/http#                        |
+| `d2rq`    | http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1# |
 
 The examples are contained in pink colored boxes:
 
