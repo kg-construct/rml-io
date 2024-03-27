@@ -186,7 +186,7 @@ Several compression formats are specified by the `comp` namespace:
 - `rml:none`: No compression is applied
 - `rml:gzip`: GZip compression
 - `rml:zip`: Zip archive with Zip compression
-- `rml:targz`: Tar archive with Xz compression
+- `rml:tarxz`: Tar archive with Xz compression
 - `rml:targz`: Tar archive with GZip compression
 
 If unspecified, the default value is no compression.
