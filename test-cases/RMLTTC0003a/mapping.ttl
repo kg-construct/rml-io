@@ -29,7 +29,7 @@
   ];
 .
 
-<#TriplesMap> a rml:TriplesMap;
+<#TriplesMap2> a rml:TriplesMap;
   rml:logicalSource [ a rml:LogicalSource;
     rml:source <#DCATSourceAccess>;
     rml:referenceFormulation rml:JSONPath;
