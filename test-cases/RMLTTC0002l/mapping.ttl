@@ -35,7 +35,7 @@
     ];
     rml:objectMap [ a rml:ObjectMap;
       rml:reference "$.age";
-      rml:languageMap [ a rml:DatatypeMap;
+      rml:datatypeMap [ a rml:DatatypeMap;
         rml:constant xsd:integer;
         rml:logicalTarget <#TargetDump2>;
       ];
