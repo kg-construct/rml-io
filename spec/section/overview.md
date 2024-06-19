@@ -35,6 +35,8 @@ the following namespace prefix bindings unless otherwise stated:
 | `hctl`    | https://www.w3.org/2019/wot/hypermedia#             |
 | `htv`     | http://www.w3.org/2011/http#                        |
 | `d2rq`    | http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1# |
+| `wotsec`  | https://www.w3.org/2019/wot/security#               |
+| `idsa`    | https://w3id.org/idsa/core/                         |
 
 The examples are contained in pink colored boxes:
 
