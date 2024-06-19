@@ -26,7 +26,7 @@ An external vocabulary such as DCAT, VoID, SD is allowed here.
 If a target cannot be accessed with existing vocabulary, a custom vocabulary 
 can be used, for example: handling an authentication flow may be specific 
 for that specific target. A custom ontology can be used here to describe 
-this authentication flow.
+this authentication flow such as [W3C Web of Things Security](https://www.w3.org/2019/wot/security).
 
 A Target (`rml:Target`) MAY contain the following properties:
  
@@ -133,12 +133,18 @@ DCAT dataset in N-Quads format with Zip compression:
 </pre>
 
 The following example shows a Target of a
-MQTT stream in N-Quads format without compression:
+MQTT stream in N-Quads format without compression.
+Authentication is performed with a custom HTTP header called `apikey`
+with token value `123456789`. Token value is described by IDSA because
+WoT Security only describes the security information without providing a
+way to supply the actual value of username/password, tokens,  etc.
+For security reasons, these values should never be provided in the RML mapping
+by separating them in separate document.
 
 <pre class="ex-target">
 &lt;#MQTTStream&gt; a rml:LogicalTarget;
     rml:target [ a rml:Target, td:Thing;
-        td:hasPropertyAffordance [
+        td:hasPropertyAffordance [ a td:PropertyAffordance;
             td:hasForm [
                 # URL and content type
                 hctl:hasTarget "mqtt://localhost/topic";
@@ -148,13 +154,18 @@ MQTT stream in N-Quads format without compression:
                 mqv:options ([ mqv:optionName "qos"; mqv:optionValue "1" ] [ mqv:optionName "dup" ]);
             ];
         ];
+        td:hasSecurityConfiguration [ a wotsec:APIKeySecurityScheme, idsa:Token;
+          wotsec:in "header";
+          wotsec:name "apikey";
+          idsa:tokenValue "123456789"
+        ];
     ];
     rml:serialization formats:N-Quads;
 .
 </pre>
 
 The following example shows a Target of a
-TCP stream in N-Quads format without compression:
+TCP stream in N-Quads format without compression.
 
 <pre class="ex-target">
 &lt;#TCPStream&gt; a rml:LogicalTarget;
