@@ -65,7 +65,7 @@ to an RDF dump with N-Quads as serialization format and GZip compression:
       rml:constant foaf:name;
     ];
     rml:objectMap [ a rml:ObjectMap;
-      rml:reference "name";
+      rml:reference "$.name";
     ];
   ];
   rml:predicateObjectMap [ a rml:PredicateObjectMap;
@@ -73,7 +73,7 @@ to an RDF dump with N-Quads as serialization format and GZip compression:
       rml:constant foaf:age;
     ];
     rml:objectMap [ a rml:ObjectMap;
-      rml:reference "age";
+      rml:reference "$.age";
     ];
   ];
 .
@@ -167,7 +167,7 @@ with Turtle as serialization format and Zip compression:
       rml:logicalTarget &lt;#TargetDump1&gt;;
     ];
     rml:objectMap [ a rml:ObjectMap;
-      rml:reference "name";
+      rml:reference "$.name";
     ];
   ];
   rml:predicateObjectMap [ a rml:PredicateObjectMap;
@@ -175,7 +175,7 @@ with Turtle as serialization format and Zip compression:
       rml:constant foaf:age;
     ];
     rml:objectMap [ a rml:ObjectMap;
-      rml:reference "age";
+      rml:reference "$.age";
     ];
   ];
 .
@@ -285,7 +285,7 @@ with N-Triples as serialization format:
       rml:constant foaf:name;
     ];
     rml:objectMap [ a rml:ObjectMap;
-      rml:reference "name";
+      rml:reference "$.name";
       rml:logicalTarget &lt;#TargetDump1&gt;;
     ];
   ];
@@ -294,7 +294,7 @@ with N-Triples as serialization format:
       rml:constant foaf:age;
     ];
     rml:objectMap [ a rml:ObjectMap;
-      rml:reference "age";
+      rml:reference "$.age";
     ];
   ];
 .
@@ -404,7 +404,7 @@ to an RDF dump with N-Quads as serialization format:
       rml:constant foaf:name;
     ];
     rml:objectMap [ a rml:ObjectMap;
-      rml:reference "name";
+      rml:reference "$.name";
     ];
   ];
   rml:predicateObjectMap [ a rml:PredicateObjectMap;
@@ -412,7 +412,7 @@ to an RDF dump with N-Quads as serialization format:
       rml:constant foaf:age;
     ];
     rml:objectMap [ a rml:ObjectMap;
-      rml:reference "age";
+      rml:reference "$.age";
     ];
   ];
 .
@@ -503,7 +503,7 @@ to a RDF dump with N-Triples as serialization format:
       rml:constant foaf:name;
     ];
     rml:objectMap [ a rml:ObjectMap;
-      rml:reference "name";
+      rml:reference "$.name";
       rml:languageMap [
         rml:logicalTarget &lt;#TargetDump1&gt;;
         rml:constant "en";
@@ -515,7 +515,7 @@ to a RDF dump with N-Triples as serialization format:
       rml:constant foaf:age;
     ];
     rml:objectMap [ a rml:ObjectMap;
-      rml:reference "age";
+      rml:reference "$.age";
     ];
   ];
 .
