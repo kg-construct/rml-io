@@ -91,6 +91,32 @@ If unspecified, the default value is UTF-8.
 This namespace is NOT limited to the listed compression formats 
 and MAY be extended in the future.
 
+#### Relative paths
+
+Relative paths to files are covered by a target access description included
+in this specification which subclasses `rml:Target` as `rml:RelativePathTarget`.
+This access description allows accessing files relative from:
+
+- `rml:CurrentWorkingDirectory`: relative to the current working directory of the RML processor.
+- `rml:MappingDirectory`: relative to the location of the RML mapping.
+- A string Literal: a string describing an absolute path against which relative paths are resolved, similar to the Base URI in [RFC3986](https://www.rfc-editor.org/rfc/rfc3986).
+
+If `rml:root` is not specified, it defaults to `rml:CurrentWorkingDirectory`.
+
+| Property    | Domain                    | Range                                                              |
+| ----------- | ------------------------- | ------------------------------------------------------------------ |
+| `rml:root`  | `rml:RelativePathSource`  | `rml:CurrentWorkingDirectory`, `rml:MappingDirectory` or `Literal` |
+| `rml:path`  | `rml:RelativePathSource`  | `Literal`                                                          |
+
+<pre class="ex-source">
+&lt;#RelativePathCWD&gt; a rml:LogicalTarget;
+  rml:target [ a rml:RelativePathTarget, rml:Target;
+    rml:root rml:CurrentWorkingDirectory;
+    rml:path "./file.ttl";
+  ];
+.
+</pre>
+
 ### Examples {#target-examples}
 
 The following example show a Target of an RDF dump in Turtle [[Turtle]] 
