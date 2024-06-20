@@ -45,6 +45,7 @@ By default, UTF-8 is used.
 | Property             | Domain               | Range             |
 | -------------------- | -------------------- | ----------------- |
 | `rml:serialization`  | `rml:LogicalTarget`  | `formats:Format`  |
+| `rml:mode`           | `rml:Target`  | `rml:Mode`        |
 | `rml:compression`    | `rml:Target`         | `rml:Compression` |
 | `rml:encoding`       | `rml:Target`         | `rml:Encoding`    |
 
@@ -61,6 +62,20 @@ The possible formats are defined in the W3C
 [formats](http://www.w3.org/ns/formats/) namespace 
 such as N-Quads, N-Triples, JSON-LD, Turtle, etc.
 If unspecified, the default format is N-Quads [[N-Quads]].
+
+#### Mode
+
+Each Target MAY describe the operation mode when accessing a Target
+with `rml:mode` to specify if the Target must be appended, overwritten, etc.
+If not specified, defaults to `rml:Write`.
+This property accepts the range of `rml:Mode`:
+
+- `rml:Read`: read-only mode (`r`). Start beginning of file. Not useful for targets. File must exist.
+- `rml:ReadWrite`: read-write mode (`r+`). Start beginning of file, no truncation.  Only write part is useful for targets. File must exist.
+- `rml:Write`: write mode (`w`).  Truncate/create file and start at the beginning to add new data.
+- `rml:WriteRead`: write-read mode (`w`).  Truncate/create file and start at the beginning to add new data. Only write part is useful for targets
+- `rml:Append`: append-only mode. Existing file is kept and new data is appended at the end. File is created if not exist.
+- `rml:AppendRead`: append-read mode. Existing file is kept and new data is appended at the end. File is created if not exist.
 
 #### Compression formats
 
