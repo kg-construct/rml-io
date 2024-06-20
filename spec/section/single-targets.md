@@ -549,3 +549,222 @@ to a RDF dump with N-Triples as serialization format:
 &lt;http://example.org/3&gt; &lt;http://xmlns.com/foaf/0.1/age&gt; "36" .
 &lt;http://example.org/4&gt; &lt;http://xmlns.com/foaf/0.1/age&gt; "37" .
 </pre>
+
+### Datatype Map {#datatype-map}
+
+All triples with a datatype are exported to the specified targets 
+in the Datatype Map [[RML]].
+
+The following examples export all triples with a datatype xsd:integer 
+to a RDF dump with N-Triples as serialization format:
+
+<pre class="ex-input">
+[
+  { 
+    "id": 0,
+    "name": "Monica Geller",
+    "age": 33
+  },
+  { 
+    "id": 1,
+    "name": "Rachel Green",
+    "age": 34
+  },
+  { 
+    "id": 2,
+    "name": "Joey Tribbiani",
+    "age": 35
+  },
+  { 
+    "id": 3,
+    "name": "Chandler Bing",
+    "age": 36
+  },
+  { 
+    "id": 4,
+    "name": "Ross Geller",
+    "age": 37
+  }
+]
+</pre>
+
+<pre class="ex-access">
+&lt;#DCATSourceAccess&gt; a rml:Source, dcat:Distribution;
+  dcat:downloadURL "https://rml.io/specs/rml-target/Friends.json";
+.
+</pre>
+
+<pre class="ex-mapping">
+&lt;#TriplesMap&gt; a rml:TriplesMap;
+  rml:logicalSource [ a rml:LogicalSource;
+    rml:source &lt;#DCATSourceAccess&gt;;
+    rml:referenceFormulation rml:JSONPath;
+    rml:iterator "$.[*]";
+  ];
+  rml:subjectMap [ a rml:SubjectMap;
+    rml:template "http://example.org/{id}";
+   ];
+  rml:predicateObjectMap [ a rml:PredicateObjectMap;
+    rml:predicateMap [ a rml:PredicateMap;
+      rml:constant foaf:name;
+    ];
+    rml:objectMap [ a rml:ObjectMap;
+      rml:reference "$.name";
+      rml:languageMap [
+        rml:constant "en";
+      ];
+    ];
+  ];
+  rml:predicateObjectMap [ a rml:PredicateObjectMap;
+    rml:predicateMap [ a rml:PredicateMap;
+      rml:constant foaf:age;
+    ];
+    rml:objectMap [ a rml:ObjectMap;
+      rml:reference "$.age";
+      rml:datatypeMap [ a rml:DatatypeMap;
+        rml:constant xsd:integer;
+        rml:logicalTarget &lt;#TargetDump1&gt;;
+      ]
+    ];
+  ];
+.
+</pre>
+
+<pre class="ex-target">
+&lt;#TargetDump1&gt; a rml:LogicalTarget;
+  rml:target &lt;#VoIDDump1&gt;;
+  rml:serialization formats:N-Triples;
+.
+</pre>
+
+<pre class="ex-access">
+&lt;#VoIDDump1&gt; a rml:Target, void:Dataset ;
+  void:dataDump &lt;file:///data/dump1.nt&gt;;
+.
+</pre>
+
+<pre class="ex-output">
+# file:///data/dump1.nt
+&lt;http://example.org/0&gt; &lt;http://xmlns.com/foaf/0.1/age&gt; "33"^^xsd:integer .
+&lt;http://example.org/1&gt; &lt;http://xmlns.com/foaf/0.1/age&gt; "34"^^xsd:integer .
+&lt;http://example.org/2&gt; &lt;http://xmlns.com/foaf/0.1/age&gt; "35"^^xsd:integer .
+&lt;http://example.org/3&gt; &lt;http://xmlns.com/foaf/0.1/age&gt; "36"^^xsd:integer .
+&lt;http://example.org/4&gt; &lt;http://xmlns.com/foaf/0.1/age&gt; "37"^^xsd:integer .
+
+# default target of the processor
+&lt;http://example.org/0&gt; &lt;http://xmlns.com/foaf/0.1/name&gt; "Monica Geller"@en .
+&lt;http://example.org/1&gt; &lt;http://xmlns.com/foaf/0.1/name&gt; "Rachel Green"@en .
+&lt;http://example.org/2&gt; &lt;http://xmlns.com/foaf/0.1/name&gt; "Joey Tribbiani"@en .
+&lt;http://example.org/3&gt; &lt;http://xmlns.com/foaf/0.1/name&gt; "Chandler Bing"@en .
+&lt;http://example.org/4&gt; &lt;http://xmlns.com/foaf/0.1/name&gt; "Ross Geller"@en .
+</pre>
+
+### Function Map {#function-map}
+
+<pre class="ex-input">
+[
+  { 
+    "id": 0,
+    "name": "Monica Geller",
+    "age": 33
+  },
+  { 
+    "id": 1,
+    "name": "Rachel Green",
+    "age": 34
+  },
+  { 
+    "id": 2,
+    "name": "Joey Tribbiani",
+    "age": 35
+  },
+  { 
+    "id": 3,
+    "name": "Chandler Bing",
+    "age": 36
+  },
+  { 
+    "id": 4,
+    "name": "Ross Geller",
+    "age": 37
+  }
+]
+</pre>
+
+<pre class="ex-access">
+&lt;#DCATSourceAccess&gt; a rml:Source, dcat:Distribution;
+  dcat:downloadURL "https://rml.io/specs/rml-target/Friends.json";
+.
+</pre>
+
+<pre class="ex-mapping">
+&lt;#TriplesMap&gt; a rml:TriplesMap;
+  rml:logicalSource [ a rml:LogicalSource;
+    rml:source &lt;#DCATSourceAccess&gt;;
+    rml:referenceFormulation rml:JSONPath;
+    rml:iterator "$.[*]";
+  ];
+  rml:subjectMap [ a rml:SubjectMap;
+    rml:template "http://example.org/{id}";
+  ];
+  rml:predicateObjectMap [ a rml:PredicateObjectMap;
+    rml:predicateMap [ a rml:PredicateMap;
+      rml:constant foaf:name;
+    ];
+    rml:objectMap [ a rml:ObjectMap;
+      rml:functionExecution <#Execution>;
+      rml:return grel:stringOut;
+    ];
+  ];
+  rml:predicateObjectMap [ a rml:PredicateObjectMap;
+    rml:predicateMap [ a rml:PredicateMap;
+      rml:constant foaf:age;
+    ];
+    rml:objectMap [ a rml:ObjectMap;
+      rml:reference "$.age";
+    ];
+  ];
+.
+
+<#Execution> a rml:FunctionExecution;
+  rml:logicalTarget &lt;#TargetDump1&gt;;
+  rml:function grel:toUppercase;
+  rml:input [ a rml:Input;
+    rml:parameter grel:valueParam;
+      rml:inputValueMap [
+        rml:reference "$.name"
+      ]
+  ]
+.
+    
+</pre>
+
+<pre class="ex-target">
+&lt;#TargetDump1&gt; a rml:LogicalTarget;
+  rml:target &lt;#VoIDDump1&gt;;
+  rml:serialization formats:N-Quads;
+.
+</pre>
+
+<pre class="ex-access">
+&lt;#VoIDDump1&gt; a rml:Target, void:Dataset ;
+  void:dataDump &lt;file:///data/dump1.nq.gz&gt;;
+  rml:compression rml:gzip;
+.
+</pre>
+
+<pre class="ex-output">
+# dump1.nq.gz
+&lt;http://example.org/0&gt; &lt;http://xmlns.com/foaf/0.1/name&gt; "MONICA GELLER" .
+&lt;http://example.org/1&gt; &lt;http://xmlns.com/foaf/0.1/name&gt; "RACHEL GREEN" .
+&lt;http://example.org/2&gt; &lt;http://xmlns.com/foaf/0.1/name&gt; "JOEY TRIBBIANI" .
+&lt;http://example.org/3&gt; &lt;http://xmlns.com/foaf/0.1/name&gt; "CHANDLER BING" .
+&lt;http://example.org/4&gt; &lt;http://xmlns.com/foaf/0.1/name&gt; "ROSS GELLER" .
+
+# default target of the processor
+&lt;http://example.org/0&gt; &lt;http://xmlns.com/foaf/0.1/age&gt; "33" .
+&lt;http://example.org/1&gt; &lt;http://xmlns.com/foaf/0.1/age&gt; "34" .
+&lt;http://example.org/2&gt; &lt;http://xmlns.com/foaf/0.1/age&gt; "35" .
+&lt;http://example.org/3&gt; &lt;http://xmlns.com/foaf/0.1/age&gt; "36" .
+&lt;http://example.org/4&gt; &lt;http://xmlns.com/foaf/0.1/age&gt; "37" .
+</pre>
