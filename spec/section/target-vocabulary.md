@@ -22,7 +22,7 @@ all other properties are optional.
 ### Target 
 
 A Target describes how a target must be accessed when exporting RDF triples.
-An external vocabulary such as DCAT, VoID, SD is allowed here. 
+An external vocabulary such as DCAT, SD, etc. is allowed here. 
 If a target cannot be accessed with existing vocabulary, a custom vocabulary 
 can be used, for example: handling an authentication flow may be specific 
 for that specific target. A custom ontology can be used here to describe 
@@ -138,9 +138,9 @@ The following example show a Target of an RDF dump in Turtle [[Turtle]]
 format with GZip compression and UTF-8 encoding:
 
 <pre class="ex-target">
-&lt;#VoIDDump&gt; a rml:LogicalTarget;
-    rml:target [ a rml:Target, void:Dataset;
-        void:dataDump &lt;file:///data/dump.ttl&gt;;
+&lt;#DCATDump&gt; a rml:LogicalTarget;
+    rml:target [ a rml:Target, dcat:Distribution;
+        dcat:downloadURL &lt;file:///data/dump.ttl&gt;;
         rml:compression rml:gzip;
         rml:encoding rml:UTF-8;
     ];

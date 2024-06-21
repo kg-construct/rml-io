@@ -81,14 +81,14 @@ to an RDF dump with N-Quads as serialization format and GZip compression:
 
 <pre class="ex-target">
 &lt;#TargetDump1&gt; a rml:LogicalTarget;
-  rml:target &lt;#VoIDDump1&gt;;
+  rml:target &lt;#DCATDump1&gt;;
   rml:serialization formats:N-Quads;
 .
 </pre>
 
 <pre class="ex-access">
-&lt;#VoIDDump1&gt; a rml:Target, void:Dataset ;
-  void:dataDump &lt;file:///data/dump1.nq.gz&gt;;
+&lt;#DCATDump1&gt; a rml:Target, dcat:Distribution ;
+  dcat:downloadURL &lt;file:///data/dump1.nq.gz&gt;;
   rml:compression rml:gzip;
 .
 </pre>
@@ -183,14 +183,14 @@ with Turtle as serialization format and Zip compression:
 
 <pre class="ex-target">
 &lt;#TargetDump1&gt; a rml:LogicalTarget;
-  rml:target &lt;#VoIDDump1&gt;;
+  rml:target &lt;#DCATDump1&gt;;
   rml:serialization formats:Turtle;
 .
 </pre>
 
 <pre class="ex-access">
-&lt;#VoIDDump1&gt; a rml:Target, void:Dataset;
-  void:dataDump &lt;file:///data/dump1.ttl.zip&gt;;
+&lt;#DCATDump1&gt; a rml:Target, dcat:Distribution;
+  dcat:downloadURL &lt;file:///data/dump1.ttl.zip&gt;;
   rml:compression rml:zip;
 .
 </pre>
@@ -302,14 +302,14 @@ with N-Triples as serialization format:
 
 <pre class="ex-target">
 &lt;#TargetDump1&gt; a rml:LogicalTarget;
-  rml:target &lt;#VoIDDump1&gt;;
+  rml:target &lt;#DCATDump1&gt;;
   rml:serialization formats:N-Triples;
 .
 </pre>
 
 <pre class="ex-access">
-&lt;#VoIDDump1&gt; a rml:Target, void:Dataset ;
-  void:dataDump &lt;file:///data/dump1.nt&gt;;
+&lt;#DCATDump1&gt; a rml:Target, dcat:Distribution ;
+  dcat:downloadURL &lt;file:///data/dump1.nt&gt;;
 .
 </pre>
 
@@ -420,13 +420,13 @@ to an RDF dump with N-Quads as serialization format:
 
 <pre class="ex-target">
 &lt;#TargetDump1&gt; a rml:LogicalTarget;
-  rml:target &lt;#VoIDDump1&gt;;
+  rml:target &lt;#DCATDump1&gt;;
 .
 </pre>
 
 <pre class="ex-access">
-&lt;#VoIDDump1&gt; a rml:Target, void:Dataset ;
-  void:dataDump &lt;file:///data/dump1.nq&gt;;
+&lt;#DCATDump1&gt; a rml:Target, dcat:Distribution ;
+  dcat:downloadURL &lt;file:///data/dump1.nq&gt;;
 .
 </pre>
 
@@ -523,14 +523,14 @@ to a RDF dump with N-Triples as serialization format:
 
 <pre class="ex-target">
 &lt;#TargetDump1&gt; a rml:LogicalTarget;
-  rml:target &lt;#VoIDDump1&gt;;
+  rml:target &lt;#DCATDump1&gt;;
   rml:serialization formats:N-Triples;
 .
 </pre>
 
 <pre class="ex-access">
-&lt;#VoIDDump1&gt; a rml:Target, void:Dataset ;
-  void:dataDump &lt;file:///data/dump1.nt&gt;;
+&lt;#DCATDump1&gt; a rml:Target, dcat:Distribution ;
+  dcat:downloadURL &lt;file:///data/dump1.nt&gt;;
 .
 </pre>
 
@@ -632,14 +632,14 @@ to a RDF dump with N-Triples as serialization format:
 
 <pre class="ex-target">
 &lt;#TargetDump1&gt; a rml:LogicalTarget;
-  rml:target &lt;#VoIDDump1&gt;;
+  rml:target &lt;#DCATDump1&gt;;
   rml:serialization formats:N-Triples;
 .
 </pre>
 
 <pre class="ex-access">
-&lt;#VoIDDump1&gt; a rml:Target, void:Dataset ;
-  void:dataDump &lt;file:///data/dump1.nt&gt;;
+&lt;#DCATDump1&gt; a rml:Target, dcat:Distribution ;
+  dcat:downloadURL &lt;file:///data/dump1.nt&gt;;
 .
 </pre>
 
@@ -741,14 +741,14 @@ to a RDF dump with N-Triples as serialization format:
 
 <pre class="ex-target">
 &lt;#TargetDump1&gt; a rml:LogicalTarget;
-  rml:target &lt;#VoIDDump1&gt;;
+  rml:target &lt;#DCATDump1&gt;;
   rml:serialization formats:N-Quads;
 .
 </pre>
 
 <pre class="ex-access">
-&lt;#VoIDDump1&gt; a rml:Target, void:Dataset ;
-  void:dataDump &lt;file:///data/dump1.nq.gz&gt;;
+&lt;#DCATDump1&gt; a rml:Target, dcat:Distribution ;
+  dcat:downloadURL &lt;file:///data/dump1.nq.gz&gt;;
   rml:compression rml:gzip;
 .
 </pre>
