@@ -19,7 +19,7 @@ and provides fine-grained control over where each RDF triple is exported to.
 
 Logical Source and Logical Target leverage
 the access descriptions of data access 
-such as DCAT [[DCAT]], VoID [[VoID]], SD [[SD]], etc. 
+such as DCAT [[DCAT]], SD [[SD]], etc. 
 
 In this document, examples assume 
 the following namespace prefix bindings unless otherwise stated:
@@ -28,7 +28,6 @@ the following namespace prefix bindings unless otherwise stated:
 | --------- | --------------------------------------------------- |
 | `rml`     | http://w3id.org/rml/                                |
 | `formats` | http://www.w3.org/ns/formats/                       |
-| `void`    | http://rdfs.org/ns/void#                            |
 | `sd`      | http://www.w3.org/ns/sparql-service-description#    |
 | `dcat`    | http://www.w3.org/ns/dcat#                          |
 | `td`      | https://www.w3.org/2019/wot/td#                     |
