@@ -1,0 +1,55 @@
+###############################################################################
+# RML Relative Path Source shape                                              #
+# Copyright Dylan Van Assche, IDLab - UGent - imec (2024)                     #
+###############################################################################
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix : <http://w3id.org/rml/shapes/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rml: <http://w3id.org/rml/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> . 
+
+:RMLRelativePathSourceShape
+    a sh:NodeShape ;
+    sh:targetClass rml:RelativePathSource ;  # Used as a class
+    sh:name "RML Relative Path Source" ;
+    sh:description """
+    A RML Relative Path Source provides a source with relative paths which is
+    not provided by existing vocabularies such as DCAT without a base IRI.
+    """ ;
+    sh:message """
+    RML Relative Path Source accepts one rml:root, and one rml:path.
+    rml:root is optional and defaults to rml:CurrentWorkingDirectory.
+    """ ;
+
+    # rml:root
+    sh:property [
+        sh:path rml:root ;
+        sh:name "rml:root" ;
+        sh:description """
+        rml:root defines the root directory against which relative paths are
+        resolved. If not provided, defaults to the current working directory.
+        """ ;
+        sh:message """
+        rml:root must be either rml:CurrentWorkingDirectory or
+        rml:MappingDirectory.
+        """ ;
+        sh:minCount 0 ;
+        sh:maxCount 1 ;
+        sh:in (rml:CurrentWorkingDirectory rml:MappingDirectory) ;
+    ] ; 
+
+    # rml:path
+    sh:property [
+        sh:path rml:path ;
+        sh:name "rml:path" ;
+        sh:description """
+        rml:path specifies the relative path to access for the source.
+        """ ;
+        sh:message """
+        rml:path must be a string Literal.
+        """ ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:nodeKind sh:Literal ;
+    ] ;
+.
