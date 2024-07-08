@@ -102,21 +102,21 @@ http://dbpedia.org/resource/Melissa_Rauch,Melissa Rauch
 
 <pre class="ex-target">
 &lt;#TargetDump1&gt; a rml:LogicalTarget;
-  rml:target &lt;#VoIDDump1&gt;;
+  rml:target &lt;#DCATDump1&gt;;
   rml:serialization formats:N-Triples;
 .
 &lt;#TargetDump2&gt; a rml:LogicalTarget;
-  rml:target &lt;#VoIDDump2&gt;;
+  rml:target &lt;#DCATDump2&gt;;
   rml:serialization formats:N-Triples;
 .
 </pre>
 
 <pre class="ex-access">
-&lt;#VoIDDump1&gt; a rml:Target, void:Dataset;
-  void:dataDump &lt;file:///data/dump1.nt&gt;;
+&lt;#DCATDump1&gt; a rml:Target, dcat:Distribution;
+  dcat:downloadURL &lt;file:///data/dump1.nt&gt;;
 .
-&lt;#VoIDDump2&gt; a rml:Target, void:Dataset;
-  void:dataDump &lt;file:///data/dump2.nq&gt;;
+&lt;#DCATDump2&gt; a rml:Target, dcat:Distribution;
+  dcat:downloadURL &lt;file:///data/dump2.nq&gt;;
 .
 </pre>
 
@@ -259,21 +259,21 @@ http://dbpedia.org/resource/Melissa_Rauch,Melissa Rauch
 
 <pre class="ex-target">
 &lt;#TargetDump1&gt; a rml:LogicalTarget;
-  rml:target &lt;#VoIDDump1&gt;;
+  rml:target &lt;#DCATDump1&gt;;
   rml:serialization formats:N-Triples;
 .
 &lt;#TargetDump2&gt; a rml:LogicalTarget;
-  rml:target &lt;#VoIDDump2&gt;;
+  rml:target &lt;#DCATDump2&gt;;
   rml:serialization formats:N-Triples;
 .
 </pre>
 
 <pre class="ex-access">
-&lt;#VoIDDump1&gt; a rml:Target, void:Dataset ;
-  void:dataDump &lt;file:///data/dump1.nt&gt;;
+&lt;#DCATDump1&gt; a rml:Target, dcat:Distribution ;
+  dcat:downloadURL &lt;file:///data/dump1.nt&gt;;
 .
-&lt;#VoIDDump2&gt; a rml:Target, void:Dataset ;
-  void:dataDump &lt;file:///data/dump2.nt&gt;;
+&lt;#DCATDump2&gt; a rml:Target, dcat:Distribution ;
+  dcat:downloadURL &lt;file:///data/dump2.nt&gt;;
 .
 </pre>
 

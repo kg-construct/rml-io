@@ -52,8 +52,8 @@ to the three specified Targets:
 &lt;#TriplesMap&gt; a rml:TriplesMap;
   rml:logicalSource [ a rml:LogicalSource;
     rml:source &lt;#DCATSourceAccess&gt;;
-    rml:referenceFormulation rml:JSONPath;
-    rml:iterator "$.[*]";
+    rml:referenceFormulation rml:XPath;
+    rml:iterator "//Supergirl/Character/";
   ];
   rml:subjectMap [ a rml:SubjectMap;
     rml:template "http://example.org/{@id}";
@@ -74,30 +74,30 @@ to the three specified Targets:
 
 <pre class="ex-target">
 &lt;#TargetDump1&gt; a rml:LogicalTarget;
-  rml:target &lt;#VoIDDump1&gt;;
+  rml:target &lt;#DCATDump1&gt;;
   rml:serialization formats:N-Triples;
 .
 &lt;#TargetDump2&gt; a rml:LogicalTarget;
-  rml:target &lt;#VoIDDump1&gt;;
+  rml:target &lt;#DCATDump1&gt;;
   rml:serialization formats:JSON-LD;
 .
 &lt;#TargetDump3&gt; a rml:LogicalTarget;
-  rml:target &lt;#VoIDDump1&gt;;
+  rml:target &lt;#DCATDump1&gt;;
   rml:serialization formats:RDF_XML;
 .
 </pre>
 
 <pre class="ex-access">
-&lt;#VoIDDump1&gt; a rml:Target, void:Dataset;
-  void:dataDump &lt;file:///data/dump1.nt.zip&gt;;
+&lt;#DCATDump1&gt; a rml:Target, dcat:Distribution;
+  dcat:downloadURL &lt;file:///data/dump1.nt.zip&gt;;
   rml:compression rml:zip;
 .
-&lt;#VoIDDump2&gt; a rml:Target, void:Dataset;
-  void:dataDump &lt;file:///data/dump2.jsonld.tar.xz&gt;;
+&lt;#DCATDump2&gt; a rml:Target, dcat:Distribution;
+  dcat:downloadURL &lt;file:///data/dump2.jsonld.tar.xz&gt;;
   rml:compression rml:tarxz;
 .
-&lt;#VoIDDump3&gt; a rml:Target, void:Dataset;
-  void:dataDump &lt;file:///data/dump3.rdf.tar.gz&gt;;
+&lt;#DCATDump3&gt; a rml:Target, dcat:Distribution;
+  dcat:downloadURL &lt;file:///data/dump3.rdf.tar.gz&gt;;
   rml:compression rml:targz;
 .
 </pre>
@@ -202,8 +202,8 @@ are exported to `TargetDump2`.
 &lt;#TriplesMap&gt; a rml:TriplesMap;
   rml:logicalSource [ a rml:LogicalSource;
     rml:source &lt;#DCATSourceAccess&gt;;
-    rml:referenceFormulation rml:JSONPath;
-    rml:iterator "$.[*]";
+    rml:referenceFormulation rml:XPath;
+    rml:iterator "//Supergirl/Character/";
   ];
   rml:subjectMap [ a rml:SubjectMap;
     rml:template "http://example.org/{@id}";
@@ -231,21 +231,21 @@ are exported to `TargetDump2`.
 
 <pre class="ex-target">
 &lt;#TargetDump1&gt; a rml:LogicalTarget;
-  rml:target &lt;#VoIDDump1&gt;;
+  rml:target &lt;#DCATDump1&gt;;
   rml:serialization formats:N-Triples;
 .
 &lt;#TargetDump2&gt; a rml:LogicalTarget;
-  rml:target &lt;#VoIDDump1&gt;;
+  rml:target &lt;#DCATDump1&gt;;
   rml:serialization formats:N-Triples;
 .
 </pre>
 
 <pre class="ex-access">
-&lt;#VoIDDump1&gt; a void:Dataset ;
-  void:dataDump &lt;file:///data/dump1.nt&gt;;
+&lt;#DCATDump1&gt; a dcat:Distribution ;
+  dcat:downloadURL &lt;file:///data/dump1.nt&gt;;
 .
-&lt;#VoIDDump2&gt; a void:Dataset ;
-  void:dataDump &lt;file:///data/dump2.nt&gt;;
+&lt;#DCATDump2&gt; a dcat:Distribution ;
+  dcat:downloadURL &lt;file:///data/dump2.nt&gt;;
 .
 </pre>
 
@@ -305,8 +305,8 @@ are exported to `TargetDump2`.
 &lt;#TriplesMap&gt; a rml:TriplesMap;
   rml:logicalSource [ a rml:LogicalSource;
     rml:source &lt;#DCATSourceAccess&gt;;
-    rml:referenceFormulation rml:JSONPath;
-    rml:iterator "$.[*]";
+    rml:referenceFormulation rml:XPath;
+    rml:iterator "//Supergirl/Character/";
   ];
   rml:subjectMap [ a rml:SubjectMap;
     rml:template "http://example.org/{@id}";
@@ -334,21 +334,21 @@ are exported to `TargetDump2`.
 
 <pre class="ex-target">
 &lt;#TargetDump1&gt; a rml:LogicalTarget;
-  rml:target &lt;#VoIDDump1&gt;;
+  rml:target &lt;#DCATDump1&gt;;
   rml:serialization formats:N-Triples;
 .
 &lt;#TargetDump2&gt; a rml:LogicalTarget;
-  rml:target &lt;#VoIDDump1&gt;;
+  rml:target &lt;#DCATDump1&gt;;
   rml:serialization formats:N-Triples;
 .
 </pre>
 
 <pre class="ex-access">
-&lt;#VoIDDump1&gt; a rml:Target, void:Dataset;
-  void:dataDump &lt;file:///data/dump1.nt&gt;;
+&lt;#DCATDump1&gt; a rml:Target, dcat:Distribution;
+  dcat:downloadURL &lt;file:///data/dump1.nt&gt;;
 .
-&lt;#VoIDDump2&gt; a rml:Target, void:Dataset;
-  void:dataDump &lt;file:///data/dump2.nt&gt;;
+&lt;#DCATDump2&gt; a rml:Target, dcat:Distribution;
+  dcat:downloadURL &lt;file:///data/dump2.nt&gt;;
 .
 </pre>
 
@@ -408,8 +408,8 @@ are exported to `TargetDump2`.
 &lt;#TriplesMap&gt; a rml:TriplesMap;
   rml:logicalSource [ a rml:LogicalSource;
     rml:source &lt;#DCATSourceAccess&gt;;
-    rml:referenceFormulation rml:JSONPath;
-    rml:iterator "$.[*]";
+    rml:referenceFormulation rml:XPath;
+    rml:iterator "//Supergirl/Character/";
   ];
   rml:subjectMap [ a rml:SubjectMap;
     rml:template "http://example.org/{@id}";
@@ -437,21 +437,21 @@ are exported to `TargetDump2`.
 
 <pre class="ex-target">
 &lt;#TargetDump1&gt; a rml:LogicalTarget;
-  rml:target &lt;#VoIDDump1&gt;;
+  rml:target &lt;#DCATDump1&gt;;
   rml:serialization formats:N-Triples;
 .
 &lt;#TargetDump2&gt; a rml:LogicalTarget;
-  rml:target &lt;#VoIDDump1&gt;;
+  rml:target &lt;#DCATDump1&gt;;
   rml:serialization formats:N-Triples;
 .
 </pre>
 
 <pre class="ex-access">
-&lt;#VoIDDump1&gt; a rml:Target, void:Dataset;
-  void:dataDump &lt;file:///data/dump1.nt&gt;;
+&lt;#DCATDump1&gt; a rml:Target, dcat:Distribution;
+  dcat:downloadURL &lt;file:///data/dump1.nt&gt;;
 .
-&lt;#VoIDDump2&gt; a rml:Target, void:Dataset;
-  void:dataDump &lt;file:///data/dump2.nt&gt;;
+&lt;#DCATDump2&gt; a rml:Target, dcat:Distribution;
+  dcat:downloadURL &lt;file:///data/dump2.nt&gt;;
 .
 </pre>
 
@@ -507,8 +507,8 @@ predicate `foaf:nickname` are exported to `TargetDump2`.
 &lt;#TriplesMap&gt; a rml:TriplesMap;
   rml:logicalSource [ a rml:LogicalSource;
     rml:source &lt;#DCATSourceAccess&gt;;
-    rml:referenceFormulation rml:JSONPath;
-    rml:iterator "$.[*]";
+    rml:referenceFormulation rml:XPath;
+    rml:iterator "//Supergirl/Character/";
   ];
   rml:subjectMap [ a rml:SubjectMap;
     rml:template "http://example.org/{@id}";
@@ -537,21 +537,21 @@ predicate `foaf:nickname` are exported to `TargetDump2`.
 
 <pre class="ex-target">
 &lt;#TargetDump1&gt; a rml:LogicalTarget;
-  rml:target &lt;#VoIDDump1&gt;;
+  rml:target &lt;#DCATDump1&gt;;
   rml:serialization formats:N-Triples;
 .
 &lt;#TargetDump2&gt; a rml:LogicalTarget;
-  rml:target &lt;#VoIDDump1&gt;;
+  rml:target &lt;#DCATDump1&gt;;
   rml:serialization formats:N-Triples;
 .
 </pre>
 
 <pre class="ex-access">
-&lt;#VoIDDump1&gt; a rml:Target, void:Dataset;
-  void:dataDump &lt;file:///data/dump1.nt&gt;;
+&lt;#DCATDump1&gt; a rml:Target, dcat:Distribution;
+  dcat:downloadURL &lt;file:///data/dump1.nt&gt;;
 .
-&lt;#VoIDDump2&gt; a rml:Target, void:Dataset;
-  void:dataDump &lt;file:///data/dump2.nt&gt;;
+&lt;#DCATDump2&gt; a rml:Target, dcat:Distribution;
+  dcat:downloadURL &lt;file:///data/dump2.nt&gt;;
 .
 </pre>
 
@@ -611,8 +611,8 @@ are exported to `TargetDump2`.
 &lt;#TriplesMap&gt; a rml:TriplesMap;
   rml:logicalSource [ a rml:LogicalSource;
     rml:source &lt;#DCATSourceAccess&gt;;
-    rml:referenceFormulation rml:JSONPath;
-    rml:iterator "$.[*]";
+    rml:referenceFormulation rml:XPath;
+    rml:iterator "//Supergirl/Character/";
   ];
   rml:subjectMap [ a rml:SubjectMap;
     rml:template "http://example.org/{@id}";
@@ -643,21 +643,21 @@ are exported to `TargetDump2`.
 
 <pre class="ex-target">
 &lt;#TargetDump1&gt; a rml:LogicalTarget;
-  rml:target &lt;#VoIDDump1&gt;;
+  rml:target &lt;#DCATDump1&gt;;
   rml:serialization formats:N-Triples;
 .
 &lt;#TargetDump2&gt; a rml:LogicalTarget;
-  rml:target &lt;#VoIDDump1&gt;;
+  rml:target &lt;#DCATDump1&gt;;
   rml:serialization formats:N-Triples;
 .
 </pre>
 
 <pre class="ex-access">
-&lt;#VoIDDump1&gt; a rml:Target, void:Dataset;
-  void:dataDump &lt;file:///data/dump1.nq&gt;;
+&lt;#DCATDump1&gt; a rml:Target, dcat:Distribution;
+  dcat:downloadURL &lt;file:///data/dump1.nq&gt;;
 .
-&lt;#VoIDDump2&gt; a rml:Target, void:Dataset;
-  void:dataDump &lt;file:///data/dump2.nq&gt;;
+&lt;#DCATDump2&gt; a rml:Target, dcat:Distribution;
+  dcat:downloadURL &lt;file:///data/dump2.nq&gt;;
 .
 </pre>
 
@@ -717,8 +717,8 @@ are exported to `TargetDump2`.
 &lt;#TriplesMap&gt; a rml:TriplesMap;
   rml:logicalSource [ a rml:LogicalSource;
     rml:source &lt;#DCATSourceAccess&gt;;
-    rml:referenceFormulation rml:JSONPath;
-    rml:iterator "$.[*]";
+    rml:referenceFormulation rml:XPath;
+    rml:iterator "//Supergirl/Character/";
   ];
   rml:subjectMap [ a rml:SubjectMap;
     rml:template "http://example.org/{@id}";
@@ -749,21 +749,21 @@ are exported to `TargetDump2`.
 
 <pre class="ex-target">
 &lt;#TargetDump1&gt; a rml:LogicalTarget;
-  rml:target &lt;#VoIDDump1&gt;;
+  rml:target &lt;#DCATDump1&gt;;
   rml:serialization formats:N-Triples;
 .
 &lt;#TargetDump2&gt; a rml:LogicalTarget;
-  rml:target &lt;#VoIDDump1&gt;;
+  rml:target &lt;#DCATDump1&gt;;
   rml:serialization formats:N-Triples;
 .
 </pre>
 
 <pre class="ex-access">
-&lt;#VoIDDump1&gt; a rml:Target, void:Dataset ;
-  void:dataDump &lt;file:///data/dump1.nq&gt;;
+&lt;#DCATDump1&gt; a rml:Target, dcat:Distribution ;
+  dcat:downloadURL &lt;file:///data/dump1.nq&gt;;
 .
-&lt;#VoIDDump2&gt; a rml:Target, void:Dataset ;
-  void:dataDump &lt;file:///data/dump2.nq&gt;;
+&lt;#DCATDump2&gt; a rml:Target, dcat:Distribution ;
+  dcat:downloadURL &lt;file:///data/dump2.nq&gt;;
 .
 </pre>
 
@@ -819,8 +819,8 @@ are exported to `TargetDump2`.
 &lt;#TriplesMap&gt; a rml:TriplesMap;
   rml:logicalSource [ a rml:LogicalSource;
     rml:source &lt;#DCATSourceAccess&gt;;
-    rml:referenceFormulation rml:JSONPath;
-    rml:iterator "$.[*]";
+    rml:referenceFormulation rml:XPath;
+    rml:iterator "//Supergirl/Character/";
   ];
   rml:subjectMap [ a rml:SubjectMap;
     rml:template "http://example.org/{@id}";
@@ -851,21 +851,21 @@ are exported to `TargetDump2`.
 
 <pre class="ex-target">
 &lt;#TargetDump1&gt; a rml:LogicalTarget;
-  rml:target &lt;#VoIDDump1&gt;;
+  rml:target &lt;#DCATDump1&gt;;
   rml:serialization formats:N-Triples;
 .
 &lt;#TargetDump2&gt; a rml:LogicalTarget;
-  rml:target &lt;#VoIDDump1&gt;;
+  rml:target &lt;#DCATDump1&gt;;
   rml:serialization formats:N-Triples;
 .
 </pre>
 
 <pre class="ex-access">
-&lt;#VoIDDump1&gt; a rml:Target, void:Dataset;
-  void:dataDump &lt;file:///data/dump1.nq&gt;;
+&lt;#DCATDump1&gt; a rml:Target, dcat:Distribution;
+  dcat:downloadURL &lt;file:///data/dump1.nq&gt;;
 .
-&lt;#VoIDDump2&gt; a rml:Target, void:Dataset;
-  void:dataDump &lt;file:///data/dump2.nq&gt;;
+&lt;#DCATDump2&gt; a rml:Target, dcat:Distribution;
+  dcat:downloadURL &lt;file:///data/dump2.nq&gt;;
 .
 </pre>
 
@@ -925,8 +925,8 @@ as there is no dedicated Target assigned to triples containing
 &lt;#TriplesMap&gt; a rml:TriplesMap;
   rml:logicalSource [ a rml:LogicalSource;
     rml:source &lt;#DCATSourceAccess&gt;;
-    rml:referenceFormulation rml:JSONPath;
-    rml:iterator "$.[*]";
+    rml:referenceFormulation rml:XPath;
+    rml:iterator "//Supergirl/Character/";
   ];
   rml:subjectMap [ a rml:SubjectMap;
     rml:template "http://example.org/{@id}";
@@ -961,21 +961,21 @@ as there is no dedicated Target assigned to triples containing
 
 <pre class="ex-target">
 &lt;#TargetDump1&gt; a rml:LogicalTarget;
-  rml:target &lt;#VoIDDump1&gt;;
+  rml:target &lt;#DCATDump1&gt;;
   rml:serialization formats:N-Triples;
 .
 &lt;#TargetDump2&gt; a rml:LogicalTarget;
-  rml:target &lt;#VoIDDump1&gt;;
+  rml:target &lt;#DCATDump1&gt;;
   rml:serialization formats:N-Triples;
 .
 </pre>
 
 <pre class="ex-access">
-&lt;#VoIDDump1&gt; a rml:Target, void:Dataset;
-  void:dataDump &lt;file:///data/dump1.nt&gt;;
+&lt;#DCATDump1&gt; a rml:Target, dcat:Distribution;
+  dcat:downloadURL &lt;file:///data/dump1.nt&gt;;
 .
-&lt;#VoIDDump2&gt; a rml:Target, void:Dataset;
-  void:dataDump &lt;file:///data/dump2.nt&gt;;
+&lt;#DCATDump2&gt; a rml:Target, dcat:Distribution;
+  dcat:downloadURL &lt;file:///data/dump2.nt&gt;;
 .
 </pre>
 
@@ -1037,8 +1037,8 @@ are exported to `TargetDump2`.
 &lt;#TriplesMap&gt; a rml:TriplesMap;
   rml:logicalSource [ a rml:LogicalSource;
     rml:source &lt;#DCATSourceAccess&gt;;
-    rml:referenceFormulation rml:JSONPath;
-    rml:iterator "$.[*]";
+    rml:referenceFormulation rml:XPath;
+    rml:iterator "//Supergirl/Character/";
   ];
   rml:subjectMap [ a rml:SubjectMap;
     rml:template "http://example.org/{@id}";
@@ -1069,21 +1069,21 @@ are exported to `TargetDump2`.
 
 <pre class="ex-target">
 &lt;#TargetDump1&gt; a rml:LogicalTarget;
-  rml:target &lt;#VoIDDump1&gt;;
+  rml:target &lt;#DCATDump1&gt;;
   rml:serialization formats:N-Triples;
 .
 &lt;#TargetDump2&gt; a rml:LogicalTarget;
-  rml:target &lt;#VoIDDump1&gt;;
+  rml:target &lt;#DCATDump1&gt;;
   rml:serialization formats:N-Triples;
 .
 </pre>
 
 <pre class="ex-access">
-&lt;#VoIDDump1&gt; a rml:Target, void:Dataset;
-  void:dataDump &lt;file:///data/dump1.nt&gt;;
+&lt;#DCATDump1&gt; a rml:Target, dcat:Distribution;
+  dcat:downloadURL &lt;file:///data/dump1.nt&gt;;
 .
-&lt;#VoIDDump2&gt; a rml:Target, void:Dataset;
-  void:dataDump &lt;file:///data/dump2.nt&gt;;
+&lt;#DCATDump2&gt; a rml:Target, dcat:Distribution;
+  dcat:downloadURL &lt;file:///data/dump2.nt&gt;;
 .
 </pre>
 
@@ -1139,8 +1139,8 @@ are exported to `TargetDump2`.
 &lt;#TriplesMap&gt; a rml:TriplesMap;
   rml:logicalSource [ a rml:LogicalSource;
     rml:source &lt;#DCATSourceAccess&gt;;
-    rml:referenceFormulation rml:JSONPath;
-    rml:iterator "$.[*]";
+    rml:referenceFormulation rml:XPath;
+    rml:iterator "//Supergirl/Character/";
   ];
   rml:subjectMap [ a rml:SubjectMap;
     rml:template "http://example.org/{@id}";
@@ -1168,21 +1168,21 @@ are exported to `TargetDump2`.
 
 <pre class="ex-target">
 &lt;#TargetDump1&gt; a rml:LogicalTarget;
-  rml:target &lt;#VoIDDump1&gt;;
+  rml:target &lt;#DCATDump1&gt;;
   rml:serialization formats:N-Triples;
 .
 &lt;#TargetDump2&gt; a rml:LogicalTarget;
-  rml:target &lt;#VoIDDump1&gt;;
+  rml:target &lt;#DCATDump1&gt;;
   rml:serialization formats:N-Triples;
 .
 </pre>
 
 <pre class="ex-access">
-&lt;#VoIDDump1&gt; a rml:Target, void:Dataset ;
-  void:dataDump &lt;file:///data/dump1.nt&gt;;
+&lt;#DCATDump1&gt; a rml:Target, dcat:Distribution ;
+  dcat:downloadURL &lt;file:///data/dump1.nt&gt;;
 .
-&lt;#VoIDDump2&gt; a rml:Target, void:Dataset ;
-  void:dataDump &lt;file:///data/dump2.nt&gt;;
+&lt;#DCATDump2&gt; a rml:Target, dcat:Distribution ;
+  dcat:downloadURL &lt;file:///data/dump2.nt&gt;;
 .
 </pre>
 
@@ -1238,8 +1238,8 @@ are exported to `TargetDump2`.
 &lt;#TriplesMap&gt; a rml:TriplesMap;
   rml:logicalSource [ a rml:LogicalSource;
     rml:source &lt;#DCATSourceAccess&gt;;
-    rml:referenceFormulation rml:JSONPath;
-    rml:iterator "$.[*]";
+    rml:referenceFormulation rml:XPath;
+    rml:iterator "//Supergirl/Character/";
   ];
   rml:subjectMap [ a rml:SubjectMap;
     rml:template "http://example.org/{@id}";
@@ -1267,21 +1267,21 @@ are exported to `TargetDump2`.
 
 <pre class="ex-target">
 &lt;#TargetDump1&gt; a rml:LogicalTarget;
-  rml:target &lt;#VoIDDump1&gt;;
+  rml:target &lt;#DCATDump1&gt;;
   rml:serialization formats:N-Triples;
 .
 &lt;#TargetDump2&gt; a rml:LogicalTarget;
-  rml:target &lt;#VoIDDump1&gt;;
+  rml:target &lt;#DCATDump1&gt;;
   rml:serialization formats:N-Triples;
 .
 </pre>
 
 <pre class="ex-access">
-&lt;#VoIDDump1&gt; a rml:Target, void:Dataset;
-  void:dataDump &lt;file:///data/dump1.nt&gt;;
+&lt;#DCATDump1&gt; a rml:Target, dcat:Distribution;
+  dcat:downloadURL &lt;file:///data/dump1.nt&gt;;
 .
-&lt;#VoIDDump2&gt; a rml:Target, void:Dataset;
-  void:dataDump &lt;file:///data/dump2.nt&gt;;
+&lt;#DCATDump2&gt; a rml:Target, dcat:Distribution;
+  dcat:downloadURL &lt;file:///data/dump2.nt&gt;;
 .
 </pre>
 
@@ -1337,8 +1337,8 @@ are exported to `TargetDump2`.
 &lt;#TriplesMap&gt; a rml:TriplesMap;
   rml:logicalSource [ a rml:LogicalSource;
     rml:source &lt;#DCATSourceAccess&gt;;
-    rml:referenceFormulation rml:JSONPath;
-    rml:iterator "$.[*]";
+    rml:referenceFormulation rml:XPath;
+    rml:iterator "//Supergirl/Character/";
   ];
   rml:subjectMap [ a rml:SubjectMap;
     rml:template "http://example.org/{@id}";
@@ -1372,21 +1372,21 @@ are exported to `TargetDump2`.
 
 <pre class="ex-target">
 &lt;#TargetDump1&gt; a rml:LogicalTarget;
-  rml:target &lt;#VoIDDump1&gt;;
+  rml:target &lt;#DCATDump1&gt;;
   rml:serialization formats:N-Triples;
 .
 &lt;#TargetDump2&gt; a rml:LogicalTarget;
-  rml:target &lt;#VoIDDump1&gt;;
+  rml:target &lt;#DCATDump1&gt;;
   rml:serialization formats:N-Triples;
 .
 </pre>
 
 <pre class="ex-access">
-&lt;#VoIDDump1&gt; a rml:Target, void:Dataset;
-  void:dataDump &lt;file:///data/dump1.nq&gt;;
+&lt;#DCATDump1&gt; a rml:Target, dcat:Distribution;
+  dcat:downloadURL &lt;file:///data/dump1.nq&gt;;
 .
-&lt;#VoIDDump2&gt; a rml:Target, void:Dataset;
-  void:dataDump &lt;file:///data/dump2.nq&gt;;
+&lt;#DCATDump2&gt; a rml:Target, dcat:Distribution;
+  dcat:downloadURL &lt;file:///data/dump2.nq&gt;;
 .
 </pre>
 

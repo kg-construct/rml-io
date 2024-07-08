@@ -43,7 +43,7 @@ are exported to the default target of the processor.
 In the example below, a CSV file is transformed into a knowledge graph.
 The CSV file is accessed using the [[CSVW]] vocabulary,
 transformed into a knowledge graph using [[RML]] mappings,
-and exported to two Logical Targets, which are accessed through the [[VoID]] 
+and exported to two Logical Targets, which are accessed through the [[DCAT]] 
 vocabulary.
 The knowledge graph is exported as N-Quads to the first Target,
 and as Turtle to the second Target.
@@ -104,23 +104,23 @@ id;name;nickname
 
 <pre class="ex-target">
 &lt;#TargetDump1&gt; a rml:LogicalTarget;
-  rml:target &lt;#VoIDDump1&gt;;
+  rml:target &lt;#DCATDump1&gt;;
   rml:serialization formats:N-Triples;
 .
 
 &lt;#TargetDump2&gt; a rml:LogicalTarget;
-  rml:target &lt;#VoIDDump2&gt;;
+  rml:target &lt;#DCATDump2&gt;;
   rml:serialization formats:Turtle;
 .
 </pre>
 
 <pre class="ex-access">
-&lt;#VoIDDump1&gt; a void:Dataset;
-  void:dataDump &ltfile:///data/dump1.nt&gt;;
+&lt;#DCATDump1&gt; a dcat:Distribution;
+  dcat:downloadURL &ltfile:///data/dump1.nt&gt;;
 .
 
-&lt;#VoIDDump2&gt; a void:Dataset;
-  void:dataDump &ltfile:///data/dump2.ttl.zip&gt;;
+&lt;#DCATDump2&gt; a dcat:Distribution;
+  dcat:downloadURL &ltfile:///data/dump2.ttl.zip&gt;;
   rml:compression rml:zip;
 .
 </pre>
