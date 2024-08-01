@@ -1,8 +1,9 @@
 ###############################################################################
 # RML Source shape                                                            #
-# Copyright Dylan Van Assche, IDLab - UGent - imec (2023)                     #
+# Copyright Dylan Van Assche, IDLab - UGent - imec (2023 - 2024)              #
 ###############################################################################
 @prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix : <http://w3id.org/rml/shapes/> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rml: <http://w3id.org/rml/> .
@@ -13,8 +14,8 @@
     sh:targetObjectsOf rml:source ;  # Object of rml:LogicalSource
     sh:targetClass rml:Source ;  # Used as a class
     # Already targets 'rml:source'
-    sh:name "RML Source" ;
-    sh:description """
+    rdfs:label "RML Source" ;
+    rdfs:comment """
     A source describes access to a data source. Any data access description
     is allowed, but rml:Source provides additional properties to complete
     such descriptions.
@@ -27,8 +28,8 @@
     # rml:null
     sh:property [
         sh:path rml:null ;
-        sh:name "rml:null" ;
-        sh:description """
+        rdfs:label "rml:null" ;
+        rdfs:comment """
         rml:null specifies how NULL or empty values are exposed by the data 
         source.
         """ ;
@@ -43,8 +44,8 @@
     # rml:compression
     sh:property [
         sh:path rml:compression ;
-        sh:name "rml:compression" ;
-        sh:description """
+        rdfs:label "rml:compression" ;
+        rdfs:comment """
         rml:compression specifies the compression algorithm to use when
         accessing the data source. By default, no compression is applied.
         """ ;
@@ -59,8 +60,8 @@
     # rml:encoding
     sh:property [
         sh:path rml:encoding ;
-        sh:name "rml:encoding" ;
-        sh:description """
+        rdfs:label "rml:encoding" ;
+        rdfs:comment """
         rml:encoding specifies the encoding to use when accessing the data 
         source. By default, UTF-8 is used.
         """ ;
@@ -75,8 +76,8 @@
     # rml:null
     sh:property [
         sh:path rml:null ;
-        sh:name "rml:null" ;
-        sh:description """
+        rdfs:label "rml:null" ;
+        rdfs:comment """
         rml:null specifies which data values inside the source should be 
         considered as NULL. Defaults to the default NULL character of a source,
         if available.
