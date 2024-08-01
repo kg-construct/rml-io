@@ -1,8 +1,9 @@
 ###############################################################################
 # RML Logical Target shape                                                    #
-# Copyright Dylan Van Assche, IDLab - UGent - imec (2023)                     #
+# Copyright Dylan Van Assche, IDLab - UGent - imec (2023 - 2024)              #
 ###############################################################################
 @prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix : <http://w3id.org/rml/shapes/> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rml: <http://w3id.org/rml/> .
@@ -13,8 +14,8 @@
     sh:targetObjectsOf rml:logicalTarget ;  # Object of rml:TriplesMap
     sh:targetClass rml:LogicalTarget ;  # Used as a class
     # Already targets 'rml:logicalTarget'
-    sh:name "RML Logical Target" ;
-    sh:description """
+    rdfs:label "RML Logical Target" ;
+    rdfs:comment """
     A logical target is any target to where generated RDF triples are exported
     to.
     """ ;
@@ -25,8 +26,8 @@
     # rml:target
     sh:property [
         sh:path rml:target ;
-        sh:name "rml:target" ;
-        sh:description """
+        rdfs:label "rml:target" ;
+        rdfs:comment """
         The target (rml:target) locates the output target. It is a URI
         that represents the target where it must export generated RDF triples
         to.

@@ -1,8 +1,9 @@
 ###############################################################################
 # RML Logical Source shape                                                    #
-# Copyright Dylan Van Assche, IDLab - UGent - imec (2020 - 2023)              #
+# Copyright Dylan Van Assche, IDLab - UGent - imec (2020 - 2024)              #
 ###############################################################################
 @prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix : <http://w3id.org/rml/shapes/> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rml: <http://w3id.org/rml/> .
@@ -13,8 +14,8 @@
     sh:targetObjectsOf rml:logicalSource ;  # Object of rml:TriplesMap
     sh:targetClass rml:LogicalSource ;  # Used as a class
     # Already targets 'rml:logicalSource'
-    sh:name "RML Logical Source" ;
-    sh:description """
+    rdfs:label "RML Logical Source" ;
+    rdfs:comment """
     A logical source is any source that is mapped to RDF triples.
     """ ;
     sh:message """
@@ -25,8 +26,8 @@
     # rml:source
     sh:property [
         sh:path rml:source ;
-        sh:name "rml:source" ;
-        sh:description """
+        rdfs:label "rml:source" ;
+        rdfs:comment """
         The source (rml:source) locates the input data source. It is a URI
         that represents the data source where the data source is.
         """ ;
@@ -43,8 +44,8 @@
     # rml:iterator
     sh:property [
         sh:path rml:iterator ;
-        sh:name "rml:iterator" ;
-        sh:description """
+        rdfs:label "rml:iterator" ;
+        rdfs:comment """
         The logical iterator (rml:iterator) defines the iteration loop used to 
         map the data of the input source. Depends on the reference formulation
         if an iterator is necessary.  
@@ -62,8 +63,8 @@
     # rml:referenceFormulation
     sh:property [
         sh:path rml:referenceFormulation ;
-        sh:name "rml:referenceFormulation" ;
-        sh:description """
+        rdfs:label "rml:referenceFormulation" ;
+        rdfs:comment """
         The reference formulation (rml:referenceFormulation) defines how to 
         reference to elements of the data of the input source.
         """ ;
