@@ -1,20 +1,20 @@
 ## Combining multiple Targets {#multiple-targets}
 
-Multiple Targets MAY be specified for the same triple 
+Multiple Targets MAY be specified for the same triple
 in the same or multiple Term Maps.
-If multiple Targets are defined in the same Term Map, 
-all triples containing the generated Term are exported 
-to all the specified Targets. 
-In case multiple Term Maps of the same RDF triple contain more than one Target, 
+If multiple Targets are defined in the same Term Map,
+all triples containing the generated Term are exported
+to all the specified Targets.
+In case multiple Term Maps of the same RDF triple contain more than one Target,
 the generated triples are exported to all the specified Targets.
 If multiple Term Maps of an RDF triple refer multiple times to the same Target,
 the RDF triple is written only once to the target to avoid duplicates.
 
 ### Multiple Targets in the same Term Map {#multiple-targets-same-term-map}
 
-All triples are exported to all Targets, if the Term Map contains multiple 
-Targets. In the example a Subject Map has three specified Targets, 
-all triples with the subject `http://example.org/{@id}` are exported 
+All triples are exported to all Targets, if the Term Map contains multiple
+Targets. In the example a Subject Map has three specified Targets,
+all triples with the subject `http://example.org/{@id}` are exported
 to the three specified Targets:
 
 - Target 1: `/data/dump.nt.zip`, N-Triples serialization, Zip compression
@@ -38,7 +38,7 @@ to the three specified Targets:
   &lt;Character id="3"&gt;
     &lt;name&gt;Nia Nal&lt;/name&gt;
     &lt;nickname&gt;Dreamer&lt;/nickname&gt;
-  &lt;/Character&gt; 
+  &lt;/Character&gt;
 &lt;/Supergirl&gt;
 </pre>
 
@@ -50,7 +50,7 @@ to the three specified Targets:
 
 <pre class="ex-mapping">
 &lt;#TriplesMap&gt; a rml:TriplesMap;
-  rml:logicalSource [ a rml:LogicalSource;
+  rml:logicalSource [ a rml:InputLogicalSource;
     rml:source &lt;#DCATSourceAccess&gt;;
     rml:referenceFormulation rml:XPath;
     rml:iterator "//Supergirl/Character/";
@@ -167,7 +167,7 @@ to the three specified Targets:
 ### Subject Map and Predicate Map {#subject-and-predicate-map}
 
 All triples containing the subject `http://example.org/{id}`
-are exported to `TargetDump1` 
+are exported to `TargetDump1`
 and all triples containing the predicate `foaf:name`
 are exported to `TargetDump2`.
 
@@ -188,7 +188,7 @@ are exported to `TargetDump2`.
   &lt;Character id="3"&gt;
     &lt;name&gt;Nia Nal&lt;/name&gt;
     &lt;nickname&gt;Dreamer&lt;/nickname&gt;
-  &lt;/Character&gt; 
+  &lt;/Character&gt;
 &lt;/Supergirl&gt;
 </pre>
 
@@ -200,7 +200,7 @@ are exported to `TargetDump2`.
 
 <pre class="ex-mapping">
 &lt;#TriplesMap&gt; a rml:TriplesMap;
-  rml:logicalSource [ a rml:LogicalSource;
+  rml:logicalSource [ a rml:InputLogicalSource;
     rml:source &lt;#DCATSourceAccess&gt;;
     rml:referenceFormulation rml:XPath;
     rml:iterator "//Supergirl/Character/";
@@ -270,7 +270,7 @@ are exported to `TargetDump2`.
 ### Subject Map and Object Map {#subject-and-object-map}
 
 All triples containing the subject `http://example.org/{id}`
-are exported to `TargetDump1` 
+are exported to `TargetDump1`
 and all triples containing the object reference `name/text()`
 are exported to `TargetDump2`.
 
@@ -291,7 +291,7 @@ are exported to `TargetDump2`.
   &lt;Character id="3"&gt;
     &lt;name&gt;Nia Nal&lt;/name&gt;
     &lt;nickname&gt;Dreamer&lt;/nickname&gt;
-  &lt;/Character&gt; 
+  &lt;/Character&gt;
 &lt;/Supergirl&gt;
 </pre>
 
@@ -303,7 +303,7 @@ are exported to `TargetDump2`.
 
 <pre class="ex-mapping">
 &lt;#TriplesMap&gt; a rml:TriplesMap;
-  rml:logicalSource [ a rml:LogicalSource;
+  rml:logicalSource [ a rml:InputLogicalSource;
     rml:source &lt;#DCATSourceAccess&gt;;
     rml:referenceFormulation rml:XPath;
     rml:iterator "//Supergirl/Character/";
@@ -373,7 +373,7 @@ are exported to `TargetDump2`.
 ### Predicate Map and Object Map {#predicate-and-object-map}
 
 All triples containing the predicate `foaf:name`
-are exported to `TargetDump1` 
+are exported to `TargetDump1`
 and all triples containing the object reference `nickname/text()`
 are exported to `TargetDump2`.
 
@@ -394,7 +394,7 @@ are exported to `TargetDump2`.
   &lt;Character id="3"&gt;
     &lt;name&gt;Nia Nal&lt;/name&gt;
     &lt;nickname&gt;Dreamer&lt;/nickname&gt;
-  &lt;/Character&gt; 
+  &lt;/Character&gt;
 &lt;/Supergirl&gt;
 </pre>
 
@@ -406,7 +406,7 @@ are exported to `TargetDump2`.
 
 <pre class="ex-mapping">
 &lt;#TriplesMap&gt; a rml:TriplesMap;
-  rml:logicalSource [ a rml:LogicalSource;
+  rml:logicalSource [ a rml:InputLogicalSource;
     rml:source &lt;#DCATSourceAccess&gt;;
     rml:referenceFormulation rml:XPath;
     rml:iterator "//Supergirl/Character/";
@@ -472,7 +472,7 @@ are exported to `TargetDump2`.
 ### Subject Map, Predicate Map and Object Map {#subject-predicate-and-object-map}
 
 All triples containing the subject `http://example.org/{@id}`
-are exported to `TargetDump1` 
+are exported to `TargetDump1`
 and all triples containing the object reference `nickname/text()` or
 predicate `foaf:nickname` are exported to `TargetDump2`.
 
@@ -493,7 +493,7 @@ predicate `foaf:nickname` are exported to `TargetDump2`.
   &lt;Character id="3"&gt;
     &lt;name&gt;Nia Nal&lt;/name&gt;
     &lt;nickname&gt;Dreamer&lt;/nickname&gt;
-  &lt;/Character&gt; 
+  &lt;/Character&gt;
 &lt;/Supergirl&gt;
 </pre>
 
@@ -505,7 +505,7 @@ predicate `foaf:nickname` are exported to `TargetDump2`.
 
 <pre class="ex-mapping">
 &lt;#TriplesMap&gt; a rml:TriplesMap;
-  rml:logicalSource [ a rml:LogicalSource;
+  rml:logicalSource [ a rml:InputLogicalSource;
     rml:source &lt;#DCATSourceAccess&gt;;
     rml:referenceFormulation rml:XPath;
     rml:iterator "//Supergirl/Character/";
@@ -576,9 +576,9 @@ predicate `foaf:nickname` are exported to `TargetDump2`.
 ### Subject Map and Graph Map {#subject-and-graph-map}
 
 All triples containing the subject `http://example.org/{@id}`
-are exported to `TargetDump1` 
+are exported to `TargetDump1`
 and all triples within the named graph `ex:Characters`
-are exported to `TargetDump2`. 
+are exported to `TargetDump2`.
 
 <pre class="ex-input">
 &lt;Supergirl&gt;
@@ -597,7 +597,7 @@ are exported to `TargetDump2`.
   &lt;Character id="3"&gt;
     &lt;name&gt;Nia Nal&lt;/name&gt;
     &lt;nickname&gt;Dreamer&lt;/nickname&gt;
-  &lt;/Character&gt; 
+  &lt;/Character&gt;
 &lt;/Supergirl&gt;
 </pre>
 
@@ -609,7 +609,7 @@ are exported to `TargetDump2`.
 
 <pre class="ex-mapping">
 &lt;#TriplesMap&gt; a rml:TriplesMap;
-  rml:logicalSource [ a rml:LogicalSource;
+  rml:logicalSource [ a rml:InputLogicalSource;
     rml:source &lt;#DCATSourceAccess&gt;;
     rml:referenceFormulation rml:XPath;
     rml:iterator "//Supergirl/Character/";
@@ -682,9 +682,9 @@ are exported to `TargetDump2`.
 ### Predicate Map and Graph Map {#predicate-and-graph-map}
 
 All triples containing the predicate `foaf:nickname`
-are exported to `TargetDump1` 
+are exported to `TargetDump1`
 and all triples within the named graph `ex:Characters`
-are exported to `TargetDump2`. 
+are exported to `TargetDump2`.
 
 <pre class="ex-input">
 &lt;Supergirl&gt;
@@ -703,7 +703,7 @@ are exported to `TargetDump2`.
   &lt;Character id="3"&gt;
     &lt;name&gt;Nia Nal&lt;/name&gt;
     &lt;nickname&gt;Dreamer&lt;/nickname&gt;
-  &lt;/Character&gt; 
+  &lt;/Character&gt;
 &lt;/Supergirl&gt;
 </pre>
 
@@ -715,7 +715,7 @@ are exported to `TargetDump2`.
 
 <pre class="ex-mapping">
 &lt;#TriplesMap&gt; a rml:TriplesMap;
-  rml:logicalSource [ a rml:LogicalSource;
+  rml:logicalSource [ a rml:InputLogicalSource;
     rml:source &lt;#DCATSourceAccess&gt;;
     rml:referenceFormulation rml:XPath;
     rml:iterator "//Supergirl/Character/";
@@ -784,9 +784,9 @@ are exported to `TargetDump2`.
 ### Object Map and Graph Map {#object-and-graph-map}
 
 All triples containing the object reference `nickname/text()`
-are exported to `TargetDump1` 
+are exported to `TargetDump1`
 and all triples within the named graph `ex:Characters`
-are exported to `TargetDump2`. 
+are exported to `TargetDump2`.
 
 <pre class="ex-input">
 &lt;Supergirl&gt;
@@ -805,7 +805,7 @@ are exported to `TargetDump2`.
   &lt;Character id="3"&gt;
     &lt;name&gt;Nia Nal&lt;/name&gt;
     &lt;nickname&gt;Dreamer&lt;/nickname&gt;
-  &lt;/Character&gt; 
+  &lt;/Character&gt;
 &lt;/Supergirl&gt;
 </pre>
 
@@ -817,7 +817,7 @@ are exported to `TargetDump2`.
 
 <pre class="ex-mapping">
 &lt;#TriplesMap&gt; a rml:TriplesMap;
-  rml:logicalSource [ a rml:LogicalSource;
+  rml:logicalSource [ a rml:InputLogicalSource;
     rml:source &lt;#DCATSourceAccess&gt;;
     rml:referenceFormulation rml:XPath;
     rml:iterator "//Supergirl/Character/";
@@ -886,12 +886,12 @@ are exported to `TargetDump2`.
 
 ### Language Map and Graph Map {#language-and-graph-map}
 
-All triples containing the language tag `en` 
-are exported to `TargetDump1` 
+All triples containing the language tag `en`
+are exported to `TargetDump1`
 and all triples within the named graph `ex:Characters`
-are exported to `TargetDump2`. 
+are exported to `TargetDump2`.
 The other triples are exported to the default target of the processor
-as there is no dedicated Target assigned to triples containing 
+as there is no dedicated Target assigned to triples containing
 `foaf:nickname` as predicate.
 
 <pre class="ex-input">
@@ -911,7 +911,7 @@ as there is no dedicated Target assigned to triples containing
   &lt;Character id="3"&gt;
     &lt;name&gt;Nia Nal&lt;/name&gt;
     &lt;nickname&gt;Dreamer&lt;/nickname&gt;
-  &lt;/Character&gt; 
+  &lt;/Character&gt;
 &lt;/Supergirl&gt;
 </pre>
 
@@ -923,7 +923,7 @@ as there is no dedicated Target assigned to triples containing
 
 <pre class="ex-mapping">
 &lt;#TriplesMap&gt; a rml:TriplesMap;
-  rml:logicalSource [ a rml:LogicalSource;
+  rml:logicalSource [ a rml:InputLogicalSource;
     rml:source &lt;#DCATSourceAccess&gt;;
     rml:referenceFormulation rml:XPath;
     rml:iterator "//Supergirl/Character/";
@@ -1001,9 +1001,9 @@ as there is no dedicated Target assigned to triples containing
 
 ### Language Map and Object Map {#language-and-object-map}
 
-All triples containing the language tag `en` 
-are exported to `TargetDump1` 
-and all triples containing the object reference `nickname/text()` 
+All triples containing the language tag `en`
+are exported to `TargetDump1`
+and all triples containing the object reference `nickname/text()`
 are exported to `TargetDump2`.
 
 <pre class="ex-input">
@@ -1023,7 +1023,7 @@ are exported to `TargetDump2`.
   &lt;Character id="3"&gt;
     &lt;name&gt;Nia Nal&lt;/name&gt;
     &lt;nickname&gt;Dreamer&lt;/nickname&gt;
-  &lt;/Character&gt; 
+  &lt;/Character&gt;
 &lt;/Supergirl&gt;
 </pre>
 
@@ -1035,7 +1035,7 @@ are exported to `TargetDump2`.
 
 <pre class="ex-mapping">
 &lt;#TriplesMap&gt; a rml:TriplesMap;
-  rml:logicalSource [ a rml:LogicalSource;
+  rml:logicalSource [ a rml:InputLogicalSource;
     rml:source &lt;#DCATSourceAccess&gt;;
     rml:referenceFormulation rml:XPath;
     rml:iterator "//Supergirl/Character/";
@@ -1104,7 +1104,7 @@ are exported to `TargetDump2`.
 ### Multiple Predicate Maps {#multiple-predicate-map}
 
 All triples containing the predicate `foaf:name`
-are exported to `TargetDump1` 
+are exported to `TargetDump1`
 and all triples containing the predicate `foaf:nickname`
 are exported to `TargetDump2`.
 
@@ -1125,7 +1125,7 @@ are exported to `TargetDump2`.
   &lt;Character id="3"&gt;
     &lt;name&gt;Nia Nal&lt;/name&gt;
     &lt;nickname&gt;Dreamer&lt;/nickname&gt;
-  &lt;/Character&gt; 
+  &lt;/Character&gt;
 &lt;/Supergirl&gt;
 </pre>
 
@@ -1137,7 +1137,7 @@ are exported to `TargetDump2`.
 
 <pre class="ex-mapping">
 &lt;#TriplesMap&gt; a rml:TriplesMap;
-  rml:logicalSource [ a rml:LogicalSource;
+  rml:logicalSource [ a rml:InputLogicalSource;
     rml:source &lt;#DCATSourceAccess&gt;;
     rml:referenceFormulation rml:XPath;
     rml:iterator "//Supergirl/Character/";
@@ -1203,7 +1203,7 @@ are exported to `TargetDump2`.
 ### Multiple Object Maps {#multiple-object-map}
 
 All triples containing the object reference `name/text()`
-are exported to `TargetDump1` 
+are exported to `TargetDump1`
 and all triples containing the object reference `nickname/text()`
 are exported to `TargetDump2`.
 
@@ -1224,7 +1224,7 @@ are exported to `TargetDump2`.
   &lt;Character id="3"&gt;
     &lt;name&gt;Nia Nal&lt;/name&gt;
     &lt;nickname&gt;Dreamer&lt;/nickname&gt;
-  &lt;/Character&gt; 
+  &lt;/Character&gt;
 &lt;/Supergirl&gt;
 </pre>
 
@@ -1236,7 +1236,7 @@ are exported to `TargetDump2`.
 
 <pre class="ex-mapping">
 &lt;#TriplesMap&gt; a rml:TriplesMap;
-  rml:logicalSource [ a rml:LogicalSource;
+  rml:logicalSource [ a rml:InputLogicalSource;
     rml:source &lt;#DCATSourceAccess&gt;;
     rml:referenceFormulation rml:XPath;
     rml:iterator "//Supergirl/Character/";
@@ -1302,9 +1302,9 @@ are exported to `TargetDump2`.
 ### Multiple Graph Maps {#multiple-graph-map}
 
 All triples within the named graph `ex:Characters`
-are exported to `TargetDump1` 
+are exported to `TargetDump1`
 and all triples within the named graph `ex:NickNames`
-are exported to `TargetDump2`. 
+are exported to `TargetDump2`.
 
 <pre class="ex-input">
 &lt;Supergirl&gt;
@@ -1323,7 +1323,7 @@ are exported to `TargetDump2`.
   &lt;Character id="3"&gt;
     &lt;name&gt;Nia Nal&lt;/name&gt;
     &lt;nickname&gt;Dreamer&lt;/nickname&gt;
-  &lt;/Character&gt; 
+  &lt;/Character&gt;
 &lt;/Supergirl&gt;
 </pre>
 
@@ -1335,7 +1335,7 @@ are exported to `TargetDump2`.
 
 <pre class="ex-mapping">
 &lt;#TriplesMap&gt; a rml:TriplesMap;
-  rml:logicalSource [ a rml:LogicalSource;
+  rml:logicalSource [ a rml:InputLogicalSource;
     rml:source &lt;#DCATSourceAccess&gt;;
     rml:referenceFormulation rml:XPath;
     rml:iterator "//Supergirl/Character/";
