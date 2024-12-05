@@ -1,19 +1,11 @@
-## Logical Source in RML {#logical-source-in-rml}
+## Input Logical Source in RML {#logical-source-in-rml}
 
-RML is aligned with the Logical Source vocabulary 
-by extending `rml:TriplesMap` with the `rml:logicalSource` property 
-to describe on Triples Map [[RML]] level where the data must be retrieved
-from and where the references refer to.
-A Triples Map is a function that generates an RDF triples 
-from a Subject Map and Predicate Object Maps [[RML]].
+[[RML-Core]] introduces a <a data-cite="RML-Core#dfn-logical-source">logical source</a>
+as an abstract construct to describe how a <a data-cite="RML-Core#dfn-data-source">data source</a>
+ can be accessed to be used in a <a data-cite="RML-Core#dfn-triples-map">Triples Map</a>.
 
-A Triples Map MUST contain exactly one `rml:logicalSource` property
-to describe the data source that must be used by the Triples Map to generate
-RDF triples.
-
-| Property            | Domain           | Range                |
-| ------------------- | ---------------- | -------------------- |
-| `rml:logicalSource` | `rml:TriplesMap` | `rml:LogicalSource`  |
+In this specification we introduce the [=Input Logical Source=] to describe how an input
+<a data-cite="RML-Core#dfn-data-source">data source</a> can be accessed.
 
 In the example below, a CSV file is transformed into a knowledge graph.
 The CSV file is accessed using the [[CSVW]] vocabulary,
@@ -43,7 +35,7 @@ id;name;nickname
 @base &lt;http://example.com/ns#&gt; .
 
 &lt;#TriplesMap&gt; a rml:TriplesMap;
-  rml:logicalSource [ a rml:LogicalSource;
+  rml:logicalSource [ a rml:InputLogicalSource;
     rml:source &lt;#CSVSourceAccess&gt;;
   ];
   rml:subjectMap [ a rml:SubjectMap;
