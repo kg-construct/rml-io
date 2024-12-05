@@ -456,3 +456,30 @@ specified by a string Literal. The file's absolute path is `/root/file.xml`.
   rml:iterator "$";
 .
 </pre>
+
+In some cases, it is useful to describe access to a source that will be programmatically
+provided to an RML processor at runtime.
+This could, for example, be a byte stream or an already deserialized JSON or XML node.
+
+For these cases, the `rml:ProvidedSource` can be used.
+It is a sub class of `rml:Source` and MUST have:
+
+* exactly one `rml:sourceIdentifier` property, whose value is a string literal, which
+uniquely identifies the source.
+
+| Property                | Domain                | Range      |
+| ------------------------| --------------------- | ---------- |
+| `rml:sourceIdentifier`  | `rml:ProvidedSource`  | `Literal`  |
+
+The following example illustrates a provided source with its unique identifier `myByteStream`:
+
+<pre class="ex-source">
+&lt;#ProvidedSource&gt; a rml:LogicalSource;
+  rml:source [ a rml:ProvidedSource;
+    rml:sourceIdentifier "myByteStream";
+  ];
+.
+</pre>
+
+An RML processor MAY offer a mechanism to programmatically provide a data source corresponding to
+the `rml:ProvidedSource` description.
