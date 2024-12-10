@@ -1,73 +1,65 @@
-## Logical Source vocabulary {#source-vocabulary}
+## Input Logical Source vocabulary {#source-vocabulary}
 
-The LogicalSource vocabulary namespace is http://w3id.org/rml/
-and it's prefix is `rml`.
+The Input Logical Source vocabulary namespace is http://w3id.org/rml/
+and its prefix is `rml`.
 
-The Logical Source vocabulary consists of 2 classes: 
+The Input Logical Source vocabulary consists of 2 classes:
 
-1. `rml:LogicalSource` describes how data of a source can be referenced.
-2. `rml:Source` describes how a source can be accessed, it is part of a `rml:LogicalSource`.
+1. `rml:InputLogicalSource` describes how data of a source can be referenced.
+2. `rml:Source` describes how a source can be accessed, it referenced from a `rml:InputLogicalSource`.
 
-### Defining Logical Sources {#defining-logical-sources}
+### Defining Input Logical Sources {#defining-input-logical-sources}
 
-A Logical Source is any data source providing data to be mapped to RDF triples.
+An <dfn>Input Logical Source</dfn> is a <a data-cite="RML-Core#dfn-logical-source">logical source</a>
+which describes the access to a <a data-cite="RML-Core#dfn-data-source">data source</a> to be used as
+input for a <a data-cite="RML-Core#dfn-triples-map">Triples Map</a>.
 
-A Logical Source (`rml:LogicalSource`) MUST contains the following properties:
+An [=Input Logical Source=] (`rml:InputLogicalSource`) MUST adhere to the properties defined for the
+<a data-cite="RML-Core#dfn-logical-source">logical source</a>.
 
-- The **source** (`rml:source`) specifies how a source is accessed through a `rml:Source`.
-- The **reference formulation** (`rml:referenceFormulation`)
-defines the reference formulation used to refer to the elements
-of a data source.
-The reference formulation must be specified in the case of relational databases,
-CSV, TSV, XML, and JSON data sources.
+Furthermore, an [=Input Logical Source=] MUST have:
+- exactly one **source** (`rml:source`) property which specifies how a
+<a data-cite="RML-Core#dfn-data-source">data source</a> is using a [=Source=] (`rml:Source`).
+
+The <a data-cite="RML-Core#dfn-reference-formulation">reference formulation</a> MUST be specified in
+the case that the <a data-cite="RML-Core#dfn-data-source">data source</a> is a relational database,
+CSV, TSV, XML, or JSON data sources.
+
 By default `rml:SQL2008Query` for databases,
 `rml:CSV` for CSV and TSV data sources.
 XPath for XML and JSONPath for JSON and JSONL data sources.
 
-The following properties MAY be specified in a Logical Source:
-
-- The **logical iterator** (`rml:iterator`)
-defines the iteration loop used to map the data of the input source. 
-The iterator defines how to refer to any of the following:
-    - a row in the case of relational databases, CSV or TSV data sources
-    - a repetition pattern expressed as an element in the case of XML documents,
-    - a repetition pattern expressed as an object in the case
-    of a JSON data sources. 
-    - etc...
-
-By default, the iterator is considered a row, if not specified:
-  - In the case of CSV or TSV data sources, the value of 
+By default, the <a data-cite="RML-Core#dfn-iterator">iterator</a> is considered a row,
+if not specified:
+  - In the case of CSV or TSV data sources, the value of
   `rml:iterator` is considered a "row" and must not be specified.
   - In the case of XML and JSON data sources, it is a valid reference
-  to an element or an object respectively considering the reference
-  formulation specified.
+  to an element or an object respectively considering the
+  <a data-cite="RML-Core#dfn-reference-formulation">reference formulation</a> specified.
   - In the case of relational databases, the value of `rml:iterator` is either
   a SQL query (`rml:referenceFormulation rml:SQL2008Query`) or the SQL table
   name (`rml:referenceFormulation rml:SQL2008Table`). For SQL table names,
   they can be converted to a SQL query using the following SQL query template:
   `SELECT * FROM {table}` where `{table}` is the table name.
 
-The Logical Source definition requires only the source (`rml:source`)
-to be specified, all other properties are optional.
-If a property is specified, it MUST NOT be specified multiple times.
 
-| Property                    | Domain               | Range                     |
-| --------------------------- | -------------------- | ------------------------- |
-| `rml:source`                | `rml:LogicalSource`  | `IRI`                     |
-| `rml:referenceFormulation`  | `rml:LogicalSource`  | `rml:ReferenceFormulation` |
-| `rml:iterator`              | `rml:LogicalSource`  | `Literal`                 |
+| Property      | Domain                    | Range  |
+| ------------- | ------------------------- | ------ |
+| `rml:source`  | `rml:InputLogicalSource`  | `IRI`  |
 
 <figure>
-  <img src="./resources/images/source-structure.png" alt="Logical Source structure"/>
-  <figcaption>The structure of Logical Source</figcaption>
+  <img src="./resources/images/source-structure.png" alt="Input Logical Source structure"/>
+  <figcaption>The structure of [=Input Logical Source=]</figcaption>
 </figure>
 
 #### Reference formulations
 
-Each Logical Source has a reference formulation to define how to reference
-to elements of the data of the input source.
-Several reference formulations (`rml:ReferenceFormulation`)
-are defined in this specification:
+Each [=Input Logical Source=] has a
+<a data-cite="RML-Core#dfn-reference-formulation">reference formulation</a> to define how
+to express a reference to elements of the data of the input
+<a data-cite="RML-Core#dfn-data-source">data source</a>.
+Several <a data-cite="RML-Core#dfn-reference-formulation">reference formulation</a>
+(`rml:ReferenceFormulation`) are defined in this specification:
 
 - `rml:CSV`: CSV or TSV data sources
 - `rml:JSONPath`: JSON documents
@@ -79,7 +71,7 @@ By default, no namespaces are defined.
 - `rml:SQL2008Query`: SQL query for a relational database.
 - `rml:SQL2008Table`: Shortcut to select all columns from a SQL table.
 
-`rml:XPathReferenceFormulation` may specify zero or more 
+`rml:XPathReferenceFormulation` may specify zero or more
 `rml:namespace` properties with a `rml:Namespace`.
 A `rml:Namespace` contains the following required properties:
  - `rml:namespacePrefix`: A Literal with the prefix used for the XML namespace.
@@ -93,7 +85,7 @@ SPARQL queries iterations can be specified by using the W3C Formats namespace:
 - `formats:SPARQL_Results_XML`: SPARQL results as XML.
 
 <pre class="ex-source">
-&lt;#XMLNamespace&gt; a rml:LogicalSource;
+&lt;#XMLNamespace&gt; a rml:InputLogicalSource;
      rml:source [ a rml:Source, dcat:Distribution;
          dcat:accessURL &lt;file:///path/to/data.xml&gt;;
      ];
@@ -108,48 +100,45 @@ SPARQL queries iterations can be specified by using the W3C Formats namespace:
 </pre>
 
 Since `rml:source` is open to any IRI, you can implement your own source access
-description for sources that are not covered by existing vocabularies such as
-paginated Web APIs which implement pagination in a Web API specific way.
+description for <a data-cite="RML-Core#dfn-data-source">data source</a> that are not
+covered by existing vocabularies such as paginated Web APIs which implement pagination
+in a Web API specific way.
 
 ### Source
 
-A Source (`rml:Source`) defines how a data source should be accessed.
-It complements other source descriptions 
+A <dfn>Source</dfn> (`rml:Source`) defines how a
+<a data-cite="RML-Core#dfn-data-source">data source</a> should be accessed.
+It complements other source descriptions
 such as SD Service, CSVW Table, DCAT Distribution, etc.
 to support encoding, null values, compression, and other access properties.
-The properties of a Source take precedence over the properties of other source
+The properties of a [=Source=] take precedence over the properties of other source
 descriptions, for example: `rml:encoding` takes precedence over `csvw:encoding`
-if both are specific.
+if both are specified.
 
-Optionally, the following properties MAY be specified:
+A [=Source=] MUST have the following properties:
 
-- **rml:encoding** specifies the encoding of the data inside the source.
-Defaults to `rml:UTF-8` if not specified.
-- **rml:null** describes which data values inside the source
-should be considered as NULL.
-Defaults to the default NULL character if available.
-If none is available such as CSV, no values are considered NULL,
-unless specified.
-- **rml:null** indicate which data values inside the source 
-should be considered as NULL values.
-The value for this predicate defaults to the default NULL token 
-of the underlying data model (e.g., NULL in relational databases 
+- zero or one **`rml:encoding`** property, which specifies the encoding
+of the data inside the source. Defaults to `rml:UTF-8` if not specified.
+- zero or more **`rml:null`** describes which data values inside the source
+should be considered as NULL.<br>
+The value for this predicate defaults to the default NULL token
+of the underlying data model (e.g., NULL in relational databases
 and null in JSON) and are always processed as such.
 Some data models have no such default NULL token, such as CSV.
 When that is the case, then nothing is considered NULL unless specified by
-`rml:null`.
+`rml:null`.<br>
 Example: CSV does not have a default NULL character,
 so no value is considered NULL.
 However, JSON has a NULL character specified: `null`,
 this one is used together with the ones specified through `rml:null`.
 For a relational database, `rml:null "foo"` results into the following values
-considered as NULL: `{NULL, "foo"}` where `NULL` comes from the relational 
+considered as NULL: `{NULL, "foo"}` where `NULL` comes from the relational
 database model as NULL value.
-- **rml:compression** specifies if the source is compressed
+- zero or one **`rml:compression`** specifies if the source is compressed
 and the used compression algorithm. Defaults to no compression.
 
 <pre class="ex-source">
-&lt;#JSON&gt; a rml:LogicalSource;
+&lt;#JSON&gt; a rml:InputLogicalSource;
      rml:source [ a rml:Source, dcat:Distribution;
        dcat:accessURL &lt;file:///path/to/data.json.gz&gt;;
        rml:null ""; # empty string as NULL besides default null character
@@ -169,7 +158,7 @@ and the used compression algorithm. Defaults to no compression.
 
 #### NULL values
 
-Each Source MAY describe the values that should be considered as NULL
+Each [=Source=] can describe the values that should be considered as NULL
 with `rml:null`, similar to `NULL` in relational databases.
 By default, standardized NULL values are always considered,
 but additional ones can be specified. Multiple NULL values are allowed.
@@ -179,9 +168,9 @@ specifying it through `rml:null` in a Source.
 
 #### Compression formats
 
-Each Source MAY specify the compression with `rml:compression`
-to apply when exporting RDF triples to a Source for saving storage space.
-Several compression formats are specified by the `comp` namespace:
+Each [=Source=] can specify the compression with `rml:compression`
+to apply when exporting RDF triples to a [=Source=] for saving storage space.
+Several compression formats are defined:
 
 - `rml:none`: No compression is applied
 - `rml:gzip`: GZip compression
@@ -190,28 +179,27 @@ Several compression formats are specified by the `comp` namespace:
 - `rml:targz`: Tar archive with GZip compression
 
 If unspecified, the default value is no compression.
-This namespace is NOT limited to the listed compression formats 
-and MAY be extended in the future.
+This namespace is NOT limited to the listed compression formats
+and may be extended in the future.
 
 #### Encoding formats
 
-Each Source MAY describe the encoding format to use when exporting
-RDF triples to a Source. Several encoding formats are defined by the `enc`
-namesapce:
+Each [=Source=] can describe the encoding format to use when exporting
+RDF triples to a Source. Several encoding formats are defined:
 
 - `rml:UTF-8`: UTF-8 encoding
 - `rml:UTF-16`: UTF-16 encoding
 
-If unspecified, the default value is UTF-8.
-This namespace is NOT limited to the listed compression formats 
-and MAY be extended in the future.
+If unspecified, the default value is `rml:UTF-8`.
+This namespace is NOT limited to the listed compression formats
+and may be extended in the future.
 
 ### Examples {#source-examples}
 
-The following example show a Source of an CSV file.
+The following example shows a Source of a CSV file.
 
 <pre class="ex-source">
-&lt;#CSV&gt; a rml:LogicalSource;
+&lt;#CSV&gt; a rml:InputLogicalSource;
      rml:source [ a rml:Source, csvw:Table;
         csvw:url "/path/to/data.csv";
         rml:null "NULL";
@@ -222,15 +210,15 @@ The following example show a Source of an CSV file.
 </pre>
 
 Note that there is no `rml:iterator` present because its default is row.
-This particular CSV file has 2 different ways to specify a NULL value: `NULL` 
-or an empty value. Implementations need to check if a value is equal to one of 
+This particular CSV file has two different ways to specify a NULL value: `NULL`
+or an empty value. Implementations need to check if a value is equal to one of
 the values defined by `rml:null` to check for NULL values in the data.
 
-The following example shows a Source specified for a MySQL database querying 
+The following example shows a [=Source=] specified for a MySQL database querying
 the `student` table. The database username and password are provided as well.
 
 <pre class="ex-source">
-&lt;#RDB&gt; a rml:LogicalSource;
+&lt;#RDB&gt; a rml:InputLogicalSource;
     rml:source [ a rml:Source, d2rq:Database;
         d2rq:jdbcDSN "jdbc:mysrml://localhost/example";
         d2rq:jdbcDriver "com.mysql.jdbc.Driver";
@@ -246,11 +234,11 @@ A shortcut is available to select all columns from a table,
 such as in the example above, by using the `rml:SQL2008Table`
 as `rml:referenceFormulation`.
 
-The following example shows a Source of a 
+The following example shows a [=Source=] of a
 XML file with no compression.
 
 <pre class="ex-source">
-&lt;#XML&gt; a rml:LogicalSource;
+&lt;#XML&gt; a rml:InputLogicalSource;
     rml:source [ a rml:Source, dcat:Distribution;
         dcat:accessURL &lt;file:///path/to/data.xml&gt;;
     ];
@@ -259,10 +247,10 @@ XML file with no compression.
 .
 </pre>
 
-The following example is GZip compressed JSON file as Source:
+The following example is GZip compressed JSON file as [=Source=]:
 
 <pre class="ex-source">
-&lt;#JSON&gt; a rml:LogicalSource;
+&lt;#JSON&gt; a rml:InputLogicalSource;
     rml:source [ a rml:Source, dcat:Distribution;
         dcat:accessURL &lt;file:///path/to/data.json.gz&gt;;
         rml:compression rml:gzip;
@@ -272,12 +260,12 @@ The following example is GZip compressed JSON file as Source:
 .
 </pre>
 
-Sources can also describe access to SPARQL endpoints with the 
-W3C Service Description ontology. SPARQL endpoints need a SPARQL query, 
+[=Sources=] can also describe access to SPARQL endpoints with the
+W3C Service Description ontology. SPARQL endpoints need a SPARQL query,
 to iterate over.
 
 <pre class="ex-source">
-&lt;#SPARQLEndpoint&gt; a rml:LogicalSource;
+&lt;#SPARQLEndpoint&gt; a rml:InputLogicalSource;
     rml:source [ a rml:Source, sd:Service;
         sd:endpoint  &lt;http://example.com/sparql&gt;;
         sd:supportedLanguage sd:SPARQL11Query;
@@ -292,13 +280,13 @@ Web APIs and streams are supported through the W3C Web of Things ontologies:
 - MQTT streams
 - CoAP
 - Kafka
-- HTTP Server Sent Events 
+- HTTP Server Sent Events
 
-The following example is a HTTP JSON Web API with a HTTP header User Agent 
+The following example is a HTTP JSON Web API with a HTTP header User Agent
 set to 'Processor':
 
 <pre class="ex-source">
-&lt;#HTTPWebAPI&gt; a rml:LogicalSource;
+&lt;#HTTPWebAPI&gt; a rml:InputLogicalSource;
     rml:source [ a rml:Source, td:Thing;
         td:hasPropertyAffordance [
             td:hasForm [
@@ -319,11 +307,11 @@ set to 'Processor':
 .
 </pre>
 
-The following example shows a Source of a
+The following example shows a [=Source=] of a
 HTTP Server Sent Events stream in XML format without compression:
 
 <pre class="ex-source">
-&lt;#HTTPSSEStream&gt; a rml:LogicalSource;
+&lt;#HTTPSSEStream&gt; a rml:InputLogicalSource;
     rml:source [ a rml:Source, td:Thing;
         td:hasPropertyAffordance [
             td:hasForm [
@@ -338,11 +326,11 @@ HTTP Server Sent Events stream in XML format without compression:
 .
 </pre>
 
-The following example shows a Source of a
+The following example shows a [=Source=] of a
 MQTT stream in JSON format without compression:
 
 <pre class="ex-source">
-&lt;#MQTTStream&gt; a rml:LogicalSource;
+&lt;#MQTTStream&gt; a rml:InputLogicalSource;
     rml:source [ a rml:Source, td:Thing;
         td:hasPropertyAffordance [
             td:hasForm [
@@ -360,11 +348,11 @@ MQTT stream in JSON format without compression:
 .
 </pre>
 
-The following example shows a Source of a
+The following example shows a [=Source=] of a
 TCP stream in JSON format without compression:
 
 <pre class="ex-source">
-&lt;#TCPStream&gt; a rml:LogicalSource;
+&lt;#TCPStream&gt; a rml:InputLogicalSource;
     rml:source [ a rml:Source, td:Thing;
         td:hasPropertyAffordance [
             td:hasForm [
@@ -379,11 +367,11 @@ TCP stream in JSON format without compression:
 .
 </pre>
 
-The following example shows a Source of a
+The following example shows a [=Source=] of a
 Kafka stream in XML format without compression:
 
 <pre class="ex-source">
-&lt;#KafkaStream&gt; a rml:LogicalSource;
+&lt;#KafkaStream&gt; a rml:InputLogicalSource;
     rml:source [ a rml:Source, td:Thing;
         td:hasPropertyAffordance [
             td:hasForm [
@@ -420,7 +408,7 @@ The file's absolute path is `$CURRENT_WORKING_DIR/file.csv` where `$CURRENT_WORK
 the location of the RML mapping.
 
 <pre class="ex-source">
-&lt;#RelativePathCWD&gt; a rml:LogicalSource;
+&lt;#RelativePathCWD&gt; a rml:InputLogicalSource;
   rml:source [ a rml:RelativePathSource, rml:Source;
     rml:root rml:CurrentWorkingDirectory;
     rml:path "./file.csv";
@@ -433,7 +421,7 @@ The file's absolute path is `$MAPPING_DIR/file.json` where `$MAPPING_DIR` is
 the location of the RML mapping.
 
 <pre class="ex-source">
-&lt;#RelativePathMapping&gt; a rml:LogicalSource;
+&lt;#RelativePathMapping&gt; a rml:InputLogicalSource;
   rml:source [ a rml:RelativePathSource, rml:Source;
     rml:root rml:MappingDirectory;
     rml:path "./file.json";
@@ -447,7 +435,7 @@ Example of accessing an XML file relative to an absolute root path
 specified by a string Literal. The file's absolute path is `/root/file.xml`.
 
 <pre class="ex-source">
-&lt;#RelativePathLiteral&gt; a rml:LogicalSource;
+&lt;#RelativePathLiteral&gt; a rml:InputLogicalSource;
   rml:source [ a rml:RelativePathSource, rml:Source;
     rml:root "/root";
     rml:path "file.xml";

@@ -6,36 +6,36 @@ therefore, they will be exported to the default Target of the processor.
 
 ### Subject Map {#subject-map}
 
-All triples containing the generated subject are exported 
+All triples containing the generated subject are exported
 to the specified targets in the Subject Map [[RML]].
 
-The following example exports all triples containing 
-the generated subject `http://example.org/{id}` 
+The following example exports all triples containing
+the generated subject `http://example.org/{id}`
 to an RDF dump with N-Quads as serialization format and GZip compression:
 
 <pre class="ex-input">
 [
-  { 
+  {
     "id": 0,
     "name": "Monica Geller",
     "age": 33
   },
-  { 
+  {
     "id": 1,
     "name": "Rachel Green",
     "age": 34
   },
-  { 
+  {
     "id": 2,
     "name": "Joey Tribbiani",
     "age": 35
   },
-  { 
+  {
     "id": 3,
     "name": "Chandler Bing",
     "age": 36
   },
-  { 
+  {
     "id": 4,
     "name": "Ross Geller",
     "age": 37
@@ -51,7 +51,7 @@ to an RDF dump with N-Quads as serialization format and GZip compression:
 
 <pre class="ex-mapping">
 &lt;#TriplesMap&gt; a rml:TriplesMap;
-  rml:logicalSource [ a rml:LogicalSource;
+  rml:logicalSource [ a rml:InputLogicalSource;
     rml:source &lt;#DCATSourceAccess&gt;;
     rml:referenceFormulation rml:JSONPath;
     rml:iterator "$.[*]";
@@ -108,36 +108,36 @@ to an RDF dump with N-Quads as serialization format and GZip compression:
 
 ### Predicate Map {#predicate-map}
 
-All triples containing the generated predicate are exported 
+All triples containing the generated predicate are exported
 to the specified targets in the Predicate Map [[RML]].
 
-The following example exports all triples containing 
-the generated predicate `foaf:name` to an RDF dump 
+The following example exports all triples containing
+the generated predicate `foaf:name` to an RDF dump
 with Turtle as serialization format and Zip compression:
 
 <pre class="ex-input">
 [
-  { 
+  {
     "id": 0,
     "name": "Monica Geller",
     "age": 33
   },
-  { 
+  {
     "id": 1,
     "name": "Rachel Green",
     "age": 34
   },
-  { 
+  {
     "id": 2,
     "name": "Joey Tribbiani",
     "age": 35
   },
-  { 
+  {
     "id": 3,
     "name": "Chandler Bing",
     "age": 36
   },
-  { 
+  {
     "id": 4,
     "name": "Ross Geller",
     "age": 37
@@ -153,7 +153,7 @@ with Turtle as serialization format and Zip compression:
 
 <pre class="ex-mapping">
 &lt;#TriplesMap&gt; a rml:TriplesMap;
-  rml:logicalSource [ a rml:LogicalSource;
+  rml:logicalSource [ a rml:InputLogicalSource;
     rml:source &lt;#DCATSourceAccess&gt;;
     rml:referenceFormulation rml:JSONPath;
     rml:iterator "$.[*]";
@@ -227,36 +227,36 @@ with Turtle as serialization format and Zip compression:
 
 ### Object Map {#object-map}
 
-All triples containing the generated object are exported 
+All triples containing the generated object are exported
 to the specified targets in the Object Map [[RML]].
 
-The following example exports all triples containing 
-the generated object from the reference `name` to an RDF dump 
+The following example exports all triples containing
+the generated object from the reference `name` to an RDF dump
 with N-Triples as serialization format:
 
 <pre class="ex-input">
 [
-  { 
+  {
     "id": 0,
     "name": "Monica Geller",
     "age": 33
   },
-  { 
+  {
     "id": 1,
     "name": "Rachel Green",
     "age": 34
   },
-  { 
+  {
     "id": 2,
     "name": "Joey Tribbiani",
     "age": 35
   },
-  { 
+  {
     "id": 3,
     "name": "Chandler Bing",
     "age": 36
   },
-  { 
+  {
     "id": 4,
     "name": "Ross Geller",
     "age": 37
@@ -272,7 +272,7 @@ with N-Triples as serialization format:
 
 <pre class="ex-mapping">
 &lt;#TriplesMap&gt; a rml:TriplesMap;
-  rml:logicalSource [ a rml:LogicalSource;
+  rml:logicalSource [ a rml:InputLogicalSource;
     rml:source &lt;#DCATSourceAccess&gt;;
     rml:referenceFormulation rml:JSONPath;
     rml:iterator "$.[*]";
@@ -332,18 +332,18 @@ with N-Triples as serialization format:
 
 ### Graph Map {#graph-map}
 
-All triples within a named graph are exported to the specified targets 
+All triples within a named graph are exported to the specified targets
 in the Graph Map [[RML]].
-The named graph influences to where the named graph's triples 
-may be exported to as the Target's serialization format must 
+The named graph influences to where the named graph's triples
+may be exported to as the Target's serialization format must
 support named graphs such as N-Quads, JSON-LD or TriG.
-When a Target contains a serialization format 
+When a Target contains a serialization format
 which does not support named graphs and a Graph Map is used,
 the mapping is considered invalid.
-If a named graph is spread over multiple targets, 
+If a named graph is spread over multiple targets,
 all targets must be combined to access the complete named graph.
 In case RDF triples are not within a specific named graph,
-they are added to the default graph as specified 
+they are added to the default graph as specified
 by the [[R2RML]] specification.
 
 The following example exports all triples in the named graph `ex:Friends`
@@ -351,27 +351,27 @@ to an RDF dump with N-Quads as serialization format:
 
 <pre class="ex-input">
 [
-  { 
+  {
     "id": 0,
     "name": "Monica Geller",
     "age": 33
   },
-  { 
+  {
     "id": 1,
     "name": "Rachel Green",
     "age": 34
   },
-  { 
+  {
     "id": 2,
     "name": "Joey Tribbiani",
     "age": 35
   },
-  { 
+  {
     "id": 3,
     "name": "Chandler Bing",
     "age": 36
   },
-  { 
+  {
     "id": 4,
     "name": "Ross Geller",
     "age": 37
@@ -387,7 +387,7 @@ to an RDF dump with N-Quads as serialization format:
 
 <pre class="ex-mapping">
 &lt;#TriplesMap&gt; a rml:TriplesMap;
-  rml:logicalSource [ a rml:LogicalSource;
+  rml:logicalSource [ a rml:InputLogicalSource;
     rml:source &lt;#DCATSourceAccess&gt;;
     rml:referenceFormulation rml:JSONPath;
     rml:iterator "$.[*]";
@@ -446,35 +446,35 @@ to an RDF dump with N-Quads as serialization format:
 
 ### Language Map {#language-map}
 
-All triples with a language tag are exported to the specified targets 
+All triples with a language tag are exported to the specified targets
 in the Language Map [[RML]].
 
-The following examples export all triples with a language tag 
+The following examples export all triples with a language tag
 to a RDF dump with N-Triples as serialization format:
 
 <pre class="ex-input">
 [
-  { 
+  {
     "id": 0,
     "name": "Monica Geller",
     "age": 33
   },
-  { 
+  {
     "id": 1,
     "name": "Rachel Green",
     "age": 34
   },
-  { 
+  {
     "id": 2,
     "name": "Joey Tribbiani",
     "age": 35
   },
-  { 
+  {
     "id": 3,
     "name": "Chandler Bing",
     "age": 36
   },
-  { 
+  {
     "id": 4,
     "name": "Ross Geller",
     "age": 37
@@ -490,7 +490,7 @@ to a RDF dump with N-Triples as serialization format:
 
 <pre class="ex-mapping">
 &lt;#TriplesMap&gt; a rml:TriplesMap;
-  rml:logicalSource [ a rml:LogicalSource;
+  rml:logicalSource [ a rml:InputLogicalSource;
     rml:source &lt;#DCATSourceAccess&gt;;
     rml:referenceFormulation rml:JSONPath;
     rml:iterator "$.[*]";
@@ -552,35 +552,35 @@ to a RDF dump with N-Triples as serialization format:
 
 ### Datatype Map {#datatype-map}
 
-All triples with a datatype are exported to the specified targets 
+All triples with a datatype are exported to the specified targets
 in the Datatype Map [[RML]].
 
-The following examples export all triples with a datatype xsd:integer 
+The following examples export all triples with a datatype xsd:integer
 to a RDF dump with N-Triples as serialization format:
 
 <pre class="ex-input">
 [
-  { 
+  {
     "id": 0,
     "name": "Monica Geller",
     "age": 33
   },
-  { 
+  {
     "id": 1,
     "name": "Rachel Green",
     "age": 34
   },
-  { 
+  {
     "id": 2,
     "name": "Joey Tribbiani",
     "age": 35
   },
-  { 
+  {
     "id": 3,
     "name": "Chandler Bing",
     "age": 36
   },
-  { 
+  {
     "id": 4,
     "name": "Ross Geller",
     "age": 37
@@ -596,7 +596,7 @@ to a RDF dump with N-Triples as serialization format:
 
 <pre class="ex-mapping">
 &lt;#TriplesMap&gt; a rml:TriplesMap;
-  rml:logicalSource [ a rml:LogicalSource;
+  rml:logicalSource [ a rml:InputLogicalSource;
     rml:source &lt;#DCATSourceAccess&gt;;
     rml:referenceFormulation rml:JSONPath;
     rml:iterator "$.[*]";
@@ -663,27 +663,27 @@ to a RDF dump with N-Triples as serialization format:
 
 <pre class="ex-input">
 [
-  { 
+  {
     "id": 0,
     "name": "Monica Geller",
     "age": 33
   },
-  { 
+  {
     "id": 1,
     "name": "Rachel Green",
     "age": 34
   },
-  { 
+  {
     "id": 2,
     "name": "Joey Tribbiani",
     "age": 35
   },
-  { 
+  {
     "id": 3,
     "name": "Chandler Bing",
     "age": 36
   },
-  { 
+  {
     "id": 4,
     "name": "Ross Geller",
     "age": 37
@@ -699,7 +699,7 @@ to a RDF dump with N-Triples as serialization format:
 
 <pre class="ex-mapping">
 &lt;#TriplesMap&gt; a rml:TriplesMap;
-  rml:logicalSource [ a rml:LogicalSource;
+  rml:logicalSource [ a rml:InputLogicalSource;
     rml:source &lt;#DCATSourceAccess&gt;;
     rml:referenceFormulation rml:JSONPath;
     rml:iterator "$.[*]";
@@ -736,7 +736,7 @@ to a RDF dump with N-Triples as serialization format:
       ]
   ]
 .
-    
+
 </pre>
 
 <pre class="ex-target">

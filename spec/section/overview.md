@@ -2,26 +2,26 @@
 
 *This section is non-normative.*
 
-This document specifies *Logical Source* and *Logical Target*, 
-Logical Source is a description
+This document specifies *Input Logical Source* and *Logical Target*,
+Input Logical Source is a description
 for specifying how a data source should be accessed.
-A Logical Source description is not limited to a specific Source
+An Input Logical Source description is not limited to a specific Source
 which allows to access any type of Source and provides a reference formulation
 to refer to data inside the Source.
 
 Logical Target is
-a description for defining how a generated 
+a description for defining how a generated
 RDF [[RDF-Concepts]]
-knowledge graph must be exported. 
-A Logical Target description is not tailored towards a specific Target 
+knowledge graph must be exported.
+A Logical Target description is not tailored towards a specific Target
 which allows to export the generated RDF triples to any type of Target
 and provides fine-grained control over where each RDF triple is exported to.
 
-Logical Source and Logical Target leverage
-the access descriptions of data access 
-such as DCAT [[DCAT]], SD [[SD]], etc. 
+Input Logical Source and Logical Target leverage
+the access descriptions of data access
+such as DCAT [[DCAT]], SD [[SD]], etc.
 
-In this document, examples assume 
+In this document, examples assume
 the following namespace prefix bindings unless otherwise stated:
 
 | Prefix    | Namespace                                           |
@@ -40,7 +40,7 @@ the following namespace prefix bindings unless otherwise stated:
 The examples are contained in pink colored boxes:
 
 <pre class="ex-source">
-# This box contains the example's Logical Source description.
+# This box contains the example's Input Logical Source description.
 </pre>
 
 <pre class="ex-target">

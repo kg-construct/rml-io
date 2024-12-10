@@ -1,13 +1,13 @@
 ## Overriding Targets {#overriding-targets}
 
-In some cases exporting all triples to a target is not desired, 
-therefore Targets can be overridden when needed 
-by either using a separate Triples Map which isolates certain triples or 
+In some cases exporting all triples to a target is not desired,
+therefore Targets can be overridden when needed
+by either using a separate Triples Map which isolates certain triples or
 by using FnO functions [[FnO]] as conditions.
 
 ### Separate Triples Map {#seperate-triples-map}
 
-Triples can be exported to a specific Target while not to other Targets 
+Triples can be exported to a specific Target while not to other Targets
 by isolating these triples in a separate Triples Map.
 
 In this example, the same subject and object are used in both Triples Maps,
@@ -39,7 +39,7 @@ http://dbpedia.org/resource/Melissa_Rauch,Melissa Rauch
 
 <pre class="ex-mapping">
 &lt;#TriplesMap1&gt; a rml:TriplesMap;
-  rml:logicalSource [ a rml:LogicalSource;
+  rml:logicalSource [ a rml:InputLogicalSource;
     rml:source &lt;#SDSourceAccess&gt;;
     rml:referenceFormulation formats:SPARQL_Results_CSV;
     rml:iterator """
@@ -69,7 +69,7 @@ http://dbpedia.org/resource/Melissa_Rauch,Melissa Rauch
   ];
 
 &lt;#TriplesMap2&gt; a rml:TriplesMap;
-  rml:logicalSource [ a rml:LogicalSource;
+  rml:logicalSource [ a rml:InputLogicalSource;
     rml:source &lt;#SDSourceAccess&gt;;
     rml:referenceFormulation formats:SPARQL_Results_CSV;
     rml:iterator """
@@ -148,15 +148,15 @@ http://dbpedia.org/resource/Melissa_Rauch,Melissa Rauch
 
 ### Conditions {#conditions}
 
-FnO functions MAY be leveraged to export triples 
-only under certain conditions. 
-Conditions are already integrated in RML+FnO processors, 
+FnO functions MAY be leveraged to export triples
+only under certain conditions.
+Conditions are already integrated in RML+FnO processors,
 thus conditions apply on Targets as well.
-Triples are generated and exported based on the FnO condition's evaluation. 
+Triples are generated and exported based on the FnO condition's evaluation.
 Only if the condition is true, the triples are generated and exported.
 
-In the example, the triples with `Jim Parsons` as object are exported 
-to the first Target, triples with `Kaley Cuoco` as object are exported 
+In the example, the triples with `Jim Parsons` as object are exported
+to the first Target, triples with `Kaley Cuoco` as object are exported
 to the second Target.
 
 <pre class="ex-input">
@@ -183,7 +183,7 @@ http://dbpedia.org/resource/Melissa_Rauch,Melissa Rauch
 
 <pre class="ex-mapping">
 &lt;#TriplesMap&gt; a rml:TriplesMap;
-  rml:logicalSource [ a rml:LogicalSource;
+  rml:logicalSource [ a rml:InputLogicalSource;
     rml:source &lt;#SDSourceAccess&gt;;
     rml:referenceFormulation formats:SPARQL_Results_CSV;
     rml:iterator """
@@ -211,7 +211,7 @@ http://dbpedia.org/resource/Melissa_Rauch,Melissa Rauch
       rml:reference "name";
     ];
   ];
-  rml:predicateObjectMap [ 
+  rml:predicateObjectMap [
     rml:predicateMap [ rml:constant foaf:name ];
     rml:objectMap [
       fnml:functionValue [
@@ -225,7 +225,7 @@ http://dbpedia.org/resource/Melissa_Rauch,Melissa Rauch
         ];
         rml:predicateObjectMap [
           rml:predicate idlab-fn:str ;
-          rml:objectMap [ 
+          rml:objectMap [
             rml:reference "name";
             rml:logicalTarget <#TargetDump1>;
           ];
@@ -233,7 +233,7 @@ http://dbpedia.org/resource/Melissa_Rauch,Melissa Rauch
       ];
     ];
   ];
-  rml:predicateObjectMap [ 
+  rml:predicateObjectMap [
     rml:predicateMap [ rml:constant foaf:name ];
     rml:objectMap [
       fnml:functionValue [
@@ -247,7 +247,7 @@ http://dbpedia.org/resource/Melissa_Rauch,Melissa Rauch
         ];
         rml:predicateObjectMap [
           rml:predicate idlab-fn:str ;
-          rml:objectMap [ 
+          rml:objectMap [
             rml:reference "name";
             rml:logicalTarget <#TargetDump2>;
           ];
