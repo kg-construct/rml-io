@@ -49,7 +49,7 @@ By default, the iterator is considered a row, if not specified:
 
 The Logical Source definition requires only the source (`rml:source`)
 to be specified, all other properties are optional.
-If a property is specified, it MUST NOT be specified multiple times.
+If a property is specified, it MUST only occur once.
 
 | Property                    | Domain               | Range                     |
 | --------------------------- | -------------------- | ------------------------- |
