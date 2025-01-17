@@ -42,6 +42,9 @@ if not specified:
   they can be converted to a SQL query using the following SQL query template:
   `SELECT * FROM {table}` where `{table}` is the table name.
 
+The Logical Source definition requires only the source (`rml:source`)
+to be specified, all other properties are optional.
+If a property is specified, it MUST only occur once.
 
 | Property      | Domain                    | Range  |
 | ------------- | ------------------------- | ------ |

@@ -1,0 +1,1335 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix rml: <http://w3id.org/rml/> .
+@prefix rmltest: <http://w3id.org/rml/test/> .
+@prefix test: <http://www.w3.org/2006/03/test-description#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://w3id.org/rml/io/test/RMLSTC0001a> a test:TestCase;
+  dcterms:identifier "RMLSTC0001a";
+  rmltest:hasError false;
+  rmltest:input <http://w3id.org/rml/io/test/RMLSTC0001a/input/Friends.json/>;
+  rmltest:mappingDocument "mapping.ttl";
+  rmltest:output <http://w3id.org/rml/io/test/RMLSTC0001a/output/default.nq/> .
+
+<http://w3id.org/rml/io/test/RMLSTC0001a/input/Friends.json/> a rmltest:Input;
+  rmltest:input "Friends.json";
+  rmltest:inputFormat "application/json" .
+
+<http://w3id.org/rml/io/test/RMLSTC0001a/output/default.nq/> a rmltest:Output;
+  rmltest:output "default.nq";
+  rmltest:outputFormat "application/n-quads" .
+
+<http://w3id.org/rml/io/test/RMLSTC0001b> a test:TestCase;
+  dcterms:identifier "RMLSTC0001b";
+  rmltest:hasError false;
+  rmltest:input <http://w3id.org/rml/io/test/RMLSTC0001b/input/Friends-UTF16.json/>;
+  rmltest:mappingDocument "mapping.ttl";
+  rmltest:output <http://w3id.org/rml/io/test/RMLSTC0001b/output/default.nq/> .
+
+<http://w3id.org/rml/io/test/RMLSTC0001b/input/Friends-UTF16.json/> a rmltest:Input;
+  rmltest:input "Friends-UTF16.json";
+  rmltest:inputFormat "application/json" .
+
+<http://w3id.org/rml/io/test/RMLSTC0001b/output/default.nq/> a rmltest:Output;
+  rmltest:output "default.nq";
+  rmltest:outputFormat "application/n-quads" .
+
+<http://w3id.org/rml/io/test/RMLSTC0002a> a test:TestCase;
+  dcterms:identifier "RMLSTC0002a";
+  rmltest:hasError false;
+  rmltest:input <http://w3id.org/rml/io/test/RMLSTC0002a/input/Friends.json/>;
+  rmltest:mappingDocument "mapping.ttl";
+  rmltest:output <http://w3id.org/rml/io/test/RMLSTC0002a/output/default.nq/> .
+
+<http://w3id.org/rml/io/test/RMLSTC0002a/input/Friends.json/> a rmltest:Input;
+  rmltest:input "Friends.json";
+  rmltest:inputFormat "application/json" .
+
+<http://w3id.org/rml/io/test/RMLSTC0002a/output/default.nq/> a rmltest:Output;
+  rmltest:output "default.nq";
+  rmltest:outputFormat "application/n-quads" .
+
+<http://w3id.org/rml/io/test/RMLSTC0002b> a test:TestCase;
+  dcterms:identifier "RMLSTC0002b";
+  rmltest:hasError false;
+  rmltest:input <http://w3id.org/rml/io/test/RMLSTC0002b/input/Friends.json.gz/>;
+  rmltest:mappingDocument "mapping.ttl";
+  rmltest:output <http://w3id.org/rml/io/test/RMLSTC0002b/output/default.nq/> .
+
+<http://w3id.org/rml/io/test/RMLSTC0002b/input/Friends.json.gz/> a rmltest:Input;
+  rmltest:input "Friends.json.gz";
+  rmltest:inputFormat "application/gzip+json" .
+
+<http://w3id.org/rml/io/test/RMLSTC0002b/output/default.nq/> a rmltest:Output;
+  rmltest:output "default.nq";
+  rmltest:outputFormat "application/n-quads" .
+
+<http://w3id.org/rml/io/test/RMLSTC0002c> a test:TestCase;
+  dcterms:identifier "RMLSTC0002c";
+  rmltest:hasError false;
+  rmltest:input <http://w3id.org/rml/io/test/RMLSTC0002c/input/Friends.json.zip/>;
+  rmltest:mappingDocument "mapping.ttl";
+  rmltest:output <http://w3id.org/rml/io/test/RMLSTC0002c/output/default.nq/> .
+
+<http://w3id.org/rml/io/test/RMLSTC0002c/input/Friends.json.zip/> a rmltest:Input;
+  rmltest:input "Friends.json.zip";
+  rmltest:inputFormat "application/gzip+json" .
+
+<http://w3id.org/rml/io/test/RMLSTC0002c/output/default.nq/> a rmltest:Output;
+  rmltest:output "default.nq";
+  rmltest:outputFormat "application/n-quads" .
+
+<http://w3id.org/rml/io/test/RMLSTC0002d> a test:TestCase;
+  dcterms:identifier "RMLSTC0002d";
+  rmltest:hasError false;
+  rmltest:input <http://w3id.org/rml/io/test/RMLSTC0002d/input/Friends.json.tar.xz/>;
+  rmltest:mappingDocument "mapping.ttl";
+  rmltest:output <http://w3id.org/rml/io/test/RMLSTC0002d/output/default.nq/> .
+
+<http://w3id.org/rml/io/test/RMLSTC0002d/input/Friends.json.tar.xz/> a rmltest:Input;
+  rmltest:input "Friends.json.tar.xz";
+  rmltest:inputFormat "application/tarxz+json" .
+
+<http://w3id.org/rml/io/test/RMLSTC0002d/output/default.nq/> a rmltest:Output;
+  rmltest:output "default.nq";
+  rmltest:outputFormat "application/n-quads" .
+
+<http://w3id.org/rml/io/test/RMLSTC0002e> a test:TestCase;
+  dcterms:identifier "RMLSTC0002e";
+  rmltest:hasError false;
+  rmltest:input <http://w3id.org/rml/io/test/RMLSTC0002e/input/Friends.json.tar.gz/>;
+  rmltest:mappingDocument "mapping.ttl";
+  rmltest:output <http://w3id.org/rml/io/test/RMLSTC0002e/output/default.nq/> .
+
+<http://w3id.org/rml/io/test/RMLSTC0002e/input/Friends.json.tar.gz/> a rmltest:Input;
+  rmltest:input "Friends.json.tar.gz";
+  rmltest:inputFormat "application/targz+json" .
+
+<http://w3id.org/rml/io/test/RMLSTC0002e/output/default.nq/> a rmltest:Output;
+  rmltest:output "default.nq";
+  rmltest:outputFormat "application/n-quads" .
+
+<http://w3id.org/rml/io/test/RMLSTC0003> a test:TestCase;
+  dcterms:identifier "RMLSTC0003";
+  rmltest:hasError false;
+  rmltest:input <http://w3id.org/rml/io/test/RMLSTC0003/input/Friends.nt/>;
+  rmltest:mappingDocument "mapping.ttl";
+  rmltest:output <http://w3id.org/rml/io/test/RMLSTC0003/output/default.nq/> .
+
+<http://w3id.org/rml/io/test/RMLSTC0003/input/Friends.nt/> a rmltest:Input;
+  rmltest:input "Friends.nt";
+  rmltest:inputFormat "application/n-triples" .
+
+<http://w3id.org/rml/io/test/RMLSTC0003/output/default.nq/> a rmltest:Output;
+  rmltest:output "default.nq";
+  rmltest:outputFormat "application/n-quads" .
+
+<http://w3id.org/rml/io/test/RMLSTC0004a> a test:TestCase;
+  dcterms:identifier "RMLSTC0004a";
+  rmltest:hasError false;
+  rmltest:input <http://w3id.org/rml/io/test/RMLSTC0004a/input/Friends-NULL.csv/>;
+  rmltest:mappingDocument "mapping.ttl";
+  rmltest:output <http://w3id.org/rml/io/test/RMLSTC0004a/output/default.nq/> .
+
+<http://w3id.org/rml/io/test/RMLSTC0004a/input/Friends-NULL.csv/> a rmltest:Input;
+  rmltest:input "Friends-NULL.csv";
+  rmltest:inputFormat "text/csv" .
+
+<http://w3id.org/rml/io/test/RMLSTC0004a/output/default.nq/> a rmltest:Output;
+  rmltest:output "default.nq";
+  rmltest:outputFormat "application/n-quads" .
+
+<http://w3id.org/rml/io/test/RMLSTC0004b> a test:TestCase;
+  dcterms:identifier "RMLSTC0004b";
+  rmltest:hasError false;
+  rmltest:input <http://w3id.org/rml/io/test/RMLSTC0004b/input/Friends-NULL.csv/>;
+  rmltest:mappingDocument "mapping.ttl";
+  rmltest:output <http://w3id.org/rml/io/test/RMLSTC0004b/output/default.nq/> .
+
+<http://w3id.org/rml/io/test/RMLSTC0004b/input/Friends-NULL.csv/> a rmltest:Input;
+  rmltest:input "Friends-NULL.csv";
+  rmltest:inputFormat "text/csv" .
+
+<http://w3id.org/rml/io/test/RMLSTC0004b/output/default.nq/> a rmltest:Output;
+  rmltest:output "default.nq";
+  rmltest:outputFormat "application/n-quads" .
+
+<http://w3id.org/rml/io/test/RMLSTC0004c> a test:TestCase;
+  dcterms:identifier "RMLSTC0004c";
+  rmltest:hasError false;
+  rmltest:input <http://w3id.org/rml/io/test/RMLSTC0004c/input/Friends-NULL2.csv/>;
+  rmltest:mappingDocument "mapping.ttl";
+  rmltest:output <http://w3id.org/rml/io/test/RMLSTC0004c/output/default.nq/> .
+
+<http://w3id.org/rml/io/test/RMLSTC0004c/input/Friends-NULL2.csv/> a rmltest:Input;
+  rmltest:input "Friends-NULL2.csv";
+  rmltest:inputFormat "text/csv" .
+
+<http://w3id.org/rml/io/test/RMLSTC0004c/output/default.nq/> a rmltest:Output;
+  rmltest:output "default.nq";
+  rmltest:outputFormat "application/n-quads" .
+
+<http://w3id.org/rml/io/test/RMLSTC0005a> a test:TestCase;
+  dcterms:identifier "RMLSTC0005a";
+  rmltest:hasError false;
+  rmltest:input <http://w3id.org/rml/io/test/RMLSTC0005a/input/Friends-NULL.csv/>;
+  rmltest:mappingDocument "mapping.ttl";
+  rmltest:output <http://w3id.org/rml/io/test/RMLSTC0005a/output/default.nq/> .
+
+<http://w3id.org/rml/io/test/RMLSTC0005a/input/Friends-NULL.csv/> a rmltest:Input;
+  rmltest:input "Friends-NULL.csv";
+  rmltest:inputFormat "text/csv" .
+
+<http://w3id.org/rml/io/test/RMLSTC0005a/output/default.nq/> a rmltest:Output;
+  rmltest:output "default.nq";
+  rmltest:outputFormat "application/n-quads" .
+
+<http://w3id.org/rml/io/test/RMLSTC0005b> a test:TestCase;
+  dcterms:identifier "RMLSTC0005b";
+  rmltest:hasError false;
+  rmltest:input <http://w3id.org/rml/io/test/RMLSTC0005b/input/Friends.csv/>;
+  rmltest:mappingDocument "mapping.ttl";
+  rmltest:output <http://w3id.org/rml/io/test/RMLSTC0005b/output/default.nq/> .
+
+<http://w3id.org/rml/io/test/RMLSTC0005b/input/Friends.csv/> a rmltest:Input;
+  rmltest:input "Friends.csv";
+  rmltest:inputFormat "text/csv" .
+
+<http://w3id.org/rml/io/test/RMLSTC0005b/output/default.nq/> a rmltest:Output;
+  rmltest:output "default.nq";
+  rmltest:outputFormat "application/n-quads" .
+
+<http://w3id.org/rml/io/test/RMLSTC0006a> a test:TestCase;
+  dcterms:identifier "RMLSTC0006a";
+  rmltest:hasError false;
+  rmltest:input <http://w3id.org/rml/io/test/RMLSTC0006a/input/Friends.json/>;
+  rmltest:mappingDocument "mapping.ttl";
+  rmltest:output <http://w3id.org/rml/io/test/RMLSTC0006a/output/default.nq/> .
+
+<http://w3id.org/rml/io/test/RMLSTC0006a/input/Friends.json/> a rmltest:Input;
+  rmltest:input "Friends.json";
+  rmltest:inputFormat "application/json" .
+
+<http://w3id.org/rml/io/test/RMLSTC0006a/output/default.nq/> a rmltest:Output;
+  rmltest:output "default.nq";
+  rmltest:outputFormat "application/n-quads" .
+
+<http://w3id.org/rml/io/test/RMLSTC0006b> a test:TestCase;
+  dcterms:identifier "RMLSTC0006b";
+  rmltest:hasError false;
+  rmltest:input <http://w3id.org/rml/io/test/RMLSTC0006b/input/Friends.nt/>;
+  rmltest:mappingDocument "mapping.ttl";
+  rmltest:output <http://w3id.org/rml/io/test/RMLSTC0006b/output/default.nq/> .
+
+<http://w3id.org/rml/io/test/RMLSTC0006b/input/Friends.nt/> a rmltest:Input;
+  rmltest:input "Friends.nt";
+  rmltest:inputFormat "application/n-triples" .
+
+<http://w3id.org/rml/io/test/RMLSTC0006b/output/default.nq/> a rmltest:Output;
+  rmltest:output "default.nq";
+  rmltest:outputFormat "application/n-quads" .
+
+<http://w3id.org/rml/io/test/RMLSTC0006c> a test:TestCase;
+  dcterms:identifier "RMLSTC0006c";
+  rmltest:hasError false;
+  rmltest:input <http://w3id.org/rml/io/test/RMLSTC0006c/input/Friends.nt/>;
+  rmltest:mappingDocument "mapping.ttl";
+  rmltest:output <http://w3id.org/rml/io/test/RMLSTC0006c/output/default.nq/> .
+
+<http://w3id.org/rml/io/test/RMLSTC0006c/input/Friends.nt/> a rmltest:Input;
+  rmltest:input "Friends.nt";
+  rmltest:inputFormat "application/n-triples" .
+
+<http://w3id.org/rml/io/test/RMLSTC0006c/output/default.nq/> a rmltest:Output;
+  rmltest:output "default.nq";
+  rmltest:outputFormat "application/n-quads" .
+
+<http://w3id.org/rml/io/test/RMLSTC0006d> a test:TestCase;
+  dcterms:identifier "RMLSTC0006d";
+  rmltest:hasError false;
+  rmltest:input <http://w3id.org/rml/io/test/RMLSTC0006d/input/Friends.csv/>;
+  rmltest:mappingDocument "mapping.ttl";
+  rmltest:output <http://w3id.org/rml/io/test/RMLSTC0006d/output/default.nq/> .
+
+<http://w3id.org/rml/io/test/RMLSTC0006d/input/Friends.csv/> a rmltest:Input;
+  rmltest:input "Friends.csv";
+  rmltest:inputFormat "text/csv" .
+
+<http://w3id.org/rml/io/test/RMLSTC0006d/output/default.nq/> a rmltest:Output;
+  rmltest:output "default.nq";
+  rmltest:outputFormat "application/n-quads" .
+
+<http://w3id.org/rml/io/test/RMLSTC0006e> a test:TestCase;
+  dcterms:identifier "RMLSTC0006e";
+  rmltest:hasError false;
+  rmltest:input <http://w3id.org/rml/io/test/RMLSTC0006e/input/Friends.json/>;
+  rmltest:mappingDocument "mapping.ttl";
+  rmltest:output <http://w3id.org/rml/io/test/RMLSTC0006e/output/default.nq/> .
+
+<http://w3id.org/rml/io/test/RMLSTC0006e/input/Friends.json/> a rmltest:Input;
+  rmltest:input "Friends.json";
+  rmltest:inputFormat "application/json" .
+
+<http://w3id.org/rml/io/test/RMLSTC0006e/output/default.nq/> a rmltest:Output;
+  rmltest:output "default.nq";
+  rmltest:outputFormat "application/n-quads" .
+
+<http://w3id.org/rml/io/test/RMLSTC0006f> a test:TestCase;
+  dcterms:identifier "RMLSTC0006f";
+  rmltest:hasError false;
+  rmltest:input <http://w3id.org/rml/io/test/RMLSTC0006f/input/Friends.csv/>;
+  rmltest:mappingDocument "mapping.ttl";
+  rmltest:output <http://w3id.org/rml/io/test/RMLSTC0006f/output/default.nq/> .
+
+<http://w3id.org/rml/io/test/RMLSTC0006f/input/Friends.csv/> a rmltest:Input;
+  rmltest:input "Friends.csv";
+  rmltest:inputFormat "text/csv" .
+
+<http://w3id.org/rml/io/test/RMLSTC0006f/output/default.nq/> a rmltest:Output;
+  rmltest:output "default.nq";
+  rmltest:outputFormat "application/n-quads" .
+
+<http://w3id.org/rml/io/test/RMLSTC0007a> a test:TestCase;
+  dcterms:identifier "RMLSTC0007a";
+  rmltest:hasError false;
+  rmltest:input <http://w3id.org/rml/io/test/RMLSTC0007a/input/Friends.json/>;
+  rmltest:mappingDocument "mapping.ttl";
+  rmltest:output <http://w3id.org/rml/io/test/RMLSTC0007a/output/default.nq/> .
+
+<http://w3id.org/rml/io/test/RMLSTC0007a/input/Friends.json/> a rmltest:Input;
+  rmltest:input "Friends.json";
+  rmltest:inputFormat "application/json" .
+
+<http://w3id.org/rml/io/test/RMLSTC0007a/output/default.nq/> a rmltest:Output;
+  rmltest:output "default.nq";
+  rmltest:outputFormat "application/n-quads" .
+
+<http://w3id.org/rml/io/test/RMLSTC0007b> a test:TestCase;
+  dcterms:identifier "RMLSTC0007b";
+  rmltest:hasError false;
+  rmltest:input <http://w3id.org/rml/io/test/RMLSTC0007b/input/Friends.csv/>;
+  rmltest:mappingDocument "mapping.ttl";
+  rmltest:output <http://w3id.org/rml/io/test/RMLSTC0007b/output/default.nq/> .
+
+<http://w3id.org/rml/io/test/RMLSTC0007b/input/Friends.csv/> a rmltest:Input;
+  rmltest:input "Friends.csv";
+  rmltest:inputFormat "text/csv" .
+
+<http://w3id.org/rml/io/test/RMLSTC0007b/output/default.nq/> a rmltest:Output;
+  rmltest:output "default.nq";
+  rmltest:outputFormat "application/n-quads" .
+
+<http://w3id.org/rml/io/test/RMLSTC0007c> a test:TestCase;
+  dcterms:identifier "RMLSTC0007c";
+  rmltest:hasError false;
+  rmltest:input <http://w3id.org/rml/io/test/RMLSTC0007c/input/Friends.xml/>;
+  rmltest:mappingDocument "mapping.ttl";
+  rmltest:output <http://w3id.org/rml/io/test/RMLSTC0007c/output/default.nq/> .
+
+<http://w3id.org/rml/io/test/RMLSTC0007c/input/Friends.xml/> a rmltest:Input;
+  rmltest:input "Friends.xml";
+  rmltest:inputFormat "text/xml" .
+
+<http://w3id.org/rml/io/test/RMLSTC0007c/output/default.nq/> a rmltest:Output;
+  rmltest:output "default.nq";
+  rmltest:outputFormat "application/n-quads" .
+
+<http://w3id.org/rml/io/test/RMLSTC0007d> a test:TestCase;
+  dcterms:identifier "RMLSTC0007d";
+  rmltest:hasError false;
+  rmltest:input <http://w3id.org/rml/io/test/RMLSTC0007d/input/Friends.xml/>;
+  rmltest:mappingDocument "mapping.ttl";
+  rmltest:output <http://w3id.org/rml/io/test/RMLSTC0007d/output/default.nq/> .
+
+<http://w3id.org/rml/io/test/RMLSTC0007d/input/Friends.xml/> a rmltest:Input;
+  rmltest:input "Friends.xml";
+  rmltest:inputFormat "text/xml" .
+
+<http://w3id.org/rml/io/test/RMLSTC0007d/output/default.nq/> a rmltest:Output;
+  rmltest:output "default.nq";
+  rmltest:outputFormat "application/n-quads" .
+
+<http://w3id.org/rml/io/test/RMLTTC0000> a test:TestCase;
+  dcterms:identifier "RMLTTC0000";
+  rmltest:hasError false;
+  rmltest:input <http://w3id.org/rml/io/test/RMLTTC0000/input/Friends.json/>;
+  rmltest:mappingDocument "mapping.ttl";
+  rmltest:output <http://w3id.org/rml/io/test/RMLTTC0000/output/default.nq/> .
+
+<http://w3id.org/rml/io/test/RMLTTC0000/input/Friends.json/> a rmltest:Input;
+  rmltest:input "Friends.json";
+  rmltest:inputFormat "application/json" .
+
+<http://w3id.org/rml/io/test/RMLTTC0000/output/default.nq/> a rmltest:Output;
+  rmltest:output "default.nq";
+  rmltest:outputFormat "application/n-quads" .
+
+<http://w3id.org/rml/io/test/RMLTTC0001a> a test:TestCase;
+  dcterms:identifier "RMLTTC0001a";
+  rmltest:hasError false;
+  rmltest:input <http://w3id.org/rml/io/test/RMLTTC0001a/input/http%3A%2F%2Fw3id.org%2Frml%2Fresources%2Frml-io%2FRMLTTC0001a%2FFriends.json/>;
+  rmltest:mappingDocument "mapping.ttl";
+  rmltest:output <http://w3id.org/rml/io/test/RMLTTC0001a/output/default.nq/>, <http://w3id.org/rml/io/test/RMLTTC0001a/output/dump1.nq/> .
+
+<http://w3id.org/rml/io/test/RMLTTC0001a/input/http%3A%2F%2Fw3id.org%2Frml%2Fresources%2Frml-io%2FRMLTTC0001a%2FFriends.json/>
+  a rmltest:Input;
+  rmltest:input "http://w3id.org/rml/resources/rml-io/RMLTTC0001a/Friends.json";
+  rmltest:inputFormat "application/json" .
+
+<http://w3id.org/rml/io/test/RMLTTC0001a/output/default.nq/> a rmltest:Output;
+  rmltest:output "default.nq";
+  rmltest:outputFormat "application/n-quads" .
+
+<http://w3id.org/rml/io/test/RMLTTC0001a/output/dump1.nq/> a rmltest:Output;
+  rmltest:output "dump1.nq";
+  rmltest:outputFormat "application/n-quads" .
+
+<http://w3id.org/rml/io/test/RMLTTC0001b> a test:TestCase;
+  dcterms:identifier "RMLTTC0001b";
+  rmltest:hasError false;
+  rmltest:input <http://w3id.org/rml/io/test/RMLTTC0001b/input/http%3A%2F%2Fw3id.org%2Frml%2Fresources%2Frml-io%2FRMLTTC0001b%2FFriends.json/>;
+  rmltest:mappingDocument "mapping.ttl";
+  rmltest:output <http://w3id.org/rml/io/test/RMLTTC0001b/output/default.nq/>, <http://w3id.org/rml/io/test/RMLTTC0001b/output/dump1.nq/> .
+
+<http://w3id.org/rml/io/test/RMLTTC0001b/input/http%3A%2F%2Fw3id.org%2Frml%2Fresources%2Frml-io%2FRMLTTC0001b%2FFriends.json/>
+  a rmltest:Input;
+  rmltest:input "http://w3id.org/rml/resources/rml-io/RMLTTC0001b/Friends.json";
+  rmltest:inputFormat "application/json" .
+
+<http://w3id.org/rml/io/test/RMLTTC0001b/output/default.nq/> a rmltest:Output;
+  rmltest:output "default.nq";
+  rmltest:outputFormat "application/n-quads" .
+
+<http://w3id.org/rml/io/test/RMLTTC0001b/output/dump1.nq/> a rmltest:Output;
+  rmltest:output "dump1.nq";
+  rmltest:outputFormat "application/n-quads" .
+
+<http://w3id.org/rml/io/test/RMLTTC0001c> a test:TestCase;
+  dcterms:identifier "RMLTTC0001c";
+  rmltest:hasError false;
+  rmltest:input <http://w3id.org/rml/io/test/RMLTTC0001c/input/http%3A%2F%2Fw3id.org%2Frml%2Fresources%2Frml-io%2FRMLTTC0001c%2FFriends.json/>;
+  rmltest:mappingDocument "mapping.ttl";
+  rmltest:output <http://w3id.org/rml/io/test/RMLTTC0001c/output/default.nq/>, <http://w3id.org/rml/io/test/RMLTTC0001c/output/dump1.nq/> .
+
+<http://w3id.org/rml/io/test/RMLTTC0001c/input/http%3A%2F%2Fw3id.org%2Frml%2Fresources%2Frml-io%2FRMLTTC0001c%2FFriends.json/>
+  a rmltest:Input;
+  rmltest:input "http://w3id.org/rml/resources/rml-io/RMLTTC0001c/Friends.json";
+  rmltest:inputFormat "application/json" .
+
+<http://w3id.org/rml/io/test/RMLTTC0001c/output/default.nq/> a rmltest:Output;
+  rmltest:output "default.nq";
+  rmltest:outputFormat "application/n-quads" .
+
+<http://w3id.org/rml/io/test/RMLTTC0001c/output/dump1.nq/> a rmltest:Output;
+  rmltest:output "dump1.nq";
+  rmltest:outputFormat "application/n-quads" .
+
+<http://w3id.org/rml/io/test/RMLTTC0001d> a test:TestCase;
+  dcterms:identifier "RMLTTC0001d";
+  rmltest:hasError false;
+  rmltest:input <http://w3id.org/rml/io/test/RMLTTC0001d/input/http%3A%2F%2Fw3id.org%2Frml%2Fresources%2Frml-io%2FRMLTTC0001d%2FFriends.json/>;
+  rmltest:mappingDocument "mapping.ttl";
+  rmltest:output <http://w3id.org/rml/io/test/RMLTTC0001d/output/default.nq/>, <http://w3id.org/rml/io/test/RMLTTC0001d/output/dump1.nq/> .
+
+<http://w3id.org/rml/io/test/RMLTTC0001d/input/http%3A%2F%2Fw3id.org%2Frml%2Fresources%2Frml-io%2FRMLTTC0001d%2FFriends.json/>
+  a rmltest:Input;
+  rmltest:input "http://w3id.org/rml/resources/rml-io/RMLTTC0001d/Friends.json";
+  rmltest:inputFormat "application/json" .
+
+<http://w3id.org/rml/io/test/RMLTTC0001d/output/default.nq/> a rmltest:Output;
+  rmltest:output "default.nq";
+  rmltest:outputFormat "application/n-quads" .
+
+<http://w3id.org/rml/io/test/RMLTTC0001d/output/dump1.nq/> a rmltest:Output;
+  rmltest:output "dump1.nq";
+  rmltest:outputFormat "application/n-quads" .
+
+<http://w3id.org/rml/io/test/RMLTTC0001e> a test:TestCase;
+  dcterms:identifier "RMLTTC0001e";
+  rmltest:hasError false;
+  rmltest:input <http://w3id.org/rml/io/test/RMLTTC0001e/input/http%3A%2F%2Fw3id.org%2Frml%2Fresources%2Frml-io%2FRMLTTC0001e%2FFriends.json/>;
+  rmltest:mappingDocument "mapping.ttl";
+  rmltest:output <http://w3id.org/rml/io/test/RMLTTC0001e/output/default.nq/>, <http://w3id.org/rml/io/test/RMLTTC0001e/output/dump1.nq/> .
+
+<http://w3id.org/rml/io/test/RMLTTC0001e/input/http%3A%2F%2Fw3id.org%2Frml%2Fresources%2Frml-io%2FRMLTTC0001e%2FFriends.json/>
+  a rmltest:Input;
+  rmltest:input "http://w3id.org/rml/resources/rml-io/RMLTTC0001e/Friends.json";
+  rmltest:inputFormat "application/json" .
+
+<http://w3id.org/rml/io/test/RMLTTC0001e/output/default.nq/> a rmltest:Output;
+  rmltest:output "default.nq";
+  rmltest:outputFormat "application/n-quads" .
+
+<http://w3id.org/rml/io/test/RMLTTC0001e/output/dump1.nq/> a rmltest:Output;
+  rmltest:output "dump1.nq";
+  rmltest:outputFormat "application/n-quads" .
+
+<http://w3id.org/rml/io/test/RMLTTC0001f> a test:TestCase;
+  dcterms:identifier "RMLTTC0001f";
+  rmltest:hasError false;
+  rmltest:input <http://w3id.org/rml/io/test/RMLTTC0001f/input/http%3A%2F%2Fw3id.org%2Frml%2Fresources%2Frml-io%2FRMLTTC0001f%2FFriends.json/>;
+  rmltest:mappingDocument "mapping.ttl";
+  rmltest:output <http://w3id.org/rml/io/test/RMLTTC0001f/output/default.nq/>, <http://w3id.org/rml/io/test/RMLTTC0001f/output/dump1.nq/> .
+
+<http://w3id.org/rml/io/test/RMLTTC0001f/input/http%3A%2F%2Fw3id.org%2Frml%2Fresources%2Frml-io%2FRMLTTC0001f%2FFriends.json/>
+  a rmltest:Input;
+  rmltest:input "http://w3id.org/rml/resources/rml-io/RMLTTC0001f/Friends.json";
+  rmltest:inputFormat "application/json" .
+
+<http://w3id.org/rml/io/test/RMLTTC0001f/output/default.nq/> a rmltest:Output;
+  rmltest:output "default.nq";
+  rmltest:outputFormat "application/n-quads" .
+
+<http://w3id.org/rml/io/test/RMLTTC0001f/output/dump1.nq/> a rmltest:Output;
+  rmltest:output "dump1.nq";
+  rmltest:outputFormat "application/n-quads" .
+
+<http://w3id.org/rml/io/test/RMLTTC0002a> a test:TestCase;
+  dcterms:identifier "RMLTTC0002a";
+  rmltest:hasError false;
+  rmltest:input <http://w3id.org/rml/io/test/RMLTTC0002a/input/http%3A%2F%2Fw3id.org%2Frml%2Fresources%2Frml-io%2FRMLTTC0002a%2FFriends.json/>;
+  rmltest:mappingDocument "mapping.ttl";
+  rmltest:output <http://w3id.org/rml/io/test/RMLTTC0002a/output/default.nq/>, <http://w3id.org/rml/io/test/RMLTTC0002a/output/dump1.nq/>,
+    <http://w3id.org/rml/io/test/RMLTTC0002a/output/dump2.nq/> .
+
+<http://w3id.org/rml/io/test/RMLTTC0002a/input/http%3A%2F%2Fw3id.org%2Frml%2Fresources%2Frml-io%2FRMLTTC0002a%2FFriends.json/>
+  a rmltest:Input;
+  rmltest:input "http://w3id.org/rml/resources/rml-io/RMLTTC0002a/Friends.json";
+  rmltest:inputFormat "application/json" .
+
+<http://w3id.org/rml/io/test/RMLTTC0002a/output/default.nq/> a rmltest:Output;
+  rmltest:output "default.nq";
+  rmltest:outputFormat "application/n-quads" .
+
+<http://w3id.org/rml/io/test/RMLTTC0002a/output/dump1.nq/> a rmltest:Output;
+  rmltest:output "dump1.nq";
+  rmltest:outputFormat "application/n-quads" .
+
+<http://w3id.org/rml/io/test/RMLTTC0002a/output/dump2.nq/> a rmltest:Output;
+  rmltest:output "dump2.nq";
+  rmltest:outputFormat "application/n-quads" .
+
+<http://w3id.org/rml/io/test/RMLTTC0002b> a test:TestCase;
+  dcterms:identifier "RMLTTC0002b";
+  rmltest:hasError false;
+  rmltest:input <http://w3id.org/rml/io/test/RMLTTC0002b/input/http%3A%2F%2Fw3id.org%2Frml%2Fresources%2Frml-io%2FRMLTTC0002b%2FFriends.json/>;
+  rmltest:mappingDocument "mapping.ttl";
+  rmltest:output <http://w3id.org/rml/io/test/RMLTTC0002b/output/default.nq/>, <http://w3id.org/rml/io/test/RMLTTC0002b/output/dump1.nq/>,
+    <http://w3id.org/rml/io/test/RMLTTC0002b/output/dump2.nq/> .
+
+<http://w3id.org/rml/io/test/RMLTTC0002b/input/http%3A%2F%2Fw3id.org%2Frml%2Fresources%2Frml-io%2FRMLTTC0002b%2FFriends.json/>
+  a rmltest:Input;
+  rmltest:input "http://w3id.org/rml/resources/rml-io/RMLTTC0002b/Friends.json";
+  rmltest:inputFormat "application/json" .
+
+<http://w3id.org/rml/io/test/RMLTTC0002b/output/default.nq/> a rmltest:Output;
+  rmltest:output "default.nq";
+  rmltest:outputFormat "application/n-quads" .
+
+<http://w3id.org/rml/io/test/RMLTTC0002b/output/dump1.nq/> a rmltest:Output;
+  rmltest:output "dump1.nq";
+  rmltest:outputFormat "application/n-quads" .
+
+<http://w3id.org/rml/io/test/RMLTTC0002b/output/dump2.nq/> a rmltest:Output;
+  rmltest:output "dump2.nq";
+  rmltest:outputFormat "application/n-quads" .
+
+<http://w3id.org/rml/io/test/RMLTTC0002c> a test:TestCase;
+  dcterms:identifier "RMLTTC0002c";
+  rmltest:hasError false;
+  rmltest:input <http://w3id.org/rml/io/test/RMLTTC0002c/input/http%3A%2F%2Fw3id.org%2Frml%2Fresources%2Frml-io%2FRMLTTC0002c%2FFriends.json/>;
+  rmltest:mappingDocument "mapping.ttl";
+  rmltest:output <http://w3id.org/rml/io/test/RMLTTC0002c/output/default.nq/>, <http://w3id.org/rml/io/test/RMLTTC0002c/output/dump1.nq/>,
+    <http://w3id.org/rml/io/test/RMLTTC0002c/output/dump2.nq/> .
+
+<http://w3id.org/rml/io/test/RMLTTC0002c/input/http%3A%2F%2Fw3id.org%2Frml%2Fresources%2Frml-io%2FRMLTTC0002c%2FFriends.json/>
+  a rmltest:Input;
+  rmltest:input "http://w3id.org/rml/resources/rml-io/RMLTTC0002c/Friends.json";
+  rmltest:inputFormat "application/json" .
+
+<http://w3id.org/rml/io/test/RMLTTC0002c/output/default.nq/> a rmltest:Output;
+  rmltest:output "default.nq";
+  rmltest:outputFormat "application/n-quads" .
+
+<http://w3id.org/rml/io/test/RMLTTC0002c/output/dump1.nq/> a rmltest:Output;
+  rmltest:output "dump1.nq";
+  rmltest:outputFormat "application/n-quads" .
+
+<http://w3id.org/rml/io/test/RMLTTC0002c/output/dump2.nq/> a rmltest:Output;
+  rmltest:output "dump2.nq";
+  rmltest:outputFormat "application/n-quads" .
+
+<http://w3id.org/rml/io/test/RMLTTC0002d> a test:TestCase;
+  dcterms:identifier "RMLTTC0002d";
+  rmltest:hasError false;
+  rmltest:input <http://w3id.org/rml/io/test/RMLTTC0002d/input/http%3A%2F%2Fw3id.org%2Frml%2Fresources%2Frml-io%2FRMLTTC0002d%2FFriends.json/>;
+  rmltest:mappingDocument "mapping.ttl";
+  rmltest:output <http://w3id.org/rml/io/test/RMLTTC0002d/output/default.nq/>, <http://w3id.org/rml/io/test/RMLTTC0002d/output/dump1.nq/>,
+    <http://w3id.org/rml/io/test/RMLTTC0002d/output/dump2.nq/> .
+
+<http://w3id.org/rml/io/test/RMLTTC0002d/input/http%3A%2F%2Fw3id.org%2Frml%2Fresources%2Frml-io%2FRMLTTC0002d%2FFriends.json/>
+  a rmltest:Input;
+  rmltest:input "http://w3id.org/rml/resources/rml-io/RMLTTC0002d/Friends.json";
+  rmltest:inputFormat "application/json" .
+
+<http://w3id.org/rml/io/test/RMLTTC0002d/output/default.nq/> a rmltest:Output;
+  rmltest:output "default.nq";
+  rmltest:outputFormat "application/n-quads" .
+
+<http://w3id.org/rml/io/test/RMLTTC0002d/output/dump1.nq/> a rmltest:Output;
+  rmltest:output "dump1.nq";
+  rmltest:outputFormat "application/n-quads" .
+
+<http://w3id.org/rml/io/test/RMLTTC0002d/output/dump2.nq/> a rmltest:Output;
+  rmltest:output "dump2.nq";
+  rmltest:outputFormat "application/n-quads" .
+
+<http://w3id.org/rml/io/test/RMLTTC0002e> a test:TestCase;
+  dcterms:identifier "RMLTTC0002e";
+  rmltest:hasError false;
+  rmltest:input <http://w3id.org/rml/io/test/RMLTTC0002e/input/http%3A%2F%2Fw3id.org%2Frml%2Fresources%2Frml-io%2FRMLTTC0002e%2FFriends.json/>;
+  rmltest:mappingDocument "mapping.ttl";
+  rmltest:output <http://w3id.org/rml/io/test/RMLTTC0002e/output/default.nq/>, <http://w3id.org/rml/io/test/RMLTTC0002e/output/dump1.nq/>,
+    <http://w3id.org/rml/io/test/RMLTTC0002e/output/dump2.nq/> .
+
+<http://w3id.org/rml/io/test/RMLTTC0002e/input/http%3A%2F%2Fw3id.org%2Frml%2Fresources%2Frml-io%2FRMLTTC0002e%2FFriends.json/>
+  a rmltest:Input;
+  rmltest:input "http://w3id.org/rml/resources/rml-io/RMLTTC0002e/Friends.json";
+  rmltest:inputFormat "application/json" .
+
+<http://w3id.org/rml/io/test/RMLTTC0002e/output/default.nq/> a rmltest:Output;
+  rmltest:output "default.nq";
+  rmltest:outputFormat "application/n-quads" .
+
+<http://w3id.org/rml/io/test/RMLTTC0002e/output/dump1.nq/> a rmltest:Output;
+  rmltest:output "dump1.nq";
+  rmltest:outputFormat "application/n-quads" .
+
+<http://w3id.org/rml/io/test/RMLTTC0002e/output/dump2.nq/> a rmltest:Output;
+  rmltest:output "dump2.nq";
+  rmltest:outputFormat "application/n-quads" .
+
+<http://w3id.org/rml/io/test/RMLTTC0002f> a test:TestCase;
+  dcterms:identifier "RMLTTC0002f";
+  rmltest:hasError false;
+  rmltest:input <http://w3id.org/rml/io/test/RMLTTC0002f/input/http%3A%2F%2Fw3id.org%2Frml%2Fresources%2Frml-io%2FRMLTTC0002f%2FFriends.json/>;
+  rmltest:mappingDocument "mapping.ttl";
+  rmltest:output <http://w3id.org/rml/io/test/RMLTTC0002f/output/default.nq/>, <http://w3id.org/rml/io/test/RMLTTC0002f/output/dump1.nq/>,
+    <http://w3id.org/rml/io/test/RMLTTC0002f/output/dump2.nq/> .
+
+<http://w3id.org/rml/io/test/RMLTTC0002f/input/http%3A%2F%2Fw3id.org%2Frml%2Fresources%2Frml-io%2FRMLTTC0002f%2FFriends.json/>
+  a rmltest:Input;
+  rmltest:input "http://w3id.org/rml/resources/rml-io/RMLTTC0002f/Friends.json";
+  rmltest:inputFormat "application/json" .
+
+<http://w3id.org/rml/io/test/RMLTTC0002f/output/default.nq/> a rmltest:Output;
+  rmltest:output "default.nq";
+  rmltest:outputFormat "application/n-quads" .
+
+<http://w3id.org/rml/io/test/RMLTTC0002f/output/dump1.nq/> a rmltest:Output;
+  rmltest:output "dump1.nq";
+  rmltest:outputFormat "application/n-quads" .
+
+<http://w3id.org/rml/io/test/RMLTTC0002f/output/dump2.nq/> a rmltest:Output;
+  rmltest:output "dump2.nq";
+  rmltest:outputFormat "application/n-quads" .
+
+<http://w3id.org/rml/io/test/RMLTTC0002g> a test:TestCase;
+  dcterms:identifier "RMLTTC0002g";
+  rmltest:hasError false;
+  rmltest:input <http://w3id.org/rml/io/test/RMLTTC0002g/input/http%3A%2F%2Fw3id.org%2Frml%2Fresources%2Frml-io%2FRMLTTC0002g%2FFriends.json/>;
+  rmltest:mappingDocument "mapping.ttl";
+  rmltest:output <http://w3id.org/rml/io/test/RMLTTC0002g/output/default.nq/>, <http://w3id.org/rml/io/test/RMLTTC0002g/output/dump1.nq/>,
+    <http://w3id.org/rml/io/test/RMLTTC0002g/output/dump2.nq/> .
+
+<http://w3id.org/rml/io/test/RMLTTC0002g/input/http%3A%2F%2Fw3id.org%2Frml%2Fresources%2Frml-io%2FRMLTTC0002g%2FFriends.json/>
+  a rmltest:Input;
+  rmltest:input "http://w3id.org/rml/resources/rml-io/RMLTTC0002g/Friends.json";
+  rmltest:inputFormat "application/json" .
+
+<http://w3id.org/rml/io/test/RMLTTC0002g/output/default.nq/> a rmltest:Output;
+  rmltest:output "default.nq";
+  rmltest:outputFormat "application/n-quads" .
+
+<http://w3id.org/rml/io/test/RMLTTC0002g/output/dump1.nq/> a rmltest:Output;
+  rmltest:output "dump1.nq";
+  rmltest:outputFormat "application/n-quads" .
+
+<http://w3id.org/rml/io/test/RMLTTC0002g/output/dump2.nq/> a rmltest:Output;
+  rmltest:output "dump2.nq";
+  rmltest:outputFormat "application/n-quads" .
+
+<http://w3id.org/rml/io/test/RMLTTC0002h> a test:TestCase;
+  dcterms:identifier "RMLTTC0002h";
+  rmltest:hasError false;
+  rmltest:input <http://w3id.org/rml/io/test/RMLTTC0002h/input/http%3A%2F%2Fw3id.org%2Frml%2Fresources%2Frml-io%2FRMLTTC0002h%2FFriends.json/>;
+  rmltest:mappingDocument "mapping.ttl";
+  rmltest:output <http://w3id.org/rml/io/test/RMLTTC0002h/output/default.nq/>, <http://w3id.org/rml/io/test/RMLTTC0002h/output/dump1.nq/>,
+    <http://w3id.org/rml/io/test/RMLTTC0002h/output/dump2.nq/> .
+
+<http://w3id.org/rml/io/test/RMLTTC0002h/input/http%3A%2F%2Fw3id.org%2Frml%2Fresources%2Frml-io%2FRMLTTC0002h%2FFriends.json/>
+  a rmltest:Input;
+  rmltest:input "http://w3id.org/rml/resources/rml-io/RMLTTC0002h/Friends.json";
+  rmltest:inputFormat "application/json" .
+
+<http://w3id.org/rml/io/test/RMLTTC0002h/output/default.nq/> a rmltest:Output;
+  rmltest:output "default.nq";
+  rmltest:outputFormat "application/n-quads" .
+
+<http://w3id.org/rml/io/test/RMLTTC0002h/output/dump1.nq/> a rmltest:Output;
+  rmltest:output "dump1.nq";
+  rmltest:outputFormat "application/n-quads" .
+
+<http://w3id.org/rml/io/test/RMLTTC0002h/output/dump2.nq/> a rmltest:Output;
+  rmltest:output "dump2.nq";
+  rmltest:outputFormat "application/n-quads" .
+
+<http://w3id.org/rml/io/test/RMLTTC0002i> a test:TestCase;
+  dcterms:identifier "RMLTTC0002i";
+  rmltest:hasError false;
+  rmltest:input <http://w3id.org/rml/io/test/RMLTTC0002i/input/http%3A%2F%2Fw3id.org%2Frml%2Fresources%2Frml-io%2FRMLTTC0002i%2FFriends.json/>;
+  rmltest:mappingDocument "mapping.ttl";
+  rmltest:output <http://w3id.org/rml/io/test/RMLTTC0002i/output/default.nq/>, <http://w3id.org/rml/io/test/RMLTTC0002i/output/dump1.nq/>,
+    <http://w3id.org/rml/io/test/RMLTTC0002i/output/dump2.nq/> .
+
+<http://w3id.org/rml/io/test/RMLTTC0002i/input/http%3A%2F%2Fw3id.org%2Frml%2Fresources%2Frml-io%2FRMLTTC0002i%2FFriends.json/>
+  a rmltest:Input;
+  rmltest:input "http://w3id.org/rml/resources/rml-io/RMLTTC0002i/Friends.json";
+  rmltest:inputFormat "application/json" .
+
+<http://w3id.org/rml/io/test/RMLTTC0002i/output/default.nq/> a rmltest:Output;
+  rmltest:output "default.nq";
+  rmltest:outputFormat "application/n-quads" .
+
+<http://w3id.org/rml/io/test/RMLTTC0002i/output/dump1.nq/> a rmltest:Output;
+  rmltest:output "dump1.nq";
+  rmltest:outputFormat "application/n-quads" .
+
+<http://w3id.org/rml/io/test/RMLTTC0002i/output/dump2.nq/> a rmltest:Output;
+  rmltest:output "dump2.nq";
+  rmltest:outputFormat "application/n-quads" .
+
+<http://w3id.org/rml/io/test/RMLTTC0002j> a test:TestCase;
+  dcterms:identifier "RMLTTC0002j";
+  rmltest:hasError false;
+  rmltest:input <http://w3id.org/rml/io/test/RMLTTC0002j/input/http%3A%2F%2Fw3id.org%2Frml%2Fresources%2Frml-io%2FRMLTTC0002j%2FFriends.json/>;
+  rmltest:mappingDocument "mapping.ttl";
+  rmltest:output <http://w3id.org/rml/io/test/RMLTTC0002j/output/default.nq/>, <http://w3id.org/rml/io/test/RMLTTC0002j/output/dump1.nq/>,
+    <http://w3id.org/rml/io/test/RMLTTC0002j/output/dump2.nq/> .
+
+<http://w3id.org/rml/io/test/RMLTTC0002j/input/http%3A%2F%2Fw3id.org%2Frml%2Fresources%2Frml-io%2FRMLTTC0002j%2FFriends.json/>
+  a rmltest:Input;
+  rmltest:input "http://w3id.org/rml/resources/rml-io/RMLTTC0002j/Friends.json";
+  rmltest:inputFormat "application/json" .
+
+<http://w3id.org/rml/io/test/RMLTTC0002j/output/default.nq/> a rmltest:Output;
+  rmltest:output "default.nq";
+  rmltest:outputFormat "application/n-quads" .
+
+<http://w3id.org/rml/io/test/RMLTTC0002j/output/dump1.nq/> a rmltest:Output;
+  rmltest:output "dump1.nq";
+  rmltest:outputFormat "application/n-quads" .
+
+<http://w3id.org/rml/io/test/RMLTTC0002j/output/dump2.nq/> a rmltest:Output;
+  rmltest:output "dump2.nq";
+  rmltest:outputFormat "application/n-quads" .
+
+<http://w3id.org/rml/io/test/RMLTTC0002k> a test:TestCase;
+  dcterms:identifier "RMLTTC0002k";
+  rmltest:hasError false;
+  rmltest:input <http://w3id.org/rml/io/test/RMLTTC0002k/input/http%3A%2F%2Fw3id.org%2Frml%2Fresources%2Frml-io%2FRMLTTC0002k%2FFriends.json/>;
+  rmltest:mappingDocument "mapping.ttl";
+  rmltest:output <http://w3id.org/rml/io/test/RMLTTC0002k/output/default.nq/>, <http://w3id.org/rml/io/test/RMLTTC0002k/output/dump1.nq/>,
+    <http://w3id.org/rml/io/test/RMLTTC0002k/output/dump2.nq/> .
+
+<http://w3id.org/rml/io/test/RMLTTC0002k/input/http%3A%2F%2Fw3id.org%2Frml%2Fresources%2Frml-io%2FRMLTTC0002k%2FFriends.json/>
+  a rmltest:Input;
+  rmltest:input "http://w3id.org/rml/resources/rml-io/RMLTTC0002k/Friends.json";
+  rmltest:inputFormat "application/json" .
+
+<http://w3id.org/rml/io/test/RMLTTC0002k/output/default.nq/> a rmltest:Output;
+  rmltest:output "default.nq";
+  rmltest:outputFormat "application/n-quads" .
+
+<http://w3id.org/rml/io/test/RMLTTC0002k/output/dump1.nq/> a rmltest:Output;
+  rmltest:output "dump1.nq";
+  rmltest:outputFormat "application/n-quads" .
+
+<http://w3id.org/rml/io/test/RMLTTC0002k/output/dump2.nq/> a rmltest:Output;
+  rmltest:output "dump2.nq";
+  rmltest:outputFormat "application/n-quads" .
+
+<http://w3id.org/rml/io/test/RMLTTC0002l> a test:TestCase;
+  dcterms:identifier "RMLTTC0002l";
+  rmltest:hasError false;
+  rmltest:input <http://w3id.org/rml/io/test/RMLTTC0002l/input/http%3A%2F%2Fw3id.org%2Frml%2Fresources%2Frml-io%2FRMLTTC0002l%2FFriends.json/>;
+  rmltest:mappingDocument "mapping.ttl";
+  rmltest:output <http://w3id.org/rml/io/test/RMLTTC0002l/output/default.nq/>, <http://w3id.org/rml/io/test/RMLTTC0002l/output/dump1.nq/>,
+    <http://w3id.org/rml/io/test/RMLTTC0002l/output/dump2.nq/> .
+
+<http://w3id.org/rml/io/test/RMLTTC0002l/input/http%3A%2F%2Fw3id.org%2Frml%2Fresources%2Frml-io%2FRMLTTC0002l%2FFriends.json/>
+  a rmltest:Input;
+  rmltest:input "http://w3id.org/rml/resources/rml-io/RMLTTC0002l/Friends.json";
+  rmltest:inputFormat "application/json" .
+
+<http://w3id.org/rml/io/test/RMLTTC0002l/output/default.nq/> a rmltest:Output;
+  rmltest:output "default.nq";
+  rmltest:outputFormat "application/n-quads" .
+
+<http://w3id.org/rml/io/test/RMLTTC0002l/output/dump1.nq/> a rmltest:Output;
+  rmltest:output "dump1.nq";
+  rmltest:outputFormat "application/n-quads" .
+
+<http://w3id.org/rml/io/test/RMLTTC0002l/output/dump2.nq/> a rmltest:Output;
+  rmltest:output "dump2.nq";
+  rmltest:outputFormat "application/n-quads" .
+
+<http://w3id.org/rml/io/test/RMLTTC0002m> a test:TestCase;
+  dcterms:identifier "RMLTTC0002m";
+  rmltest:hasError false;
+  rmltest:input <http://w3id.org/rml/io/test/RMLTTC0002m/input/http%3A%2F%2Fw3id.org%2Frml%2Fresources%2Frml-io%2FRMLTTC0002m%2FFriends.json/>;
+  rmltest:mappingDocument "mapping.ttl";
+  rmltest:output <http://w3id.org/rml/io/test/RMLTTC0002m/output/default.nq/>, <http://w3id.org/rml/io/test/RMLTTC0002m/output/dump1.nq/>,
+    <http://w3id.org/rml/io/test/RMLTTC0002m/output/dump2.nq/> .
+
+<http://w3id.org/rml/io/test/RMLTTC0002m/input/http%3A%2F%2Fw3id.org%2Frml%2Fresources%2Frml-io%2FRMLTTC0002m%2FFriends.json/>
+  a rmltest:Input;
+  rmltest:input "http://w3id.org/rml/resources/rml-io/RMLTTC0002m/Friends.json";
+  rmltest:inputFormat "application/json" .
+
+<http://w3id.org/rml/io/test/RMLTTC0002m/output/default.nq/> a rmltest:Output;
+  rmltest:output "default.nq";
+  rmltest:outputFormat "application/n-quads" .
+
+<http://w3id.org/rml/io/test/RMLTTC0002m/output/dump1.nq/> a rmltest:Output;
+  rmltest:output "dump1.nq";
+  rmltest:outputFormat "application/n-quads" .
+
+<http://w3id.org/rml/io/test/RMLTTC0002m/output/dump2.nq/> a rmltest:Output;
+  rmltest:output "dump2.nq";
+  rmltest:outputFormat "application/n-quads" .
+
+<http://w3id.org/rml/io/test/RMLTTC0002n> a test:TestCase;
+  dcterms:identifier "RMLTTC0002n";
+  rmltest:hasError false;
+  rmltest:input <http://w3id.org/rml/io/test/RMLTTC0002n/input/http%3A%2F%2Fw3id.org%2Frml%2Fresources%2Frml-io%2FRMLTTC0002n%2FFriends.json/>;
+  rmltest:mappingDocument "mapping.ttl";
+  rmltest:output <http://w3id.org/rml/io/test/RMLTTC0002n/output/default.nq/>, <http://w3id.org/rml/io/test/RMLTTC0002n/output/dump1.nq/>,
+    <http://w3id.org/rml/io/test/RMLTTC0002n/output/dump2.nq/> .
+
+<http://w3id.org/rml/io/test/RMLTTC0002n/input/http%3A%2F%2Fw3id.org%2Frml%2Fresources%2Frml-io%2FRMLTTC0002n%2FFriends.json/>
+  a rmltest:Input;
+  rmltest:input "http://w3id.org/rml/resources/rml-io/RMLTTC0002n/Friends.json";
+  rmltest:inputFormat "application/json" .
+
+<http://w3id.org/rml/io/test/RMLTTC0002n/output/default.nq/> a rmltest:Output;
+  rmltest:output "default.nq";
+  rmltest:outputFormat "application/n-quads" .
+
+<http://w3id.org/rml/io/test/RMLTTC0002n/output/dump1.nq/> a rmltest:Output;
+  rmltest:output "dump1.nq";
+  rmltest:outputFormat "application/n-quads" .
+
+<http://w3id.org/rml/io/test/RMLTTC0002n/output/dump2.nq/> a rmltest:Output;
+  rmltest:output "dump2.nq";
+  rmltest:outputFormat "application/n-quads" .
+
+<http://w3id.org/rml/io/test/RMLTTC0002o> a test:TestCase;
+  dcterms:identifier "RMLTTC0002o";
+  rmltest:hasError false;
+  rmltest:input <http://w3id.org/rml/io/test/RMLTTC0002o/input/http%3A%2F%2Fw3id.org%2Frml%2Fresources%2Frml-io%2FRMLTTC0002o%2FFriends.json/>;
+  rmltest:mappingDocument "mapping.ttl";
+  rmltest:output <http://w3id.org/rml/io/test/RMLTTC0002o/output/default.nq/>, <http://w3id.org/rml/io/test/RMLTTC0002o/output/dump1.nq/>,
+    <http://w3id.org/rml/io/test/RMLTTC0002o/output/dump2.nq/> .
+
+<http://w3id.org/rml/io/test/RMLTTC0002o/input/http%3A%2F%2Fw3id.org%2Frml%2Fresources%2Frml-io%2FRMLTTC0002o%2FFriends.json/>
+  a rmltest:Input;
+  rmltest:input "http://w3id.org/rml/resources/rml-io/RMLTTC0002o/Friends.json";
+  rmltest:inputFormat "application/json" .
+
+<http://w3id.org/rml/io/test/RMLTTC0002o/output/default.nq/> a rmltest:Output;
+  rmltest:output "default.nq";
+  rmltest:outputFormat "application/n-quads" .
+
+<http://w3id.org/rml/io/test/RMLTTC0002o/output/dump1.nq/> a rmltest:Output;
+  rmltest:output "dump1.nq";
+  rmltest:outputFormat "application/n-quads" .
+
+<http://w3id.org/rml/io/test/RMLTTC0002o/output/dump2.nq/> a rmltest:Output;
+  rmltest:output "dump2.nq";
+  rmltest:outputFormat "application/n-quads" .
+
+<http://w3id.org/rml/io/test/RMLTTC0002p> a test:TestCase;
+  dcterms:identifier "RMLTTC0002p";
+  rmltest:hasError false;
+  rmltest:input <http://w3id.org/rml/io/test/RMLTTC0002p/input/http%3A%2F%2Fw3id.org%2Frml%2Fresources%2Frml-io%2FRMLTTC0002p%2FFriends.json/>;
+  rmltest:mappingDocument "mapping.ttl";
+  rmltest:output <http://w3id.org/rml/io/test/RMLTTC0002p/output/default.nq/>, <http://w3id.org/rml/io/test/RMLTTC0002p/output/dump1.nq/>,
+    <http://w3id.org/rml/io/test/RMLTTC0002p/output/dump2.nq/> .
+
+<http://w3id.org/rml/io/test/RMLTTC0002p/input/http%3A%2F%2Fw3id.org%2Frml%2Fresources%2Frml-io%2FRMLTTC0002p%2FFriends.json/>
+  a rmltest:Input;
+  rmltest:input "http://w3id.org/rml/resources/rml-io/RMLTTC0002p/Friends.json";
+  rmltest:inputFormat "application/json" .
+
+<http://w3id.org/rml/io/test/RMLTTC0002p/output/default.nq/> a rmltest:Output;
+  rmltest:output "default.nq";
+  rmltest:outputFormat "application/n-quads" .
+
+<http://w3id.org/rml/io/test/RMLTTC0002p/output/dump1.nq/> a rmltest:Output;
+  rmltest:output "dump1.nq";
+  rmltest:outputFormat "application/n-quads" .
+
+<http://w3id.org/rml/io/test/RMLTTC0002p/output/dump2.nq/> a rmltest:Output;
+  rmltest:output "dump2.nq";
+  rmltest:outputFormat "application/n-quads" .
+
+<http://w3id.org/rml/io/test/RMLTTC0002q> a test:TestCase;
+  dcterms:identifier "RMLTTC0002q";
+  rmltest:hasError false;
+  rmltest:input <http://w3id.org/rml/io/test/RMLTTC0002q/input/http%3A%2F%2Fw3id.org%2Frml%2Fresources%2Frml-io%2FRMLTTC0002q%2FFriends.json/>;
+  rmltest:mappingDocument "mapping.ttl";
+  rmltest:output <http://w3id.org/rml/io/test/RMLTTC0002q/output/default.nq/>, <http://w3id.org/rml/io/test/RMLTTC0002q/output/dump1.nq/>,
+    <http://w3id.org/rml/io/test/RMLTTC0002q/output/dump2.nq/> .
+
+<http://w3id.org/rml/io/test/RMLTTC0002q/input/http%3A%2F%2Fw3id.org%2Frml%2Fresources%2Frml-io%2FRMLTTC0002q%2FFriends.json/>
+  a rmltest:Input;
+  rmltest:input "http://w3id.org/rml/resources/rml-io/RMLTTC0002q/Friends.json";
+  rmltest:inputFormat "application/json" .
+
+<http://w3id.org/rml/io/test/RMLTTC0002q/output/default.nq/> a rmltest:Output;
+  rmltest:output "default.nq";
+  rmltest:outputFormat "application/n-quads" .
+
+<http://w3id.org/rml/io/test/RMLTTC0002q/output/dump1.nq/> a rmltest:Output;
+  rmltest:output "dump1.nq";
+  rmltest:outputFormat "application/n-quads" .
+
+<http://w3id.org/rml/io/test/RMLTTC0002q/output/dump2.nq/> a rmltest:Output;
+  rmltest:output "dump2.nq";
+  rmltest:outputFormat "application/n-quads" .
+
+<http://w3id.org/rml/io/test/RMLTTC0002r> a test:TestCase;
+  dcterms:identifier "RMLTTC0002r";
+  rmltest:hasError false;
+  rmltest:input <http://w3id.org/rml/io/test/RMLTTC0002r/input/http%3A%2F%2Fw3id.org%2Frml%2Fresources%2Frml-io%2FRMLTTC0002r%2FFriends.json/>;
+  rmltest:mappingDocument "mapping.ttl";
+  rmltest:output <http://w3id.org/rml/io/test/RMLTTC0002r/output/default.nq/>, <http://w3id.org/rml/io/test/RMLTTC0002r/output/dump1.nq/> .
+
+<http://w3id.org/rml/io/test/RMLTTC0002r/input/http%3A%2F%2Fw3id.org%2Frml%2Fresources%2Frml-io%2FRMLTTC0002r%2FFriends.json/>
+  a rmltest:Input;
+  rmltest:input "http://w3id.org/rml/resources/rml-io/RMLTTC0002r/Friends.json";
+  rmltest:inputFormat "application/json" .
+
+<http://w3id.org/rml/io/test/RMLTTC0002r/output/default.nq/> a rmltest:Output;
+  rmltest:output "default.nq";
+  rmltest:outputFormat "application/n-quads" .
+
+<http://w3id.org/rml/io/test/RMLTTC0002r/output/dump1.nq/> a rmltest:Output;
+  rmltest:output "dump1.nq";
+  rmltest:outputFormat "application/n-quads" .
+
+<http://w3id.org/rml/io/test/RMLTTC0003a> a test:TestCase;
+  dcterms:identifier "RMLTTC0003a";
+  rmltest:hasError false;
+  rmltest:input <http://w3id.org/rml/io/test/RMLTTC0003a/input/http%3A%2F%2Fw3id.org%2Frml%2Fresources%2Frml-io%2FRMLTTC0003a%2FFriends.json/>;
+  rmltest:mappingDocument "mapping.ttl";
+  rmltest:output <http://w3id.org/rml/io/test/RMLTTC0003a/output/default.nq/>, <http://w3id.org/rml/io/test/RMLTTC0003a/output/dump1.nq/>,
+    <http://w3id.org/rml/io/test/RMLTTC0003a/output/dump2.nq/> .
+
+<http://w3id.org/rml/io/test/RMLTTC0003a/input/http%3A%2F%2Fw3id.org%2Frml%2Fresources%2Frml-io%2FRMLTTC0003a%2FFriends.json/>
+  a rmltest:Input;
+  rmltest:input "http://w3id.org/rml/resources/rml-io/RMLTTC0003a/Friends.json";
+  rmltest:inputFormat "application/json" .
+
+<http://w3id.org/rml/io/test/RMLTTC0003a/output/default.nq/> a rmltest:Output;
+  rmltest:output "default.nq";
+  rmltest:outputFormat "application/n-quads" .
+
+<http://w3id.org/rml/io/test/RMLTTC0003a/output/dump1.nq/> a rmltest:Output;
+  rmltest:output "dump1.nq";
+  rmltest:outputFormat "application/n-quads" .
+
+<http://w3id.org/rml/io/test/RMLTTC0003a/output/dump2.nq/> a rmltest:Output;
+  rmltest:output "dump2.nq";
+  rmltest:outputFormat "application/n-quads" .
+
+<http://w3id.org/rml/io/test/RMLTTC0004a> a test:TestCase;
+  dcterms:identifier "RMLTTC0004a";
+  rmltest:hasError false;
+  rmltest:input <http://w3id.org/rml/io/test/RMLTTC0004a/input/http%3A%2F%2Fw3id.org%2Frml%2Fresources%2Frml-io%2FRMLTTC0004a%2FFriends.json/>;
+  rmltest:mappingDocument "mapping.ttl";
+  rmltest:output <http://w3id.org/rml/io/test/RMLTTC0004a/output/default.nq/>, <http://w3id.org/rml/io/test/RMLTTC0004a/output/dump1.jsonld/> .
+
+<http://w3id.org/rml/io/test/RMLTTC0004a/input/http%3A%2F%2Fw3id.org%2Frml%2Fresources%2Frml-io%2FRMLTTC0004a%2FFriends.json/>
+  a rmltest:Input;
+  rmltest:input "http://w3id.org/rml/resources/rml-io/RMLTTC0004a/Friends.json";
+  rmltest:inputFormat "application/json" .
+
+<http://w3id.org/rml/io/test/RMLTTC0004a/output/default.nq/> a rmltest:Output;
+  rmltest:output "default.nq";
+  rmltest:outputFormat "application/n-quads" .
+
+<http://w3id.org/rml/io/test/RMLTTC0004a/output/dump1.jsonld/> a rmltest:Output;
+  rmltest:output "dump1.jsonld";
+  rmltest:outputFormat "application/n-quads" .
+
+<http://w3id.org/rml/io/test/RMLTTC0004b> a test:TestCase;
+  dcterms:identifier "RMLTTC0004b";
+  rmltest:hasError false;
+  rmltest:input <http://w3id.org/rml/io/test/RMLTTC0004b/input/http%3A%2F%2Fw3id.org%2Frml%2Fresources%2Frml-io%2FRMLTTC0004b%2FFriends.json/>;
+  rmltest:mappingDocument "mapping.ttl";
+  rmltest:output <http://w3id.org/rml/io/test/RMLTTC0004b/output/default.nq/>, <http://w3id.org/rml/io/test/RMLTTC0004b/output/dump1.n3/> .
+
+<http://w3id.org/rml/io/test/RMLTTC0004b/input/http%3A%2F%2Fw3id.org%2Frml%2Fresources%2Frml-io%2FRMLTTC0004b%2FFriends.json/>
+  a rmltest:Input;
+  rmltest:input "http://w3id.org/rml/resources/rml-io/RMLTTC0004b/Friends.json";
+  rmltest:inputFormat "application/json" .
+
+<http://w3id.org/rml/io/test/RMLTTC0004b/output/default.nq/> a rmltest:Output;
+  rmltest:output "default.nq";
+  rmltest:outputFormat "application/n-quads" .
+
+<http://w3id.org/rml/io/test/RMLTTC0004b/output/dump1.n3/> a rmltest:Output;
+  rmltest:output "dump1.n3";
+  rmltest:outputFormat "application/n-quads" .
+
+<http://w3id.org/rml/io/test/RMLTTC0004c> a test:TestCase;
+  dcterms:identifier "RMLTTC0004c";
+  rmltest:hasError false;
+  rmltest:input <http://w3id.org/rml/io/test/RMLTTC0004c/input/http%3A%2F%2Fw3id.org%2Frml%2Fresources%2Frml-io%2FRMLTTC0004c%2FFriends.json/>;
+  rmltest:mappingDocument "mapping.ttl";
+  rmltest:output <http://w3id.org/rml/io/test/RMLTTC0004c/output/default.nq/>, <http://w3id.org/rml/io/test/RMLTTC0004c/output/dump1.nt/> .
+
+<http://w3id.org/rml/io/test/RMLTTC0004c/input/http%3A%2F%2Fw3id.org%2Frml%2Fresources%2Frml-io%2FRMLTTC0004c%2FFriends.json/>
+  a rmltest:Input;
+  rmltest:input "http://w3id.org/rml/resources/rml-io/RMLTTC0004c/Friends.json";
+  rmltest:inputFormat "application/json" .
+
+<http://w3id.org/rml/io/test/RMLTTC0004c/output/default.nq/> a rmltest:Output;
+  rmltest:output "default.nq";
+  rmltest:outputFormat "application/n-quads" .
+
+<http://w3id.org/rml/io/test/RMLTTC0004c/output/dump1.nt/> a rmltest:Output;
+  rmltest:output "dump1.nt";
+  rmltest:outputFormat "application/n-quads" .
+
+<http://w3id.org/rml/io/test/RMLTTC0004d> a test:TestCase;
+  dcterms:identifier "RMLTTC0004d";
+  rmltest:hasError false;
+  rmltest:input <http://w3id.org/rml/io/test/RMLTTC0004d/input/http%3A%2F%2Fw3id.org%2Frml%2Fresources%2Frml-io%2FRMLTTC0004d%2FFriends.json/>;
+  rmltest:mappingDocument "mapping.ttl";
+  rmltest:output <http://w3id.org/rml/io/test/RMLTTC0004d/output/default.nq/>, <http://w3id.org/rml/io/test/RMLTTC0004d/output/dump1.nq/> .
+
+<http://w3id.org/rml/io/test/RMLTTC0004d/input/http%3A%2F%2Fw3id.org%2Frml%2Fresources%2Frml-io%2FRMLTTC0004d%2FFriends.json/>
+  a rmltest:Input;
+  rmltest:input "http://w3id.org/rml/resources/rml-io/RMLTTC0004d/Friends.json";
+  rmltest:inputFormat "application/json" .
+
+<http://w3id.org/rml/io/test/RMLTTC0004d/output/default.nq/> a rmltest:Output;
+  rmltest:output "default.nq";
+  rmltest:outputFormat "application/n-quads" .
+
+<http://w3id.org/rml/io/test/RMLTTC0004d/output/dump1.nq/> a rmltest:Output;
+  rmltest:output "dump1.nq";
+  rmltest:outputFormat "application/n-quads" .
+
+<http://w3id.org/rml/io/test/RMLTTC0004e> a test:TestCase;
+  dcterms:identifier "RMLTTC0004e";
+  rmltest:hasError false;
+  rmltest:input <http://w3id.org/rml/io/test/RMLTTC0004e/input/http%3A%2F%2Fw3id.org%2Frml%2Fresources%2Frml-io%2FRMLTTC0004e%2FFriends.json/>;
+  rmltest:mappingDocument "mapping.ttl";
+  rmltest:output <http://w3id.org/rml/io/test/RMLTTC0004e/output/default.nq/>, <http://w3id.org/rml/io/test/RMLTTC0004e/output/dump1.rdfjson/> .
+
+<http://w3id.org/rml/io/test/RMLTTC0004e/input/http%3A%2F%2Fw3id.org%2Frml%2Fresources%2Frml-io%2FRMLTTC0004e%2FFriends.json/>
+  a rmltest:Input;
+  rmltest:input "http://w3id.org/rml/resources/rml-io/RMLTTC0004e/Friends.json";
+  rmltest:inputFormat "application/json" .
+
+<http://w3id.org/rml/io/test/RMLTTC0004e/output/default.nq/> a rmltest:Output;
+  rmltest:output "default.nq";
+  rmltest:outputFormat "application/n-quads" .
+
+<http://w3id.org/rml/io/test/RMLTTC0004e/output/dump1.rdfjson/> a rmltest:Output;
+  rmltest:output "dump1.rdfjson";
+  rmltest:outputFormat "application/n-quads" .
+
+<http://w3id.org/rml/io/test/RMLTTC0004f> a test:TestCase;
+  dcterms:identifier "RMLTTC0004f";
+  rmltest:hasError false;
+  rmltest:input <http://w3id.org/rml/io/test/RMLTTC0004f/input/http%3A%2F%2Fw3id.org%2Frml%2Fresources%2Frml-io%2FRMLTTC0004f%2FFriends.json/>;
+  rmltest:mappingDocument "mapping.ttl";
+  rmltest:output <http://w3id.org/rml/io/test/RMLTTC0004f/output/default.nq/>, <http://w3id.org/rml/io/test/RMLTTC0004f/output/dump1.rdfxml/> .
+
+<http://w3id.org/rml/io/test/RMLTTC0004f/input/http%3A%2F%2Fw3id.org%2Frml%2Fresources%2Frml-io%2FRMLTTC0004f%2FFriends.json/>
+  a rmltest:Input;
+  rmltest:input "http://w3id.org/rml/resources/rml-io/RMLTTC0004f/Friends.json";
+  rmltest:inputFormat "application/json" .
+
+<http://w3id.org/rml/io/test/RMLTTC0004f/output/default.nq/> a rmltest:Output;
+  rmltest:output "default.nq";
+  rmltest:outputFormat "application/n-quads" .
+
+<http://w3id.org/rml/io/test/RMLTTC0004f/output/dump1.rdfxml/> a rmltest:Output;
+  rmltest:output "dump1.rdfxml";
+  rmltest:outputFormat "application/n-quads" .
+
+<http://w3id.org/rml/io/test/RMLTTC0004g> a test:TestCase;
+  dcterms:identifier "RMLTTC0004g";
+  rmltest:hasError false;
+  rmltest:input <http://w3id.org/rml/io/test/RMLTTC0004g/input/http%3A%2F%2Fw3id.org%2Frml%2Fresources%2Frml-io%2FRMLTTC0004g%2FFriends.json/>;
+  rmltest:mappingDocument "mapping.ttl";
+  rmltest:output <http://w3id.org/rml/io/test/RMLTTC0004g/output/default.nq/>, <http://w3id.org/rml/io/test/RMLTTC0004g/output/dump1.ttl/> .
+
+<http://w3id.org/rml/io/test/RMLTTC0004g/input/http%3A%2F%2Fw3id.org%2Frml%2Fresources%2Frml-io%2FRMLTTC0004g%2FFriends.json/>
+  a rmltest:Input;
+  rmltest:input "http://w3id.org/rml/resources/rml-io/RMLTTC0004g/Friends.json";
+  rmltest:inputFormat "application/json" .
+
+<http://w3id.org/rml/io/test/RMLTTC0004g/output/default.nq/> a rmltest:Output;
+  rmltest:output "default.nq";
+  rmltest:outputFormat "application/n-quads" .
+
+<http://w3id.org/rml/io/test/RMLTTC0004g/output/dump1.ttl/> a rmltest:Output;
+  rmltest:output "dump1.ttl";
+  rmltest:outputFormat "application/n-quads" .
+
+<http://w3id.org/rml/io/test/RMLTTC0005a> a test:TestCase;
+  dcterms:identifier "RMLTTC0005a";
+  rmltest:hasError false;
+  rmltest:input <http://w3id.org/rml/io/test/RMLTTC0005a/input/http%3A%2F%2Fw3id.org%2Frml%2Fresources%2Frml-io%2FRMLTTC0005a%2FFriends.json/>;
+  rmltest:mappingDocument "mapping.ttl";
+  rmltest:output <http://w3id.org/rml/io/test/RMLTTC0005a/output/default.nq/>, <http://w3id.org/rml/io/test/RMLTTC0005a/output/dump1.nq/> .
+
+<http://w3id.org/rml/io/test/RMLTTC0005a/input/http%3A%2F%2Fw3id.org%2Frml%2Fresources%2Frml-io%2FRMLTTC0005a%2FFriends.json/>
+  a rmltest:Input;
+  rmltest:input "http://w3id.org/rml/resources/rml-io/RMLTTC0005a/Friends.json";
+  rmltest:inputFormat "application/json" .
+
+<http://w3id.org/rml/io/test/RMLTTC0005a/output/default.nq/> a rmltest:Output;
+  rmltest:output "default.nq";
+  rmltest:outputFormat "application/n-quads" .
+
+<http://w3id.org/rml/io/test/RMLTTC0005a/output/dump1.nq/> a rmltest:Output;
+  rmltest:output "dump1.nq";
+  rmltest:outputFormat "application/n-quads" .
+
+<http://w3id.org/rml/io/test/RMLTTC0005b> a test:TestCase;
+  dcterms:identifier "RMLTTC0005b";
+  rmltest:hasError false;
+  rmltest:input <http://w3id.org/rml/io/test/RMLTTC0005b/input/http%3A%2F%2Fw3id.org%2Frml%2Fresources%2Frml-io%2FRMLTTC0005b%2FFriends.json/>;
+  rmltest:mappingDocument "mapping.ttl";
+  rmltest:output <http://w3id.org/rml/io/test/RMLTTC0005b/output/default.nq/>, <http://w3id.org/rml/io/test/RMLTTC0005b/output/dump1.nq/> .
+
+<http://w3id.org/rml/io/test/RMLTTC0005b/input/http%3A%2F%2Fw3id.org%2Frml%2Fresources%2Frml-io%2FRMLTTC0005b%2FFriends.json/>
+  a rmltest:Input;
+  rmltest:input "http://w3id.org/rml/resources/rml-io/RMLTTC0005b/Friends.json";
+  rmltest:inputFormat "application/json" .
+
+<http://w3id.org/rml/io/test/RMLTTC0005b/output/default.nq/> a rmltest:Output;
+  rmltest:output "default.nq";
+  rmltest:outputFormat "application/n-quads" .
+
+<http://w3id.org/rml/io/test/RMLTTC0005b/output/dump1.nq/> a rmltest:Output;
+  rmltest:output "dump1.nq";
+  rmltest:outputFormat "application/n-quads" .
+
+<http://w3id.org/rml/io/test/RMLTTC0006a> a test:TestCase;
+  dcterms:identifier "RMLTTC0006a";
+  rmltest:hasError false;
+  rmltest:input <http://w3id.org/rml/io/test/RMLTTC0006a/input/http%3A%2F%2Fw3id.org%2Frml%2Fresources%2Frml-io%2FRMLTTC0006a%2FFriends.json/>;
+  rmltest:mappingDocument "mapping.ttl";
+  rmltest:output <http://w3id.org/rml/io/test/RMLTTC0006a/output/default.nq/>, <http://w3id.org/rml/io/test/RMLTTC0006a/output/dump1.nq/> .
+
+<http://w3id.org/rml/io/test/RMLTTC0006a/input/http%3A%2F%2Fw3id.org%2Frml%2Fresources%2Frml-io%2FRMLTTC0006a%2FFriends.json/>
+  a rmltest:Input;
+  rmltest:input "http://w3id.org/rml/resources/rml-io/RMLTTC0006a/Friends.json";
+  rmltest:inputFormat "application/json" .
+
+<http://w3id.org/rml/io/test/RMLTTC0006a/output/default.nq/> a rmltest:Output;
+  rmltest:output "default.nq";
+  rmltest:outputFormat "application/n-quads" .
+
+<http://w3id.org/rml/io/test/RMLTTC0006a/output/dump1.nq/> a rmltest:Output;
+  rmltest:output "dump1.nq";
+  rmltest:outputFormat "application/n-quads" .
+
+<http://w3id.org/rml/io/test/RMLTTC0006b> a test:TestCase;
+  dcterms:identifier "RMLTTC0006b";
+  rmltest:hasError false;
+  rmltest:input <http://w3id.org/rml/io/test/RMLTTC0006b/input/http%3A%2F%2Fw3id.org%2Frml%2Fresources%2Frml-io%2FRMLTTC0006b%2FFriends.json/>;
+  rmltest:mappingDocument "mapping.ttl";
+  rmltest:output <http://w3id.org/rml/io/test/RMLTTC0006b/output/default.nq/>, <http://w3id.org/rml/io/test/RMLTTC0006b/output/dump1.nq.gz/> .
+
+<http://w3id.org/rml/io/test/RMLTTC0006b/input/http%3A%2F%2Fw3id.org%2Frml%2Fresources%2Frml-io%2FRMLTTC0006b%2FFriends.json/>
+  a rmltest:Input;
+  rmltest:input "http://w3id.org/rml/resources/rml-io/RMLTTC0006b/Friends.json";
+  rmltest:inputFormat "application/json" .
+
+<http://w3id.org/rml/io/test/RMLTTC0006b/output/default.nq/> a rmltest:Output;
+  rmltest:output "default.nq";
+  rmltest:outputFormat "application/n-quads" .
+
+<http://w3id.org/rml/io/test/RMLTTC0006b/output/dump1.nq.gz/> a rmltest:Output;
+  rmltest:output "dump1.nq.gz";
+  rmltest:outputFormat "application/n-quads" .
+
+<http://w3id.org/rml/io/test/RMLTTC0006c> a test:TestCase;
+  dcterms:identifier "RMLTTC0006c";
+  rmltest:hasError false;
+  rmltest:input <http://w3id.org/rml/io/test/RMLTTC0006c/input/http%3A%2F%2Fw3id.org%2Frml%2Fresources%2Frml-io%2FRMLTTC0006c%2FFriends.json/>;
+  rmltest:mappingDocument "mapping.ttl";
+  rmltest:output <http://w3id.org/rml/io/test/RMLTTC0006c/output/default.nq/>, <http://w3id.org/rml/io/test/RMLTTC0006c/output/dump1.nq.zip/> .
+
+<http://w3id.org/rml/io/test/RMLTTC0006c/input/http%3A%2F%2Fw3id.org%2Frml%2Fresources%2Frml-io%2FRMLTTC0006c%2FFriends.json/>
+  a rmltest:Input;
+  rmltest:input "http://w3id.org/rml/resources/rml-io/RMLTTC0006c/Friends.json";
+  rmltest:inputFormat "application/json" .
+
+<http://w3id.org/rml/io/test/RMLTTC0006c/output/default.nq/> a rmltest:Output;
+  rmltest:output "default.nq";
+  rmltest:outputFormat "application/n-quads" .
+
+<http://w3id.org/rml/io/test/RMLTTC0006c/output/dump1.nq.zip/> a rmltest:Output;
+  rmltest:output "dump1.nq.zip";
+  rmltest:outputFormat "application/n-quads" .
+
+<http://w3id.org/rml/io/test/RMLTTC0006d> a test:TestCase;
+  dcterms:identifier "RMLTTC0006d";
+  rmltest:hasError false;
+  rmltest:input <http://w3id.org/rml/io/test/RMLTTC0006d/input/http%3A%2F%2Fw3id.org%2Frml%2Fresources%2Frml-io%2FRMLTTC0006d%2FFriends.json/>;
+  rmltest:mappingDocument "mapping.ttl";
+  rmltest:output <http://w3id.org/rml/io/test/RMLTTC0006d/output/default.nq/>, <http://w3id.org/rml/io/test/RMLTTC0006d/output/dump1.nq.tar.xz/> .
+
+<http://w3id.org/rml/io/test/RMLTTC0006d/input/http%3A%2F%2Fw3id.org%2Frml%2Fresources%2Frml-io%2FRMLTTC0006d%2FFriends.json/>
+  a rmltest:Input;
+  rmltest:input "http://w3id.org/rml/resources/rml-io/RMLTTC0006d/Friends.json";
+  rmltest:inputFormat "application/json" .
+
+<http://w3id.org/rml/io/test/RMLTTC0006d/output/default.nq/> a rmltest:Output;
+  rmltest:output "default.nq";
+  rmltest:outputFormat "application/n-quads" .
+
+<http://w3id.org/rml/io/test/RMLTTC0006d/output/dump1.nq.tar.xz/> a rmltest:Output;
+  rmltest:output "dump1.nq.tar.xz";
+  rmltest:outputFormat "application/n-quads" .
+
+<http://w3id.org/rml/io/test/RMLTTC0006e> a test:TestCase;
+  dcterms:identifier "RMLTTC0006e";
+  rmltest:hasError false;
+  rmltest:input <http://w3id.org/rml/io/test/RMLTTC0006e/input/http%3A%2F%2Fw3id.org%2Frml%2Fresources%2Frml-io%2FRMLTTC0006e%2FFriends.json/>;
+  rmltest:mappingDocument "mapping.ttl";
+  rmltest:output <http://w3id.org/rml/io/test/RMLTTC0006e/output/default.nq/>, <http://w3id.org/rml/io/test/RMLTTC0006e/output/dump1.nq.tar.gz/> .
+
+<http://w3id.org/rml/io/test/RMLTTC0006e/input/http%3A%2F%2Fw3id.org%2Frml%2Fresources%2Frml-io%2FRMLTTC0006e%2FFriends.json/>
+  a rmltest:Input;
+  rmltest:input "http://w3id.org/rml/resources/rml-io/RMLTTC0006e/Friends.json";
+  rmltest:inputFormat "application/json" .
+
+<http://w3id.org/rml/io/test/RMLTTC0006e/output/default.nq/> a rmltest:Output;
+  rmltest:output "default.nq";
+  rmltest:outputFormat "application/n-quads" .
+
+<http://w3id.org/rml/io/test/RMLTTC0006e/output/dump1.nq.tar.gz/> a rmltest:Output;
+  rmltest:output "dump1.nq.tar.gz";
+  rmltest:outputFormat "application/n-quads" .
+
+<http://w3id.org/rml/io/test/RMLTTC0007a> a test:TestCase;
+  dcterms:identifier "RMLTTC0007a";
+  rmltest:hasError false;
+  rmltest:input <http://w3id.org/rml/io/test/RMLTTC0007a/input/http%3A%2F%2Fw3id.org%2Frml%2Fresources%2Frml-io%2FRMLTTC0007a%2FFriends.json/>;
+  rmltest:mappingDocument "mapping.ttl";
+  rmltest:output <http://w3id.org/rml/io/test/RMLTTC0007a/output/default.nq/>, <http://w3id.org/rml/io/test/RMLTTC0007a/output/dump1.nq/> .
+
+<http://w3id.org/rml/io/test/RMLTTC0007a/input/http%3A%2F%2Fw3id.org%2Frml%2Fresources%2Frml-io%2FRMLTTC0007a%2FFriends.json/>
+  a rmltest:Input;
+  rmltest:input "http://w3id.org/rml/resources/rml-io/RMLTTC0007a/Friends.json";
+  rmltest:inputFormat "application/json" .
+
+<http://w3id.org/rml/io/test/RMLTTC0007a/output/default.nq/> a rmltest:Output;
+  rmltest:output "default.nq";
+  rmltest:outputFormat "application/n-quads" .
+
+<http://w3id.org/rml/io/test/RMLTTC0007a/output/dump1.nq/> a rmltest:Output;
+  rmltest:output "dump1.nq";
+  rmltest:outputFormat "application/n-quads" .
+
+<http://w3id.org/rml/io/test/RMLTTC0007b> a test:TestCase;
+  dcterms:identifier "RMLTTC0007b";
+  rmltest:hasError false;
+  rmltest:input <http://w3id.org/rml/io/test/RMLTTC0007b/input/http%3A%2F%2Fw3id.org%2Frml%2Fresources%2Frml-io%2FRMLTTC0007b%2FFriends.json/>;
+  rmltest:mappingDocument "mapping.ttl";
+  rmltest:output <http://w3id.org/rml/io/test/RMLTTC0007b/output/default.nq/>, <http://w3id.org/rml/io/test/RMLTTC0007b/output/dump1.nq/> .
+
+<http://w3id.org/rml/io/test/RMLTTC0007b/input/http%3A%2F%2Fw3id.org%2Frml%2Fresources%2Frml-io%2FRMLTTC0007b%2FFriends.json/>
+  a rmltest:Input;
+  rmltest:input "http://w3id.org/rml/resources/rml-io/RMLTTC0007b/Friends.json";
+  rmltest:inputFormat "application/json" .
+
+<http://w3id.org/rml/io/test/RMLTTC0007b/output/default.nq/> a rmltest:Output;
+  rmltest:output "default.nq";
+  rmltest:outputFormat "application/n-quads" .
+
+<http://w3id.org/rml/io/test/RMLTTC0007b/output/dump1.nq/> a rmltest:Output;
+  rmltest:output "dump1.nq";
+  rmltest:outputFormat "application/n-quads" .
+
+<http://w3id.org/rml/io/test/RMLTTC0007c> a test:TestCase;
+  dcterms:identifier "RMLTTC0007c";
+  rmltest:hasError false;
+  rmltest:input <http://w3id.org/rml/io/test/RMLTTC0007c/input/http%3A%2F%2Fw3id.org%2Frml%2Fresources%2Frml-io%2FRMLTTC0007c%2FFriends.json/>;
+  rmltest:mappingDocument "mapping.ttl";
+  rmltest:output <http://w3id.org/rml/io/test/RMLTTC0007c/output/default.nq/>, <http://w3id.org/rml/io/test/RMLTTC0007c/output/dump1.nq/> .
+
+<http://w3id.org/rml/io/test/RMLTTC0007c/input/http%3A%2F%2Fw3id.org%2Frml%2Fresources%2Frml-io%2FRMLTTC0007c%2FFriends.json/>
+  a rmltest:Input;
+  rmltest:input "http://w3id.org/rml/resources/rml-io/RMLTTC0007c/Friends.json";
+  rmltest:inputFormat "application/json" .
+
+<http://w3id.org/rml/io/test/RMLTTC0007c/output/default.nq/> a rmltest:Output;
+  rmltest:output "default.nq";
+  rmltest:outputFormat "application/n-quads" .
+
+<http://w3id.org/rml/io/test/RMLTTC0007c/output/dump1.nq/> a rmltest:Output;
+  rmltest:output "dump1.nq";
+  rmltest:outputFormat "application/n-quads" .
+
+<http://w3id.org/rml/io/test/RMLTTC0007d> a test:TestCase;
+  dcterms:identifier "RMLTTC0007d";
+  rmltest:hasError false;
+  rmltest:input <http://w3id.org/rml/io/test/RMLTTC0007d/input/http%3A%2F%2Fw3id.org%2Frml%2Fresources%2Frml-io%2FRMLTTC0007d%2FFriends.json/>;
+  rmltest:mappingDocument "mapping.ttl";
+  rmltest:output <http://w3id.org/rml/io/test/RMLTTC0007d/output/default.nq/>, <http://w3id.org/rml/io/test/RMLTTC0007d/output/dump1.nq/> .
+
+<http://w3id.org/rml/io/test/RMLTTC0007d/input/http%3A%2F%2Fw3id.org%2Frml%2Fresources%2Frml-io%2FRMLTTC0007d%2FFriends.json/>
+  a rmltest:Input;
+  rmltest:input "http://w3id.org/rml/resources/rml-io/RMLTTC0007d/Friends.json";
+  rmltest:inputFormat "application/json" .
+
+<http://w3id.org/rml/io/test/RMLTTC0007d/output/default.nq/> a rmltest:Output;
+  rmltest:output "default.nq";
+  rmltest:outputFormat "application/n-quads" .
+
+<http://w3id.org/rml/io/test/RMLTTC0007d/output/dump1.nq/> a rmltest:Output;
+  rmltest:output "dump1.nq";
+  rmltest:outputFormat "application/n-quads" .
+
+<http://w3id.org/rml/io/test/RMLTTC0007e> a test:TestCase;
+  dcterms:identifier "RMLTTC0007e";
+  rmltest:hasError false;
+  rmltest:input <http://w3id.org/rml/io/test/RMLTTC0007e/input/http%3A%2F%2Fw3id.org%2Frml%2Fresources%2Frml-io%2FRMLTTC0007e%2FFriends.json/>;
+  rmltest:mappingDocument "mapping.ttl";
+  rmltest:output <http://w3id.org/rml/io/test/RMLTTC0007e/output/default.nq/>, <http://w3id.org/rml/io/test/RMLTTC0007e/output/dump1.nq/> .
+
+<http://w3id.org/rml/io/test/RMLTTC0007e/input/http%3A%2F%2Fw3id.org%2Frml%2Fresources%2Frml-io%2FRMLTTC0007e%2FFriends.json/>
+  a rmltest:Input;
+  rmltest:input "http://w3id.org/rml/resources/rml-io/RMLTTC0007e/Friends.json";
+  rmltest:inputFormat "application/json" .
+
+<http://w3id.org/rml/io/test/RMLTTC0007e/output/default.nq/> a rmltest:Output;
+  rmltest:output "default.nq";
+  rmltest:outputFormat "application/n-quads" .
+
+<http://w3id.org/rml/io/test/RMLTTC0007e/output/dump1.nq/> a rmltest:Output;
+  rmltest:output "dump1.nq";
+  rmltest:outputFormat "application/n-quads" .
