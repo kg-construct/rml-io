@@ -9,7 +9,19 @@
     } ]
   } ]
 }, {
-  "@id" : "_:genid11",
+  "@id" : "_:genid10",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#unionOf" : [ {
+    "@list" : [ {
+      "@id" : "http://w3id.org/rml/CurrentWorkingDirectory"
+    }, {
+      "@id" : "http://w3id.org/rml/MappingDirectory"
+    }, {
+      "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#Literal"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid14",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2002/07/owl#unionOf" : [ {
     "@list" : [ {
@@ -19,7 +31,7 @@
     } ]
   } ]
 }, {
-  "@id" : "_:genid14",
+  "@id" : "_:genid17",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2002/07/owl#unionOf" : [ {
     "@list" : [ {
@@ -43,11 +55,9 @@
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2002/07/owl#unionOf" : [ {
     "@list" : [ {
-      "@id" : "http://w3id.org/rml/CurrentWorkingDirectory"
+      "@id" : "http://w3id.org/rml/LanguageMap"
     }, {
-      "@id" : "http://w3id.org/rml/MappingDirectory"
-    }, {
-      "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#Literal"
+      "@id" : "http://w3id.org/rml/TermMap"
     } ]
   } ]
 }, {
@@ -89,6 +99,9 @@
 }, {
   "@id" : "http://purl.org/vocab/vann/preferredNamespaceUri",
   "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://w3id.org/rml/AbstractLogicalSource",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
 }, {
   "@id" : "http://w3id.org/rml/CSV",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
@@ -164,6 +177,9 @@
     "@value" : "JSONPath"
   } ]
 }, {
+  "@id" : "http://w3id.org/rml/LanguageMap",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
+}, {
   "@id" : "http://w3id.org/rml/LogicalSource",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
@@ -175,6 +191,9 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@value" : "Logical Source"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://w3id.org/rml/AbstractLogicalSource"
   } ]
 }, {
   "@id" : "http://w3id.org/rml/LogicalTarget",
@@ -299,6 +318,9 @@
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@value" : "Target"
   } ]
+}, {
+  "@id" : "http://w3id.org/rml/TermMap",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
 }, {
   "@id" : "http://w3id.org/rml/UTF-16",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
@@ -443,7 +465,7 @@
     "@id" : "http://purl.org/NET/rdflicense/cc-by4.0"
   } ],
   "http://purl.org/dc/terms/modified" : [ {
-    "@value" : "2023-06-15"
+    "@value" : "2025-01-18"
   } ],
   "http://purl.org/dc/terms/publisher" : [ {
     "@id" : "https://www.w3.org/community/kg-construct/"
@@ -461,6 +483,9 @@
   "http://purl.org/vocab/vann/preferredNamespaceUri" : [ {
     "@value" : "http://w3id.org/rml/"
   } ],
+  "http://www.w3.org/2002/07/owl#imports" : [ {
+    "@id" : "http://w3id.org/rml/core/"
+  } ],
   "http://www.w3.org/2002/07/owl#versionIRI" : [ {
     "@id" : "http://w3id.org/rml/io"
   } ],
@@ -468,23 +493,22 @@
     "@value" : "0.1.0"
   } ]
 }, {
-  "@id" : "http://w3id.org/rml/iterator",
-  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "@id" : "http://w3id.org/rml/logicalTarget",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@language" : "en",
-    "@value" : "An expression qualified according to the reference formulation specified for pointing to an extract of the source data. "
+    "@value" : "Represents the logical target to where triples are exported to."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "http://w3id.org/rml/LogicalSource"
+    "@id" : "_:genid7"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
     "@id" : "http://w3id.org/rml/io/"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@value" : "iterator"
+    "@value" : "logical target"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "http://www.w3.org/2001/XMLSchema#string"
+    "@id" : "http://w3id.org/rml/LogicalTarget"
   } ]
 }, {
   "@id" : "http://w3id.org/rml/namespace",
@@ -595,25 +619,6 @@
     "@id" : "http://www.w3.org/2001/XMLSchema#string"
   } ]
 }, {
-  "@id" : "http://w3id.org/rml/referenceFormulation",
-  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@language" : "en",
-    "@value" : "The reference formulation used to refer to extracts of the source data. "
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "http://w3id.org/rml/LogicalSource"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
-    "@id" : "http://w3id.org/rml/io/"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@value" : "reference formulation"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "http://w3id.org/rml/ReferenceFormulation"
-  } ]
-}, {
   "@id" : "http://w3id.org/rml/root",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
@@ -630,7 +635,7 @@
     "@value" : "root"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "_:genid7"
+    "@id" : "_:genid10"
   } ]
 }, {
   "@id" : "http://w3id.org/rml/serialization",
@@ -668,7 +673,7 @@
     "@value" : "source"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "_:genid11"
+    "@id" : "_:genid14"
   } ]
 }, {
   "@id" : "http://w3id.org/rml/target",
@@ -687,7 +692,7 @@
     "@value" : "target"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "_:genid14"
+    "@id" : "_:genid17"
   } ]
 }, {
   "@id" : "http://w3id.org/rml/targzip",
