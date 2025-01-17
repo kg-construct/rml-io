@@ -8,7 +8,7 @@ The Logical Source vocabulary consists of 2 classes:
 1. `rml:LogicalSource` describes how data of a source can be referenced.
 2. `rml:Source` describes how a source can be accessed, it referenced from a `rml:LogicalSource`.
 
-### Defining Logical Sources {#defining-input-logical-sources}
+### Defining Logical Sources {#defining-logical-sources}
 
 A <dfn>Logical Source</dfn> is an <a data-cite="RML-Core#dfn-abstract-logical-source">abstract logical source</a>
 which specifies the access to a <a data-cite="RML-Core#dfn-data-source">data source</a> to be used as
@@ -161,7 +161,7 @@ and the used compression algorithm. Defaults to no compression.
 
 #### NULL values
 
-Each [=Source=] can describe the values that should be considered as NULL
+Each [=Source=] MAY describe the values that should be considered as NULL
 with `rml:null`, similar to `NULL` in relational databases.
 By default, standardized NULL values are always considered,
 but additional ones can be specified. Multiple NULL values are allowed.
@@ -171,7 +171,7 @@ specifying it through `rml:null` in a Source.
 
 #### Compression formats
 
-Each [=Source=] can specify the compression with `rml:compression`
+Each [=Source=] MAY specify the compression with `rml:compression`
 to apply when exporting RDF triples to a [=Source=] for saving storage space.
 Several compression formats are defined:
 
@@ -183,11 +183,11 @@ Several compression formats are defined:
 
 If unspecified, the default value is no compression.
 This namespace is NOT limited to the listed compression formats
-and may be extended in the future.
+and MAY be extended in the future.
 
 #### Encoding formats
 
-Each [=Source=] can describe the encoding format to use when exporting
+Each [=Source=] MAY describe the encoding format to use when exporting
 RDF triples to a Source. Several encoding formats are defined:
 
 - `rml:UTF-8`: UTF-8 encoding
@@ -263,7 +263,7 @@ The following example is GZip compressed JSON file as [=Source=]:
 .
 </pre>
 
-[=Sources=] can also describe access to SPARQL endpoints with the
+[=Sources=] MAY also describe access to SPARQL endpoints with the
 W3C Service Description ontology. SPARQL endpoints need a SPARQL query,
 to iterate over.
 
