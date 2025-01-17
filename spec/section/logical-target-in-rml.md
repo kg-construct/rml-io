@@ -74,7 +74,7 @@ id;name;nickname
 @base &lt;http://example.com/ns#&gt; .
 
 &lt;#TriplesMap&gt; a rml:TriplesMap;
-  rml:logicalSource [ a rml:InputLogicalSource;
+  rml:logicalSource [ a rml:LogicalSource;
     rml:source &lt;#CSVSourceAccess&gt;;
   ];
   rml:subjectMap [ a rml:SubjectMap;

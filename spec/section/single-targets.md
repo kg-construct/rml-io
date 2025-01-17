@@ -51,7 +51,7 @@ to an RDF dump with N-Quads as serialization format and GZip compression:
 
 <pre class="ex-mapping">
 &lt;#TriplesMap&gt; a rml:TriplesMap;
-  rml:logicalSource [ a rml:InputLogicalSource;
+  rml:logicalSource [ a rml:LogicalSource;
     rml:source &lt;#DCATSourceAccess&gt;;
     rml:referenceFormulation rml:JSONPath;
     rml:iterator "$.[*]";
@@ -153,7 +153,7 @@ with Turtle as serialization format and Zip compression:
 
 <pre class="ex-mapping">
 &lt;#TriplesMap&gt; a rml:TriplesMap;
-  rml:logicalSource [ a rml:InputLogicalSource;
+  rml:logicalSource [ a rml:LogicalSource;
     rml:source &lt;#DCATSourceAccess&gt;;
     rml:referenceFormulation rml:JSONPath;
     rml:iterator "$.[*]";
@@ -272,7 +272,7 @@ with N-Triples as serialization format:
 
 <pre class="ex-mapping">
 &lt;#TriplesMap&gt; a rml:TriplesMap;
-  rml:logicalSource [ a rml:InputLogicalSource;
+  rml:logicalSource [ a rml:LogicalSource;
     rml:source &lt;#DCATSourceAccess&gt;;
     rml:referenceFormulation rml:JSONPath;
     rml:iterator "$.[*]";
@@ -387,7 +387,7 @@ to an RDF dump with N-Quads as serialization format:
 
 <pre class="ex-mapping">
 &lt;#TriplesMap&gt; a rml:TriplesMap;
-  rml:logicalSource [ a rml:InputLogicalSource;
+  rml:logicalSource [ a rml:LogicalSource;
     rml:source &lt;#DCATSourceAccess&gt;;
     rml:referenceFormulation rml:JSONPath;
     rml:iterator "$.[*]";
@@ -490,7 +490,7 @@ to a RDF dump with N-Triples as serialization format:
 
 <pre class="ex-mapping">
 &lt;#TriplesMap&gt; a rml:TriplesMap;
-  rml:logicalSource [ a rml:InputLogicalSource;
+  rml:logicalSource [ a rml:LogicalSource;
     rml:source &lt;#DCATSourceAccess&gt;;
     rml:referenceFormulation rml:JSONPath;
     rml:iterator "$.[*]";
@@ -596,7 +596,7 @@ to a RDF dump with N-Triples as serialization format:
 
 <pre class="ex-mapping">
 &lt;#TriplesMap&gt; a rml:TriplesMap;
-  rml:logicalSource [ a rml:InputLogicalSource;
+  rml:logicalSource [ a rml:LogicalSource;
     rml:source &lt;#DCATSourceAccess&gt;;
     rml:referenceFormulation rml:JSONPath;
     rml:iterator "$.[*]";
@@ -699,7 +699,7 @@ to a RDF dump with N-Triples as serialization format:
 
 <pre class="ex-mapping">
 &lt;#TriplesMap&gt; a rml:TriplesMap;
-  rml:logicalSource [ a rml:InputLogicalSource;
+  rml:logicalSource [ a rml:LogicalSource;
     rml:source &lt;#DCATSourceAccess&gt;;
     rml:referenceFormulation rml:JSONPath;
     rml:iterator "$.[*]";

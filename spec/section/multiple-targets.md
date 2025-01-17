@@ -50,7 +50,7 @@ to the three specified Targets:
 
 <pre class="ex-mapping">
 &lt;#TriplesMap&gt; a rml:TriplesMap;
-  rml:logicalSource [ a rml:InputLogicalSource;
+  rml:logicalSource [ a rml:LogicalSource;
     rml:source &lt;#DCATSourceAccess&gt;;
     rml:referenceFormulation rml:XPath;
     rml:iterator "//Supergirl/Character/";
@@ -200,7 +200,7 @@ are exported to `TargetDump2`.
 
 <pre class="ex-mapping">
 &lt;#TriplesMap&gt; a rml:TriplesMap;
-  rml:logicalSource [ a rml:InputLogicalSource;
+  rml:logicalSource [ a rml:LogicalSource;
     rml:source &lt;#DCATSourceAccess&gt;;
     rml:referenceFormulation rml:XPath;
     rml:iterator "//Supergirl/Character/";
@@ -303,7 +303,7 @@ are exported to `TargetDump2`.
 
 <pre class="ex-mapping">
 &lt;#TriplesMap&gt; a rml:TriplesMap;
-  rml:logicalSource [ a rml:InputLogicalSource;
+  rml:logicalSource [ a rml:LogicalSource;
     rml:source &lt;#DCATSourceAccess&gt;;
     rml:referenceFormulation rml:XPath;
     rml:iterator "//Supergirl/Character/";
@@ -406,7 +406,7 @@ are exported to `TargetDump2`.
 
 <pre class="ex-mapping">
 &lt;#TriplesMap&gt; a rml:TriplesMap;
-  rml:logicalSource [ a rml:InputLogicalSource;
+  rml:logicalSource [ a rml:LogicalSource;
     rml:source &lt;#DCATSourceAccess&gt;;
     rml:referenceFormulation rml:XPath;
     rml:iterator "//Supergirl/Character/";
@@ -505,7 +505,7 @@ predicate `foaf:nickname` are exported to `TargetDump2`.
 
 <pre class="ex-mapping">
 &lt;#TriplesMap&gt; a rml:TriplesMap;
-  rml:logicalSource [ a rml:InputLogicalSource;
+  rml:logicalSource [ a rml:LogicalSource;
     rml:source &lt;#DCATSourceAccess&gt;;
     rml:referenceFormulation rml:XPath;
     rml:iterator "//Supergirl/Character/";
@@ -609,7 +609,7 @@ are exported to `TargetDump2`.
 
 <pre class="ex-mapping">
 &lt;#TriplesMap&gt; a rml:TriplesMap;
-  rml:logicalSource [ a rml:InputLogicalSource;
+  rml:logicalSource [ a rml:LogicalSource;
     rml:source &lt;#DCATSourceAccess&gt;;
     rml:referenceFormulation rml:XPath;
     rml:iterator "//Supergirl/Character/";
@@ -715,7 +715,7 @@ are exported to `TargetDump2`.
 
 <pre class="ex-mapping">
 &lt;#TriplesMap&gt; a rml:TriplesMap;
-  rml:logicalSource [ a rml:InputLogicalSource;
+  rml:logicalSource [ a rml:LogicalSource;
     rml:source &lt;#DCATSourceAccess&gt;;
     rml:referenceFormulation rml:XPath;
     rml:iterator "//Supergirl/Character/";
@@ -817,7 +817,7 @@ are exported to `TargetDump2`.
 
 <pre class="ex-mapping">
 &lt;#TriplesMap&gt; a rml:TriplesMap;
-  rml:logicalSource [ a rml:InputLogicalSource;
+  rml:logicalSource [ a rml:LogicalSource;
     rml:source &lt;#DCATSourceAccess&gt;;
     rml:referenceFormulation rml:XPath;
     rml:iterator "//Supergirl/Character/";
@@ -923,7 +923,7 @@ as there is no dedicated Target assigned to triples containing
 
 <pre class="ex-mapping">
 &lt;#TriplesMap&gt; a rml:TriplesMap;
-  rml:logicalSource [ a rml:InputLogicalSource;
+  rml:logicalSource [ a rml:LogicalSource;
     rml:source &lt;#DCATSourceAccess&gt;;
     rml:referenceFormulation rml:XPath;
     rml:iterator "//Supergirl/Character/";
@@ -1035,7 +1035,7 @@ are exported to `TargetDump2`.
 
 <pre class="ex-mapping">
 &lt;#TriplesMap&gt; a rml:TriplesMap;
-  rml:logicalSource [ a rml:InputLogicalSource;
+  rml:logicalSource [ a rml:LogicalSource;
     rml:source &lt;#DCATSourceAccess&gt;;
     rml:referenceFormulation rml:XPath;
     rml:iterator "//Supergirl/Character/";
@@ -1137,7 +1137,7 @@ are exported to `TargetDump2`.
 
 <pre class="ex-mapping">
 &lt;#TriplesMap&gt; a rml:TriplesMap;
-  rml:logicalSource [ a rml:InputLogicalSource;
+  rml:logicalSource [ a rml:LogicalSource;
     rml:source &lt;#DCATSourceAccess&gt;;
     rml:referenceFormulation rml:XPath;
     rml:iterator "//Supergirl/Character/";
@@ -1236,7 +1236,7 @@ are exported to `TargetDump2`.
 
 <pre class="ex-mapping">
 &lt;#TriplesMap&gt; a rml:TriplesMap;
-  rml:logicalSource [ a rml:InputLogicalSource;
+  rml:logicalSource [ a rml:LogicalSource;
     rml:source &lt;#DCATSourceAccess&gt;;
     rml:referenceFormulation rml:XPath;
     rml:iterator "//Supergirl/Character/";
@@ -1335,7 +1335,7 @@ are exported to `TargetDump2`.
 
 <pre class="ex-mapping">
 &lt;#TriplesMap&gt; a rml:TriplesMap;
-  rml:logicalSource [ a rml:InputLogicalSource;
+  rml:logicalSource [ a rml:LogicalSource;
     rml:source &lt;#DCATSourceAccess&gt;;
     rml:referenceFormulation rml:XPath;
     rml:iterator "//Supergirl/Character/";

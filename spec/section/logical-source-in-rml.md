@@ -1,10 +1,10 @@
-## Input Logical Source in RML {#logical-source-in-rml}
+## Logical Source in RML {#logical-source-in-rml}
 
-[[RML-Core]] introduces a <a data-cite="RML-Core#dfn-logical-source">logical source</a>
+[[RML-Core]] introduces an <a data-cite="RML-Core#dfn-abstract-logical-source">abstract logical source</a>
 as an abstract construct to describe how a <a data-cite="RML-Core#dfn-data-source">data source</a>
  can be accessed to be used in a <a data-cite="RML-Core#dfn-triples-map">Triples Map</a>.
 
-In this specification we introduce the [=Input Logical Source=] to describe how an input
+In this specification we introduce the [=Logical Source=] to describe how an input
 <a data-cite="RML-Core#dfn-data-source">data source</a> can be accessed.
 
 In the example below, a CSV file is transformed into a knowledge graph.
@@ -35,7 +35,7 @@ id;name;nickname
 @base &lt;http://example.com/ns#&gt; .
 
 &lt;#TriplesMap&gt; a rml:TriplesMap;
-  rml:logicalSource [ a rml:InputLogicalSource;
+  rml:logicalSource [ a rml:LogicalSource;
     rml:source &lt;#CSVSourceAccess&gt;;
   ];
   rml:subjectMap [ a rml:SubjectMap;

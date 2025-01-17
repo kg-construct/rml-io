@@ -39,7 +39,7 @@ http://dbpedia.org/resource/Melissa_Rauch,Melissa Rauch
 
 <pre class="ex-mapping">
 &lt;#TriplesMap1&gt; a rml:TriplesMap;
-  rml:logicalSource [ a rml:InputLogicalSource;
+  rml:logicalSource [ a rml:LogicalSource;
     rml:source &lt;#SDSourceAccess&gt;;
     rml:referenceFormulation formats:SPARQL_Results_CSV;
     rml:iterator """
@@ -69,7 +69,7 @@ http://dbpedia.org/resource/Melissa_Rauch,Melissa Rauch
   ];
 
 &lt;#TriplesMap2&gt; a rml:TriplesMap;
-  rml:logicalSource [ a rml:InputLogicalSource;
+  rml:logicalSource [ a rml:LogicalSource;
     rml:source &lt;#SDSourceAccess&gt;;
     rml:referenceFormulation formats:SPARQL_Results_CSV;
     rml:iterator """
@@ -183,7 +183,7 @@ http://dbpedia.org/resource/Melissa_Rauch,Melissa Rauch
 
 <pre class="ex-mapping">
 &lt;#TriplesMap&gt; a rml:TriplesMap;
-  rml:logicalSource [ a rml:InputLogicalSource;
+  rml:logicalSource [ a rml:LogicalSource;
     rml:source &lt;#SDSourceAccess&gt;;
     rml:referenceFormulation formats:SPARQL_Results_CSV;
     rml:iterator """

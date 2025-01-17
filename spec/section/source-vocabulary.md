@@ -1,23 +1,23 @@
-## Input Logical Source vocabulary {#source-vocabulary}
+## Logical Source vocabulary {#source-vocabulary}
 
-The Input Logical Source vocabulary namespace is http://w3id.org/rml/
+The Logical Source vocabulary namespace is http://w3id.org/rml/
 and its prefix is `rml`.
 
-The Input Logical Source vocabulary consists of 2 classes:
+The Logical Source vocabulary consists of 2 classes:
 
-1. `rml:InputLogicalSource` describes how data of a source can be referenced.
-2. `rml:Source` describes how a source can be accessed, it referenced from a `rml:InputLogicalSource`.
+1. `rml:LogicalSource` describes how data of a source can be referenced.
+2. `rml:Source` describes how a source can be accessed, it referenced from a `rml:LogicalSource`.
 
-### Defining Input Logical Sources {#defining-input-logical-sources}
+### Defining Logical Sources {#defining-input-logical-sources}
 
-An <dfn>Input Logical Source</dfn> is a <a data-cite="RML-Core#dfn-logical-source">logical source</a>
-which describes the access to a <a data-cite="RML-Core#dfn-data-source">data source</a> to be used as
+A <dfn>Logical Source</dfn> is an <a data-cite="RML-Core#dfn-abstract-logical-source">abstract logical source</a>
+which specifies the access to a <a data-cite="RML-Core#dfn-data-source">data source</a> to be used as
 input for a <a data-cite="RML-Core#dfn-triples-map">Triples Map</a>.
 
-An [=Input Logical Source=] (`rml:InputLogicalSource`) MUST adhere to the properties defined for the
-<a data-cite="RML-Core#dfn-logical-source">logical source</a>.
+An [=Logical Source=] (`rml:LogicalSource`) MUST adhere to the properties defined for the
+<a data-cite="RML-Core#dfn-abstract=logical-source">abstract logical source</a>.
 
-Furthermore, an [=Input Logical Source=] MUST have:
+Furthermore, an [=Logical Source=] MUST have:
 - exactly one **source** (`rml:source`) property which specifies how a
 <a data-cite="RML-Core#dfn-data-source">data source</a> is using a [=Source=] (`rml:Source`).
 
@@ -48,16 +48,16 @@ If a property is specified, it MUST only occur once.
 
 | Property      | Domain                    | Range  |
 | ------------- | ------------------------- | ------ |
-| `rml:source`  | `rml:InputLogicalSource`  | `IRI`  |
+| `rml:source`  | `rml:LogicalSource`  | `IRI`  |
 
 <figure>
-  <img src="./resources/images/source-structure.png" alt="Input Logical Source structure"/>
-  <figcaption>The structure of [=Input Logical Source=]</figcaption>
+  <img src="./resources/images/source-structure.png" alt="Logical Source structure"/>
+  <figcaption>The structure of [=Logical Source=]</figcaption>
 </figure>
 
 #### Reference formulations
 
-Each [=Input Logical Source=] has a
+Each [=Logical Source=] has a
 <a data-cite="RML-Core#dfn-reference-formulation">reference formulation</a> to define how
 to express a reference to elements of the data of the input
 <a data-cite="RML-Core#dfn-data-source">data source</a>.
@@ -88,7 +88,7 @@ SPARQL queries iterations can be specified by using the W3C Formats namespace:
 - `formats:SPARQL_Results_XML`: SPARQL results as XML.
 
 <pre class="ex-source">
-&lt;#XMLNamespace&gt; a rml:InputLogicalSource;
+&lt;#XMLNamespace&gt; a rml:LogicalSource;
      rml:source [ a rml:Source, dcat:Distribution;
          dcat:accessURL &lt;file:///path/to/data.xml&gt;;
      ];
@@ -141,7 +141,7 @@ database model as NULL value.
 and the used compression algorithm. Defaults to no compression.
 
 <pre class="ex-source">
-&lt;#JSON&gt; a rml:InputLogicalSource;
+&lt;#JSON&gt; a rml:LogicalSource;
      rml:source [ a rml:Source, dcat:Distribution;
        dcat:accessURL &lt;file:///path/to/data.json.gz&gt;;
        rml:null ""; # empty string as NULL besides default null character
@@ -202,7 +202,7 @@ and may be extended in the future.
 The following example shows a Source of a CSV file.
 
 <pre class="ex-source">
-&lt;#CSV&gt; a rml:InputLogicalSource;
+&lt;#CSV&gt; a rml:LogicalSource;
      rml:source [ a rml:Source, csvw:Table;
         csvw:url "/path/to/data.csv";
         rml:null "NULL";
@@ -221,7 +221,7 @@ The following example shows a [=Source=] specified for a MySQL database querying
 the `student` table. The database username and password are provided as well.
 
 <pre class="ex-source">
-&lt;#RDB&gt; a rml:InputLogicalSource;
+&lt;#RDB&gt; a rml:LogicalSource;
     rml:source [ a rml:Source, d2rq:Database;
         d2rq:jdbcDSN "jdbc:mysrml://localhost/example";
         d2rq:jdbcDriver "com.mysql.jdbc.Driver";
@@ -241,7 +241,7 @@ The following example shows a [=Source=] of a
 XML file with no compression.
 
 <pre class="ex-source">
-&lt;#XML&gt; a rml:InputLogicalSource;
+&lt;#XML&gt; a rml:LogicalSource;
     rml:source [ a rml:Source, dcat:Distribution;
         dcat:accessURL &lt;file:///path/to/data.xml&gt;;
     ];
@@ -253,7 +253,7 @@ XML file with no compression.
 The following example is GZip compressed JSON file as [=Source=]:
 
 <pre class="ex-source">
-&lt;#JSON&gt; a rml:InputLogicalSource;
+&lt;#JSON&gt; a rml:LogicalSource;
     rml:source [ a rml:Source, dcat:Distribution;
         dcat:accessURL &lt;file:///path/to/data.json.gz&gt;;
         rml:compression rml:gzip;
@@ -268,7 +268,7 @@ W3C Service Description ontology. SPARQL endpoints need a SPARQL query,
 to iterate over.
 
 <pre class="ex-source">
-&lt;#SPARQLEndpoint&gt; a rml:InputLogicalSource;
+&lt;#SPARQLEndpoint&gt; a rml:LogicalSource;
     rml:source [ a rml:Source, sd:Service;
         sd:endpoint  &lt;http://example.com/sparql&gt;;
         sd:supportedLanguage sd:SPARQL11Query;
@@ -289,7 +289,7 @@ The following example is a HTTP JSON Web API with a HTTP header User Agent
 set to 'Processor':
 
 <pre class="ex-source">
-&lt;#HTTPWebAPI&gt; a rml:InputLogicalSource;
+&lt;#HTTPWebAPI&gt; a rml:LogicalSource;
     rml:source [ a rml:Source, td:Thing;
         td:hasPropertyAffordance [
             td:hasForm [
@@ -314,7 +314,7 @@ The following example shows a [=Source=] of a
 HTTP Server Sent Events stream in XML format without compression:
 
 <pre class="ex-source">
-&lt;#HTTPSSEStream&gt; a rml:InputLogicalSource;
+&lt;#HTTPSSEStream&gt; a rml:LogicalSource;
     rml:source [ a rml:Source, td:Thing;
         td:hasPropertyAffordance [
             td:hasForm [
@@ -333,7 +333,7 @@ The following example shows a [=Source=] of a
 MQTT stream in JSON format without compression:
 
 <pre class="ex-source">
-&lt;#MQTTStream&gt; a rml:InputLogicalSource;
+&lt;#MQTTStream&gt; a rml:LogicalSource;
     rml:source [ a rml:Source, td:Thing;
         td:hasPropertyAffordance [
             td:hasForm [
@@ -355,7 +355,7 @@ The following example shows a [=Source=] of a
 TCP stream in JSON format without compression:
 
 <pre class="ex-source">
-&lt;#TCPStream&gt; a rml:InputLogicalSource;
+&lt;#TCPStream&gt; a rml:LogicalSource;
     rml:source [ a rml:Source, td:Thing;
         td:hasPropertyAffordance [
             td:hasForm [
@@ -374,7 +374,7 @@ The following example shows a [=Source=] of a
 Kafka stream in XML format without compression:
 
 <pre class="ex-source">
-&lt;#KafkaStream&gt; a rml:InputLogicalSource;
+&lt;#KafkaStream&gt; a rml:LogicalSource;
     rml:source [ a rml:Source, td:Thing;
         td:hasPropertyAffordance [
             td:hasForm [
@@ -411,7 +411,7 @@ The file's absolute path is `$CURRENT_WORKING_DIR/file.csv` where `$CURRENT_WORK
 the location of the RML mapping.
 
 <pre class="ex-source">
-&lt;#RelativePathCWD&gt; a rml:InputLogicalSource;
+&lt;#RelativePathCWD&gt; a rml:LogicalSource;
   rml:source [ a rml:RelativePathSource, rml:Source;
     rml:root rml:CurrentWorkingDirectory;
     rml:path "./file.csv";
@@ -424,7 +424,7 @@ The file's absolute path is `$MAPPING_DIR/file.json` where `$MAPPING_DIR` is
 the location of the RML mapping.
 
 <pre class="ex-source">
-&lt;#RelativePathMapping&gt; a rml:InputLogicalSource;
+&lt;#RelativePathMapping&gt; a rml:LogicalSource;
   rml:source [ a rml:RelativePathSource, rml:Source;
     rml:root rml:MappingDirectory;
     rml:path "./file.json";
@@ -438,7 +438,7 @@ Example of accessing an XML file relative to an absolute root path
 specified by a string Literal. The file's absolute path is `/root/file.xml`.
 
 <pre class="ex-source">
-&lt;#RelativePathLiteral&gt; a rml:InputLogicalSource;
+&lt;#RelativePathLiteral&gt; a rml:LogicalSource;
   rml:source [ a rml:RelativePathSource, rml:Source;
     rml:root "/root";
     rml:path "file.xml";
