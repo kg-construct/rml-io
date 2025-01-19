@@ -5,17 +5,22 @@ from shutil import get_terminal_size
 
 
 class MappingValidator:
-    def __init__(self, shape: str) -> None:
-        g = Graph()
-        g.parse(shape, format='turtle')
-        self._shape = g
+    def __init__(self, shape: str, ontology: str) -> None:
+        sg = Graph()
+        sg.parse(shape, format='turtle')
+        self._shape = sg
+        og = Graph()
+        og.parse(ontology, format='turtle')
+        self._ont = og
 
     def validate(self, rules: Graph, print_report: bool = True) -> None:
         valid: bool
         report_graph: Graph
         report_text: str
         valid, report_graph, report_text = validate(rules,
-                                                    shacl_graph=self._shape)
+                                                    shacl_graph=self._shape,
+                                                    ont_graph=self._ont,
+                                                    do_owl_imports=True)
         debug(f'RML rules valid: {valid}')
         debug(f'SHACL validation report: {report_text}')
 

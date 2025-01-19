@@ -14,16 +14,30 @@ from glob import glob
 from rdflib import Graph
 
 from mapping_validator import MappingValidator
+from utils import replace_strings_in_file, cleanup_tmp_folder
 
-TEST_CASES_DIR = os.path.join(os.path.abspath('../../test-cases'), '*/*.ttl')
-SHAPE_FILE = os.path.abspath('io.ttl')
+TEST_CASES_DIR = os.path.join(os.path.abspath('../test-cases'), '*/*.ttl')
+SHAPE_FILE_LOCATION = 'io.ttl'
+ONTOLOGY_FILE_LOCATION = '../ontology/documentation/ontology.ttl'
 
 
 class MappingValidatorTests(unittest.TestCase):
     def _validate_rules(self, path: str) -> None:
         rules = Graph().parse(path, format='turtle')
-        mapping_validator = MappingValidator(SHAPE_FILE)
+
+        # Replace import statements
+        shapes = replace_strings_in_file(SHAPE_FILE_LOCATION, {
+            '<http://w3id.org/rml/core/shapes>': '<https://github.com/kg-construct/rml-core/blob/main/shapes/core.ttl>'
+        })
+        ontology = replace_strings_in_file(ONTOLOGY_FILE_LOCATION, {
+            '<http://w3id.org/rml/core/>': '<https://raw.githubusercontent.com/kg-construct/rml-core/refs/heads/main/ontology/documentation/ontology.ttl>'
+        })
+
+        mapping_validator = MappingValidator(shapes, ontology)
         mapping_validator.validate(rules)
+
+        cleanup_tmp_folder(shapes)
+        cleanup_tmp_folder(ontology)
 
     def test_non_existing_mapping_rules(self) -> None:
         with self.assertRaises(FileNotFoundError):
