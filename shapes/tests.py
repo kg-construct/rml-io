@@ -27,7 +27,7 @@ class MappingValidatorTests(unittest.TestCase):
 
         # Replace import statements
         shapes = replace_strings_in_file(SHAPE_FILE_LOCATION, {
-            '<http://w3id.org/rml/core/shapes>': '<https://github.com/kg-construct/rml-core/blob/main/shapes/core.ttl>'
+            '<http://w3id.org/rml/core/shapes>': '<https://raw.githubusercontent.com/kg-construct/rml-core/refs/heads/main/shapes/core.ttl>'
         })
         ontology = replace_strings_in_file(ONTOLOGY_FILE_LOCATION, {
             '<http://w3id.org/rml/core/>': '<https://raw.githubusercontent.com/kg-construct/rml-core/refs/heads/main/ontology/documentation/ontology.ttl>'
