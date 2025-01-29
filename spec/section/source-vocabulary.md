@@ -66,26 +66,19 @@ Several <a data-cite="RML-Core#dfn-reference-formulation">reference formulation<
 
 - `rml:CSV`: CSV or TSV data sources
 - `rml:JSONPath`: JSON documents
-- `rml:XPath`: XML documents, a shortcut for `rml:XPathReferenceFormulation`
-with default parameters
-- `rml:XPathReferenceFormulation`: XML documents with optionally
+- `rml:XPath`: XML documents with optionally
 the definition of XML namespaces used in references.
 By default, no namespaces are defined.
 - `rml:SQL2008Query`: SQL query for a relational database.
 - `rml:SQL2008Table`: Shortcut to select all columns from a SQL table.
 
-`rml:XPathReferenceFormulation` may specify zero or more
+`rml:XPath` may specify zero or more
 `rml:namespace` properties with a `rml:Namespace`.
 A `rml:Namespace` contains the following required properties:
  - `rml:namespacePrefix`: A Literal with the prefix used for the XML namespace.
  - `rml:namespaceURL`: A Literal with the URL identifying the XML namespace.
 
-SPARQL queries iterations can be specified by using the W3C Formats namespace:
-
-- `formats:SPARQL_Results_CSV`: SPARQL results as CSV.
-- `formats:SPARQL_Results_TSV`: SPARQL results as TSV.
-- `formats:SPARQL_Results_JSON`: SPARQL results as JSON.
-- `formats:SPARQL_Results_XML`: SPARQL results as XML.
+These reference formulations are defined in the [[RML-IO-Registry]].
 
 <pre class="ex-source">
 &lt;#XMLNamespace&gt; a rml:LogicalSource;
@@ -237,162 +230,8 @@ A shortcut is available to select all columns from a table,
 such as in the example above, by using the `rml:SQL2008Table`
 as `rml:referenceFormulation`.
 
-The following example shows a [=Source=] of a
-XML file with no compression.
-
-<pre class="ex-source">
-&lt;#XML&gt; a rml:LogicalSource;
-    rml:source [ a rml:Source, dcat:Distribution;
-        dcat:accessURL &lt;file:///path/to/data.xml&gt;;
-    ];
-    rml:referenceFormulation rml:XPath;
-    rml:iterator "/xpath/iterator/expression";
-.
-</pre>
-
-The following example is GZip compressed JSON file as [=Source=]:
-
-<pre class="ex-source">
-&lt;#JSON&gt; a rml:LogicalSource;
-    rml:source [ a rml:Source, dcat:Distribution;
-        dcat:accessURL &lt;file:///path/to/data.json.gz&gt;;
-        rml:compression rml:gzip;
-     ];
-     rml:referenceFormulation rml:JSONPath;
-     rml:iterator "$.jsonpath.expression";
-.
-</pre>
-
-[=Sources=] MAY also describe access to SPARQL endpoints with the
-W3C Service Description ontology. SPARQL endpoints need a SPARQL query,
-to iterate over.
-
-<pre class="ex-source">
-&lt;#SPARQLEndpoint&gt; a rml:LogicalSource;
-    rml:source [ a rml:Source, sd:Service;
-        sd:endpoint  &lt;http://example.com/sparql&gt;;
-        sd:supportedLanguage sd:SPARQL11Query;
-    ];
-    rml:iterator "SELECT { s? ?p ?o } WHERE { ?s ?p ?o. } LIMIT 100";
-    rml:referenceFormulation formats:SPARQL_Results_CSV;
-.
-</pre>
-
-Web APIs and streams are supported through the W3C Web of Things ontologies:
-- HTTP Web API
-- MQTT streams
-- CoAP
-- Kafka
-- HTTP Server Sent Events
-
-The following example is a HTTP JSON Web API with a HTTP header User Agent
-set to 'Processor':
-
-<pre class="ex-source">
-&lt;#HTTPWebAPI&gt; a rml:LogicalSource;
-    rml:source [ a rml:Source, td:Thing;
-        td:hasPropertyAffordance [
-            td:hasForm [
-                # URL and content type
-                hctl:hasTarget "http://localhost:4242/";
-                hctl:forContentType "application/json";
-                # Set HTTP method and headers through W3C WoT Binding Template for HTTP
-                htv:methodName "GET";
-                htv:headers ([
-                    htv:fieldName "User-Agent";
-                    htv:fieldValue "Processor";
-                ]);
-            ];
-        ];
-    ];
-    rml:referenceFormulation rml:JSONPath;
-    rml:iterator "$.jsonpath";
-.
-</pre>
-
-The following example shows a [=Source=] of a
-HTTP Server Sent Events stream in XML format without compression:
-
-<pre class="ex-source">
-&lt;#HTTPSSEStream&gt; a rml:LogicalSource;
-    rml:source [ a rml:Source, td:Thing;
-        td:hasPropertyAffordance [
-            td:hasForm [
-                # URL and content type
-                hctl:hasTarget "http://localhost:4242/";
-                hctl:forContentType "text/event-stream";
-            ];
-        ];
-    ];
-    rml:referenceFormulation rml:XPath;
-    rml:iterator "/my/xpath";
-.
-</pre>
-
-The following example shows a [=Source=] of a
-MQTT stream in JSON format without compression:
-
-<pre class="ex-source">
-&lt;#MQTTStream&gt; a rml:LogicalSource;
-    rml:source [ a rml:Source, td:Thing;
-        td:hasPropertyAffordance [
-            td:hasForm [
-                # URL and content type
-                hctl:hasTarget "mqtt://localhost/topic";
-                hctl:forContentType "application/json";
-                # Set MQTT parameters through W3C WoT Binding Template for MQTT
-                mqv:controlPacketValue "SUBSCRIBE";
-                mqv:options ([ mqv:optionName "qos"; mqv:optionValue "1" ] [ mqv:optionName "dup" ]);
-            ];
-        ];
-    ];
-    rml:referenceFormulation rml:JSONPath;
-    rml:iterator "$.jsonpath";
-.
-</pre>
-
-The following example shows a [=Source=] of a
-TCP stream in JSON format without compression:
-
-<pre class="ex-source">
-&lt;#TCPStream&gt; a rml:LogicalSource;
-    rml:source [ a rml:Source, td:Thing;
-        td:hasPropertyAffordance [
-            td:hasForm [
-                # URL and content type
-                hctl:hasTarget "tcp://localhost:1234/topic";
-                hctl:forContentType "application/json";
-            ];
-        ];
-    ];
-    rml:referenceFormulation rml:JSONPath;
-    rml:iterator "$.jsonpath";
-.
-</pre>
-
-The following example shows a [=Source=] of a
-Kafka stream in XML format without compression:
-
-<pre class="ex-source">
-&lt;#KafkaStream&gt; a rml:LogicalSource;
-    rml:source [ a rml:Source, td:Thing;
-        td:hasPropertyAffordance [
-            td:hasForm [
-                # URL and content type
-                hctl:hasTarget "kafka://localhost:8089/topic";
-                hctl:forContentType "application/xml";
-                # Kafka parameters through W3C WoT Binding Template for Kafka
-                kafka:groupId "MyAwesomeGroup";
-            ];
-        ];
-    ];
-    rml:referenceFormulation rml:XPath;
-    rml:iterator "/my/xpath";
-.
-</pre>
-
 Relative paths to files are covered by a source access description included
-in this specification which subclasses `rml:Source` as `rml:RelativePathSource`.
+in this specification which subclasses `rml:Source` as `rml:FilePath`.
 This access description allows accessing files relative from:
 
 - `rml:CurrentWorkingDirectory`: relative to the current working directory of the RML processor.
@@ -401,10 +240,10 @@ This access description allows accessing files relative from:
 
 If `rml:root` is not specified, it defaults to `rml:CurrentWorkingDirectory`.
 
-| Property    | Domain                    | Range                                                              |
-| ----------- | ------------------------- | ------------------------------------------------------------------ |
-| `rml:root`  | `rml:RelativePathSource`  | `rml:CurrentWorkingDirectory`, `rml:MappingDirectory` or `Literal` |
-| `rml:path`  | `rml:RelativePathSource`  | `Literal`                                                          |
+| Property    | Domain          | Range                                                              |
+| ----------- | --------------- | ------------------------------------------------------------------ |
+| `rml:root`  | `rml:FilePath`  | `rml:CurrentWorkingDirectory`, `rml:MappingDirectory` or `Literal` |
+| `rml:path`  | `rml:FilePath`  | `Literal`                                                          |
 
 Example of accessing a CSV file relative to the current working directory.
 The file's absolute path is `$CURRENT_WORKING_DIR/file.csv` where `$CURRENT_WORKING_DIR` is
@@ -412,7 +251,7 @@ the location of the RML mapping.
 
 <pre class="ex-source">
 &lt;#RelativePathCWD&gt; a rml:LogicalSource;
-  rml:source [ a rml:RelativePathSource, rml:Source;
+  rml:source [ a rml:FilePath, rml:Source;
     rml:root rml:CurrentWorkingDirectory;
     rml:path "./file.csv";
   ];
@@ -425,7 +264,7 @@ the location of the RML mapping.
 
 <pre class="ex-source">
 &lt;#RelativePathMapping&gt; a rml:LogicalSource;
-  rml:source [ a rml:RelativePathSource, rml:Source;
+  rml:source [ a rml:FilePath, rml:Source;
     rml:root rml:MappingDirectory;
     rml:path "./file.json";
   ];
@@ -439,7 +278,7 @@ specified by a string Literal. The file's absolute path is `/root/file.xml`.
 
 <pre class="ex-source">
 &lt;#RelativePathLiteral&gt; a rml:LogicalSource;
-  rml:source [ a rml:RelativePathSource, rml:Source;
+  rml:source [ a rml:FilePath, rml:Source;
     rml:root "/root";
     rml:path "file.xml";
   ];

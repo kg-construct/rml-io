@@ -108,28 +108,7 @@ and MAY be extended in the future.
 #### Relative paths
 
 Relative paths to files are covered by a target access description included
-in this specification which subclasses `rml:Target` as `rml:RelativePathTarget`.
-This access description allows accessing files relative from:
-
-- `rml:CurrentWorkingDirectory`: relative to the current working directory of the RML processor.
-- `rml:MappingDirectory`: relative to the location of the RML mapping.
-- A string Literal: a string describing an absolute path against which relative paths are resolved, similar to the Base URI in [RFC3986](https://www.rfc-editor.org/rfc/rfc3986).
-
-If `rml:root` is not specified, it defaults to `rml:CurrentWorkingDirectory`.
-
-| Property    | Domain                    | Range                                                              |
-| ----------- | ------------------------- | ------------------------------------------------------------------ |
-| `rml:root`  | `rml:RelativePathSource`  | `rml:CurrentWorkingDirectory`, `rml:MappingDirectory` or `Literal` |
-| `rml:path`  | `rml:RelativePathSource`  | `Literal`                                                          |
-
-<pre class="ex-source">
-&lt;#RelativePathCWD&gt; a rml:LogicalTarget;
-  rml:target [ a rml:RelativePathTarget, rml:Target;
-    rml:root rml:CurrentWorkingDirectory;
-    rml:path "./file.ttl";
-  ];
-.
-</pre>
+in this specification which subclasses `rml:Target` as `rml:FilePath` re-used from the Logical Source.
 
 ### Examples {#target-examples}
 
@@ -137,168 +116,12 @@ The following example show a Target of an RDF dump in Turtle [[Turtle]]
 format with GZip compression and UTF-8 encoding:
 
 <pre class="ex-target">
-&lt;#DCATDump&gt; a rml:LogicalTarget;
-    rml:target [ a rml:Target, dcat:Distribution;
-        dcat:downloadURL &lt;file:///data/dump.ttl&gt;;
+&lt;#FileDump&gt; a rml:LogicalTarget;
+    rml:target [ a rml:Target, rml:FilePath;
+        rml:path "/data/dump.ttl";
         rml:compression rml:gzip;
         rml:encoding rml:UTF-8;
     ];
     rml:serialization formats:Turtle;
-.
-</pre>
-
-The following example shows a Target of a [[SPARQL]]
-endpoint with `SPARQL UPDATE`:
-
-<pre class="ex-target">
-&lt;#SPARQLEndpoint&gt; a rml:LogicalTarget;
-    rml:target [ a rml:Target, sd:Service;
-        sd:endpoint  &lt;http://example.com/sparql-update&gt;;
-        sd:supportedLanguage sd:SPARQL11Update ;
-    ];
-.
-</pre>
-
-The following example shows a Target of a
-DCAT dataset in N-Quads format with Zip compression:
-
-<pre class="ex-target">
-&lt;#DCATDump&gt; a rml:LogicalTarget;
-    rml:target [ a rml:Target, dcat:Distribution;
-        dcat:accessURL &lt;http://example.org/dcat-access-url&gt;;
-        rml:compression rml:zip;
-    ];
-    rml:serialization formats:N-Quads;
-.
-</pre>
-
-The following example shows a Target of a
-MQTT stream in N-Quads format without compression.
-Authentication is performed with a custom HTTP header called `apikey`
-with token value `123456789`. Token value is described by IDSA because
-WoT Security only describes the security information without providing a
-way to supply the actual value of username/password, tokens,  etc.
-For security reasons, these values should never be provided in the RML mapping
-by separating them in separate document.
-
-<pre class="ex-target">
-&lt;#MQTTStream&gt; a rml:LogicalTarget;
-    rml:target [ a rml:Target, td:Thing;
-        td:hasPropertyAffordance [ a td:PropertyAffordance;
-            td:hasForm [
-                # URL and content type
-                hctl:hasTarget "mqtt://localhost/topic";
-                hctl:forContentType "application/n-quads";
-                # Set MQTT parameters through W3C WoT Binding Template for MQTT
-                mqv:controlPacketValue "SUBSCRIBE";
-                mqv:options ([ mqv:optionName "qos"; mqv:optionValue "1" ] [ mqv:optionName "dup" ]);
-            ];
-        ];
-        td:hasSecurityConfiguration [ a wotsec:APIKeySecurityScheme, idsa:Token;
-          wotsec:in "header";
-          wotsec:name "apikey";
-          idsa:tokenValue "123456789"
-        ];
-    ];
-    rml:serialization formats:N-Quads;
-.
-</pre>
-
-The following example shows a Target of a
-TCP stream in N-Quads format without compression.
-
-<pre class="ex-target">
-&lt;#TCPStream&gt; a rml:LogicalTarget;
-    rml:target [ a rml:Target, td:Thing;
-        td:hasPropertyAffordance [
-            td:hasForm [
-                # URL and content type
-                hctl:hasTarget "tcp://localhost:1234/topic";
-                hctl:forContentType "application/n-quads";
-            ];
-        ];
-    ];
-    rml:serialization formats:N-Quads;
-.
-</pre>
-
-The following example shows a Target of a
-Kafka stream in N-Quads format without compression:
-
-<pre class="ex-target">
-&lt;#KafkaStream&gt; a rml:LogicalTarget;
-    rml:target [ a rml:Target, td:Thing;
-        td:hasPropertyAffordance [
-            td:hasForm [
-                # URL and content type
-                hctl:hasTarget "kafka://localhost:8089/topic";
-                hctl:forContentType "application/n-quads";
-                # Kafka parameters through W3C WoT Binding Template for Kafka
-                kafka:groupId "MyAwesomeGroup";
-            ];
-        ];
-    ];
-    rml:serialization formats:N-Quads;
-.
-</pre>
-
-The following example shows a Target of a
-HTTP Web API in N-Quads format without compression and
-the User Agent HTTP header set to 'Processor':
-
-<pre class="ex-target">
-&lt;#HTTPWebAPI&gt; a rml:LogicalTarget;
-    rml:target [ a rml:Target, td:Thing;
-        td:hasPropertyAffordance [
-            td:hasForm [
-                # URL and content type
-                hctl:hasTarget "http://localhost:4242/";
-                hctl:forContentType "application/n-quads";
-                # Set HTTP method and headers through W3C WoT Binding Template for HTTP
-                htv:methodName "POST";
-                htv:headers ([
-                    htv:fieldName "User-Agent";
-                    htv:fieldValue "Processor";
-                ]);
-            ];
-        ];
-    ];
-    rml:serialization formats:N-Quads;
-.
-</pre>
-
-The following example shows a Target of a
-HTTP Server Sent Events stream in N-Quads format without compression:
-
-<pre class="ex-target">
-&lt;#HTTPSSEStream&gt; a rml:LogicalTarget;
-    rml:target [ a rml:Target, td:Thing;
-        td:hasPropertyAffordance [
-            td:hasForm [
-                # URL and content type
-                hctl:hasTarget "http://localhost:4242/";
-                hctl:forContentType "text/event-stream";
-            ];
-        ];
-    ];
-    rml:serialization formats:N-Quads;
-.
-</pre>
-
-The following example shows a Target of a
-WebSocket in N-Quads format without compression:
-
-<pre class="ex-target">
-&lt;#HTTPSSEStream&gt; a rml:LogicalTarget;
-    rml:target [ a rml:Target, td:Thing;
-        td:hasPropertyAffordance [
-            td:hasForm [
-                # URL and content type
-                hctl:hasTarget "ws://localhost:5555/";
-                hctl:forContentType "application/n-quads";
-            ];
-        ];
-    ];
-    rml:serialization formats:N-Quads;
 .
 </pre>
