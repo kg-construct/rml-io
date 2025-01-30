@@ -4,7 +4,7 @@
 
 **Description**: Test export all triples as N-Triples
 
-**Error expected?** Yes
+**Error expected?** No
 
 **Input**
  [http://w3id.org/rml/resources/rml-io/RMLTTC0004c/Friends.json](http://w3id.org/rml/resources/rml-io/RMLTTC0004c/Friends.json)

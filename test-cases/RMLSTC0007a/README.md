@@ -4,7 +4,7 @@
 
 **Description**: Test source with JSONPath reference formulation
 
-**Error expected?** Yes
+**Error expected?** No
 
 **Input**
 ```

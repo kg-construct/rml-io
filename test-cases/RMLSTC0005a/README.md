@@ -4,7 +4,7 @@
 
 **Description**: Test source with data access description providing NULL values which we override.
 
-**Error expected?** Yes
+**Error expected?** No
 
 **Input**
 ```

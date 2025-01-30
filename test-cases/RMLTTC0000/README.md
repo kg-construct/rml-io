@@ -4,7 +4,7 @@
 
 **Description**: Test exporting all triples to the default Target when not Targets are specified.
 
-**Error expected?** Yes
+**Error expected?** No
 
 **Input**
 ```

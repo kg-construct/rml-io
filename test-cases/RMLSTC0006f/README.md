@@ -4,7 +4,7 @@
 
 **Description**: Test source with D2RQ access description for SQL databases
 
-**Error expected?** Yes
+**Error expected?** No
 
 **Input**
 ```

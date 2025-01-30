@@ -4,7 +4,7 @@
 
 **Description**: Test exporting all triples to same Target in multiple Term Maps.
 
-**Error expected?** Yes
+**Error expected?** No
 
 **Input**
  [http://w3id.org/rml/resources/rml-io/RMLTTC0002r/Friends.json](http://w3id.org/rml/resources/rml-io/RMLTTC0002r/Friends.json)

@@ -4,7 +4,7 @@
 
 **Description**: Test export all triples with UTF-8 encoding
 
-**Error expected?** Yes
+**Error expected?** No
 
 **Input**
  [http://w3id.org/rml/resources/rml-io/RMLTTC0005a/Friends.json](http://w3id.org/rml/resources/rml-io/RMLTTC0005a/Friends.json)

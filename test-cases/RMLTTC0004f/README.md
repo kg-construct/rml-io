@@ -4,7 +4,7 @@
 
 **Description**: Test export all triples as RDF/XML
 
-**Error expected?** Yes
+**Error expected?** No
 
 **Input**
  [http://w3id.org/rml/resources/rml-io/RMLTTC0004f/Friends.json](http://w3id.org/rml/resources/rml-io/RMLTTC0004f/Friends.json)

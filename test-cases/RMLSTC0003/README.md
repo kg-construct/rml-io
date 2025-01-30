@@ -4,7 +4,7 @@
 
 **Description**: Test source which requires a query
 
-**Error expected?** Yes
+**Error expected?** No
 
 **Input**
 ```

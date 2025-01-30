@@ -4,7 +4,7 @@
 
 **Description**: Test source with data access description providing encoding which we override.
 
-**Error expected?** Yes
+**Error expected?** No
 
 **Input**
 ```

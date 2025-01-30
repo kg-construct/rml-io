@@ -4,7 +4,7 @@
 
 **Description**: Test exporting some triples to a different Target with a separate Triples Map.
 
-**Error expected?** Yes
+**Error expected?** No
 
 **Input**
  [http://w3id.org/rml/resources/rml-io/RMLTTC0003a/Friends.json](http://w3id.org/rml/resources/rml-io/RMLTTC0003a/Friends.json)

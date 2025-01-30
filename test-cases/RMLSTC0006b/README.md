@@ -4,7 +4,7 @@
 
 **Description**: Test source with VoID data access description
 
-**Error expected?** Yes
+**Error expected?** No
 
 **Input**
 ```

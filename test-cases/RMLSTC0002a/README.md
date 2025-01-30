@@ -4,7 +4,7 @@
 
 **Description**: Test source without compression
 
-**Error expected?** Yes
+**Error expected?** No
 
 **Input**
 ```

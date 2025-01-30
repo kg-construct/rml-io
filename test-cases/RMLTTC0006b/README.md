@@ -4,7 +4,7 @@
 
 **Description**: Test export all triples with GZip compression
 
-**Error expected?** Yes
+**Error expected?** No
 
 **Input**
  [http://w3id.org/rml/resources/rml-io/RMLTTC0006b/Friends.json](http://w3id.org/rml/resources/rml-io/RMLTTC0006b/Friends.json)

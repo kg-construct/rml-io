@@ -4,7 +4,7 @@
 
 **Description**: Test exporting all triples to Targets in multiple Graph Maps.
 
-**Error expected?** Yes
+**Error expected?** No
 
 **Input**
  [http://w3id.org/rml/resources/rml-io/RMLTTC0002o/Friends.json](http://w3id.org/rml/resources/rml-io/RMLTTC0002o/Friends.json)

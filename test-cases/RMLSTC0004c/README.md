@@ -4,7 +4,7 @@
 
 **Description**: Test source with multiple NULL values defined
 
-**Error expected?** Yes
+**Error expected?** No
 
 **Input**
 ```

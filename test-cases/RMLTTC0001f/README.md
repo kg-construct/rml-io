@@ -4,7 +4,7 @@
 
 **Description**: Test exporting all triples with a given datatype to a single Target.
 
-**Error expected?** Yes
+**Error expected?** No
 
 **Input**
  [http://w3id.org/rml/resources/rml-io/RMLTTC0001f/Friends.json](http://w3id.org/rml/resources/rml-io/RMLTTC0001f/Friends.json)

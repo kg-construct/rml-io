@@ -4,7 +4,7 @@
 
 **Description**: Test dcat:format in a Target
 
-**Error expected?** Yes
+**Error expected?** No
 
 **Input**
  [http://w3id.org/rml/resources/rml-io/RMLTTC0007e/Friends.json](http://w3id.org/rml/resources/rml-io/RMLTTC0007e/Friends.json)

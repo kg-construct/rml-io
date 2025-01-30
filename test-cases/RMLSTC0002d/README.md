@@ -4,7 +4,7 @@
 
 **Description**: Test source with TarXZ compression
 
-**Error expected?** Yes
+**Error expected?** No
 
 **Input**
  `Friends.json.tar.xz`

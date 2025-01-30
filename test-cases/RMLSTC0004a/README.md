@@ -4,7 +4,7 @@
 
 **Description**: Test source with default NULL values
 
-**Error expected?** Yes
+**Error expected?** No
 
 **Input**
 ```

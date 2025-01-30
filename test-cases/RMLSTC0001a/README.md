@@ -4,7 +4,7 @@
 
 **Description**: Test source with UTF-8 encoding
 
-**Error expected?** Yes
+**Error expected?** No
 
 **Input**
 ```

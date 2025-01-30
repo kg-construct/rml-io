@@ -4,7 +4,7 @@
 
 **Description**: Test source with GZip compression
 
-**Error expected?** Yes
+**Error expected?** No
 
 **Input**
  `Friends.json.gz`

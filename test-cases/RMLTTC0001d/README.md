@@ -4,7 +4,7 @@
 
 **Description**: Test exporting all triples within a named graph to a single Target.
 
-**Error expected?** Yes
+**Error expected?** No
 
 **Input**
  [http://w3id.org/rml/resources/rml-io/RMLTTC0001d/Friends.json](http://w3id.org/rml/resources/rml-io/RMLTTC0001d/Friends.json)
