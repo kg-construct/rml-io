@@ -1,4 +1,4 @@
-# RMLTTC0006e
+## RMLTTC0006e
 
 **Title**: Target TarGzip compression
 

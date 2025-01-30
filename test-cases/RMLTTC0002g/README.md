@@ -1,4 +1,4 @@
-# RMLTTC0002g
+## RMLTTC0002g
 
 **Title**: Multiple Targets: Predicate Map and Graph Map
 

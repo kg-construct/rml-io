@@ -1,4 +1,4 @@
-# RMLTTC0006c
+## RMLTTC0006c
 
 **Title**: Target Zip compression
 

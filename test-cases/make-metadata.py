@@ -135,7 +135,7 @@ def main(spec: str):
                              output3, error])
             lines = []
             # Title and description
-            lines.append(f'# {testcase}\n\n')
+            lines.append(f'## {testcase}\n\n')
             lines.append(f'**Title**: {title}\n\n')
             lines.append(f'**Description**: {description}\n\n')
             if error:

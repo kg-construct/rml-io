@@ -1,4 +1,4 @@
-# RMLTTC0006b
+## RMLTTC0006b
 
 **Title**: Target GZip compression
 
