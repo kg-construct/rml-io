@@ -1,6 +1,8 @@
 # RMLTTC0002d
 
-Test exporting all triples to a Target in a Predicate Map and a Target in a Object Map.
+**Title**: Multiple Targets: Predicate Map and Object Map
+
+**Description**: Test exporting all triples to a Target in a Predicate Map and a Target in a Object Map.
 
 **Error expected?** Yes
 

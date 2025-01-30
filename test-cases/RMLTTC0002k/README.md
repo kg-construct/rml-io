@@ -1,6 +1,8 @@
 # RMLTTC0002k
 
-Test exporting all triples to a Target in a Datatype Map and a Target in a Graph Map.
+**Title**: Multiple Targets: Datatype Map and Graph Map
+
+**Description**: Test exporting all triples to a Target in a Datatype Map and a Target in a Graph Map.
 
 **Error expected?** Yes
 

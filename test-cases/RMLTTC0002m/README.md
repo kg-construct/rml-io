@@ -1,6 +1,8 @@
 # RMLTTC0002m
 
-Test exporting all triples to Targets in multiple Predicate Maps.
+**Title**: Multiple Targets: Multiple Predicate Maps
+
+**Description**: Test exporting all triples to Targets in multiple Predicate Maps.
 
 **Error expected?** Yes
 

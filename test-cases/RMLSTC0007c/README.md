@@ -1,6 +1,8 @@
 # RMLSTC0007c
 
-Test source with XPath reference formulation
+**Title**: Source with XPath reference formulation
+
+**Description**: Test source with XPath reference formulation
 
 **Error expected?** Yes
 

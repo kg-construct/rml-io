@@ -1,6 +1,8 @@
 # RMLSTC0002c
 
-Test source with ZIP compression
+**Title**: Source Zip compression
+
+**Description**: Test source with ZIP compression
 
 **Error expected?** Yes
 

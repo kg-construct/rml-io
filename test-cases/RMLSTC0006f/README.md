@@ -1,6 +1,8 @@
 # RMLSTC0006f
 
-Test source with D2RQ access description for SQL databases
+**Title**: Source with D2RQ access description
+
+**Description**: Test source with D2RQ access description for SQL databases
 
 **Error expected?** Yes
 

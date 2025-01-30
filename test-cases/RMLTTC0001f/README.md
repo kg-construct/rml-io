@@ -1,6 +1,8 @@
 # RMLTTC0001f
 
-Test exporting all triples with a given datatype to a single Target.
+**Title**: Single Target: Datatype Map
+
+**Description**: Test exporting all triples with a given datatype to a single Target.
 
 **Error expected?** Yes
 

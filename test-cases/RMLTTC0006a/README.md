@@ -1,6 +1,8 @@
 # RMLTTC0006a
 
-Test export all triples with no compression
+**Title**: Target no compression
+
+**Description**: Test export all triples with no compression
 
 **Error expected?** Yes
 

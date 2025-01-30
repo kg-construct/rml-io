@@ -1,6 +1,8 @@
 # RMLSTC0001b
 
-Test source with UTF-16 encoding
+**Title**: Source with UTF-16 encoding
+
+**Description**: Test source with UTF-16 encoding
 
 **Error expected?** Yes
 

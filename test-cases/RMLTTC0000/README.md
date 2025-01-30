@@ -1,6 +1,8 @@
 # RMLTTC0000
 
-Test exporting all triples to the default Target when not Targets are specified.
+**Title**: Default target
+
+**Description**: Test exporting all triples to the default Target when not Targets are specified.
 
 **Error expected?** Yes
 

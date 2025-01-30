@@ -1,6 +1,8 @@
 # RMLTTC0004c
 
-Test export all triples as N-Triples
+**Title**: Target N-Triples
+
+**Description**: Test export all triples as N-Triples
 
 **Error expected?** Yes
 

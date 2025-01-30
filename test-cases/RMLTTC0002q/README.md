@@ -1,6 +1,8 @@
 # RMLTTC0002q
 
-Test exporting all triples to Targets in multiple Datatype Maps.
+**Title**: Multiple Targets: Multiple Datatype Maps
+
+**Description**: Test exporting all triples to Targets in multiple Datatype Maps.
 
 **Error expected?** Yes
 

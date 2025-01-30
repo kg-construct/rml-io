@@ -1,6 +1,8 @@
 # RMLSTC0004c
 
-Test source with multiple NULL values defined
+**Title**: Source with multiple NULL values
+
+**Description**: Test source with multiple NULL values defined
 
 **Error expected?** Yes
 

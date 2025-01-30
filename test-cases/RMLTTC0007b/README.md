@@ -1,6 +1,8 @@
 # RMLTTC0007b
 
-Test export all triples to a target with VoID access description
+**Title**: Target with VoID access description
+
+**Description**: Test export all triples to a target with VoID access description
 
 **Error expected?** Yes
 

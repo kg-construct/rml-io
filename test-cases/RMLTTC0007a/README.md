@@ -1,6 +1,8 @@
 # RMLTTC0007a
 
-Test export all triples to a target with DCAT access description
+**Title**: Target with DCAT access description
+
+**Description**: Test export all triples to a target with DCAT access description
 
 **Error expected?** Yes
 

@@ -1,6 +1,8 @@
 # RMLTTC0001b
 
-Test exporting all triples to a single Target with a given predicate.
+**Title**: Single Target: Predicate Map
+
+**Description**: Test exporting all triples to a single Target with a given predicate.
 
 **Error expected?** Yes
 

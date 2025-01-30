@@ -1,6 +1,8 @@
 # RMLSTC0002d
 
-Test source with TarXZ compression
+**Title**: Source TarXz compression
+
+**Description**: Test source with TarXZ compression
 
 **Error expected?** Yes
 

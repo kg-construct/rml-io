@@ -1,6 +1,8 @@
 # RMLSTC0006a
 
-Test source with DCAT data access description
+**Title**: Source with DCAT access description
+
+**Description**: Test source with DCAT data access description
 
 **Error expected?** Yes
 

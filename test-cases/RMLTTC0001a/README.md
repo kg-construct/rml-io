@@ -1,6 +1,8 @@
 # RMLTTC0001a
 
-Test exporting all triples to a single Target with a given subject.
+**Title**: Single Target: Subject Map
+
+**Description**: Test exporting all triples to a single Target with a given subject.
 
 **Error expected?** Yes
 

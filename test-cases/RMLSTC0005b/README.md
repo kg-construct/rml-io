@@ -1,6 +1,8 @@
 # RMLSTC0005b
 
-Test source with data access description providing encoding which we override.
+**Title**: Source overrride access: Encoding
+
+**Description**: Test source with data access description providing encoding which we override.
 
 **Error expected?** Yes
 

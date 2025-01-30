@@ -1,6 +1,8 @@
 # RMLSTC0006b
 
-Test source with VoID data access description
+**Title**: Source with VoID access description
+
+**Description**: Test source with VoID data access description
 
 **Error expected?** Yes
 

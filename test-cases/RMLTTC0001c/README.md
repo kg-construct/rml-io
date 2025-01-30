@@ -1,6 +1,8 @@
 # RMLTTC0001c
 
-Test exporting all triples to a single Target with a given object reference.
+**Title**: Single Target: Object Map
+
+**Description**: Test exporting all triples to a single Target with a given object reference.
 
 **Error expected?** Yes
 

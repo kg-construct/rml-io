@@ -1,6 +1,8 @@
 # RMLTTC0002i
 
-Test exporting all triples to a Target in a Language Map and a Target in a Graph Map.
+**Title**: Multiple Targets: Language Map and Graph Map
+
+**Description**: Test exporting all triples to a Target in a Language Map and a Target in a Graph Map.
 
 **Error expected?** Yes
 

@@ -1,6 +1,8 @@
 # RMLSTC0006c
 
-Test source with SD data access description
+**Title**: Source with SD access description
+
+**Description**: Test source with SD data access description
 
 **Error expected?** Yes
 

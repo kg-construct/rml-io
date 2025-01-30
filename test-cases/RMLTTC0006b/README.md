@@ -1,6 +1,8 @@
 # RMLTTC0006b
 
-Test export all triples with GZip compression
+**Title**: Target GZip compression
+
+**Description**: Test export all triples with GZip compression
 
 **Error expected?** Yes
 

@@ -1,6 +1,8 @@
 # RMLTTC0002f
 
-Test exporting all triples to a Target in a Subject Map and a Target in a Graph Map.
+**Title**: Multiple Targets: Subject Map and Graph Map
+
+**Description**: Test exporting all triples to a Target in a Subject Map and a Target in a Graph Map.
 
 **Error expected?** Yes
 

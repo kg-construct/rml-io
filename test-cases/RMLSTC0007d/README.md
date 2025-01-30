@@ -1,6 +1,8 @@
 # RMLSTC0007d
 
-Test source with XPath reference formulation with namespaces
+**Title**: Source with XPath reference formulation with namespaces
+
+**Description**: Test source with XPath reference formulation with namespaces
 
 **Error expected?** Yes
 

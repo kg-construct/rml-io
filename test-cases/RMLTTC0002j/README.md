@@ -1,6 +1,8 @@
 # RMLTTC0002j
 
-Test exporting all triples to a Target in a Language Map and a Target in a Object Map.
+**Title**: Multiple Targets: Language Map and Object Map
+
+**Description**: Test exporting all triples to a Target in a Language Map and a Target in a Object Map.
 
 **Error expected?** Yes
 

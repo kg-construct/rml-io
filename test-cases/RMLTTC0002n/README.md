@@ -1,6 +1,8 @@
 # RMLTTC0002n
 
-Test exporting all triples to Targets in multiple Object Maps.
+**Title**: Multiple Targets: Multiple Object Maps
+
+**Description**: Test exporting all triples to Targets in multiple Object Maps.
 
 **Error expected?** Yes
 

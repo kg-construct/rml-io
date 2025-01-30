@@ -1,6 +1,8 @@
 # RMLSTC0006e
 
-Test source with Web of Things data access description
+**Title**: Source with Web of Things access description
+
+**Description**: Test source with Web of Things data access description
 
 **Error expected?** Yes
 

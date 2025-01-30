@@ -1,6 +1,8 @@
 # RMLTTC0001e
 
-Test exporting all triples with a given language tag to a single Target.
+**Title**: Single Target: Language Map
+
+**Description**: Test exporting all triples with a given language tag to a single Target.
 
 **Error expected?** Yes
 

@@ -1,6 +1,8 @@
 # RMLTTC0007d
 
-Test export all triples to a target with Web of Things access description
+**Title**: Target with Web of Things access description
+
+**Description**: Test export all triples to a target with Web of Things access description
 
 **Error expected?** Yes
 

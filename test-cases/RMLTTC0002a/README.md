@@ -1,6 +1,8 @@
 # RMLTTC0002a
 
-Test exporting all triples to multiple Targets in the same Term Map.
+**Title**: Multiple Targets: Same Term Map
+
+**Description**: Test exporting all triples to multiple Targets in the same Term Map.
 
 **Error expected?** Yes
 

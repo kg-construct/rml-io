@@ -1,6 +1,8 @@
 # RMLSTC0002e
 
-Test source with TarGZip compression
+**Title**: Source TarGzip compression
+
+**Description**: Test source with TarGZip compression
 
 **Error expected?** Yes
 

@@ -1,6 +1,8 @@
 # RMLTTC0002o
 
-Test exporting all triples to Targets in multiple Graph Maps.
+**Title**: Multiple Targets: Multiple Graph Maps
+
+**Description**: Test exporting all triples to Targets in multiple Graph Maps.
 
 **Error expected?** Yes
 

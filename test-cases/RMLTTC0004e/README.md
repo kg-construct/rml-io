@@ -1,6 +1,8 @@
 # RMLTTC0004e
 
-Test export all triples as RDF/JSON
+**Title**: Target RDF/JSON
+
+**Description**: Test export all triples as RDF/JSON
 
 **Error expected?** Yes
 

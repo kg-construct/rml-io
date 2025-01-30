@@ -1,6 +1,8 @@
 # RMLSTC0003
 
-Test source which requires a query
+**Title**: Source with query
+
+**Description**: Test source which requires a query
 
 **Error expected?** Yes
 

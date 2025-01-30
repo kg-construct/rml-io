@@ -1,6 +1,8 @@
 # RMLTTC0007c
 
-Test export all triples to a target with SD access description
+**Title**: Target with SD access description
+
+**Description**: Test export all triples to a target with SD access description
 
 **Error expected?** Yes
 

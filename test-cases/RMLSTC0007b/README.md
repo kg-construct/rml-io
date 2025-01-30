@@ -1,6 +1,8 @@
 # RMLSTC0007b
 
-Test source with Tabular reference formulation
+**Title**: Source with CSV reference formulation
+
+**Description**: Test source with Tabular reference formulation
 
 **Error expected?** Yes
 

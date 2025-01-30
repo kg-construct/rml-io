@@ -1,6 +1,8 @@
 # RMLTTC0003a
 
-Test exporting some triples to a different Target with a separate Triples Map.
+**Title**: Overriding Targets: Seperate Triples Map
+
+**Description**: Test exporting some triples to a different Target with a separate Triples Map.
 
 **Error expected?** Yes
 

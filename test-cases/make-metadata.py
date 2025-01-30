@@ -136,7 +136,8 @@ def main(spec: str):
             lines = []
             # Title and description
             lines.append(f'# {testcase}\n\n')
-            lines.append(f'{description}\n\n')
+            lines.append(f'**Title**: {title}\n\n')
+            lines.append(f'**Description**: {description}\n\n')
             if error:
                 error_html = 'Yes'
             else:

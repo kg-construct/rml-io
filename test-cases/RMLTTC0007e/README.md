@@ -1,6 +1,8 @@
 # RMLTTC0007e
 
-Test dcat:format in a Target
+**Title**: Target with dcat:format
+
+**Description**: Test dcat:format in a Target
 
 **Error expected?** Yes
 

@@ -1,6 +1,8 @@
 # RMLSTC0004b
 
-Test source with one NULL value defined
+**Title**: Source with one NULL value
+
+**Description**: Test source with one NULL value defined
 
 **Error expected?** Yes
 

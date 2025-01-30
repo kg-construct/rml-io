@@ -1,6 +1,8 @@
 # RMLTTC0006e
 
-Test export all triples with TarGZip compression
+**Title**: Target TarGzip compression
+
+**Description**: Test export all triples with TarGZip compression
 
 **Error expected?** Yes
 

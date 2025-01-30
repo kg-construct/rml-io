@@ -1,6 +1,8 @@
 # RMLTTC0001d
 
-Test exporting all triples within a named graph to a single Target.
+**Title**: Single Target: Graph Map
+
+**Description**: Test exporting all triples within a named graph to a single Target.
 
 **Error expected?** Yes
 

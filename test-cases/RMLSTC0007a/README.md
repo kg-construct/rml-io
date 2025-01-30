@@ -1,6 +1,8 @@
 # RMLSTC0007a
 
-Test source with JSONPath reference formulation
+**Title**: Source with JSONPath reference formulation
+
+**Description**: Test source with JSONPath reference formulation
 
 **Error expected?** Yes
 

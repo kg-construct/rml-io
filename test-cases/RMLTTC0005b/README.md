@@ -1,6 +1,8 @@
 # RMLTTC0005b
 
-Test export all triples with UTF-16 encoding
+**Title**: Target UTF-16
+
+**Description**: Test export all triples with UTF-16 encoding
 
 **Error expected?** Yes
 

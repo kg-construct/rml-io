@@ -1,6 +1,8 @@
 # RMLTTC0002p
 
-Test exporting all triples to Targets in multiple Language Maps.
+**Title**: Multiple Targets: Multiple Language Maps
+
+**Description**: Test exporting all triples to Targets in multiple Language Maps.
 
 **Error expected?** Yes
 
