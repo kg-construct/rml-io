@@ -16,7 +16,7 @@
   ];
   rml:subjectMap [ a rml:SubjectMap;
     rml:template "http://example.org/{$.id}";
-    rml:logicalTarget <#TargetDump1>;
+    rml:logicalTarget <#TargetDump2>;
   ];
   rml:predicateObjectMap [ a rml:PredicateObjectMap;
     rml:predicateMap [ a rml:PredicateMap;
