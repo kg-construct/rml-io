@@ -56,7 +56,7 @@
             sh:nodeKind sh:BlankNodeOrIRI ;
             sh:path rml:source ] ;
     sh:targetClass rml:LogicalSource ;
-    sh:targetObjectsOf rml:logicalSource .
+    sh:targetSubjectsOf rml:source .
 
 <http://w3id.org/rml/shapes/RMLLogicalTargetShape> a sh:NodeShape ;
     rdfs:label "RML Logical Target" ;
