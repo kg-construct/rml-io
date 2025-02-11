@@ -1,23 +1,19 @@
-## RMLSTC0006b
+## RMLSTC0006f
 
-**Title**: Source with VoID access description
+**Title**: Source with D2RQ access description
 
-**Description**: Test source with VoID data access description
+**Description**: Test source with D2RQ access description for SQL databases
 
 **Error expected?** No
 
 **Input**
 ```
-<http://example.org/0> <http://xmlns.com/foaf/0.1/age> "33" .
-<http://example.org/0> <http://xmlns.com/foaf/0.1/name> "Monica Geller" .
-<http://example.org/1> <http://xmlns.com/foaf/0.1/age> "34" .
-<http://example.org/1> <http://xmlns.com/foaf/0.1/name> "Rachel Green" .
-<http://example.org/2> <http://xmlns.com/foaf/0.1/age> "35" .
-<http://example.org/2> <http://xmlns.com/foaf/0.1/name> "Joey Tribbiani" .
-<http://example.org/3> <http://xmlns.com/foaf/0.1/age> "36" .
-<http://example.org/3> <http://xmlns.com/foaf/0.1/name> "Chandler Bing" .
-<http://example.org/4> <http://xmlns.com/foaf/0.1/age> "37" .
-<http://example.org/4> <http://xmlns.com/foaf/0.1/name> "Ross Geller" .
+id, name, age
+0, Monica Geller, 33
+1, Rachel Green, 34
+2, Joey Tribbiani, 35
+3, Chandler Bing, 36
+4, Ross Geller, 37
 
 ```
 
@@ -25,27 +21,21 @@
 ```
 @prefix rml: <http://w3id.org/rml/> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
-@prefix dcat: <http://www.w3.org/ns/dcat#> .
-@prefix formats: <http://www.w3.org/ns/formats/> .
+@prefix d2rq: <http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @base <http://example.com/rules/> .
 
-<#VoIDSourceAccess> a rml:Source, dcat:Distribution;
-  dcat:downloadURL <http://w3id.org/rml/resources/rml-io/RMLSTC0006b/Friends.nt>;
+<#D2RQSourceAccess> a rml:Source, d2rq:Database;
+  d2rq:jdbcDSN "$CONNECTIONDSN";
+  d2rq:username "$USERNAME";
+  d2rq:password "$PASSWORD"
 .
 
 <#TriplesMap> a rml:TriplesMap;
   rml:logicalSource [ a rml:LogicalSource;
-    rml:source <#VoIDSourceAccess>;
-    rml:iterator """
-    PREFIX foaf: <http://xmlns.com/foaf/0.1/>
-
-    SELECT ?id ?name ?age WHERE {
-        ?person foaf:name ?name .
-        ?person foaf:age ?age .
-        BIND(REPLACE(STR(?person),"http://example.org/", "") AS ?id) .
-    }
-    """;
-    rml:referenceFormulation formats:SPARQL_Results_CSV;
+    rml:source <#D2RQSourceAccess>;
+    rml:referenceFormulation rml:SQL2008Table;
+    rml:iterator "Friends";
   ];
   rml:subjectMap [ a rml:SubjectMap;
     rml:template "http://example.org/{id}";
