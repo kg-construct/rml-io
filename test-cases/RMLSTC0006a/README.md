@@ -1,40 +1,19 @@
-## RMLSTC0006a
+## RMLSTC0006f
 
-**Title**: Source with DCAT access description
+**Title**: Source with D2RQ access description
 
-**Description**: Test source with DCAT data access description
+**Description**: Test source with D2RQ access description for SQL databases
 
 **Error expected?** No
 
 **Input**
 ```
-[
-  { 
-    "id": 0,
-    "name": "Monica Geller",
-    "age": 33
-  },
-  { 
-    "id": 1,
-    "name": "Rachel Green",
-    "age": 34
-  },
-  { 
-    "id": 2,
-    "name": "Joey Tribbiani",
-    "age": 35
-  },
-  { 
-    "id": 3,
-    "name": "Chandler Bing",
-    "age": 36
-  },
-  { 
-    "id": 4,
-    "name": "Ross Geller",
-    "age": 37
-  }
-]
+id, name, age
+0, Monica Geller, 33
+1, Rachel Green, 34
+2, Joey Tribbiani, 35
+3, Chandler Bing, 36
+4, Ross Geller, 37
 
 ```
 
@@ -42,28 +21,31 @@
 ```
 @prefix rml: <http://w3id.org/rml/> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
-@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix d2rq: <http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @base <http://example.com/rules/> .
 
-<#DCATSourceAccess> a rml:Source, dcat:Distribution;
-    dcat:downloadURL <http://w3id.org/rml/resources/rml-io/RMLSTC0006a/Friends.json>;
+<#D2RQSourceAccess> a rml:Source, d2rq:Database;
+  d2rq:jdbcDSN "$CONNECTIONDSN";
+  d2rq:username "$USERNAME";
+  d2rq:password "$PASSWORD"
 .
 
 <#TriplesMap> a rml:TriplesMap;
   rml:logicalSource [ a rml:LogicalSource;
-    rml:source <#DCATSourceAccess>;
-    rml:referenceFormulation rml:JSONPath;
-    rml:iterator "$[*]";
+    rml:source <#D2RQSourceAccess>;
+    rml:referenceFormulation rml:SQL2008Table;
+    rml:iterator "Friends";
   ];
   rml:subjectMap [ a rml:SubjectMap;
-    rml:template "http://example.org/{$.id}";
+    rml:template "http://example.org/{id}";
   ];
   rml:predicateObjectMap [ a rml:PredicateObjectMap;
     rml:predicateMap [ a rml:PredicateMap;
       rml:constant foaf:name;
     ];
     rml:objectMap [ a rml:ObjectMap;
-      rml:reference "$.name";
+      rml:reference "name";
     ];
   ];
   rml:predicateObjectMap [ a rml:PredicateObjectMap;
@@ -71,7 +53,7 @@
       rml:constant foaf:age;
     ];
     rml:objectMap [ a rml:ObjectMap;
-      rml:reference "$.age";
+      rml:reference "age";
     ];
   ];
 .
