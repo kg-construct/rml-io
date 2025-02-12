@@ -3,6 +3,7 @@
 @prefix csvw: <http://www.w3.org/ns/csvw#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix ex: <http://example.com/> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
 @base <http://example.com/rules/> .
 
 <#DCATSourceAccessJSON> a rml:Source, dcat:Distribution;
