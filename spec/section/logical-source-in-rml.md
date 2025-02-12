@@ -21,13 +21,9 @@ id;name;nickname
 </pre>
 
 <pre class="ex-access">
-&lt;#CSVSourceAccess&gt; a rml:Source, csvw:Table;
-  csvw:url "https://rml.io/specs/rml-target/Leverage.csv";
-  csvw:dialect [ a csvw:Dialect;
-    csvw:delimiter ";";
-    csvw:encoding "UTF-8";
-    csvw:header "1"^^xsd:boolean;
-  ];
+&lt;#CSVSourceAccess&gt; a rml:Source, rml:FilePath;
+  rml:root rml:CurrentWorkingDirectory;
+  rml:path "./Leverage.csv";
 .
 </pre>
 

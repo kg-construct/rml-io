@@ -51,7 +51,7 @@ If a property is specified, it MUST only occur once.
 | `rml:source`  | `rml:LogicalSource`  | `IRI`  |
 
 <figure>
-  <img src="./resources/images/source-structure.png" alt="Logical Source structure"/>
+  <img src="/resources/images/source-structure.png" alt="Logical Source structure"/>
   <figcaption>The structure of [=Logical Source=]</figcaption>
 </figure>
 
@@ -82,8 +82,8 @@ These reference formulations are defined in the [[RML-IO-Registry]].
 
 <pre class="ex-source">
 &lt;#XMLNamespace&gt; a rml:LogicalSource;
-     rml:source [ a rml:Source, dcat:Distribution;
-         dcat:accessURL &lt;file:///path/to/data.xml&gt;;
+     rml:source [ a rml:Source, rml:FilePath;
+         rml:path "/path/to/file/data.xml";
      ];
      rml:referenceFormulation [ a rml:XPathReferenceFormulation;
        rml:namespace [ a rml:Namespace;
@@ -135,8 +135,8 @@ and the used compression algorithm. Defaults to no compression.
 
 <pre class="ex-source">
 &lt;#JSON&gt; a rml:LogicalSource;
-     rml:source [ a rml:Source, dcat:Distribution;
-       dcat:accessURL &lt;file:///path/to/data.json.gz&gt;;
+     rml:source [ a rml:Source, rml:FilePath;
+       rml:path "/path/to/data.json.gz";
        rml:null ""; # empty string as NULL besides default null character
        rml:compression rml:gzip; # GZip compression
        rml:encoding rml:UTF-16; # UTF-16 encoding
@@ -193,11 +193,15 @@ and may be extended in the future.
 ### Examples {#source-examples}
 
 The following example shows a Source of a CSV file.
+RML-IO-Registry provides also support for CSVW which allows more fine-grained control
+over CSV files such as delimeters, encoding, etc. but it is not required for
+Processors to implement CSVW, only CSV is the minimum to be compliant with 
+the RML IO module.
 
 <pre class="ex-source">
 &lt;#CSV&gt; a rml:LogicalSource;
-     rml:source [ a rml:Source, csvw:Table;
-        csvw:url "/path/to/data.csv";
+     rml:source [ a rml:Source, rml:FilePath;
+        rml:path "/path/to/data.csv";
         rml:null "NULL";
         rml:null "";
      ];

@@ -60,13 +60,9 @@ id;name;nickname
 </pre>
 
 <pre class="ex-access">
-&lt;#CSVSourceAccess&gt; a csvw:Table;
-  csvw:url "https://rml.io/specs/rml-target/Leverage.csv";
-  csvw:dialect [ a csvw:Dialect;
-    csvw:delimiter ";";
-    csvw:encoding "UTF-8";
-    csvw:header "1"^^xsd:boolean;
-  ];
+&lt;#CSVSourceAccess&gt; a rml:Source, rml:FilePath;
+  rml:root rml:CurrentWorkingDirectory;
+  rml:path "./Leverage.csv";
 .
 </pre>
 
@@ -104,23 +100,23 @@ id;name;nickname
 
 <pre class="ex-target">
 &lt;#TargetDump1&gt; a rml:LogicalTarget;
-  rml:target &lt;#DCATDump1&gt;;
+  rml:target &lt;#Dump1&gt;;
   rml:serialization formats:N-Triples;
 .
 
 &lt;#TargetDump2&gt; a rml:LogicalTarget;
-  rml:target &lt;#DCATDump2&gt;;
+  rml:target &lt;#Dump2&gt;;
   rml:serialization formats:Turtle;
 .
 </pre>
 
 <pre class="ex-access">
-&lt;#DCATDump1&gt; a dcat:Distribution;
-  dcat:downloadURL &ltfile:///data/dump1.nt&gt;;
+&lt;#Dump1&gt; a rml:FilePath;
+  rml:path "/data/dump1.nt";
 .
 
-&lt;#DCATDump2&gt; a dcat:Distribution;
-  dcat:downloadURL &ltfile:///data/dump2.ttl.zip&gt;;
+&lt;#Dump2&gt; a rml:FilePath;
+  rml:path "/data/dump2.ttl.zip";
   rml:compression rml:zip;
 .
 </pre>

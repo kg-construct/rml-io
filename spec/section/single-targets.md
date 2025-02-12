@@ -44,15 +44,15 @@ to an RDF dump with N-Quads as serialization format and GZip compression:
 </pre>
 
 <pre class="ex-access">
-&lt;#DCATSourceAccess&gt; a rml:Source, dcat:Distribution;
-  dcat:downloadURL "https://rml.io/specs/rml-target/Friends.json";
+&lt;#SourceAccess&gt; a rml:Source, rml:FilePath;
+  rml:path "Friends.json";
 .
 </pre>
 
 <pre class="ex-mapping">
 &lt;#TriplesMap&gt; a rml:TriplesMap;
   rml:logicalSource [ a rml:LogicalSource;
-    rml:source &lt;#DCATSourceAccess&gt;;
+    rml:source &lt;#SourceAccess&gt;;
     rml:referenceFormulation rml:JSONPath;
     rml:iterator "$.[*]";
   ];
@@ -81,14 +81,14 @@ to an RDF dump with N-Quads as serialization format and GZip compression:
 
 <pre class="ex-target">
 &lt;#TargetDump1&gt; a rml:LogicalTarget;
-  rml:target &lt;#DCATDump1&gt;;
+  rml:target &lt;#Dump1&gt;;
   rml:serialization formats:N-Quads;
 .
 </pre>
 
 <pre class="ex-access">
-&lt;#DCATDump1&gt; a rml:Target, dcat:Distribution ;
-  dcat:downloadURL &lt;file:///data/dump1.nq.gz&gt;;
+&lt;#Dump1&gt; a rml:Target, rml:FilePath;
+  rml:path "/data/dump1.nq.gz";
   rml:compression rml:gzip;
 .
 </pre>
@@ -146,15 +146,15 @@ with Turtle as serialization format and Zip compression:
 </pre>
 
 <pre class="ex-access">
-&lt;#DCATSourceAccess&gt; a rml:Source, dcat:Distribution;
-  dcat:downloadURL "https://rml.io/specs/rml-target/Friends.json";
+&lt;#SourceAccess&gt; a rml:Source, rml:FilePath;
+  rml:path "Friends.json";
 .
 </pre>
 
 <pre class="ex-mapping">
 &lt;#TriplesMap&gt; a rml:TriplesMap;
   rml:logicalSource [ a rml:LogicalSource;
-    rml:source &lt;#DCATSourceAccess&gt;;
+    rml:source &lt;#SourceAccess&gt;;
     rml:referenceFormulation rml:JSONPath;
     rml:iterator "$.[*]";
   ];
@@ -183,15 +183,15 @@ with Turtle as serialization format and Zip compression:
 
 <pre class="ex-target">
 &lt;#TargetDump1&gt; a rml:LogicalTarget;
-  rml:target &lt;#DCATDump1&gt;;
+  rml:target &lt;#Dump1&gt;;
   rml:serialization formats:Turtle;
 .
 </pre>
 
 <pre class="ex-access">
-&lt;#DCATDump1&gt; a rml:Target, dcat:Distribution;
-  dcat:downloadURL &lt;file:///data/dump1.ttl.zip&gt;;
-  rml:compression rml:zip;
+&lt;#Dump1&gt; a rml:Target, rml:FilePath;
+  rml:path "/data/dump1.ttl.gz";
+  rml:compression rml:gzip;
 .
 </pre>
 
@@ -265,15 +265,15 @@ with N-Triples as serialization format:
 </pre>
 
 <pre class="ex-access">
-&lt;#DCATSourceAccess&gt; a rml:Source, dcat:Distribution;
-  dcat:downloadURL "https://rml.io/specs/rml-target/Friends.json";
+&lt;#SourceAccess&gt; a rml:Source, rml:FilePath;
+  rml:path "Friends.json";
 .
 </pre>
 
 <pre class="ex-mapping">
 &lt;#TriplesMap&gt; a rml:TriplesMap;
   rml:logicalSource [ a rml:LogicalSource;
-    rml:source &lt;#DCATSourceAccess&gt;;
+    rml:source &lt;#SourceAccess&gt;;
     rml:referenceFormulation rml:JSONPath;
     rml:iterator "$.[*]";
   ];
@@ -302,14 +302,14 @@ with N-Triples as serialization format:
 
 <pre class="ex-target">
 &lt;#TargetDump1&gt; a rml:LogicalTarget;
-  rml:target &lt;#DCATDump1&gt;;
+  rml:target &lt;#Dump1&gt;;
   rml:serialization formats:N-Triples;
 .
 </pre>
 
 <pre class="ex-access">
-&lt;#DCATDump1&gt; a rml:Target, dcat:Distribution ;
-  dcat:downloadURL &lt;file:///data/dump1.nt&gt;;
+&lt;#Dump1&gt; a rml:Target, rml:FilePath;
+  rml:path "/data/dump1.nt";
 .
 </pre>
 
@@ -380,15 +380,15 @@ to an RDF dump with N-Quads as serialization format:
 </pre>
 
 <pre class="ex-access">
-&lt;#DCATSourceAccess&gt; a rml:Source, dcat:Distribution;
-  dcat:downloadURL "https://rml.io/specs/rml-target/Friends.json";
+&lt;#SourceAccess&gt; a rml:Source, rml:FilePath;
+  rml:path "Friends.json";
 .
 </pre>
 
 <pre class="ex-mapping">
 &lt;#TriplesMap&gt; a rml:TriplesMap;
   rml:logicalSource [ a rml:LogicalSource;
-    rml:source &lt;#DCATSourceAccess&gt;;
+    rml:source &lt;#SourceAccess&gt;;
     rml:referenceFormulation rml:JSONPath;
     rml:iterator "$.[*]";
   ];
@@ -420,13 +420,13 @@ to an RDF dump with N-Quads as serialization format:
 
 <pre class="ex-target">
 &lt;#TargetDump1&gt; a rml:LogicalTarget;
-  rml:target &lt;#DCATDump1&gt;;
+  rml:target &lt;#Dump1&gt;;
 .
 </pre>
 
 <pre class="ex-access">
-&lt;#DCATDump1&gt; a rml:Target, dcat:Distribution ;
-  dcat:downloadURL &lt;file:///data/dump1.nq&gt;;
+&lt;#Dump1&gt; a rml:Target, rml:FilePath;
+  rml:path "/data/dump1.nq";
 .
 </pre>
 
@@ -483,15 +483,15 @@ to a RDF dump with N-Triples as serialization format:
 </pre>
 
 <pre class="ex-access">
-&lt;#DCATSourceAccess&gt; a rml:Source, dcat:Distribution;
-  dcat:downloadURL "https://rml.io/specs/rml-target/Friends.json";
+&lt;#SourceAccess&gt; a rml:Source, rml:FilePath;
+  rml:path "Friends.json";
 .
 </pre>
 
 <pre class="ex-mapping">
 &lt;#TriplesMap&gt; a rml:TriplesMap;
   rml:logicalSource [ a rml:LogicalSource;
-    rml:source &lt;#DCATSourceAccess&gt;;
+    rml:source &lt;#SourceAccess&gt;;
     rml:referenceFormulation rml:JSONPath;
     rml:iterator "$.[*]";
   ];
@@ -523,14 +523,14 @@ to a RDF dump with N-Triples as serialization format:
 
 <pre class="ex-target">
 &lt;#TargetDump1&gt; a rml:LogicalTarget;
-  rml:target &lt;#DCATDump1&gt;;
+  rml:target &lt;#Dump1&gt;;
   rml:serialization formats:N-Triples;
 .
 </pre>
 
 <pre class="ex-access">
-&lt;#DCATDump1&gt; a rml:Target, dcat:Distribution ;
-  dcat:downloadURL &lt;file:///data/dump1.nt&gt;;
+&lt;#Dump1&gt; a rml:Target, rml:FilePath;
+  rml:path "/data/dump1.nt";
 .
 </pre>
 
@@ -589,15 +589,15 @@ to a RDF dump with N-Triples as serialization format:
 </pre>
 
 <pre class="ex-access">
-&lt;#DCATSourceAccess&gt; a rml:Source, dcat:Distribution;
-  dcat:downloadURL "https://rml.io/specs/rml-target/Friends.json";
+&lt;#SourceAccess&gt; a rml:Source, rml:FilePath;
+  rml:path "Friends.json";
 .
 </pre>
 
 <pre class="ex-mapping">
 &lt;#TriplesMap&gt; a rml:TriplesMap;
   rml:logicalSource [ a rml:LogicalSource;
-    rml:source &lt;#DCATSourceAccess&gt;;
+    rml:source &lt;#SourceAccess&gt;;
     rml:referenceFormulation rml:JSONPath;
     rml:iterator "$.[*]";
   ];
@@ -632,14 +632,14 @@ to a RDF dump with N-Triples as serialization format:
 
 <pre class="ex-target">
 &lt;#TargetDump1&gt; a rml:LogicalTarget;
-  rml:target &lt;#DCATDump1&gt;;
+  rml:target &lt;#Dump1&gt;;
   rml:serialization formats:N-Triples;
 .
 </pre>
 
 <pre class="ex-access">
-&lt;#DCATDump1&gt; a rml:Target, dcat:Distribution ;
-  dcat:downloadURL &lt;file:///data/dump1.nt&gt;;
+&lt;#Dump1&gt; a rml:Target, rml:FilePath;
+  rml:path "/data/dump1.nt";
 .
 </pre>
 
@@ -692,15 +692,15 @@ to a RDF dump with N-Triples as serialization format:
 </pre>
 
 <pre class="ex-access">
-&lt;#DCATSourceAccess&gt; a rml:Source, dcat:Distribution;
-  dcat:downloadURL "https://rml.io/specs/rml-target/Friends.json";
+&lt;#SourceAccess&gt; a rml:Source, rml:FilePath;
+  rml:path "Friends.json";
 .
 </pre>
 
 <pre class="ex-mapping">
 &lt;#TriplesMap&gt; a rml:TriplesMap;
   rml:logicalSource [ a rml:LogicalSource;
-    rml:source &lt;#DCATSourceAccess&gt;;
+    rml:source &lt;#SourceAccess&gt;;
     rml:referenceFormulation rml:JSONPath;
     rml:iterator "$.[*]";
   ];
@@ -741,14 +741,14 @@ to a RDF dump with N-Triples as serialization format:
 
 <pre class="ex-target">
 &lt;#TargetDump1&gt; a rml:LogicalTarget;
-  rml:target &lt;#DCATDump1&gt;;
+  rml:target &lt;#Dump1&gt;;
   rml:serialization formats:N-Quads;
 .
 </pre>
 
 <pre class="ex-access">
-&lt;#DCATDump1&gt; a rml:Target, dcat:Distribution ;
-  dcat:downloadURL &lt;file:///data/dump1.nq.gz&gt;;
+&lt;#Dump1&gt; a rml:Target, rml:FilePath;
+  rml:path "/data/dump1.nq.gz";
   rml:compression rml:gzip;
 .
 </pre>

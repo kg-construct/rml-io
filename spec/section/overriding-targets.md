@@ -16,7 +16,7 @@ are exported to the first Target and the triples with the second predicate
 `schema:name` to the second Target.
 
 <pre class="ex-input">
-# Results of DBPedia SPARQL query
+# DBPedia Friends actors as CSV
 actor,name,nickname
 http://dbpedia.org/resource/Kevin_Sussman,Kevin Sussman
 http://dbpedia.org/resource/Jim_Parsons,Jim Parsons
@@ -31,28 +31,16 @@ http://dbpedia.org/resource/Melissa_Rauch,Melissa Rauch
 </pre>
 
 <pre class="ex-access">
-&lt;#SDSourceAccess&gt; a rml:Source, sd:Service;
-  sd:endpoint <http://dbpedia.org/sparql/>;
-  sd:supportedLanguage sd:SPARQL11Query;
+&lt;#SourceAccess&gt; a rml:Source, rml:FilePath;
+  rml:path "FriendsDBPedia.csv";
 .
 </pre>
 
 <pre class="ex-mapping">
 &lt;#TriplesMap1&gt; a rml:TriplesMap;
   rml:logicalSource [ a rml:LogicalSource;
-    rml:source &lt;#SDSourceAccess&gt;;
-    rml:referenceFormulation formats:SPARQL_Results_CSV;
-    rml:iterator """
-      PREFIX dbo: <http://dbpedia.org/ontology/>
-      PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
-      PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-      SELECT DISTINCT ?actor ?name WHERE {
-        ?tvshow rdf:type dbo:TelevisionShow .
-        ?tvshow rdfs:label "The Big Bang Theory"@en .
-        ?tvshow dbo:starring ?actor .
-        ?actor foaf:name ?name .
-      }
-    """;
+    rml:source &lt;#SourceAccess&gt;;
+    rml:referenceFormulation rml:CSV;
   ];
   rml:subjectMap [ a rml:SubjectMap;
     rml:reference "actor";
@@ -70,19 +58,8 @@ http://dbpedia.org/resource/Melissa_Rauch,Melissa Rauch
 
 &lt;#TriplesMap2&gt; a rml:TriplesMap;
   rml:logicalSource [ a rml:LogicalSource;
-    rml:source &lt;#SDSourceAccess&gt;;
-    rml:referenceFormulation formats:SPARQL_Results_CSV;
-    rml:iterator """
-      PREFIX dbo: <http://dbpedia.org/ontology/>
-      PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
-      PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-      SELECT DISTINCT ?actor ?name WHERE {
-        ?tvshow rdf:type dbo:TelevisionShow .
-        ?tvshow rdfs:label "The Big Bang Theory"@en .
-        ?tvshow dbo:starring ?actor .
-        ?actor foaf:name ?name .
-      }
-    """;
+    rml:source &lt;#SourceAccess&gt;;
+    rml:referenceFormulation rml:CSV;
   ];
   rml:subjectMap [ a rml:SubjectMap;
     rml:reference "actor";
@@ -102,21 +79,21 @@ http://dbpedia.org/resource/Melissa_Rauch,Melissa Rauch
 
 <pre class="ex-target">
 &lt;#TargetDump1&gt; a rml:LogicalTarget;
-  rml:target &lt;#DCATDump1&gt;;
+  rml:target &lt;#Dump1&gt;;
   rml:serialization formats:N-Triples;
 .
 &lt;#TargetDump2&gt; a rml:LogicalTarget;
-  rml:target &lt;#DCATDump2&gt;;
+  rml:target &lt;#Dump2&gt;;
   rml:serialization formats:N-Triples;
 .
 </pre>
 
 <pre class="ex-access">
-&lt;#DCATDump1&gt; a rml:Target, dcat:Distribution;
-  dcat:downloadURL &lt;file:///data/dump1.nt&gt;;
+&lt;#Dump1&gt; a rml:Target, rml:FilePath;
+  rml:path "/data/dump1.nt";
 .
-&lt;#DCATDump2&gt; a rml:Target, dcat:Distribution;
-  dcat:downloadURL &lt;file:///data/dump2.nq&gt;;
+&lt;#Dump2&gt; a rml:Target, rml:FilePath;
+  rml:path "/data/dump2.nt";
 .
 </pre>
 
@@ -160,7 +137,7 @@ to the first Target, triples with `Kaley Cuoco` as object are exported
 to the second Target.
 
 <pre class="ex-input">
-# Results of DBPedia SPARQL query
+# DBPedia Friends actors as CSV
 actor,name,nickname
 http://dbpedia.org/resource/Kevin_Sussman,Kevin Sussman
 http://dbpedia.org/resource/Jim_Parsons,Jim Parsons
@@ -175,28 +152,16 @@ http://dbpedia.org/resource/Melissa_Rauch,Melissa Rauch
 </pre>
 
 <pre class="ex-access">
-&lt;#SDSourceAccess&gt; a rml:Source, sd:Service;
-  sd:endpoint <http://dbpedia.org/sparql/>;
-  sd:supportedLanguage sd:SPARQL11Query;
+&lt;#SourceAccess&gt; a rml:Source, rml:FilePath;
+  rml:path "FriendsDBPedia.csv";
 .
 </pre>
 
 <pre class="ex-mapping">
 &lt;#TriplesMap&gt; a rml:TriplesMap;
   rml:logicalSource [ a rml:LogicalSource;
-    rml:source &lt;#SDSourceAccess&gt;;
-    rml:referenceFormulation formats:SPARQL_Results_CSV;
-    rml:iterator """
-      PREFIX dbo: <http://dbpedia.org/ontology/>
-      PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
-      PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-      SELECT DISTINCT ?actor ?name WHERE {
-        ?tvshow rdf:type dbo:TelevisionShow .
-        ?tvshow rdfs:label "The Big Bang Theory"@en .
-        ?tvshow dbo:starring ?actor .
-        ?actor foaf:name ?name .
-      }
-    """;
+    rml:source &lt;SourceAccess&gt;;
+    rml:referenceFormulation rml:CSV;
   ];
   rml:subjectMap [ a rml:SubjectMap;
     rml:reference "actor";
@@ -259,21 +224,21 @@ http://dbpedia.org/resource/Melissa_Rauch,Melissa Rauch
 
 <pre class="ex-target">
 &lt;#TargetDump1&gt; a rml:LogicalTarget;
-  rml:target &lt;#DCATDump1&gt;;
+  rml:target &lt;#Dump1&gt;;
   rml:serialization formats:N-Triples;
 .
 &lt;#TargetDump2&gt; a rml:LogicalTarget;
-  rml:target &lt;#DCATDump2&gt;;
+  rml:target &lt;#Dump2&gt;;
   rml:serialization formats:N-Triples;
 .
 </pre>
 
 <pre class="ex-access">
-&lt;#DCATDump1&gt; a rml:Target, dcat:Distribution ;
-  dcat:downloadURL &lt;file:///data/dump1.nt&gt;;
+&lt;#Dump1&gt; a rml:Target, rml:FilePath;
+  rml:path "/data/dump1.nt";
 .
-&lt;#DCATDump2&gt; a rml:Target, dcat:Distribution ;
-  dcat:downloadURL &lt;file:///data/dump2.nt&gt;;
+&lt;#Dump2&gt; a rml:Target, rml:FilePath;
+  rml:path "/data/dump2.nt";
 .
 </pre>
 
