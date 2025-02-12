@@ -11,7 +11,7 @@
 
 :RMLLogicalSourceShape
     a sh:NodeShape ;
-    sh:targetObjectsOf rml:logicalSource ;  # Object of rml:TriplesMap
+    sh:targetSubjectsOf rml:source ;
     sh:targetClass rml:LogicalSource ;  # Used as a class
     # Already targets 'rml:logicalSource'
     rdfs:label "RML Logical Source" ;
