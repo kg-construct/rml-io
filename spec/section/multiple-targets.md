@@ -43,23 +43,23 @@ to the three specified Targets:
 </pre>
 
 <pre class="ex-access">
-&lt;#DCATSourceAccess&gt; a rml:Source, dcat:Distribution;
-  dcat:downloadURL "https://rml.io/specs/rml-target/Supergirl.xml";
+&lt;#SourceAccess&gt; a rml:Source, rml:FilePath;
+  rml:path "Supergirl.xml";
 .
 </pre>
 
 <pre class="ex-mapping">
 &lt;#TriplesMap&gt; a rml:TriplesMap;
   rml:logicalSource [ a rml:LogicalSource;
-    rml:source &lt;#DCATSourceAccess&gt;;
+    rml:source &lt;#SourceAccess&gt;;
     rml:referenceFormulation rml:XPath;
     rml:iterator "//Supergirl/Character/";
   ];
   rml:subjectMap [ a rml:SubjectMap;
     rml:template "http://example.org/{@id}";
-    rml:logicalTarget <#TargetDump1>;
-    rml:logicalTarget <#TargetDump2>;
-    rml:logicalTarget <#TargetDump3>;
+    rml:logicalTarget &lt;#TargetDump1&gt;;
+    rml:logicalTarget &lt;#TargetDump2&gt;;
+    rml:logicalTarget &lt;#TargetDump3&gt;;
   ];
   rml:predicateObjectMap [ a rml:PredicateObjectMap;
     rml:predicateMap [ a rml:PredicateMap;
@@ -74,30 +74,30 @@ to the three specified Targets:
 
 <pre class="ex-target">
 &lt;#TargetDump1&gt; a rml:LogicalTarget;
-  rml:target &lt;#DCATDump1&gt;;
+  rml:target &lt;#Dump1&gt;;
   rml:serialization formats:N-Triples;
 .
 &lt;#TargetDump2&gt; a rml:LogicalTarget;
-  rml:target &lt;#DCATDump1&gt;;
+  rml:target &lt;#Dump2&gt;;
   rml:serialization formats:JSON-LD;
 .
 &lt;#TargetDump3&gt; a rml:LogicalTarget;
-  rml:target &lt;#DCATDump1&gt;;
+  rml:target &lt;#Dump3&gt;;
   rml:serialization formats:RDF_XML;
 .
 </pre>
 
 <pre class="ex-access">
-&lt;#DCATDump1&gt; a rml:Target, dcat:Distribution;
-  dcat:downloadURL &lt;file:///data/dump1.nt.zip&gt;;
+&lt;#Dump1&gt; a rml:Target, rml:FilePath;
+  rml:path "/data/dump1.nt.zip";
   rml:compression rml:zip;
 .
-&lt;#DCATDump2&gt; a rml:Target, dcat:Distribution;
-  dcat:downloadURL &lt;file:///data/dump2.jsonld.tar.xz&gt;;
+&lt;#Dump2&gt; a rml:Target, rml:FilePath;
+  rml:path "/data/dump2.jsonld.tar.xz";
   rml:compression rml:tarxz;
 .
-&lt;#DCATDump3&gt; a rml:Target, dcat:Distribution;
-  dcat:downloadURL &lt;file:///data/dump3.rdf.tar.gz&gt;;
+&lt;#Dump3&gt; a rml:Target, rml:FilePath;
+  rml:path "/data/dump3.rdf.tar.gz";
   rml:compression rml:targz;
 .
 </pre>
@@ -193,26 +193,26 @@ are exported to `TargetDump2`.
 </pre>
 
 <pre class="ex-access">
-&lt;#DCATSourceAccess&gt; a rml:Source, dcat:Distribution;
-  dcat:downloadURL "https://rml.io/specs/rml-target/Supergirl.xml";
+&lt;#SourceAccess&gt; a rml:Source, rml:FilePath;
+  rml:path "Supergirl.xml";
 .
 </pre>
 
 <pre class="ex-mapping">
 &lt;#TriplesMap&gt; a rml:TriplesMap;
   rml:logicalSource [ a rml:LogicalSource;
-    rml:source &lt;#DCATSourceAccess&gt;;
+    rml:source &lt;#SourceAccess&gt;;
     rml:referenceFormulation rml:XPath;
     rml:iterator "//Supergirl/Character/";
   ];
   rml:subjectMap [ a rml:SubjectMap;
     rml:template "http://example.org/{@id}";
-    rml:logicalTarget <#TargetDump1>;
+    rml:logicalTarget &lt;#TargetDump1&gt;;
   ];
   rml:predicateObjectMap [ a rml:PredicateObjectMap;
     rml:predicateMap [ a rml:PredicateMap;
       rml:constant foaf:name;
-      rml:logicalTarget <#TargetDump2>;
+      rml:logicalTarget &lt;#TargetDump2&gt;;
     ];
     rml:objectMap [ a rml:ObjectMap;
       rml:reference "name/text()";
@@ -231,21 +231,21 @@ are exported to `TargetDump2`.
 
 <pre class="ex-target">
 &lt;#TargetDump1&gt; a rml:LogicalTarget;
-  rml:target &lt;#DCATDump1&gt;;
+  rml:target &lt;#Dump1&gt;;
   rml:serialization formats:N-Triples;
 .
 &lt;#TargetDump2&gt; a rml:LogicalTarget;
-  rml:target &lt;#DCATDump1&gt;;
+  rml:target &lt;#Dump1&gt;;
   rml:serialization formats:N-Triples;
 .
 </pre>
 
 <pre class="ex-access">
-&lt;#DCATDump1&gt; a dcat:Distribution ;
-  dcat:downloadURL &lt;file:///data/dump1.nt&gt;;
+&lt;#Dump1&gt; a rml:Target, rml:FilePath;
+  rml:path "/data/dump1.nt";
 .
-&lt;#DCATDump2&gt; a dcat:Distribution ;
-  dcat:downloadURL &lt;file:///data/dump2.nt&gt;;
+&lt;#Dump2&gt; a rml:Target, rml:FilePath;
+  rml:path "/data/dump2.nt";
 .
 </pre>
 
@@ -296,21 +296,21 @@ are exported to `TargetDump2`.
 </pre>
 
 <pre class="ex-access">
-&lt;#DCATSourceAccess&gt; a rml:Source, dcat:Distribution;
-  dcat:downloadURL "https://rml.io/specs/rml-target/Supergirl.xml";
+&lt;#SourceAccess&gt; a rml:Source, rml:FilePath;
+  rml:path "Supergirl.xml";
 .
 </pre>
 
 <pre class="ex-mapping">
 &lt;#TriplesMap&gt; a rml:TriplesMap;
   rml:logicalSource [ a rml:LogicalSource;
-    rml:source &lt;#DCATSourceAccess&gt;;
+    rml:source &lt;#SourceAccess&gt;;
     rml:referenceFormulation rml:XPath;
     rml:iterator "//Supergirl/Character/";
   ];
   rml:subjectMap [ a rml:SubjectMap;
     rml:template "http://example.org/{@id}";
-    rml:logicalTarget <#TargetDump1>;
+    rml:logicalTarget &lt;#TargetDump1&gt;;
   ];
   rml:predicateObjectMap [ a rml:PredicateObjectMap;
     rml:predicateMap [ a rml:PredicateMap;
@@ -318,7 +318,7 @@ are exported to `TargetDump2`.
     ];
     rml:objectMap [ a rml:ObjectMap;
       rml:reference "name/text()";
-      rml:logicalTarget <#TargetDump2>;
+      rml:logicalTarget &lt;#TargetDump2&gt;;
     ];
   ];
   rml:predicateObjectMap [ a rml:PredicateObjectMap;
@@ -334,21 +334,21 @@ are exported to `TargetDump2`.
 
 <pre class="ex-target">
 &lt;#TargetDump1&gt; a rml:LogicalTarget;
-  rml:target &lt;#DCATDump1&gt;;
+  rml:target &lt;#Dump1&gt;;
   rml:serialization formats:N-Triples;
 .
 &lt;#TargetDump2&gt; a rml:LogicalTarget;
-  rml:target &lt;#DCATDump1&gt;;
+  rml:target &lt;#Dump1&gt;;
   rml:serialization formats:N-Triples;
 .
 </pre>
 
 <pre class="ex-access">
-&lt;#DCATDump1&gt; a rml:Target, dcat:Distribution;
-  dcat:downloadURL &lt;file:///data/dump1.nt&gt;;
+&lt;#Dump1&gt; a rml:Target, rml:FilePath;
+  rml:path "/data/dump1.nt";
 .
-&lt;#DCATDump2&gt; a rml:Target, dcat:Distribution;
-  dcat:downloadURL &lt;file:///data/dump2.nt&gt;;
+&lt;#Dump2&gt; a rml:Target, rml:FilePath;
+  rml:path "/data/dump2.nt";
 .
 </pre>
 
@@ -399,15 +399,15 @@ are exported to `TargetDump2`.
 </pre>
 
 <pre class="ex-access">
-&lt;#DCATSourceAccess&gt; a rml:Source, dcat:Distribution;
-  dcat:downloadURL "https://rml.io/specs/rml-target/Supergirl.xml";
+&lt;#SourceAccess&gt; a rml:Source, rml:FilePath;
+  rml:path "Supergirl.xml";
 .
 </pre>
 
 <pre class="ex-mapping">
 &lt;#TriplesMap&gt; a rml:TriplesMap;
   rml:logicalSource [ a rml:LogicalSource;
-    rml:source &lt;#DCATSourceAccess&gt;;
+    rml:source &lt;#SourceAccess&gt;;
     rml:referenceFormulation rml:XPath;
     rml:iterator "//Supergirl/Character/";
   ];
@@ -417,7 +417,7 @@ are exported to `TargetDump2`.
   rml:predicateObjectMap [ a rml:PredicateObjectMap;
     rml:predicateMap [ a rml:PredicateMap;
       rml:constant foaf:name;
-      rml:logicalTarget <#TargetDump1>;
+      rml:logicalTarget &lt;#TargetDump1&gt;;
     ];
     rml:objectMap [ a rml:ObjectMap;
       rml:reference "name/text()";
@@ -429,7 +429,7 @@ are exported to `TargetDump2`.
     ];
     rml:objectMap [ a rml:ObjectMap;
       rml:reference "nickname/text()";
-      rml:logicalTarget <#TargetDump2>;
+      rml:logicalTarget &lt;#TargetDump2&gt;;
     ];
   ];
 .
@@ -437,21 +437,21 @@ are exported to `TargetDump2`.
 
 <pre class="ex-target">
 &lt;#TargetDump1&gt; a rml:LogicalTarget;
-  rml:target &lt;#DCATDump1&gt;;
+  rml:target &lt;#Dump1&gt;;
   rml:serialization formats:N-Triples;
 .
 &lt;#TargetDump2&gt; a rml:LogicalTarget;
-  rml:target &lt;#DCATDump1&gt;;
+  rml:target &lt;#Dump1&gt;;
   rml:serialization formats:N-Triples;
 .
 </pre>
 
 <pre class="ex-access">
-&lt;#DCATDump1&gt; a rml:Target, dcat:Distribution;
-  dcat:downloadURL &lt;file:///data/dump1.nt&gt;;
+&lt;#Dump1&gt; a rml:Target, rml:FilePath;
+  rml:path "/data/dump1.nt";
 .
-&lt;#DCATDump2&gt; a rml:Target, dcat:Distribution;
-  dcat:downloadURL &lt;file:///data/dump2.nt&gt;;
+&lt;#Dump2&gt; a rml:Target, rml:FilePath;
+  rml:path "/data/dump2.nt";
 .
 </pre>
 
@@ -498,21 +498,21 @@ predicate `foaf:nickname` are exported to `TargetDump2`.
 </pre>
 
 <pre class="ex-access">
-&lt;#DCATSourceAccess&gt; a rml:Source, dcat:Distribution;
-  dcat:downloadURL "https://rml.io/specs/rml-target/Supergirl.xml";
+&lt;#SourceAccess&gt; a rml:Source, rml:FilePath;
+  rml:path "Supergirl.xml";
 .
 </pre>
 
 <pre class="ex-mapping">
 &lt;#TriplesMap&gt; a rml:TriplesMap;
   rml:logicalSource [ a rml:LogicalSource;
-    rml:source &lt;#DCATSourceAccess&gt;;
+    rml:source &lt;#SourceAccess&gt;;
     rml:referenceFormulation rml:XPath;
     rml:iterator "//Supergirl/Character/";
   ];
   rml:subjectMap [ a rml:SubjectMap;
     rml:template "http://example.org/{@id}";
-    rml:logicalTarget <#TargetDump1>;
+    rml:logicalTarget &lt;#TargetDump1&gt;;
   ];
   rml:predicateObjectMap [ a rml:PredicateObjectMap;
     rml:predicateMap [ a rml:PredicateMap;
@@ -525,11 +525,11 @@ predicate `foaf:nickname` are exported to `TargetDump2`.
   rml:predicateObjectMap [ a rml:PredicateObjectMap;
     rml:predicateMap [ a rml:PredicateMap;
       rml:constant foaf:nickname;
-      rml:logicalTarget <#TargetDump2>;
+      rml:logicalTarget &lt;#TargetDump2&gt;;
     ];
     rml:objectMap [ a rml:ObjectMap;
       rml:reference "nickname/text()";
-      rml:logicalTarget <#TargetDump2>;
+      rml:logicalTarget &lt;#TargetDump2&gt;;
     ];
   ];
 .
@@ -537,21 +537,21 @@ predicate `foaf:nickname` are exported to `TargetDump2`.
 
 <pre class="ex-target">
 &lt;#TargetDump1&gt; a rml:LogicalTarget;
-  rml:target &lt;#DCATDump1&gt;;
+  rml:target &lt;#Dump1&gt;;
   rml:serialization formats:N-Triples;
 .
 &lt;#TargetDump2&gt; a rml:LogicalTarget;
-  rml:target &lt;#DCATDump1&gt;;
+  rml:target &lt;#Dump1&gt;;
   rml:serialization formats:N-Triples;
 .
 </pre>
 
 <pre class="ex-access">
-&lt;#DCATDump1&gt; a rml:Target, dcat:Distribution;
-  dcat:downloadURL &lt;file:///data/dump1.nt&gt;;
+&lt;#Dump1&gt; a rml:Target, rml:FilePath;
+  rml:path "/data/dump1.nt";
 .
-&lt;#DCATDump2&gt; a rml:Target, dcat:Distribution;
-  dcat:downloadURL &lt;file:///data/dump2.nt&gt;;
+&lt;#Dump2&gt; a rml:Target, rml:FilePath;
+  rml:path "/data/dump2.nt";
 .
 </pre>
 
@@ -602,25 +602,25 @@ are exported to `TargetDump2`.
 </pre>
 
 <pre class="ex-access">
-&lt;#DCATSourceAccess&gt; a rml:Source, dcat:Distribution;
-  dcat:downloadURL "https://rml.io/specs/rml-target/Supergirl.xml";
+&lt;#SourceAccess&gt; a rml:Source, rml:FilePath;
+  rml:path "Supergirl.xml";
 .
 </pre>
 
 <pre class="ex-mapping">
 &lt;#TriplesMap&gt; a rml:TriplesMap;
   rml:logicalSource [ a rml:LogicalSource;
-    rml:source &lt;#DCATSourceAccess&gt;;
+    rml:source &lt;#SourceAccess&gt;;
     rml:referenceFormulation rml:XPath;
     rml:iterator "//Supergirl/Character/";
   ];
   rml:subjectMap [ a rml:SubjectMap;
     rml:template "http://example.org/{@id}";
-    rml:logicalTarget <#TargetDump1>;
+    rml:logicalTarget &lt;#TargetDump1&gt;;
   ];
   rml:predicateObjectMap [ a rml:PredicateObjectMap;
     rml:graphMap [ a rml:GraphMap;
-      rml:logicalTarget <#TargetDump2>;
+      rml:logicalTarget &lt;#TargetDump2&gt;;
       rml:constant ex:Characters;
     ];
     rml:predicateMap [ a rml:PredicateMap;
@@ -643,21 +643,21 @@ are exported to `TargetDump2`.
 
 <pre class="ex-target">
 &lt;#TargetDump1&gt; a rml:LogicalTarget;
-  rml:target &lt;#DCATDump1&gt;;
+  rml:target &lt;#Dump1&gt;;
   rml:serialization formats:N-Triples;
 .
 &lt;#TargetDump2&gt; a rml:LogicalTarget;
-  rml:target &lt;#DCATDump1&gt;;
+  rml:target &lt;#Dump1&gt;;
   rml:serialization formats:N-Triples;
 .
 </pre>
 
 <pre class="ex-access">
-&lt;#DCATDump1&gt; a rml:Target, dcat:Distribution;
-  dcat:downloadURL &lt;file:///data/dump1.nq&gt;;
+&lt;#Dump1&gt; a rml:Target, rml:FilePath;
+  rml:path "/data/dump1.nt";
 .
-&lt;#DCATDump2&gt; a rml:Target, dcat:Distribution;
-  dcat:downloadURL &lt;file:///data/dump2.nq&gt;;
+&lt;#Dump2&gt; a rml:Target, rml:FilePath;
+  rml:path "/data/dump2.nt";
 .
 </pre>
 
@@ -708,15 +708,15 @@ are exported to `TargetDump2`.
 </pre>
 
 <pre class="ex-access">
-&lt;#DCATSourceAccess&gt; a rml:Source, dcat:Distribution;
-  dcat:downloadURL "https://rml.io/specs/rml-target/Supergirl.xml";
+&lt;#SourceAccess&gt; a rml:Source, rml:FilePath;
+  rml:path "Supergirl.xml";
 .
 </pre>
 
 <pre class="ex-mapping">
 &lt;#TriplesMap&gt; a rml:TriplesMap;
   rml:logicalSource [ a rml:LogicalSource;
-    rml:source &lt;#DCATSourceAccess&gt;;
+    rml:source &lt;#SourceAccess&gt;;
     rml:referenceFormulation rml:XPath;
     rml:iterator "//Supergirl/Character/";
   ];
@@ -725,7 +725,7 @@ are exported to `TargetDump2`.
   ];
   rml:predicateObjectMap [ a rml:PredicateObjectMap;
     rml:graphMap [ a rml:GraphMap;
-      rml:logicalTarget <#TargetDump2>;
+      rml:logicalTarget &lt;#TargetDump2&gt;;
       rml:constant ex:Characters;
     ];
     rml:predicateMap [ a rml:PredicateMap;
@@ -738,7 +738,7 @@ are exported to `TargetDump2`.
   rml:predicateObjectMap [ a rml:PredicateObjectMap;
     rml:predicateMap [ a rml:PredicateMap;
       rml:constant foaf:nickname;
-      rml:logicalTarget <#TargetDump1>;
+      rml:logicalTarget &lt;#TargetDump1&gt;;
     ];
     rml:objectMap [ a rml:ObjectMap;
       rml:reference "nickname/text()";
@@ -749,21 +749,21 @@ are exported to `TargetDump2`.
 
 <pre class="ex-target">
 &lt;#TargetDump1&gt; a rml:LogicalTarget;
-  rml:target &lt;#DCATDump1&gt;;
+  rml:target &lt;#Dump1&gt;;
   rml:serialization formats:N-Triples;
 .
 &lt;#TargetDump2&gt; a rml:LogicalTarget;
-  rml:target &lt;#DCATDump1&gt;;
+  rml:target &lt;#Dump1&gt;;
   rml:serialization formats:N-Triples;
 .
 </pre>
 
 <pre class="ex-access">
-&lt;#DCATDump1&gt; a rml:Target, dcat:Distribution ;
-  dcat:downloadURL &lt;file:///data/dump1.nq&gt;;
+&lt;#Dump1&gt; a rml:Target, rml:FilePath;
+  rml:path "/data/dump1.nt";
 .
-&lt;#DCATDump2&gt; a rml:Target, dcat:Distribution ;
-  dcat:downloadURL &lt;file:///data/dump2.nq&gt;;
+&lt;#Dump2&gt; a rml:Target, rml:FilePath;
+  rml:path "/data/dump2.nt";
 .
 </pre>
 
@@ -810,15 +810,15 @@ are exported to `TargetDump2`.
 </pre>
 
 <pre class="ex-access">
-&lt;#DCATSourceAccess&gt; a rml:Source, dcat:Distribution;
-  dcat:downloadURL "https://rml.io/specs/rml-target/Supergirl.xml";
+&lt;#SourceAccess&gt; a rml:Source, rml:FilePath;
+  rml:path "Supergirl.xml";
 .
 </pre>
 
 <pre class="ex-mapping">
 &lt;#TriplesMap&gt; a rml:TriplesMap;
   rml:logicalSource [ a rml:LogicalSource;
-    rml:source &lt;#DCATSourceAccess&gt;;
+    rml:source &lt;#SourceAccess&gt;;
     rml:referenceFormulation rml:XPath;
     rml:iterator "//Supergirl/Character/";
   ];
@@ -827,7 +827,7 @@ are exported to `TargetDump2`.
   ];
   rml:predicateObjectMap [ a rml:PredicateObjectMap;
     rml:graphMap [ a rml:GraphMap;
-      rml:logicalTarget <#TargetDump2>;
+      rml:logicalTarget &lt;#TargetDump2&gt;;
       rml:constant ex:Characters;
     ];
     rml:predicateMap [ a rml:PredicateMap;
@@ -843,7 +843,7 @@ are exported to `TargetDump2`.
     ];
     rml:objectMap [ a rml:ObjectMap;
       rml:reference "nickname/text()";
-      rml:logicalTarget <#TargetDump1>;
+      rml:logicalTarget &lt;#TargetDump1&gt;;
     ];
   ];
 .
@@ -851,21 +851,21 @@ are exported to `TargetDump2`.
 
 <pre class="ex-target">
 &lt;#TargetDump1&gt; a rml:LogicalTarget;
-  rml:target &lt;#DCATDump1&gt;;
+  rml:target &lt;#Dump1&gt;;
   rml:serialization formats:N-Triples;
 .
 &lt;#TargetDump2&gt; a rml:LogicalTarget;
-  rml:target &lt;#DCATDump1&gt;;
+  rml:target &lt;#Dump1&gt;;
   rml:serialization formats:N-Triples;
 .
 </pre>
 
 <pre class="ex-access">
-&lt;#DCATDump1&gt; a rml:Target, dcat:Distribution;
-  dcat:downloadURL &lt;file:///data/dump1.nq&gt;;
+&lt;#Dump1&gt; a rml:Target, rml:FilePath;
+  rml:path "/data/dump1.nt";
 .
-&lt;#DCATDump2&gt; a rml:Target, dcat:Distribution;
-  dcat:downloadURL &lt;file:///data/dump2.nq&gt;;
+&lt;#Dump2&gt; a rml:Target, rml:FilePath;
+  rml:path "/data/dump2.nt";
 .
 </pre>
 
@@ -916,15 +916,15 @@ as there is no dedicated Target assigned to triples containing
 </pre>
 
 <pre class="ex-access">
-&lt;#DCATSourceAccess&gt; a rml:Source, dcat:Distribution;
-  dcat:downloadURL "https://rml.io/specs/rml-target/Supergirl.xml";
+&lt;#SourceAccess&gt; a rml:Source, rml:FilePath;
+  rml:path "Supergirl.xml";
 .
 </pre>
 
 <pre class="ex-mapping">
 &lt;#TriplesMap&gt; a rml:TriplesMap;
   rml:logicalSource [ a rml:LogicalSource;
-    rml:source &lt;#DCATSourceAccess&gt;;
+    rml:source &lt;#SourceAccess&gt;;
     rml:referenceFormulation rml:XPath;
     rml:iterator "//Supergirl/Character/";
   ];
@@ -933,7 +933,7 @@ as there is no dedicated Target assigned to triples containing
   ];
   rml:predicateObjectMap [ a rml:PredicateObjectMap;
     rml:graphMap [ a rml:GraphMap;
-      rml:logicalTarget <#TargetDump2>;
+      rml:logicalTarget &lt;#TargetDump2&gt;;
       rml:constant ex:Characters;
     ];
     rml:predicateMap [ a rml:PredicateMap;
@@ -942,7 +942,7 @@ as there is no dedicated Target assigned to triples containing
     rml:objectMap [ a rml:ObjectMap;
       rml:reference "name/text()";
       rml:languageMap [
-        rml:logicalTarget <#TargetDump1>;
+        rml:logicalTarget &lt;#TargetDump1&gt;;
         rml:constant "en";
       ];
     ];
@@ -953,7 +953,7 @@ as there is no dedicated Target assigned to triples containing
     ];
     rml:objectMap [ a rml:ObjectMap;
       rml:reference "nickname/text()";
-      rml:logicalTarget <#TargetDump2>;
+      rml:logicalTarget &lt;#TargetDump2&gt;;
     ];
   ];
 .
@@ -961,21 +961,21 @@ as there is no dedicated Target assigned to triples containing
 
 <pre class="ex-target">
 &lt;#TargetDump1&gt; a rml:LogicalTarget;
-  rml:target &lt;#DCATDump1&gt;;
+  rml:target &lt;#Dump1&gt;;
   rml:serialization formats:N-Triples;
 .
 &lt;#TargetDump2&gt; a rml:LogicalTarget;
-  rml:target &lt;#DCATDump1&gt;;
+  rml:target &lt;#Dump1&gt;;
   rml:serialization formats:N-Triples;
 .
 </pre>
 
 <pre class="ex-access">
-&lt;#DCATDump1&gt; a rml:Target, dcat:Distribution;
-  dcat:downloadURL &lt;file:///data/dump1.nt&gt;;
+&lt;#Dump1&gt; a rml:Target, rml:FilePath;
+  rml:path "/data/dump1.nt";
 .
-&lt;#DCATDump2&gt; a rml:Target, dcat:Distribution;
-  dcat:downloadURL &lt;file:///data/dump2.nt&gt;;
+&lt;#Dump2&gt; a rml:Target, rml:FilePath;
+  rml:path "/data/dump2.nt";
 .
 </pre>
 
@@ -1028,15 +1028,15 @@ are exported to `TargetDump2`.
 </pre>
 
 <pre class="ex-access">
-&lt;#DCATSourceAccess&gt; a rml:Source, dcat:Distribution;
-  dcat:downloadURL "https://rml.io/specs/rml-target/Supergirl.xml";
+&lt;#SourceAccess&gt; a rml:Source, rml:FilePath;
+  rml:path "Supergirl.xml";
 .
 </pre>
 
 <pre class="ex-mapping">
 &lt;#TriplesMap&gt; a rml:TriplesMap;
   rml:logicalSource [ a rml:LogicalSource;
-    rml:source &lt;#DCATSourceAccess&gt;;
+    rml:source &lt;#SourceAccess&gt;;
     rml:referenceFormulation rml:XPath;
     rml:iterator "//Supergirl/Character/";
   ];
@@ -1050,7 +1050,7 @@ are exported to `TargetDump2`.
     rml:objectMap [ a rml:ObjectMap;
       rml:reference "name/text()";
       rml:languageMap [
-        rml:logicalTarget <#TargetDump1>;
+        rml:logicalTarget &lt;#TargetDump1&gt;;
         rml:constant "en";
       ];
     ];
@@ -1061,7 +1061,7 @@ are exported to `TargetDump2`.
     ];
     rml:objectMap [ a rml:ObjectMap;
       rml:reference "nickname/text()";
-      rml:logicalTarget <#TargetDump2>;
+      rml:logicalTarget &lt;#TargetDump2&gt;;
     ];
   ];
 .
@@ -1069,21 +1069,21 @@ are exported to `TargetDump2`.
 
 <pre class="ex-target">
 &lt;#TargetDump1&gt; a rml:LogicalTarget;
-  rml:target &lt;#DCATDump1&gt;;
+  rml:target &lt;#Dump1&gt;;
   rml:serialization formats:N-Triples;
 .
 &lt;#TargetDump2&gt; a rml:LogicalTarget;
-  rml:target &lt;#DCATDump1&gt;;
+  rml:target &lt;#Dump1&gt;;
   rml:serialization formats:N-Triples;
 .
 </pre>
 
 <pre class="ex-access">
-&lt;#DCATDump1&gt; a rml:Target, dcat:Distribution;
-  dcat:downloadURL &lt;file:///data/dump1.nt&gt;;
+&lt;#Dump1&gt; a rml:Target, rml:FilePath;
+  rml:path "/data/dump1.nt";
 .
-&lt;#DCATDump2&gt; a rml:Target, dcat:Distribution;
-  dcat:downloadURL &lt;file:///data/dump2.nt&gt;;
+&lt;#Dump2&gt; a rml:Target, rml:FilePath;
+  rml:path "/data/dump2.nt";
 .
 </pre>
 
@@ -1130,15 +1130,15 @@ are exported to `TargetDump2`.
 </pre>
 
 <pre class="ex-access">
-&lt;#DCATSourceAccess&gt; a rml:Source, dcat:Distribution;
-  dcat:downloadURL "https://rml.io/specs/rml-target/Supergirl.xml";
+&lt;#SourceAccess&gt; a rml:Source, rml:FilePath;
+  rml:path "Supergirl.xml";
 .
 </pre>
 
 <pre class="ex-mapping">
 &lt;#TriplesMap&gt; a rml:TriplesMap;
   rml:logicalSource [ a rml:LogicalSource;
-    rml:source &lt;#DCATSourceAccess&gt;;
+    rml:source &lt;#SourceAccess&gt;;
     rml:referenceFormulation rml:XPath;
     rml:iterator "//Supergirl/Character/";
   ];
@@ -1148,7 +1148,7 @@ are exported to `TargetDump2`.
   rml:predicateObjectMap [ a rml:PredicateObjectMap;
     rml:predicateMap [ a rml:PredicateMap;
       rml:constant foaf:name;
-      rml:logicalTarget <#TargetDump1>;
+      rml:logicalTarget &lt;#TargetDump1&gt;;
     ];
     rml:objectMap [ a rml:ObjectMap;
       rml:reference "name/text()";
@@ -1157,7 +1157,7 @@ are exported to `TargetDump2`.
   rml:predicateObjectMap [ a rml:PredicateObjectMap;
     rml:predicateMap [ a rml:PredicateMap;
       rml:constant foaf:nickname;
-      rml:logicalTarget <#TargetDump2>;
+      rml:logicalTarget &lt;#TargetDump2&gt;;
     ];
     rml:objectMap [ a rml:ObjectMap;
       rml:reference "nickname/text()";
@@ -1168,21 +1168,21 @@ are exported to `TargetDump2`.
 
 <pre class="ex-target">
 &lt;#TargetDump1&gt; a rml:LogicalTarget;
-  rml:target &lt;#DCATDump1&gt;;
+  rml:target &lt;#Dump1&gt;;
   rml:serialization formats:N-Triples;
 .
 &lt;#TargetDump2&gt; a rml:LogicalTarget;
-  rml:target &lt;#DCATDump1&gt;;
+  rml:target &lt;#Dump1&gt;;
   rml:serialization formats:N-Triples;
 .
 </pre>
 
 <pre class="ex-access">
-&lt;#DCATDump1&gt; a rml:Target, dcat:Distribution ;
-  dcat:downloadURL &lt;file:///data/dump1.nt&gt;;
+&lt;#Dump1&gt; a rml:Target, rml:FilePath;
+  rml:path "/data/dump1.nt";
 .
-&lt;#DCATDump2&gt; a rml:Target, dcat:Distribution ;
-  dcat:downloadURL &lt;file:///data/dump2.nt&gt;;
+&lt;#Dump2&gt; a rml:Target, rml:FilePath;
+  rml:path "/data/dump2.nt";
 .
 </pre>
 
@@ -1229,15 +1229,15 @@ are exported to `TargetDump2`.
 </pre>
 
 <pre class="ex-access">
-&lt;#DCATSourceAccess&gt; a rml:Source, dcat:Distribution;
-  dcat:downloadURL "https://rml.io/specs/rml-target/Supergirl.xml";
+&lt;#SourceAccess&gt; a rml:Source, rml:FilePath;
+  rml:path "Supergirl.xml";
 .
 </pre>
 
 <pre class="ex-mapping">
 &lt;#TriplesMap&gt; a rml:TriplesMap;
   rml:logicalSource [ a rml:LogicalSource;
-    rml:source &lt;#DCATSourceAccess&gt;;
+    rml:source &lt;#SourceAccess&gt;;
     rml:referenceFormulation rml:XPath;
     rml:iterator "//Supergirl/Character/";
   ];
@@ -1250,7 +1250,7 @@ are exported to `TargetDump2`.
     ];
     rml:objectMap [ a rml:ObjectMap;
       rml:reference "name/text()";
-      rml:logicalTarget <#TargetDump1>;
+      rml:logicalTarget &lt;#TargetDump1&gt;;
     ];
   ];
   rml:predicateObjectMap [ a rml:PredicateObjectMap;
@@ -1259,7 +1259,7 @@ are exported to `TargetDump2`.
     ];
     rml:objectMap [ a rml:ObjectMap;
       rml:reference "nickname/text()";
-      rml:logicalTarget <#TargetDump2>;
+      rml:logicalTarget &lt;#TargetDump2&gt;;
     ];
   ];
 .
@@ -1267,21 +1267,21 @@ are exported to `TargetDump2`.
 
 <pre class="ex-target">
 &lt;#TargetDump1&gt; a rml:LogicalTarget;
-  rml:target &lt;#DCATDump1&gt;;
+  rml:target &lt;#Dump1&gt;;
   rml:serialization formats:N-Triples;
 .
 &lt;#TargetDump2&gt; a rml:LogicalTarget;
-  rml:target &lt;#DCATDump1&gt;;
+  rml:target &lt;#Dump1&gt;;
   rml:serialization formats:N-Triples;
 .
 </pre>
 
 <pre class="ex-access">
-&lt;#DCATDump1&gt; a rml:Target, dcat:Distribution;
-  dcat:downloadURL &lt;file:///data/dump1.nt&gt;;
+&lt;#Dump1&gt; a rml:Target, rml:FilePath;
+  rml:path "/data/dump1.nt";
 .
-&lt;#DCATDump2&gt; a rml:Target, dcat:Distribution;
-  dcat:downloadURL &lt;file:///data/dump2.nt&gt;;
+&lt;#Dump2&gt; a rml:Target, rml:FilePath;
+  rml:path "/data/dump2.nt";
 .
 </pre>
 
@@ -1328,15 +1328,15 @@ are exported to `TargetDump2`.
 </pre>
 
 <pre class="ex-access">
-&lt;#DCATSourceAccess&gt; a rml:Source, dcat:Distribution;
-  dcat:downloadURL "https://rml.io/specs/rml-target/Supergirl.xml";
+&lt;#SourceAccess&gt; a rml:Source, rml:FilePath;
+  rml:path "Supergirl.xml";
 .
 </pre>
 
 <pre class="ex-mapping">
 &lt;#TriplesMap&gt; a rml:TriplesMap;
   rml:logicalSource [ a rml:LogicalSource;
-    rml:source &lt;#DCATSourceAccess&gt;;
+    rml:source &lt;#SourceAccess&gt;;
     rml:referenceFormulation rml:XPath;
     rml:iterator "//Supergirl/Character/";
   ];
@@ -1345,7 +1345,7 @@ are exported to `TargetDump2`.
   ];
   rml:predicateObjectMap [ a rml:PredicateObjectMap;
     rml:graphMap [ a rml:GraphMap;
-      rml:logicalTarget <#TargetDump1>;
+      rml:logicalTarget &lt;#TargetDump1&gt;;
       rml:constant ex:Characters;
     ];
     rml:predicateMap [ a rml:PredicateMap;
@@ -1357,7 +1357,7 @@ are exported to `TargetDump2`.
   ];
   rml:predicateObjectMap [ a rml:PredicateObjectMap;
     rml:graphMap [ a rml:GraphMap;
-      rml:logicalTarget <#TargetDump2>;
+      rml:logicalTarget &lt;#TargetDump2&gt;;
       rml:constant ex:NickNames;
     ];
     rml:predicateMap [ a rml:PredicateMap;
@@ -1372,21 +1372,21 @@ are exported to `TargetDump2`.
 
 <pre class="ex-target">
 &lt;#TargetDump1&gt; a rml:LogicalTarget;
-  rml:target &lt;#DCATDump1&gt;;
+  rml:target &lt;#Dump1&gt;;
   rml:serialization formats:N-Triples;
 .
 &lt;#TargetDump2&gt; a rml:LogicalTarget;
-  rml:target &lt;#DCATDump1&gt;;
+  rml:target &lt;#Dump1&gt;;
   rml:serialization formats:N-Triples;
 .
 </pre>
 
 <pre class="ex-access">
-&lt;#DCATDump1&gt; a rml:Target, dcat:Distribution;
-  dcat:downloadURL &lt;file:///data/dump1.nq&gt;;
+&lt;#Dump1&gt; a rml:Target, rml:FilePath;
+  rml:path "/data/dump1.nt";
 .
-&lt;#DCATDump2&gt; a rml:Target, dcat:Distribution;
-  dcat:downloadURL &lt;file:///data/dump2.nq&gt;;
+&lt;#Dump2&gt; a rml:Target, rml:FilePath;
+  rml:path "/data/dump2.nt";
 .
 </pre>
 
