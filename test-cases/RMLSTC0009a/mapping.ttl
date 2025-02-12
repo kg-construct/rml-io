@@ -5,14 +5,12 @@
 @base <http://example.com/rules/> .
 
 <#CSVWSourceAccess> a rml:Source, csvw:Table;
-  csvw:url "http://w3id.org/rml/resources/rml-io/RMLSTC0005c/Friends.csv"^^xsd:anyURI ;
+  csvw:url "http://w3id.org/rml/resources/rml-io/RMLSTC0009a/Friends.csv"^^xsd:anyURI ;
   csvw:dialect [ a csvw:Dialect;
     csvw:delimiter ";";
     csvw:encoding "UTF-8";
     csvw:header "1"^^xsd:boolean;
   ];
-  # Encoding is UTF-16 and overrides CSVW
-  rml:encoding rml:UTF-16;
 .
 
 <#TriplesMap> a rml:TriplesMap;
