@@ -1,8 +1,8 @@
 ## RMLTTC0007a
 
-**Title**: Target with DCAT access description
+**Title**: Target with FilePath description
 
-**Description**: Test export all triples to a target with DCAT access description
+**Description**: Test export all triples to a target with File path access description
 
 **Error expected?** No
 
@@ -13,17 +13,15 @@
 ```
 @prefix rml: <http://w3id.org/rml/> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
-@prefix dcat: <http://www.w3.org/ns/dcat#> .
 @prefix formats: <http://www.w3.org/ns/formats/> .
 @base <http://example.com/rules/> .
 
-<#DCATSourceAccess> a rml:Source, dcat:Distribution;
-    dcat:downloadURL <http://w3id.org/rml/resources/rml-io/RMLTTC0007a/Friends.json>;
-.
-
 <#TriplesMap> a rml:TriplesMap;
   rml:logicalSource [ a rml:LogicalSource;
-    rml:source <#DCATSourceAccess>;
+    rml:source [ a rml:FilePath, rml:Source;
+      rml:root rml:CurrentWorkingDirectory;
+      rml:path "./Friends.json";
+    ];
     rml:referenceFormulation rml:JSONPath;
     rml:iterator "$[*]";
   ];
@@ -50,8 +48,9 @@
 .
 
 <#TargetDump1> a rml:LogicalTarget;
-  rml:target [ a rml:Target, dcat:Distribution;
-    dcat:accessUrl <file://./dump1.nq>;
+  rml:target [ a rml:Target, rml:FilePath;
+    rml:root rml:CurrentWorkingDirectory;
+    rml:path "./dump1.nq";
   ];
   rml:serialization formats:N-Quads;
 .

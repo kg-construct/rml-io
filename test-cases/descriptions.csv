@@ -45,11 +45,11 @@ RMLTTC0006b,Target GZip compression,Test export all triples with GZip compressio
 RMLTTC0006c,Target Zip compression,Test export all triples with ZIP compression,no,Friends.json,default.nq,dump1.nq.zip,,,
 RMLTTC0006d,Target TarXz compression,Test export all triples with TarXZ compression,no,Friends.json,default.nq,dump1.nq.tar.xz,,,
 RMLTTC0006e,Target TarGzip compression,Test export all triples with TarGZip compression,no,Friends.json,default.nq,dump1.nq.tar.gz,,,
-RMLTTC0007a,Target with DCAT access description,Test export all triples to a target with DCAT access description,no,Friends.json,default.nq,dump1.nq,,,
-RMLTTC0007b,Target with VoID access description,Test export all triples to a target with VoID access description,no,Friends.json,default.nq,dump1.nq,,,
-RMLTTC0007c,Target with SD access description,Test export all triples to a target with SD access description,no,Friends.json,default.nq,dump1.nq,,,
-RMLTTC0007d,Target with Web of Things access description,Test export all triples to a target with Web of Things access description,no,Friends.json,default.nq,dump1.nq,,,
-RMLTTC0007e,Target with dcat:format,Test dcat:format in a Target,no,Friends.json,default.nq,dump1.nq,,,
+RMLTTC0007a,Target with FilePath description,Test export all triples to a target with File path access description,no,Friends.json,default.nq,dump1.nq,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
 SOURCE,,,,,,,,,
 RMLSTC0001a,Source with UTF-8 encoding,Test source with UTF-8 encoding,no,Friends.json,default.nq,,,,
 RMLSTC0001b,Source with UTF-16 encoding,Test source with UTF-16 encoding,no,Friends-UTF16.json,default.nq,,,,
@@ -64,16 +64,24 @@ RMLSTC0004b,Source with one NULL value,Test source with one NULL value defined,n
 RMLSTC0004c,Source with multiple NULL values,Test source with multiple NULL values defined,no,Friends-NULL2.csv,default.nq,,,,
 RMLSTC0005a,Source overrride access: NULL values,Test source with data access description providing NULL values which we override.,no,Friends-NULL.csv,default.nq,,,,
 RMLSTC0005b,Source overrride access: Encoding,Test source with data access description providing encoding which we override.,no,Friends.csv,default.nq,,,,
-RMLSTC0006a,Source with DCAT access description,Test source with DCAT data access description,no,Friends.json,default.nq,,,,
-RMLSTC0006b,Source with VoID access description,Test source with VoID data access description,no,Friends.nt,default.nq,,,,
-RMLSTC0006c,Source with SD access description,Test source with SD data access description,no,Friends.nt,default.nq,,,,
-RMLSTC0006d,Source with CSVW access description,Test source with CSVW data access description,no,Friends.csv,default.nq,,,,
-RMLSTC0006e,Source with Web of Things access description,Test source with Web of Things data access description,no,Friends.json,default.nq,,,,
-RMLSTC0006f,Source with D2RQ access description,Test source with D2RQ access description for SQL databases,no,Friends.csv,default.nq,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+RMLSTC0006a,Source with D2RQ access description,Test source with D2RQ access description for SQL databases,no,Friends.csv,default.nq,,,,
+RMLSTC0006b,Source with a Relative Path Source,Test access to a file,no,Friends.csv,default.nq,,,,
 RMLSTC0007a,Source with JSONPath reference formulation,Test source with JSONPath reference formulation,no,Friends.json,default.nq,,,,
 RMLSTC0007b,Source with CSV reference formulation,Test source with Tabular reference formulation,no,Friends.csv,default.nq,,,,
 RMLSTC0007c,Source with XPath reference formulation,Test source with XPath reference formulation,no,Friends.xml,default.nq,,,,
 RMLSTC0007d,Source with XPath reference formulation with namespaces,Test source with XPath reference formulation with namespaces,no,Friends.xml,default.nq,,,,
-,,,,,,,,,
-,Missing,,,,,,,,
-,SPARQL endpoint,,,,,,,,
+RMLSTC0008a,Multiple sources of same type,Tests the generation of all triples from multiple homogeneous sources ,no,"Friends.json, Friends2.json",default.nq,,,,Sources not yet added to RML resources for download via URL
+RMLSTC0008b,Multiple sources of different type,Tests the generation of all triples from multiple heterogeneous sources ,no,"Friends.json, Friends.csv",default.nq,,,,Sources not yet added to RML resources for download via URL
+RMLSTC0009a,Source with quoted columns,Tests the generation of triples where columns are quoted,no,Friends.csv,default.nq,,,,Sources not yet added to RML resources for download via URL
+RMLSTC00010a,"Invalid CSV source, reference to invalid column",Tests the identification of invalid CSV sources,yes,Friends.csv,,,,,Sources not yet added to RML resources for download via URL
+RMLSTC00010b,"Invalid CSV source, no reference to invalid column","Tests the identification of invalid CSV sources, even when all columns referenced are valid",yes,Friends.csv,,,,,Sources not yet added to RML resources for download via URL
+RMLSTC00011a,Complex JSON source,Tests the generation of triples from complex JSON sources,no,companies.json,default.nq,,,,Sources not yet added to RML resources for download via URL
+RMLSTC00011b,Complex JSON source,Tests the generation of triples from complex JSON sources,no,companies.json,default.nq,,,,Sources not yet added to RML resources for download via URL
+RMLSTC00011c,Complex JSON source,Tests the generation of triples from complex JSON sources,no,companies.json,default.nq,,,,Sources not yet added to RML resources for download via URL
+RMLSTC00011d,Complex JSON source,Tests the generation of triples from complex JSON sources,no,companies.json,default.nq,,,,Sources not yet added to RML resources for download via URL
+RMLSTC00011a,Complex JSON source,Tests the generation of triples from complex JSON sources,no,companies.json,default.nq,,,,Sources not yet added to RML resources for download via URL

@@ -1,8 +1,8 @@
-## RMLSTC0006f
+## RMLSTC0006b
 
-**Title**: Source with D2RQ access description
+**Title**: Source with a Relative Path Source
 
-**Description**: Test source with D2RQ access description for SQL databases
+**Description**: Test access to a file
 
 **Error expected?** No
 
@@ -21,21 +21,16 @@ id, name, age
 ```
 @prefix rml: <http://w3id.org/rml/> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
-@prefix d2rq: <http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @base <http://example.com/rules/> .
 
-<#D2RQSourceAccess> a rml:Source, d2rq:Database;
-  d2rq:jdbcDSN "$CONNECTIONDSN";
-  d2rq:username "$USERNAME";
-  d2rq:password "$PASSWORD"
-.
-
 <#TriplesMap> a rml:TriplesMap;
   rml:logicalSource [ a rml:LogicalSource;
-    rml:source <#D2RQSourceAccess>;
-    rml:referenceFormulation rml:SQL2008Table;
-    rml:iterator "Friends";
+    rml:source [ a rml:FilePath, rml:Source;
+      rml:root rml:CurrentWorkingDirectory;
+      rml:path "./Friends.csv"
+    ];
+    rml:referenceFormulation rml:CSV;
   ];
   rml:subjectMap [ a rml:SubjectMap;
     rml:template "http://example.org/{id}";
