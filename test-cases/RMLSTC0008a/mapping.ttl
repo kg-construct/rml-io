@@ -1,6 +1,5 @@
 @prefix rml: <http://w3id.org/rml/> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
-@prefix dcat: <http://www.w3.org/ns/dcat#> .
 @base <http://example.com/rules/> .
 
 <#TriplesMap> a rml:TriplesMap;
