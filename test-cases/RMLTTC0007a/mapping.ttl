@@ -5,9 +5,9 @@
 
 <#TriplesMap> a rml:TriplesMap;
   rml:logicalSource [ a rml:LogicalSource;
-    rml:source [ a rml:FilePath, rml:Source;
-      rml:root rml:CurrentWorkingDirectory;
-      rml:path "./Friends.json";
+    rml:source [ a rml:FilePath;
+      rml:root rml:MappingDirectory;
+      rml:path "Friends.json";
     ];
     rml:referenceFormulation rml:JSONPath;
     rml:iterator "$[*]";

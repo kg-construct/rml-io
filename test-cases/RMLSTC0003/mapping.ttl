@@ -6,7 +6,7 @@
 
 <#TriplesMap> a rml:TriplesMap;
   rml:logicalSource [ a rml:LogicalSource;
-    rml:source [ a rml:RelativePathSource;
+    rml:source [ a rml:FilePath;
         rml:path "./Friends.nt";
     ];
     rml:iterator """
