@@ -12,16 +12,16 @@
       rml:path "companies.xml";
     ];
     rml:referenceFormulation rml:XPath;
-    rml:iterator "/companies";
+    rml:iterator "/companies/company";
   ];
   rml:subjectMap [ a rml:SubjectMap;
-    rml:template "http://example.org/{company/@id}";
+    rml:template "http://example.org/{@id}";
   ];
   rml:predicateObjectMap [ a rml:PredicateObjectMap;
     rml:predicateMap [ a rml:PredicateMap;
       rml:constant foaf:name;
     ];
     rml:objectMap [ a rml:ObjectMap;
-      rml:reference "company/name";
+      rml:reference "name";
     ];
   ].
