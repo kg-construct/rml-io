@@ -1,0 +1,4 @@
+<http://example.org/25> <http://example.com/employee> "Alice Johnson" .
+<http://example.org/25> <http://example.com/employee> "John Doe" .
+<http://example.org/35> <http://example.com/employee> "Emma Wilson" .
+<http://example.org/35> <http://example.com/employee> "Michael Green" .
