@@ -2,17 +2,14 @@
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix csvw: <http://www.w3.org/ns/csvw#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-@prefix dcat: <http://www.w3.org/ns/dcat#> .
 @base <http://example.com/rules/> .
-
-<#DCATSourceAccessJSON> a rml:Source, dcat:Distribution;
-  dcat:downloadURL <http://w3id.org/rml/resources/rml-io/RMLSTC0010a/Friends.csv>;
-  rml:encoding rml:UTF-8;
-.
 
 <#TriplesMap2> a rml:TriplesMap;
   rml:logicalSource [ a rml:LogicalSource;
-    rml:source <#DCATSourceAccessJSON>;
+    rml:source [ a rml:RelativePathSource;
+      rml:root rml:MappingDirectory;
+      rml:path "Friends.csv";
+    ];
     rml:referenceFormulation rml:CSV;
   ];
   rml:subjectMap [ a rml:SubjectMap;
