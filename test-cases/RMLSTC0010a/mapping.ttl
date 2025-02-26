@@ -6,7 +6,7 @@
 
 <#TriplesMap2> a rml:TriplesMap;
   rml:logicalSource [ a rml:LogicalSource;
-    rml:source [ a rml:RelativePathSource;
+    rml:source [ a rml:FilePath;
       rml:root rml:MappingDirectory;
       rml:path "Friends.csv";
     ];
