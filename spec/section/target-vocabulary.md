@@ -54,6 +54,8 @@ By default, UTF-8 is used.
   <figcaption>The structure of Logical Target</figcaption>
 </figure>
 
+Logical Targets are the same if they are effectively equal as described in [RML-Core](https://kg-construct.github.io/rml-core/spec/docs/#dfn-effectively-equal).
+
 #### Serialization formats
 
 Each Target MAY describe the serialization format
