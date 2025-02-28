@@ -42,22 +42,15 @@
 ```
 @prefix rml: <http://w3id.org/rml/> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
-@prefix dcat: <http://www.w3.org/ns/dcat#> .
 @base <http://example.com/rules/> .
-
-<#DCATSourceAccessJSON> a rml:Source, dcat:Distribution;
-  dcat:downloadURL <http://w3id.org/rml/resources/rml-io/RMLSTC0008b/Friends.json>;
-  rml:encoding rml:UTF-8;
-.
-
-<#DCATSourceAccessCSV> a rml:Source, dcat:Distribution;
-  dcat:downloadURL <http://w3id.org/rml/resources/rml-io/RMLSTC0008b/Friends.csv>;
-  rml:encoding rml:UTF-8;
-.
 
 <#TriplesMap> a rml:TriplesMap;
   rml:logicalSource [ a rml:LogicalSource;
-    rml:source <#DCATSourceAccessJSON>;
+    rml:source [ a rml:FilePath;
+      rml:root rml:MappingDirectory;
+      rml:path "Friends.json";
+      rml:encoding rml:UTF-8
+    ];
     rml:referenceFormulation rml:JSONPath;
     rml:iterator "$[*]";
   ];
@@ -84,7 +77,11 @@
 
 <#TriplesMap2> a rml:TriplesMap;
   rml:logicalSource [ a rml:LogicalSource;
-    rml:source <#DCATSourceAccessCSV>;
+    rml:source [ a rml:RelativePathSource;
+      rml:root rml:MappingDirectory;
+      rml:path "Friends.csv";
+      rml:encoding rml:UTF-8
+    ];
     rml:referenceFormulation rml:CSV;
   ];
   rml:subjectMap [ a rml:SubjectMap;

@@ -7,24 +7,51 @@
 **Error expected?** No
 
 **Input**
- [http://w3id.org/rml/resources/rml-io/RMLTTC0002j/Friends.json](http://w3id.org/rml/resources/rml-io/RMLTTC0002j/Friends.json)
+```
+[
+  { 
+    "id": 0,
+    "name": "Monica Geller",
+    "age": 33
+  },
+  { 
+    "id": 1,
+    "name": "Rachel Green",
+    "age": 34
+  },
+  { 
+    "id": 2,
+    "name": "Joey Tribbiani",
+    "age": 35
+  },
+  { 
+    "id": 3,
+    "name": "Chandler Bing",
+    "age": 36
+  },
+  { 
+    "id": 4,
+    "name": "Ross Geller",
+    "age": 37
+  }
+]
+
+```
 
 **Mapping**
 ```
 @prefix rml: <http://w3id.org/rml/> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
-@prefix dcat: <http://www.w3.org/ns/dcat#> .
 @prefix formats: <http://www.w3.org/ns/formats/> .
 @prefix ex: <http://example.org> .
 @base <http://example.com/rules/> .
 
-<#DCATSourceAccess> a rml:Source, dcat:Distribution;
-    dcat:downloadURL <http://w3id.org/rml/resources/rml-io/RMLTTC0002j/Friends.json>;
-.
-
 <#TriplesMap> a rml:TriplesMap;
   rml:logicalSource [ a rml:LogicalSource;
-    rml:source <#DCATSourceAccess>;
+    rml:source [ a rml:FilePath;
+      rml:root rml:MappingDirectory;
+      rml:path "Friends.json";
+    ];
     rml:referenceFormulation rml:JSONPath;
     rml:iterator "$[*]";
   ];
@@ -55,15 +82,17 @@
 .
 
 <#TargetDump1> a rml:LogicalTarget;
-  rml:target [ a rml:Target, dcat:Distribution;
-    dcat:downloadURL <file://./dump1.nq>;
+  rml:target [ a rml:Target, rml:FilePath;
+    rml:root rml:CurrentWorkingDirectory;
+    rml:path "./dump1.nq";
   ];
   rml:serialization formats:N-Quads;
 .
 
 <#TargetDump2> a rml:LogicalTarget;
-  rml:target [ a rml:Target, dcat:Distribution;
-    dcat:downloadURL <file://./dump2.nq>;
+  rml:target [ a rml:Target, rml:FilePath;
+    rml:root rml:CurrentWorkingDirectory;
+    rml:path "./dump2.nq";
   ];
   rml:serialization formats:N-Quads;
 .

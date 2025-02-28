@@ -8,12 +8,12 @@
 
 **Input**
 ```
-id; name; age
-0; Monica Geller; 33
-1; Rachel Green; 34
-2; Joey Tribbiani; 35
-3; Chandler Bing; 36
-4; Ross Geller; 37
+id,name,age
+0,Monica Geller,33
+1,Rachel Green,34
+2,Joey Tribbiani,35
+3,Chandler Bing,36
+4,Ross Geller,37
 
 ```
 
@@ -21,22 +21,15 @@ id; name; age
 ```
 @prefix rml: <http://w3id.org/rml/> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
-@prefix csvw: <http://www.w3.org/ns/csvw#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @base <http://example.com/rules/> .
 
-<#CSVWSourceAccess> a rml:Source, csvw:Table;
-  csvw:url "http://w3id.org/rml/resources/rml-io/RMLSTC0007b/Friends.csv"^^xsd:anyURI ;
-  csvw:dialect [ a csvw:Dialect;
-    csvw:delimiter ";";
-    csvw:encoding "UTF-8";
-    csvw:header "1"^^xsd:boolean;
-  ];
-.
-
 <#TriplesMap> a rml:TriplesMap;
   rml:logicalSource [ a rml:LogicalSource;
-    rml:source <#CSVWSourceAccess>;
+    rml:source [ a rml:FilePath;
+      rml:root rml:MappingDirectory;
+      rml:path "Friends.csv";
+    ];
     rml:referenceFormulation rml:CSV;
   ];
   rml:subjectMap [ a rml:SubjectMap;

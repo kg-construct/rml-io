@@ -7,7 +7,36 @@
 **Error expected?** No
 
 **Input**
- [http://w3id.org/rml/resources/rml-io/RMLTTC0007a/Friends.json](http://w3id.org/rml/resources/rml-io/RMLTTC0007a/Friends.json)
+```
+[
+  { 
+    "id": 0,
+    "name": "Monica Geller",
+    "age": 33
+  },
+  { 
+    "id": 1,
+    "name": "Rachel Green",
+    "age": 34
+  },
+  { 
+    "id": 2,
+    "name": "Joey Tribbiani",
+    "age": 35
+  },
+  { 
+    "id": 3,
+    "name": "Chandler Bing",
+    "age": 36
+  },
+  { 
+    "id": 4,
+    "name": "Ross Geller",
+    "age": 37
+  }
+]
+
+```
 
 **Mapping**
 ```
@@ -18,9 +47,9 @@
 
 <#TriplesMap> a rml:TriplesMap;
   rml:logicalSource [ a rml:LogicalSource;
-    rml:source [ a rml:FilePath, rml:Source;
-      rml:root rml:CurrentWorkingDirectory;
-      rml:path "./Friends.json";
+    rml:source [ a rml:FilePath;
+      rml:root rml:MappingDirectory;
+      rml:path "Friends.json";
     ];
     rml:referenceFormulation rml:JSONPath;
     rml:iterator "$[*]";
