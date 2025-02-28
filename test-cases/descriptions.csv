@@ -62,8 +62,8 @@ RMLSTC0003,Source with query,Test source which requires a query,no,Friends.nt,de
 RMLSTC0004a,Source with default NULL values,Test source with default NULL values,no,Friends-NULL.csv,default.nq,,,,
 RMLSTC0004b,Source with one NULL value,Test source with one NULL value defined,no,Friends-NULL.csv,default.nq,,,,
 RMLSTC0004c,Source with multiple NULL values,Test source with multiple NULL values defined,no,Friends-NULL2.csv,default.nq,,,,
-RMLSTC0005a,Source overrride access: NULL values,Test source with data access description providing NULL values which we override.,no,Friends-NULL.csv,default.nq,,,,
-RMLSTC0005b,Source overrride access: Encoding,Test source with data access description providing encoding which we override.,no,Friends.csv,default.nq,,,,
+,,,,,,,,,
+,,,,,,,,,
 ,,,,,,,,,
 ,,,,,,,,,
 ,,,,,,,,,
@@ -75,13 +75,18 @@ RMLSTC0007a,Source with JSONPath reference formulation,Test source with JSONPath
 RMLSTC0007b,Source with CSV reference formulation,Test source with Tabular reference formulation,no,Friends.csv,default.nq,,,,
 RMLSTC0007c,Source with XPath reference formulation,Test source with XPath reference formulation,no,Friends.xml,default.nq,,,,
 RMLSTC0007d,Source with XPath reference formulation with namespaces,Test source with XPath reference formulation with namespaces,no,Friends.xml,default.nq,,,,
-RMLSTC0008a,Multiple sources of same type,Tests the generation of all triples from multiple homogeneous sources ,no,"Friends.json, Friends2.json",default.nq,,,,Sources not yet added to RML resources for download via URL
-RMLSTC0008b,Multiple sources of different type,Tests the generation of all triples from multiple heterogeneous sources ,no,"Friends.json, Friends.csv",default.nq,,,,Sources not yet added to RML resources for download via URL
-RMLSTC0009a,Source with quoted columns,Tests the generation of triples where columns are quoted,no,Friends.csv,default.nq,,,,Sources not yet added to RML resources for download via URL
-RMLSTC00010a,"Invalid CSV source, reference to invalid column",Tests the identification of invalid CSV sources,yes,Friends.csv,,,,,Sources not yet added to RML resources for download via URL
-RMLSTC00010b,"Invalid CSV source, no reference to invalid column","Tests the identification of invalid CSV sources, even when all columns referenced are valid",yes,Friends.csv,,,,,Sources not yet added to RML resources for download via URL
-RMLSTC00011a,Complex JSON source,Tests the generation of triples from complex JSON sources,no,companies.json,default.nq,,,,Sources not yet added to RML resources for download via URL
-RMLSTC00011b,Complex JSON source,Tests the generation of triples from complex JSON sources,no,companies.json,default.nq,,,,Sources not yet added to RML resources for download via URL
-RMLSTC00011c,Complex JSON source,Tests the generation of triples from complex JSON sources,no,companies.json,default.nq,,,,Sources not yet added to RML resources for download via URL
-RMLSTC00011d,Complex JSON source,Tests the generation of triples from complex JSON sources,no,companies.json,default.nq,,,,Sources not yet added to RML resources for download via URL
-RMLSTC00011a,Complex JSON source,Tests the generation of triples from complex JSON sources,no,companies.json,default.nq,,,,Sources not yet added to RML resources for download via URL
+RMLSTC0008a,Multiple sources of same type,Tests the generation of all triples from multiple homogeneous sources ,no,"Friends.json, Friends2.json",default.nq,,,,
+RMLSTC0008b,Multiple sources of different type,Tests the generation of all triples from multiple heterogeneous sources ,no,"Friends.json, Friends.csv",default.nq,,,,
+RMLSTC0009a,Source with quoted columns,Tests the generation of triples where columns are quoted,no,Friends.csv,default.nq,,,,
+RMLSTC0010a,"Invalid CSV source, reference to invalid column",Tests the identification of invalid CSV sources,yes,Friends.csv,,,,,
+RMLSTC0010b,"Invalid CSV source, no reference to invalid column","Tests the identification of invalid CSV sources, even when all columns referenced are valid",yes,Friends.csv,,,,,
+RMLSTC0011a,Complex JSON source,Tests the generation of triples from complex JSON sources,no,companies.json,default.nq,,,,
+RMLSTC0011b,Complex JSON source,Tests the generation of triples from complex JSON sources,no,companies.json,default.nq,,,,
+RMLSTC0011c,Complex JSON source,Tests the generation of triples from complex JSON sources,no,companies.json,default.nq,,,,
+RMLSTC0011d,Complex JSON source,Tests the generation of triples from complex JSON sources,no,companies.json,default.nq,,,,
+RMLSTC0011e,Complex JSON source,Tests the generation of triples from complex JSON sources,no,companies.json,default.nq,,,,
+RMLSTC0012a,Complex XML source,Tests the generation of triples from complex XML sources,no,companies.xml,default.nq,,,,
+RMLSTC0012b,Complex XML source,Tests the generation of triples from complex XML sources,no,companies.xml,default.nq,,,,
+RMLSTC0012c,Complex XML source,Tests the generation of triples from complex XML sources,no,companies.xml,default.nq,,,,
+RMLSTC0012d,Complex XML source,Tests the generation of triples from complex XML sources,no,companies.xml,default.nq,,,,
+RMLSTC0012e,Complex XML source,Tests the generation of triples from complex XML sources,no,companies.xml,default.nq,,,,
