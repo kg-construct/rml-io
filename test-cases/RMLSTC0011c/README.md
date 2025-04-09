@@ -31,7 +31,7 @@
   ];
   rml:predicateObjectMap [ a rml:PredicateObjectMap;
     rml:predicateMap [ a rml:PredicateMap;
-      rml:constant ex:department;
+      rml:constant ex:employee;
     ];
     rml:objectMap [ a rml:ObjectMap;
       rml:reference "$.departments[*].employees[*].name";
