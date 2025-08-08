@@ -69,4 +69,5 @@ var respecConfig = {
   copyrightStart: "2024",
   doJsonLd: true,
   group: "kg-construct",
+  prevVersion: "https://kg-construct.github.io/rml-io/test-cases/docs/20250630/",
 };

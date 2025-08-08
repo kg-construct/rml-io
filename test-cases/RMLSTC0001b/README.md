@@ -7,39 +7,38 @@
 **Error expected?** No
 
 **Input**
-```json
+```
 [
-    { 
-        "id": 0,
-        "name": "Monica Geller",
-        "age": 33
-    },
-    { 
-        "id": 1,
-        "name": "Rachel Green",
-        "age": 34
-    },
-    { 
-        "id": 2,
-        "name": "Joey Tribbiani",
-        "age": 35
-    },
-    { 
-        "id": 3,
-        "name": "Chandler Bing",
-        "age": 36
-    },
-    { 
-        "id": 4,
-        "name": "Ross Geller",
-        "age": 37
-    }
+  { 
+    "id": 0,
+    "name": "Monica Geller",
+    "age": 33
+  },
+  { 
+    "id": 1,
+    "name": "Rachel Green",
+    "age": 34
+  },
+  { 
+    "id": 2,
+    "name": "Joey Tribbiani",
+    "age": 35
+  },
+  { 
+    "id": 3,
+    "name": "Chandler Bing",
+    "age": 36
+  },
+  { 
+    "id": 4,
+    "name": "Ross Geller",
+    "age": 37
+  }
 ]
+
 ```
 
-
 **Mapping**
-
 ```
 @prefix rml: <http://w3id.org/rml/> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
@@ -79,7 +78,6 @@
 ```
 
 **Output**
-
 ```
 <http://example.org/0> <http://xmlns.com/foaf/0.1/age> "33" .
 <http://example.org/0> <http://xmlns.com/foaf/0.1/name> "Monica Geller" .
@@ -93,3 +91,4 @@
 <http://example.org/4> <http://xmlns.com/foaf/0.1/name> "Ross Geller" .
 
 ```
+

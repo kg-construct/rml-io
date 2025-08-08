@@ -5,3 +5,4 @@ node_modules
 .mypy_cache
 .DS_Store
 venv
+test-cases/burp.jar

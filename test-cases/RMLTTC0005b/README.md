@@ -104,5 +104,6 @@
 <http://example.org/3> <http://xmlns.com/foaf/0.1/name> "Chandler Bing" .
 <http://example.org/4> <http://xmlns.com/foaf/0.1/age> "37" .
 <http://example.org/4> <http://xmlns.com/foaf/0.1/name> "Ross Geller" .
+
 ```
 

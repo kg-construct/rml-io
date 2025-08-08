@@ -162,7 +162,7 @@ def main(spec: str):
                         try:
                             with open(os.path.join(testcase, i), encoding='utf-16') as f:
                                 input_html = f'**Input{inputCount}**\n```\n{f.read()}\n```\n\n'
-                        except UnicodeDecodeError:
+                        except UnicodeError:
                             input_html = f'**Input{inputCount}**\n `{i}`\n\n'
 
                 lines.append(input_html)
