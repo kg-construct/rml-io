@@ -42,24 +42,24 @@
 
 **Output**
 ```
-<http://example.org/Bob%20Smith> <http://example.com/employee> "AWS" .
-<http://example.org/Bob%20Smith> <http://example.com/employee> "JavaScript" .
-<http://example.org/Bob%20Smith> <http://example.com/employee> "Python" .
-<http://example.org/Eve%20Davis> <http://example.com/employee> "Docker" .
-<http://example.org/Eve%20Davis> <http://example.com/employee> "Kubernetes" .
-<http://example.org/Eve%20Davis> <http://example.com/employee> "Terraform" .
-<http://example.org/Liam%20Brown> <http://example.com/employee> "Deep Learning" .
-<http://example.org/Liam%20Brown> <http://example.com/employee> "Machine Learning" .
-<http://example.org/Liam%20Brown> <http://example.com/employee> "Python" .
-<http://example.org/Olivia%20Martinez> <http://example.com/employee> "CRM" .
-<http://example.org/Olivia%20Martinez> <http://example.com/employee> "Lead Generation" .
-<http://example.org/Olivia%20Martinez> <http://example.com/employee> "Negotiation" .
-<http://example.org/Sarah%20Lee> <http://example.com/employee> "Copywriting" .
-<http://example.org/Sarah%20Lee> <http://example.com/employee> "Google Ads" .
-<http://example.org/Sarah%20Lee> <http://example.com/employee> "SEO" .
-<http://example.org/Sophia%20White> <http://example.com/employee> "Data Analysis" .
-<http://example.org/Sophia%20White> <http://example.com/employee> "R" .
-<http://example.org/Sophia%20White> <http://example.com/employee> "SQL" .
+<http://example.org/Bob%20Smith> <http://example.com/skill> "AWS" .
+<http://example.org/Bob%20Smith> <http://example.com/skill> "JavaScript" .
+<http://example.org/Bob%20Smith> <http://example.com/skill> "Python" .
+<http://example.org/Eve%20Davis> <http://example.com/skill> "Docker" .
+<http://example.org/Eve%20Davis> <http://example.com/skill> "Kubernetes" .
+<http://example.org/Eve%20Davis> <http://example.com/skill> "Terraform" .
+<http://example.org/Liam%20Brown> <http://example.com/skill> "Deep Learning" .
+<http://example.org/Liam%20Brown> <http://example.com/skill> "Machine Learning" .
+<http://example.org/Liam%20Brown> <http://example.com/skill> "Python" .
+<http://example.org/Olivia%20Martinez> <http://example.com/skill> "CRM" .
+<http://example.org/Olivia%20Martinez> <http://example.com/skill> "Lead Generation" .
+<http://example.org/Olivia%20Martinez> <http://example.com/skill> "Negotiation" .
+<http://example.org/Sarah%20Lee> <http://example.com/skill> "Copywriting" .
+<http://example.org/Sarah%20Lee> <http://example.com/skill> "Google Ads" .
+<http://example.org/Sarah%20Lee> <http://example.com/skill> "SEO" .
+<http://example.org/Sophia%20White> <http://example.com/skill> "Data Analysis" .
+<http://example.org/Sophia%20White> <http://example.com/skill> "R" .
+<http://example.org/Sophia%20White> <http://example.com/skill> "SQL" .
 
 ```
 
