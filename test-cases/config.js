@@ -24,25 +24,27 @@ var respecConfig = {
   // check https://respec.org/docs/ for the meaning of these keys
   preProcess: [loadTurtle],
   authors: [
-    {
-      name: "Dylan Van Assche",
-      url: "https://dylanvanassche.be",
-      company: "IDLab &ndash; Ghent University &ndash; imec",
-      orcid: "0000-0002-7195-9935",
-      companyURL: "https://knows.idlab.ugent.be/"
-    }
+
   ],
   edDraftURI: "https://w3id.org/rml/io/test-cases/",
   editors: [
     {
+            name: "Sitt Min Oo",
+            url: "hhttps://sminoo.be/",
+            company: "IDLab &ndash; Ghent University &ndash; imec",
+            orcid: "0000-0001-9157-7507",
+            companyURL: "https://knows.idlab.ugent.be/"
+          }
+
+  ],
+  formerEditors: [
+       {
       name: "Dylan Van Assche",
       url: "https://dylanvanassche.be",
       company: "IDLab &ndash; Ghent University &ndash; imec",
       orcid: "0000-0002-7195-9935",
       companyURL: "https://knows.idlab.ugent.be/"
     }
-  ],
-  formerEditors: [
   ],
   github: "https://github.com/kg-construct/rml-io",
   license: "w3c-software-doc",
@@ -70,4 +72,6 @@ var respecConfig = {
   doJsonLd: true,
   group: "kg-construct",
   prevVersion: "https://kg-construct.github.io/rml-io/test-cases/docs/20250630/",
+  latestVersion: "https://kg-construct.github.io/rml-io/test-cases/docs/20260316/",
+
 };
