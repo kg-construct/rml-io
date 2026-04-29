@@ -30,7 +30,7 @@ var respecConfig = {
   editors: [
     {
             name: "Sitt Min Oo",
-            url: "hhttps://sminoo.be/",
+            url: "https://sminoo.be/",
             company: "IDLab &ndash; Ghent University &ndash; imec",
             orcid: "0000-0001-9157-7507",
             companyURL: "https://knows.idlab.ugent.be/"
