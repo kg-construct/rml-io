@@ -27,7 +27,7 @@
     rml:iterator "$.companies[*].departments[*].employees[*]";
   ];
   rml:subjectMap [ a rml:SubjectMap;
-    rml:template "http://example.org/{name}";
+    rml:template "http://example.org/{$.name}";
   ];
   rml:predicateObjectMap [ a rml:PredicateObjectMap;
     rml:predicateMap [ a rml:PredicateMap;
