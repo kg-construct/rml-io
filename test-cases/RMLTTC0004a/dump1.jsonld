@@ -7,27 +7,42 @@
 
       "@id": "http://example.org/0",
       "foaf:name": "Monica Geller",
-      "foaf:age": "33"
+      "foaf:age": {
+        "@value": "33", 
+        "@type": "http://www.w3.org/2001/XMLSchema#integer"
+        }
     },
     {                                                                                
       "@id": "http://example.org/1",
       "foaf:name": "Rachel Green",
-      "foaf:age": "34"
+      "foaf:age": {
+        "@value": "34", 
+        "@type": "http://www.w3.org/2001/XMLSchema#integer"
+        }
     },
     {                                                                                
       "@id": "http://example.org/2",
       "foaf:name": "Joey Tribbiani",
-      "foaf:age": "35"
+      "foaf:age": {
+        "@value": "35", 
+        "@type": "http://www.w3.org/2001/XMLSchema#integer"
+        }
     },
     {                                                                                
       "@id": "http://example.org/3",
       "foaf:name": "Chandler Bing",
-      "foaf:age": "36"
+      "foaf:age": {
+        "@value": "36", 
+        "@type": "http://www.w3.org/2001/XMLSchema#integer"
+        }
     },
       {                                                                                
       "@id": "http://example.org/4",
       "foaf:name": "Ross Geller",
-      "foaf:age": "37"
+      "foaf:age": {
+        "@value": "37", 
+        "@type": "http://www.w3.org/2001/XMLSchema#integer"
+        }
     }
   ]
 }

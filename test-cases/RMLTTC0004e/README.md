@@ -95,23 +95,23 @@
 ```
 {
     "http://example.org/0" : {
-        "http://xmlns.com/foaf/0.1/age" : [ { "type" : "literal", "value" : 33 } ],
+        "http://xmlns.com/foaf/0.1/age" : [ { "type" : "literal", "value" : 33, "datatype" : "http://www.w3.org/2001/XMLSchema#integer" } ],
         "http://xmlns.com/foaf/0.1/name" : [ { "type" : "literal", "value" : "Monica Geller" } ]
     },
     "http://example.org/1" : {
-        "http://xmlns.com/foaf/0.1/age" : [ { "type" : "literal", "value" : 34 } ],
+        "http://xmlns.com/foaf/0.1/age" : [ { "type" : "literal", "value" : 34, "datatype" : "http://www.w3.org/2001/XMLSchema#integer" } ],
         "http://xmlns.com/foaf/0.1/name" : [ { "type" : "literal", "value" : "Rachel Green" } ]
     },
     "http://example.org/2" : {
-        "http://xmlns.com/foaf/0.1/age" : [ { "type" : "literal", "value" : 35 } ],
+        "http://xmlns.com/foaf/0.1/age" : [ { "type" : "literal", "value" : 35, "datatype" : "http://www.w3.org/2001/XMLSchema#integer" } ],
         "http://xmlns.com/foaf/0.1/name" : [ { "type" : "literal", "value" : "Joey Tribbiani" } ]
     },
     "http://example.org/3" : {
-        "http://xmlns.com/foaf/0.1/age" : [ { "type" : "literal", "value" : 36 } ],
+        "http://xmlns.com/foaf/0.1/age" : [ { "type" : "literal", "value" : 36, "datatype" : "http://www.w3.org/2001/XMLSchema#integer" } ],
         "http://xmlns.com/foaf/0.1/name" : [ { "type" : "literal", "value" : "Chandler Bing" } ]
     },
     "http://example.org/4" : {
-        "http://xmlns.com/foaf/0.1/age" : [ { "type" : "literal", "value" : 37 } ],
+        "http://xmlns.com/foaf/0.1/age" : [ { "type" : "literal", "value" : 37, "datatype" : "http://www.w3.org/2001/XMLSchema#integer" } ],
         "http://xmlns.com/foaf/0.1/name" : [ { "type" : "literal", "value" : "Ross Geller" } ]
     }
 }
