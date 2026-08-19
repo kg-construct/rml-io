@@ -14,14 +14,16 @@
      xmlns:terms="http://purl.org/dc/terms/">
     <owl:Ontology rdf:about="http://w3id.org/rml/io/">
         <owl:versionIRI rdf:resource="http://w3id.org/rml/io"/>
+        <owl:imports rdf:resource="http://w3id.org/rml/core/"/>
         <terms:contributor>Ana Iglesias Molina</terms:contributor>
         <terms:contributor>Anastasia Dimou</terms:contributor>
         <terms:contributor>Dylan Van Assche</terms:contributor>
         <terms:contributor>Pano Maria</terms:contributor>
+        <terms:contributor>Sitt Min Oo</terms:contributor>
         <terms:created>2023-03-14</terms:created>
         <terms:description xml:lang="en">RML-IO enables the description of input data sources and target output data serialization </terms:description>
         <terms:license rdf:resource="http://purl.org/NET/rdflicense/cc-by4.0"/>
-        <terms:modified>2023-06-15</terms:modified>
+        <terms:modified>2025-01-18</terms:modified>
         <terms:publisher rdf:resource="https://www.w3.org/community/kg-construct/"/>
         <terms:title xml:lang="en">RML-IO: Source and Target</terms:title>
         <bibo:status>draft</bibo:status>
@@ -201,6 +203,26 @@
     
 
 
+    <!-- http://w3id.org/rml/logicalTarget -->
+
+
+    <owl:ObjectProperty rdf:about="http://w3id.org/rml/logicalTarget">
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://w3id.org/rml/LanguageMap"/>
+                    <rdf:Description rdf:about="http://w3id.org/rml/TermMap"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://w3id.org/rml/LogicalTarget"/>
+        <rdfs:comment>Represents the logical target to where triples are exported to.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://w3id.org/rml/io/"/>
+        <rdfs:label>logical target</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://w3id.org/rml/namespace -->
 
 
@@ -214,24 +236,18 @@
     
 
 
-    <!-- http://w3id.org/rml/referenceFormulation -->
-
-
-    <owl:ObjectProperty rdf:about="http://w3id.org/rml/referenceFormulation">
-        <rdfs:domain rdf:resource="http://w3id.org/rml/LogicalSource"/>
-        <rdfs:range rdf:resource="http://w3id.org/rml/ReferenceFormulation"/>
-        <rdfs:comment xml:lang="en">The reference formulation used to refer to extracts of the source data. </rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://w3id.org/rml/io/"/>
-        <rdfs:label>reference formulation</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
     <!-- http://w3id.org/rml/root -->
 
 
     <owl:ObjectProperty rdf:about="http://w3id.org/rml/root">
-        <rdfs:domain rdf:resource="http://w3id.org/rml/RelativePath"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://w3id.org/rml/FilePath"/>
+                    <rdf:Description rdf:about="http://w3id.org/rml/RelativePath"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
         <rdfs:range>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
@@ -313,19 +329,6 @@
     
 
 
-    <!-- http://w3id.org/rml/iterator -->
-
-
-    <owl:DatatypeProperty rdf:about="http://w3id.org/rml/iterator">
-        <rdfs:domain rdf:resource="http://w3id.org/rml/LogicalSource"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment xml:lang="en">An expression qualified according to the reference formulation specified for pointing to an extract of the source data. </rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://w3id.org/rml/io/"/>
-        <rdfs:label>iterator</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
     <!-- http://w3id.org/rml/namespacePrefix -->
 
 
@@ -368,7 +371,14 @@
 
 
     <owl:DatatypeProperty rdf:about="http://w3id.org/rml/path">
-        <rdfs:domain rdf:resource="http://w3id.org/rml/LogicalSource"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://w3id.org/rml/FilePath"/>
+                    <rdf:Description rdf:about="http://w3id.org/rml/LogicalSource"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment xml:lang="en">Denotes the path to a source or target resource.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://w3id.org/rml/io/"/>
@@ -386,6 +396,13 @@
      -->
 
 
+    
+
+
+    <!-- http://w3id.org/rml/AbstractLogicalSource -->
+
+
+    <owl:Class rdf:about="http://w3id.org/rml/AbstractLogicalSource"/>
     
 
 
@@ -422,10 +439,29 @@
     
 
 
+    <!-- http://w3id.org/rml/FilePath -->
+
+
+    <owl:Class rdf:about="http://w3id.org/rml/FilePath">
+        <rdfs:comment xml:lang="en">Denotes a file&apos;s path location.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://w3id.org/rml/io/"/>
+        <rdfs:label>File Path</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://w3id.org/rml/LanguageMap -->
+
+
+    <owl:Class rdf:about="http://w3id.org/rml/LanguageMap"/>
+    
+
+
     <!-- http://w3id.org/rml/LogicalSource -->
 
 
     <owl:Class rdf:about="http://w3id.org/rml/LogicalSource">
+        <rdfs:subClassOf rdf:resource="http://w3id.org/rml/AbstractLogicalSource"/>
         <rdfs:comment xml:lang="en">Denotes a logical source.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://w3id.org/rml/io/"/>
         <rdfs:label>Logical Source</rdfs:label>
@@ -507,6 +543,13 @@
         <rdfs:isDefinedBy rdf:resource="http://w3id.org/rml/io/"/>
         <rdfs:label>Target</rdfs:label>
     </owl:Class>
+    
+
+
+    <!-- http://w3id.org/rml/TermMap -->
+
+
+    <owl:Class rdf:about="http://w3id.org/rml/TermMap"/>
     
 
 
@@ -658,10 +701,10 @@
     
 
 
-    <!-- http://w3id.org/rml/targzip -->
+    <!-- http://w3id.org/rml/targz -->
 
 
-    <owl:NamedIndividual rdf:about="http://w3id.org/rml/targzip">
+    <owl:NamedIndividual rdf:about="http://w3id.org/rml/targz">
         <rdf:type rdf:resource="http://w3id.org/rml/Compression"/>
         <rdfs:comment xml:lang="en">Represents TarGZip file compression.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://w3id.org/rml/io/"/>

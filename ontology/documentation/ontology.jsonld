@@ -13,21 +13,21 @@
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2002/07/owl#unionOf" : [ {
     "@list" : [ {
+      "@id" : "http://w3id.org/rml/FilePath"
+    }, {
+      "@id" : "http://w3id.org/rml/RelativePath"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid13",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#unionOf" : [ {
+    "@list" : [ {
       "@id" : "http://w3id.org/rml/CurrentWorkingDirectory"
     }, {
       "@id" : "http://w3id.org/rml/MappingDirectory"
     }, {
       "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#Literal"
-    } ]
-  } ]
-}, {
-  "@id" : "_:genid14",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2002/07/owl#unionOf" : [ {
-    "@list" : [ {
-      "@id" : "http://w3id.org/rml/RelativePath"
-    }, {
-      "@id" : "http://w3id.org/rml/Source"
     } ]
   } ]
 }, {
@@ -37,7 +37,27 @@
     "@list" : [ {
       "@id" : "http://w3id.org/rml/RelativePath"
     }, {
+      "@id" : "http://w3id.org/rml/Source"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid20",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#unionOf" : [ {
+    "@list" : [ {
+      "@id" : "http://w3id.org/rml/RelativePath"
+    }, {
       "@id" : "http://w3id.org/rml/Target"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid23",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#unionOf" : [ {
+    "@list" : [ {
+      "@id" : "http://w3id.org/rml/FilePath"
+    }, {
+      "@id" : "http://w3id.org/rml/LogicalSource"
     } ]
   } ]
 }, {
@@ -159,6 +179,19 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@value" : "Encoding class"
+  } ]
+}, {
+  "@id" : "http://w3id.org/rml/FilePath",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Denotes a file's path location."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@id" : "http://w3id.org/rml/io/"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "File Path"
   } ]
 }, {
   "@id" : "http://w3id.org/rml/JSONPath",
@@ -453,6 +486,8 @@
     "@value" : "Dylan Van Assche"
   }, {
     "@value" : "Pano Maria"
+  }, {
+    "@value" : "Sitt Min Oo"
   } ],
   "http://purl.org/dc/terms/created" : [ {
     "@value" : "2023-03-14"
@@ -607,7 +642,7 @@
     "@value" : "Denotes the path to a source or target resource."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "http://w3id.org/rml/LogicalSource"
+    "@id" : "_:genid23"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
     "@id" : "http://w3id.org/rml/io/"
@@ -626,7 +661,7 @@
     "@value" : "Defines the root of the relative path."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "http://w3id.org/rml/RelativePath"
+    "@id" : "_:genid10"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
     "@id" : "http://w3id.org/rml/io/"
@@ -635,7 +670,7 @@
     "@value" : "root"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "_:genid10"
+    "@id" : "_:genid13"
   } ]
 }, {
   "@id" : "http://w3id.org/rml/serialization",
@@ -673,7 +708,7 @@
     "@value" : "source"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "_:genid14"
+    "@id" : "_:genid17"
   } ]
 }, {
   "@id" : "http://w3id.org/rml/target",
@@ -692,10 +727,10 @@
     "@value" : "target"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "_:genid17"
+    "@id" : "_:genid20"
   } ]
 }, {
-  "@id" : "http://w3id.org/rml/targzip",
+  "@id" : "http://w3id.org/rml/targz",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "http://w3id.org/rml/Compression"
