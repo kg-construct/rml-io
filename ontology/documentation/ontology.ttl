@@ -12,7 +12,8 @@
                            <http://purl.org/dc/terms/contributor> "Ana Iglesias Molina" ,
                                                                   "Anastasia Dimou" ,
                                                                   "Dylan Van Assche" ,
-                                                                  "Pano Maria" ;
+                                                                  "Pano Maria" ,
+                                                                  "Sitt Min Oo" ;
                            <http://purl.org/dc/terms/created> "2023-03-14" ;
                            <http://purl.org/dc/terms/description> "RML-IO enables the description of input data sources and target output data serialization "@en ;
                            <http://purl.org/dc/terms/license> <http://purl.org/NET/rdflicense/cc-by4.0> ;
@@ -142,7 +143,11 @@
 
 ###  http://w3id.org/rml/root
 <http://w3id.org/rml/root> rdf:type owl:ObjectProperty ;
-                           rdfs:domain <http://w3id.org/rml/RelativePath> ;
+                           rdfs:domain [ rdf:type owl:Class ;
+                                         owl:unionOf ( <http://w3id.org/rml/FilePath>
+                                                       <http://w3id.org/rml/RelativePath>
+                                                     )
+                                       ] ;
                            rdfs:range [ rdf:type owl:Class ;
                                         owl:unionOf ( <http://w3id.org/rml/CurrentWorkingDirectory>
                                                       <http://w3id.org/rml/MappingDirectory>
@@ -221,7 +226,11 @@
 
 ###  http://w3id.org/rml/path
 <http://w3id.org/rml/path> rdf:type owl:DatatypeProperty ;
-                           rdfs:domain <http://w3id.org/rml/LogicalSource> ;
+                           rdfs:domain [ rdf:type owl:Class ;
+                                         owl:unionOf ( <http://w3id.org/rml/FilePath>
+                                                       <http://w3id.org/rml/LogicalSource>
+                                                     )
+                                       ] ;
                            rdfs:range xsd:string ;
                            rdfs:comment "Denotes the path to a source or target resource."@en ;
                            rdfs:isDefinedBy <http://w3id.org/rml/io/> ;
@@ -255,6 +264,13 @@
                                rdfs:comment "Represents encoding formats."@en ;
                                rdfs:isDefinedBy <http://w3id.org/rml/io/> ;
                                rdfs:label "Encoding class" .
+
+
+###  http://w3id.org/rml/FilePath
+<http://w3id.org/rml/FilePath> rdf:type owl:Class ;
+                               rdfs:comment "Denotes a file's path location."@en ;
+                               rdfs:isDefinedBy <http://w3id.org/rml/io/> ;
+                               rdfs:label "File Path" .
 
 
 ###  http://w3id.org/rml/LanguageMap
@@ -416,12 +432,12 @@ rdf:Literal rdf:type owl:Class .
                            rdfs:label "None" .
 
 
-###  http://w3id.org/rml/targzip
-<http://w3id.org/rml/targzip> rdf:type owl:NamedIndividual ,
-                                       <http://w3id.org/rml/Compression> ;
-                              rdfs:comment "Represents TarGZip file compression."@en ;
-                              rdfs:isDefinedBy <http://w3id.org/rml/io/> ;
-                              rdfs:label "TarGZip" .
+###  http://w3id.org/rml/targz
+<http://w3id.org/rml/targz> rdf:type owl:NamedIndividual ,
+                                     <http://w3id.org/rml/Compression> ;
+                            rdfs:comment "Represents TarGZip file compression."@en ;
+                            rdfs:isDefinedBy <http://w3id.org/rml/io/> ;
+                            rdfs:label "TarGZip" .
 
 
 ###  http://w3id.org/rml/tarxz

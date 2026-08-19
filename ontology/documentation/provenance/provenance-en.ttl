@@ -2,15 +2,19 @@
 @prefix dc: <http://purl.org/dc/terms/> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix : <> .
-<..\index-en.html> a prov:Entity;
+<http://w3id.org/rml/io> a prov:Entity;
 	 dc:title "RML-IO: Source and Target";
 	 prov:wasAttributedTo :agent0;
 	 prov:wasAttributedTo :agent1;
 	 prov:wasAttributedTo :agent2;
 	 prov:wasAttributedTo :agent3;
+	 prov:wasAttributedTo :agent4;
 	 prov:wasAttributedTo <https://github.com/dgarijo/Widoco/>,<http://www.essepuntato.it/lode/>;
+	 prov:specializationOf <http://w3id.org/rml/>;
+	 prov:wasGeneratedAt "2023-03-14";
 .
 :agent0 a prov:Agent; foaf:name "Ana Iglesias Molina".
 :agent1 a prov:Agent; foaf:name "Anastasia Dimou".
 :agent2 a prov:Agent; foaf:name "Dylan Van Assche".
 :agent3 a prov:Agent; foaf:name "Pano Maria".
+:agent4 a prov:Agent; foaf:name "Sitt Min Oo".
