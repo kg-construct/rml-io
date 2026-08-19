@@ -21,7 +21,8 @@
                            dc:contributor "Ana Iglesias Molina" ,
                                           "Anastasia Dimou" ,
                                           "Dylan Van Assche" ,
-                                          "Pano Maria" ;
+                                          "Pano Maria" ,
+                                          "Sitt Min Oo"; 
                            dc:created "2023-03-14" ;
                            dc:description "RML-IO enables the description of input data sources and target output data serialization "@en ;
                            dc:license <http://purl.org/NET/rdflicense/cc-by4.0> ;
@@ -139,7 +140,11 @@ foaf:name rdf:type owl:AnnotationProperty .
 
 ###  http://w3id.org/rml/root
 :root rdf:type owl:ObjectProperty ;
-      rdfs:domain :RelativePath ;
+      rdfs:domain [ rdf:type owl:Class; 
+                    owl:unionOf ( :RelativePath
+                                  :FilePath
+                                )
+                 ] ;
       rdfs:range [ rdf:type owl:Class ;
                    owl:unionOf ( :CurrentWorkingDirectory
                                  :MappingDirectory
@@ -218,7 +223,11 @@ foaf:name rdf:type owl:AnnotationProperty .
 
 ###  http://w3id.org/rml/path
 :path rdf:type owl:DatatypeProperty ;
-      rdfs:domain :LogicalSource ;
+      rdfs:domain [  rdf:type owl:Class; 
+                     owl:unionOf (  :LogicalSource 
+                                    :FilePath
+                                 )
+                  ] ;
       rdfs:range xsd:string ;
       rdfs:comment "Denotes the path to a source or target resource."@en ;
       rdfs:isDefinedBy <http://w3id.org/rml/io/> ;
@@ -292,6 +301,10 @@ foaf:name rdf:type owl:AnnotationProperty .
               rdfs:isDefinedBy <http://w3id.org/rml/io/> ;
               rdfs:label "Relative Path" .
 
+:FilePath rdf:type owl:Class; 
+          rdfs:comment "Denotes a file's path location."@en; 
+          rdfs:isDefinedBy <http://w3id.org/rml/io/>; 
+          rdfs:label "File Path" . 
 
 ###  http://w3id.org/rml/Source
 :Source rdf:type owl:Class ;
@@ -313,6 +326,7 @@ foaf:name rdf:type owl:AnnotationProperty .
                            rdfs:comment "Denotes a XPath Reference Formulation."@en ;
                            rdfs:isDefinedBy <http://w3id.org/rml/io/> ;
                            rdfs:label "XPath Reference Formulation" .
+
 
 
 ###  http://www.w3.org/1999/02/22-rdf-syntax-ns#Literal
@@ -401,8 +415,8 @@ formats:Format rdf:type owl:Class .
       rdfs:label "None" .
 
 
-###  http://w3id.org/rml/targzip
-:targzip rdf:type owl:NamedIndividual ,
+###  http://w3id.org/rml/targz
+:targz rdf:type owl:NamedIndividual ,
                   :Compression ;
          rdfs:comment "Represents TarGZip file compression."@en ;
          rdfs:isDefinedBy <http://w3id.org/rml/io/> ;
