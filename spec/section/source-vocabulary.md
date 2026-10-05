@@ -78,7 +78,7 @@ A `rml:Namespace` contains the following required properties:
  - `rml:namespacePrefix`: A Literal with the prefix used for the XML namespace.
  - `rml:namespaceURL`: A Literal with the URL identifying the XML namespace.
 
-These reference formulations are defined in the [[RML-IO-Registry]].
+How each of these reference formulations is processed (its iterator, its expressions, and its natural RDF mapping) is defined in the [[RML-IO-Registry]].
 
 <pre class="ex-source">
 &lt;#XMLNamespace&gt; a rml:LogicalSource;
@@ -220,7 +220,7 @@ the `student` table. The database username and password are provided as well.
 <pre class="ex-source">
 &lt;#RDB&gt; a rml:LogicalSource;
     rml:source [ a rml:Source, d2rq:Database;
-        d2rq:jdbcDSN "jdbc:mysrml://localhost/example";
+        d2rq:jdbcDSN "jdbc:mysql://localhost/example";
         d2rq:jdbcDriver "com.mysql.jdbc.Driver";
         d2rq:username "user";
         d2rq:password "password";
