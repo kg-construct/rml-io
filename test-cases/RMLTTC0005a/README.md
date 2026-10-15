@@ -80,9 +80,9 @@
   rml:target [ a rml:Target, rml:FilePath;
     rml:root rml:CurrentWorkingDirectory;
     rml:path "./dump1.nq";
+    rml:encoding rml:UTF-8;
   ];
   rml:serialization formats:N-Quads;
-  rml:encoding rml:UTF-8;
 .
 
 ```
