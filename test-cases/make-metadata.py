@@ -96,22 +96,22 @@ def main(spec: str):
                 output_format2 = 'application/n-quads'
             elif os.path.exists(os.path.join(testcase, 'dump1.nt')):
                 output2 = 'dump1.nt'
-                output_format2 = 'application/n-quads'
+                output_format2 = 'application/n-triples'
             elif os.path.exists(os.path.join(testcase, 'dump1.n3')):
                 output2 = 'dump1.n3'
-                output_format2 = 'application/n-quads'
+                output_format2 = 'text/n3'
             elif os.path.exists(os.path.join(testcase, 'dump1.jsonld')):
                 output2 = 'dump1.jsonld'
-                output_format2 = 'application/n-quads'
+                output_format2 = 'application/ld+json'
             elif os.path.exists(os.path.join(testcase, 'dump1.rdfjson')):
                 output2 = 'dump1.rdfjson'
-                output_format2 = 'application/n-quads'
+                output_format2 = 'application/rdf+json'
             elif os.path.exists(os.path.join(testcase, 'dump1.rdfxml')):
                 output2 = 'dump1.rdfxml'
-                output_format2 = 'application/n-quads'
+                output_format2 = 'application/rdf+xml'
             elif os.path.exists(os.path.join(testcase, 'dump1.ttl')):
                 output2 = 'dump1.ttl'
-                output_format2 = 'application/n-quads'
+                output_format2 = 'text/turtle'
             elif os.path.exists(os.path.join(testcase, 'dump1.nq.gz')):
                 output2 = 'dump1.nq.gz'
                 output_format2 = 'application/n-quads'
