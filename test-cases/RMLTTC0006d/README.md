@@ -81,9 +81,9 @@
   rml:target [ a rml:Target, rml:FilePath;
     rml:root rml:CurrentWorkingDirectory;
     rml:path "./dump1.nq.tar.xz";
+    rml:compression rml:tarxz;
   ];
   rml:serialization formats:N-Quads;
-  rml:compression rml:tarxz;
 .
 
 ```

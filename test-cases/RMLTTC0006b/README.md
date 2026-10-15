@@ -80,9 +80,9 @@
   rml:target [ a rml:Target, rml:FilePath;
     rml:root rml:CurrentWorkingDirectory;
     rml:path "./dump1.nq.gz";
+    rml:compression rml:gzip;
   ];
   rml:serialization formats:N-Quads;
-  rml:compression rml:gzip;
 .
 
 ```
