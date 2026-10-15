@@ -8,12 +8,18 @@
 
 **Input**
 ```
-id,name,age
-0,Monica Geller,33
-1,Rachel Green,34
-2,Joey Tribbiani,35
-3,Chandler Bing,36
-4,Ross Geller,37
+USE test;
+DROP TABLE IF EXISTS Friends;
+CREATE TABLE Friends (
+  id INTEGER,
+  name VARCHAR(50),
+  age INTEGER
+);
+INSERT INTO Friends VALUES (0, 'Monica Geller', 33);
+INSERT INTO Friends VALUES (1, 'Rachel Green', 34);
+INSERT INTO Friends VALUES (2, 'Joey Tribbiani', 35);
+INSERT INTO Friends VALUES (3, 'Chandler Bing', 36);
+INSERT INTO Friends VALUES (4, 'Ross Geller', 37);
 
 ```
 
@@ -26,9 +32,10 @@ id,name,age
 @base <http://example.com/rules/> .
 
 <#D2RQSourceAccess> a rml:Source, d2rq:Database;
-  d2rq:jdbcDSN "$CONNECTIONDSN";
-  d2rq:username "$USERNAME";
-  d2rq:password "$PASSWORD"
+  d2rq:jdbcDSN "CONNECTIONDSN";
+  d2rq:jdbcDriver "com.mysql.cj.jdbc.Driver";
+  d2rq:username "root";
+  d2rq:password ""
 .
 
 <#TriplesMap> a rml:TriplesMap;
