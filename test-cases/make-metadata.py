@@ -74,6 +74,9 @@ def main(spec: str):
             elif os.path.exists(os.path.join(testcase, 'Friends.xml')):
                 input1 = 'Friends.xml'
                 input_format1 = 'text/xml'
+            elif os.path.exists(os.path.join(testcase, 'resource.sql')):
+                input1 = 'resource.sql'
+                input_format1 = 'application/sql'
             else:
                 input1 = f'http://w3id.org/rml/resources/rml-io/{testcase}/Friends.json'
                 input_format1 = 'application/json'

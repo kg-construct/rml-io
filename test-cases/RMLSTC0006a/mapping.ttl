@@ -5,9 +5,10 @@
 @base <http://example.com/rules/> .
 
 <#D2RQSourceAccess> a rml:Source, d2rq:Database;
-  d2rq:jdbcDSN "$CONNECTIONDSN";
-  d2rq:username "$USERNAME";
-  d2rq:password "$PASSWORD"
+  d2rq:jdbcDSN "CONNECTIONDSN";
+  d2rq:jdbcDriver "com.mysql.cj.jdbc.Driver";
+  d2rq:username "root";
+  d2rq:password ""
 .
 
 <#TriplesMap> a rml:TriplesMap;
